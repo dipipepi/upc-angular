@@ -1,0 +1,143 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+
+<!--<div class="authorization-wrapper">-->
+<!--  <div class="login-caption {{message || loading ? 'hidden' : ''}}">{{'LOGIN.GREETING' | translate}}</div>-->
+
+<!--  <form class="login-caption" [formGroup]="authForm" (ngSubmit)="login()">-->
+<!--    <div class="loading {{loading ? '' : 'hidden'}}">{{ loadingMessage | translate}}</div>-->
+<!--    <div class="default-error {{message ? '' : 'hidden'}}">{{message}}</div>-->
+<!--    <label>-->
+<!--      <span>Login</span>-->
+<!--      <input class="default-input {{credentials.valid ? '' : 'error'}}"-->
+<!--             type="text"-->
+<!--             name="login"-->
+<!--             formControlName="login"-->
+<!--             placeholder="{{'LOGIN.NAME' | translate}}"-->
+<!--             (blur)="onBlurLogin()"-->
+<!--             (focus)="onFocusLogin()"-->
+<!--             required>-->
+<!--    </label>-->
+<!--    <hr>-->
+<!--    <label>-->
+<!--      <span>{{"LOGIN.SIGNING" | translate}}</span>-->
+<!--      <input type="password"-->
+<!--             name="password"-->
+<!--             formControlName="password"-->
+<!--             class="default-input {{credentials.valid ? '' : 'error'}}"-->
+<!--             autocomplete="on"-->
+<!--             required-->
+<!--             placeholder="{{'LOGIN.PASSWORD' | translate}}">-->
+<!--    </label>-->
+
+<!--    <div class="keep-me">-->
+<!--      <div class="default-checkbox">-->
+<!--        <input name="check-remember-me" id="check-remember-me" type="checkbox" ng-model="loginCtrl.isKeepMeSigned" [disabled]="isKeepMeDisabled">-->
+<!--        <label for="check-remember-me">{{'LOGIN.REMEMBER_ME' | translate}}</label>-->
+<!--      </div>-->
+<!--      <a class="forgot-password"-->
+<!--         *ngIf="isForgotPasswordEnabled"-->
+<!--         (click)="remindPassword()"-->
+<!--         focus-only-tab>-->
+<!--        {{'LOGIN.FORGOT_PASSWORD' | translate}}-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="button-wrapper">-->
+<!--      <button type="submit"-->
+<!--              class="default-button"-->
+<!--              [disabled]="!credentials.login || !credentials.password || !credentials.valid || loading"-->
+<!--              focus-only-tab>-->
+<!--        {{'LOGIN.SIGN_IN' | translate}}-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <button (click)="dialogRef.close()" aria-label="Dismiss" class="ngdialog-close" focus-only-tab></button>-->
+
+<!--    <button type="submit">Login</button>-->
+<!--  </form>-->
+
+<!--  <div class="sso-login" *ngIf="oauth2ButtonEnabled">-->
+<!--    <div *ngIf="authFormEnabled"><span>{{'LOGIN.OR_SIGN_IN' | translate}}</span></div>-->
+<!--    <a href="" (click)="redirectToOauth2()">{{'LOGIN.USE_ENTERPRISE_ACCOUNT' | translate}}</a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<div class="authorization-wrapper">
+  <div class="login-caption {{message || loading ? 'hidden' : ''}}">{{'LOGIN.GREETING' | translate}}</div>
+
+  <form name="loginForm" [formGroup]="authForm" (ngSubmit)="login()" *ngIf="authFormEnabled">
+    <div class="loading {{loading ? '' : 'hidden'}}">{{ loadingMessage | translate}}</div>
+    <div class="default-error {{message ? '' : 'hidden'}}">{{message}}</div>
+    <label>
+      <input class="default-input {{credentials.valid ? '' : 'error'}}"
+             (change)="credentials.valid = true"
+             type="text"
+             autocomplete="on"
+             name="login"
+             formControlName="login"
+             placeholder="{{'LOGIN.NAME' | translate}}"
+             (blur)="onBlurLogin()"
+             (focus)="onFocusLogin()"
+             (click)="showData()"
+             required>
+<!--      <button class="reset-field" (click)="resetField('login')" *ngIf="authForm.value.login"></button>-->
+    </label>
+    <label>
+      <input reset-field
+             appResetField
+             (change)="credentials.valid = true"
+             type="password"
+             name="password"
+             formControlName="password"
+             class="default-input {{credentials.valid ? '' : 'error'}}"
+             autocomplete="on"
+             required
+             placeholder="{{'LOGIN.PASSWORD' | translate}}">
+      <button class="reset-field" (click)="resetField('password')" *ngIf="authForm.value.password"></button>
+    </label>
+    <div class="keep-me">
+      <div class="default-checkbox">
+        <input name="check-remember-me" formControlName="isKeepMeSigned" id="check-remember-me" type="checkbox" [disabled]="isKeepMeDisabled">
+        <label for="check-remember-me">{{'LOGIN.REMEMBER_ME' | translate}}</label>
+      </div>
+      <a class="forgot-password"
+         *ngIf="isForgotPasswordEnabled"
+         (click)="remindPassword()"
+         href=""
+         focus-only-tab>
+        {{'LOGIN.FORGOT_PASSWORD' | translate}}
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <button type="submit"
+              class="default-button"
+              [disabled]="!authForm.value.login || !authForm.value.password || authForm.status === 'INVALID' || loading"
+              translate-once="LOGIN.SIGN_IN"
+              focus-only-tab>
+        {{'LOGIN.SIGN_IN' | translate}}
+      </button>
+    </div>
+    <button (click)="dialogRef.close()" aria-label="Dismiss" class="ngdialog-close" focus-only-tab></button>
+  </form>
+
+  <div class="sso-login" *ngIf="oauth2ButtonEnabled">
+    <div *ngIf="authFormEnabled"><span>{{'LOGIN.OR_SIGN_IN' | translate}}</span></div>
+    <a href="" (click)="redirectToOauth2()" >{{'LOGIN.USE_ENTERPRISE_ACCOUNT' | translate}}</a>
+  </div>
+</div>

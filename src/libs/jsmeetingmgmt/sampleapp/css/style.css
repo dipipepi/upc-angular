@@ -1,0 +1,109 @@
+body {
+    background-color: #fcfcfc;
+    height:100%;
+    margin:0;
+    padding:0;
+    position: relative;
+}
+
+.container {
+    width: 85%;
+}
+
+.collection {
+    border: 0;
+}
+
+#search-results.collection li .collection-item {
+    transition: all 0.2s;
+    height: 94px;
+    border-top: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+}
+
+#search-results.collection li:last-child .collection-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.block {
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+#logs {
+    max-height: 300px;
+    min-height: 300px;
+    overflow: auto;
+}
+
+#credential-block h5 {
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+#credential-block input {
+    margin-bottom: 10px;
+}
+
+#credential-block .btn {
+    margin: 0 8% 15px 8%;
+    width: 84%;
+}
+
+#buttons-block .btn {
+    margin: 0 8% 15px 8%;
+    width: 84%;
+}
+
+#buttons-block .btn:first-child {
+    margin-top: 15px;
+}
+
+#buttons-block input {
+    margin-bottom: 10px;
+}
+
+.tab-content {
+    height:805px;
+    margin:15px 30px;
+}
+
+.search-results-container {
+    border:0;
+    max-height:800px;
+    overflow: auto;
+}
+
+#meeting-details-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width:100%;
+    height: 100%;
+    text-align:center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#meeting-details-overlay .meeting-details-container {
+    width:70%;
+    height: 87%;
+    max-height: 850px;
+    margin: 75px auto 30px;
+    background-color: #fff;
+    padding:15px;
+    text-align:center;
+    overflow: auto;
+}
+
+#cd-btns-block .btn {
+    margin: 0 8% 15px 8%;
+    width: 84%;
+}
+
+a .material-icons {
+    color: #26a69a;
+}

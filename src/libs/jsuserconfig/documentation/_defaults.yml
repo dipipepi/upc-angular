@@ -1,0 +1,43 @@
+#Page properties
+#=================================
+title: "JavaScript Meeting Management Services Package"
+
+#=================================
+#=================================
+
+
+#API Ref variables
+#=================================
+Base_Responses: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Base.Responses.html'>Responses</a>"
+Base_Responses_ObjectValidation: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Base.Responses.ObjectValidation.html'>ObjectValidation</a>"
+Base_Responses_Promise: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Base.Responses.Promise.html'>Promise</a>"
+Base_Responses_QueryMeetingResponse: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Base.Responses.QueryMeetingResponse.html'>QueryMeetingResponse</a>"
+Base_Responses_SimpleObjectResponse: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Base.Responses.SimpleObjectResponse.html'>SimpleObjectResponse</a>"
+Config_ClientConfig: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Config.ClientConfig.html'>ClientConfig</a>"
+Config: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Config.html'>Config</a>"
+Config_Logger: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Config.Logger.html'>Logger</a>"
+Config_Resources: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.Config.Resources.html'>Resources</a>"
+MeetingManagementService_BroadcastProfile: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.BroadcastProfile.html'>BroadcastProfile</a>"
+MeetingManagementService: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.html'>MeetingManagementService</a>"
+MeetingManagementService_Meeting_AdvancedProperties: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.AdvancedProperties.html'>AdvancedProperties</a>"
+MeetingManagementService_Meeting_Attendee: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Attendee.html'>Attendee</a>"
+MeetingManagementService_Meeting_Attendee_ResourceAvailability_Availability: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Attendee.ResourceAvailability.Availability.html'>Availability</a>"
+MeetingManagementService_Meeting_Attendee_ResourceAvailability: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Attendee.ResourceAvailability.html'>ResourceAvailability</a>"
+MeetingManagementService_Meeting_BroadcastSetting_AccessModeSetting: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.BroadcastSetting.AccessModeSetting.html'>AccessModeSetting</a>"
+MeetingManagementService_Meeting_BroadcastSetting: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.BroadcastSetting.html'>BroadcastSetting</a>"
+MeetingManagementService_Meeting_Daily: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Daily.html'>Daily</a>"
+MeetingManagementService_Meeting: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.html'>Meeting</a>"
+MeetingManagementService_Meeting_Monthly_DayOfNumberOfEveryMonth: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Monthly.DayOfNumberOfEveryMonth.html'>DayOfNumberOfEveryMonth</a>"
+MeetingManagementService_Meeting_Monthly: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Monthly.html'>Monthly</a>"
+MeetingManagementService_Meeting_RecurrenceEnd: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.RecurrenceEnd.html'>RecurrenceEnd</a>"
+MeetingManagementService_Meeting_ReservedPorts: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.ReservedPorts.html'>ReservedPorts</a>"
+MeetingManagementService_Meeting_Weekly: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Meeting.Weekly.html'>Weekly</a>"
+MeetingManagementService_Propositional: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.Propositional.html'>Propositional</a>"
+MeetingManagementService_VirtualRoom: "<a class='apiref' href='../api_refs/AvayaMeetingManagementClient.MeetingManagementService.VirtualRoom.html'>VirtualRoom</a>"
+AvayaMeetingManagementClient: "<a class='apiref' href='../api_refs/window.AvayaMeetingManagementClient.html'>AvayaMeetingManagementClient</a>"
+
+#Custom variables
+#=================================
+ConfiguringTheSDK: "<a href='../tech/configuring_the_sdk.gsp'>Configuring The SDK</a>"
+InitializingSDK: "<a href='../tech/initializing_sdk.gsp'>Initializing SDK</a>"
+WorkingTokenAuth: "<a href='../tech/working_token_auth.gsp'>Working with Token Authorization</a>"

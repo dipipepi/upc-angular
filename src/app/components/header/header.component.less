@@ -1,0 +1,75 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+
+.header-wrapper {
+  background: @header;
+  height: auto;
+  min-height: 34px;
+  padding: 0 0 0 30px;
+  font-size: 0;
+  position: relative;
+
+
+  .action-blocks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .settings-block {
+      position: relative;
+      display: flex;
+      float: left;
+      align-items: center;
+      margin-right: 10px;
+      color: @text-color-light;
+      text-decoration: none;
+      font-size: 11px;
+      cursor: pointer;
+
+      .settings-icon {
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        background: url("icons/ic_portal_settings.svg");
+        background-size: 100%;
+      }
+    }
+
+    .about {
+      margin-right: 10px;
+      display: inline-block;
+      color: @text-color-light;
+      text-decoration: none;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .sign-in-block {
+      position: relative;
+      display: flex;
+      align-items: center;
+      float: right;
+      color: @text-color-light;
+      line-height: inherit;
+      padding-right: 46px;
+      font-size: 11px;
+      cursor: pointer;
+      margin: 0 0 0 auto;
+
+      .sign-in-avatar {
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+        overflow: hidden;
+        border-radius: 100%;
+        background: @url-generic-avatar;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+.mat-dialog-container{
+  border-radius: 0 !important;
+}

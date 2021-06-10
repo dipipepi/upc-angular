@@ -1,0 +1,8 @@
+{
+	"host": "dev-cores204.uplab.com",
+	"port": "8443",
+	"organizationAlias": "dev-org204",
+	"login": "2040009",
+	"password": "2040009"
+	
+}

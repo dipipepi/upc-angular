@@ -1,0 +1,62 @@
+#Page properties
+#=================================
+title: "JavaScript Meeting Management Services Package"
+
+#=================================
+#=================================
+
+
+#API Ref variables
+#=================================
+AvayaRecordingClient: "<a class='apiref' href='../api_refs/jsrecording/window.AvayaRecordingClient.html'>AvayaRecordingClient</a>"
+Base_Responses: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Base.Responses.html'>Responses</a>"
+Base_Responses_ObjectValidation: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Base.Responses.ObjectValidation.html'>ObjectValidation</a>"
+Base_Responses_Promise: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Base.Responses.Promise.html'>Promise</a>"
+Base_Responses_QueryProgramResponse: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Base.Responses.QueryProgramResponse.html'>QueryProgramResponse</a>"
+Base_Responses_SimpleObjectResponse: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Base.Responses.SimpleObjectResponse.html'>SimpleObjectResponse</a>"
+Constants: "<a class='apiref' href='../api_refs/jsplayer/PlayerClient.Constants.html'>Constants</a>"
+Config: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.html'>Config</a>"
+Config_ClientConfig: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.ClientConfig.html'>ClientConfig</a>"
+Config_Logger: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.Logger.html'>Logger</a>"
+Config_PlayersConfiguration: "<a class='apiref' href='../api_refs/jsplayer/PlayerClient.Config.PlayersConfiguration.html'>PlayersConfiguration</a>"
+Config_Resources_AuthorizationResources: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.Resources.AuthorizationResources.html'>AuthorizationResources</a>"
+Config_Resources: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.Resources.html'>Resources</a>"
+Config_Resources_ProgramResources: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.Resources.ProgramResources.html'>ProgramResources</a>"
+Config_ServerInfo: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.ServerInfo.html'>ServerInfo</a>"
+Config_ServerInfo_Resources: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Config.ServerInfo.html#toc9'>ServerInfo Resources</a>"
+PlayerParams: "<a class='apiref' href='../api_refs/jsplayer/PlayerClient.PlayerParams.html'>PlayerParams</a>"
+PlayerClient: "<a class='apiref' href='../api_refs/jsplayer/window.PlayerClient.html'>PlayerClient</a>"
+Services_AuthenticationService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.AuthenticationService.html'>AuthenticationService</a>"
+Services_AuthenticationService_Responses_TokenResponse: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.AuthenticationService.Responses.TokenResponse.html'>TokenResponse</a>"
+Services_ChatService_ChatMessage: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ChatService.ChatMessage.html'>ChatMessage</a>"
+Services_ChatService_ChatParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ChatService.ChatParams.html'>ChatParams</a>"
+Services_ChatService_ChatSession: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ChatService.ChatSession.html'>ChatSession</a>"
+Services_ChatService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ChatService.html'>ChatService</a>"
+Services: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.html'>Services</a>"
+Services_ProgramService_Category: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.Category.html'>Category</a>"
+Services_ProgramService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.html'>ProgramService</a>"
+Services_ProgramService_PagedList: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.PagedList.html'>PagedList</a>"
+Services_ProgramService_Program: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.Program.html'>Program</a>"
+Services_ProgramService_ProgramAddress: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.ProgramAddress.html'>ProgramAddress</a>"
+Services_ProgramService_ProgramParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.ProgramParams.html'>ProgramParams</a>"
+Services_ProgramService_ProgramStatus: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.ProgramStatus.html'>ProgramStatus</a>"
+Services_ProgramService_Streams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.Streams.html'>Streams</a>"
+Services_ProgramService_Template: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ProgramService.Template.html'>Template</a>"
+Services_ReportsService_AccessReport: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.AccessReport.html'>AccessReport</a>"
+Services_ReportsService_AccessReportOneProgramParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.AccessReportOneProgramParams.html'>AccessReportOneProgramParams</a>"
+Services_ReportsService_AccessReportParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.AccessReportParams.html'>AccessReportParams</a>"
+Services_ReportsService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.html'>ReportsService</a>"
+Services_ReportsService_ViewerReport: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.ViewerReport.html'>ViewerReport</a>"
+Services_ReportsService_ViewerReportEntry: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.ReportsService.ViewerReportEntry.html'>ViewerReportEntry</a>"
+Services_SystemSettingsService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.SystemSettingsService.html'>SystemSettingsService</a>"
+Services_SystemSettingsService_SystemSettings: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.SystemSettingsService.SystemSettings.html'>SystemSettings</a>"
+Services_SystemSettingsService_SystemSettingsParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.SystemSettingsService.SystemSettingsParams.html'>SystemSettingsParams</a>"
+Services_TenantService: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.TenantService.html'>TenantService</a>"
+Services_TenantService_Tenant: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.TenantService.Tenant.html'>Tenant</a>"
+Services_TenantService_TenantParams: "<a class='apiref' href='../api_refs/jsrecording/AvayaRecordingClient.Services.TenantService.TenantParams.html'>TenantParams</a>"
+
+#Custom variables
+#=================================
+ConfiguringTheSDK: "<a href='../tech/configuring_the_sdk.gsp'>Configuring The SDK</a>"
+InitializingSDK: "<a href='../tech/initializing_sdk.gsp'>Initializing SDK</a>"
+WorkingCredentials: "<a href='../tech/working_credentials.gsp'>Working with Credentials</a>"

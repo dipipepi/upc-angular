@@ -1,0 +1,6 @@
+{
+	"login": "2060006",
+	"password": "2060006",
+	"hostAndPort": "dev-esg106.uplab.com",
+	"alias": "dev-org106"
+}

@@ -1,0 +1,36 @@
+{
+    "activeXWindowProperty": "ActiveXObject",
+    "wmpConfiguration": {
+        "activeXComponent": "WMPlayer.OCX",
+        "mimeType": "application/x-ms-wmp",
+        "classID": "clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6",
+        "plugin": "np-mswmp",
+        "className": "wmp",
+        "mute": 0,
+        "stretchToFit": true,
+        "uiMode": "full",
+        "windowlessVideo": true,
+        "invokeURLs": false
+    },
+    "flashConfiguration": {
+        "activeXComponent": "ShockwaveFlash.ShockwaveFlash",
+        "mimeType": "application/x-shockwave-flash",
+        "streamType": "dvr",
+        "windowMode": "opaque",
+        "allowFullScreen": true,
+        "controlBarAutoHide": true
+    },
+    "silverlightConfiguration": {
+        "activeXComponent": "AgControl.AgControl",
+        "mimeType": "application/x-silverlight-2",
+        "data": "data:application/x-silverlight,",
+        "plugin": "Silverlight Plug-In",
+        "minRuntimeVersion": "4.0.50401.0",
+        "background": "black",
+        "autoUpgrade": true,
+        "enableGPUAcceleration": true,
+        "enableHtmlAccess": true,
+        "windowless": true,
+        "stretchMode": "Uniform"
+    }
+}

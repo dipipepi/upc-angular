@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>JSC SDK User Settings Package Class: VirtualRoomSetup</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.custom.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">JSC SDK User Settings Package</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaUserClient.Base.Responses.html">AvayaUserClient.Base.Responses</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Config.html">AvayaUserClient.Config</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Base.Responses.ObjectValidation.html">Base.Responses.ObjectValidation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Base.Responses.QueryConfigResponse.html">Base.Responses.QueryConfigResponse</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Config.ClientConfig.html">Config.ClientConfig</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Config.Logger.html">Config.Logger</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.Config.Resources.html">Config.Resources</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.html">UserService</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.html">UserService.UserDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.html">UserService.UserDetails.Conferencing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.MeetingService.html">UserService.UserDetails.Conferencing.MeetingService</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.MeetingService.VideoLayout.html">UserService.UserDetails.Conferencing.MeetingService.VideoLayout</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.Propositional.html">UserService.UserDetails.Conferencing.Propositional</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.UserGroup.html">UserService.UserDetails.Conferencing.UserGroup</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.html">UserService.UserDetails.Conferencing.VirtualRoomSetup</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.AdvancedProperties.html">UserService.UserDetails.Conferencing.VirtualRoomSetup.AdvancedProperties</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.Attendee.html">UserService.UserDetails.Conferencing.VirtualRoomSetup.Attendee</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.ReservedPorts.html">UserService.UserDetails.Conferencing.VirtualRoomSetup.ReservedPorts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.Handle.html">UserService.UserDetails.Handle</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.InvitationLanguages.html">UserService.UserDetails.InvitationLanguages</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetails.VoicePromptLanguage.html">UserService.UserDetails.VoicePromptLanguage</a>
+						</li>
+						
+						<li>
+							<a href="AvayaUserClient.UserService.UserDetailsUpdate.html">UserService.UserDetailsUpdate</a>
+						</li>
+						
+						<li>
+							<a href="window.AvayaUserClient.html">window.AvayaUserClient</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="tutorials.list.html" class="dropdown-toggle" data-toggle="dropdown">Tutorials<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="tutorial-async.html">Asynchronous operations</a>
+						</li>
+						
+						<li>
+							<a href="tutorial-gettingStarted.html">Getting started</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: VirtualRoomSetup</h1>
+<section>
+
+<!--
+<header>
+    <h2>
+        <span class="ancestors"><a href="AvayaUserClient.UserService.html">.UserService</a><a href="AvayaUserClient.UserService.UserDetails.html">.UserDetails</a><a href="AvayaUserClient.UserService.UserDetails.Conferencing.html">.Conferencing</a>.</span>
+    
+    VirtualRoomSetup
+    </h2>
+    
+        <div class="class-description"><p>Subclass of <a href="AvayaUserClient.UserService.UserDetails.Conferencing.html">AvayaUserClient.UserService.UserDetails.Conferencing</a> object.</p></div>
+    
+</header>
+-->
+
+<article>
+    <div class="container-overview">
+
+
+    
+
+    
+        
+<dt>
+    
+
+    
+</dt>
+<dd>
+
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+    
+    </div>
+
+    <!--
+    
+    -->
+
+    
+
+    <!--
+    
+    -->
+
+    
+        <h2 class="subsection-title">Classes</h2>
+
+        <dl>
+            <dt><a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.AdvancedProperties.html">AdvancedProperties</a></dt>
+        
+            <dt><a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.Attendee.html">Attendee</a></dt>
+        
+            <dt><a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.ReservedPorts.html">ReservedPorts</a></dt>
+        </dl>
+    
+
+    
+
+    
+        <h2 class="subsection-title">Members</h2>
+
+        
+            <dl class="members">
+<dt class="name" id="accessPIN">
+    <h4><span class="type-signature"></span>accessPIN</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>accessPIN field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="advancedProperties">
+    <h4><span class="type-signature"></span>advancedProperties</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>advancedProperties field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    <a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.AdvancedProperties.html">AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.AdvancedProperties</a>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="allowInstantMeeting">
+    <h4><span class="type-signature"></span>allowInstantMeeting</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>allowInstantMeeting field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="allowKnocking">
+    <h4><span class="type-signature"></span>allowKnocking</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>allowKnocking field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="allowPresentPolicy">
+    <h4><span class="type-signature"></span>allowPresentPolicy</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>allowPresentPolicy field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="allowRecording">
+    <h4><span class="type-signature"></span>allowRecording</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>allowRecording field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="allowStreaming">
+    <h4><span class="type-signature"></span>allowStreaming</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>allowStreaming field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="attendees">
+    <h4><span class="type-signature"></span>attendees</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>attendees field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    Array.&lt;<a href="AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.Attendee.html">AvayaUserClient.UserService.UserDetails.Conferencing.VirtualRoomSetup.Attendee</a>>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="autoExtend">
+    <h4><span class="type-signature"></span>autoExtend</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>autoExtend field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="blockDialIn">
+    <h4><span class="type-signature"></span>blockDialIn</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>blockDialIn field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="defaultRoom">
+    <h4><span class="type-signature"></span>defaultRoom</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>defaultRoom field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="description">
+    <h4><span class="type-signature"></span>description</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>description field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="entryAnnouncement">
+    <h4><span class="type-signature"></span>entryAnnouncement</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>entryAnnouncement field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="exitAnnouncement">
+    <h4><span class="type-signature"></span>exitAnnouncement</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>exitAnnouncement field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="fixedMeetingType">
+    <h4><span class="type-signature"></span>fixedMeetingType</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>fixedMeetingType field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="invitationLanguage">
+    <h4><span class="type-signature"></span>invitationLanguage</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>invitationLanguage field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="maxParticipants">
+    <h4><span class="type-signature"></span>maxParticipants</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>maxParticipants field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="maxPlayNameNumber">
+    <h4><span class="type-signature"></span>maxPlayNameNumber</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>maxPlayNameNumber field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="maxPlayToneNumber">
+    <h4><span class="type-signature"></span>maxPlayToneNumber</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>maxPlayToneNumber field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="maxRoomParticipants">
+    <h4><span class="type-signature"></span>maxRoomParticipants</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>maxRoomParticipants field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="memberId">
+    <h4><span class="type-signature"></span>memberId</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>memberId field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="moderatorPIN">
+    <h4><span class="type-signature"></span>moderatorPIN</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>moderatorPIN field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="name">
+    <h4><span class="type-signature"></span>name</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>name field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="number">
+    <h4><span class="type-signature"></span>number</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>number field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="oneTimePINRequired">
+    <h4><span class="type-signature"></span>oneTimePINRequired</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>oneTimePINRequired field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="preferredDialInLocation">
+    <h4><span class="type-signature"></span>preferredDialInLocation</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>preferredDialInLocation field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="priority">
+    <h4><span class="type-signature"></span>priority</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>priority field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="publicRoom">
+    <h4><span class="type-signature"></span>publicRoom</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>publicRoom field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="reservedPorts">
+    <h4><span class="type-signature"></span>reservedPorts</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>reservedPorts field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    AvayaVirtualRoomSetupManagementClient.VirtualRoomSetupManagementService.VirtualRoomSetup.ReservedPorts
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="servicePrefix">
+    <h4><span class="type-signature"></span>servicePrefix</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>servicePrefix field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="serviceTemplateId">
+    <h4><span class="type-signature"></span>serviceTemplateId</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>serviceTemplateId field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="streamingStatus">
+    <h4><span class="type-signature"></span>streamingStatus</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>streamingStatus field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="virtualRoomId">
+    <h4><span class="type-signature"></span>virtualRoomId</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>virtualRoomId field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    number
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="voicePromptLanguage">
+    <h4><span class="type-signature"></span>voicePromptLanguage</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>voicePromptLanguage field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+            <dl class="members">
+<dt class="name" id="waitingRoom">
+    <h4><span class="type-signature"></span>waitingRoom</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>waitingRoom field description</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    string
+|
+
+    boolean
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright 2016 Avaya Inc. All Rights Reserved.
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
+		on Wed Mar 27th 2019 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

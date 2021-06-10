@@ -1,0 +1,150 @@
+@import "src/assets/styles/theme";
+@import "src/assets/styles/desktop-utility";
+
+mat-dialog-container{
+  padding: 0;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 0;
+}
+
+.about-content{
+  background: @background-highlight-1;
+  color: black;
+  width: 800px;
+  height: auto;
+
+  .details-popup-title{
+    max-height: 50px;
+    padding: 20px 20px 12px;
+    font-size: 15px;
+  }
+
+  .detail-popup-body.about {
+    font-size: 14px;
+    padding: 30px;
+    line-height: 20px;
+    height: ~"calc(100% - 100px)";
+    background: white;
+    border-top: 1px solid @input-borders-color;
+    border-bottom: 1px solid @input-borders-color;
+
+    .title{
+      text-align: left;
+      border-bottom: 1px solid @input-borders-color;
+      padding-bottom: 20px;
+
+      span {
+        font-weight: 600;
+        margin-right: 25px;
+      }
+
+      p {
+        display: inline;
+      }
+    }
+
+    .main-text {
+      padding-top: 20px;
+
+      p, div {
+        margin: 10px 0;
+
+        &:last-child {
+          margin-top: 25px;
+        }
+      }
+
+      div {
+        p, a{
+          display: inline;
+        }
+      }
+    }
+
+    .reset-tutorial {
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: underline;
+      color: @links-color-mobile;
+    }
+  }
+}
+
+.ngdialog.ngdialog-theme-details-popup-about {
+  top: 0;
+  background: transparent;
+
+  .ngdialog-overlay {
+    background: fade(@background-black, 40%);
+    display: block;
+  }
+
+  .ngdialog-content {
+    position: absolute;
+    background: @background-highlight-1;
+    top: ~"calc(50% - 325px)";
+    width: 800px;
+    height: auto;
+    left: ~"calc(50% - 400px)";
+    font-size: 0;
+    border-top: none;
+    overflow-y: auto;
+
+    .details-popup-title {
+      max-height: 50px;
+    }
+
+    .detail-popup-body.about {
+      font-size: 14px;
+      padding: 30px;
+      line-height: 20px;
+      height: ~"calc(100% - 100px)";
+      background: white;
+      border-top: 1px solid @input-borders-color;
+      border-bottom: 1px solid @input-borders-color;
+
+      .title{
+        text-align: left;
+        border-bottom: 1px solid @input-borders-color;
+        padding-bottom: 20px;
+
+        span {
+          font-weight: 600;
+          margin-right: 25px;
+        }
+
+        p {
+          display: inline;
+        }
+      }
+
+      .main-text {
+        padding-top: 20px;
+
+        p, div {
+          margin: 10px 0;
+
+          &:last-child {
+            margin-top: 25px;
+          }
+        }
+
+        div {
+          p, a{
+            display: inline;
+          }
+        }
+      }
+
+      .reset-tutorial {
+        display: inline-block;
+        cursor: pointer;
+        text-decoration: underline;
+        color: @links-color-mobile;
+      }
+    }
+  }
+}
+

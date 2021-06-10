@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSC SDK Test App</title>
+    <script type="text/javascript" src="libs/avayaUserClient.js"></script>
+    <script type="text/javascript" src='app.js'></script>
+    <script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper teal darken-1">
+            <div class="container">
+                <div class="brand-logo">JSC SDK User Settings Test App</div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col s3">
+                <div class="block z-depth-1 white" id="credential-block">
+                    <div class="input-field col s12">
+                        <input id="credentials-host" type="text">
+                        <label for="credentials-host">Host</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-port" type="text">
+                        <label for="credentials-port">Port</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-tenant" type="text">
+                        <label for="credentials-tenant">Organization code</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-login" type="text">
+                        <label for="credentials-login">Login</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-password" type="text">
+                        <label for="credentials-password">Password</label>
+                    </div>
+                    <a id="upload-btn" class="file-field waves-effect waves-light btn">Upload config
+                            <input id="upload-input" type="file"/>
+                    </a>
+                    <a class="waves-effect waves-light btn" onclick="testApp.login()">LogIn server</a>
+                </div>
+                <div class="block z-depth-1 white">
+                    <div class="content">
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.startService()">Start Service
+                        <i class="material-icons right">send</i></a>
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.stopService()">Stop Service
+                        <i class="material-icons right">send</i></a>
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.isServiceStarted()">is Service started
+                        <i class="material-icons right">send</i></a>
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.getUserConfig()">Get User Config
+                        <i class="material-icons right">send</i></a>
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.getPicture()">get user Picture
+                        <i class="material-icons right">send</i></a>
+                        <a class="waves-effect waves-light btn teal darken-3 file-field ">Set user Picture
+                            <input id="upload-picture" type="file" accept="image/*" onchange="testApp.postPicture(this)"/>
+                            <i class="material-icons right">send</i>
+                        </a>
+                        <a class="waves-effect waves-light btn teal darken-3" onclick="testApp.deletePicture()">delete user Picture
+                        <i class="material-icons right">send</i></a>
+                        <div class="divider"></div>
+                        <div class="tabs-vertical">
+                            <ul class="tabs">
+                                <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test5">Update User Config
+                                <i class="material-icons tiny right">send</i></a></li>
+                                <div id="test5" class="row" data-program-test="UPDATE" style="display: none;">
+                                    <button class="waves-effect waves-light left btn" onclick="testApp.updateUserConfig()">Update<i class="material-icons right">send</i></button>
+                                </div>
+                                <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test6">Change Password
+                                <i class="material-icons tiny right">send</i></a></li>
+                                <div id="test6" class="row" data-program-test="PASSWORD">
+                                    <button class="waves-effect waves-light left btn" onclick="testApp.changePassword()">Update<i class="material-icons right">send</i></button>
+                                </div>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s5">
+                <div id="results" class="block z-depth-1 white result-block">
+                    <div class="col s12">
+                        <div class="tabs">
+                            <h4><a class="active">Results:</a></h4>
+                        </div>
+                    </div>
+                    <div class="col s12 tab-content">
+                        <div class="tab-content">
+                            <ul id="search-results" class="collection search-results-container">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class=" block z-depth-1 white result-block">
+                    <div class="collection z-depth-1 white">
+                        <h5 style="margin-left:15px;">Log</h5>
+                        <ul id="logs" class="collection">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <li class="collection-item" id="log-msg-prototype">
+        <span class="msg-text"></span>
+    </li>
+</body>
+
+</html>

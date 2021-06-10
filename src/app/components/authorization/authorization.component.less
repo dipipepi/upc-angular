@@ -1,0 +1,205 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+
+.authorization-wrapper{
+  font-size: 14px;
+  width: 260px;
+  padding: 0 30px;
+  background: @background;
+  box-shadow: 0 7px 30px -5px fade(@background-black, 60%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .login-caption,
+  .loading {
+    font-size: 12px;
+    height: 14px;
+    display: block;
+    color: @text-color;
+    margin: 25px 0 20px;
+    text-align: center;
+    min-height: 18px;
+  }
+
+  .loading {
+    height: 30px;
+
+    &::before {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  .default-checkbox {
+    display: inline-block;
+    margin: 0;
+    padding-left: 25px;
+
+    input+label::before {
+      display: inline-block;
+      border: 1px solid @input-borders-color;
+    }
+
+    input:checked+label {
+      font-weight: normal;
+      color: @text-color;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    input:focus+label {
+      box-shadow: none;
+
+      &::before {
+        box-shadow: 0 0 1px 1px @focus;
+      }
+    }
+  }
+
+  .default-error {
+    padding-left: 36px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .forgot-password {
+    float: right;
+    margin-bottom: 0;
+    &:focus {
+      box-shadow: 0 0 1px 1px #007aff;
+    }
+  }
+
+  .keep-me{
+    display: flex;
+    flex-direction: row;
+    font-size: 9px;
+
+    .forgot-password{
+      text-align: right;
+      margin: auto;
+      flex-grow: 1;
+    }
+  }
+
+  .default-input {
+    vertical-align: middle;
+    border: 1px solid @input-borders-color;
+    background: @background-white;
+    color: @text-color;
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    outline: none;
+    margin-bottom: 12px;
+
+    &.error {
+      border: 1px solid @highlight-1;
+      background: @background-error;
+    }
+
+    &:focus {
+      box-shadow: 0 0 1px 1px @focus;
+    }
+
+    &:disabled {
+      border: 1px solid lighten(@input-borders-color, 7%);
+    }
+
+    &.search {
+      background: @background-white @url-search left 5px center no-repeat;
+      padding-left: 30px;
+    }
+  }
+
+  .button-wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 15px 0 3px 0;
+
+  }
+
+  .ngdialog-close {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    font-size: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    &::before {
+      content: 'X';
+      color: @darkener;
+      font-size: 10px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 1px 1px #007aff;
+    }
+  }
+
+  label {
+    position: relative;
+
+    input:focus {
+      box-shadow: 0 0 1px 1px @focus !important;
+      clip-path: inset(-2px -2px -5px -5px);
+    }
+
+    .reset-field {
+      display: block;
+      width: 10px;
+      height: 10px;
+      font-size: 0;
+      cursor: pointer;
+      background: none;
+      border: none;
+      position: absolute;
+      top: -4px;
+      right: 11px;
+
+      &::before {
+        content: 'X';
+        color: @darkener;
+        font-size: 10px;
+      }
+
+      &:focus {
+        box-shadow: 0 0 1px 1px #007aff;
+      }
+    }
+  }
+
+  .sso-login{
+    margin-bottom: 20px;
+    text-align: center;
+
+    div{
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid #c7cbce;
+      line-height: .2em;
+      margin: 10px 0 13px;
+
+      span{
+        background: #f2f2f2;
+        padding: 0 10px;
+        font-size: 9px;
+        color: #3c5064;
+      }
+    }
+
+    a{
+      font-size: 10px;
+    }
+  }
+}

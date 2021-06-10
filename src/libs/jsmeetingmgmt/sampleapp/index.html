@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2006-2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<html>
+
+<head>
+    <title>JSC SDK Meeting Management Test App</title>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+    <nav class="teal darken-1">
+        <div class="nav-wrapper">
+            <div class="container">
+                <div class="brand-logo">JSC SDK Meeting Management Test App</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s3">
+                <div class="block z-depth-1 white" id="credential-block">
+                    <h5>Config and credentials</h5>
+                    <div class="input-field col s12">
+                        <input id="credentials-host-port" type="text">
+                        <label for="credentials-host-port">Host:Port</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-alias" type="text">
+                        <label for="credentials-alias">Organization alias</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-login" type="text">
+                        <label for="credentials-login">User name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="credentials-password" type="text">
+                        <label for="credentials-password">Password</label>
+                    </div>
+                    <a id="upload-btn" class="file-field waves-effect waves-light btn">Upload config<input id="upload-input" type="file"/></a>
+                    <a id="login-btn" class="waves-effect waves-light btn">Login</a>
+                    <a id="logout-btn" class="waves-effect waves-light btn hide">Logout</a>
+                </div>
+                <div class="block z-depth-1 white" id="buttons-block">
+                    <div class="block-item">
+
+                    </div>
+                    <div class="block-item">
+                        <div class="input-field col s12">
+                            <label for="fetch-from" class="active">Fetch by period: date from</label>
+                            <input id="fetch-from" type="date" class="datepicker">
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="fetch-to" class="active">Fetch by period: date to</label>
+                            <input id="fetch-to" type="date" class="datepicker">
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="fetch-date" class="active">Fetch by date</label>
+                            <input id="fetch-date" type="date" class="datepicker">
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="fetch-id" class="">Fetch by Id</label>
+                            <input id="fetch-id" type="text">
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="fetch-starts-in" class="">Fetch starts in (minutes)</label>
+                            <input id="fetch-starts-in" type="text">
+                        </div>
+                        <div class="input-field col s12 left-align">
+                            <div class="s12">
+                                Fetch by status:
+                            </div>
+                            <div class="s12">
+                                <select class="browser-default" id="fetch-status">
+                                <option value="ABNORMAL_STOPPED">ABNORMAL_STOPPED</option>
+                                <option value="CANCELLED">CANCELLED</option>
+                                <option value="FINISHED">FINISHED</option>
+                                <option value="IN_SESSION">IN_SESSION</option>
+                                <option value="NOT_START">NOT_START</option>
+                                <option value="SCHEDULE_FAILED">SCHEDULE_FAILED</option>
+                                <option value="START_FAILED">START_FAILED</option>
+                                <option value="STOP_FAILED">STOP_FAILED</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="col s12">
+                            <input type="checkbox" id="past-meetings-checkbox" />
+                            <label for="past-meetings-checkbox">Fetch Past Meetings</label>
+                        </div>
+                        <div class="col s12">
+                            <input type="checkbox" id="detailed-checkbox" checked />
+                            <label for="detailed-checkbox">Detailed</label>
+                        </div>
+                        <a id="fetch-meetings-by-period-btn" class="waves-effect waves-light btn disabled">Fetch by period</a>
+                        <a id="fetch-meetings-by-date-btn" class="waves-effect waves-light btn disabled">Fetch by date</a>
+                        <a id="fetch-meetings-by-id-btn" class="waves-effect waves-light btn disabled">Fetch by Id</a>
+                        <a id="fetch-meetings-by-status-btn" class="waves-effect waves-light btn disabled">Fetch by status</a>
+                        <a id="fetch-meetings-ongoing-btn" class="waves-effect waves-light btn disabled">Fetch ongoing meetings</a>
+                        <a id="fetch-meetings-starts-in-btn" class="waves-effect waves-light btn disabled">Fetch starts in</a>
+                        <a id="create-meeting-btn" class="waves-effect waves-light btn disabled">Create meeting</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s9">
+                <div style="margin-top:10px;margin-bottom:10px;" class="z-depth-1 white" id="contacts-block">
+                    <div class="row">
+                        <div class="col s12">
+                            <ul class="tabs">
+                                <li class="tab col s3 active"><a class="active" href="#meetingListTab">Meeting List</a></li>
+                            </ul>
+                        </div>
+                        <div id="meetingListTab" class="col s12">
+                            <div class="tab-content">
+                                <ul id="search-results" class="collection search-results-container">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection z-depth-1 white">
+                    <h5 style="margin-left:15px;">Log</h5>
+                    <ul id="logs" class="collection">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="meeting-details-overlay" class="hide">
+        <div class="z-depth-1 white meeting-details-container">
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="row" style="border: 1px solid #e0e0e0; border-radius: 5px; padding-bottom: 25px;">
+                        <h5 id="md_title">Create meeting</h5>
+                        <div class="input-field col s3">
+                            <input id="md_subject" type="text">
+                            <label for="md_subject">Subject</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_start_time" type="text">
+                            <label for="md_start_time">Start time</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_end_time" type="text">
+                            <label for="md_end_time">End time</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_locationId" type="text">
+                            <label for="md_locationId">Location Id</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_access_pin" type="text">
+                            <label for="md_access_pin">Access PIN</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_moderator_pin" type="text">
+                            <label for="md_moderator_pin">Moderator PIN</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_user_id" type="text">
+                            <label for="md_user_id">User Id</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_member_id" type="text">
+                            <label for="md_member_id">Member Id</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_number" type="text">
+                            <label for="md_number">Number</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_serviceTemplateId" type="text">
+                            <label for="md_serviceTemplateId">Service Template Id</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_servicePrefix" type="text">
+                            <label for="md_servicePrefix">Service prefix</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_conferenceId" type="text">
+                            <label for="md_conferenceId">ConferenceId</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_description" type="text">
+                            <label for="md_description">Description</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_earlyTime" type="text">
+                            <label for="md_earlyTime">Early time</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_timeZoneId" type="text">
+                            <label for="md_timeZoneId">Time zone Id</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input id="md_duration" type="text">
+                            <label for="md_duration">Duration</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <div class="s12">
+                                Allow Streaming:
+                            </div>
+                            <div class="s12">
+                                <select class="browser-default" id="md_allowStreaming_select">
+                                    <option value="ON">ON</option>
+                                    <option value="OFF">OFF</option>
+                                    <option value="DISABLED">DISABLED</option>
+                                    <option value="UNDEFINED">UNDEFINED</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <div class="s12">
+                                Streaming status:
+                            </div>
+                            <div class="s12">
+                                <select class="browser-default" id="md_streamingStatus_select">
+                                    <option value="ON">ON</option>
+                                    <option value="OFF">OFF</option>
+                                    <option value="DISABLED">DISABLED</option>
+                                    <option value="UNDEFINED">UNDEFINED</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <div class="s12">
+                                Priority:
+                            </div>
+                            <div class="s12">
+                                <select class="browser-default" id="md_priority">
+                                    <option value="DELAY">DELAY</option>
+                                    <option value="LOCAL">LOCAL</option>
+                                    <option value="UNSPECIFIED">UNSPECIFIED</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <div class="s12">
+                                Status:
+                            </div>
+                            <div class="s12">
+                                <select class="browser-default" id="md_status">
+                                    <option value="ABNORMAL_STOPPED">ABNORMAL_STOPPED</option>
+                                    <option value="CANCELLED">CANCELLED</option>
+                                    <option value="FINISHED">FINISHED</option>
+                                    <option value="IN_SESSION">IN_SESSION</option>
+                                    <option value="NOT_START">NOT_START</option>
+                                    <option value="SCHEDULE_FAILED">SCHEDULE_FAILED</option>
+                                    <option value="START_FAILED">START_FAILED</option>
+                                    <option value="STOP_FAILED">STOP_FAILED</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_blockDialIn_checkbox" />
+                            <label for="md_blockDialIn_checkbox">Block dial in</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_autoExtend_checkbox" />
+                            <label for="md_autoExtend_checkbox">Auto extend</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_waitingRoom_checkbox" />
+                            <label for="md_waitingRoom_checkbox">Waiting room</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_oneTimePINRequired_checkbox" />
+                            <label for="md_oneTimePINRequired_checkbox">One time PIN required</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_testOnly_checkbox" />
+                            <label for="md_testOnly_checkbox">Test only</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_sendingNotification_checkbox" />
+                            <label for="md_sendingNotification_checkbox">Sending notification</label>
+                        </div>
+                        <div class="input-field col s3 left-align">
+                            <input type="checkbox" id="md_recordingMeetingWhenStart_checkbox" />
+                            <label for="md_recordingMeetingWhenStart_checkbox">Recording meeting when start</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s6" style="border: 1px solid #e0e0e0; border-radius: 5px; padding-bottom: 25px; min-height: 530px;">
+                            <h5>Attendees <a href="#" id="md_add_attendee_btn"><i class="material-icons">add_circle_outline</i></a></h5>
+                            <ul id="md_attendees" class="collection">
+                            </ul>
+                        </div>
+                        <div class="col s6" style="border: 1px solid #e0e0e0; border-radius: 5px; padding-bottom: 25px;  min-height: 530px;">
+                            <div class="col s6">
+                                <h5>Daily</h5>
+                                <div class="input-field col s12">
+                                    <input id="md_numberOfEveryDay" type="text">
+                                    <label for="md_numberOfEveryDay">Number Of Every Day</label>
+                                </div>
+                                <div class="input-field col s12 left-align">
+                                    <input type="checkbox" id="md_everyWeekDay_checkbox" />
+                                    <label for="md_everyWeekDay_checkbox">Every Week Day</label>
+                                </div>
+                            </div>
+                            <div class="col s6">
+                                <h5>Weekly</h5>
+                                <div class="input-field col s12">
+                                    <input id="md_numberOfEveryWeek" type="text">
+                                    <label for="md_numberOfEveryWeek">Number Of Every Week</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="md_daysOfWeek" type="text">
+                                    <label for="md_daysOfWeek">Days Of Week</label>
+                                </div>
+                            </div>
+                            <div class="col s6">
+                                <h5>Monthly</h5>
+                                <div class="input-field col s12">
+                                    <input id="md_numberOfEveryMonth" type="text">
+                                    <label for="md_numberOfEveryMonth">Number Of Every Month</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="md_dayOfMonth" type="text">
+                                    <label for="md_dayOfMonth">Day Of Month</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="md_dayOfNumberOfEveryMonth" type="text">
+                                    <label for="md_dayOfNumberOfEveryMonth">Day Of Number Of Every Month</label>
+                                </div>
+                            </div>
+                            <div class="col s6">
+                                <h5>RecurrenceEnd</h5>
+                                <div class="input-field col s12">
+                                    <input id="md_endOfOccurrences" type="text">
+                                    <label for="md_endOfOccurrences">End Of Occurrences</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="md_by" type="text">
+                                    <label for="md_by">By</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="border: 1px solid #e0e0e0; border-radius: 5px; padding-bottom: 25px;">
+                        <div class="col s3">
+                            <h5>Advanced properties</h5>
+                            <div class="input-field col s12">
+                                <input id="md_durationAfterLeft" type="text">
+                                <label for="md_durationAfterLeft">Duration After Left</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="md_maxParticipants" type="text">
+                                <label for="md_maxParticipants">Max Participants</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <div class="s12 left-align">
+                                    Termination Condition:
+                                </div>
+                                <div class="s12">
+                                    <select class="browser-default" id="md_terminationCondition">
+                                        <option value="NORMAL">NORMAL</option>
+                                        <option value="AFTER_ALL_PARTIES_LEFT">AFTER_ALL_PARTIES_LEFT</option>
+                                        <option value="AFTER_HOST_LEFT">AFTER_HOST_LEFT</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s9">
+                            <h5>Broadcast setting</h5>
+                            <div class="col s3">
+                                <div class="input-field col s12" class="height: 132px;">
+                                    <img id="md_thumbnail_img" src="" style="width: 100%;">
+                                    <label for="md_thumbnail" style="top: -1.2rem;">Thumbnail</label>
+                                    <input id="md_thumbnail" type="file" accept="image/*" style="width: 100%;">
+                                </div>
+                                <div class="input-field col s12 left-align">
+                                    <input type="checkbox" id="md_public_checkbox" />
+                                    <label for="md_public_checkbox">Public</label>
+                                </div>
+                                <div class="input-field col s12 left-align">
+                                    <input type="checkbox" id="md_questionsAndAnswersEnabled_checkbox" />
+                                    <label for="md_questionsAndAnswersEnabled_checkbox">Questions And Answers Enabled</label>
+                                </div>
+                            </div>
+                            <div class="col s9">
+                                <div class="input-field col s4">
+                                    <input id="md_broadcast_subject" type="text">
+                                    <label for="md_broadcast_subject">Subject</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_pin" type="text">
+                                    <label for="md_pin">Pin</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_thumbnailMimeType" type="text" readonly>
+                                    <label for="md_thumbnailMimeType">Thumbnail Mime Type</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_profile" type="text">
+                                    <label for="md_profile">Profile</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_broadcast_description" type="text">
+                                    <label for="md_broadcast_description">Description</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_userIds" type="text">
+                                    <label for="md_userIds">User Ids</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_moderatorPIN" type="text">
+                                    <label for="md_moderatorPIN">Moderator PIN</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input id="md_programId" type="text">
+                                    <label for="md_programId">Program Id</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <div class="s12 left-align">
+                                        Access Mode:
+                                    </div>
+                                    <div class="s12">
+                                        <select class="browser-default" id="md_accessMode">
+                                            <option value="PRIVATE">PRIVATE</option>
+                                            <option value="LIMITED_USERS">LIMITED_USERS</option>
+                                            <option value="ALL_AUTHED_USERS">ALL_AUTHED_USERS</option>
+                                            <option value="ALL_USERS">ALL_USERS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 right-align" id="cd-btns-block">
+                        <div class="col s6 left-align">
+                            <div class="col s12 hide" id="mandatory-fields-prompt" style="color:red">
+                                The meeting should have <b>Number</b>, <b>Start time</b> and <b>Duration</b>
+                            </div>
+                            <div class="col s12 hide" id="mandatory-fields-ok" style="color:green">
+                                The meeting has minimum required fields.
+                            </div>
+                        </div>
+                        <div class="col s2">
+                            <a id="md_delete_meeting_btn" class="waves-effect waves-light btn">Delete meeting</a>
+                        </div>
+                        <div class="col s2">
+                            <a id="md_save_changes_btn" class="waves-effect waves-light btn">Save meeting</a>
+                        </div>
+                        <div class="col s2">
+                            <a id="md_close_btn" class="waves-effect waves-light btn">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="wait-modal" class="modal">
+        <div class="modal-content">
+            <h5>Please wait...</h5>
+        </div>
+    </div>
+
+    <div id="failure-modal" class="modal">
+        <div class="modal-content">
+            <h5>Operation failed</h5>
+            <p>Failure details</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="no-results-modal" class="modal">
+        <div class="modal-content">
+            <h5>No results found</h5>
+            <p>There are no meetings matching your search request</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div class="hide">
+        <a class="collection-item waves-effect waves-teal" id="meeting-prototype" style="cursor: pointer;color:rgba(0, 0, 0, 0.87);display: block;">
+            <span class="title"><b>Time:</b> <span class="start-time"></span> - <span class="end-time"></span> <b>Subject:</b> <span class="subject"></span></span>
+            <p><b>Description:</b> <span class="details"></span></p>
+        </a>
+
+        <li class="collection-item" id="log-msg-prototype">
+            <span class="msg-text"></span>
+        </li>
+
+        <li class="collection-item" id="md-attendee-container-prototype" style="min-height: 42px;">
+            <div>
+                <span id="md_attendee_title_proto"></span>
+                <div class="secondary-content">
+                    <a href="#" id="md_expand_attendee_proto"><i class="material-icons">expand_more</i></a>
+                    <a href="#" id="md_delete_attendee_proto"><i class="material-icons">delete</i></a>
+                </div>
+            </div>
+            <div id="md_attendee_details_spoiler_proto" class="row card-panel z-depth-1 hide">
+                <div class="input-field col s12">
+                    <input id="md_attendee_first_name_proto" type="text">
+                    <label for="md_attendee_first_name_proto">First name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_last_name_proto" type="text">
+                    <label for="md_attendee_last_name_proto">Last name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_user_id_proto" type="text">
+                    <label for="md_attendee_user_id_proto">User Id</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_email_proto" type="text">
+                    <label for="md_attendee_email_proto">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_terminalId_proto" type="text">
+                    <label for="md_attendee_terminalId_proto">Terminal Id</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_terminalName_proto" type="text">
+                    <label for="md_attendee_terminalName_proto">Terminal Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_terminalNumber_proto" type="text">
+                    <label for="md_attendee_terminalNumber_proto">Terminal Number</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_protocol_proto" type="text">
+                    <label for="md_attendee_protocol_proto">Protocol</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_maxBandwidth_proto" type="text">
+                    <label for="md_attendee_maxBandwidth_proto">maxBandwidth</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_maxISDNBandwidth_proto" type="text">
+                    <label for="md_attendee_maxISDNBandwidth_proto">maxISDNBandwidth</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_areaCode_proto" type="text">
+                    <label for="md_attendee_areaCode_proto">Area Code</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_countryCode_proto" type="text">
+                    <label for="md_attendee_countryCode_proto">Country Code</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="md_attendee_telephoneNumber_proto" type="text">
+                    <label for="md_attendee_telephoneNumber_proto">Telephone Number</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_organizer_checkbox_proto" />
+                    <label for="md_attendee_organizer_checkbox_proto">Organizer</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_host_checkbox_proto" />
+                    <label for="md_attendee_host_checkbox_proto">Host</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_restrictedMode_checkbox_proto" />
+                    <label for="md_attendee_restrictedMode_checkbox_proto">Restricted mode</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_threeG_checkbox_proto" />
+                    <label for="md_attendee_threeG_checkbox_proto">threeG</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_voiceOnly_checkbox_proto" />
+                    <label for="md_attendee_voiceOnly_checkbox_proto">Voice only</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_needOnMaster_checkbox_proto" />
+                    <label for="md_attendee_needOnMaster_checkbox_proto">needOnMaster</label>
+                </div>
+                <div class="input-field col s12 left-align">
+                    <input type="checkbox" id="md_attendee_autoDialIn_checkbox_proto" />
+                    <label for="md_attendee_autoDialIn_checkbox_proto">autoDialIn</label>
+                </div>
+            </div>
+        </li>
+    </div>
+
+    <script src="libs/jquery.js"></script>
+    <script src="libs/materialize/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script src="libs/avayaMeetingManagementClient.js"></script>
+</body>
+
+</html>

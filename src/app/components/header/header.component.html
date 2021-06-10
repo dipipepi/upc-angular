@@ -1,0 +1,26 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+
+<div class="header-wrapper">
+
+  <div class="action-blocks">
+    <div class="settings-block">
+      <div class="settings-icon"></div>
+      <span>{{'HEADER.SETTINGS' | translate}}</span>
+    </div>
+    <div class="about" (click)="showAbout()">
+      <span>{{'HEADER.ABOUT' | translate}}</span>
+    </div>
+    <div (click)="onSignIn()" class="sign-in-block" *ngIf="isLoginAvailable">
+      <span>{{"HEADER.SIGN_IN" | translate}}</span>
+      <div class="sign-in-avatar"></div>
+    </div>
+  </div>
+</div>

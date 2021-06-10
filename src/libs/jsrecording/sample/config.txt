@@ -1,0 +1,12 @@
+{
+	"login": "2040004",
+	"password": "2040004",
+	"host": "dev-cores204.uplab.com",
+	"port": "8443",
+	"organizationAlias": "dev-org204",
+	"baseUrl": "https://192.168.115.40",
+	"programsUrl": "/api/manager/programs",
+	"categoriesUrl": "/api/manager/categories",
+	"templatesUrl": "/api/manager/templates",
+	"reportsUrl": "/api/manager/reports"
+}

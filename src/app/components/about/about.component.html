@@ -1,0 +1,51 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+
+<div class="about-content">
+  <div class="details-popup-title">{{"ABOUT.TITLE" | translate}}</div>
+
+  <div class="detail-popup-body about">
+
+    <div class="title" ng-if="resources.portalVersion">
+      <span>{{"ABOUT.RELEASE" | translate}}</span>
+      <p>{{portalResourcesServiceService.portalResources.portalVersion}}</p>
+    </div>
+
+    <div class="main-text">
+      <p>{{"ABOUT.AVAYA_TRADEMARKS" | translate}}</p>
+      <p>{{"ABOUT.OTHER_TRADEMARKS" | translate}}</p>
+      <p>{{"ABOUT.TRADEMARKS_INFO" | translate}}</p>
+
+      <p [innerHTML]="'ABOUT.COPYRIGHT_INFO' | translate:translateParams"></p>
+
+      <div>
+        <p>{{"ABOUT.LICENCE" | translate}}</p>
+        <a href="https://support.avaya.com/helpcenter/getGenericDetails?detailId=C2009223142629795043#SubSection1" target="_blank">{{"ABOUT.LINK" | translate}}</a>
+      </div>
+
+      <div>
+        <p>{{"ABOUT.LICENCE_I18N" | translate}}</p>
+        <a href="https://support.avaya.com/helpcenter/getGenericDetails?detailId=C2009223142629795043#SubSection1" target="_blank">{{"ABOUT.LINK" | translate}}</a>
+      </div>
+
+      <p>{{"ABOUT.USAGE_INFO" | translate}}</p>
+      <p>{{"ABOUT.COPYRIGHT" | translate:translateParams}}</p>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="reset-tutorial" ng-if="!isMobile && !isTablet" ng-click="resetTutorials()">{{"MSG_UTILS.FIRST_LOUNCH_TUTORIAL.RESET_FIRST_LAUNCH_TUTORIALS" | translate}}</div>
+
+  </div>
+
+  <div class="details-popup-buttons">
+    <button type="button" mat-dialog-close>{{"ABOUT.CLOSE" | translate}}</button>
+  </div>
+</div>

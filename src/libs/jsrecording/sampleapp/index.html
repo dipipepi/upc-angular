@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSC SDK Test App</title>
+    <script type="text/javascript" src="libs/avayaRecordingClient.js"></script>
+    <script type="text/javascript" src='app.js'></script>
+    <script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="libs/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper teal darken-1">
+            <div class="title brand-logo left teal darken-2">JSC SDK Recordings Test App</div>
+            <a data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn-large modal-trigger" href="#modalSettings">Configuration</a></li>
+                <li class="active" data-activates="authentication"><a>Authentication Service<i class="material-icons right non-authorized">error</i></a></li>
+                <li data-activates="program"><a>Program Service</a></li>
+                <li data-activates="chat"><a>Chat Service</a></li>
+                <li><a>&nbsp;</a></li>
+                <li data-activates="administrative"><a>Administrative Services</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a class="waves-effect waves-light btn-large modal-trigger" href="#modalSettings">Configuration</a></li>
+                <li><a>Authentication Service</a></li>
+                <li><a>Program Service</a></li>
+                <li><a>Chat Service</a></li>
+                <li><a>&nbsp;</a></li>
+                <li><a>Administrative Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="modal" id="modalSettings">
+        <div class="modal-content">
+            <h5>Config and credentials</h5>
+            <div class="row">
+                <div class="col s12">
+                    <div class="block z-depth-1 white" id="credential-block">
+                        <div class="input-field col s12">
+                            <input id="credentials-host" type="text">
+                            <label for="credentials-host">Host</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="credentials-port" type="text">
+                            <label for="credentials-port">Port</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="credentials-tenant" type="text">
+                            <label for="credentials-tenant">Organization code</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="credentials-login" type="text">
+                            <label for="credentials-login">Login</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="credentials-password" type="text">
+                            <label for="credentials-password">Password</label>
+                        </div>
+                        <a id="upload-btn" class="file-field waves-effect waves-light btn">Upload config
+                                <input id="upload-input" type="file"/>
+                        </a>
+                    </div>
+                    <div class="block z-depth-1 white" id="resources-block">
+                        <div class="input-field col s12">
+                            <input id="acsr-url" type="text">
+                            <label for="acsr-url">ACSR url</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="programs-url" type="text">
+                            <label for="programs-url">Programs url</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="categories-url" type="text">
+                            <label for="categories-url">Categories url</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="templates-url" type="text">
+                            <label for="templates-url">Templates url</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="reports-url" type="text">
+                            <label for="reports-url">Reports url</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s3">
+                <div class="block z-depth-1 white">
+                        <div class="content active" id="authentication">
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" onclick="testApp.isLogged()">is logged</a>
+                            </div>
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" onclick="testApp.login()">Login</a>
+                            </div>
+                            <div class="col s12">
+                                <a class="waves-effect waves-light btn" onclick="testApp.logout()">Logout</a>
+                            </div>
+                        </div>
+                        <div class="content" id="program">
+                            <div class="tabs-vertical">
+                                <ul class="tabs">
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test13">Fetch All Categories</a></li>
+                                    <div id="test13" class="row" data-program-test="CATEGORY_ALL" style="display: none;">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getAllCategories()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test14">Fetch an Individual Category</a></li>
+                                    <div id="test14" class="row" data-program-test="CATEGORY">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getCategory()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test1">Get Programs</a></li>
+                                    <div id="test1" class="row" data-program-test="VOD">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.fetchVodRecords()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light" href="#test2">Get by Category</a></li>
+                                    <div id="test2" class="row" data-program-test="CATEGORY">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getRecordsByCategory()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test3">Get by Publisher</a></li>
+                                    <div id="test3" class="row" data-program-test="PUBLISHER">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getRecordsByPublisher()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test11">Get an Individual Program</a></li>
+                                    <div id="test11" class="row" data-program-test="INDIVIDUAL">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getIndividualProgram()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test4">Fetch Broadcasts</a></li>
+                                    <div id="test4" class="row" data-program-test="LIVE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getAllBroadcasts()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test5">Future Live Broadcasts</a></li>
+                                    <div id="test5" class="row" data-program-test="LIVE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getFutureLiveBroadcasts()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test6">Today's Broadcasts</a></li>
+                                    <div id="test6" class="row" data-program-test="LIVE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getTodayBroadcasts()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test7">Current Broadcasts</a></li>
+                                    <div id="test7" class="row" data-program-test="LIVE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getOngoingBroadcasts()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test12">Password Protected Program</a></li>
+                                    <div id="test12" class="row" data-program-test="INDIVIDUAL">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getPasswordProtectedProgram()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test8">Program's playback details</a></li>
+                                    <div id="test8" class="row" data-program-test="INDIVIDUAL">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getProgramPlaybackAddressDetails()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test9">Report Begin Program View</a></li>
+                                    <div id="test9" class="row" data-program-test="PLAY_REPORT">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.reportProgramView()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test10">Report End Program View</a></li>
+                                    <div id="test10" class="row" data-program-test="PLAY_REPORT">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.reportEndProgramView()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test15">Fetch Status of Program</a></li>
+                                    <div id="test15" class="row" data-program-test="STATE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getProgramStatus()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test16">All Program Templates</a></li>
+                                    <div id="test16" class="row">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getAllTemplates()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test17">Individual Program Template</a></li>
+                                    <div id="test17" class="row" data-program-test="TEMPLATE">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.getIndividualTemplate()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test18">Update Program</a></li>
+                                    <div id="test18" class="row" data-program-test="EDIT">
+                                        <button class="waves-effect waves-light left btn" onclick=" testApp.editProgram()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test19">Delete Program</a></li>
+                                    <div id="test19" class="row" data-program-test="INDIVIDUAL">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.deleteProgram()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                    <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test20">Recover Program</a></li>
+                                    <div id="test20" class="row" data-program-test="INDIVIDUAL">
+                                        <button class="waves-effect waves-light left btn" onclick="testApp.recoverProgram()">Show result<i class="material-icons right">send</i></button>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content" id="chat">
+                            <div class="tabs-vertical">
+                                    <ul class="tabs">
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test21">Get Sessions</a></li>
+                                        <div id="test21" class="row" data-program-test="CHAT_SESSIONS" style="display: none;">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.fetchChatSessions()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light" href="#test22">Answer for message</a></li>
+                                        <div id="test22" class="row" data-program-test="CHAT_SEND">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.answerForMessage()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test23">Create session</a></li>
+                                        <div id="test23" class="row" data-program-test="CHAT_CREATE_SESSION">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.createNewSession()">Create session<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test24">Ask question</a></li>
+                                        <div id="test24" class="row" data-program-test="CHAT_ASK_SEND">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.askQuestion()">Send message<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test25">Get session</a></li>
+                                        <div id="test25" class="row" data-program-test="CHAT_SESSION">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getSession()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                    </ul>
+                                </div>
+                        </div>
+                        <div class="content" id="administrative">
+                            <div class="block">
+                                <div class="tabs-vertical">
+                                    <ul class="tabs">
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test26">System Settings</a></li>
+                                        <div id="test26" class="row" data-program-test="ADM_SETTINGS" style="display: none;">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getSystemSettings()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light" href="#test27">Tenant Settings</a></li>
+                                        <div id="test27" class="row" data-program-test="ADM_SETTINGS">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getIndividualTenant()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="block">
+                                <div class="tabs-vertical">
+                                    <ul class="tabs">
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light " href="#test28">Access reports</a></li>
+                                        <div id="test28" class="row" data-program-test="REPORTS" style="display: none;">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getProgramAccessReport()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light" href="#test29">Access reports fo program</a></li>
+                                        <div id="test29" class="row" data-program-test="REPORTS_SINGLE">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getProgramAccessReportForProgram()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                        <li class="tab col s12  teal darken-3"><a class="waves-effect waves-light" href="#test30">Viewers information</a></li>
+                                        <div id="test30" class="row" data-program-test="REPORTS_VIEWERS">
+                                            <button class="waves-effect waves-light left btn" onclick="testApp.getProgramViewers()">Show result<i class="material-icons right">send</i></button>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="col s5">
+                <div id="results" class="block z-depth-1 white result-block">
+                    <div class="col s12">
+                        <div class="tabs">
+                            <h4><a class="active">Results:</a></h4>
+                        </div>
+                    </div>
+                    <div class="col s12 tab-content">
+                        <div class="tab-content">
+                            <ul id="search-results" class="collection search-results-container">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class=" block z-depth-1 white result-block">
+                    <div class="collection z-depth-1 white">
+                        <h5 style="margin-left:15px;">Log</h5>
+                        <ul id="logs" class="collection">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <li class="collection-item" id="log-msg-prototype">
+        <span class="msg-text"></span>
+    </li>
+</body>
+
+</html>
