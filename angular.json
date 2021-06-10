@@ -33,7 +33,8 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/libs/jsmeetingmgmt/sdk/avayaMeetingManagementClient.js",
-              "src/libs/jsuserconfig/sdk/avayaUserClient.js"
+              "src/libs/jsuserconfig/sdk/avayaUserClient.js",
+              "src/libs/jsrecording/sdk/jscsdk/avayaRecordingClient.js"
             ]
           },
           "configurations": {

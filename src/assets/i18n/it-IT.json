@@ -1,1 +1,166 @@
-{}
+{
+	"ABOUT": {
+		"TITLE": "Informazioni su Avaya Meetings",
+		"RELEASE": "Versione:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings e Equinox Conferencing sono marchi commerciali di Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java è un marchio di Sun Microsystems, Inc.; Microsoft, Windows e Internet Explorer sono marchi o marchi registrati di Microsoft Corporation negli Stati Uniti e/o in altri paesi.",
+		"TRADEMARKS_INFO": "I nomi di tutti gli altri prodotti utilizzati nel presente documento sono marchi o marchi registrati dei rispettivi produttori.",
+		"COPYRIGHT_INFO": "Per informazioni relative ai titolari di copyright dei componenti di terze parti e per i termini e le condizioni applicabili a questo prodotto, fare riferimento a <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+		"LICENCE": "Scaricando, installando o usando il software si conferma di aver letto, compreso e accettato i termini e le condizioni della licenza software Avaya (prodotti Avaya) - ",
+		"LICENCE_I18N": "La versione inglese, brasiliana, francese canadese, cinese, tedesca, italiana, portoghese, spagnola, francese, giapponese e russa sono disponibili al ",
+		"USAGE_INFO": "Se non si dispone di accesso diretto a internet, utilizzare un dispositivo che consenta l'accesso a internet per visualizzare, scaricare e stampare la licenza applicabile.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. Tutti i diritti riservati.",
+		"CLOSE": "Chiudi",
+		"LINK": "collegamento"
+	},
+	"LOGIN": {
+		"SIGNING": "Accesso in corso...",
+		"LOADING": "Caricamento in corso...",
+		"GREETING": "Si dispone di un account?",
+		"NAME": "nome utente",
+		"LOGIN": "accesso",
+		"PASSWORD": "password",
+		"REMEMBER_ME": "Resta connesso",
+		"SIGN_IN": "Accesso",
+		"LOG_IN": "Connessione",
+		"FORGOT_PASSWORD": "Password dimenticata?",
+		"OR_SIGN_IN": "o accedi con",
+		"USE_ENTERPRISE_ACCOUNT": "Usa l'account aziendale personale (SSO)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "È stata inviata un'e-mail contenente un collegamento per il recupero della password"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Nome utente o password non validi",
+			"VALIDATION_FAILED": "Il nome utente o la password non devono essere vuoti.",
+			"NOT_ALLOWED": "Non si è autorizzati a eseguire l'accesso.",
+			"USER_AUTH_DISABLED": "Autenticazione disabilitata per l'utente {{name}}",
+			"ERROR": "Nessuna risposta dal server o errore del server. Riprovare più tardi.",
+			"ERC_AUTH_USER_NAME": "Autenticazione OAuth non riuscita. Consultare l'amministratore del sistema per richiedere assistenza.",
+			"ERC_AUTH_EMPTY_EMAIL": "Impossibile connettere un utente con indirizzo e-mail non definito"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "Informazioni su",
+		"SIGN_OUT": "Esci",
+		"SETTINGS": "Impostazioni",
+		"SIGN_IN": "Accesso"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "non può essere usato per partecipare alla riunione. Provare con uno dei browser supportati.",
+		"YOUR": "Il",
+		"BROWSER": "browser",
+		"BROWSERS": "browser",
+		"BROWSER_OUT_OF_DATE": "è scaduto. Aggiornare il browser per ottenere prestazioni ottimali.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "La versione del browser non supporta audio/video. Per un'esperienza migliore della collaborazione,<br>provare un'altra versione o un altro <span class=\"underline\">browser supportato</span> oppure scaricare il client.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "La versione del browser non supporta le conferenze su Web. Per un'esperienza migliore della collaborazione,<br>provare un'altra versione o un altro <span class=\"underline\">browser supportato</span> oppure scaricare il client.",
+		"OLD_EDGE": "Il browser non è compatibile con Avaya Meetings. Passare a Google Chrome o all'ultima versione di Microsoft Edge per una migliore esperienza."
+	},
+	"MSG_UTILS": {
+		"DOWNLOAD": "Scarica",
+		"DOWNLOAD_APP": "Scarica l'app",
+		"DOWNLOAD_UPDATE": "Scarica aggiornamento",
+		"DOWNLOAD_ADD_IN": "Ottenere il componente aggiuntivo Avaya",
+		"DOWNLOAD_OUTLOOK_PLUGIN": "Acquisire il componente aggiuntivo Outlook per riunioni da Microsoft Store",
+		"CONTINUE": "App installata",
+		"BTN_RESOLVE": "Risolvi",
+		"DISMISS": "Ignora",
+		"VIEW_ONLY": "Visualizza soltanto",
+		"USE_BROWSER_TO_JOIN_AV": "Partecipa con audio/video del browser",
+		"SCREEN_SHARING_EXTENSION_OFFER": "Si prevede di condividere?",
+		"OUTLOOK_PLUGIN_NOTIFICATION": "Si desidera pianificare riunioni su Outlook?",
+		"DO_NOT_SHOW_AGAIN": "Non mostrare più",
+		"NOTIFICATION": {
+			"BAD_BROWSER": "Il browser sta limitando l'esperienza utente.",
+			"NO_CLIENT_TO_RUN": "Nessun client disponibile da avviare",
+			"LEARN_MORE": "Per saperne di più",
+			"NO_RESOURCES": "Le risorse del server non sono state ancora recuperate, riprovare più tardi.",
+			"NOT_AUTHENTICATED": "Effettuare l'accesso per visualizzare il programma",
+			"NOT_ACCESS_TO_PROGRAM": "Non è consentito visualizzare il programma",
+			"DONT_SHOW_AGAIN": "Non mostrare più"
+		},
+		"WEBRTC_MSG": {
+			"CAPTION": "Se si continua ad utilizzare questo browser...",
+			"MESSAGE": "È possibile visualizzare i partecipanti alla riunione e guardare la condivisione dello schermo, ma sarà necessario una chiamata separata per audio o video.",
+			"DO_MORE": "Serve altro?",
+			"DO_MORE_MSG": "Utilizzare uno dei browser indicati di seguito per aggiungere l'audio e il video dal computer e condividere lo schermo.",
+			"DO_MORE_DOWNLOAD_MSG": "Scarica l'app o utilizzare uno dei browser indicati di seguito per aggiungere l'audio e il video dal computer e condividere lo schermo.",
+			"OR": "o",
+			"DOWNLOAD_HINT": "Desidero avere l'esperienza multimediale completa",
+			"PRESENTATION_ONLY_HINT": "Solo visualizzazione della presentazione (con telefono per l’audio)",
+			"BAD_BROWSER_HEAD_MESSAGE": "Questo browser non supporta riunioni audio e video. ",
+			"COPY_MEETING_LINK": "Copiare il link della riunione",
+			"COPY_PORTAL_LINK": "Copiare il link del portale",
+			"PASTE_MESSAGE": "e incollare in una versione recente di Chrome per la condivisione di audio, video e schermate nel browser.",
+			"SWC_CANT_RUN_IN_AV_HEADER": "Il client Web non può essere eseguito in questa modalità.",
+			"SWC_CANT_RUN_IN_AV_MESSAGE": "Si può partecipare in modalità di sola visualizzazione o usando Avaya Workplace"
+		},
+		"CLIENT_APP": {
+			"NOT_FOUND": "L' app non è stata trovata. Assicurarsi di soddisfare le richieste del browser quando richiesto o scaricare il client",
+			"CLIENT_NOT_FOUND": "L’app {{clientName}} non è stata trovata.",
+			"IF_INSTALLED": "Se è già disponibile l’app {{clientName}}, ",
+			"TRY_AGAIN": "riprovare",
+			"MAKE_SURE_TO_ALLOW_REQUEST": " e consentire l’esecuzione del gestore installazione quando richiesto.",
+			"CLIENT_UPDATE_AVAILABLE": "Aggiornamento di {{clientName}} disponibile",
+			"CLIENT_UPDATE_REQUIRED": "Aggiornamento di Avaya Workplace necessario",
+			"WAIT_INSTALL": "Fare clic quando l'app è installata",
+			"EXTERNAL_PROTOCOL_WARNING": "Per un'esperienza ottimale, abbiamo bisogno dell'autorizzazione dell'utente per verificare che l'applicazione sia stata installata.\nAccettare il prompt del browser dopo aver fatto clic su \"Va bene!\".",
+			"GOT_IT": "Va bene!",
+			"FORCE_UPDATE_TEXT": "Sembra che l’app non sia aggiornata.\n Aggiornare alla versione più recente.",
+			"FIRST_TIME_JOIN": "La prima volta qui? Come si preferisce partecipare alla riunione?",
+			"JOIN_PRESENTATION": "Partecipa solo alla presentazione",
+			"PRESENTATION_DUALIN": "Solo presentazione / Composizione",
+			"USE_CUMPUTER": "Utilizzare il computer per audio e video",
+			"USE_BROWSER_TO_JOIN": "Utilizzare il browser per partecipare",
+			"DOWNLOAD_TO_JOIN": "Scarica l'app",
+			"HAVE_CLIENT": "Dispongo già dell'app",
+			"CHOOSE_APP": "Quale app si preferisce usare?",
+			"HAVE_YOU_APP": "È stata installata l'App?",
+			"DOES_NOT_SUPPORT": "Questo browser non supporta riunioni audio e video.",
+			"APP_INSTALLED": "Fare clic quando l'app è installata",
+			"APP_INSTALLED_BUTTON": "L'app è installata",
+			"MORE_INFO": " e incollare in una versione recente di Chrome o Firefox per la condivisione di audio, video e schermate nel browser, oppure",
+			"COPY_MEETING_LINK": "Copiare il link della riunione",
+			"DONT_HAVE_MICROPHONE": "È necessario un microfono per partecipare a questa riunione.",
+			"CONNECT_MICROPHONE": "Collegare un microfono e riprovare.",
+			"MIC_NOT_FOUND": "Microfono non trovato",
+			"CHECK_MIC": "Controllare che il microfono o le cuffie siano connesse e partecipare nuovamente tramite browser.",
+			"MIC_WAS_FOUND": "Microfono connesso",
+			"MIC_WAS_CHECKED": "Il microfono o le cuffie sono ora connesse. \nPartecipare nuovamente tramite browser."
+		},
+		"CREATE_METING": {
+			"NUMBER_EXCEED": "Il numero di partecipanti supera il valore massimo specificato nelle impostazioni della sala virtuale.",
+			"CONTINUING": "Se si continua, alcuni partecipanti invitati potrebbero non riuscire ad accedere alla riunione",
+			"CONTINUE_SENDING": "Continua l'invio",
+			"CANCEL": "Annulla"
+		},
+		"DOWNLOAD_DIALOG": {
+			"DOWNLOAD_AFTER_SETTING_TITLE": "Una volta installata l'app, aprirla per controllare le impostazioni audio e video.",
+			"OPEN_THE_EQUINOX": "Aprire l'app",
+			"DOWNLOAD_AND_JOIN": "Una volta installata l'app, partecipare con l'app",
+			"JOIN_BUTTON": "Partecipa con l'app",
+			"CHECK_CLIENT": "Controllo audio e video",
+			"INSTALL_AND_CHECK": "Una volta installata l'app, aprirla per completare la configurazione."
+		},
+		"FIRST_LOUNCH_TUTORIAL": {
+			"RESET_FIRST_LAUNCH_TUTORIALS": "Esercitazione",
+			"NON_WEBRTC": {
+				"SETTINGS": "È possibile controllare le informazioni del client e altro",
+				"SIGN_IN": "Se si dispone di un account, fare clic su Accesso per accedervi.",
+				"JOIN": "Dopo aver immesso il nome e l'ID riunione, scegliere un metodo per partecipare a una riunione."
+			},
+			"WEBRTC": {
+				"SETTINGS": "È possibile impostare Partecipa senza video, controllare le informazioni del client e altro",
+				"SIGN_IN": "Se si dispone di un account, fare clic su Accesso per accedervi.",
+				"JOIN": "Dopo aver immesso il nome e l'ID riunione, scegliere un metodo per partecipare a una riunione."
+			},
+			"LOGIN_IN": {
+				"MEETING_ROOM": "Scegliere la sala riunioni o le riunioni a cui si è partecipato in precedenza. È inoltre possibile condividere o inviare un invito e-mail alla sala riunioni selezionata",
+				"MEETING_IN_PROGRESS": "La riunione in corso verrà visualizzata qui"
+			}
+		},
+		"PIN_UPDATE": {
+			"PIN_UPDATE_TITLE": "Il PIN del moderatore della riunione è scaduto. Modificare il PIN in ",
+			"OPEN_SETTINGS": "Impostazioni"
+		}
+	}
+}

@@ -4,6 +4,7 @@ import {PortalResourcesServiceService} from '../portal-resources-service.service
 import { Logger } from '../../../Logger';
 import {EVENT, LOCAL_STORAGE, USER_TYPE, SESSION_STORAGE} from '../../constants';
 import {EncodingService} from '../EncodingService/encoding-service.service';
+import {UserSettingsService} from '../UserSettingsService/user-settings.service';
 
 export interface LoginResponse {
   encryptedPassword: string;
@@ -19,7 +20,8 @@ export interface LoginResponse {
 export class AuthorizationServiceService {
 
   constructor(private http: HttpClient, private portalResourcesServiceService: PortalResourcesServiceService,
-              private encodeService: EncodingService) { }
+              private encodeService: EncodingService,
+              private userSettingsService: UserSettingsService) { }
 
   private logger = new Logger('AuthorizationService');
 
@@ -61,14 +63,14 @@ export class AuthorizationServiceService {
         const isSsoPe =
           // TODO make possible get sso by URL
           // this.$location.search().sso === 'pe-websso' &&
-          this.portalResourcesServiceService.portalResources.peEnabled &&
-          this.portalResourcesServiceService.portalResources.ssoRedirectUrl;
+          this.userSettingsService.portalResources.peEnabled &&
+          this.userSettingsService.portalResources.ssoRedirectUrl;
 
         // TODO check that Pole-Emploi authentication works
 
         if (isSsoPe) {
-          this.logger.log('Redirect to PE websso sign in page %s', this.portalResourcesServiceService.portalResources.ssoRedirectUrl);
-          window.location.href = this.portalResourcesServiceService.portalResources.ssoRedirectUrl;
+          this.logger.log('Redirect to PE websso sign in page %s', this.userSettingsService.portalResources.ssoRedirectUrl);
+          window.location.href = this.userSettingsService.portalResources.ssoRedirectUrl;
         } else {
           this.logger.log('Seems websso is not used');
         }
@@ -84,7 +86,7 @@ export class AuthorizationServiceService {
         };
       }
 
-      this.http.post(this.portalResourcesServiceService.portalResources.resources.authentication.POST.login.href, credentials, {
+      this.http.post(this.userSettingsService.portalResources.resources.authentication.POST.login.href, credentials, {
         headers: new HttpHeaders(headers)
       }).toPromise()
         .then( (res) => {
@@ -185,7 +187,7 @@ export class AuthorizationServiceService {
       'Content-Type': 'application/json'
     };
 
-    this.http.post(this.portalResourcesServiceService.portalResources.resources.authentication.POST.logout.href, {}, {
+    this.http.post(this.userSettingsService.portalResources.resources.authentication.POST.logout.href, {}, {
       headers: new HttpHeaders(headers)
     }).subscribe(res => {
       console.log('hello logout', res);
@@ -216,7 +218,10 @@ export class AuthorizationServiceService {
       this.logger.log('Get resources for GUEST');
       // request resources for guest user
       // TODO create this service and methods
-      // this.UserSettingsService.fetchResources().then( () => {
+
+
+
+      // this.userSettingsService.fetchResources().then( () => {
       //   this.logger.log('Resources for GUEST are received. Logout from ACSR service');
       //
       //   this.RecordingService.initAvayaRecordingManagementService();
@@ -255,7 +260,7 @@ export class AuthorizationServiceService {
 
       const body = {organizationAlias: 'dev-org208'};
 
-      this.http.post(this.portalResourcesServiceService.portalResources.resources.authentication.POST.logout.href, null, {
+      this.http.post(this.userSettingsService.portalResources.resources.authentication.POST.logout.href, null, {
         headers: new HttpHeaders(headers)
       }).subscribe(res => {
         this.isAuthorizedUser = true;
@@ -270,10 +275,10 @@ export class AuthorizationServiceService {
     return new Promise<any>((resolve, reject) => {
       try {
         let requestParams;
-        const tokenUrl = this.portalResourcesServiceService.portalResources.oauthCodeToTokenExchangeUrl;
+        const tokenUrl = this.userSettingsService.portalResources.oauthCodeToTokenExchangeUrl;
         if (oauth2Params.refreshToken) {
           requestParams = {
-            client_id: this.portalResourcesServiceService.portalResources.oauth2ClientId,
+            client_id: this.userSettingsService.portalResources.oauth2ClientId,
             grant_type: 'refresh_token',
             refresh_token: oauth2Params.refreshToken
           };
@@ -302,14 +307,14 @@ export class AuthorizationServiceService {
           const refreshToken = res.data.refresh_token;
           window.localStorage.setItem(LOCAL_STORAGE.OAUTH2_REFRESH_TOKEN, refreshToken);
           window.history.replaceState({}, document.title, '/portal/tenants/' +
-            this.portalResourcesServiceService.portalResources.tenantAlias);
+            this.userSettingsService.portalResources.tenantAlias);
           const headers = {
             Authorization: 'Bearer ' + accessToken,
             'Content-Type': 'application/vnd.avaya.portal.authentication.login.v2+json'
           };
           const params = {
             method: 'POST',
-            url: this.portalResourcesServiceService.portalResources.resources.authentication.POST.login.href,
+            url: this.userSettingsService.portalResources.resources.authentication.POST.login.href,
             data: null,
             params: null,
             headers: headers || {
@@ -317,7 +322,7 @@ export class AuthorizationServiceService {
             },
             responseType: undefined
           };
-          return this.http.post(this.portalResourcesServiceService.portalResources.resources.authentication.POST.login.href, {}, {
+          return this.http.post(this.userSettingsService.portalResources.resources.authentication.POST.login.href, {}, {
             headers: new HttpHeaders(params.headers)
           }).toPromise().then((response) => {
             this.onLoginSuccess(response, null, undefined);
@@ -338,7 +343,7 @@ export class AuthorizationServiceService {
           //   });
         }, (e) => {
           window.history.replaceState({}, document.title, '/portal/tenants/' +
-            this.portalResourcesServiceService.portalResources.tenantAlias);
+            this.userSettingsService.portalResources.tenantAlias);
           window.localStorage.removeItem(LOCAL_STORAGE.OAUTH2_REFRESH_TOKEN);
           this.onLoginError(e);
           this.logger.error('Unable to perform oauth 2 authentication', e);
@@ -546,7 +551,9 @@ export class AuthorizationServiceService {
       this.logger.log('UPS token has been added to localStorage');
       // TODO create following service and method
 
-      // return this.UserSettingsService.fetchResources().then(onFetchResourcesSuccess, onFetchResourcesError);
+
+
+      return this.userSettingsService.fetchResources().then(onFetchResourcesSuccess, onFetchResourcesError);
     });
 
     // if(response.oauth2Authentication){
@@ -677,12 +684,12 @@ export class AuthorizationServiceService {
     //   !!this.PortalResources.resources.peEnabled &&
     //   !!this.PortalResources.resources.ssoRedirectUrl
 
-    return !!this.portalResourcesServiceService.portalResources.peEnabled &&
-      !!this.portalResourcesServiceService.portalResources.ssoRedirectUrl;
+    return !!this.userSettingsService.portalResources.peEnabled &&
+      !!this.userSettingsService.portalResources.ssoRedirectUrl;
   }
 
   private usePoleEmployeeSSOLogin(): void{
-    this.logger.log('Redirect to PE websso sign in page %s', this.portalResourcesServiceService.portalResources.ssoRedirectUrl);
-    window.location.href = this.portalResourcesServiceService.portalResources.ssoRedirectUrl;
+    this.logger.log('Redirect to PE websso sign in page %s', this.userSettingsService.portalResources.ssoRedirectUrl);
+    window.location.href = this.userSettingsService.portalResources.ssoRedirectUrl;
   }
 }

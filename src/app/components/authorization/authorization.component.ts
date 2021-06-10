@@ -6,6 +6,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {AUTH_TYPE, LOCAL_STORAGE, STATUS_CODE, ERROR_CODE} from '../../constants';
 import {MatDialogRef} from '@angular/material/dialog';
 import { Logger } from '../../../Logger';
+import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
 
 class MyDialogComponent {
 }
@@ -17,9 +18,9 @@ class MyDialogComponent {
 })
 export class AuthorizationComponent implements OnInit {
 
-  oauth2ButtonEnabled = this.portalResourcesServiceService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_AND_PASSWORD ||
-    this.portalResourcesServiceService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_ONLY;
-  authFormEnabled = this.portalResourcesServiceService.portalResources.supportedAuthType !== AUTH_TYPE.OAUTH_ONLY;
+  oauth2ButtonEnabled = this.userSettingsService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_AND_PASSWORD ||
+    this.userSettingsService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_ONLY;
+  authFormEnabled = this.userSettingsService.portalResources.supportedAuthType !== AUTH_TYPE.OAUTH_ONLY;
 
   loading = false;
   isKeepMeSigned = false;
@@ -47,7 +48,8 @@ export class AuthorizationComponent implements OnInit {
   constructor(public portalResourcesServiceService: PortalResourcesServiceService,
               public authorizationServiceService: AuthorizationServiceService,
               public dialogRef: MatDialogRef<MyDialogComponent>,
-              public translate: TranslateService) {
+              public translate: TranslateService,
+              private userSettingsService: UserSettingsService) {
   }
 
   ngOnInit(): void {

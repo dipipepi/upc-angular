@@ -1,1 +1,166 @@
-{}
+{
+	"ABOUT": {
+		"TITLE": "關於 Avaya Meetings",
+		"RELEASE": "版本：",
+		"AVAYA_TRADEMARKS": "Avaya Meetings 和 Equinox Conferencing 是 Avaya Inc. 的商標。",
+		"OTHER_TRADEMARKS": "Java 是 Sun Microsystems, Inc. 的商標；Microsoft、Windows 和 Internet Explorer 是 Microsoft Corporation 在美國和／或其他國家／地區的註冊商標或商標。",
+		"TRADEMARKS_INFO": "本文件中使用的所有其他產品名稱是其各自製造商的商標或註冊商標。",
+		"COPYRIGHT_INFO": "如需確認適用於此產品之第三方元件的版權所有者以及使用條款，請參閱 <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>。",
+		"LICENCE": "下載軟體、安裝或使用，即表示您已閱讀、了解並接受以下連結中的 Avaya 軟體授權條款（Avaya 產品） ",
+		"LICENCE_I18N": "英文、巴西葡萄牙文、加拿大法文、中文、德文、義大利文、葡萄牙文、西班牙文、法文、日文和俄文版本張貼於 ",
+		"USAGE_INFO": "如果您無法直接存取網際網路，請使用具有網際網路存取權限的裝置來檢視、下載及列印適用的授權。",
+		"COPYRIGHT": "版權所有 © {{year}} Avaya Inc. 保留所有權利。",
+		"CLOSE": "關閉",
+		"LINK": "連結"
+	},
+	"LOGIN": {
+		"SIGNING": "正在登入...",
+		"LOADING": "正在載入...",
+		"GREETING": "已有帳戶？",
+		"NAME": "使用者名稱",
+		"LOGIN": "登入",
+		"PASSWORD": "密碼",
+		"REMEMBER_ME": "保持我的登入狀態",
+		"SIGN_IN": "登入",
+		"LOG_IN": "登入",
+		"FORGOT_PASSWORD": "忘記密碼？",
+		"OR_SIGN_IN": "或使用以下方式登入：",
+		"USE_ENTERPRISE_ACCOUNT": "使用我們的企業帳戶（SSO）",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "系統已將包含密碼復原連結的電子郵件傳送給您"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "使用者名稱或密碼無效",
+			"VALIDATION_FAILED": "使用者名稱或密碼必須為空白。",
+			"NOT_ALLOWED": "不允許您登入。",
+			"USER_AUTH_DISABLED": "已為使用者 {{name}} 停用驗證",
+			"ERROR": "沒有來自伺服器的回應，或伺服器錯誤。請稍後重試。",
+			"ERC_AUTH_USER_NAME": "OAuth 驗證未成功。請聯絡系統管理員協助。",
+			"ERC_AUTH_EMPTY_EMAIL": "使用者帳戶無法使用未定義的電子郵件登入"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "關於",
+		"SIGN_OUT": "登出",
+		"SETTINGS": "設定",
+		"SIGN_IN": "登入"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "無法用於加入會議。請嘗試使用支援的瀏覽器。",
+		"YOUR": "您的",
+		"BROWSER": "瀏覽器",
+		"BROWSERS": "瀏覽器",
+		"BROWSER_OUT_OF_DATE": "已過期。請更新您的瀏覽器，以獲得最佳體驗。",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "您的瀏覽器版本不支援音訊／視訊。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "您的瀏覽器版本不支援網路會議。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
+		"OLD_EDGE": "您的瀏覽器與 Avaya Meetings 不相容。請切換到 Google Chrome 或最新的 Microsoft Edge，以獲得最佳體驗。"
+	},
+	"MSG_UTILS": {
+		"DOWNLOAD": "下載",
+		"DOWNLOAD_APP": "下載應用程式",
+		"DOWNLOAD_UPDATE": "下載更新",
+		"DOWNLOAD_ADD_IN": "獲取 Avaya 增益集",
+		"DOWNLOAD_OUTLOOK_PLUGIN": "從 Microsoft Store 取得適用於 Outlook 的會議增益集",
+		"CONTINUE": "應用程式已安裝",
+		"BTN_RESOLVE": "解析",
+		"DISMISS": "解除",
+		"VIEW_ONLY": "僅檢視",
+		"USE_BROWSER_TO_JOIN_AV": "透過瀏覽器音訊／視訊加入",
+		"SCREEN_SHARING_EXTENSION_OFFER": "計劃共用？",
+		"OUTLOOK_PLUGIN_NOTIFICATION": "要在 Outlook 中排程會議嗎？",
+		"DO_NOT_SHOW_AGAIN": "不要再顯示",
+		"NOTIFICATION": {
+			"BAD_BROWSER": "您的瀏覽器會削弱您的體驗效果！",
+			"NO_CLIENT_TO_RUN": "沒有可啟動的用戶端",
+			"LEARN_MORE": "瞭解更多資訊",
+			"NO_RESOURCES": "尚未擷取伺服器資源，請稍後重試。",
+			"NOT_AUTHENTICATED": "您必須登入才能檢視此錄製節目",
+			"NOT_ACCESS_TO_PROGRAM": "您無法檢視此錄製節目",
+			"DONT_SHOW_AGAIN": "不要再顯示"
+		},
+		"WEBRTC_MSG": {
+			"CAPTION": "如果您要繼續使用此瀏覽器...",
+			"MESSAGE": "您可以查看誰在會議中並觀看螢幕共用，但您需要一次單獨的視訊或音訊通話。",
+			"DO_MORE": "想要瞭解更多資訊？",
+			"DO_MORE_MSG": "使用下面其中一種瀏覽器來從電腦新增音訊和視訊，然後共用您的螢幕。",
+			"DO_MORE_DOWNLOAD_MSG": "下載應用程式或使用下面其中一種瀏覽器來從電腦新增音訊和視訊，然後共用您的螢幕。",
+			"OR": "或",
+			"DOWNLOAD_HINT": "我想要具備完整功能的多媒體體驗",
+			"PRESENTATION_ONLY_HINT": "我只需要查看簡報（我將使用電話處理音訊）",
+			"BAD_BROWSER_HEAD_MESSAGE": "此瀏覽器不支援音訊和視訊會議。",
+			"COPY_MEETING_LINK": "複製會議連結",
+			"COPY_PORTAL_LINK": "複製入口網站連結",
+			"PASTE_MESSAGE": "並貼到最新版的 Chrome 中，以在瀏覽器中進行音訊、視訊和螢幕共用。",
+			"SWC_CANT_RUN_IN_AV_HEADER": "網頁用戶端無法在此模式下執行。",
+			"SWC_CANT_RUN_IN_AV_MESSAGE": "您可以僅檢視模式加入或使用 Avaya Workplace"
+		},
+		"CLIENT_APP": {
+			"NOT_FOUND": "找不到此應用程式。請確保提示時允許瀏覽器要求或下載用戶端",
+			"CLIENT_NOT_FOUND": "找不到 {{clientName}} 應用程式。",
+			"IF_INSTALLED": "如果您已有 {{clientName}} 應用程式，",
+			"TRY_AGAIN": "請重試",
+			"MAKE_SURE_TO_ALLOW_REQUEST": " 並在提示時允許安裝管理員執行。",
+			"CLIENT_UPDATE_AVAILABLE": "{{clientName}} 有可使用的更新",
+			"CLIENT_UPDATE_REQUIRED": "需要 Avaya Workplace 更新",
+			"WAIT_INSTALL": "安裝應用程式後按一下",
+			"EXTERNAL_PROTOCOL_WARNING": "為了提供最佳體驗，我們需要您授權以檢查是否已安裝應用程式。\n在按下「開始吧！」之後，請接受瀏覽器的彈出視窗。",
+			"GOT_IT": "開始吧！",
+			"FORCE_UPDATE_TEXT": "看來您的應用程式已過期。\n 請升級至最新版本。",
+			"FIRST_TIME_JOIN": "看來您是第一次使用此應用程式。您想要如何加入會議呢？",
+			"JOIN_PRESENTATION": "僅加入簡報",
+			"PRESENTATION_DUALIN": "僅提供簡報／撥入",
+			"USE_CUMPUTER": "使用我的電腦播放音訊和視訊",
+			"USE_BROWSER_TO_JOIN": "使用我的瀏覽器加入",
+			"DOWNLOAD_TO_JOIN": "下載應用程式",
+			"HAVE_CLIENT": "我有應用程式",
+			"CHOOSE_APP": "您想要使用哪個應用程式？",
+			"HAVE_YOU_APP": "已經下載應用程式了嗎？",
+			"DOES_NOT_SUPPORT": "此瀏覽器不支援音訊和視訊會議。",
+			"APP_INSTALLED": "安裝應用程式後按一下",
+			"APP_INSTALLED_BUTTON": "已安裝應用程式",
+			"MORE_INFO": " 並貼到最新版的 Chrome 或 Firefox 中，以在瀏覽器中進行音訊、視訊和螢幕共用。或者",
+			"COPY_MEETING_LINK": "複製會議連結",
+			"DONT_HAVE_MICROPHONE": "需要麥克風才能加入此會議。",
+			"CONNECT_MICROPHONE": "請嘗試連接麥克風，然後重試。",
+			"MIC_NOT_FOUND": "找不到麥克風",
+			"CHECK_MIC": "請檢查您的麥克風或耳機是否已連接，然後重新透過瀏覽器加入。",
+			"MIC_WAS_FOUND": "已連接麥克風",
+			"MIC_WAS_CHECKED": "現在已連接麥克風或耳機。 \n請使用瀏覽器重新加入。"
+		},
+		"CREATE_METING": {
+			"NUMBER_EXCEED": "參與者人數超過在虛擬會議室設定中指定的最大值。",
+			"CONTINUING": "繼續執行此作業可能會導致無法允許所有受邀者加入",
+			"CONTINUE_SENDING": "繼續傳送",
+			"CANCEL": "取消"
+		},
+		"DOWNLOAD_DIALOG": {
+			"DOWNLOAD_AFTER_SETTING_TITLE": "安裝應用程式後，請開啟以檢查您的音訊和視訊設定。",
+			"OPEN_THE_EQUINOX": "打開應用程式",
+			"DOWNLOAD_AND_JOIN": "安裝應用程式後，透過應用程式加入",
+			"JOIN_BUTTON": "使用應用程式以加入",
+			"CHECK_CLIENT": "音訊／視訊檢查",
+			"INSTALL_AND_CHECK": "安裝應用程式後，請開啟以完成設定。"
+		},
+		"FIRST_LOUNCH_TUTORIAL": {
+			"RESET_FIRST_LAUNCH_TUTORIALS": "教學課程",
+			"NON_WEBRTC": {
+				"SETTINGS": "您可以檢查您的用戶端資訊及更多內容",
+				"SIGN_IN": "已有帳戶了嗎？ 按一下「登入」以存取您的帳戶。",
+				"JOIN": "輸入名稱和會議 ID 後，選擇加入會議的方法。"
+			},
+			"WEBRTC": {
+				"SETTINGS": "您可以設定「加入而不開啟視訊」、檢查您的用戶端資訊以及更多操作",
+				"SIGN_IN": "已有帳戶了嗎？ 按一下「登入」以存取您的帳戶。",
+				"JOIN": "輸入名稱和會議 ID 後，選擇加入會議的方法。"
+			},
+			"LOGIN_IN": {
+				"MEETING_ROOM": "選擇您自己的會議室或先前加入的會議。您也可以分享或傳送您所選取會議室的電子郵件邀請。",
+				"MEETING_IN_PROGRESS": "此處將顯示您進行中的會議"
+			}
+		},
+		"PIN_UPDATE": {
+			"PIN_UPDATE_TITLE": "會議主持人 PIN 碼已過期。請 ",
+			"OPEN_SETTINGS": "在「設定」中變更您的 PIN 碼"
+		}
+	}
+}

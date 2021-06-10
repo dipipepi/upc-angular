@@ -3,6 +3,9 @@ import {PortalResourcesServiceService} from './services/portal-resources-service
 import {FormGroup} from '@angular/forms';
 import {AuthorizationServiceService} from './services/Authorization/authorization-service.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {LocalizationService} from './services/LocalizationService/localization.service';
+import {TranslateService} from '@ngx-translate/core';
+import {UserSettingsService} from './services/UserSettingsService/user-settings.service';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,11 @@ export class AppComponent implements OnInit{
   });
 
   constructor(public portalResourcesServiceService: PortalResourcesServiceService,
-              private authorizationServiceService: AuthorizationServiceService) {
+              private authorizationServiceService: AuthorizationServiceService,
+              private localization: LocalizationService,
+              public translate: TranslateService,
+              private userSettingsService: UserSettingsService) {
+    translate.setDefaultLang(localization.initLocalization());
   }
 
   // tslint:disable-next-line:typedef
@@ -34,22 +41,16 @@ export class AppComponent implements OnInit{
     // TODO 2.1) AUTH WITH TOKEN
     // TODO 2.1) GET USER RESOURCES
 
-    console.log('hello user client 2', DeviceDetectorService);
-    this.portalResourcesServiceService.fetchResources().subscribe(res => {
-      this.portalResourcesServiceService.portalResources = res;
+    this.userSettingsService.fetchResources(false).then((res) => {
+      console.log('hello test', res);
+    });
+
+    this.userSettingsService.fetchResources(true).then(res => {
       this.isResourcesLoading = false;
-      this.authorizationServiceService.validateToken();
-      // @ts-ignore
-      this.userClient = new AvayaUserClient(new AvayaUserClient.Config.ClientConfig({
-        resources: res
-      }));
-      console.log('hello user client', this.userClient);
-      const service = this.userClient.userService;
-      console.log('hello user client 2');
+      // this.authorizationServiceService.validateToken();
     }, () => {
       alert('Error. Can not get resources');
     });
-
 
     window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat :  this.defaultTimeFormat;
 

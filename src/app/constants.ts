@@ -9,12 +9,33 @@ export class UP_CLIENT_CONNECTION_SETTINGS {
 }
 
 export class URL {
-
-  public static UPS = {
+  // tslint:disable-next-line:typedef
+  public static get ACS() {return {
+    RESOURCES: '/acs/resources'
+  };}
+  // tslint:disable-next-line:typedef
+  public static get UPC() {return {
+    BASE: '/tenants/:alias',
+    JOIN: '/',
+    SCHEDULE: '/schedule',
+    RECORDINGS: '/recording/',
+    REMIND_PASSWORD: '/remind_password/'
+  };}
+  // tslint:disable-next-line:typedef
+  public static get UPS() {return {
     MEETINGS_GET_TOKEN: UP_CLIENT_CONNECTION_SETTINGS.frontEndUPSBaseURL + '/resources/middleware/token',
     RESOURCES: UP_CLIENT_CONNECTION_SETTINGS.frontEndUPSBaseURL + '/resources/tenants/',
     ALIAS: UP_CLIENT_CONNECTION_SETTINGS.frontEndUPSBaseURL + '/resources/middleware/tenant_alias?vrNumber='
-  };
+  };}
+  // tslint:disable-next-line:typedef
+  public static get UWS() {return {
+    JOIN_MEET_ME_SWC: UP_CLIENT_CONNECTION_SETTINGS.frontEndSWCBaseURL + '/index.html?'
+  };}
+  // tslint:disable-next-line:typedef
+  public static get ASSR() {return {
+    PROGRAMS: '/api/manager/programs',
+    CATEGORIES: '/api/manager/categories'
+  };}
 }
 
 
@@ -43,12 +64,12 @@ export class LOCAL_STORAGE {
 }
 
 export class STATUS_CODE {
-  static OK: 200;
-  static BAD_REQUEST: 400;
-  static UNAUTHORIZED: 401;
-  static NOT_FOUND: 404;
-  static INTERNAL_SERVER_ERROR: 500;
-  static SERVICE_UNAVAILABLE: 503;
+  public static get OK(): number {return 200;}
+  public static get BAD_REQUEST(): number {return 400;}
+  public static get UNAUTHORIZED(): number {return 401;}
+  public static get NOT_FOUND(): number {return 404;}
+  public static get INTERNAL_SERVER_ERROR(): number {return 500;}
+  public static get SERVICE_UNAVAILABLE(): number {return 503;}
 }
 
 export class ERROR_CODE {

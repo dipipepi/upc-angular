@@ -1,1 +1,166 @@
-{}
+{
+	"ABOUT": {
+		"TITLE": "Avaya Meetings 정보",
+		"RELEASE": "릴리즈:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings 및  Equinox Conferencing은 Avaya Inc.의 상표입니다.",
+		"OTHER_TRADEMARKS": "Java는 Sun Microsystems, Inc.의 상표입니다. Microsoft, Windows, Internet Explorer는 미국 및 기타 해당 국가에서 Microsoft Corporation의 등록 상표 또는 상표입니다.",
+		"TRADEMARKS_INFO": "이 문서에 언급된 기타 다른 모든 제품 이름은 해당 제조사의 상표 또는 등록 상표입니다.",
+		"COPYRIGHT_INFO": "제3자 구성요소의 저작권 소유자를 식별하는 정보 및 이 제품에 적용되는 조항은 <a href=\"{{link}}\" target=\"_blank\">{{이 링크}}</a>에서 확인하십시오.",
+		"LICENCE": "소프트웨어를 다운로드, 설치 또는 사용하면 다음에 있는 Avaya 소프트웨어 사용 조건(Avaya 제품)의 조항을 읽고 이해하였으며 이를 수락한 것으로 간주됩니다.",
+		"LICENCE_I18N": "영어, 브라질어, 캐나다 프랑스어, 중국어, 독일어, 이탈리아어, 포르트갈어, 스페인어, 프랑스어, 일본어, 그리고 러시아 버전은 다음 링크에 게시되어 있습니다.",
+		"USAGE_INFO": "인터넷에 직접 액세스할 수 없는 경우 해당 라이선스를 보고 다운로드하고 인쇄하기 위해 인터넷 액세스를 지닌 장치에 액세스하십시오.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
+		"CLOSE": "닫기",
+		"LINK": "링크"
+	},
+	"LOGIN": {
+		"SIGNING": "로그인 중...",
+		"LOADING": "로딩 중...",
+		"GREETING": "계정이 있습니까?",
+		"NAME": "사용자 이름",
+		"LOGIN": "로그인",
+		"PASSWORD": "암호",
+		"REMEMBER_ME": "로그인 상태 유지",
+		"SIGN_IN": "로그인",
+		"LOG_IN": "로그인",
+		"FORGOT_PASSWORD": "암호를 분실했습니까?",
+		"OR_SIGN_IN": "또는 다음으로 로그인",
+		"USE_ENTERPRISE_ACCOUNT": "내 엔터프라이즈 계정(SSO) 사용",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "암호를 복원하는 링크가 포함된 이메일이 발송되었습니다."
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "사용자 이름 또는 암호가 잘못되었습니다.",
+			"VALIDATION_FAILED": "사용자 이름 또는 암호는 비워둘 수 없습니다.",
+			"NOT_ALLOWED": "로그인이 허용되지 않습니다.",
+			"USER_AUTH_DISABLED": "사용자 {{name}}에 대해 인증이 비활성화되었습니다.",
+			"ERROR": "서버 또는 서버 오류로부터 응답이 없습니다. 나중에 다시 시도하십시오.",
+			"ERC_AUTH_USER_NAME": "OAuth 인증에 실패했습니다. 시스템 관리자에게 지원을 요청하십시오.",
+			"ERC_AUTH_EMPTY_EMAIL": "정의되지 않은 이메일로 사용자를 로그인할 수 없음"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "정보",
+		"SIGN_OUT": "로그아웃",
+		"SETTINGS": "설정",
+		"SIGN_IN": "로그인"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "를 사용하여 회의에 참가할 수 없습니다. 지원되는 브라우저로 시도해 주십시오.",
+		"YOUR": "귀하의",
+		"BROWSER": "브라우저",
+		"BROWSERS": "브라우저",
+		"BROWSER_OUT_OF_DATE": "가 최신 버전이 아닙니다. 원활한 사용을 위해서는 브라우저를 업데이트하십시오.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "오디오/비디오를 지원하지 않는 브라우저 버전입니다. 더 나은 협업 작업 환경을 위해<br>다른 버전 또는, 다른 <span class=\"underline\">지원되는 브라우저</span>를 사용하거나 클라이언트를 다운로드하십시오.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "웹 회의를 지원하지 않는 브라우저 버전입니다. 더 나은 협업 작업 환경을 위해<br>다른 버전 또는, 다른 <span class=\"underline\">지원되는 브라우저</span>를 사용하거나 클라이언트를 다운로드하십시오.",
+		"OLD_EDGE": "사용 중인 브라우저에서는 Avaya Meetings와 호환되지 않습니다. 최상의 경험을 위해 Google Chrome 또는 최신 Microsoft Edge 로 전환하십시오."
+	},
+	"MSG_UTILS": {
+		"DOWNLOAD": "다운로드",
+		"DOWNLOAD_APP": "앱 다운로드",
+		"DOWNLOAD_UPDATE": "업데이트 다운로드",
+		"DOWNLOAD_ADD_IN": "Avaya 애드인 받기",
+		"DOWNLOAD_OUTLOOK_PLUGIN": "Microsoft Store에서 Outlook 회의 추가 기능을 가져오십시오.",
+		"CONTINUE": "앱이 설치되었습니다.",
+		"BTN_RESOLVE": "해결",
+		"DISMISS": "해제",
+		"VIEW_ONLY": "보기 전용",
+		"USE_BROWSER_TO_JOIN_AV": "브라우저 오디오/비디오로 참가",
+		"SCREEN_SHARING_EXTENSION_OFFER": "공유하시겠습니까?",
+		"OUTLOOK_PLUGIN_NOTIFICATION": "Outlook에서 회의를 예약하시겠습니까?",
+		"DO_NOT_SHOW_AGAIN": "다시 표시 안 함",
+		"NOTIFICATION": {
+			"BAD_BROWSER": "귀하의 브라우저는 사용자 경험을 저해하고 있습니다.",
+			"NO_CLIENT_TO_RUN": "시작할 수 있는 클라이언트가 없습니다.",
+			"LEARN_MORE": "자세히 보기",
+			"NO_RESOURCES": "서버 리소스를 아직 가져오지 않았습니다. 나중에 다시 시도하십시오.",
+			"NOT_AUTHENTICATED": "이 프로그램을 보려면 로그인해야 합니다.",
+			"NOT_ACCESS_TO_PROGRAM": "이 프로그램을 볼 수 있는 권한이 없습니다.",
+			"DONT_SHOW_AGAIN": "다시 표시 안 함"
+		},
+		"WEBRTC_MSG": {
+			"CAPTION": "이 브라우저를 계속 사용하면...",
+			"MESSAGE": "회의에 참가한 사람과 화면 공유를 보는 사람을 볼 수 있지만 오디오 또는 비디오를 보기 위해서는 별도의 통화가 필요합니다.",
+			"DO_MORE": "더 많은 기능을 원하십니까?",
+			"DO_MORE_MSG": "아래 브라우저 중 하나를 사용하여 컴퓨터에서 오디오 및 비디오를 추가하고 화면을 공유해 보십시오.",
+			"DO_MORE_DOWNLOAD_MSG": "앱을 다운로드하거나 아래 브라우저 중 하나를 사용하여 컴퓨터에서 오디오 및 비디오를 추가하고 화면을 공유해 보십시오.",
+			"OR": "또는",
+			"DOWNLOAD_HINT": "모든 기능을 갖춘 멀티미디어 환경을 원합니다.",
+			"PRESENTATION_ONLY_HINT": "프레젠테이션만 표시되면 됩니다(오디오 전화 사용).",
+			"BAD_BROWSER_HEAD_MESSAGE": "이 브라우저는 오디오 및 비디오 회의를 지원하지 않습니다.",
+			"COPY_MEETING_LINK": "회의 링크 복사",
+			"COPY_PORTAL_LINK": "포털 링크 복사",
+			"PASTE_MESSAGE": "후 브라우저에서 오디오, 비디오 및 화면 공유를 사용하도록 Chrome 최신 버전으로 붙여 넣습니다.",
+			"SWC_CANT_RUN_IN_AV_HEADER": "이 모드에서는 웹 클라이언트를 실행할 수 없습니다.",
+			"SWC_CANT_RUN_IN_AV_MESSAGE": "보기 전용 모드 또는 Avaya Workplace를 사용하여 참가할 수 있습니다."
+		},
+		"CLIENT_APP": {
+			"NOT_FOUND": "앱을 찾을 수 없습니다. 메시지가 표시되면 브라우저 요청을 허용하거나 클라이언트를 다운로드하십시오.",
+			"CLIENT_NOT_FOUND": "{{clientName}} 앱을 찾을 수 없습니다.",
+			"IF_INSTALLED": "{{clientName}} 앱이 이미 있는 경우 ",
+			"TRY_AGAIN": "다시 시도하십시오.",
+			"MAKE_SURE_TO_ALLOW_REQUEST": " 메시지가 표시되면 설치 관리자가 실행되도록 허용합니다.",
+			"CLIENT_UPDATE_AVAILABLE": "{{clientName}} 업데이트 가능",
+			"CLIENT_UPDATE_REQUIRED": "Avaya Workplace 업데이트 필요",
+			"WAIT_INSTALL": "앱이 설치되면 클릭하십시오.",
+			"EXTERNAL_PROTOCOL_WARNING": "최상의 환경을 위해 앱이 설치되어 있는지 확인하려면 귀하의 허가가 필요합니다.\n\"진행하세요.\"를 클릭한 후 브라우저 프롬프트에 동의하십시오.",
+			"GOT_IT": "진행하세요!",
+			"FORCE_UPDATE_TEXT": "현재 앱 버전이 오래된 것 같습니다.\n 최신 버전으로 업그레이드하십시오.",
+			"FIRST_TIME_JOIN": "이곳에 처음 오셨군요. 회의에 어떻게 참가하시겠습니까?",
+			"JOIN_PRESENTATION": "프레젠테이션 전용 참가",
+			"PRESENTATION_DUALIN": "프레젠테이션 전용/다이얼",
+			"USE_CUMPUTER": "내 컴퓨터로 오디오 및 비디오 사용",
+			"USE_BROWSER_TO_JOIN": "내 브라우저로 참가",
+			"DOWNLOAD_TO_JOIN": "앱 다운로드",
+			"HAVE_CLIENT": "앱을 보유하고 있습니다.",
+			"CHOOSE_APP": "어느 앱을 사용하시겠습니까?",
+			"HAVE_YOU_APP": "앱을 설치하셨습니까?",
+			"DOES_NOT_SUPPORT": "이 브라우저는 오디오 및 비디오 회의를 지원하지 않습니다.",
+			"APP_INSTALLED": "앱이 설치되면 클릭하십시오.",
+			"APP_INSTALLED_BUTTON": "앱이 설치되었습니다.",
+			"MORE_INFO": " 후 브라우저에서 오디오, 비디오 및 화면 공유를 사용하도록 Chrome 또는 Firefox 최신 버전으로 붙여 넣습니다.",
+			"COPY_MEETING_LINK": "회의 링크 복사",
+			"DONT_HAVE_MICROPHONE": "이 회의에 참가하려면 마이크가 필요합니다.",
+			"CONNECT_MICROPHONE": "마이크를 연결한 후 다시 시도해 보십시오.",
+			"MIC_NOT_FOUND": "마이크를 찾을 수 없습니다.",
+			"CHECK_MIC": "마이크 또는 헤드셋이 연결되어 있으며 브라우저로 참가 중인지 다시 확인하십시오.",
+			"MIC_WAS_FOUND": "마이크 연결됨",
+			"MIC_WAS_CHECKED": "마이크 또는 헤드셋이 이제 연결되었습니다. \n다시 브라우저로 참가하십시오."
+		},
+		"CREATE_METING": {
+			"NUMBER_EXCEED": "참가자 수가 가상 회의실 설정에 지정된 최대 값을 초과합니다.",
+			"CONTINUING": "계속하면 초대 대상자 모두가 참가할 수 없습니다.",
+			"CONTINUE_SENDING": "계속 전송",
+			"CANCEL": "취소"
+		},
+		"DOWNLOAD_DIALOG": {
+			"DOWNLOAD_AFTER_SETTING_TITLE": "앱이 설치되면 앱을 열어 오디오 및 비디오 설정을 확인합니다.",
+			"OPEN_THE_EQUINOX": "앱 열기",
+			"DOWNLOAD_AND_JOIN": "앱이 설치되면 앱으로 참가하십시오.",
+			"JOIN_BUTTON": "앱을 사용하여 참가",
+			"CHECK_CLIENT": "오디오/비디오 확인",
+			"INSTALL_AND_CHECK": "앱이 설치되면 앱을 열어 구성을 완료합니다."
+		},
+		"FIRST_LOUNCH_TUTORIAL": {
+			"RESET_FIRST_LAUNCH_TUTORIALS": "자습서",
+			"NON_WEBRTC": {
+				"SETTINGS": "클라이언트 정보 등을 확인할 수 있습니다.",
+				"SIGN_IN": "계정이 있습니까? 로그인을 클릭하여 계정에 액세스하십시오.",
+				"JOIN": "이름 및 회의 ID를 입력한 후 회의에 참가할 방법을 선택합니다."
+			},
+			"WEBRTC": {
+				"SETTINGS": "비디오 없이 참가로 설정하고 클라이언트 정보 등을 확인할 수 있습니다.",
+				"SIGN_IN": "계정이 있습니까? 로그인을 클릭하여 계정에 액세스하십시오.",
+				"JOIN": "이름 및 회의 ID를 입력한 후 회의에 참가할 방법을 선택합니다."
+			},
+			"LOGIN_IN": {
+				"MEETING_ROOM": "내 회의실 또는 이전에 참가한 회의를 선택합니다. 선택한 회의실에 이메일 초대를 공유하거나 전송할 수도 있습니다.",
+				"MEETING_IN_PROGRESS": "여기에 진행 중인 회의가 표시됩니다."
+			}
+		},
+		"PIN_UPDATE": {
+			"PIN_UPDATE_TITLE": "회의 호스트 PIN이 만료되었습니다. 다음에서 PIN을 변경하십시오.",
+			"OPEN_SETTINGS": "설정"
+		}
+	}
+}

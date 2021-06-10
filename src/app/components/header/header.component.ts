@@ -14,8 +14,7 @@ export class HeaderComponent implements OnInit {
   isLoginAvailable = true;
 
   constructor(public translate: TranslateService, public dialog: MatDialog) {
-    translate.setDefaultLang('en');
-    translate.use('en');
+    // translate.setDefaultLang('es-XL');
   }
 
   ngOnInit(): void {

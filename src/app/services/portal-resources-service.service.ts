@@ -5,6 +5,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 export interface PortalResources {
+  sessionId: string;
+  getRecParams: any;
   aadsServicesUrl: string;
   acBrandingUrl: string;
   acceptedUserAgentRegexp: string;
@@ -114,6 +116,7 @@ export interface PortalResources {
     userId: string | null
   };
   resources: {
+    pictures: any;
     'webdeployment': {
       'GET': {
         'webdeployment': {
@@ -265,7 +268,6 @@ export class PortalResourcesServiceService {
     let resourcesUrl = window.location.origin + URL.UPS.RESOURCES + alias + '/';
     resourcesUrl = 'https://dev-cores208.uplab.com/ups/resources/';
     const token = fetchAsGuest ? undefined : window.localStorage.UPS_TOKEN;
-    console.log('hello', alias, resourcesUrl, token);
 
     return this.http.get<PortalResources>(resourcesUrl);
 

@@ -1,1 +1,166 @@
-{}
+{
+	"ABOUT": {
+		"TITLE": "Info o Avaya Meetings Server",
+		"RELEASE": "Verze:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings Server je ochranná známka společnosti Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java je ochranná známka společnosti Sun Microsystems, Inc.; Microsoft, Windows a Internet Explorer jsou registrované ochranné známky nebo ochranné známky společnosti Microsoft Corporation ve Spojených státech a/nebo dalších zemích.",
+		"TRADEMARKS_INFO": "Všechny ostatní názvy produktů použité v tomto Avaya produktu jsou registrované ochranné známky příslušných výrobců.",
+		"COPYRIGHT_INFO": "Informace pro identifikaci držitelů autorských práv ke komponentám a podmínkám třetích stran, které se vztahují na tento produkt, naleznete na tomto odkazu: <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>",
+		"LICENCE": "Stažením, instalací nebo použitím softwaru souhlasíte, že jste si přečetli, porozuměli a přijali podmínky licenčních podmínek softwaru Avaya (produkty Avaya) na tomto odkazu: ",
+		"LICENCE_I18N": "Jazykové verze těchto licenčních podmínek nalezne na tomto odkazu: ",
+		"USAGE_INFO": "Pokud nemáte přímý přístup k internetu, použijete zařízení, které přístup k Internetu má a příslušnou licenci si stáhněte a vytiskněte.",
+		"COPYRIGHT": "Copyright © {{{year}} Avaya Inc. Všechna práva vyhrazena.",
+		"CLOSE": "Zavřít",
+		"LINK": "odkaz"
+	},
+	"LOGIN": {
+		"SIGNING": "Přihlašování…",
+		"LOADING": "Načítání…",
+		"GREETING": "Máte již účet?",
+		"NAME": "Uživatelské jméno",
+		"LOGIN": "Přihlašovací jméno",
+		"PASSWORD": "Heslo",
+		"REMEMBER_ME": "Zůstat přihlášen",
+		"SIGN_IN": "Přihlásit",
+		"LOG_IN": "Přihlásit",
+		"FORGOT_PASSWORD": "Zapomenuté heslo?",
+		"OR_SIGN_IN": "nebo se přihlaste pomocí",
+		"USE_ENTERPRISE_ACCOUNT": "Použít můj firemní účet (jednotné přihlašování)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Byl vám zaslán e-mail s odkazem na obnovení hesla"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Neplatné uživatelské jméno nebo heslo",
+			"VALIDATION_FAILED": "Uživatelské jméno nebo heslo nesmí být prázdné.",
+			"NOT_ALLOWED": "Nemáte oprávnění se přihlásit.",
+			"USER_AUTH_DISABLED": "Ověření bylo pro uživatele {{name}} deaktivováno",
+			"ERROR": "Žádná odpověď ze serveru nebo chyba serveru. Zkuste to později.",
+			"ERC_AUTH_USER_NAME": "Ověřování OAuth nebylo úspěšné. Požádejte o pomoc svého správce systému.",
+			"ERC_AUTH_EMPTY_EMAIL": "Nelze přihlásit uživatele s nedefinovanou e-mailovou adresou"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "O aplikaci",
+		"SIGN_OUT": "Odhlásit",
+		"SETTINGS": "Nastavení",
+		"SIGN_IN": "Přihlásit"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "nelze použít pro připojení ke schůzce. Vyzkoušejte některý z podporovaných prohlížečů.",
+		"YOUR": "Váš",
+		"BROWSER": "prohlížeč",
+		"BROWSERS": "prohlížeč",
+		"BROWSER_OUT_OF_DATE": "je zastaralý. Aktualizujte svůj prohlížeč, abyste mohli používat všechny funkce.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "Verze vašeho prohlížeče nepodporuje audio/video. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Verze vašeho prohlížeče nepodporuje webové konference. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+		"OLD_EDGE": "Váš prohlížeč není kompatibilní s Avaya Meetings. Chcete-li používat všechny funkce použijte nejnovější verzi prohlížeče Google Chrome nebo Microsoft Edge."
+	},
+	"MSG_UTILS": {
+		"DOWNLOAD": "Stahování",
+		"DOWNLOAD_APP": "Stáhnout aplikaci",
+		"DOWNLOAD_UPDATE": "Stáhnout aktualizaci",
+		"DOWNLOAD_ADD_IN": "Získat doplněk Avaya",
+		"DOWNLOAD_OUTLOOK_PLUGIN": "Stáhnout Plánovač schůzek Avaya pro Outlook z obchodu Microsoft",
+		"CONTINUE": "Aplikace nainstalována",
+		"BTN_RESOLVE": "Vyřešit",
+		"DISMISS": "Zrušit",
+		"VIEW_ONLY": "Pouze sledovat",
+		"USE_BROWSER_TO_JOIN_AV": "Připojit v prohlížeči (audio/video)",
+		"SCREEN_SHARING_EXTENSION_OFFER": "Plánujete sdílet?",
+		"OUTLOOK_PLUGIN_NOTIFICATION": "Plánujete schůzky v Outlooku?",
+		"DO_NOT_SHOW_AGAIN": "Již znovu nezobrazovat",
+		"NOTIFICATION": {
+			"BAD_BROWSER": "Váš prohlížeč snižuje funkcionalitu této aplikace.",
+			"NO_CLIENT_TO_RUN": "Žádná telefonní aplikace ke spuštění",
+			"LEARN_MORE": "Zjistit více",
+			"NO_RESOURCES": "Prostředky serveru ještě nejsou načteny, zkuste to později.",
+			"NOT_AUTHENTICATED": "Chcete-li zobrazit tento program, musíte být přihlášeni.",
+			"NOT_ACCESS_TO_PROGRAM": "Tento program nemáte povoleno prohlížet.",
+			"DONT_SHOW_AGAIN": "Již znovu nezobrazovat"
+		},
+		"WEBRTC_MSG": {
+			"CAPTION": "Pokud budete nadále používat tento prohlížeč…",
+			"MESSAGE": "Budete moci vidět, kdo je na vaší schůzce, a sledovat sdílení obrazovky, ale pro audio nebo video budete potřebovat telefonní hovor.",
+			"DO_MORE": "Chcete více funkcionality?",
+			"DO_MORE_MSG": "Jeden z níže uvedených prohlížečů umožní přidat audio i video z počítače a sdílet obrazovku.",
+			"DO_MORE_DOWNLOAD_MSG": "Stáhněte si telefonní aplikaci nebo použijte některý z níže uvedených prohlížečů pro přidání audia a videa z počítače a sdílení obrazovky.",
+			"OR": "nebo",
+			"DOWNLOAD_HINT": "Chci plně vybavený multimediální zážitek",
+			"PRESENTATION_ONLY_HINT": "Jen potřebuji vidět prezentaci (pro zvuk použiji telefon)",
+			"BAD_BROWSER_HEAD_MESSAGE": "Tento prohlížeč nepodporuje audio audio/video schůzky. ",
+			"COPY_MEETING_LINK": "Kopírovat odkaz na schůzku",
+			"COPY_PORTAL_LINK": "Kopírovat odkaz portálu",
+			"PASTE_MESSAGE": "a vložit do nejnovější verze prohlížeče Chrome a používat audio, video a sdílení obrazovky přímo v prohlížeči.",
+			"SWC_CANT_RUN_IN_AV_HEADER": "V tomto režimu nelze webovou aplikaci spustit.",
+			"SWC_CANT_RUN_IN_AV_MESSAGE": "Můžete se připojit jen v režimu „Pouze sledovat“ nebo použít aplikaci Avaya Workplace."
+		},
+		"CLIENT_APP": {
+			"NOT_FOUND": "Aplikace nebyla nalezena. Po zobrazení výzvy nebo stažení klienta nezapomeňte povolit požadavek prohlížeče.",
+			"CLIENT_NOT_FOUND": "Aplikaci {{clientName}} nelze najít.",
+			"IF_INSTALLED": "Pokud již aplikaci {{clientName}} máte, ",
+			"TRY_AGAIN": "zkuste to znovu",
+			"MAKE_SURE_TO_ALLOW_REQUEST": " a po zobrazení výzvy povolte spuštění instalace.",
+			"CLIENT_UPDATE_AVAILABLE": "K dispozici je aktualizace aplikace {{clientName}}",
+			"CLIENT_UPDATE_REQUIRED": "Je vyžadována aktualizace aplikace Avaya Workplace",
+			"WAIT_INSTALL": "Jakmile je aplikace nainstalována, klikněte na ni.",
+			"EXTERNAL_PROTOCOL_WARNING": "Bylo by dobré povolit zjišťování zda je telefonní aplikace nainstalována.\nPřijměte výzvu prohlížeče kliknutím na „Souhlasím“.",
+			"GOT_IT": "Souhlasím",
+			"FORCE_UPDATE_TEXT": "Vypadá to, že vaše aplikace je zastaralá.\n Aktualizujte na nejnovější verzi.",
+			"FIRST_TIME_JOIN": "Vypadá to, že jste tu poprvé. Jak se chcete připojit ke schůzce?",
+			"JOIN_PRESENTATION": "Pouze prezentace",
+			"PRESENTATION_DUALIN": "Pouze prezentace + telefonické připojení",
+			"USE_CUMPUTER": "Použít můj počítač pro audio a video",
+			"USE_BROWSER_TO_JOIN": "Připojit se pomocí mého prohlížeče",
+			"DOWNLOAD_TO_JOIN": "Stáhnout telefonní aplikaci",
+			"HAVE_CLIENT": "Telefonní aplikaci mám nainstalovanou",
+			"CHOOSE_APP": "Kterou aplikaci byste chtěli použít?",
+			"HAVE_YOU_APP": "Nainstalovali jste telefonní aplikaci?",
+			"DOES_NOT_SUPPORT": "Tento prohlížeč nepodporuje audio audio/video schůzky.",
+			"APP_INSTALLED": "Jakmile je aplikace nainstalována, klikněte na ni.",
+			"APP_INSTALLED_BUTTON": "Aplikace je nainstalována",
+			"MORE_INFO": " a vložit do nejnovější verze prohlížeče Chrome či Firefox a používat audio, video a sdílení obrazovky přímo v prohlížeči.",
+			"COPY_MEETING_LINK": "Kopírovat odkaz na schůzku",
+			"DONT_HAVE_MICROPHONE": "K této schůzce je potřeba mikrofon.",
+			"CONNECT_MICROPHONE": "Připojte mikrofon a zkuste to znovu.",
+			"MIC_NOT_FOUND": "Mikrofon nebyl nalezen.",
+			"CHECK_MIC": "Zkontrolujte, zda je připojen mikrofon nebo sluchátka s mikrofonem, a znovu klikněte na „Připojit v prohlížeči“.",
+			"MIC_WAS_FOUND": "Mikrofon připojen",
+			"MIC_WAS_CHECKED": "Mikrofon nebo sluchátka s mikrofonem jsou nyní připojena. \nPřipojte se znovu pomocí prohlížeče."
+		},
+		"CREATE_METING": {
+			"NUMBER_EXCEED": "Počet pozvaných účastníků překračuje maximální hodnotu uvedenou v nastavení virtuální místnosti.",
+			"CONTINUING": "Pokračováním můžete znemožnit všem pozvaným se připojit.",
+			"CONTINUE_SENDING": "Pokračovat v odesílání",
+			"CANCEL": "Zrušit"
+		},
+		"DOWNLOAD_DIALOG": {
+			"DOWNLOAD_AFTER_SETTING_TITLE": "Jakmile je telefonní aplikace nainstalována, otevřete ji a zkontrolujte nastavení audia a videa.",
+			"OPEN_THE_EQUINOX": "Otevřít telefonní aplikaci",
+			"DOWNLOAD_AND_JOIN": "Jakmile je aplikace nainstalována, klikněte na „Připojit v aplikaci“.",
+			"JOIN_BUTTON": "Připojit v aplikaci",
+			"CHECK_CLIENT": "Kontrola audia/videa",
+			"INSTALL_AND_CHECK": "Jakmile je aplikace nainstalována, otevřete ji a dokončete konfiguraci."
+		},
+		"FIRST_LOUNCH_TUTORIAL": {
+			"RESET_FIRST_LAUNCH_TUTORIALS": "Tutoriál",
+			"NON_WEBRTC": {
+				"SETTINGS": "Zde můžete zkontrolovat informace o aplikaci a další.",
+				"SIGN_IN": "Máte již účet? Kliknutím na „Přihlásit“ otevřete svůj účet.",
+				"JOIN": "Jakmile zadáte své jméno a ID schůzky, vyberte způsob připojení ke schůzce."
+			},
+			"WEBRTC": {
+				"SETTINGS": "V nastavení můžete povolit „videohovory“, zkontrolovat informace o aplikaci a další.",
+				"SIGN_IN": "Máte již účet? Kliknutím na „Přihlásit“ otevřete svůj účet.",
+				"JOIN": "Jakmile zadáte své jméno a ID schůzky, vyberte způsob připojení ke schůzce."
+			},
+			"LOGIN_IN": {
+				"MEETING_ROOM": "Vyberte si svou virtuální místnost nebo dříve navštívené místnosti jiných uživatelů. Můžete také sdílet odkaz nebo poslat e-mail s pozvánkou do vybrané virtuální místnosti.",
+				"MEETING_IN_PROGRESS": "Vaše probíhající schůzka se zobrazí zde."
+			}
+		},
+		"PIN_UPDATE": {
+			"PIN_UPDATE_TITLE": "PIN moderátora vaší schůzky vypršel. Změňte svůj PIN kód v ",
+			"OPEN_SETTINGS": "Nastavení"
+		}
+	}
+}
