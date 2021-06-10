@@ -1,0 +1,166 @@
+{
+	"ABOUT": {
+		"TITLE": "About Avaya Meetings",
+		"RELEASE": "Release:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings and Equinox Conferencing are trademarks of Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java is a trademark of Sun Microsystems, Inc.; Microsoft, Windows, and Internet Explorer are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.",
+		"TRADEMARKS_INFO": "All other product names used in this document are trademarks registered trademarks of their respective manufacturers.",
+		"COPYRIGHT_INFO": "For information identifying the copyright holders of the Third Party Components and Terms that apply to this Product please refer to <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+		"LICENCE": "Downloading the software, installation, or use indicates you have read, understood, and accepted the terms of the Avaya Software License Terms (Avaya Products) at ",
+		"LICENCE_I18N": "The English, Brazilian, Canadian French, Chinese, German, Italian, Portuguese, Spanish, French, Japanese, and Russian versions are posted at ",
+		"USAGE_INFO": "If you do not have direct Internet access, please access a device that has Internet access to view, download and print the applicable license.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
+		"CLOSE": "Close",
+		"LINK": "link"
+	},
+	"LOGIN": {
+		"SIGNING": "Signing in...",
+		"LOADING": "Loading...",
+		"GREETING": "Have an account?",
+		"NAME": "user name",
+		"LOGIN": "login",
+		"PASSWORD": "password",
+		"REMEMBER_ME": "Keep me signed in",
+		"SIGN_IN": "Sign in",
+		"LOG_IN": "Log in",
+		"FORGOT_PASSWORD": "Forgot password?",
+		"OR_SIGN_IN": "or sign in with",
+		"USE_ENTERPRISE_ACCOUNT": "Use my Enterprise Account (SSO)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Email with link to recover password has been sent to you"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Invalid username or password",
+			"VALIDATION_FAILED": "The user name or password must not be empty.",
+			"NOT_ALLOWED": "You are not allowed to login.",
+			"USER_AUTH_DISABLED": "Authentication disabled for the user {{name}}",
+			"ERROR": "No response from server or server error. Try again later.",
+			"ERC_AUTH_USER_NAME": "The OAuth authentication was not successful. Contact your system administrator for assistance.",
+			"ERC_AUTH_EMPTY_EMAIL": "Unable to login user with undefined email"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "About",
+		"SIGN_OUT": "Sign out",
+		"SETTINGS": "Settings",
+		"SIGN_IN": "Sign in"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "can not be used to join the meeting. Please try one of the supported browsers.",
+		"YOUR": "Your",
+		"BROWSER": "browser",
+		"BROWSERS": "browsers",
+		"BROWSER_OUT_OF_DATE": "is out of date. Please update your browser for the best experience.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "Your browser version does not support audio/video. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Your browser version does not support web conferencing. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
+		"OLD_EDGE": "Your browser is not compatible with Avaya Meetings. Please switch to Google Chrome or the latest Microsoft Edge for the best experience."
+	},
+	"MSG_UTILS": {
+		"DOWNLOAD": "Download",
+		"DOWNLOAD_APP": "Download the App",
+		"DOWNLOAD_UPDATE": "Download Update",
+		"DOWNLOAD_ADD_IN": "Get the Avaya Add-in",
+		"DOWNLOAD_OUTLOOK_PLUGIN": "Get the Meeting Outlook Add-In from Microsoft Store",
+		"CONTINUE": "App installed",
+		"BTN_RESOLVE": "Resolve",
+		"DISMISS": "Dismiss",
+		"VIEW_ONLY": "View only",
+		"USE_BROWSER_TO_JOIN_AV": "Join with browser audio/video",
+		"SCREEN_SHARING_EXTENSION_OFFER": "Planning to share?",
+		"OUTLOOK_PLUGIN_NOTIFICATION": "Scheduling meetings in Outlook?",
+		"DO_NOT_SHOW_AGAIN": "Do not show it again",
+		"NOTIFICATION": {
+			"BAD_BROWSER": "Your browser is bringing down your experience!",
+			"NO_CLIENT_TO_RUN": "No client available to launch",
+			"LEARN_MORE": "Learn more",
+			"NO_RESOURCES": "Server resources is not fetched yet, please retry later.",
+			"NOT_AUTHENTICATED": "You must be signed in to view this program",
+			"NOT_ACCESS_TO_PROGRAM": "You are not allowed to view this program",
+			"DONT_SHOW_AGAIN": "Don't show again"
+		},
+		"WEBRTC_MSG": {
+			"CAPTION": "If you continue using this browser...",
+			"MESSAGE": "You can see who’s in your meeting and watch screen sharing, but you’ll need a separate call for audio or video.",
+			"DO_MORE": "Want to do more?",
+			"DO_MORE_MSG": "Use one of the browsers below to add audio and video from your computer and share your screen.",
+			"DO_MORE_DOWNLOAD_MSG": "Download the app or use one of the browsers below to add audio and video from your computer and share your screen.",
+			"OR": "or",
+			"DOWNLOAD_HINT": "I want the fully featured multimedia experience",
+			"PRESENTATION_ONLY_HINT": "I just need to see the presentation (I’ll use a phone for audio)",
+			"BAD_BROWSER_HEAD_MESSAGE": "This browser doesn’t support Audio & Video meetings. ",
+			"COPY_MEETING_LINK": "Copy Meeting Link",
+			"COPY_PORTAL_LINK": "Copy Portal Link",
+			"PASTE_MESSAGE": "and paste into a recent version of Chrome for audio, video and screen sharing in the browser.",
+			"SWC_CANT_RUN_IN_AV_HEADER": "Web client can't run in this mode.",
+			"SWC_CANT_RUN_IN_AV_MESSAGE": "You can join in view only mode, or use Avaya Workplace"
+		},
+		"CLIENT_APP": {
+			"NOT_FOUND": "The app was not found. Make sure to allow the browser request when prompted or download the client",
+			"CLIENT_NOT_FOUND": "The {{clientName}} app could not be found.",
+			"IF_INSTALLED": "If you already have the {{clientName}} app, ",
+			"TRY_AGAIN": "try again",
+			"MAKE_SURE_TO_ALLOW_REQUEST": " and allow the install manager to run when prompted.",
+			"CLIENT_UPDATE_AVAILABLE": "{{clientName}} update available",
+			"CLIENT_UPDATE_REQUIRED": "Avaya Workplace update required",
+			"WAIT_INSTALL": "Click once the app is installed",
+			"EXTERNAL_PROTOCOL_WARNING": "For the best experience, we need your permission to check if the App is installed.\nPlease accept the browser prompt after clicking “Go for it!”.",
+			"GOT_IT": "Go for it!",
+			"FORCE_UPDATE_TEXT": "Looks like your app is outdated.\n Upgrade to latest version.",
+			"FIRST_TIME_JOIN": "Looks like you are here for the first time. How would you like to join a meeting?",
+			"JOIN_PRESENTATION": "Join presentation only",
+			"PRESENTATION_DUALIN": "Presentation only / Dial in",
+			"USE_CUMPUTER": "Use my computer for audio & video",
+			"USE_BROWSER_TO_JOIN": "Use my browser to join",
+			"DOWNLOAD_TO_JOIN": "Download App",
+			"HAVE_CLIENT": "I have App",
+			"CHOOSE_APP": "Which app would you like to use?",
+			"HAVE_YOU_APP": "Have you installed App?",
+			"DOES_NOT_SUPPORT": "This browser doesn’t support Audio & Video meetings.",
+			"APP_INSTALLED": "Click once app is installed",
+			"APP_INSTALLED_BUTTON": "App is installed",
+			"MORE_INFO": " and paste into a recent version of Chrome or Firefox for audio, video and screen sharing in the browser. or",
+			"COPY_MEETING_LINK": "Copy Meeting Link",
+			"DONT_HAVE_MICROPHONE": "Microphone is needed to join this meeting.",
+			"CONNECT_MICROPHONE": "Try connecting a microphone and try again.",
+			"MIC_NOT_FOUND": "Microphone was not found",
+			"CHECK_MIC": "Please check that your microphone or headset is connected and Join with Browser again.",
+			"MIC_WAS_FOUND": "Microphone connected",
+			"MIC_WAS_CHECKED": "Microphone or headset is now connected. \nPlease Join with Browser again."
+		},
+		"CREATE_METING": {
+			"NUMBER_EXCEED": "The number of participants exceed the maximum value specified in the Virtual room settings.",
+			"CONTINUING": "Continuing may not allow all of the invitees to join",
+			"CONTINUE_SENDING": "Continue sending",
+			"CANCEL": "Cancel"
+		},
+		"DOWNLOAD_DIALOG": {
+			"DOWNLOAD_AFTER_SETTING_TITLE": "Once the app is installed, let's open it to check your audio and video settings.",
+			"OPEN_THE_EQUINOX": "Open the App",
+			"DOWNLOAD_AND_JOIN": "Once the app is installed, Join with the App",
+			"JOIN_BUTTON": "Join using the App",
+			"CHECK_CLIENT": "Audio/Video Check",
+			"INSTALL_AND_CHECK": "Once the app is installed, let's open it to complete the configuration."
+		},
+		"FIRST_LOUNCH_TUTORIAL": {
+			"RESET_FIRST_LAUNCH_TUTORIALS": "Tutorial",
+			"NON_WEBRTC": {
+				"SETTINGS": "You can check your client information and more",
+				"SIGN_IN": "Have an account? Click Sign In to access your account.",
+				"JOIN": "Once you enter your name and a meeting ID, choose a method to Join a meeting."
+			},
+			"WEBRTC": {
+				"SETTINGS": "You can set Join without Video, check your client information and more",
+				"SIGN_IN": "Have an account? Click Sign In to access your account.",
+				"JOIN": "Once you enter your name and a meeting ID, choose a method to Join a meeting."
+			},
+			"LOGIN_IN": {
+				"MEETING_ROOM": "Choose your own meeting room or previous joined meetings. You can also share or send email invite to the meeting room you selected",
+				"MEETING_IN_PROGRESS": "Your meeting in progress will show up here"
+			}
+		},
+		"PIN_UPDATE": {
+			"PIN_UPDATE_TITLE": "Your meeting's moderator PIN has expired. Please change your PIN in ",
+			"OPEN_SETTINGS": "Settings"
+		}
+	}
+}

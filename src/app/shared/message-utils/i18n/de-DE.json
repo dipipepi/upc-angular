@@ -1,0 +1,110 @@
+{
+    "MSG_UTILS": {
+        "DOWNLOAD": "Herunterladen",
+        "DOWNLOAD_APP": "App herunterladen",
+        "DOWNLOAD_UPDATE": "Update herunterladen",
+        "DOWNLOAD_ADD_IN": "Das Avaya Add-in herunterladen",
+        "DOWNLOAD_OUTLOOK_PLUGIN": "Laden Sie das Besprechungs-Add-In für Outlook aus dem Microsoft Store herunter",
+        "CONTINUE": "App installiert",
+        "BTN_RESOLVE": "Beheben",
+        "DISMISS": "Schließen",
+        "VIEW_ONLY": "Nur anzeigen",
+        "USE_BROWSER_TO_JOIN_AV": "Mit Browser-Audio/Video beitreten",
+        "SCREEN_SHARING_EXTENSION_OFFER": "Möchten Sie Freigaben nutzen?",
+        "OUTLOOK_PLUGIN_NOTIFICATION": "Besprechungen in Outlook planen?",
+        "DO_NOT_SHOW_AGAIN": "Nicht mehr anzeigen",
+        "NOTIFICATION": {
+            "BAD_BROWSER": "Ihr aktueller Browser beeinträchtigt Ihr Benutzererlebnis!",
+            "NO_CLIENT_TO_RUN": "Es gibt keinen Client, der gestartet werden kann.",
+            "LEARN_MORE": "Mehr erfahren",
+            "NO_RESOURCES": "Die Serverressourcen wurden noch nicht abgerufen. Versuchen Sie es später erneut.",
+            "NOT_AUTHENTICATED": "Sie müssen angemeldet sein, um dieses Video anzeigen zu können.",
+            "NOT_ACCESS_TO_PROGRAM": "Sie sind nicht dazu berechtigt, dieses Video anzuzeigen.",
+            "DONT_SHOW_AGAIN": "Nicht mehr anzeigen"
+        },
+        "WEBRTC_MSG": {
+            "CAPTION": "Wenn Sie weiterhin diesen Browser verwenden …",
+            "MESSAGE": "werden zwar die Besprechungsteilnehmer und die Bildschirmfreigabe angezeigt, Sie benötigen jedoch jeweils eigene Verbindungen für Audio- und Videoübertragungen.",
+            "DO_MORE": "Wünschen Sie sich einen größeren Funktionsumfang?",
+            "DO_MORE_MSG": "Laden Sie die App herunter oder verwenden Sie einen der nachstehend genannten Browser, um Audio und Video von ihrem Computer zu übertragen und die Bildschirmfreigabe zu nutzen.",
+            "DO_MORE_DOWNLOAD_MSG": "Laden Sie die App herunter oder verwenden Sie einen der nachstehend genannten Browser, um Audio und Video über Ihren Computer zu übertragen und die Bildschirmfreigabe zu nutzen.",
+            "OR": "oder",
+            "DOWNLOAD_HINT": "Ich möchte sämtliche Multimediafunktionen",
+            "PRESENTATION_ONLY_HINT": "Ich muss die Präsentation nur sehen können (und verwende ein Telefon für die Audioübertragung)",
+            "BAD_BROWSER_HEAD_MESSAGE": "Dieser Browser unterstützt keine Audio- und Videobesprechungen. ",
+            "COPY_MEETING_LINK": "Besprechungslink kopieren",
+            "COPY_PORTAL_LINK": "Portal-Link kopieren",
+            "PASTE_MESSAGE": "und in eine aktuelle Version von Chrome einfügen, um Audio, Video und Bildschirm im Browser freizugeben.",
+            "SWC_CANT_RUN_IN_AV_HEADER": "Der Web Client kann in diesem Modus nicht ausgeführt werden.",
+            "SWC_CANT_RUN_IN_AV_MESSAGE": "Sie können im Zuschauermodus teilnehmen oder Avaya Workplace verwenden."
+        },
+        "CLIENT_APP": {
+            "NOT_FOUND": "Die App wurde nicht gefunden. Lassen Sie die Browseranfrage zu oder laden Sie den Client herunter",
+            "CLIENT_NOT_FOUND": "Die {{clientName}}-App konnte nicht gefunden werden.",
+            "IF_INSTALLED": "Wenn Sie die {{clientName}}-App bereits haben, ",
+            "TRY_AGAIN": "versuchen Sie es erneut",
+            "MAKE_SURE_TO_ALLOW_REQUEST": " und bestätigen Sie die Ausführung des Installationsmanagers.",
+            "CLIENT_UPDATE_AVAILABLE": "Aktualisierung für {{clientName}} ist verfügbar",
+            "CLIENT_UPDATE_REQUIRED": "Avaya Workplace muss aktualisiert werden.",
+            "WAIT_INSTALL": "Klicken Sie hier, sobald die App installiert wurde.",
+            "EXTERNAL_PROTOCOL_WARNING": "Wir benötigen Ihre Erlaubnis zu überprüfen, ob die App installiert ist.\nBitte klicken Sie auf „Los“ und bestätigen Sie danach die Browser-Meldung.",
+            "GOT_IT": "Los",
+            "FORCE_UPDATE_TEXT": "Ihre App ist wahrscheinlich veraltet.\n Führen Sie ein Upgrade auf die aktuelle Version durch.",
+            "FIRST_TIME_JOIN": "Sind Sie zum ersten Mal hier? Wählen Sie aus, wie Sie einer Besprechung beitreten möchten.",
+            "JOIN_PRESENTATION": "Nur Präsentation beitreten",
+            "PRESENTATION_DUALIN": "Nur Präsentation/Einwahl",
+            "USE_CUMPUTER": "Computer für Audio und Video verwenden",
+            "USE_BROWSER_TO_JOIN": "Über meinen Browser teilnehmen",
+            "DOWNLOAD_TO_JOIN": "App herunterladen",
+            "HAVE_CLIENT": "App ist vorhanden",
+            "CHOOSE_APP": "Welche App möchten Sie verwenden?",
+            "HAVE_YOU_APP": "Ist die App installiert?",
+            "DOES_NOT_SUPPORT": "Dieser Browser unterstützt keine Audio- und Videobesprechungen.",
+            "APP_INSTALLED": "Klicken Sie hier, sobald die App installiert wurde.",
+            "APP_INSTALLED_BUTTON": "Die App ist installiert",
+            "MORE_INFO": " und in eine aktuelle Version von Chrome oder Firefox einfügen, um Audio, Video und Bildschirm im Browser freizugeben.",
+            "COPY_MEETING_LINK": "Besprechungslink kopieren",
+            "DONT_HAVE_MICROPHONE": "Für die Besprechungsteilnahme ist ein Mikrofon erforderlich.",
+            "CONNECT_MICROPHONE": "Schließen Sie ein Mikrofon an und versuchen Sie es erneut.",
+            "MIC_NOT_FOUND": "Mikrofon wurde nicht gefunden",
+            "CHECK_MIC": "Überprüfen Sie, ob Ihr Mikrofon oder Headset angeschlossen ist, und treten Sie über den Browser erneut bei.",
+            "MIC_WAS_FOUND": "Mikrofon angeschlossen",
+            "MIC_WAS_CHECKED": "Mikrofon oder Headset ist jetzt angeschlossen. \nTreten Sie über den Browser erneut bei."
+        },
+        "CREATE_METING": {
+            "NUMBER_EXCEED": "Die Anzahl der Teilnehmer übersteigt die in den Einstellungen des virtuellen Raums festgelegte maximale Teilnehmerzahl.",
+            "CONTINUING": "Beim Fortsetzen können möglicherweise nicht alle Teilnehmer beitreten.",
+            "CONTINUE_SENDING": "Senden fortsetzen",
+            "CANCEL": "Abbrechen"
+        },
+        "DOWNLOAD_DIALOG": {
+            "DOWNLOAD_AFTER_SETTING_TITLE": "Sobald die App installiert wurde, öffnen wir sie zum Testen der Audio- und Videoeinstellungen.",
+            "OPEN_THE_EQUINOX": "Öffnen Sie die App.",
+            "DOWNLOAD_AND_JOIN": "Sobald die App installiert wurde, können Sie über die App beitreten.",
+            "JOIN_BUTTON": "Über App beitreten",
+            "CHECK_CLIENT": "Audio- und Videotest",
+            "INSTALL_AND_CHECK": "Sobald die App installiert wurde, öffnen wir sie zum Abschließen der Einrichtung."
+        },
+        "FIRST_LOUNCH_TUTORIAL": {
+            "RESET_FIRST_LAUNCH_TUTORIALS": "Lernprogramm",
+            "NON_WEBRTC": {
+                "SETTINGS": "Überprüfen Sie Ihre Clientinformationen und weitere Details",
+                "SIGN_IN": "Sie haben bereits ein Konto? Klicken Sie auf „Anmelden“, um auf das Konto zuzugreifen.",
+                "JOIN": "Nachdem Sie Ihren Namen und eine Besprechungs-ID angegeben haben, können Sie eine Methode zur Besprechungsteilnahme auswählen."
+            },
+            "WEBRTC": {
+                "SETTINGS": "Sie können „Ohne Video beitreten“ nutzen, Informationen zu Ihrem Client abrufen und vieles mehr",
+                "SIGN_IN": "Sie haben bereits ein Konto? Klicken Sie auf „Anmelden“, um auf das Konto zuzugreifen.",
+                "JOIN": "Nachdem Sie Ihren Namen und eine Besprechungs-ID angegeben haben, können Sie eine Methode zur Besprechungsteilnahme auswählen."
+            },
+            "LOGIN_IN": {
+                "MEETING_ROOM": "Wählen Sie Ihren eigenen Besprechungsraum oder Besprechungen aus, an denen Sie schon einmal teilgenommen haben. Sie können auch E-Mail-Einladungen zur ausgewählten Besprechung versenden.",
+                "MEETING_IN_PROGRESS": "Hier wird Ihre aktive Besprechung angezeigt"
+            }
+        },
+        "PIN_UPDATE": {
+            "PIN_UPDATE_TITLE": "Die PIN des Moderators Ihrer Besprechung ist abgelaufen. Bitte ändern Sie Ihre PIN unter ",
+            "OPEN_SETTINGS": "Einstellungen"
+        }
+    }
+}

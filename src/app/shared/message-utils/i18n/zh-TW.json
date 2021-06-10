@@ -1,0 +1,110 @@
+{
+    "MSG_UTILS": {
+        "DOWNLOAD": "下載",
+        "DOWNLOAD_APP": "下載應用程式",
+        "DOWNLOAD_UPDATE": "下載更新",
+        "DOWNLOAD_ADD_IN": "獲取 Avaya 增益集",
+        "DOWNLOAD_OUTLOOK_PLUGIN": "從 Microsoft Store 取得適用於 Outlook 的會議增益集",
+        "CONTINUE": "應用程式已安裝",
+        "BTN_RESOLVE": "解析",
+        "DISMISS": "解除",
+        "VIEW_ONLY": "僅檢視",
+        "USE_BROWSER_TO_JOIN_AV": "透過瀏覽器音訊／視訊加入",
+        "SCREEN_SHARING_EXTENSION_OFFER": "計劃共用？",
+        "OUTLOOK_PLUGIN_NOTIFICATION": "要在 Outlook 中排程會議嗎？",
+        "DO_NOT_SHOW_AGAIN": "不要再顯示",
+        "NOTIFICATION": {
+            "BAD_BROWSER": "您的瀏覽器會削弱您的體驗效果！",
+            "NO_CLIENT_TO_RUN": "沒有可啟動的用戶端",
+            "LEARN_MORE": "瞭解更多資訊",
+            "NO_RESOURCES": "尚未擷取伺服器資源，請稍後重試。",
+            "NOT_AUTHENTICATED": "您必須登入才能檢視此錄製節目",
+            "NOT_ACCESS_TO_PROGRAM": "您無法檢視此錄製節目",
+            "DONT_SHOW_AGAIN": "不要再顯示"
+        },
+        "WEBRTC_MSG": {
+            "CAPTION": "如果您要繼續使用此瀏覽器...",
+            "MESSAGE": "您可以查看誰在會議中並觀看螢幕共用，但您需要一次單獨的視訊或音訊通話。",
+            "DO_MORE": "想要瞭解更多資訊？",
+            "DO_MORE_MSG": "使用下面其中一種瀏覽器來從電腦新增音訊和視訊，然後共用您的螢幕。",
+            "DO_MORE_DOWNLOAD_MSG": "下載應用程式或使用下面其中一種瀏覽器來從電腦新增音訊和視訊，然後共用您的螢幕。",
+            "OR": "或",
+            "DOWNLOAD_HINT": "我想要具備完整功能的多媒體體驗",
+            "PRESENTATION_ONLY_HINT": "我只需要查看簡報（我將使用電話處理音訊）",
+            "BAD_BROWSER_HEAD_MESSAGE": "此瀏覽器不支援音訊和視訊會議。",
+            "COPY_MEETING_LINK": "複製會議連結",
+            "COPY_PORTAL_LINK": "複製入口網站連結",
+            "PASTE_MESSAGE": "並貼到最新版的 Chrome 中，以在瀏覽器中進行音訊、視訊和螢幕共用。",
+            "SWC_CANT_RUN_IN_AV_HEADER": "網頁用戶端無法在此模式下執行。",
+            "SWC_CANT_RUN_IN_AV_MESSAGE": "您可以僅檢視模式加入或使用 Avaya Workplace"
+        },
+        "CLIENT_APP": {
+            "NOT_FOUND": "找不到此應用程式。請確保提示時允許瀏覽器要求或下載用戶端",
+            "CLIENT_NOT_FOUND": "找不到 {{clientName}} 應用程式。",
+            "IF_INSTALLED": "如果您已有 {{clientName}} 應用程式，",
+            "TRY_AGAIN": "請重試",
+            "MAKE_SURE_TO_ALLOW_REQUEST": " 並在提示時允許安裝管理員執行。",
+            "CLIENT_UPDATE_AVAILABLE": "{{clientName}} 有可使用的更新",
+            "CLIENT_UPDATE_REQUIRED": "需要 Avaya Workplace 更新",
+            "WAIT_INSTALL": "安裝應用程式後按一下",
+            "EXTERNAL_PROTOCOL_WARNING": "為了提供最佳體驗，我們需要您授權以檢查是否已安裝應用程式。\n在按下「開始吧！」之後，請接受瀏覽器的彈出視窗。",
+            "GOT_IT": "開始吧！",
+            "FORCE_UPDATE_TEXT": "看來您的應用程式已過期。\n 請升級至最新版本。",
+            "FIRST_TIME_JOIN": "看來您是第一次使用此應用程式。您想要如何加入會議呢？",
+            "JOIN_PRESENTATION": "僅加入簡報",
+            "PRESENTATION_DUALIN": "僅提供簡報／撥入",
+            "USE_CUMPUTER": "使用我的電腦播放音訊和視訊",
+            "USE_BROWSER_TO_JOIN": "使用我的瀏覽器加入",
+            "DOWNLOAD_TO_JOIN": "下載應用程式",
+            "HAVE_CLIENT": "我有應用程式",
+            "CHOOSE_APP": "您想要使用哪個應用程式？",
+            "HAVE_YOU_APP": "已經下載應用程式了嗎？",
+            "DOES_NOT_SUPPORT": "此瀏覽器不支援音訊和視訊會議。",
+            "APP_INSTALLED": "安裝應用程式後按一下",
+            "APP_INSTALLED_BUTTON": "已安裝應用程式",
+            "MORE_INFO": " 並貼到最新版的 Chrome 或 Firefox 中，以在瀏覽器中進行音訊、視訊和螢幕共用。或者",
+            "COPY_MEETING_LINK": "複製會議連結",
+            "DONT_HAVE_MICROPHONE": "需要麥克風才能加入此會議。",
+            "CONNECT_MICROPHONE": "請嘗試連接麥克風，然後重試。",
+            "MIC_NOT_FOUND": "找不到麥克風",
+            "CHECK_MIC": "請檢查您的麥克風或耳機是否已連接，然後重新透過瀏覽器加入。",
+            "MIC_WAS_FOUND": "已連接麥克風",
+            "MIC_WAS_CHECKED": "現在已連接麥克風或耳機。 \n請使用瀏覽器重新加入。"
+        },
+        "CREATE_METING": {
+            "NUMBER_EXCEED": "參與者人數超過在虛擬會議室設定中指定的最大值。",
+            "CONTINUING": "繼續執行此作業可能會導致無法允許所有受邀者加入",
+            "CONTINUE_SENDING": "繼續傳送",
+            "CANCEL": "取消"
+        },
+        "DOWNLOAD_DIALOG": {
+            "DOWNLOAD_AFTER_SETTING_TITLE": "安裝應用程式後，請開啟以檢查您的音訊和視訊設定。",
+            "OPEN_THE_EQUINOX": "打開應用程式",
+            "DOWNLOAD_AND_JOIN": "安裝應用程式後，透過應用程式加入",
+            "JOIN_BUTTON": "使用應用程式以加入",
+            "CHECK_CLIENT": "音訊／視訊檢查",
+            "INSTALL_AND_CHECK": "安裝應用程式後，請開啟以完成設定。"
+        },
+        "FIRST_LOUNCH_TUTORIAL": {
+            "RESET_FIRST_LAUNCH_TUTORIALS": "教學課程",
+            "NON_WEBRTC": {
+                "SETTINGS": "您可以檢查您的用戶端資訊及更多內容",
+                "SIGN_IN": "已有帳戶了嗎？ 按一下「登入」以存取您的帳戶。",
+                "JOIN": "輸入名稱和會議 ID 後，選擇加入會議的方法。"
+            },
+            "WEBRTC": {
+                "SETTINGS": "您可以設定「加入而不開啟視訊」、檢查您的用戶端資訊以及更多操作",
+                "SIGN_IN": "已有帳戶了嗎？ 按一下「登入」以存取您的帳戶。",
+                "JOIN": "輸入名稱和會議 ID 後，選擇加入會議的方法。"
+            },
+            "LOGIN_IN": {
+                "MEETING_ROOM": "選擇您自己的會議室或先前加入的會議。您也可以分享或傳送您所選取會議室的電子郵件邀請。",
+                "MEETING_IN_PROGRESS": "此處將顯示您進行中的會議"
+            }
+        },
+        "PIN_UPDATE": {
+            "PIN_UPDATE_TITLE": "會議主持人 PIN 碼已過期。請 ",
+            "OPEN_SETTINGS": "在「設定」中變更您的 PIN 碼"
+        }
+    }
+}

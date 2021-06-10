@@ -1,0 +1,30 @@
+{
+    "LOGIN": {
+        "SIGNING": "Signing in...",
+        "LOADING": "Loading...",
+        "GREETING": "Have an account?",
+        "NAME": "user name",
+        "LOGIN": "login",
+        "PASSWORD": "password",
+        "REMEMBER_ME": "Keep me signed in",
+        "SIGN_IN": "Sign in",
+        "LOG_IN": "Log in",
+        "FORGOT_PASSWORD": "Forgot password?",
+        "OR_SIGN_IN": "or sign in with",
+        "USE_ENTERPRISE_ACCOUNT": "Use my Enterprise Account (SSO)",
+
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Email with link to recover password has been sent to you"
+        },
+
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Invalid username or password",
+            "VALIDATION_FAILED": "The user name or password must not be empty.",
+            "NOT_ALLOWED": "You are not allowed to login.",
+            "USER_AUTH_DISABLED": "Authentication disabled for the user {{name}}",
+            "ERROR": "No response from server or server error. Try again later.",
+            "ERC_AUTH_USER_NAME": "The OAuth authentication was not successful. Contact your system administrator for assistance.",
+            "ERC_AUTH_EMPTY_EMAIL": "Unable to login user with undefined email"
+        }
+    }
+}

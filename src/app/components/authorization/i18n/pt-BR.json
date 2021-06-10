@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Entrando...",
+        "LOADING": "Carregando...",
+        "GREETING": "Tem uma conta?",
+        "NAME": "nome de usuário",
+        "LOGIN": "logon",
+        "PASSWORD": "senha",
+        "REMEMBER_ME": "Mantenha-me conectado",
+        "SIGN_IN": "Entrar",
+        "LOG_IN": "Logon",
+        "FORGOT_PASSWORD": "Esqueceu sua senha?",
+        "OR_SIGN_IN": "ou entrar com",
+        "USE_ENTERPRISE_ACCOUNT": "Usar minha conta empresarial (SSO)",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Um e-mail com o link para recuperar a senha foi enviado para você."
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Nome de usuário ou senha inválidos",
+            "VALIDATION_FAILED": "Nome de usuário e senha não podem estar vazios.",
+            "NOT_ALLOWED": "Você não tem permissão para fazer logon.",
+            "USER_AUTH_DISABLED": "Autenticação desativada para o usuário {{name}}",
+            "ERROR": "Não há resposta do servidor ou há um erro do servidor. Tente novamente depois.",
+            "ERC_AUTH_USER_NAME": "Falha na autenticação OAuth. Entre em contato com o administrador do sistema para obter ajuda.",
+            "ERC_AUTH_EMPTY_EMAIL": "Não é possível fazer logon do usuário com e-mail indefinido"
+        }
+    }
+}

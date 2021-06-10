@@ -1,0 +1,16 @@
+{
+    "ABOUT": {
+        "TITLE": "Avaya Meetings のバージョン情報",
+        "RELEASE": "リリース：",
+        "AVAYA_TRADEMARKS": "Avaya Meetings および Equinox Conferencing は Avaya Inc. の商標です。",
+        "OTHER_TRADEMARKS": "Java は Sun Microsystems, Inc. の商標です。Microsoft、Windows および Internet Explorer は、米国およびその他の国における Microsoft Corporation の登録商標または商標です。",
+        "TRADEMARKS_INFO": "本書で使用されるその他のすべての製品名は、各製造元の登録商標または商標です。",
+        "COPYRIGHT_INFO": "本製品に適用されるサードパーティコンポーネントの著作権者および利用規約を特定する情報は、<a href=\"{{link}}\" target=\"_blank\">{{link}}</a> をご参照ください。",
+        "LICENCE": "ソフトウェアのダウンロード、インストール、または使用を実行する場合、以下のリンクに記載されている Avaya ライセンス規約（Avaya 製品）を読み、理解し、同意したことと看做されます：",
+        "LICENCE_I18N": "以下のリンクでイタリア語、英語、スペイン語、中国語、日本語、フランス語、フランス語（カナダ）、ポルトガル語、ポルトガル語（ブラジル）、ドイツ語、ロシア語のバージョンを入手できます：",
+        "USAGE_INFO": "インターネットに直接アクセスできない場合、インターネットにアクセスできるデバイスにアクセスし、該当するライセンスを表示、ダウンロード、および印刷してください。",
+        "COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
+        "CLOSE": "閉じる",
+        "LINK": "リンク"
+    }
+}

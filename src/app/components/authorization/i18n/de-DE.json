@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Anmelden…",
+        "LOADING": "Lädt...",
+        "GREETING": "Haben Sie ein Konto?",
+        "NAME": "Benutzername",
+        "LOGIN": "Anmelden",
+        "PASSWORD": "Kennwort",
+        "REMEMBER_ME": "Angemeldet bleiben",
+        "SIGN_IN": "Anmelden",
+        "LOG_IN": "Anmelden",
+        "FORGOT_PASSWORD": "Kennwort vergessen?",
+        "OR_SIGN_IN": "oder melden Sie sich an mit",
+        "USE_ENTERPRISE_ACCOUNT": "Mein Enterprise Account (SSO) verwenden",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Eine E-Mail mit einem Link zur Kennwortwiederherstellung wurde an Sie gesendet"
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Benutzername oder Kennwort ungültig",
+            "VALIDATION_FAILED": "Benutzername oder Kennwort dürfen nicht leer sein.",
+            "NOT_ALLOWED": "Sie sind nicht berechtigt, sich anzumelden.",
+            "USER_AUTH_DISABLED": "Authentifizierung für den Benutzer {{name}} deaktiviert",
+            "ERROR": "Keine Antwort vom Server oder Serverfehler. Versuchen Sie es später erneut.",
+            "ERC_AUTH_USER_NAME": "Die OAuth-Authentifizierung war nicht erfolgreich. Wenden Sie sich zur Unterstützung an Ihren Systemverwalter.",
+            "ERC_AUTH_EMPTY_EMAIL": "Benutzer mit nicht definierter E-Mail kann nicht angemeldet werden"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "Informazioni su",
+        "SIGN_OUT": "Esci",
+        "SETTINGS": "Impostazioni",
+        "SIGN_IN": "Accesso"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "non può essere usato per partecipare alla riunione. Provare con uno dei browser supportati.",
+        "YOUR": "Il",
+        "BROWSER": "browser",
+        "BROWSERS": "browser",
+        "BROWSER_OUT_OF_DATE": "è scaduto. Aggiornare il browser per ottenere prestazioni ottimali.",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "La versione del browser non supporta audio/video. Per un'esperienza migliore della collaborazione,<br>provare un'altra versione o un altro <span class=\"underline\">browser supportato</span> oppure scaricare il client.",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "La versione del browser non supporta le conferenze su Web. Per un'esperienza migliore della collaborazione,<br>provare un'altra versione o un altro <span class=\"underline\">browser supportato</span> oppure scaricare il client.",
+        "OLD_EDGE": "Il browser non è compatibile con Avaya Meetings. Passare a Google Chrome o all'ultima versione di Microsoft Edge per una migliore esperienza."
+    }
+}

@@ -2,7 +2,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "sourceMap": true,
+    "outDir": "./dist/assets2",
     "types": []
   },
   "files": [

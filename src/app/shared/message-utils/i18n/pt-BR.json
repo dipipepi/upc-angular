@@ -1,0 +1,110 @@
+{
+    "MSG_UTILS": {
+        "DOWNLOAD": "Fazer o download",
+        "DOWNLOAD_APP": "Fazer o download do aplicativo",
+        "DOWNLOAD_UPDATE": "Fazer o download da atualização",
+        "DOWNLOAD_ADD_IN": "Obtenha o Add-in da Avaya",
+        "DOWNLOAD_OUTLOOK_PLUGIN": "Obtenha o suplemento do Outlook para reunião na Microsoft Store",
+        "CONTINUE": "App instalado",
+        "BTN_RESOLVE": "Resolver",
+        "DISMISS": "Dispensar",
+        "VIEW_ONLY": "Apenas exibição",
+        "USE_BROWSER_TO_JOIN_AV": "Ingressar com áudio/vídeo do navegador",
+        "SCREEN_SHARING_EXTENSION_OFFER": "Planeja compartilhar?",
+        "OUTLOOK_PLUGIN_NOTIFICATION": "Agendando reuniões no Outlook?",
+        "DO_NOT_SHOW_AGAIN": "Não mostrar novamente",
+        "NOTIFICATION": {
+            "BAD_BROWSER": "Seu navegador está atrapalhando sua experiência!",
+            "NO_CLIENT_TO_RUN": "Não há aplicativo disponível para lançamento",
+            "LEARN_MORE": "Saiba mais",
+            "NO_RESOURCES": "Os recursos do servidor ainda não foram obtidos, tente novamente mais tarde.",
+            "NOT_AUTHENTICATED": "Você precisa estar conectado para usar este programa.",
+            "NOT_ACCESS_TO_PROGRAM": "Você não tem autorização para visualizar este programa.",
+            "DONT_SHOW_AGAIN": "Não exibir novamente"
+        },
+        "WEBRTC_MSG": {
+            "CAPTION": "Caso continue usando este navegador...",
+            "MESSAGE": "É possível visualizar quem está em sua reunião e assistir ao compartilhamento de telas, mas você vai precisar de uma chamada separada para áudio ou vídeo.",
+            "DO_MORE": "Deseja fazer mais?",
+            "DO_MORE_MSG": "Use um dos navegadores abaixo para adicionar áudio e vídeo a partir de seu computador e compartilhe sua tela.",
+            "DO_MORE_DOWNLOAD_MSG": "Faça o download do aplicativo ou use um dos navegadores abaixo para adicionar áudio e vídeo a partir de seu computador e compartilhar sua tela.",
+            "OR": "ou",
+            "DOWNLOAD_HINT": "Desejo a experiência multimídia com todos os recursos",
+            "PRESENTATION_ONLY_HINT": "Preciso apenas ver a apresentação (usarei um telefone para o áudio)",
+            "BAD_BROWSER_HEAD_MESSAGE": "Este navegador não é compatível com reuniões de áudio e vídeo. ",
+            "COPY_MEETING_LINK": "Copiar link da reunião",
+            "COPY_PORTAL_LINK": "Copiar link do portal",
+            "PASTE_MESSAGE": "e cole em uma versão recente do Chrome para obter áudio, vídeo e compartilhamento de tela no navegador.",
+            "SWC_CANT_RUN_IN_AV_HEADER": "O Web Client não pode funcionar nesse modo.",
+            "SWC_CANT_RUN_IN_AV_MESSAGE": "Você pode ingressar no modo somente visualização ou usar o Avaya Workplace"
+        },
+        "CLIENT_APP": {
+            "NOT_FOUND": "O aplicativo não foi encontrado. Certifique-se de permitir o pedido do browser quando solicitado ou quando fizer o download do aplicativo",
+            "CLIENT_NOT_FOUND": "Não foi possível encontrar o aplicativo {{clientName}}.",
+            "IF_INSTALLED": "Caso já tenha o aplicativo {{clientName}}, ",
+            "TRY_AGAIN": "tente novamente",
+            "MAKE_SURE_TO_ALLOW_REQUEST": " e autorize a execução do gerenciador de instalação quando solicitado.",
+            "CLIENT_UPDATE_AVAILABLE": "Update do {{clientName}} disponível",
+            "CLIENT_UPDATE_REQUIRED": "É necessário atualizar o Avaya Workplace",
+            "WAIT_INSTALL": "Clique quando o aplicativo estiver instalado",
+            "EXTERNAL_PROTOCOL_WARNING": "Para uma experiência melhor, precisamos de sua permissão para checar se o aplicativo está instalado.\nAceite o aviso do navegador depois de clicar em “Siga adiante!”.",
+            "GOT_IT": "Siga adiante!",
+            "FORCE_UPDATE_TEXT": "Parece que seu aplicativo está desatualizado.\n Atualize-o para a versão mais recente.",
+            "FIRST_TIME_JOIN": "Parece que é sua primeira vez aqui. Gostaria de ingressar em uma reunião?",
+            "JOIN_PRESENTATION": "Ingressar apenas na apresentação",
+            "PRESENTATION_DUALIN": "Apenas apresentação/acesso discado",
+            "USE_CUMPUTER": "Usar meu computador para áudio e vídeo",
+            "USE_BROWSER_TO_JOIN": "Usar meu navegador para ingressar",
+            "DOWNLOAD_TO_JOIN": "Fazer download do aplicativo",
+            "HAVE_CLIENT": "Fazer download do aplicativo",
+            "CHOOSE_APP": "Qual aplicativo gostaria de usar?",
+            "HAVE_YOU_APP": "Já instalou o aplicativo?",
+            "DOES_NOT_SUPPORT": "Este navegador não é compatível com reuniões de áudio e vídeo.",
+            "APP_INSTALLED": "Clique quando o aplicativo estiver instalado",
+            "APP_INSTALLED_BUTTON": "O aplicativo está instalado",
+            "MORE_INFO": " e cole em uma versão recente do Chrome ou Firefox para obter áudio, vídeo e compartilhamento de tela no navegador. ou",
+            "COPY_MEETING_LINK": "Copiar link da reunião",
+            "DONT_HAVE_MICROPHONE": "É necessário ter um microfone para ingressar nessa reunião.",
+            "CONNECT_MICROPHONE": "Conecte um microfone e tente novamente.",
+            "MIC_NOT_FOUND": "O microfone não foi encontrado",
+            "CHECK_MIC": "Verifique se o microfone ou fone de ouvido está conectado e ingresse novamente usando o navegador.",
+            "MIC_WAS_FOUND": "Microfone conectado",
+            "MIC_WAS_CHECKED": "Agora o microfone ou fone de ouvido está conectado. \nIngresse com o navegador novamente."
+        },
+        "CREATE_METING": {
+            "NUMBER_EXCEED": "O número de participantes excedeu o valor máximo especificado nas configurações de Salas Virtuais.",
+            "CONTINUING": "Prosseguir pode não permitir o ingresso de todos os convidados",
+            "CONTINUE_SENDING": "Continuar o envio",
+            "CANCEL": "Cancelar"
+        },
+        "DOWNLOAD_DIALOG": {
+            "DOWNLOAD_AFTER_SETTING_TITLE": "Assim que o aplicativo estiver instalado, vamos executá-lo para verificar suas configurações de áudio e vídeo.",
+            "OPEN_THE_EQUINOX": "Abra o aplicativo",
+            "DOWNLOAD_AND_JOIN": "Uma vez instalado, ingresse com o aplicativo",
+            "JOIN_BUTTON": "Ingressar com o aplicativo",
+            "CHECK_CLIENT": "Verificação de áudio/vídeo",
+            "INSTALL_AND_CHECK": "Assim que o aplicativo estiver instalado, vamos executá-lo para concluir a configuração."
+        },
+        "FIRST_LOUNCH_TUTORIAL": {
+            "RESET_FIRST_LAUNCH_TUTORIALS": "Tutorial",
+            "NON_WEBRTC": {
+                "SETTINGS": "Você pode verificar suas informações de aplicativo e mais",
+                "SIGN_IN": "Tem uma conta? Clique em Conectar-se para acessar sua conta.",
+                "JOIN": "Quando inserir seu nome e uma ID da reunião, selecione um método para Ingressar em uma reunião."
+            },
+            "WEBRTC": {
+                "SETTINGS": "Você pode configurar Ingressar sem vídeo, verificar as informações de seu cliente e muito mais.",
+                "SIGN_IN": "Tem uma conta? Clique em Conectar-se para acessar sua conta.",
+                "JOIN": "Quando inserir seu nome e uma ID da reunião, selecione um método para Ingressar em uma reunião."
+            },
+            "LOGIN_IN": {
+                "MEETING_ROOM": "Escolha sua própria sala de reunião ou reuniões anteriores. Você também pode compartilhar ou enviar um convite por e-mail para a sala de reunião selecionada.",
+                "MEETING_IN_PROGRESS": "Sua reunião em andamento será exibida aqui."
+            }
+        },
+        "PIN_UPDATE": {
+            "PIN_UPDATE_TITLE": "O PIN de moderador da sua reunião expirou. Altere seu PIN em ",
+            "OPEN_SETTINGS": "Configurações"
+        }
+    }
+}

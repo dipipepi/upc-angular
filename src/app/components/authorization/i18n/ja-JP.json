@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "サインイン中...",
+        "LOADING": "読み込み中...",
+        "GREETING": "アカウント情報を入力：",
+        "NAME": "ユーザー名",
+        "LOGIN": "ログイン",
+        "PASSWORD": "パスワード",
+        "REMEMBER_ME": "ログインしたままにする",
+        "SIGN_IN": "サインイン",
+        "LOG_IN": "ログイン",
+        "FORGOT_PASSWORD": "パスワードを忘れた場合",
+        "OR_SIGN_IN": "または",
+        "USE_ENTERPRISE_ACCOUNT": "エンタープライズアカウント（SSO）を使用してサインイン",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "パスワードリセットのリンクが電子メールで送信されました"
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "ユーザー名またはパスワードが無効です",
+            "VALIDATION_FAILED": "ユーザー名またはパスワードを空にすることはできません。",
+            "NOT_ALLOWED": "ログインが許可されていません。",
+            "USER_AUTH_DISABLED": "ユーザー {{name}} の認証が無効です",
+            "ERROR": "サーバーから応答がないか、サーバーエラーが発生しています。後でもう一度お試しください。",
+            "ERC_AUTH_USER_NAME": "OAuth 認証に失敗しました。サポートが必要な場合は、システム管理者に連絡してください。",
+            "ERC_AUTH_EMPTY_EMAIL": "未定義の電子メールではログインできません"
+        }
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "MSG_UTILS": {
+        "DOWNLOAD": "Télécharger",
+        "DOWNLOAD_APP": "Télécharger l'application",
+        "DOWNLOAD_UPDATE": "Télécharger la mise à jour",
+        "DOWNLOAD_ADD_IN": "Téléchargez le complément Avaya.",
+        "DOWNLOAD_OUTLOOK_PLUGIN": "Obtenez le complément Outlook pour les réunions depuis le Microsoft Store",
+        "CONTINUE": "Application installé(e)",
+        "BTN_RESOLVE": "Résoudre",
+        "DISMISS": "Fermer",
+        "VIEW_ONLY": "Voir uniquement",
+        "USE_BROWSER_TO_JOIN_AV": "Rejoindre avec l'audio et la vidéo du navigateur",
+        "SCREEN_SHARING_EXTENSION_OFFER": "Vous prévoyez de partager ?",
+        "OUTLOOK_PLUGIN_NOTIFICATION": "Vous planifiez des réunions dans Outlook ?",
+        "DO_NOT_SHOW_AGAIN": "Ne plus afficher ce message",
+        "NOTIFICATION": {
+            "BAD_BROWSER": "Votre navigateur ne vous permet pas de profiter d'une qualité optimale !",
+            "NO_CLIENT_TO_RUN": "Aucun client disponible à lancer",
+            "LEARN_MORE": "En savoir plus",
+            "NO_RESOURCES": "Les ressources du serveur n'ont pas encore été récupérées, veuillez réessayer plus tard.",
+            "NOT_AUTHENTICATED": "Vous devez être connecté pour afficher cette vidéo.",
+            "NOT_ACCESS_TO_PROGRAM": "Vous n'êtes pas autorisé à afficher cette vidéo.",
+            "DONT_SHOW_AGAIN": "Ne plus afficher"
+        },
+        "WEBRTC_MSG": {
+            "CAPTION": "Si vous continuez à utiliser ce navigateur...",
+            "MESSAGE": "Vous pourrez voir les noms des participants à la réunion et profiter du partage d'écran, mais l'audio et la vidéo devront passer par un autre appel.",
+            "DO_MORE": "Envie de profiter de fonctionnalités optimales ?",
+            "DO_MORE_MSG": "Utilisez l'un des navigateurs ci-dessous pour bénéficier de l'audio et de la vidéo directement à partir de votre ordinateur et partager votre écran.",
+            "DO_MORE_DOWNLOAD_MSG": "Téléchargez l'application ou utilisez l'un des navigateurs ci-dessous pour bénéficier de l'audio et de la vidéo directement à partir de votre ordinateur et partager votre écran.",
+            "OR": "ou",
+            "DOWNLOAD_HINT": "Je veux connaître l'expérience multimédia avec toutes les fonctions",
+            "PRESENTATION_ONLY_HINT": "J'ai seulement besoin de voir la présentation (j'utiliserai un téléphone pour l'audio).",
+            "BAD_BROWSER_HEAD_MESSAGE": "Ce navigateur ne prend pas en charge les réunions audio et vidéo. ",
+            "COPY_MEETING_LINK": "Copier le lien vers la réunion",
+            "COPY_PORTAL_LINK": "Copier le lien vers le portail",
+            "PASTE_MESSAGE": "et coller dans une version récente de Chrome pour l'audio, la vidéo et le partage d'écran dans le navigateur.",
+            "SWC_CANT_RUN_IN_AV_HEADER": "Impossible d'exécuter le client Web dans ce mode.",
+            "SWC_CANT_RUN_IN_AV_MESSAGE": "Vous pouvez rejoindre en mode lecture seule, ou bien utiliser Avaya Workplace"
+        },
+        "CLIENT_APP": {
+            "NOT_FOUND": "L'application est introuvable. Assurez-vous d'autoriser la requête du navigateur lorsque vous y serez invité ou téléchargez le client.",
+            "CLIENT_NOT_FOUND": "Impossible de trouver l'application {{clientName}}.",
+            "IF_INSTALLED": "Si vous avez déjà l'application {{clientName}}, ",
+            "TRY_AGAIN": "réessayez",
+            "MAKE_SURE_TO_ALLOW_REQUEST": " et autorisez l'exécution du gestionnaire d'installation, lorsque vous y serez invité.",
+            "CLIENT_UPDATE_AVAILABLE": "Mise à jour de {{clientName}} disponible",
+            "CLIENT_UPDATE_REQUIRED": "Avaya Workplace nécessite une mise à jour",
+            "WAIT_INSTALL": "Cliquez une fois l'application installée.",
+            "EXTERNAL_PROTOCOL_WARNING": "Pour une utilisation optimale, nous avons besoin de votre autorisation afin de vérifier que l'application est installée.\nVeuillez accepter l'invite du navigateur après avoir cliqué sur \"Lancez-vous !\".",
+            "GOT_IT": "Lancez-vous !",
+            "FORCE_UPDATE_TEXT": "Il semble que votre application soit obsolète.\n Mettre à niveau vers la version la plus récente.",
+            "FIRST_TIME_JOIN": "Il semble qu'il s'agisse de votre première visite. Souhaitez-vous rejoindre une réunion ?",
+            "JOIN_PRESENTATION": "Rejoindre la présentation uniquement",
+            "PRESENTATION_DUALIN": "Présentation uniquement / Accès",
+            "USE_CUMPUTER": "Utiliser mon ordinateur pour l'audio et la vidéo",
+            "USE_BROWSER_TO_JOIN": "Utiliser mon navigateur pour rejoindre",
+            "DOWNLOAD_TO_JOIN": "Télécharger l'application",
+            "HAVE_CLIENT": "Je dispose de l'application.",
+            "CHOOSE_APP": "Quelle application souhaitez-vous utiliser ?",
+            "HAVE_YOU_APP": "Avez-vous installé l'application ?",
+            "DOES_NOT_SUPPORT": "Ce navigateur ne prend pas en charge les réunions audio et vidéo.",
+            "APP_INSTALLED": "Cliquez une fois l'application installée.",
+            "APP_INSTALLED_BUTTON": "L'application est installée",
+            "MORE_INFO": " et collez-le dans une version récente de Chrome ou Firefox pour l'audio, la vidéo et le partage d'écran au sein du navigateur.",
+            "COPY_MEETING_LINK": "Copiez le lien vers la réunion",
+            "DONT_HAVE_MICROPHONE": "Un microphone est nécessaire pour rejoindre cette réunion.",
+            "CONNECT_MICROPHONE": "Connectez un microphone et réessayez.",
+            "MIC_NOT_FOUND": "Microphone introuvable",
+            "CHECK_MIC": "Veuillez vérifier que votre microphone ou votre casque est connecté et rejoignez à nouveau la réunion avec votre navigateur.",
+            "MIC_WAS_FOUND": "Microphone connecté",
+            "MIC_WAS_CHECKED": "Le microphone ou le casque est maintenant connecté. \nVeuillez rejoindre à nouveau la réunion avec votre navigateur."
+        },
+        "CREATE_METING": {
+            "NUMBER_EXCEED": "Le nombre de participants a depassé la valeur maximale spécifiée dans les paramètres de la salle virtuelle.",
+            "CONTINUING": "Si vous continuez, il est possible que certains invités ne puissent pas rejoindre la réunion.",
+            "CONTINUE_SENDING": "Poursuivre l'envoi",
+            "CANCEL": "Annuler"
+        },
+        "DOWNLOAD_DIALOG": {
+            "DOWNLOAD_AFTER_SETTING_TITLE": "Une fois l’application installée, ouvrez-la pour vérifier vos paramètres audio et vidéo.",
+            "OPEN_THE_EQUINOX": "Ouvrir l'application",
+            "DOWNLOAD_AND_JOIN": "Une fois l’application installée, rejoignez la réunion avec l’application.",
+            "JOIN_BUTTON": "Rejoindre via l'application",
+            "CHECK_CLIENT": "Contrôle audio / vidéo",
+            "INSTALL_AND_CHECK": "Une fois l’application installée, ouvrez-la pour terminer la configuration."
+        },
+        "FIRST_LOUNCH_TUTORIAL": {
+            "RESET_FIRST_LAUNCH_TUTORIALS": "Didacticiel",
+            "NON_WEBRTC": {
+                "SETTINGS": "Vous pouvez vérifier vos informations client et plus encore.",
+                "SIGN_IN": "Vous disposez d'un compte ? Cliquez sur Connexion pour accéder à votre compte.",
+                "JOIN": "Une fois que vous avez saisi votre nom et un identifiant de réunion, choisissez une méthode pour participer à une réunion."
+            },
+            "WEBRTC": {
+                "SETTINGS": "Vous pouvez définir l'option Rejoindre sans vidéo, vérifier les informations du client et plus encore.",
+                "SIGN_IN": "Vous disposez d'un compte ? Cliquez sur Connexion pour accéder à votre compte.",
+                "JOIN": "Une fois que vous avez saisi votre nom et un identifiant de réunion, choisissez une méthode pour participer à une réunion."
+            },
+            "LOGIN_IN": {
+                "MEETING_ROOM": "Choisissez votre propre salle de réunion ou vos réunions précédentes. Vous pouvez également partager ou envoyer des invitations par courrier électronique à la salle de réunion que vous avez sélectionnée.",
+                "MEETING_IN_PROGRESS": "Votre réunion en cours sera affichée ici."
+            }
+        },
+        "PIN_UPDATE": {
+            "PIN_UPDATE_TITLE": "Le code PIN du modérateur de la réunion a expiré. Veuillez modifier le code confidentiel dans : ",
+            "OPEN_SETTINGS": "Paramètres"
+        }
+    }
+}

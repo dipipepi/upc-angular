@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "로그인 중...",
+        "LOADING": "로딩 중...",
+        "GREETING": "계정이 있습니까?",
+        "NAME": "사용자 이름",
+        "LOGIN": "로그인",
+        "PASSWORD": "암호",
+        "REMEMBER_ME": "로그인 상태 유지",
+        "SIGN_IN": "로그인",
+        "LOG_IN": "로그인",
+        "FORGOT_PASSWORD": "암호를 분실했습니까?",
+        "OR_SIGN_IN": "또는 다음으로 로그인",
+        "USE_ENTERPRISE_ACCOUNT": "내 엔터프라이즈 계정(SSO) 사용",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "암호를 복원하는 링크가 포함된 이메일이 발송되었습니다."
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "사용자 이름 또는 암호가 잘못되었습니다.",
+            "VALIDATION_FAILED": "사용자 이름 또는 암호는 비워둘 수 없습니다.",
+            "NOT_ALLOWED": "로그인이 허용되지 않습니다.",
+            "USER_AUTH_DISABLED": "사용자 {{name}}에 대해 인증이 비활성화되었습니다.",
+            "ERROR": "서버 또는 서버 오류로부터 응답이 없습니다. 나중에 다시 시도하십시오.",
+            "ERC_AUTH_USER_NAME": "OAuth 인증에 실패했습니다. 시스템 관리자에게 지원을 요청하십시오.",
+            "ERC_AUTH_EMPTY_EMAIL": "정의되지 않은 이메일로 사용자를 로그인할 수 없음"
+        }
+    }
+}

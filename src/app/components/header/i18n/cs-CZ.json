@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "O aplikaci",
+        "SIGN_OUT": "Odhlásit",
+        "SETTINGS": "Nastavení",
+        "SIGN_IN": "Přihlásit"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "nelze použít pro připojení ke schůzce. Vyzkoušejte některý z podporovaných prohlížečů.",
+        "YOUR": "Váš",
+        "BROWSER": "prohlížeč",
+        "BROWSERS": "prohlížeč",
+        "BROWSER_OUT_OF_DATE": "je zastaralý. Aktualizujte svůj prohlížeč, abyste mohli používat všechny funkce.",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "Verze vašeho prohlížeče nepodporuje audio/video. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "Verze vašeho prohlížeče nepodporuje webové konference. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+        "OLD_EDGE": "Váš prohlížeč není kompatibilní s Avaya Meetings. Chcete-li používat všechny funkce použijte nejnovější verzi prohlížeče Google Chrome nebo Microsoft Edge."
+    }
+}

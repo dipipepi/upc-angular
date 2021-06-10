@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Logowanie…",
+        "LOADING": "Ładowanie…",
+        "GREETING": "Czy masz konto?",
+        "NAME": "nazwa użytkownika",
+        "LOGIN": "logowanie",
+        "PASSWORD": "hasło",
+        "REMEMBER_ME": "Nie wyloguj mnie",
+        "SIGN_IN": "Zaloguj się",
+        "LOG_IN": "Zaloguj się",
+        "FORGOT_PASSWORD": "Nie pamiętasz hasła?",
+        "OR_SIGN_IN": "lub zaloguj się za pomocą",
+        "USE_ENTERPRISE_ACCOUNT": "Użyj mojego konta służbowego (SSO)",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Został wysłany do Ciebie e-mail z łączem do odzyskania hasła"
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Nieprawidłowa nazwa użytkownika lub hasło",
+            "VALIDATION_FAILED": "Nazwa użytkownika i hasło nie mogą być puste.",
+            "NOT_ALLOWED": "Nie masz pozwolenia na logowanie.",
+            "USER_AUTH_DISABLED": "Dla użytkownika {{name}} wyłączono uwierzytelnianie",
+            "ERROR": "Brak odpowiedzi ze strony serwera lub błąd serwera. Spróbuj ponownie później.",
+            "ERC_AUTH_USER_NAME": "Uwierzytelnienie OAuth nie powiodło się. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.",
+            "ERC_AUTH_EMPTY_EMAIL": "Nie można zalogować użytkownika bez określonego e-maila"
+        }
+    }
+}

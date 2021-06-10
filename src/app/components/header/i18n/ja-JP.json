@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "バージョン情報",
+        "SIGN_OUT": "サインアウト",
+        "SETTINGS": "設定",
+        "SIGN_IN": "サインイン"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "は会議の参加には使用できません。対応ブラウザでお試しください。",
+        "YOUR": "お使いの",
+        "BROWSER": "ブラウザ",
+        "BROWSERS": "ブラウザ",
+        "BROWSER_OUT_OF_DATE": "が古くなっています。快適にお使いいただくために最新のブラウザにアップデートしてください。",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "お使いのブラウザバージョンはオーディオとビデオをサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "お使いのブラウザバージョンはウェブ会議をサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
+        "OLD_EDGE": "お使いのブラウザは Avaya Meetings との互換性がありません。快適にお使いいただくために、Google Chrome または最新の Microsoft Edge に切り替えてください。"
+    }
+}

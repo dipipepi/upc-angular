@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "关于",
+        "SIGN_OUT": "注销",
+        "SETTINGS": "设置",
+        "SIGN_IN": "登录"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "无法用于加入会议。请使用受支持的浏览器。",
+        "YOUR": "您的",
+        "BROWSER": "浏览器",
+        "BROWSERS": "浏览器",
+        "BROWSER_OUT_OF_DATE": "已过期。请更新浏览器以获得最佳体验。",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "您的浏览器版本不支持语音/视频。为了更佳的协作体验，<br>请使用其他版本，<span class=\"underline\">其他支持的浏览器</span>，或下载客户端。",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "您的浏览器版本不支持网络会议。为了更佳的协作体验，<br>请使用其他版本，<span class=\"underline\">其他支持的浏览器</span>，或下载客户端。",
+        "OLD_EDGE": "您的浏览器与 Avaya Meetings 不兼容。请切换到 Google Chrome 或最新的 Microsoft Edge，以获得最佳体验。"
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "MSG_UTILS": {
+        "DOWNLOAD": "ダウンロード",
+        "DOWNLOAD_APP": "アプリのダウンロード",
+        "DOWNLOAD_UPDATE": "更新プログラムのダウンロード",
+        "DOWNLOAD_ADD_IN": "Avaya Add-in のインストール",
+        "DOWNLOAD_OUTLOOK_PLUGIN": "Microsoft Store から Meeting Outlook アドインを入手しましょう。",
+        "CONTINUE": "アプリがインストールされました",
+        "BTN_RESOLVE": "解決",
+        "DISMISS": "閉じる",
+        "VIEW_ONLY": "表示のみ",
+        "USE_BROWSER_TO_JOIN_AV": "ブラウザーでオーディオ/ビデオに参加",
+        "SCREEN_SHARING_EXTENSION_OFFER": "共有しますか？",
+        "OUTLOOK_PLUGIN_NOTIFICATION": "Outlook で会議をスケジュール設定しますか？",
+        "DO_NOT_SHOW_AGAIN": "今後表示しない",
+        "NOTIFICATION": {
+            "BAD_BROWSER": "ブラウザが原因で操作性が低下しています。",
+            "NO_CLIENT_TO_RUN": "起動できるクライアントはありません",
+            "LEARN_MORE": "詳細を見る",
+            "NO_RESOURCES": "サーバーリソースがまだ取得されていません。後ほど再試行してください。",
+            "NOT_AUTHENTICATED": "このプログラムを見るにはログインする必要があります。",
+            "NOT_ACCESS_TO_PROGRAM": "このプログラムを視聴する権限がありません。",
+            "DONT_SHOW_AGAIN": "今後は表示しない"
+        },
+        "WEBRTC_MSG": {
+            "CAPTION": "このブラウザをこのまま使用する場合：",
+            "MESSAGE": "会議の参加者を確認したり、画面を共有して視聴したりすることはできますが、音声通話またはビデオ通話を個別に発信する必要があります。",
+            "DO_MORE": "他の操作を行いますか？",
+            "DO_MORE_MSG": "コンピュータで次のいずれかのブラウザを使用し、音声および動画を追加して画面を共有します。",
+            "DO_MORE_DOWNLOAD_MSG": "アプリをダウンロードするか、コンピュータから次のいずれかのブラウザを使用してオーディオおよびビデオを追加し、画面を共有します。",
+            "OR": "または",
+            "DOWNLOAD_HINT": "すべてのマルチメディア機能を希望する",
+            "PRESENTATION_ONLY_HINT": "プレゼンテーションの表示のみを希望する（電話の音声を使用します）",
+            "BAD_BROWSER_HEAD_MESSAGE": "このブラウザでは、音声会議とビデオ会議はサポートされていません。",
+            "COPY_MEETING_LINK": "会議リンクのコピー",
+            "COPY_PORTAL_LINK": "ポータルリンクをコピーして、",
+            "PASTE_MESSAGE": "ブラウザで音声、ビデオ、画面共有を使用するには、Chrome の最新バージョンに貼り付けます。",
+            "SWC_CANT_RUN_IN_AV_HEADER": "このモードでは Web クライアントを実行できません。",
+            "SWC_CANT_RUN_IN_AV_MESSAGE": "表示限定モードで参加する、または Avaya Workplace を使用することができます"
+        },
+        "CLIENT_APP": {
+            "NOT_FOUND": "このアプリは見つかりませんでした。確認メッセージが表示されたらブラウザの要求を許可するか、クライアントをダウンロードしてください。",
+            "CLIENT_NOT_FOUND": "{{clientName}} アプリが見つかりませんでした。",
+            "IF_INSTALLED": "すでに {{clientName}} アプリがインストール済みの場合は、",
+            "TRY_AGAIN": "ここをクリック",
+            "MAKE_SURE_TO_ALLOW_REQUEST": " し、確認メッセージが表示されるとインストールマネージャを実行できるようになります。",
+            "CLIENT_UPDATE_AVAILABLE": "{{clientName}} の更新が可能です",
+            "CLIENT_UPDATE_REQUIRED": "Avaya Workplace のアップデートが必要です",
+            "WAIT_INSTALL": "アプリがインストールされたらクリックしてください",
+            "EXTERNAL_PROTOCOL_WARNING": "快適にお使いいただくには、アプリのインストールを確認する権限が必要です。\n［続行］をクリック後、ブラウザの確認メッセージに同意してください。",
+            "GOT_IT": "続行",
+            "FORCE_UPDATE_TEXT": "アプリのバージョンが最新ではないようです。\n 最新バージョンにアップグレードしてください。",
+            "FIRST_TIME_JOIN": "会議に初めてご参加いただくようですが、どの参加方法をご希望ですか？",
+            "JOIN_PRESENTATION": "プレゼンテーションのみ参加",
+            "PRESENTATION_DUALIN": "プレゼンテーションのみ / ダイヤルイン",
+            "USE_CUMPUTER": "オーディオおよびビデオにコンピューターを使用する",
+            "USE_BROWSER_TO_JOIN": "ブラウザを使って参加する",
+            "DOWNLOAD_TO_JOIN": "アプリのダウンロード",
+            "HAVE_CLIENT": "アプリを持っています",
+            "CHOOSE_APP": "どのアプリを使用しますか？",
+            "HAVE_YOU_APP": "アプリをイントール済ですか？",
+            "DOES_NOT_SUPPORT": "このブラウザでは、音声会議とビデオ会議はサポートされていません。",
+            "APP_INSTALLED": "アプリのインストールが完了したらクリックしてください",
+            "APP_INSTALLED_BUTTON": "アプリがインストールされています",
+            "MORE_INFO": " ブラウザで音声、ビデオ、画面共有を使用するには、Chrome または Firefox の最新バージョンに貼り付けます。または、",
+            "COPY_MEETING_LINK": "会議リンクのコピー",
+            "DONT_HAVE_MICROPHONE": "この会議に参加するにはマイクが必要です。",
+            "CONNECT_MICROPHONE": "マイクを接続してもう一度お試しください。",
+            "MIC_NOT_FOUND": "マイクが見つかりませんでした",
+            "CHECK_MIC": "マイクまたはヘッドセットが接続されていることを確認し、もう一度ブラウザで参加してください。",
+            "MIC_WAS_FOUND": "マイク接続済み",
+            "MIC_WAS_CHECKED": "マイクまたはヘッドセットが接続されました。 \nブラウザで再度参加してください。"
+        },
+        "CREATE_METING": {
+            "NUMBER_EXCEED": "参加者数が仮想会議室で設定された最大値を超えています。",
+            "CONTINUING": "すべての招待者が参加し、続行することは許可されていません。",
+            "CONTINUE_SENDING": "送信を続行",
+            "CANCEL": "キャンセル"
+        },
+        "DOWNLOAD_DIALOG": {
+            "DOWNLOAD_AFTER_SETTING_TITLE": "アプリがインストールされたら、アプリを開きオーディオおよびビデオ設定を確認しましょう。",
+            "OPEN_THE_EQUINOX": "アプリを開きます",
+            "DOWNLOAD_AND_JOIN": "アプリがインストールされたら、アプリから参加してください",
+            "JOIN_BUTTON": "アプリを使用して参加する",
+            "CHECK_CLIENT": "オーディオ/ビデオチェック",
+            "INSTALL_AND_CHECK": "アプリがインストールされたら、アプリを開いて設定を行いましょう。"
+        },
+        "FIRST_LOUNCH_TUTORIAL": {
+            "RESET_FIRST_LAUNCH_TUTORIALS": "チュートリアル",
+            "NON_WEBRTC": {
+                "SETTINGS": "クライアント情報などを確認できます",
+                "SIGN_IN": "アカウントをお持ちですか？ アカウントにアクセスするには［サインイン］をクリックします。",
+                "JOIN": "名前と会議 ID を入力したら、会議への参加方法を選択します。"
+            },
+            "WEBRTC": {
+                "SETTINGS": "ビデオなしで参加、クライアント情報の確認など、その他の設定ができます",
+                "SIGN_IN": "アカウントをお持ちですか？ アカウントにアクセスするには［サインイン］をクリックします。",
+                "JOIN": "名前と会議 ID を入力したら、会議への参加方法を選択します。"
+            },
+            "LOGIN_IN": {
+                "MEETING_ROOM": "自分の会議室または以前参加した会議を選択します。選択した会議室への電子メールの招待状を送信または共有できます",
+                "MEETING_IN_PROGRESS": "進行中の会議がこちらに表示されます"
+            }
+        },
+        "PIN_UPDATE": {
+            "PIN_UPDATE_TITLE": "会議のモデレーター PIN の有効期限が切れました。PIN を変更してください：",
+            "OPEN_SETTINGS": "設定"
+        }
+    }
+}

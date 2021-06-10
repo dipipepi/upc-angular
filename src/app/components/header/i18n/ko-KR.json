@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "정보",
+        "SIGN_OUT": "로그아웃",
+        "SETTINGS": "설정",
+        "SIGN_IN": "로그인"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "를 사용하여 회의에 참가할 수 없습니다. 지원되는 브라우저로 시도해 주십시오.",
+        "YOUR": "귀하의",
+        "BROWSER": "브라우저",
+        "BROWSERS": "브라우저",
+        "BROWSER_OUT_OF_DATE": "가 최신 버전이 아닙니다. 원활한 사용을 위해서는 브라우저를 업데이트하십시오.",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "오디오/비디오를 지원하지 않는 브라우저 버전입니다. 더 나은 협업 작업 환경을 위해<br>다른 버전 또는, 다른 <span class=\"underline\">지원되는 브라우저</span>를 사용하거나 클라이언트를 다운로드하십시오.",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "웹 회의를 지원하지 않는 브라우저 버전입니다. 더 나은 협업 작업 환경을 위해<br>다른 버전 또는, 다른 <span class=\"underline\">지원되는 브라우저</span>를 사용하거나 클라이언트를 다운로드하십시오.",
+        "OLD_EDGE": "사용 중인 브라우저에서는 Avaya Meetings와 호환되지 않습니다. 최상의 경험을 위해 Google Chrome 또는 최신 Microsoft Edge 로 전환하십시오."
+    }
+}

@@ -1,0 +1,152 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+
+  &.overlayed::before {
+    top: 0;
+    background: @overlay-color;
+    z-index: 9998;
+  }
+
+  &.overlayed::after {
+    content: '';
+    position: fixed;
+    top: ~"calc(50% - 22px)";
+    left: ~"calc(50% - 22px)";
+    width: 44px;
+    height: 44px;
+    background: @overlay-spinner;
+    background-size: 100%;
+    z-index: 9999;
+    animation: spin 1s steps(8) infinite;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: @font-family;
+  font-size: 14px;
+  color: @text-color;
+  background: @off-white @url-background top -100px right no-repeat;;
+  min-width: 320px;
+  opacity: 0.9999;
+  -webkit-text-size-adjust: 100%;
+  padding-right: 0 !important;
+  overflow: hidden;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 100%;
+  display: table-cell;
+}
+
+* {
+  outline: none;
+  box-sizing: inherit;
+}
+
+::selection {
+  background: @focus;
+  color: @text-color-light;
+}
+
+::-moz-selection {
+  background: @focus;
+  color: @text-color-light;
+}
+
+//Firefox button fix
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0
+}
+
+//IE input fields fix
+//noinspection CssInvalidPseudoSelector
+::-ms-clear,
+::-ms-reveal {
+  width: 0;
+  height: 0;
+}
+
+//Webkit search clear fix
+input[reset-field]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+//Webkit autofill yellow background fix
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px @background-white inset;
+  &:focus {
+    box-shadow: 0 0 1px 1px @focus, 0 0 0 1000px @background-white inset;
+  }
+}
+
+input.error:-webkit-autofill {
+  box-shadow: 0 0 0 1000px @background-error inset;
+  &:focus {
+    box-shadow: 0 0 1px 1px @focus, 0 0 0 1000px @background-error inset;
+  }
+}
+
+//Arrogant iOS input autostyling fix
+textarea,
+input[type=text],
+input[type=password] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea,
+input {
+  resize: none;
+  font-family: inherit;
+}
+
+main {
+  display: block;
+  position: relative;
+  height: ~"calc(100% - 50px)";
+  background: @background;
+
+  &.upc\.join {
+    background: @background-front-page;
+  }
+
+  &>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+}

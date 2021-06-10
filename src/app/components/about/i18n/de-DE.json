@@ -1,0 +1,16 @@
+{
+    "ABOUT": {
+        "TITLE": "Info zu Avaya Meetings",
+        "RELEASE": "Version:",
+        "AVAYA_TRADEMARKS": "Avaya Meetings und Equinox Conferencing sind Marken von Avaya Inc.",
+        "OTHER_TRADEMARKS": "Java ist eine Marke von Sun Microsystems, Inc.; Microsoft, Windows und Internet Explorer sind eingetragene Marken oder Marken der Microsoft Corporation in den USA und/oder anderen Ländern.",
+        "TRADEMARKS_INFO": "Alle anderen in diesem Dokument genannten Produktnamen sind Marken oder eingetragene Marken ihrer jeweiligen Inhaber.",
+        "COPYRIGHT_INFO": "Informationen zu den Inhabern der Urheberrechte für Komponenten Dritter und zu den Bedingungen für dieses Produkt finden Sie unter <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+        "LICENCE": "Mit dem Herunterladen, der Installation oder der Nutzung der Software zeigen Sie an, dass Sie die Nutzungsbedingungen der Avaya Software-Lizenzbestimmungen (Avaya-Produkte) gelesen, verstanden und akzeptiert haben. Diese finden Sie ",
+        "LICENCE_I18N": "Die Versionen in den Sprachen Englisch, brasilianisches Portugiesisch, kanadisches Französisch, Chinesisch, Deutsch, Italienisch, Portugiesisch, Spanisch, Französisch, Japanisch und Russisch finden Sie ",
+        "USAGE_INFO": "Wenn Sie nicht über einen direkten Internetzugang verfügen, verwenden Sie bitte ein Gerät mit Internetzugang, um die entsprechende Lizenz anzusehen, herunterzuladen und auszudrucken.",
+        "COPYRIGHT": "Copyright © {{year}} Avaya Inc. Alle Rechte vorbehalten.",
+        "CLOSE": "Schließen",
+        "LINK": "hier."
+    }
+}

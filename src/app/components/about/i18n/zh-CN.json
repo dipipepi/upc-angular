@@ -1,0 +1,16 @@
+{
+    "ABOUT": {
+        "TITLE": "关于 Avaya Meetings",
+        "RELEASE": "版本：",
+        "AVAYA_TRADEMARKS": "Avaya Meetings 和 Equinox Conferencing 是 Avaya Inc. 的商标。",
+        "OTHER_TRADEMARKS": "Java 是 Sun Microsystems, Inc. 的商标；Microsoft、Windows 和 Internet Explorer 是 Microsoft Corporation 在美国和／或其他国家／地区的注册商标或商标。",
+        "TRADEMARKS_INFO": "本文档中所提及的其他所有产品名称都是其相应制造商的商标或注册商标。",
+        "COPYRIGHT_INFO": "有关适用于本产品识别第三方组件的版权所有者和使用条款，请参阅 <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>。",
+        "LICENCE": "下载软件、安装或使用表示您已阅读、了解并同意 Avaya 软件许可证条款（Avaya 产品），条款详情位于 ",
+        "LICENCE_I18N": "英语、巴西葡萄牙语、加拿大法语、、中文、德语、意大利语、葡萄牙语、西班牙语、法语、日语和俄语版本发布于 ",
+        "USAGE_INFO": "若您没有直接的网络访问权限，请通过有网络访问权限的设备以查看、下载及打印相关的条款。",
+        "COPYRIGHT": "版权所有 © {{year}} Avaya Inc. 保留所有权利。",
+        "CLOSE": "关闭",
+        "LINK": "链接"
+    }
+}

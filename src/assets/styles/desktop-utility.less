@@ -1,0 +1,136 @@
+@import "theme";
+
+.default-input {
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.default-button {
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.ghost-button {
+    width: auto;
+}
+
+.ngdialog.ngdialog-theme-details-popup {
+    top: 0;
+    background: transparent;
+
+    .ngdialog-overlay {
+        background: fade(@background-black, 40%);
+        display: block;
+    }
+
+    .ngdialog-content {
+        position: absolute;
+        background: @background-highlight-1;
+        top: ~"calc(50% - 290px)";
+        width: 800px;
+        min-height: 575px;
+        left: ~"calc(50% - 400px)";
+        font-size: 0;
+        border-top: none;
+        overflow-y: auto;
+        bottom: auto;
+
+        // it is not applicable for <copy-or-email-link> tags
+        :not(.input-wrapper) > .dropdown-options div:empty+ie-fix {
+            border-radius: 0;
+            background: transparent;
+            padding: 20px;
+        }
+    }
+
+    .ngdialog-close {
+        display: none;
+    }
+}
+
+.details-popup-title {
+    padding: 20px 20px 12px;
+    font-size: 15px;
+}
+
+.details-popup-top {
+    height: auto;
+    padding: 0 30px;
+}
+
+.details-popup-tabs {
+    box-shadow: inset 0 -1px @input-borders-color;
+    padding: 20px 30px 0;
+
+    .tab {
+        padding: 10px;
+        min-width: 100px;
+        text-align: center;
+        margin-right: 10px;
+        font-size: 12px;
+        display: inline-block;
+        vertical-align: top;
+        height: 35px;
+        cursor: pointer;
+
+        &.current {
+            background: @background-white;
+            border: 1px solid @input-borders-color;
+            border-bottom: 0;
+            font-weight: bold;
+            font-size: 13px;
+        }
+    }
+}
+
+.details-popup-body {
+    background: @background-white;
+    height: 280px;
+    border-bottom: 1px solid @input-borders-color;
+}
+
+.details-popup-buttons {
+    text-align: right;
+    padding: 10px;
+
+    button {
+        height: 30px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        background: none;
+        user-select: none;
+        color: @text-color;
+        padding: 5px 10px;
+        margin-right: 10px;
+
+        &:focus {
+            box-shadow: 0 0 1px 1px @focus;
+        }
+
+        &:disabled {
+            color: @button-disabled;
+        }
+    }
+
+    .apply {
+        color: @highlight-2;
+    }
+
+    .delete {
+        color: @highlight-1;
+        position: relative;
+
+        div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+}

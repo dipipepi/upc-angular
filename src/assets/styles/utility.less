@@ -1,0 +1,288 @@
+.default-error,
+.default-warning {
+  color: @highlight-1;
+  font-size: 12px;
+  display: block;
+  padding-left: 0px;
+  position: relative;
+  margin: 15px 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: ~"calc(50% - 13px)";
+    width: 26px;
+    height: 26px;
+
+    background-size: 100%;
+  }
+}
+
+.incorrect-pin::after
+{
+  content:" *";
+  color: red;
+}
+
+.default-warning {
+  color: @text-color;
+  &::before {
+
+    background-size: 100%;
+  }
+}
+
+.default-button {
+  width: 144px;
+  border: 0;
+  border-radius: 100px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 18px;
+  padding: 0;
+  background: @button;
+  color: @button-label;
+  transition: background 0.3s ease;
+  outline: none;
+  user-select: none;
+  vertical-align: middle;
+  &:hover {
+    background: @button-hover;
+    color: @button-hover-label;
+  }
+  &:active {
+    background: @button-active;
+    color: @button-active-label;
+  }
+  &:focus {
+    background: @button-focused;
+    color: @button-focused-label;
+    box-shadow: 0 0 1px 1px @focus;
+  }
+  &:disabled {
+    background: @button-disabled;
+    color: @button-disabled-label;
+  }
+}
+
+.secondary-button {
+  vertical-align: middle;
+  background: @button-secondary;
+  color: @text-color;
+  line-height: 30px;
+  border: 1px solid fade(@text-color, 50%);
+
+  &:hover,
+  &:active {
+    background: @button-secondary;
+    color: @text-color;
+  }
+
+  &:focus {
+    background: @button-secondary;
+    color: @text-color;
+    box-shadow: 0 0 1px 1px @focus;
+  }
+
+  &:disabled {
+    background: @button-secondary;
+    color: fade(@text-color, 25%);
+  }
+}
+
+.ghost-button {
+  width: auto;
+  background: transparent;
+  color: @text-color;
+  border: 1px solid @text-color-med;
+  padding: 0 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: none;
+  }
+}
+
+.white-button {
+  font-size: 12px;
+  background: @button-secondary;
+  border: 1px solid @input-borders-color;
+  height: 30px;
+  width: 120px;
+  outline: none;
+  user-select: none;
+  &:focus {
+    box-shadow: 0 0 1px 1px @focus;
+  }
+}
+
+.gray-button {
+  width: 120px;
+  border: 0;
+  border-radius: 100px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px;
+  padding: 0;
+  background: @darkener-soft;
+  outline: none;
+  user-select: none;
+  &:focus {
+    box-shadow: 0 0 1px 1px @focus;
+  }
+}
+
+.default-checkbox,
+.default-radio {
+  display: inline-block;
+  text-align: left;
+  cursor: default;
+  padding-left: 25px;
+
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  input+label::before, input+span::before {
+    content: '';
+    display: inline-block;
+    margin: 0 5px 0 -25px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid @input-borders-color;
+    background: @background-white;
+    vertical-align: middle;
+    box-sizing: inherit;
+  }
+
+  &.error input+label::before, &.error input+span::before {
+    border: 1px solid @highlight-1;
+  }
+
+  input:focus+label::before, input:focus+span::before {
+    box-shadow: 0 0 1px 1px @focus;
+  }
+
+  input:checked+label::before, input:checked+span::before {
+    background: @background-white @url-check-box;
+  }
+
+  input:disabled+label, input:disabled+span {
+    color: @text-color-med;
+
+    &::before {
+      border: 1px solid lighten(@input-borders-color, 5%);
+      box-shadow: inset 0 0 0 100px fade(@background-white, 70%);
+    }
+  }
+}
+
+.default-radio {
+  input+span::before {
+    border-radius: 100%;
+    background: @background-white;
+    box-shadow: inset 0 0 0 4px @background-white;
+  }
+
+  input:focus+span::before {
+    box-shadow: inset 0 0 0 4px @background-white, 0 0 1px 1px @focus;
+  }
+
+  input:checked+span::before {
+    background: @focus;
+  }
+
+  input:disabled+span::before {
+    box-shadow: inset 0 0 0 4px @background-white, inset 0 0 0 100px fade(@background-white, 70%);
+  }
+}
+
+.default-input {
+  vertical-align: middle;
+  border: 1px solid @input-borders-color;
+  background: @background-white;
+  color: @text-color;
+  font-size: 14px;
+  width: 225px;
+  height: 36px;
+  padding: 0 13px;
+  outline: none;
+  &.error {
+    border: 1px solid @highlight-1;
+    background: @background-error;
+  }
+  &:focus {
+    box-shadow: 0 0 1px 1px @focus;
+  }
+  &:disabled {
+    border: 1px solid lighten(@input-borders-color, 7%);
+  }
+
+  &.search {
+    background: @background-white @url-search left 5px center no-repeat;
+    padding-left: 30px;
+  }
+}
+
+select.default-input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: @background-white @url-down-chevron right -5px center no-repeat;
+  background-size: 32px;
+}
+
+select.default-input::-ms-expand {
+  display: none;
+}
+
+textarea.default-input {
+  font-family: inherit;
+  resize: none;
+  padding: 10px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  body,
+  .details-popup-title,
+  .details-popup-buttons,
+  .settings-buttons,
+  .accordeon-name.settings,
+  .tag-options {
+    transform: translateZ(0);
+  }
+}
+
+.ngdialog.ngdialog-theme-details-popup {
+  .ngdialog-content {
+    background: @background-highlight-1;
+  }
+}
+
+.details-popup-body {
+  background: @background-white;
+}
+
+@media only screen and (min-width: 800px) and (max-height: 575px) {
+  .ngdialog.ngdialog-theme-details-popup .ngdialog-content {
+    top: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-height: 575px) {
+  .ngdialog.ngdialog-theme-settings .ngdialog-content {
+    top: 0 !important;
+  }
+}

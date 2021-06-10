@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Přihlašování…",
+        "LOADING": "Načítání…",
+        "GREETING": "Máte již účet?",
+        "NAME": "Uživatelské jméno",
+        "LOGIN": "Přihlašovací jméno",
+        "PASSWORD": "Heslo",
+        "REMEMBER_ME": "Zůstat přihlášen",
+        "SIGN_IN": "Přihlásit",
+        "LOG_IN": "Přihlásit",
+        "FORGOT_PASSWORD": "Zapomenuté heslo?",
+        "OR_SIGN_IN": "nebo se přihlaste pomocí",
+        "USE_ENTERPRISE_ACCOUNT": "Použít můj firemní účet (jednotné přihlašování)",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Byl vám zaslán e-mail s odkazem na obnovení hesla"
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Neplatné uživatelské jméno nebo heslo",
+            "VALIDATION_FAILED": "Uživatelské jméno nebo heslo nesmí být prázdné.",
+            "NOT_ALLOWED": "Nemáte oprávnění se přihlásit.",
+            "USER_AUTH_DISABLED": "Ověření bylo pro uživatele {{name}} deaktivováno",
+            "ERROR": "Žádná odpověď ze serveru nebo chyba serveru. Zkuste to později.",
+            "ERC_AUTH_USER_NAME": "Ověřování OAuth nebylo úspěšné. Požádejte o pomoc svého správce systému.",
+            "ERC_AUTH_EMPTY_EMAIL": "Nelze přihlásit uživatele s nedefinovanou e-mailovou adresou"
+        }
+    }
+}

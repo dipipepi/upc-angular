@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Iniciando sesión...",
+        "LOADING": "Cargando...",
+        "GREETING": "¿Tiene una cuenta?",
+        "NAME": "Nombre de usuario",
+        "LOGIN": "inicio de sesión",
+        "PASSWORD": "Contraseña",
+        "REMEMBER_ME": "No cerrar sesión",
+        "SIGN_IN": "Iniciar sesión",
+        "LOG_IN": "Iniciar sesión",
+        "FORGOT_PASSWORD": "¿Olvidó su contraseña?",
+        "OR_SIGN_IN": "o inicie sesión con",
+        "USE_ENTERPRISE_ACCOUNT": "Usar mi cuenta empresarial (SSO)",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "Se le envió un correo electrónico con un vínculo para recuperar la contraseña."
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Nombre de usuario o contraseña no válidos",
+            "VALIDATION_FAILED": "El nombre de usuario o contraseña no pueden estar vacíos.",
+            "NOT_ALLOWED": "No tiene autorización para iniciar sesión.",
+            "USER_AUTH_DISABLED": "Autenticación deshabilitada para el usuario {{name}}",
+            "ERROR": "No hay respuesta del servidor o se produjo un error en el servidor. Vuelva a intentarlo más tarde.",
+            "ERC_AUTH_USER_NAME": "La autenticación OAuth no se realizó correctamente. Comuníquese con el administrador del sistema para solicitar ayuda.",
+            "ERC_AUTH_EMPTY_EMAIL": "El usuario no puede iniciar sesión con un correo electrónico no definido"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" inkscape:version="0.91 r13725" xml:space="preserve" width="20" height="20" viewBox="0 0 20 20" sodipodi:docname="search_16px_50-opacity.ai">
+<style>
+.s0{
+	fill:none;
+	stroke-dasharray:none;
+	stroke-linecap:butt;
+	stroke-linejoin:miter;
+	stroke-miterlimit:10;
+	stroke-opacity:1;
+	stroke-width:1;
+	stroke:#636c75;
+}
+
+</style>  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>
+          image/svg+xml
+        </dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <clipPath clipPathUnits="userSpaceOnUse">
+      <path d="M0 16 16 16 16 0 0 0 0 16Z" inkscape:connector-curvature="0"/>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="918" inkscape:window-height="677" showgrid="false" inkscape:zoom="11.8" inkscape:cx="10" inkscape:cy="10" inkscape:window-x="0" inkscape:window-y="56" inkscape:window-maximized="0" inkscape:current-layer="g10"/>
+  <g inkscape:groupmode="layer" inkscape:label="search_16px_50-opacity" transform="matrix(1.25,0,0,-1.25,0,20)">
+    <g clip-path="url(#clipPath16)">
+      <g transform="translate(9.5428,13.037)">
+        <path d="m0 0c1.815-1.815 1.815-4.761 0-6.577-1.818-1.817-4.763-1.817-6.582 0-1.814 1.816-1.814 4.762 0 6.577 1.819 1.817 4.764 1.818 6.582 0z" inkscape:connector-curvature="0" class="s0"/>
+      </g>
+      <g transform="translate(9.3151,6.6873)">
+        <path d="M0 0 5.085-5.087" inkscape:connector-curvature="0" class="s0"/>
+      </g>
+    </g>
+  </g>
+</svg>

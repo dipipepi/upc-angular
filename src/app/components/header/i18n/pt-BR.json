@@ -1,0 +1,18 @@
+{
+    "HEADER": {
+        "ABOUT": "Sobre",
+        "SIGN_OUT": "Sair",
+        "SETTINGS": "Configurações",
+        "SIGN_IN": "Entrar"
+    },
+    "BROWSERS": {
+        "BROWSER_NOT_SUPPORTED": "não pode ser usado para ingressar na reunião. Tente novamente usando um dos navegadores compatíveis.",
+        "YOUR": "Seu",
+        "BROWSER": "navegador",
+        "BROWSERS": "navegadores",
+        "BROWSER_OUT_OF_DATE": "está desatualizado. Atualize seu navegador para obter a melhor experiência.",
+        "VERSION_EXCLUSION_FOR_WEBRTC": "A versão do seu navegador não suporta áudio/vídeo. Para uma experiência de colaboração ainda melhor,<br>tente utilizar uma nova versão, outro <span class=\"underline\">navegador compatível</span> ou faça o download do aplicativo.",
+        "VERSION_EXCLUSION_FOR_DATE_ONLY": "A versão do seu navegador não oferece suporte ao web conferencing. Para uma experiência de colaboração ainda melhor,<br>tente utilizar uma nova versão, outro <span class=\"underline\">navegador compatível</span> ou faça o download do aplicativo.",
+        "OLD_EDGE": "Seu navegador não é compatível com o Avaya Meetings. Use a versão mais recente do Google Chrome ou do Microsoft Edge para ter a melhor experiência."
+    }
+}

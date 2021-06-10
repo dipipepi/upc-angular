@@ -1,0 +1,28 @@
+{
+    "LOGIN": {
+        "SIGNING": "Accesso in corso...",
+        "LOADING": "Caricamento in corso...",
+        "GREETING": "Si dispone di un account?",
+        "NAME": "nome utente",
+        "LOGIN": "accesso",
+        "PASSWORD": "password",
+        "REMEMBER_ME": "Resta connesso",
+        "SIGN_IN": "Accesso",
+        "LOG_IN": "Connessione",
+        "FORGOT_PASSWORD": "Password dimenticata?",
+        "OR_SIGN_IN": "o accedi con",
+        "USE_ENTERPRISE_ACCOUNT": "Usa l'account aziendale personale (SSO)",
+        "POPUP": {
+            "REMIND_PASSWORD_IN_EMAIL": "È stata inviata un'e-mail contenente un collegamento per il recupero della password"
+        },
+        "ERROR": {
+            "INVALID_CREDENTIALS": "Nome utente o password non validi",
+            "VALIDATION_FAILED": "Il nome utente o la password non devono essere vuoti.",
+            "NOT_ALLOWED": "Non si è autorizzati a eseguire l'accesso.",
+            "USER_AUTH_DISABLED": "Autenticazione disabilitata per l'utente {{name}}",
+            "ERROR": "Nessuna risposta dal server o errore del server. Riprovare più tardi.",
+            "ERC_AUTH_USER_NAME": "Autenticazione OAuth non riuscita. Consultare l'amministratore del sistema per richiedere assistenza.",
+            "ERC_AUTH_EMPTY_EMAIL": "Impossibile connettere un utente con indirizzo e-mail non definito"
+        }
+    }
+}
