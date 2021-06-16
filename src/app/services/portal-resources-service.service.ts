@@ -5,6 +5,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 export interface PortalResources {
+  limits: any;
+  photoUploadEnabled: boolean;
   sessionId: string;
   getRecParams: any;
   aadsServicesUrl: string;
@@ -116,6 +118,8 @@ export interface PortalResources {
     userId: string | null
   };
   resources: {
+    conference?: any;
+    broadcastProfiles?: { href: string };
     pictures: any;
     'webdeployment': {
       'GET': {

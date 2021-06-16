@@ -14,6 +14,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-height: 30px;
+    span{
+      padding-top: 1px;
+    }
 
     .settings-block {
       position: relative;
@@ -42,6 +46,7 @@
       text-decoration: none;
       font-size: 11px;
       cursor: pointer;
+      padding-top: 2px;
     }
 
     .sign-in-block {
@@ -67,6 +72,76 @@
         background-size: 100%;
       }
     }
+
+    .user-block {
+      cursor: pointer;
+      display: flex;
+      margin-left: auto;
+      width: 80%;
+      align-items: center;
+
+      span {
+        display: inline;
+        font-size: 11px;
+      }
+
+      .user-name {
+        font-size: 11px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 90%;
+        margin-left: auto;
+        text-align: right;
+        color: @text-color-light;
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+        overflow: hidden;
+        border-radius: 100%;
+        background: @url-generic-avatar;
+        background-size: 100%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 13px 24px 0 10px;
+        padding: 1px;
+        border: 1px solid @white;
+      }
+
+      .sign-out {
+        position: absolute;
+        right: 40px;
+        top: 32px;
+        padding: 20px;
+        background: fade(@background-black, 85%);
+        z-index: 2;
+
+        &.toggled {
+          display: block;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          border: 7px solid transparent;
+          border-bottom: 7px solid fade(@background-black, 85%);
+          top: -14px;
+          right: 40px;
+        }
+
+        .default-button {
+          background: @button-disabled;
+
+          &:hover {
+            background: @highlight-1;
+          }
+        }
+      }
+    }
+
+
   }
 }
 

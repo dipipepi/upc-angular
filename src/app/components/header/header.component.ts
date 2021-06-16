@@ -3,6 +3,9 @@ import {TranslateService} from '@ngx-translate/core';
 import {AboutComponent} from '../about/about.component';
 import {MatDialog} from '@angular/material/dialog';
 import {AuthorizationComponent} from '../authorization/authorization.component';
+import {AuthorizationService} from '../../services/Authorization/authorization.service';
+import { Logger } from '../../../Logger';
+import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +15,11 @@ import {AuthorizationComponent} from '../authorization/authorization.component';
 export class HeaderComponent implements OnInit {
 
   isLoginAvailable = true;
+  logoutVisible = false;
+  private logger = new Logger('HeaderController');
 
-  constructor(public translate: TranslateService, public dialog: MatDialog) {
-    // translate.setDefaultLang('es-XL');
+  constructor(public translate: TranslateService, public dialog: MatDialog, public authorizationService: AuthorizationService,
+              private userSettingsService: UserSettingsService) {
   }
 
   ngOnInit(): void {
@@ -55,5 +60,25 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  logout(): void {
+    this.authorizationService.logout();
+  }
 
+  showGuestSettings(): void {
+
+  }
+
+  showLogout($event?: MouseEvent): void {
+    this.logger.info('Open logout popup');
+    this.logoutVisible = true;
+    document.addEventListener('click', this.hideLogout);
+    $event.stopPropagation();
+    console.log('hello event', this.userSettingsService, this.authorizationService);
+  }
+
+  private hideLogout = (): void => {
+    this.logger.info('Hide logout popup');
+    this.logoutVisible = false;
+    document.removeEventListener('click', this.hideLogout);
+  }
 }

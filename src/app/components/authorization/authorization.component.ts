@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PortalResourcesServiceService} from '../../services/portal-resources-service.service';
-import {AuthorizationServiceService} from '../../services/Authorization/authorization-service.service';
+import {AuthorizationService} from '../../services/Authorization/authorization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {AUTH_TYPE, LOCAL_STORAGE, STATUS_CODE, ERROR_CODE} from '../../constants';
 import {MatDialogRef} from '@angular/material/dialog';
 import { Logger } from '../../../Logger';
 import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
+import {Observable, Subscription} from 'rxjs';
 
 class MyDialogComponent {
 }
@@ -16,7 +17,7 @@ class MyDialogComponent {
   templateUrl: './authorization.component.html',
   styleUrls: ['./authorization.component.less']
 })
-export class AuthorizationComponent implements OnInit {
+export class AuthorizationComponent implements OnInit, OnDestroy {
 
   oauth2ButtonEnabled = this.userSettingsService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_AND_PASSWORD ||
     this.userSettingsService.portalResources.supportedAuthType === AUTH_TYPE.OAUTH_ONLY;
@@ -35,39 +36,41 @@ export class AuthorizationComponent implements OnInit {
   loadingMessage = 'LOGIN.SIGNING';
   message = '';
 
-  authForm = new FormGroup({
-    login: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    isKeepMeSigned: new FormControl(false)
-  });
+  authForm: FormGroup;
   private logger = new Logger('LoginController');
+  private formSubscriber: Subscription;
 
 
   // redirectToOauth2 = () => AuthorizationService.redirectToOauth2();
 
   constructor(public portalResourcesServiceService: PortalResourcesServiceService,
-              public authorizationServiceService: AuthorizationServiceService,
+              public authorizationService: AuthorizationService,
               public dialogRef: MatDialogRef<MyDialogComponent>,
               public translate: TranslateService,
               private userSettingsService: UserSettingsService) {
   }
 
   ngOnInit(): void {
-    console.log('hello auth', this.authForm);
+    this.authForm = new FormGroup({
+      login: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+      isKeepMeSigned: new FormControl(false)
+    });
+    console.log('hello', this.userSettingsService, this.authorizationService);
+
+    this.onChanges();
   }
 
-  showData(): void {
-    console.log('hello form', this.authForm);
-  }
+  showData(): void {}
 
   login(): Promise<any> {
-    return this.authorizationServiceService.login(false, this.authForm.value.login, this.authForm.value.password,
+    return this.authorizationService.login(false, this.authForm.value.login, this.authForm.value.password,
       this.authForm.value.isKeepMeSigned).then(this.onLoginSuccess, this.onLoginFailure);
   }
 
   // tslint:disable-next-line:typedef
   logout() {
-    this.authorizationServiceService.logout();
+    this.authorizationService.logout();
   }
 
   redirectToOauth2(): void {
@@ -77,14 +80,16 @@ export class AuthorizationComponent implements OnInit {
   signIn(): void {
     this.loading = true;
     this.credentials.valid = true;
+    this.message = '';
 
     if (!window.localStorage) {
-      // this.logger.warn('Browser does not support localStorage.');
+      this.logger.warn('Browser does not support localStorage.');
     }
 
     window.localStorage.removeItem(LOCAL_STORAGE.UPS_TOKEN);
-    // return this.AuthorizationService.login(false, this.credentials.login, this.credentials.password, this.isKeepMeSigned)
-    //   .then(this.onLoginSuccess.bind(this), this.onLoginFailure.bind(this));
+    this.authorizationService.login(false, this.authForm.value.login, this.authForm.value.password,
+      this.authForm.value.isKeepMeSigned)
+      .then(this.onLoginSuccess.bind(this), this.onLoginFailure.bind(this));
   }
 
   onBlurLogin(): void {
@@ -133,7 +138,6 @@ export class AuthorizationComponent implements OnInit {
   }
 
   resetField(field: string): void {
-    console.log('hello reset', this.authForm);
     const newValue = {};
     newValue[field] = '';
     this.authForm.patchValue(newValue);
@@ -155,7 +159,7 @@ export class AuthorizationComponent implements OnInit {
         });
         break;
       case STATUS_CODE.UNAUTHORIZED:
-        if (response.data.error[0].errorCode === ERROR_CODE.AUTH.USER_AUTH_DISABLED) {
+        if (response.error.error[0].errorCode === ERROR_CODE.AUTH.USER_AUTH_DISABLED) {
           this.translate.get('LOGIN.ERROR.USER_AUTH_DISABLED', { name: this.authForm.value.login }).subscribe((res: string) => {
             console.log(res);
             this.message = res;
@@ -175,14 +179,29 @@ export class AuthorizationComponent implements OnInit {
         });
     }
 
-    if(response.data.error[0].errorCode === ERROR_CODE.AUTH.ERC_AUTH_EMPTY_EMAIL){
+    if(response.error.error[0].errorCode === ERROR_CODE.AUTH.ERC_AUTH_EMPTY_EMAIL){
       this.translate.get('LOGIN.ERROR.ERC_AUTH_EMPTY_EMAIL').subscribe((res: string) => {
         console.log(res);
         this.message = res;
+        this.credentials.valid = false;
       });
     }
     this.logger.log('Error message is %s', this.message);
 
+    console.log('hello', this.authForm.controls.login.errors);
     this.loading = false;
+  }
+
+  makeCredentialsValid(): void {
+    this.credentials.valid = true;
+  }
+  onChanges(): void {
+    this.formSubscriber = this.authForm.valueChanges.subscribe(val => {
+      this.credentials.valid = true;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.formSubscriber.unsubscribe();
   }
 }

@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {PortalResourcesServiceService} from './services/portal-resources-service.service';
 import {FormGroup} from '@angular/forms';
-import {AuthorizationServiceService} from './services/Authorization/authorization-service.service';
+import {AuthorizationService} from './services/Authorization/authorization.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {LocalizationService} from './services/LocalizationService/localization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {UserSettingsService} from './services/UserSettingsService/user-settings.service';
+import {test} from './shared/commonVariables';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit{
   });
 
   constructor(public portalResourcesServiceService: PortalResourcesServiceService,
-              private authorizationServiceService: AuthorizationServiceService,
+              private authorizationServiceService: AuthorizationService,
               private localization: LocalizationService,
               public translate: TranslateService,
               private userSettingsService: UserSettingsService) {
@@ -41,13 +42,11 @@ export class AppComponent implements OnInit{
     // TODO 2.1) AUTH WITH TOKEN
     // TODO 2.1) GET USER RESOURCES
 
-    this.userSettingsService.fetchResources(false).then((res) => {
-      console.log('hello test', res);
-    });
-
     this.userSettingsService.fetchResources(true).then(res => {
       this.isResourcesLoading = false;
-      // this.authorizationServiceService.validateToken();
+
+      // tslint:disable-next-line:no-shadowed-variable
+      this.authorizationServiceService.validateToken();
     }, () => {
       alert('Error. Can not get resources');
     });

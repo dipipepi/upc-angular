@@ -3,6 +3,7 @@ import {LOCAL_STORAGE, STATUS_CODE, URL} from '../../constants';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PortalResources} from '../portal-resources-service.service';
 import { Logger } from '../../../Logger';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class UserSettingsService {
   userSettings;
 
   pictureUrls;
+  locations;
 
   // @ts-ignore
   client = new AvayaUserClient(new AvayaUserClient.Config.ClientConfig({
@@ -21,7 +23,8 @@ export class UserSettingsService {
   }));
   service = this.client.userService;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private translate: TranslateService) { }
 
   fetchResources(fetchAsGuest?: boolean): Promise<PortalResources> {
     return new Promise<any>((resolve, reject) => {
@@ -58,14 +61,17 @@ export class UserSettingsService {
             upsResourcesResponse.aadsServicesUrl :
             window.location.origin;
           const resourcesUrl = origin + URL.ACS.RESOURCES;
-          const headers = {Accept : 'application/vnd.avaya.acs.resources.v7+json, application/vnd.avaya.acs.resources.v1+json'};
+          const headers = {
+            Accept : 'application/vnd.avaya.acs.resources.v7+json, application/vnd.avaya.acs.resources.v1+json',
+            Authorization: `UPToken ${window.localStorage[LOCAL_STORAGE.UPS_TOKEN]}`
+          };
           return this.http.get(resourcesUrl, {
             headers: new HttpHeaders(headers)
           }).toPromise().then(
             (response) => {
               this.logger.log('Get acs resources request success, response = %o', response);
               // @ts-ignore
-              return response.data;
+              return response;
             },
             (response) => {
               if (response.status === STATUS_CODE.UNAUTHORIZED) {
@@ -148,7 +154,7 @@ export class UserSettingsService {
 
         if (this.service) {
           // @ts-ignore
-          this.service.resources = new AvayaUserClient.Config.Resources(this.portalResources.resources);
+          this.service.resources = new AvayaUserClient.Config.Resources(this.portalResources);
         }
 
         if (this.portalResources.resources.pictures) {
@@ -159,7 +165,6 @@ export class UserSettingsService {
           };
         }
 
-        console.log('hello trigger');
         // TODO this can be replaced with client side UUID generation
         return this.http.get(this.portalResources.resources.middleware.POST.createSession.href).toPromise()
           .then((session) => {
@@ -176,25 +181,71 @@ export class UserSettingsService {
   }
 
   fetchUserSettings(): Promise<any> {
-    if (!this.service) {
-      this.logger.error('try to fetch user settings without existing service! make sure you start it already.');
-      return this.$q.reject('User Settings Service is not initialised yet!');
-    }
+    return new Promise<any>((resolve, reject) => {
+      if (!this.service) {
+        this.logger.error('try to fetch user settings without existing service! make sure you start it already.');
+        reject('User Settings Service is not initialised yet!');
+      }
 
-    return this.service.getUserConfig().fail((response) => {
-      this.logger.warn('user settings request failed');
-      this.logger.debug(JSON.stringify(response));
-      //TODO make broadcast analog
-      // if (response.status === this.STATUS_CODE.UNAUTHORIZED) {
-      //   this.$rootScope.$broadcast(this.EVENT.CUSTOM.UNAUTHORIZED_ACCESS);
-      // }
-      return response;
-    }).done((response) => {
-      this.logger.debug('user settings request success');
-      this.userSettings = response.userConfig;
-      this.userSettings.photoUploadEnabled = this.$rootScope.resources.photoUploadEnabled || false;
-      this.userSettings.maxPictureSizeInKB = this.$rootScope.resources.limits && this.$rootScope.resources.limits.maxPictureSizeInKB || 300;
-      return response;
+      return this.service.getUserConfig().fail((response) => {
+        this.logger.warn('user settings request failed');
+        this.logger.debug(JSON.stringify(response));
+        // TODO make broadcast analog
+        // if (response.status === this.STATUS_CODE.UNAUTHORIZED) {
+        //   this.$rootScope.$broadcast(this.EVENT.CUSTOM.UNAUTHORIZED_ACCESS);
+        // }
+        reject(response);
+      }).done((response) => {
+        this.logger.debug('user settings request success');
+        this.userSettings = response.userConfig;
+        this.userSettings.photoUploadEnabled = this.portalResources.photoUploadEnabled || false;
+        this.userSettings.maxPictureSizeInKB = this.portalResources.limits &&
+          this.portalResources.limits.maxPictureSizeInKB || 300;
+        resolve(response);
+      });
+    });
+
+  }
+
+  stopAvayaUserService(): void {
+    if (this.service) {
+      this.service.stop();
+      this.logger.log('AvayaUserService stopped');
+    }
+  }
+
+  startAvayaUserService(): void {
+    if (!this.pictureUrls) {
+      this.logger.error('Picture Urls is not fetched yet, can\'s start User Service!');
+      // this.MessageUtilsService.showError('', this.$translate.instant('SETTINGS.ERROR.NO_DATA_TO_INIT_USER_SERVICE')); // make this method
+      return;
+    }
+    this.service.start(window.localStorage[LOCAL_STORAGE.UPS_TOKEN], this.pictureUrls);
+    this.logger.log('AvayaUserService started');
+  }
+
+  fetchLocations(): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      // const alias = this.$stateParams.alias || window.location.href.split('/')[5]; // TODO set alias dynamic
+      const alias = 'dev-org208';
+      // const locationUrl = window.location.origin + URL.UPS.RESOURCES + alias + '/location/'; // TODO make locationUrl dynamic
+      const locationUrl = 'https://dev-cores208.uplab.com/ups/resources/tenants/dev-org208/location/';
+      return this.http.get(locationUrl, {
+        headers: new HttpHeaders({Authorization: `UPToken ${window.localStorage[LOCAL_STORAGE.UPS_TOKEN]}`})
+      }).toPromise().then(
+        (response: any) => {
+          this.logger.log('Get locations request success');
+          this.locations = response.location;
+          this.translate.get('SETTINGS.AUTO').subscribe(res => {
+            this.locations.splice(0, 0, { locationId: '', name: res });
+          });
+          resolve(response);
+        },
+        (response) => {
+          this.logger.log('Get locations request fail');
+          reject(response);
+        }
+      );
     });
   }
 }

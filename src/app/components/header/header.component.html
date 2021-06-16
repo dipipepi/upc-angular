@@ -18,9 +18,24 @@ intended publication of such source code.
     <div class="about" (click)="showAbout()">
       <span>{{'HEADER.ABOUT' | translate}}</span>
     </div>
-    <div (click)="onSignIn()" class="sign-in-block" *ngIf="isLoginAvailable">
+    <div (click)="onSignIn()" class="sign-in-block" *ngIf="isLoginAvailable && authorizationService.userType !== 'SIGN_IN'">
       <span>{{"HEADER.SIGN_IN" | translate}}</span>
       <div class="sign-in-avatar"></div>
+    </div>
+    <div class="user-block"
+         *ngIf="authorizationService.userType==='SIGN_IN'"
+         (click)="showLogout($event)">
+      <span class="user-name">{{ authorizationService.user.name + ' ' +  authorizationService.user.lastName}}</span>
+      <div class="avatar">
+        <img alt="" *ngIf="authorizationService.user.pictureData" [src]="authorizationService.user.pictureData">
+      </div>
+      <div class="sign-out {{logoutVisible ? 'toggled' : 'hidden'}}">
+        <button type="button"
+                class="default-button"
+                (click)="logout()"
+                autofocus>{{'HEADER.SIGN_OUT' | translate}}
+        </button>
+      </div>
     </div>
   </div>
 </div>

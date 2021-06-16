@@ -80,12 +80,12 @@ intended publication of such source code.
 <div class="authorization-wrapper">
   <div class="login-caption {{message || loading ? 'hidden' : ''}}">{{'LOGIN.GREETING' | translate}}</div>
 
-  <form name="loginForm" [formGroup]="authForm" (ngSubmit)="login()" *ngIf="authFormEnabled">
-    <div class="loading {{loading ? '' : 'hidden'}}">{{ loadingMessage | translate}}</div>
+  <form name="loginForm" [formGroup]="authForm" (ngSubmit)="signIn()" *ngIf="authFormEnabled">
+    <div class="loading {{loading ? '' : 'hidden'}}"></div>
     <div class="default-error {{message ? '' : 'hidden'}}">{{message}}</div>
     <label>
       <input class="default-input {{credentials.valid ? '' : 'error'}}"
-             (change)="credentials.valid = true"
+             (change)="makeCredentialsValid()"
              type="text"
              autocomplete="on"
              name="login"
@@ -100,7 +100,7 @@ intended publication of such source code.
     <label>
       <input reset-field
              appResetField
-             (change)="credentials.valid = true"
+             (change)="makeCredentialsValid()"
              type="password"
              name="password"
              formControlName="password"
@@ -127,7 +127,7 @@ intended publication of such source code.
     <div class="button-wrapper">
       <button type="submit"
               class="default-button"
-              [disabled]="!authForm.value.login || !authForm.value.password || authForm.status === 'INVALID' || loading"
+              [disabled]="!authForm.value.login || !authForm.value.password || authForm.status === 'INVALID' || loading || !credentials.valid"
               translate-once="LOGIN.SIGN_IN"
               focus-only-tab>
         {{'LOGIN.SIGN_IN' | translate}}

@@ -23,12 +23,20 @@
   }
 
   .loading {
-    height: 30px;
+    margin: 19px 0 14px;
+    height: 33px;
+  }
 
-    &::before {
-      width: 26px;
-      height: 26px;
-    }
+  .loading::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 26px;
+    height: 26px;
+    background: @overlay-spinner;
+    background-size: 100%;
+    animation: spin 1s steps(8) infinite;
   }
 
   .default-checkbox {

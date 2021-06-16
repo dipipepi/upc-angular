@@ -63,6 +63,7 @@ export class LOCAL_STORAGE {
   public static get OAUTH2_REFRESH_TOKEN(): string {return 'OAUTH2_REFRESH_TOKEN';}
 }
 
+// tslint:disable-next-line:class-name
 export class STATUS_CODE {
   public static get OK(): number {return 200;}
   public static get BAD_REQUEST(): number {return 400;}
@@ -72,18 +73,22 @@ export class STATUS_CODE {
   public static get SERVICE_UNAVAILABLE(): number {return 503;}
 }
 
+// tslint:disable-next-line:class-name
 export class ERROR_CODE {
-  static GENERAL: {
+  // tslint:disable-next-line:typedef
+  public static get GENERAL() {return {
     INTERNAL_SERVER_ERROR: 'ERC_INTERNAL_SERVER_ERROR',
     MISSING_REQUEST_PARAM: 'ERC_MISSING_REQUEST_PARAM'
-  };
-  static MEETING: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get MEETING() {return {
     VIRTUAL_ROOM_REQUIRED: 'ERC_VIRTUAL_ROOM_REQUIRED',
     ERROR_INVALID_P2P_INFO: 'ERROR_INVALID_P2P_INFO',
     ERC_MCU_RESOURCE_SHORTAGE: 'ERC_MCU_RESOURCE_SHORTAGE',
     ERC_WAITING_ROOM_REQUIRED_IN_TE: 'ERC_WAITING_ROOM_REQUIRED_IN_TE'
-  };
-  static JOIN: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get JOIN() {return  {
     INCORRECT_INPUT: 'ERC_JC_INCORRECT_INPUT',
     ERC_WRONG_CURRENT_CONFERENCE: 'ERC_WRONG_CURRENT_CONFERENCE',
     ERC_DISALLOW_INITIATE_NON_VIRTUAL_ROOM_MEETING : 'ERC_DISALLOW_INITIATE_NON_VIRTUAL_ROOM_MEETING',
@@ -101,8 +106,9 @@ export class ERROR_CODE {
     AUDIO_PRESENTATION: 'Audio + Presentation',
     PRESENTATION_ONLY: 'Presentation Only',
     FAIL_TO_JOIN_UNAUTHORIZED_PARTICIPANT_ID: 'FAIL_TO_JOIN_UNAUTHORIZED_PARTICIPANT_ID'
-  };
-  static AUTH: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get AUTH() {return {
     TOKEN_EXPIRED: 'ERC_AUTH_TOKEN_EXPIRED',
     TOKEN_INVALID: 'ERC_AUTH_TOKEN_INVALID',
     ORG_NOT_EXIST: 'ERC_ORG_NOT_EXIST',
@@ -110,20 +116,23 @@ export class ERROR_CODE {
     USER_AUTH_DISABLED: 'ERC_AUTH_USER_AUTH_DISABLED',
     ERC_AUTH_USER_NAME: 'ERC_AUTH_USER_NAME',
     ERC_AUTH_EMPTY_EMAIL: 'ERC_AUTH_EMPTY_EMAIL'
-  };
-  static SCHEDULE: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get SCHEDULE() {return {
     VIRTUAL_CONFERENCE_ID_CONFLICTED: 'ERC_VIRTUAL_CONFERENCE_ID_CONFLICTED'
-  };
-  static CONTACT_SEARCH: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get CONTACT_SEARCH() {return {
     REQUEST_CANCELED: 'REQUEST_CANCELED'
-  };
-  static CLIENT: {
+  };}
+  // tslint:disable-next-line:typedef
+  public static get CLIENT() {return {
     SWC_PO_ONLY_SUPPORTED: 'SWC_PO_ONLY_SUPPORTED',
     NO_RESOURCES: 'NO_RESOURCES',
     PREFERRED_CLIENT_ISSUE: 'PREFERRED_CLIENT_ISSUE',
     UPDATE_REQUIRED: 'UPDATE_REQUIRED',
     MIN_VERSION: '3.4.0.120'
-  };
+  };}
 }
 
 export class USER_TYPE {
