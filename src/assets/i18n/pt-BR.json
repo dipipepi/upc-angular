@@ -55,6 +55,50 @@
 		"VERSION_EXCLUSION_FOR_DATE_ONLY": "A versão do seu navegador não oferece suporte ao web conferencing. Para uma experiência de colaboração ainda melhor,<br>tente utilizar uma nova versão, outro <span class=\"underline\">navegador compatível</span> ou faça o download do aplicativo.",
 		"OLD_EDGE": "Seu navegador não é compatível com o Avaya Meetings. Use a versão mais recente do Google Chrome ou do Microsoft Edge para ter a melhor experiência."
 	},
+	"GENERAL": {
+		"ERROR": {
+			"SESSION_HAS_EXPIRED": "Sua sessão expirou. Faça logon para continuar.",
+			"WINDOW_WIDTH_REACHED_MINIMUM": "Sentimos muito, mas a janela do seu navegador é menor do que o mínimo esperado. Expanda-a de modo que possa visualizar todos os controles.",
+			"INCORRECT_PIN": "O PIN não pode conter dígitos repetidos ou em sequência.",
+			"PIN_MIN_LENGTH": "O PIN precisa ter entre {{minLength}} e {{maxLength}} dígitos.",
+			"EMPTY_PIN": "O PIN não pode estar vazio.",
+			"FAILED_UPLOAD_IMAGE_TITLE": "Falha ao carregar imagem.",
+			"FAILED_UPLOAD_IMAGE_MESSAGE": "Seu arquivo de miniatura é muito grande. Faça o upload de um arquivo menor do que 3 Mb."
+		},
+		"MONTH_AND_YEAR_STRING": {
+			"JANUARY_NUMBER_OF_YEAR": "Janeiro de {{numberOfYear}}",
+			"FEBRUARY_NUMBER_OF_YEAR": "Fevereiro de {{numberOfYear}}",
+			"MARCH_NUMBER_OF_YEAR": "Março de {{numberOfYear}}",
+			"APRIL_NUMBER_OF_YEAR": "Abril de {{numberOfYear}}",
+			"MAY_NUMBER_OF_YEAR": "Maio de {{numberOfYear}}",
+			"JUNE_NUMBER_OF_YEAR": "Junho de {{numberOfYear}}",
+			"JULY_NUMBER_OF_YEAR": "Julho de {{numberOfYear}}",
+			"AUGUST_NUMBER_OF_YEAR": "Agosto de {{numberOfYear}}",
+			"SEPTEMBER_NUMBER_OF_YEAR": "Setembro de {{numberOfYear}}",
+			"OCTOBER_NUMBER_OF_YEAR": "Outubro de {{numberOfYear}}",
+			"NOVEMBER_NUMBER_OF_YEAR": "Novembro de {{numberOfYear}}",
+			"DECEMBER_NUMBER_OF_YEAR": "Dezembro de {{numberOfYear}}"
+		},
+		"WEEKDAY_MIN": {
+			"MONDAY": "Seg",
+			"TUESDAY": "Ter",
+			"WEDNESDAY": "Qua",
+			"THURSDAY": "Qui",
+			"FRIDAY": "Sex",
+			"SATURDAY": "Sáb",
+			"SUNDAY": "Dom"
+		},
+		"BROWSERS": {
+			"BROWSER_NOT_SUPPORTED": "não pode ser usado para ingressar na reunião. Tente novamente usando um dos navegadores compatíveis.",
+			"YOUR": "Seu",
+			"BROWSER": "navegador",
+			"BROWSERS": "navegadores",
+			"BROWSER_OUT_OF_DATE": "está desatualizado. Atualize seu navegador para obter a melhor experiência."
+		},
+		"DOWNLOAD": {
+			"NO_CLIENT": "O aplicativo não foi encontrado no Avaya Meetings Management. Entre em contato com a equipe de suporte."
+		}
+	},
 	"MSG_UTILS": {
 		"DOWNLOAD": "Fazer o download",
 		"DOWNLOAD_APP": "Fazer o download do aplicativo",

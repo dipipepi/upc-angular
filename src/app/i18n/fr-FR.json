@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "Votre session est arrivée à expiration. Veuillez vous connecter pour continuer.",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "Désolé, la taille de votre fenêtre de navigateur est inférieure à la taille minimale. Veuillez l'agrandir afin d'afficher tous les contrôles.",
+            "INCORRECT_PIN": "Le code PIN ne peut pas contenir de chiffres séquentiels ou répétés.",
+            "PIN_MIN_LENGTH": "Le code PIN doit comporter entre {{minLength}} et {{maxLength}} chiffres.",
+            "EMPTY_PIN": "Le code PIN doit être renseigné.",
+            "FAILED_UPLOAD_IMAGE_TITLE": "Échec du chargement de l'image.",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "Le fichier de votre miniature est trop volumineux. Veuillez charger un fichier dont la taille est inférieure à 3 Mo."
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "Janvier {{numberOfYear}}",
+            "FEBRUARY_NUMBER_OF_YEAR": "Février {{numberOfYear}}",
+            "MARCH_NUMBER_OF_YEAR": "Mars {{numberOfYear}}",
+            "APRIL_NUMBER_OF_YEAR": "Avril {{numberOfYear}}",
+            "MAY_NUMBER_OF_YEAR": "Mai {{numberOfYear}}",
+            "JUNE_NUMBER_OF_YEAR": "Juin {{numberOfYear}}",
+            "JULY_NUMBER_OF_YEAR": "Juillet {{numberOfYear}}",
+            "AUGUST_NUMBER_OF_YEAR": "Août {{numberOfYear}}",
+            "SEPTEMBER_NUMBER_OF_YEAR": "Septembre {{numberOfYear}}",
+            "OCTOBER_NUMBER_OF_YEAR": "Octobre {{numberOfYear}}",
+            "NOVEMBER_NUMBER_OF_YEAR": "Novembre {{numberOfYear}}",
+            "DECEMBER_NUMBER_OF_YEAR": "Décembre {{numberOfYear}}"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "Lu",
+            "TUESDAY": "Ma",
+            "WEDNESDAY": "Me",
+            "THURSDAY": "Je",
+            "FRIDAY": "Ve",
+            "SATURDAY": "Sa",
+            "SUNDAY": "Di"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "ne peut pas être utilisé pour rejoindre la réunion. Veuillez essayer l'un des navigateurs pris en charge.",
+            "YOUR": "Votre",
+            "BROWSER": "navigateur",
+            "BROWSERS": "navigateurs",
+            "BROWSER_OUT_OF_DATE": "n'est pas à jour. Veuillez mettre à jour votre navigateur pour une expérience optimale."
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "L'application n'a pas été trouvée dans Avaya Meetings Management. Veuillez contacter votre équipe d'assistance."
+        }
+    }
+}

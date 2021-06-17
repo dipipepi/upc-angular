@@ -118,6 +118,7 @@ export interface PortalResources {
     userId: string | null
   };
   resources: {
+    user: any;
     conference?: any;
     broadcastProfiles?: { href: string };
     pictures: any;
@@ -209,6 +210,7 @@ export interface PortalResources {
     }
   };
   clientSettings: {
+    webMeetMeDataOnlyBrowsers: any[];
     'avayaCommunicatorClientAuraDomain': any[],
     'scopiaDesktopClientEnableRank': number,
     'scopiaDesktopClientMinVersion': string | null,

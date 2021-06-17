@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {PortalResourcesServiceService} from './services/portal-resources-service.service';
 import {FormGroup} from '@angular/forms';
-import {AuthorizationService} from './services/Authorization/authorization.service';
+import {AuthorizationService} from './services/AuthorizationService/authorization.service';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {LocalizationService} from './services/LocalizationService/localization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {UserSettingsService} from './services/UserSettingsService/user-settings.service';
-import {test} from './shared/commonVariables';
+import { Logger } from '../Logger';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +19,7 @@ export class AppComponent implements OnInit{
   name= '';
   isResourcesLoading = true;
   authForm: FormGroup;
+  logger = new Logger('GlobalController');
   private userClient;
   private defaultTimeFormat = JSON.stringify({
     useDefault : true,

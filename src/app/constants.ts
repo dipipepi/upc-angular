@@ -39,17 +39,20 @@ export class URL {
 }
 
 
+// tslint:disable-next-line:class-name
 export class DATE_FORMAT {
-  static MM_DD_YY: 'MM/DD/YY';
-  static DD_MM_YY: 'DD/MM/YY';
+  public static get MM_DD_YY(): string {return 'MM/DD/YY';}
+  public static get  DD_MM_YY(): string {return 'DD/MM/YY';}
 }
 
+// tslint:disable-next-line:class-name
 export class AUTH_TYPE {
   public static get OAUTH_AND_PASSWORD(): string { return 'OAUTH_AND_PASSWORD';}
   public static get OAUTH_ONLY(): string { return 'OAUTH_ONLY';}
   public static get PASSWORD_ONLY(): string { return 'PASSWORD_ONLY';}
 }
 
+// tslint:disable-next-line:class-name
 export class LOCAL_STORAGE {
   public static get ALIAS(): string { return 'ALIAS';}
   public static get UPS_TOKEN(): string { return 'UPS_TOKEN';}
@@ -135,6 +138,7 @@ export class ERROR_CODE {
   };}
 }
 
+// tslint:disable-next-line:class-name
 export class USER_TYPE {
   public static get GUEST(): string {return 'GUEST';}
   public static get SIGN_IN(): string {return 'SIGN_IN';}
@@ -200,6 +204,31 @@ export class EVENT {
   }
 }
 
+// tslint:disable-next-line:class-name
 export class SESSION_STORAGE {
   public static get SESSION_IS_ACTIVE(): string {return 'SESSION_IS_ACTIVE';}
+}
+
+export class BROWSERS {
+  public static get CHROME(): string {return 'Chrome';}
+  public static get FIREFOX(): string {return 'Firefox';}
+  public static get IE(): string {return 'IE';}
+  public static get MS_EDGE_CHROMIUM(): string {return 'MS-Edge-Chromium';}
+  public static get MS_EDGE(): string {return 'MS-Edge';}
+  public static get YANDEX(): string {return 'Yandex';}
+  public static get SAFARI(): string {return 'Safari';}
+  public static get OPERA(): string {return 'Opera';}
+  public static get FB_MESSANGER(): string {return 'FB-Messanger';}
+  public static get SAMSUNG(): string {return 'Samsung';}
+  public static get UCBROWSER(): string {return 'UC-Browser';}
+  public static get CORDOVA(): string {return 'Cordova';}
+}
+
+export class OS {
+  public static get WINDOWS(): string {return 'Windows';}
+  public static get MAC(): string {return 'Mac';}
+  public static get IOS(): string {return 'iOS';}
+  public static get ANDROID(): string {return 'Android';}
+  public static get LINUX(): string {return 'Linux';}
+  public static get CHROME_OS(): string {return 'Chrome-OS';}
 }

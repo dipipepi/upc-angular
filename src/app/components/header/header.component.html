@@ -7,11 +7,37 @@ THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
 The copyright notice above does not evidence any actual or
 intended publication of such source code.
 -->
+<div class="browser-notifications-container">
+  <div class="administrator-notification-container"></div>
+  <div class="rollover-container"></div>
+
+  <div *ngIf="isDesktop && browserInfoService.isWebRTCBrowserExclusion() &&
+    !browserInfoService.isDataOnlyBrowserExclusion()  && !isOldEdge" class="browser-exclusion">
+    <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_WEBRTC' | translate}}</div>
+  </div>
+
+  <div *ngIf="isDesktop && browserInfoService.isDataOnlyBrowserExclusion()  && !isOldEdge" class="browser-exclusion">
+    <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_DATE_ONLY' | translate}}</div>
+  </div>
+
+  <div *ngIf="isDesktop && !browserInfoService.isBrowserSupported() && !isOldEdge" class="browser-supporting">
+    <div class="text">{{browserNotSupportedMessage}}</div>
+  </div>
+
+  <div *ngIf="isDesktop && browserInfoService.isBrowserSupported() && !browserInfoService.isFreshVersion()
+    && !isOldEdge" class="browser-supporting">
+    <div class="text">{{browserOutOfDateMessage}}</div>
+  </div>
+
+  <div class="browser-supporting" *ngIf="isOldEdge">
+    <div class="text">{{'BROWSERS.OLD_EDGE' | translate}}</div>
+  </div>
+</div>
 
 <div class="header-wrapper">
 
   <div class="action-blocks">
-    <div class="settings-block">
+    <div class="settings-block" (click)="showSettings()">
       <div class="settings-icon"></div>
       <span>{{'HEADER.SETTINGS' | translate}}</span>
     </div>

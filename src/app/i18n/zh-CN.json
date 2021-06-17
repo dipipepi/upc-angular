@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "您的会话已过期。请登录以继续",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "抱歉，您的浏览器窗口小于最小值，请放大窗口以查看所有控件。",
+            "INCORRECT_PIN": "PIN 码不能包含连续或重复的数字。",
+            "PIN_MIN_LENGTH": "PIN 码长度必须介于 {{minLength}} 和 {{maxLength}} 之间。",
+            "EMPTY_PIN": "PIN 码不能为空。",
+            "FAILED_UPLOAD_IMAGE_TITLE": "无法上传图像",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "您的缩略图文件太大。请上传小于 3 MB 的文件。"
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "一月{{numberOfYear}}",
+            "FEBRUARY_NUMBER_OF_YEAR": "二月 {{numberOfYear}}",
+            "MARCH_NUMBER_OF_YEAR": "三月 {{numberOfYear}}",
+            "APRIL_NUMBER_OF_YEAR": "四月 {{numberOfYear}}",
+            "MAY_NUMBER_OF_YEAR": "五月 {{numberOfYear}}",
+            "JUNE_NUMBER_OF_YEAR": "六月 {{numberOfYear}}",
+            "JULY_NUMBER_OF_YEAR": "七月 {{numberOfYear}}",
+            "AUGUST_NUMBER_OF_YEAR": "八月 {{numberOfYear}}",
+            "SEPTEMBER_NUMBER_OF_YEAR": "九月 {{numberOfYear}}",
+            "OCTOBER_NUMBER_OF_YEAR": "十月 {{numberOfYear}}",
+            "NOVEMBER_NUMBER_OF_YEAR": "十一月 {{numberOfYear}}",
+            "DECEMBER_NUMBER_OF_YEAR": "十二月 {{numberOfYear}}"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "周一",
+            "TUESDAY": "周二",
+            "WEDNESDAY": "周三",
+            "THURSDAY": "周四",
+            "FRIDAY": "周五",
+            "SATURDAY": "周六",
+            "SUNDAY": "周日"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "无法用于加入会议。请使用受支持的浏览器。",
+            "YOUR": "您的",
+            "BROWSER": "浏览器",
+            "BROWSERS": "浏览器",
+            "BROWSER_OUT_OF_DATE": "已过期。请更新浏览器以获得最佳体验。"
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "Avaya Meetings Management 中未找到应用程序。请联系您的支持团队。"
+        }
+    }
+}

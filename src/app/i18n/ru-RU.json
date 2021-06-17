@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "Срок действия вашего сеанса истек. Войдите в систему, чтобы продолжить.",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "Окно вашего браузера слишком маленькое, разверните его, чтобы получить доступ ко всем элементам управления.",
+            "INCORRECT_PIN": "PIN-код не может содержать последовательные или повторяющиеся цифры.",
+            "PIN_MIN_LENGTH": "Длина PIN-кода должна составлять {{minLength}}–{{maxLength}} цифр.",
+            "EMPTY_PIN": "PIN-код не может быть пустым.",
+            "FAILED_UPLOAD_IMAGE_TITLE": "Не удалось загрузить изображение",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "Слишком большой размер файла миниатюры. Загрузите файл размером меньше 3 МБ."
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "Январь {{numberOfYear}}",
+            "FEBRUARY_NUMBER_OF_YEAR": "Февраль {{numberOfYear}}",
+            "MARCH_NUMBER_OF_YEAR": "Март {{numberOfYear}}",
+            "APRIL_NUMBER_OF_YEAR": "Апрель {{numberOfYear}}",
+            "MAY_NUMBER_OF_YEAR": "Май {{numberOfYear}}",
+            "JUNE_NUMBER_OF_YEAR": "Июнь {{numberOfYear}}",
+            "JULY_NUMBER_OF_YEAR": "Июль {{numberOfYear}}",
+            "AUGUST_NUMBER_OF_YEAR": "Август {{numberOfYear}}",
+            "SEPTEMBER_NUMBER_OF_YEAR": "Сентябрь {{numberOfYear}}",
+            "OCTOBER_NUMBER_OF_YEAR": "Октябрь {{numberOfYear}}",
+            "NOVEMBER_NUMBER_OF_YEAR": "Ноябрь {{numberOfYear}}",
+            "DECEMBER_NUMBER_OF_YEAR": "Декабрь {{numberOfYear}}"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "Пн",
+            "TUESDAY": "Вт",
+            "WEDNESDAY": "Ср",
+            "THURSDAY": "Чт",
+            "FRIDAY": "Пт",
+            "SATURDAY": "Сб",
+            "SUNDAY": "Вс"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "не может использоваться для присоединения к собранию. Воспользуйтесь одним из поддерживаемых браузеров.",
+            "YOUR": "Поддержка",
+            "BROWSER": "браузера",
+            "BROWSERS": "браузеров",
+            "BROWSER_OUT_OF_DATE": "не осуществляется. Обновите программу."
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "Приложение не найдено в Avaya Meetings Management. Обратитесь в службу поддержки."
+        }
+    }
+}

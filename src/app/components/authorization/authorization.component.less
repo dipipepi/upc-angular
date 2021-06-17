@@ -39,14 +39,55 @@
     animation: spin 1s steps(8) infinite;
   }
 
-  .default-checkbox {
+  .keep-me-checkbox {
     display: inline-block;
     margin: 0;
     padding-left: 25px;
 
+    input {
+      opacity: 0;
+      position: absolute;
+    }
+
+
     input+label::before {
       display: inline-block;
       border: 1px solid @input-borders-color;
+    }
+
+    input+label::before, input+span::before {
+      content: '';
+      display: inline-block;
+      margin: 0 5px 0 -25px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid @input-borders-color;
+      background: @background-white;
+      vertical-align: middle;
+      box-sizing: inherit;
+    }
+
+
+    &.error input+label::before, &.error input+span::before {
+      //border: 1px solid @highlight-1;
+    }
+
+    input:focus{
+      &::before {
+        //border: 1px solid @focus;
+      }
+    }
+
+    input:focus+label::before, input:focus+span::before {
+      //box-shadow: 0 0 1px 1px @focus;
+    }
+
+    input:active{
+      //border: 1px solid @focus;
+    }
+
+    input:checked+label::before, input:checked+span::before {
+      background: @background-white @url-check-box;
     }
 
     input:checked+label {
@@ -62,7 +103,7 @@
       box-shadow: none;
 
       &::before {
-        box-shadow: 0 0 1px 1px @focus;
+        border: 1px solid @focus;
       }
     }
   }

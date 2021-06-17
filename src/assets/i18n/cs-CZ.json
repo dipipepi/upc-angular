@@ -55,6 +55,50 @@
 		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Verze vašeho prohlížeče nepodporuje webové konference. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
 		"OLD_EDGE": "Váš prohlížeč není kompatibilní s Avaya Meetings. Chcete-li používat všechny funkce použijte nejnovější verzi prohlížeče Google Chrome nebo Microsoft Edge."
 	},
+	"GENERAL": {
+		"ERROR": {
+			"SESSION_HAS_EXPIRED": "Vaše relace vypršela. Chcete-li pokračovat, přihlaste se.",
+			"WINDOW_WIDTH_REACHED_MINIMUM": "Je nám líto, ale okno prohlížeče je zmenšené na minimum. Roztáhněte okno, tak abyste mohli vidět všechny ovládací prvky.",
+			"INCORRECT_PIN": "PIN kód nesmí obsahovat postupné nebo opakované číslice.",
+			"PIN_MIN_LENGTH": "PIN kód musí mít minimálně {{minLength}} a maximálně {{maxLength}} číslic.",
+			"EMPTY_PIN": "PIN kód nemůže být prázdný.",
+			"FAILED_UPLOAD_IMAGE_TITLE": "Nahrání obrázku se nezdařilo",
+			"FAILED_UPLOAD_IMAGE_MESSAGE": "Soubor s miniaturami je příliš velký. Nahrajte soubor, který je menší než 3 MB."
+		},
+		"MONTH_AND_YEAR_STRING": {
+			"JANUARY_NUMBER_OF_YEAR": "Leden {{numberOfYear}}",
+			"FEBRUARY_NUMBER_OF_YEAR": "Únor {{numberOfYear}}",
+			"MARCH_NUMBER_OF_YEAR": "Březen {{numberOfYear}}",
+			"APRIL_NUMBER_OF_YEAR": "Duben {{numberOfYear}}",
+			"MAY_NUMBER_OF_YEAR": "Květen {{numberOfYear}}",
+			"JUNE_NUMBER_OF_YEAR": "Červen {{numberOfYear}}",
+			"JULY_NUMBER_OF_YEAR": "Červenec {{numberOfYear}}",
+			"AUGUST_NUMBER_OF_YEAR": "Srpen {{numberOfYear}}",
+			"SEPTEMBER_NUMBER_OF_YEAR": "Září {{numberOfYear}}",
+			"OCTOBER_NUMBER_OF_YEAR": "Říjen {{numberOfYear}}",
+			"NOVEMBER_NUMBER_OF_YEAR": "Listopad {{numberOfYear}}",
+			"DECEMBER_NUMBER_OF_YEAR": "Prosinec {{numberOfYear}}"
+		},
+		"WEEKDAY_MIN": {
+			"MONDAY": "Po",
+			"TUESDAY": "Út",
+			"WEDNESDAY": "St",
+			"THURSDAY": "Čt",
+			"FRIDAY": "Pá",
+			"SATURDAY": "So",
+			"SUNDAY": "Ne"
+		},
+		"BROWSERS": {
+			"BROWSER_NOT_SUPPORTED": "nelze použít pro připojení ke schůzce. Vyzkoušejte některý z podporovaných prohlížečů.",
+			"YOUR": "Váš",
+			"BROWSER": "prohlížeč",
+			"BROWSERS": "prohlížeč",
+			"BROWSER_OUT_OF_DATE": "je zastaralý. Aktualizujte svůj prohlížeč, abyste mohli používat všechny funkce."
+		},
+		"DOWNLOAD": {
+			"NO_CLIENT": "Telefonní aplikace nebyla nalezena na serveru Avaya Meetings Server. Obraťte se na svého správce systému."
+		}
+	},
 	"MSG_UTILS": {
 		"DOWNLOAD": "Stahování",
 		"DOWNLOAD_APP": "Stáhnout aplikaci",

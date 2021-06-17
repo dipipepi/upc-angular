@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "セッションの有効期限が切れました。続行するにはログインしてください",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "お使いのブラウザウィンドウは最小サイズ以下になっています。コントロールをすべて表示できるようにウィンドウを拡大してください。",
+            "INCORRECT_PIN": "連続した数字または数字の繰り返しは PIN に使用できません。",
+            "PIN_MIN_LENGTH": "PIN は {{minLength}} ～ {{maxLength}} 文字、数字のみ使用可能です。",
+            "EMPTY_PIN": "PIN を空白にすることはできません。",
+            "FAILED_UPLOAD_IMAGE_TITLE": "画像をアップロードできませんでした",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "サムネイルファイルが大きすぎます。アップロードするファイルは 3 Mb 未満にしてください。"
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "{{numberOfYear}} 年 1 月",
+            "FEBRUARY_NUMBER_OF_YEAR": "{{numberOfYear}} 年 2 月",
+            "MARCH_NUMBER_OF_YEAR": "{{numberOfYear}} 年 3 月",
+            "APRIL_NUMBER_OF_YEAR": "{{numberOfYear}} 年 4 月",
+            "MAY_NUMBER_OF_YEAR": "{{numberOfYear}} 年 5 月",
+            "JUNE_NUMBER_OF_YEAR": "{{numberOfYear}} 年 6 月",
+            "JULY_NUMBER_OF_YEAR": "{{numberOfYear}} 年 7 月",
+            "AUGUST_NUMBER_OF_YEAR": "{{numberOfYear}} 年 8 月",
+            "SEPTEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年 9 月",
+            "OCTOBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年 10 月",
+            "NOVEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年 11 月",
+            "DECEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年 12 月"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "月",
+            "TUESDAY": "火",
+            "WEDNESDAY": "水",
+            "THURSDAY": "木",
+            "FRIDAY": "金",
+            "SATURDAY": "土",
+            "SUNDAY": "日"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "は会議の参加には使用できません。対応ブラウザでお試しください。",
+            "YOUR": "お使いの",
+            "BROWSER": "ブラウザ",
+            "BROWSERS": "ブラウザ",
+            "BROWSER_OUT_OF_DATE": "が古くなっています。快適にお使いいただくために最新のブラウザにアップデートしてください。"
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "Avaya Meetings Management でアプリが見つかりませんでした。サポートチームにお問い合わせください。"
+        }
+    }
+}

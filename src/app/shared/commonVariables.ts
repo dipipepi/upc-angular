@@ -11,42 +11,32 @@ if (path[4] === 'tenants') {
   // baseUrl = `/portal/`;
 }
 
-export function test(): Promise<any> {
-  return new Promise<unknown>((resolve) => {
-    resolve(test2().then(onTestSuccess, onTestFail));
-  });
-}
-
-function test2(): Promise<any> {
-  return test3().then(onTest3Success, onTest3Fail);
-}
-
-function onTestSuccess(): Promise<unknown> {
+// tslint:disable-next-line:typedef
+function test1() {
   return new Promise(resolve => {
-    resolve(1);
+    resolve(test2().then(test3));
   });
 }
 
-function onTestFail(): Promise<unknown> {
-  return new Promise(resolve => {
-    resolve(2);
+// tslint:disable-next-line:typedef
+function test2() {
+  return new Promise((resolve) => {
+    resolve(3);
   });
 }
 
-function test3(): Promise<number> {
-  return new Promise<number>((resolve, reject) => {
-    setTimeout(() => {resolve(3);}, 1000);
-  });
+function test3(res) {
+  return res*3;
 }
 
-function onTest3Success(): Promise<unknown> {
-  return new Promise(resolve => {
-    resolve(4);
-  });
-}
+test1().then(res=>{console.log('hello', res);});
 
-function onTest3Fail(): Promise<unknown> {
-  return new Promise(resolve => {
-    resolve(5);
-  });
+const arr = {
+  s: 3,
+  sdf: 2,
+  arr: [323, 23 ,23]
+};
+
+for(const el of arr.arr) {
+  console.log('hello el', el);
 }

@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PortalResourcesServiceService} from '../../services/portal-resources-service.service';
-import {AuthorizationService} from '../../services/Authorization/authorization.service';
+import {AuthorizationService} from '../../services/AuthorizationService/authorization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {AUTH_TYPE, LOCAL_STORAGE, STATUS_CODE, ERROR_CODE} from '../../constants';
 import {MatDialogRef} from '@angular/material/dialog';

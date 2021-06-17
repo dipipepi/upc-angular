@@ -23,8 +23,83 @@ export class UserSettingsService {
   }));
   service = this.client.userService;
 
+  private localizedAudioPromptLanguages = {
+    cs_cz : 'Čeština',
+    da_dk : 'Dansk',
+    de_de : 'Deutsch',
+    en_gb : 'English (U.K.)',
+    en_us : 'English (U.S.)',
+    es_mx : 'Español',
+    fr_fr : 'Français',
+    fr_ca : 'French (Canadian)',
+    hu_hu : 'Magyar',
+    in_id : 'Bahasa Indonesia',
+    it_it : 'Italiano',
+    ja_jp : '日本語',
+    ko_kr : '한국어',
+    ms_my : 'Bahasa melayu',
+    nb_no : 'Norsk',
+    nl_be : 'Nederlands',
+    pl_pl : 'Polski',
+    pt_br : 'Português (Brasil)',
+    ru_ru : 'Русский',
+    sv_se : 'Svenska',
+    th_th : 'ภาษาไทย',
+    tr_tr : 'Türkçe',
+    zh_cn : '中文',
+    zh_tw : '中文 (繁體)'
+  };
+
+  private localizedLanguages = {
+    cs_cz : 'Čeština',
+    da_dk : 'Dansk',
+    de_de : 'Deutsch',
+    en_gb : 'English (U.K.)',
+    en_us : 'English (U.S.)',
+    es_mx : 'Español',
+    fr_fr : 'Français',
+    fr_ca : 'French (Canadian)',
+    hu_hu : 'Magyar',
+    in_id : 'Bahasa Indonesia',
+    it_it : 'Italiano',
+    ja_jp : '日本語',
+    ko_kr : '한국어',
+    ms_my : 'Bahasa melayu',
+    nb_no : 'Norsk',
+    nl_be : 'Nederlands',
+    pl_pl : 'Polski',
+    pt_br : 'Português (Brasil)',
+    ru_ru : 'Русский',
+    sv_se : 'Svenska',
+    th_th : 'ภาษาไทย',
+    tr_tr : 'Türkçe',
+    zh_cn : '中文 (简体)',
+    zh_tw : '中文 (繁體)'
+  };
+
   constructor(private http: HttpClient,
               private translate: TranslateService) { }
+
+  startAvayaUserService(): void {
+    if (!this.pictureUrls) {
+      this.logger.error('Picture Urls is not fetched yet, can\'s start User Service!');
+      // this.MessageUtilsService.showError('', this.$translate.instant('SETTINGS.ERROR.NO_DATA_TO_INIT_USER_SERVICE')); // make this method
+      return;
+    }
+    this.service.start(window.localStorage[LOCAL_STORAGE.UPS_TOKEN], this.pictureUrls);
+    this.logger.log('AvayaUserService started');
+  }
+
+  stopAvayaUserService(): void {
+    if (this.service) {
+      this.service.stop();
+      this.logger.log('AvayaUserService stopped');
+    }
+  }
+
+  getAvayaUserService(): void {
+    return this.service;
+  }
 
   fetchResources(fetchAsGuest?: boolean): Promise<PortalResources> {
     return new Promise<any>((resolve, reject) => {
@@ -50,7 +125,7 @@ export class UserSettingsService {
         })
           .catch((response) => {
             this.logger.warn('Get resources request fail, response=%o', response);
-            return response;
+            reject(response);
           });
       };
 
@@ -180,6 +255,31 @@ export class UserSettingsService {
     });
   }
 
+  fetchLocations(): Promise<any> {
+    return new Promise<any>((resolve, reject) => {
+      // const alias = this.$stateParams.alias || window.location.href.split('/')[5]; // TODO set alias dynamic
+      const alias = 'dev-org208';
+      // const locationUrl = window.location.origin + URL.UPS.RESOURCES + alias + '/location/'; // TODO make locationUrl dynamic
+      const locationUrl = 'https://dev-cores208.uplab.com/ups/resources/tenants/dev-org208/location/';
+      return this.http.get(locationUrl, {
+        headers: new HttpHeaders({Authorization: `UPToken ${window.localStorage[LOCAL_STORAGE.UPS_TOKEN]}`})
+      }).toPromise().then(
+        (response: any) => {
+          this.logger.log('Get locations request success');
+          this.locations = response.location;
+          this.translate.get('SETTINGS.AUTO').subscribe(res => {
+            this.locations.splice(0, 0, { locationId: '', name: res });
+          });
+          resolve(response);
+        },
+        (response) => {
+          this.logger.log('Get locations request fail');
+          reject(response);
+        }
+      );
+    });
+  }
+
   fetchUserSettings(): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       if (!this.service) {
@@ -207,45 +307,100 @@ export class UserSettingsService {
 
   }
 
-  stopAvayaUserService(): void {
-    if (this.service) {
-      this.service.stop();
-      this.logger.log('AvayaUserService stopped');
-    }
-  }
-
-  startAvayaUserService(): void {
-    if (!this.pictureUrls) {
-      this.logger.error('Picture Urls is not fetched yet, can\'s start User Service!');
-      // this.MessageUtilsService.showError('', this.$translate.instant('SETTINGS.ERROR.NO_DATA_TO_INIT_USER_SERVICE')); // make this method
-      return;
-    }
-    this.service.start(window.localStorage[LOCAL_STORAGE.UPS_TOKEN], this.pictureUrls);
-    this.logger.log('AvayaUserService started');
-  }
-
-  fetchLocations(): Promise<any> {
+  uploadUserSettings(newSettings): Promise<any> {
     return new Promise<any>((resolve, reject) => {
-      // const alias = this.$stateParams.alias || window.location.href.split('/')[5]; // TODO set alias dynamic
-      const alias = 'dev-org208';
-      // const locationUrl = window.location.origin + URL.UPS.RESOURCES + alias + '/location/'; // TODO make locationUrl dynamic
-      const locationUrl = 'https://dev-cores208.uplab.com/ups/resources/tenants/dev-org208/location/';
-      return this.http.get(locationUrl, {
-        headers: new HttpHeaders({Authorization: `UPToken ${window.localStorage[LOCAL_STORAGE.UPS_TOKEN]}`})
-      }).toPromise().then(
-        (response: any) => {
-          this.logger.log('Get locations request success');
-          this.locations = response.location;
-          this.translate.get('SETTINGS.AUTO').subscribe(res => {
-            this.locations.splice(0, 0, { locationId: '', name: res });
-          });
-          resolve(response);
-        },
-        (response) => {
-          this.logger.log('Get locations request fail');
-          reject(response);
+      if (!this.service) {
+        this.logger.error('try to upload user settings without existing service! make sure you start it already.');
+        reject('User Settings Service is not initialised yet!');
+      }
+
+      resolve(this.service.updateUserConfig(newSettings).fail((response) => {
+        this.logger.warn('user settings update request failed');
+        this.logger.debug(JSON.stringify(response));
+        if (response.status === STATUS_CODE.UNAUTHORIZED) {
+          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.UNAUTHORIZED_ACCESS); // TODO make analog of this event
         }
-      );
+        return response;
+      }).done((response) => {
+        this.logger.debug('user settings update request success');
+        return response;
+      }));
     });
+  }
+
+  // tslint:disable-next-line:typedef
+  getUserSettings() {
+    return this.userSettings;
+  }
+
+  updateUserSettings(newUserSettings): void {
+    this.userSettings = newUserSettings;
+  }
+
+  // tslint:disable-next-line:typedef
+  getLocations() {
+    return this.locations;
+  }
+
+  // tslint:disable-next-line:typedef
+  getLocalizedLanguage(languages, localizedLanguages?) {
+    if (!languages) {
+      return [];
+    }
+
+    if(!localizedLanguages){
+      localizedLanguages = this.localizedLanguages;
+    }
+
+
+    for( let i=0;i<languages.length;i++ ) {
+      languages[i].localizedDisplayName = localizedLanguages[languages[i].id] || languages[i].displayName;
+    }
+
+    return languages;
+  }
+
+  // tslint:disable-next-line:typedef
+  getLocalizedAudioPromptLanguage(languages) {
+    if (!languages) {
+      return [];
+    }
+
+    return this.getLocalizedLanguage(languages, this.localizedAudioPromptLanguages) ;
+  }
+
+  getCurrentVideoCheck(): string {
+    return JSON.parse(window.localStorage.videoCallingPreferences);
+  }
+
+  // tslint:disable-next-line:typedef
+  getRoomByNumber(number) {
+    if (!this.userSettings || !number) {
+      return null;
+    }
+
+    if (this.userSettings && this.userSettings.conferencing && this.userSettings.conferencing.virtualRoomSettings) {
+      const rooms = this.userSettings.conferencing.virtualRoomSettings;
+      for (let i = 0; i < rooms.length; i++) {
+        if (rooms[i].number === number) {
+          return rooms[i];
+        }
+      }
+    }
+    return null;
+  }
+
+  // tslint:disable-next-line:typedef
+  getNewParticipantId() {
+    const headers = {
+      Authorization: 'UPToken ' + window.localStorage[LOCAL_STORAGE.UPS_TOKEN]
+    };
+    const parameters = {
+      method: 'POST',
+      url: this.portalResources.resources.user.POST.resetParticipantId.href,
+      headers
+    };
+
+    return this.http.post(parameters.url, {}, {headers: new HttpHeaders(headers)}).toPromise();
   }
 }

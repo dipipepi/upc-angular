@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "Sesja wygasła. Zaloguj się, aby kontynuować",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "Rozmiar okna przeglądarki jest mniejszy, niż minimalny. Zwiększ okno, aby zobaczyć wszystkie przyciski.",
+            "INCORRECT_PIN": "Kod PIN nie może zawierać kolejnych lub powtarzających się cyfr.",
+            "PIN_MIN_LENGTH": "PIN musi zawierać od {{minLength}} do {{maxLength}} cyfr.",
+            "EMPTY_PIN": "PIN nie może być pusty.",
+            "FAILED_UPLOAD_IMAGE_TITLE": "Nie udało się przesłać obrazu",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "Plik miniatury jest za duży. Prześlij plik mniejszy niż 3 MB."
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "Styczeń {{numberOfYear}}",
+            "FEBRUARY_NUMBER_OF_YEAR": "Luty {{numberOfYear}}",
+            "MARCH_NUMBER_OF_YEAR": "Marzec {{numberOfYear}}",
+            "APRIL_NUMBER_OF_YEAR": "Kwiecień {{numberOfYear}}",
+            "MAY_NUMBER_OF_YEAR": "Maj {{numberOfYear}}",
+            "JUNE_NUMBER_OF_YEAR": "Czerwiec {{numberOfYear}}",
+            "JULY_NUMBER_OF_YEAR": "Lipiec {{numberOfYear}}",
+            "AUGUST_NUMBER_OF_YEAR": "Sierpień {{numberOfYear}}",
+            "SEPTEMBER_NUMBER_OF_YEAR": "Wrzesień {{numberOfYear}}",
+            "OCTOBER_NUMBER_OF_YEAR": "Październik {{numberOfYear}}",
+            "NOVEMBER_NUMBER_OF_YEAR": "Listopad {{numberOfYear}}",
+            "DECEMBER_NUMBER_OF_YEAR": "Grudzień {{numberOfYear}}"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "Pn",
+            "TUESDAY": "Wt",
+            "WEDNESDAY": "Śr",
+            "THURSDAY": "Czw",
+            "FRIDAY": "Pt",
+            "SATURDAY": "So",
+            "SUNDAY": "Ni"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "nie mogą być wykorzystane do dołączenia do spotkania. Proszę wypróbować jedną z obsługiwanych przeglądarek.",
+            "YOUR": "Twoja",
+            "BROWSER": "przeglądarka",
+            "BROWSERS": "przeglądarki",
+            "BROWSER_OUT_OF_DATE": "jest przestarzała. Zaktualizuj przeglądarkę, aby mieć dostęp do wszystkich funkcji."
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "Nie znaleziono aplikacji w Avaya Meetings Management. Skontaktuj się z zespołem wsparcia."
+        }
+    }
+}

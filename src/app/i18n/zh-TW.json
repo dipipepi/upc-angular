@@ -1,0 +1,46 @@
+{
+    "GENERAL": {
+        "ERROR": {
+            "SESSION_HAS_EXPIRED": "您的工作階段已過期。請登入以繼續",
+            "WINDOW_WIDTH_REACHED_MINIMUM": "很抱歉，您的瀏覽器視窗小於最小限度，請放大以檢視所有控制項。",
+            "INCORRECT_PIN": "PIN 碼不能包含循序或重複數字。",
+            "PIN_MIN_LENGTH": "PIN 碼長度必須介於 {{minLength}} 位數到 {{maxLength}} 位數之間。",
+            "EMPTY_PIN": "PIN 碼不能為空。",
+            "FAILED_UPLOAD_IMAGE_TITLE": "無法上傳影像",
+            "FAILED_UPLOAD_IMAGE_MESSAGE": "縮圖檔案過大。請上傳不超過 3 Mb 的檔案。"
+        },
+        "MONTH_AND_YEAR_STRING": {
+            "JANUARY_NUMBER_OF_YEAR": "{{numberOfYear}} 年一月",
+            "FEBRUARY_NUMBER_OF_YEAR": "{{numberOfYear}} 年二月",
+            "MARCH_NUMBER_OF_YEAR": "{{numberOfYear}} 年三月",
+            "APRIL_NUMBER_OF_YEAR": "{{numberOfYear}} 年四月",
+            "MAY_NUMBER_OF_YEAR": "{{numberOfYear}} 年五月",
+            "JUNE_NUMBER_OF_YEAR": "{{numberOfYear}} 年六月",
+            "JULY_NUMBER_OF_YEAR": "{{numberOfYear}} 年七月",
+            "AUGUST_NUMBER_OF_YEAR": "{{numberOfYear}} 年八月",
+            "SEPTEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年九月",
+            "OCTOBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年十月",
+            "NOVEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年十一月",
+            "DECEMBER_NUMBER_OF_YEAR": "{{numberOfYear}} 年十二月"
+        },
+        "WEEKDAY_MIN": {
+            "MONDAY": "一",
+            "TUESDAY": "二",
+            "WEDNESDAY": "三",
+            "THURSDAY": "四",
+            "FRIDAY": "五",
+            "SATURDAY": "六",
+            "SUNDAY": "日"
+        },
+        "BROWSERS": {
+            "BROWSER_NOT_SUPPORTED": "無法用於加入會議。請嘗試使用支援的瀏覽器。",
+            "YOUR": "您的",
+            "BROWSER": "瀏覽器",
+            "BROWSERS": "瀏覽器",
+            "BROWSER_OUT_OF_DATE": "已過期。請更新您的瀏覽器，以獲得最佳體驗。"
+        },
+        "DOWNLOAD": {
+            "NO_CLIENT": "在 Avaya Meetings Management 中找不到應用程式。請聯絡您的支援團隊。"
+        }
+    }
+}

@@ -111,7 +111,7 @@ intended publication of such source code.
       <button class="reset-field" (click)="resetField('password')" *ngIf="authForm.value.password"></button>
     </label>
     <div class="keep-me">
-      <div class="default-checkbox">
+      <div class="keep-me-checkbox">
         <input name="check-remember-me" formControlName="isKeepMeSigned" id="check-remember-me" type="checkbox" [disabled]="isKeepMeDisabled">
         <label for="check-remember-me">{{'LOGIN.REMEMBER_ME' | translate}}</label>
       </div>

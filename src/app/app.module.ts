@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MessageUtilsComponent } from './shared/message-utils/message-utils.component';
+import { UserSettingsComponent } from './components/Settings/user-settings/user-settings.component';
+import { GuestSettingsComponent } from './components/Settings/guest-settings/guest-settings.component';
 
 
 // tslint:disable-next-line:typedef
@@ -35,7 +37,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthorizationComponent,
     HeaderComponent,
     AboutComponent,
-    MessageUtilsComponent
+    MessageUtilsComponent,
+    UserSettingsComponent,
+    GuestSettingsComponent
   ],
   imports: [
     BrowserModule,
