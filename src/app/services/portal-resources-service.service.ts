@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 export interface PortalResources {
+  isAemo: any;
   limits: any;
   photoUploadEnabled: boolean;
   sessionId: string;

@@ -1,3 +1,5 @@
+import {rejects} from 'assert';
+
 export const path = window.location.href.split('/');
 export let currentAlias;
 export let checkingAlias;
@@ -21,22 +23,13 @@ function test1() {
 // tslint:disable-next-line:typedef
 function test2() {
   return new Promise((resolve) => {
-    resolve(3);
+    resolve(true);
   });
 }
 
-function test3(res) {
-  return res*3;
-}
-
-test1().then(res=>{console.log('hello', res);});
-
-const arr = {
-  s: 3,
-  sdf: 2,
-  arr: [323, 23 ,23]
-};
-
-for(const el of arr.arr) {
-  console.log('hello el', el);
+function test3(res): Promise<boolean> {
+  return new Promise((resolve, reject) => {
+    reject(false);
+  });
+  // return res*3;
 }

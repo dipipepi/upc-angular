@@ -56,8 +56,6 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
       password: new FormControl('', Validators.required),
       isKeepMeSigned: new FormControl(false)
     });
-    console.log('hello', this.userSettingsService, this.authorizationService);
-
     this.onChanges();
   }
 
@@ -187,8 +185,6 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
       });
     }
     this.logger.log('Error message is %s', this.message);
-
-    console.log('hello', this.authForm.controls.login.errors);
     this.loading = false;
   }
 

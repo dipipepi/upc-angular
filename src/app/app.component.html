@@ -17,3 +17,40 @@ intended publication of such source code.
   <app-navigator></app-navigator>
   <router-outlet></router-outlet>
 </ng-template>
+
+<script type='text/javascript'>
+  function isUnSupportedBrowser(){
+    // IE less then 11
+    if (navigator.appName === 'Microsoft Internet Explorer'){
+      return true;
+    }
+
+    var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS');
+
+    return !!(isSafari && parseInt(navigator.userAgent.split('Version/')[1].split('.')[0], 10) < 7);
+
+
+  }
+
+  if(isUnSupportedBrowser()){
+    var html;
+    html = '';
+    html += '<style>';
+    html += '.text1{ position: relative; font-size: 20px; color: #3C5064; font-family: sans-serif; width: 100%; text-align: center;}';
+    html += '.logo1{ position: relative; margin: 150px auto 0 auto; width: 208px; height: 72px; background: url(../../assets/images/ic_common_equinoxWebLogo.svg); no-repeat; background-size: 100%; }';
+    html += '.icon1{ position: relative; margin: 200px auto 0 auto; width: 58px; height: 42px;  background: url(../../assets/icons/ic_browser_error.svg); no-repeat; background-size: 100%; }';
+    html += '</style>';
+
+    html += '<div class="icon1"></div>';
+    html += '<p class="text1">This browser is not supported.</br>Try to use  <a href="https://www.google.com/chrome/">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/">FireFox</a></p>';
+    html += '<div class="logo1"></div>';
+    document.body.innerHTML = html;
+  } else {
+    html = '';
+    html += '<header class="header" ng-click="hideMenu()" ui-view="header"></header>';
+    html += '<nav style="visibility: hidden;" ng-click="hideMenu()" ui-view="navigation" ng-class="isMenuToggled ? \'toggled\' : \'\'"></nav>';
+    html += '<main ng-click="hideMenu()" id="main" ui-view="content" ng-swipe-right="showMenu($event)" ng-style="calcMainHeight()" ng-class="[$state.current.name]"></main>';
+    document.body.innerHTML = html
+  }
+
+</script>

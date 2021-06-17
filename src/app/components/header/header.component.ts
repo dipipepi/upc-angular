@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
               private userSettingsService: UserSettingsService,
               public browserInfoService: BrowserInfoService,
               private customDeviceDetector: CustomDeviceDetectorService) {
-    console.log('hello info', browserInfoService);
   }
 
   ngOnInit(): void {
@@ -89,7 +88,6 @@ export class HeaderComponent implements OnInit {
     this.logoutVisible = true;
     document.addEventListener('click', this.hideLogout);
     $event.stopPropagation();
-    console.log('hello event', this.userSettingsService, this.authorizationService);
   }
 
   private hideLogout = (): void => {

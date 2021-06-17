@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PortalResources, PortalResourcesServiceService} from '../portal-resources-service.service';
-import { Logger } from '../../../Logger';
-import {LOCAL_STORAGE, USER_TYPE, SESSION_STORAGE} from '../../constants';
+import {Logger} from '../../../Logger';
+import {LOCAL_STORAGE, SESSION_STORAGE, USER_TYPE} from '../../constants';
 import {EncodingService} from '../EncodingService/encoding-service.service';
 import {UserSettingsService} from '../UserSettingsService/user-settings.service';
 import {RecordingService} from '../RecordingService/recording.service';
 import {PictureService} from '../PictureUtils/picture.service';
 import {ContactsService} from '../ContactsService/contacts.service';
 import {ScheduleService} from '../ScheduleService/schedule.service';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 
 export interface LoginResponse {
   encryptedPassword: string;
@@ -28,6 +29,10 @@ export interface User{
   pictureUrl: string;
   scopiaId: string;
   pictureData?: string;
+}
+
+export interface Token{
+  token: string;
 }
 
 @Injectable({
@@ -116,7 +121,7 @@ export class AuthorizationService {
     });
   }
 
-  public logout (): Promise<any> {
+  logout (): Promise<any> {
     return this.http.post(this.userSettingsService.portalResources.resources.authentication.POST.logout.href, {}, {
       headers: new HttpHeaders({Authorization: `UPToken ${window.localStorage.getItem('UPS_TOKEN')}`})
     })
@@ -209,58 +214,63 @@ export class AuthorizationService {
     });
   }
 
-  validateToken(): Promise<any> {
-    const token = window.localStorage.getItem('UPS_TOKEN');
+  validateToken(): Promise<Token> {
+    return new Promise((resolve, reject) => {
+      const token = window.localStorage.getItem('UPS_TOKEN');
 
-    // TODO Finish the sso authorization
-    // if(this.$location.$$search.code && this.$location.$$search.session_state && this.$location.$$search.state){
-    //   const authParams = {
-    //     oauth2State: this.$location.$$search.state,
-    //     oauth2SessionState: this.$location.$$search.session_state,
-    //     oauth2Code: this.$location.$$search.code
-    //   };
-    //
-    //   return this.loginOauth2(authParams);
-    // }
+      // TODO Finish the sso authorization
+      // if(this.$location.$$search.code && this.$location.$$search.session_state && this.$location.$$search.state){
+      //   const authParams = {
+      //     oauth2State: this.$location.$$search.state,
+      //     oauth2SessionState: this.$location.$$search.session_state,
+      //     oauth2Code: this.$location.$$search.code
+      //   };
+      //
+      //   return this.loginOauth2(authParams);
+      // }
 
-    if (token || this.isKeepMeEnabled()) {
-      const headers = {
-        Authorization: 'UPToken ' + token,
-        'Content-Type': 'application/vnd.avaya.portal.authentication.login.v2+json'
-      };
-      const url = this.userSettingsService.portalResources.resources.authentication.POST.login.href;
-      const parameters = {
-        method: 'POST',
-        url: this.userSettingsService.portalResources.resources.authentication.POST.login.href,
-        headers,
-        data: undefined
-      };
-
-      if(this.isKeepMeEnabled()){
-        const dataForKeepMe = {
-          login: window.localStorage[LOCAL_STORAGE.USER_DATA.LOGIN],
-          encryptedPassword: window.localStorage[LOCAL_STORAGE.USER_DATA.ENCRYPTED_PASSWORD],
-          organizationAlias: window.localStorage[LOCAL_STORAGE.ALIAS]
+      if (token || this.isKeepMeEnabled()) {
+        const headers = {
+          Authorization: 'UPToken ' + token,
+          'Content-Type': 'application/vnd.avaya.portal.authentication.login.v2+json'
+        };
+        const url = this.userSettingsService.portalResources.resources.authentication.POST.login.href;
+        const parameters = {
+          method: 'POST',
+          url: this.userSettingsService.portalResources.resources.authentication.POST.login.href,
+          headers,
+          data: undefined
         };
 
-        parameters.data = JSON.stringify(dataForKeepMe);
+        if (this.isKeepMeEnabled()) {
+          const dataForKeepMe = {
+            login: window.localStorage[LOCAL_STORAGE.USER_DATA.LOGIN],
+            encryptedPassword: window.localStorage[LOCAL_STORAGE.USER_DATA.ENCRYPTED_PASSWORD],
+            organizationAlias: window.localStorage[LOCAL_STORAGE.ALIAS]
+          };
 
-      }
+          parameters.data = JSON.stringify(dataForKeepMe);
 
-      return this.http.post(url, {}, {
-        headers: new HttpHeaders(headers)
-      }).toPromise().then( (response) => {
-        this.onLoginSuccess(response, false, undefined);
-      }, this.onLoginError);
-    } else {
-      if(this.isPeSSOEnabled()){
-        this.usePoleEmployeeSSOLogin();
-      } else{
-        this.userType = USER_TYPE.GUEST;
-        // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED); // TODO create analog of this event
-        this.recordingService.initAvayaRecordingManagementService();
+        }
+
+        resolve(this.http.post(url, {}, {
+          headers: new HttpHeaders(headers)
+        }).toPromise().then((response) => {
+          return new Promise((resolve1, reject1) => {
+            resolve1(this.onLoginSuccess(response, false, undefined));
+          });
+        }, this.onLoginError));
+      } else {
+        if (this.isPeSSOEnabled()) {
+          this.usePoleEmployeeSSOLogin();
+        } else {
+          this.userType = USER_TYPE.GUEST;
+          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED); // TODO create analog of this event
+          this.recordingService.initAvayaRecordingManagementService();
+          reject();
+        }
       }
-    }
+    });
   }
 
   loginOauth2 (oauth2Params): Promise<any> {
@@ -344,73 +354,81 @@ export class AuthorizationService {
   }
 
   private onLoginSuccess (response: any, isSaveKeepMe: any, credentials?: { login: any; }): Promise<any> {
-
+    return new Promise<any>((resolve, reject) => {
       if(response.oauth2Authentication){
         window.localStorage.setItem('oauth2Authentication', String(response.oauth2Authentication));
       }
-      const onFetchResourcesSuccess = () => {
-        const onFetchUserSettingsSuccess = (userConfigResponse) => {
-          this.isAuthorizedUser = true;
-          this.logger.log('User settings fetched successfully');
-          if (isSaveKeepMe) {
-            window.localStorage.setItem(LOCAL_STORAGE.USER_DATA.LOGIN, response.loginId);
-            window.localStorage.setItem(LOCAL_STORAGE.USER_DATA.ENCRYPTED_PASSWORD, response.encryptedPassword);
-            this.logger.log('Keep me: Saved user data to local storage ');
-          }
+      const onFetchResourcesSuccess = (): Promise<any> => {
+        return new Promise<any>((resolve1, reject1) => {
+          const onFetchUserSettingsSuccess = (userConfigResponse): Promise<any> => {
+            return new Promise((resolve2) => {
+              this.isAuthorizedUser = true;
+              this.logger.log('User settings fetched successfully');
+              if (isSaveKeepMe) {
+                window.localStorage.setItem(LOCAL_STORAGE.USER_DATA.LOGIN, response.loginId);
+                window.localStorage.setItem(LOCAL_STORAGE.USER_DATA.ENCRYPTED_PASSWORD, response.encryptedPassword);
+                this.logger.log('Keep me: Saved user data to local storage ');
+              }
 
-          // window.localStorage.setItem(LOCAL_STORAGE.ALIAS, this.$stateParams.alias); //TODO get alias from URL
-          window.localStorage.setItem(LOCAL_STORAGE.ALIAS, 'dev-org208');
-          const userConfig = userConfigResponse.userConfig;
-          this.user = {
-            login: (credentials && credentials.login) ? credentials.login : '',
-            name: userConfig.givenName,
-            lastName: userConfig.surname,
-            scopiaId: userConfig.conferencing.scopiaUserId,
-            pictureUrl: userConfig.pictureUrl,
-            officePhoneNumber: userConfig.officePhoneNumber,
-            mobilePhoneNumbers: userConfig.mobilePhoneNumbers,
-            fullName: userConfig.givenName + ' ' + userConfig.surname
+              // window.localStorage.setItem(LOCAL_STORAGE.ALIAS, this.$stateParams.alias); //TODO get alias from URL
+              window.localStorage.setItem(LOCAL_STORAGE.ALIAS, 'dev-org208');
+              const userConfig = userConfigResponse.userConfig;
+              this.user = {
+                login: (credentials && credentials.login) ? credentials.login : '',
+                name: userConfig.givenName,
+                lastName: userConfig.surname,
+                scopiaId: userConfig.conferencing.scopiaUserId,
+                pictureUrl: userConfig.pictureUrl,
+                officePhoneNumber: userConfig.officePhoneNumber,
+                mobilePhoneNumbers: userConfig.mobilePhoneNumbers,
+                fullName: userConfig.givenName + ' ' + userConfig.surname
+              };
+              this.pictureUtils.extendObjectByPictureData(this.user);
+              this.userSettingsService.fetchLocations();
+              this.userType = USER_TYPE.SIGN_IN;
+
+              // TODO create following service and method
+              this.recordingService.authenticationService.login(response.token).done((res, res2) => {
+                this.logger.log('RecordingService: Login: %o : %o', res, res2);
+              }).fail(() => {
+                this.logger.warn('RecordingService: Login fail');
+              }).always(() => {
+                // TODO make analog of this event
+                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED);
+                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGIN);
+                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.STOP_RECORDING);
+              });
+
+              // TODO make analog of this event
+              // this.$rootScope.$broadcast(this.EVENT.CUSTOM.CHECK_VIRTUAL_ROOM_PIN_UPDATE);
+              resolve2(response);
+            });
           };
-          this.pictureUtils.extendObjectByPictureData(this.user);
-          this.userSettingsService.fetchLocations();
-          this.userType = USER_TYPE.SIGN_IN;
+          const onFetchUserSettingsError = (userConfigResponse): Promise<any> => {
+            return new Promise<any>((resolve2, reject2) => {
+              this.logger.warn('User settings request failed, login rejected');
+              this.clearUserData();
+              reject2(userConfigResponse);
+            });
+          };
 
-          // TODO create following service and method
-          this.recordingService.authenticationService.login(response.token).done((res, res2) => {
-            this.logger.log('RecordingService: Login: %o : %o', res, res2);
-          }).fail(() => {
-            this.logger.warn('RecordingService: Login fail');
-          }).always(() => {
-            // TODO make analog of this event
-            // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED);
-            // this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGIN);
-            // this.$rootScope.$broadcast(this.EVENT.CUSTOM.STOP_RECORDING);
-          });
+          this.logger.log('Resources are fetched');
+          this.contactsService.startAvayaClientServices();
+          this.userSettingsService.startAvayaUserService();
+          this.scheduleService.startAvayaMeetingManagementService();
+          this.recordingService.initAvayaRecordingManagementService();
 
-          // TODO make analog of this event
-          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.CHECK_VIRTUAL_ROOM_PIN_UPDATE);
-          return response;
-        };
-        const  onFetchUserSettingsError = (userConfigResponse) => {
-          this.logger.warn('User settings request failed, login rejected');
-          this.clearUserData();
-          return userConfigResponse;
-        };
-
-        this.logger.log('Resources are fetched');
-        this.contactsService.startAvayaClientServices();
-        this.userSettingsService.startAvayaUserService();
-        this.scheduleService.startAvayaMeetingManagementService();
-        this.recordingService.initAvayaRecordingManagementService();
-
-        return this.userSettingsService.fetchUserSettings().then(onFetchUserSettingsSuccess, onFetchUserSettingsError);
+          resolve1(this.userSettingsService.fetchUserSettings().then(onFetchUserSettingsSuccess, onFetchUserSettingsError));
+        });
 
       };
 
-      const onFetchResourcesError = (fetchResourcesResponse) => {
-        this.logger.warn('User resources request failed, login rejected');
-        this.clearUserData();
-        return fetchResourcesResponse;
+      const onFetchResourcesError = (fetchResourcesResponse): Promise<any> => {
+        return new Promise<any>((resolve1, reject1) => {
+          this.logger.warn('User resources request failed, login rejected');
+          this.clearUserData();
+          reject1(fetchResourcesResponse);
+        });
       };
 
       // TODO make analog of this event
@@ -423,8 +441,8 @@ export class AuthorizationService {
       window.sessionStorage.setItem(SESSION_STORAGE.SESSION_IS_ACTIVE, true);
       this.logger.log('UPS token has been added to localStorage');
 
-      return this.userSettingsService.fetchResources().then(onFetchResourcesSuccess, onFetchResourcesError);
-
+      resolve(this.userSettingsService.fetchResources().then(onFetchResourcesSuccess, onFetchResourcesError));
+    });
   }
 
   private onLoginError = (response): Promise<any> => {
@@ -455,12 +473,15 @@ export class AuthorizationService {
     //   !!this.PortalResources.resources.peEnabled &&
     //   !!this.PortalResources.resources.ssoRedirectUrl
 
-    return !!this.userSettingsService.portalResources.peEnabled &&
-      !!this.userSettingsService.portalResources.ssoRedirectUrl;
+    return false;
   }
 
   private usePoleEmployeeSSOLogin(): void{
     this.logger.log('Redirect to PE websso sign in page %s', this.userSettingsService.portalResources.ssoRedirectUrl);
     window.location.href = this.userSettingsService.portalResources.ssoRedirectUrl;
+  }
+
+  private asObservable(subject: Subject<any>): Observable<any> {
+    return new Observable(fn => subject.subscribe(fn));
   }
 }
