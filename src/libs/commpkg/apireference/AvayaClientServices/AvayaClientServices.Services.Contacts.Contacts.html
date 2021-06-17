@@ -1,0 +1,3848 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Communication Services API Reference (JavaScript) Class: Contacts</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulian.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">Communication Services API Reference (JavaScript)</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.html">AvayaClientServices.Base</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.html">AvayaClientServices.Base.Library</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.jQuery.html">AvayaClientServices.Base.Library.jQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.html">AvayaClientServices.Config</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.html">AvayaClientServices.Services</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.html">AvayaClientServices.Services.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.html">AvayaClientServices.Services.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.html">AvayaClientServices.Services.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.html">AvayaClientServices.Services.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.ContentSharing.html">AvayaClientServices.Services.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.html">AvayaClientServices.Services.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.html">AvayaClientServices.Services.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioDevice.html">AvayaClientServices.Base.AudioDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInputInterface.html">AvayaClientServices.Base.AudioInputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInterface.html">AvayaClientServices.Base.AudioInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioOutputInterface.html">AvayaClientServices.Base.AudioOutputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.BaseError.html">AvayaClientServices.Base.BaseError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataSet.html">AvayaClientServices.Base.DataSet</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.LoggerInterface.html">AvayaClientServices.Base.LoggerInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaInterface.html">AvayaClientServices.Base.MediaInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaServices.html">AvayaClientServices.Base.MediaServices</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.SettingsFileParser.html">AvayaClientServices.Base.SettingsFileParser</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoDevice.html">AvayaClientServices.Base.VideoDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoInterface.html">AvayaClientServices.Base.VideoInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AbstractCredentialProvider.html">AvayaClientServices.Config.AbstractCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ACSConfiguration.html">AvayaClientServices.Config.ACSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AMMConfiguration.html">AvayaClientServices.Config.AMMConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AnalyticsConfiguration.html">AvayaClientServices.Config.AnalyticsConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CallUserConfiguration.html">AvayaClientServices.Config.CallUserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CollaborationConfiguration.html">AvayaClientServices.Config.CollaborationConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialProvider.html">AvayaClientServices.Config.CredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialTokenProvider.html">AvayaClientServices.Config.CredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.GuestCredentialProvider.html">AvayaClientServices.Config.GuestCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.InvalidCredentialsEvent.html">AvayaClientServices.Config.InvalidCredentialsEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.MediaConfiguration.html">AvayaClientServices.Config.MediaConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.NetworkProviderConfiguration.html">AvayaClientServices.Config.NetworkProviderConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.PresenceConfiguration.html">AvayaClientServices.Config.PresenceConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ServerInfo.html">AvayaClientServices.Config.ServerInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.SGConfiguration.html">AvayaClientServices.Config.SGConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UCCPConfiguration.html">AvayaClientServices.Config.UCCPConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UserConfiguration.html">AvayaClientServices.Config.UserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationAudio.html">AvayaClientServices.Config.VoIPConfigurationAudio</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationVideo.html">AvayaClientServices.Config.VoIPConfigurationVideo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSConfiguration.html">AvayaClientServices.Config.WCSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSCredentialTokenProvider.html">AvayaClientServices.Config.WCSCredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioChannel.html">AvayaClientServices.Services.Call.AudioChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioDetails.html">AvayaClientServices.Services.Call.AudioDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Call.html">AvayaClientServices.Services.Call.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallCreationInfo.html">AvayaClientServices.Services.Call.CallCreationInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallEndEvent.html">AvayaClientServices.Services.Call.CallEndEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallException.html">AvayaClientServices.Services.Call.CallException</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Calls.html">AvayaClientServices.Services.Call.Calls</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.ConferenceEntryOptions.html">AvayaClientServices.Services.Call.ConferenceEntryOptions</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.RingbackToneURLs.html">AvayaClientServices.Services.Call.RingbackToneURLs</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.UserToUserInfo.html">AvayaClientServices.Services.Call.UserToUserInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoChannel.html">AvayaClientServices.Services.Call.VideoChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoDetails.html">AvayaClientServices.Services.Call.VideoDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.AbstractShape.html">AvayaClientServices.Services.Collaboration.AbstractShape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Bitmap.html">AvayaClientServices.Services.Collaboration.Bitmap</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Circle.html">AvayaClientServices.Services.Collaboration.Circle</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CircleTool.html">AvayaClientServices.Services.Collaboration.CircleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ClearTool.html">AvayaClientServices.Services.Collaboration.ClearTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CollaborationError.html">AvayaClientServices.Services.Collaboration.CollaborationError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaborations.html">AvayaClientServices.Services.Collaboration.Collaborations</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.DeleteTool.html">AvayaClientServices.Services.Collaboration.DeleteTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Frame.html">AvayaClientServices.Services.Collaboration.Frame</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.LineTool.html">AvayaClientServices.Services.Collaboration.LineTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.MarkerTool.html">AvayaClientServices.Services.Collaboration.MarkerTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Participant.html">AvayaClientServices.Services.Collaboration.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.PenTool.html">AvayaClientServices.Services.Collaboration.PenTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Point.html">AvayaClientServices.Services.Collaboration.Point</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.RectangleTool.html">AvayaClientServices.Services.Collaboration.RectangleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SelectionTool.html">AvayaClientServices.Services.Collaboration.SelectionTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Shape.html">AvayaClientServices.Services.Collaboration.Shape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SliderSlide.html">AvayaClientServices.Services.Collaboration.SliderSlide</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.StampTool.html">AvayaClientServices.Services.Collaboration.StampTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.TextTool.html">AvayaClientServices.Services.Collaboration.TextTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardRenderer.html">AvayaClientServices.Services.Collaboration.WhiteboardRenderer</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardSurface.html">AvayaClientServices.Services.Collaboration.WhiteboardSurface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardText.html">AvayaClientServices.Services.Collaboration.WhiteboardText</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardTools.html">AvayaClientServices.Services.Collaboration.WhiteboardTools</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ActiveParticipant.html">AvayaClientServices.Services.Conference.ActiveParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Chat.html">AvayaClientServices.Services.Conference.Chat</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ChatMessage.html">AvayaClientServices.Services.Conference.ChatMessage</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Conference.html">AvayaClientServices.Services.Conference.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.DroppedParticipant.html">AvayaClientServices.Services.Conference.DroppedParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Participant.html">AvayaClientServices.Services.Conference.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.PendingParticipant.html">AvayaClientServices.Services.Conference.PendingParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactBooleanField.html">AvayaClientServices.Services.Contacts.ContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactEmailAddressField.html">AvayaClientServices.Services.Contacts.ContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactField.html">AvayaClientServices.Services.Contacts.ContactField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactFieldList.html">AvayaClientServices.Services.Contacts.ContactFieldList</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactIMAddressField.html">AvayaClientServices.Services.Contacts.ContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactNumberField.html">AvayaClientServices.Services.Contacts.ContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactPhoneField.html">AvayaClientServices.Services.Contacts.ContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactSearchRequest.html">AvayaClientServices.Services.Contacts.ContactSearchRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactStringField.html">AvayaClientServices.Services.Contacts.ContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactBooleanField.html">AvayaClientServices.Services.Contacts.EditableContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactEmailAddressField.html">AvayaClientServices.Services.Contacts.EditableContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactIMAddressField.html">AvayaClientServices.Services.Contacts.EditableContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactNumberField.html">AvayaClientServices.Services.Contacts.EditableContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactPhoneField.html">AvayaClientServices.Services.Contacts.EditableContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactStringField.html">AvayaClientServices.Services.Contacts.EditableContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel.html">AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactResult.html">AvayaClientServices.Services.Contacts.ResolveContactResult</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactsRequest.html">AvayaClientServices.Services.Contacts.ResolveContactsRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Terminal.html">AvayaClientServices.Services.Contacts.Terminal</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Attachment.html">AvayaClientServices.Services.Messaging.Attachment</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.ChatStateEvent.html">AvayaClientServices.Services.Messaging.ChatStateEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Messaging.html">AvayaClientServices.Services.Messaging.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingError.html">AvayaClientServices.Services.Messaging.MessagingError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingQuery.html">AvayaClientServices.Services.Messaging.MessagingQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Participant.html">AvayaClientServices.Services.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.Presence.html">AvayaClientServices.Services.Presence.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceError.html">AvayaClientServices.Services.Presence.PresenceError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceListSubscription.html">AvayaClientServices.Services.Presence.PresenceListSubscription</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceService.html">AvayaClientServices.Services.Presence.PresenceService</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.SelfPresence.html">AvayaClientServices.Services.Presence.SelfPresence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.User.html">AvayaClientServices.User</a>
+						</li>
+						
+						<li>
+							<a href="window.AvayaClientServices.html">window.AvayaClientServices</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: Contacts</h1>
+<section>
+
+<!--
+<header>
+    <h2>
+        <span class="ancestors"><a href="AvayaClientServices.Services.html">.Services</a><a href="AvayaClientServices.Services.Contacts.html">.Contacts</a>.</span>
+    
+    Contacts
+    </h2>
+    
+</header>
+-->
+
+<article>
+    <div class="container-overview">
+
+
+    
+
+    
+        <h2>Constructor</h2>
+        <dl class="frame">
+            
+<dt>
+    <h4 class="name" id="Contacts"><span class="type-signature"></span>new Contacts<span class="signature">(contactsService)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Provides contacts functionality to the client application. For contacts module namespace, see <a href="AvayaClientServices.Services.Contacts.html">AvayaClientServices.Services.Contacts</a>.</p>
+<p>Contacts class provides a set of APIs that enable application developers to manage user's contacts and search for other users/contacts.<br>The capabilities and the set of allowed operations depend on the state of the contact-related servers and services.</p>
+<p>The client application is notified about contact services status updates through callback functions that the application has registered on the <a href="AvayaClientServices.Services.Contacts.Contacts.html">Contacts</a> object.<br>These updates may be the result of local operations on the contacts object as well as remote changes initiated either by the service/server or other users.</p>
+<p>In order to retrieve a list of contacts, call the <a href="AvayaClientServices.Services.Contacts.Contacts.html#getContacts">Contacts.getContacts()</a> function.<br>It should be done after <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceAvailableCallback">onContactsServiceAvailableCallback</a> is called.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contactsService</code></td>
+            
+
+            <td class="type">
+            
+                
+    AvayaClientServices.Services.Contacts.ContactsService
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+        </dl>
+    
+    </div>
+
+    <!--
+    
+    -->
+
+    
+
+    <!--
+    
+        <h2 class="subsection-title">Requires</h2>
+
+        <ul>
+            <li>module:AvayaClientServices.Base.AOPCommonAdvices</li>
+        </ul>
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+        <h2 class="subsection-title">Methods</h2>
+
+        
+
+
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="addContact"><span class="type-signature"></span>addContact<span class="signature">(newContact)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds a new contact.</p>
+<p>An editable contact object can be created using one of the following functions:</p>
+<ul><br> <li> by calling <a href="AvayaClientServices.Services.Contacts.Contacts.html#createEditableContact">Contacts.createEditableContact()</a> and then filling in the fields appropriately. </li><br> <li> by calling <a href="AvayaClientServices.Services.Contacts.Contacts.html#createEditableContactFromContact">Contacts.createEditableContactFromContact()</a> to populate the editable contact from a directory search result. </li><br></ul>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>newContact</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The contact to be added to the contact list.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#getAddContactCapability">AvayaClientServices.Services.Contacts.Contacts#getAddContactCapability</a>}</li>
+			
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#updateContact">AvayaClientServices.Services.Contacts.Contacts#updateContact</a>}</li>
+			
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#deleteContact">AvayaClientServices.Services.Contacts.Contacts#deleteContact</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="changeSearchContactsRequest"><span class="type-signature"></span>changeSearchContactsRequest<span class="signature">(dataRetrieval, newSearchString)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Changes the search contacts request with given new query string. All other parameters are immutable.</p>
+<p>If the search associated with provided <a href="AvayaClientServices.Base.DataRetrieval.html">DataRetrieval</a> instance was completed more than 2 minutes ago, this function would generate <a href="AvayaClientServices.Services.Contacts.ContactsError.html">ContactsError</a> with SEARCH_REQUEST_NOT_FOUND reason.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>dataRetrieval</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data retrieval object returned by initial <a href="AvayaClientServices.Services.Contacts.Contacts.html#searchContacts">Contacts.searchContacts()</a> call.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newSearchString</code></td>
+            
+
+            <td class="type">
+            
+                
+    string
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A new search string.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#getNetworkSearchContactCapability">AvayaClientServices.Services.Contacts.Contacts#getNetworkSearchContactCapability</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+
+    <div class="param-desc">
+    
+        
+    <a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+
+
+    
+    </div>
+
+
+        
+    
+    
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="createEditableContact"><span class="type-signature"></span>createEditableContact<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates new <a href="AvayaClientServices.Services.Contacts.EditableContact.html">EditableContact</a> object with default values.<br>This function must be used to create a new <a href="AvayaClientServices.Services.Contacts.EditableContact.html">EditableContact</a> object before calling the <a href="AvayaClientServices.Services.Contacts.Contacts.html#addContact">Contacts.addContact()</a> function.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#createEditableContactFromContact">AvayaClientServices.Services.Contacts.Contacts#createEditableContactFromContact</a>}</li>
+			
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#addContact">AvayaClientServices.Services.Contacts.Contacts#addContact</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+
+}
+
+<p>Editable contact that has all editable properties set to default values.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="createEditableContactFromContact"><span class="type-signature"></span>createEditableContactFromContact<span class="signature">(contact)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new editable contact object from a given existing contact.</p>
+<p>This function can be used to create a new contact using the <a href="AvayaClientServices.Services.Contacts.Contacts.html#searchContacts">Contacts.searchContacts()</a> function results.<br>After that, a new <a href="AvayaClientServices.Services.Contacts.EditableContact.html">EditableContact</a> can be used in <a href="AvayaClientServices.Services.Contacts.Contacts.html#addContact">Contacts.addContact()</a> operation.<br>There is also a possibility to add the contact from local to enterprise source using the same scenario.</p>
+<p>This function must be used to update an existing contact as well. Once a new <a href="AvayaClientServices.Services.Contacts.EditableContact.html">EditableContact</a> is created, call the <a href="AvayaClientServices.Services.Contacts.Contacts.html#updateContact">Contacts.updateContact()</a> function to send a request.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contact</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The contact whose current values will be used to populate the new <a href="AvayaClientServices.Services.Contacts.EditableContact.html">EditableContact</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#addContact">AvayaClientServices.Services.Contacts.Contacts#addContact</a>}</li>
+			
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#updateContact">AvayaClientServices.Services.Contacts.Contacts#updateContact</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+
+}
+
+<p>Editable contact that has all editable properties set based on the specified input contact. Note that the fields not supported by enterprise source will not be used.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="deleteContact"><span class="type-signature"></span>deleteContact<span class="signature">(contact)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Deletes an existing contact.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contact</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The contact to be deleted from the contact list.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contact.html#getDeleteContactCapability">AvayaClientServices.Services.Contacts.Contact#getDeleteContactCapability</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="findLocalMatchingContacts"><span class="type-signature"></span>findLocalMatchingContacts<span class="signature">(searchString, searchField)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Searches for contacts matching the search request in local cache only. Unlike <a href="AvayaClientServices.Services.Contacts.Contacts.html#searchContacts">Contacts.searchContacts()</a>, this function returns <a href="AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel.html">MatchedContactsWithMatchLevel</a> instance with detailed information on how strong each contact matches the search request.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>searchString</code></td>
+            
+
+            <td class="type">
+            
+                
+    string
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>String to search for.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>searchField</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.html#.SearchFieldType">AvayaClientServices.Services.Contacts.SearchFieldType</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Field the search should be done against (name, phone number, etc.).</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getContacts"><span class="type-signature"></span>getContacts<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Retrieves the list of user's contacts. If this function has been called earlier, it returns the instance of <a href="AvayaClientServices.Base.DataRetrieval.html">DataRetrieval</a> that was returned from the previous call.<br>Contacts will be in underlying <a href="AvayaClientServices.Base.DataSet.html">DataSet</a> and <a href="AvayaClientServices.Base.DataRetrieval.html#onDataRetrievalDone">DataRetrieval#onDataRetrievalDone</a> callback will not be fired again.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="resolveContacts"><span class="type-signature"></span>resolveContacts<span class="signature">(resolveContactsRequest)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.ResolveContactResult.html">AvayaClientServices.Services.Contacts.ResolveContactResult</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Searches for contacts based on list of search strings provided in <a href="AvayaClientServices.Services.Contacts.ResolveContactsRequest.html">ResolveContactsRequest</a>.<br>This function should be used when the application needs to search for details of multiple users at once, for example, to display the names in user's call history or conference participant list.</p>
+<p>Please note that contacts returned by this function usually have only the basic set of data filled (such as first name, last name, phone numbers, email addresses).</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>resolveContactsRequest</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.ResolveContactsRequest.html">AvayaClientServices.Services.Contacts.ResolveContactsRequest</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object describing the search parameters.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#getNetworkResolveContactsCapability">AvayaClientServices.Services.Contacts.Contacts#getNetworkResolveContactsCapability</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+
+    <div class="param-desc">
+    
+        
+    <a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+
+
+    
+    </div>
+
+
+        
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.ResolveContactResult.html">AvayaClientServices.Services.Contacts.ResolveContactResult</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="searchContacts"><span class="type-signature"></span>searchContacts<span class="signature">(searchRequest)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Searches for the contacts with given request parameters.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>searchRequest</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.ContactSearchRequest.html">AvayaClientServices.Services.Contacts.ContactSearchRequest</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Object describing the search parameters.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#getNetworkSearchContactCapability">AvayaClientServices.Services.Contacts.Contacts#getNetworkSearchContactCapability</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+
+    <div class="param-desc">
+    
+        
+    <a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+
+
+    
+    </div>
+
+
+        
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>.&lt;<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="updateContact"><span class="type-signature"></span>updateContact<span class="signature">(updatedContact)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Updates an existing contact.</p>
+<p>An editable contact object can be created by calling <a href="AvayaClientServices.Services.Contacts.Contacts.html#createEditableContactFromContact">Contacts.createEditableContactFromContact()</a> to populate the editable contact from one of the contacts included in the contact list.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>updatedContact</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The contact to be updated in the contact list.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contact.html#getUpdateContactCapability">AvayaClientServices.Services.Contacts.Contact#getUpdateContactCapability</a>}</li>
+			
+			<li>{<a href="AvayaClientServices.Services.Contacts.Contacts.html#deleteContact">AvayaClientServices.Services.Contacts.Contacts#deleteContact</a>}</li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+
+
+        
+            <h3 class="group-title" id="Callbacks">Callbacks</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnContactServicesCapabilitiesChangedCallback"><span class="type-signature"></span>addOnContactServicesCapabilitiesChangedCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds a new <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactServicesCapabilitiesChangedCallback">onContactServicesCapabilitiesChangedCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactServicesCapabilitiesChangedCallback">AvayaClientServices.Services.Contacts.Contacts#onContactServicesCapabilitiesChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnContactsServiceAvailableCallback"><span class="type-signature"></span>addOnContactsServiceAvailableCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceAvailableCallback">onContactsServiceAvailableCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceAvailableCallback">AvayaClientServices.Services.Contacts.Contacts#onContactsServiceAvailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnContactsServiceUnavailableCallback"><span class="type-signature"></span>addOnContactsServiceUnavailableCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceUnavailableCallback">onContactsServiceUnavailableCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceUnavailableCallback">AvayaClientServices.Services.Contacts.Contacts#onContactsServiceUnavailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnContactServicesCapabilitiesChangedCallback"><span class="type-signature"></span>removeOnContactServicesCapabilitiesChangedCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactServicesCapabilitiesChangedCallback">onContactServicesCapabilitiesChangedCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactServicesCapabilitiesChangedCallback">AvayaClientServices.Services.Contacts.Contacts#onContactServicesCapabilitiesChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnContactsServiceAvailableCallback"><span class="type-signature"></span>removeOnContactsServiceAvailableCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceAvailableCallback">onContactsServiceAvailableCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceAvailableCallback">AvayaClientServices.Services.Contacts.Contacts#onContactsServiceAvailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnContactsServiceUnavailableCallback"><span class="type-signature"></span>removeOnContactsServiceUnavailableCallback<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceUnavailableCallback">onContactsServiceUnavailableCallback</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html#onContactsServiceUnavailableCallback">AvayaClientServices.Services.Contacts.Contacts#onContactsServiceUnavailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+            <h3 class="group-title" id="Capabilities">Capabilities</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getAddContactCapability"><span class="type-signature"></span>getAddContactCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the capability indicating if the provided contact can be updated.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object describing whether the contact service supports adding contacts.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getNetworkResolveContactsCapability"><span class="type-signature"></span>getNetworkResolveContactsCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the capability to resolve contact in the network.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object describing whether the contact service supports contacts resolution.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getNetworkSearchContactCapability"><span class="type-signature"></span>getNetworkSearchContactCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the capability to search contacts in the network.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object describing whether the contact service supports searching contacts.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getNetworkSearchTerminalCapability"><span class="type-signature"></span>getNetworkSearchTerminalCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the capability to search terminal in the network.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object describing whether the contact service supports searching contacts.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getNetworkSearchTerminalCapability"><span class="type-signature"></span>getNetworkSearchTerminalCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the capability to search users only in conference.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object describing ability to do search only in conference.</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+
+    
+
+    
+        <h2 class="subsection-title">Type Definitions</h2>
+
+        
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onContactServicesCapabilitiesChangedCallback"><span class="type-signature"></span>onContactServicesCapabilitiesChangedCallback<span class="signature">(contacts)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for the callback function to be invoked when add or search capabilities of contact service are changed.<br>It is up to the UI to inquire what capability has been changed. For example, when ACS provider is out of service, the service notifies that capabilities have been changed, and the UI needs to call <a href="AvayaClientServices.Services.Contacts.Contacts.html#getAddContactCapability">Contacts.getAddContactCapability()</a> or <a href="AvayaClientServices.Services.Contacts.Contacts.html#getNetworkSearchContactCapability">Contacts.getNetworkSearchContactCapability()</a> in order to update the UI.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contacts</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An instance of contacts module.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onContactsServiceAvailableCallback"><span class="type-signature"></span>onContactsServiceAvailableCallback<span class="signature">(contacts)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for the callback function to be invoked when contact service is available.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contacts</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An instance of contacts module.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onContactsServiceUnavailableCallback"><span class="type-signature"></span>onContactsServiceUnavailableCallback<span class="signature">(contacts)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for the callback function to be invoked when contact service is unavailable.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>contacts</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An instance of contacts module.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+            
+         </dl>
+         
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+                        <span class="copyright">
+                        ©2016 Avaya Inc. All Rights Reserved.
+                        </span>
+						<br />
+					
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

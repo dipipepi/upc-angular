@@ -1,0 +1,12722 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Communication Services API Reference (JavaScript) Class: Conversation</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulian.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">Communication Services API Reference (JavaScript)</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.html">AvayaClientServices.Base</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.html">AvayaClientServices.Base.Library</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.jQuery.html">AvayaClientServices.Base.Library.jQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.html">AvayaClientServices.Config</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.html">AvayaClientServices.Services</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.html">AvayaClientServices.Services.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.html">AvayaClientServices.Services.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.html">AvayaClientServices.Services.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.html">AvayaClientServices.Services.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.ContentSharing.html">AvayaClientServices.Services.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.html">AvayaClientServices.Services.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.html">AvayaClientServices.Services.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioDevice.html">AvayaClientServices.Base.AudioDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInputInterface.html">AvayaClientServices.Base.AudioInputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInterface.html">AvayaClientServices.Base.AudioInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioOutputInterface.html">AvayaClientServices.Base.AudioOutputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.BaseError.html">AvayaClientServices.Base.BaseError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataSet.html">AvayaClientServices.Base.DataSet</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.LoggerInterface.html">AvayaClientServices.Base.LoggerInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaInterface.html">AvayaClientServices.Base.MediaInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaServices.html">AvayaClientServices.Base.MediaServices</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.SettingsFileParser.html">AvayaClientServices.Base.SettingsFileParser</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoDevice.html">AvayaClientServices.Base.VideoDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoInterface.html">AvayaClientServices.Base.VideoInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AbstractCredentialProvider.html">AvayaClientServices.Config.AbstractCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ACSConfiguration.html">AvayaClientServices.Config.ACSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AMMConfiguration.html">AvayaClientServices.Config.AMMConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AnalyticsConfiguration.html">AvayaClientServices.Config.AnalyticsConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CallUserConfiguration.html">AvayaClientServices.Config.CallUserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CollaborationConfiguration.html">AvayaClientServices.Config.CollaborationConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialProvider.html">AvayaClientServices.Config.CredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialTokenProvider.html">AvayaClientServices.Config.CredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.GuestCredentialProvider.html">AvayaClientServices.Config.GuestCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.InvalidCredentialsEvent.html">AvayaClientServices.Config.InvalidCredentialsEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.MediaConfiguration.html">AvayaClientServices.Config.MediaConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.NetworkProviderConfiguration.html">AvayaClientServices.Config.NetworkProviderConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.PresenceConfiguration.html">AvayaClientServices.Config.PresenceConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ServerInfo.html">AvayaClientServices.Config.ServerInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.SGConfiguration.html">AvayaClientServices.Config.SGConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UCCPConfiguration.html">AvayaClientServices.Config.UCCPConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UserConfiguration.html">AvayaClientServices.Config.UserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationAudio.html">AvayaClientServices.Config.VoIPConfigurationAudio</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationVideo.html">AvayaClientServices.Config.VoIPConfigurationVideo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSConfiguration.html">AvayaClientServices.Config.WCSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSCredentialTokenProvider.html">AvayaClientServices.Config.WCSCredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioChannel.html">AvayaClientServices.Services.Call.AudioChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioDetails.html">AvayaClientServices.Services.Call.AudioDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Call.html">AvayaClientServices.Services.Call.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallCreationInfo.html">AvayaClientServices.Services.Call.CallCreationInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallEndEvent.html">AvayaClientServices.Services.Call.CallEndEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallException.html">AvayaClientServices.Services.Call.CallException</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Calls.html">AvayaClientServices.Services.Call.Calls</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.ConferenceEntryOptions.html">AvayaClientServices.Services.Call.ConferenceEntryOptions</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.RingbackToneURLs.html">AvayaClientServices.Services.Call.RingbackToneURLs</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.UserToUserInfo.html">AvayaClientServices.Services.Call.UserToUserInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoChannel.html">AvayaClientServices.Services.Call.VideoChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoDetails.html">AvayaClientServices.Services.Call.VideoDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.AbstractShape.html">AvayaClientServices.Services.Collaboration.AbstractShape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Bitmap.html">AvayaClientServices.Services.Collaboration.Bitmap</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Circle.html">AvayaClientServices.Services.Collaboration.Circle</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CircleTool.html">AvayaClientServices.Services.Collaboration.CircleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ClearTool.html">AvayaClientServices.Services.Collaboration.ClearTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CollaborationError.html">AvayaClientServices.Services.Collaboration.CollaborationError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaborations.html">AvayaClientServices.Services.Collaboration.Collaborations</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.DeleteTool.html">AvayaClientServices.Services.Collaboration.DeleteTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Frame.html">AvayaClientServices.Services.Collaboration.Frame</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.LineTool.html">AvayaClientServices.Services.Collaboration.LineTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.MarkerTool.html">AvayaClientServices.Services.Collaboration.MarkerTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Participant.html">AvayaClientServices.Services.Collaboration.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.PenTool.html">AvayaClientServices.Services.Collaboration.PenTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Point.html">AvayaClientServices.Services.Collaboration.Point</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.RectangleTool.html">AvayaClientServices.Services.Collaboration.RectangleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SelectionTool.html">AvayaClientServices.Services.Collaboration.SelectionTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Shape.html">AvayaClientServices.Services.Collaboration.Shape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SliderSlide.html">AvayaClientServices.Services.Collaboration.SliderSlide</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.StampTool.html">AvayaClientServices.Services.Collaboration.StampTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.TextTool.html">AvayaClientServices.Services.Collaboration.TextTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardRenderer.html">AvayaClientServices.Services.Collaboration.WhiteboardRenderer</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardSurface.html">AvayaClientServices.Services.Collaboration.WhiteboardSurface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardText.html">AvayaClientServices.Services.Collaboration.WhiteboardText</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardTools.html">AvayaClientServices.Services.Collaboration.WhiteboardTools</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ActiveParticipant.html">AvayaClientServices.Services.Conference.ActiveParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Chat.html">AvayaClientServices.Services.Conference.Chat</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ChatMessage.html">AvayaClientServices.Services.Conference.ChatMessage</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Conference.html">AvayaClientServices.Services.Conference.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.DroppedParticipant.html">AvayaClientServices.Services.Conference.DroppedParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Participant.html">AvayaClientServices.Services.Conference.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.PendingParticipant.html">AvayaClientServices.Services.Conference.PendingParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactBooleanField.html">AvayaClientServices.Services.Contacts.ContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactEmailAddressField.html">AvayaClientServices.Services.Contacts.ContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactField.html">AvayaClientServices.Services.Contacts.ContactField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactFieldList.html">AvayaClientServices.Services.Contacts.ContactFieldList</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactIMAddressField.html">AvayaClientServices.Services.Contacts.ContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactNumberField.html">AvayaClientServices.Services.Contacts.ContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactPhoneField.html">AvayaClientServices.Services.Contacts.ContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactSearchRequest.html">AvayaClientServices.Services.Contacts.ContactSearchRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactStringField.html">AvayaClientServices.Services.Contacts.ContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactBooleanField.html">AvayaClientServices.Services.Contacts.EditableContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactEmailAddressField.html">AvayaClientServices.Services.Contacts.EditableContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactIMAddressField.html">AvayaClientServices.Services.Contacts.EditableContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactNumberField.html">AvayaClientServices.Services.Contacts.EditableContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactPhoneField.html">AvayaClientServices.Services.Contacts.EditableContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactStringField.html">AvayaClientServices.Services.Contacts.EditableContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel.html">AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactResult.html">AvayaClientServices.Services.Contacts.ResolveContactResult</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactsRequest.html">AvayaClientServices.Services.Contacts.ResolveContactsRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Terminal.html">AvayaClientServices.Services.Contacts.Terminal</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Attachment.html">AvayaClientServices.Services.Messaging.Attachment</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.ChatStateEvent.html">AvayaClientServices.Services.Messaging.ChatStateEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Messaging.html">AvayaClientServices.Services.Messaging.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingError.html">AvayaClientServices.Services.Messaging.MessagingError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingQuery.html">AvayaClientServices.Services.Messaging.MessagingQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Participant.html">AvayaClientServices.Services.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.Presence.html">AvayaClientServices.Services.Presence.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceError.html">AvayaClientServices.Services.Presence.PresenceError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceListSubscription.html">AvayaClientServices.Services.Presence.PresenceListSubscription</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceService.html">AvayaClientServices.Services.Presence.PresenceService</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.SelfPresence.html">AvayaClientServices.Services.Presence.SelfPresence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.User.html">AvayaClientServices.User</a>
+						</li>
+						
+						<li>
+							<a href="window.AvayaClientServices.html">window.AvayaClientServices</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: Conversation</h1>
+<section>
+
+<!--
+<header>
+    <h2>
+        <span class="ancestors"><a href="AvayaClientServices.Services.html">.Services</a><a href="AvayaClientServices.Services.Messaging.html">.Messaging</a>.</span>
+    
+    Conversation
+    </h2>
+    
+</header>
+-->
+
+<article>
+    <div class="container-overview">
+
+
+    
+
+    
+        <h2>Constructor</h2>
+        <dl class="frame">
+            
+<dt>
+    <h4 class="name" id="Conversation"><span class="type-signature"></span>new Conversation<span class="signature">(conversationService)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Conversation allows <a href="AvayaClientServices.Services.Messaging.Participant.html">Participants</a> to communicate by sending and receiving <a href="AvayaClientServices.Services.Messaging.Message.html">Messages</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversationService</code></td>
+            
+
+            <td class="type">
+            
+                
+    AvayaClientServices.Services.Messaging.ConversationService
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+        </dl>
+    
+    </div>
+
+    <!--
+    
+    -->
+
+    
+
+    <!--
+    
+        <h2 class="subsection-title">Requires</h2>
+
+        <ul>
+            <li>module:AvayaClientServices.Base.AOPCommonAdvices</li>
+        
+            <li>module:AvayaClientServices.Base.Capability</li>
+        </ul>
+    
+    -->
+
+    
+
+    
+
+    
+
+    
+        <h2 class="subsection-title">Methods</h2>
+
+        
+
+
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="addParticipantAddresses"><span class="type-signature"></span>addParticipantAddresses<span class="signature">(addressesToAdd)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(Array|object)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds participants to conversation by addresses.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>addressesToAdd</code></td>
+            
+
+            <td class="type">
+            
+                
+    Array.&lt;String>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of Strings.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#removeParticipantAddresses">AvayaClientServices.Services.Messaging.Conversation#removeParticipantAddresses</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(Array|object)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="createEscalation"><span class="type-signature"></span>createEscalation<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates Escalation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#removeEscalation">AvayaClientServices.Services.Messaging.Conversation#removeEscalation</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="createMessage"><span class="type-signature"></span>createMessage<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates new Message.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getActiveParticipants"><span class="type-signature"></span>getActiveParticipants<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns array of all active Participants that take part in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getComposingParticipants">AvayaClientServices.Services.Messaging.Conversation#getComposingParticipants</a></li>
+			
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getParticipants">AvayaClientServices.Services.Messaging.Conversation#getParticipants</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getAttachmentCount"><span class="type-signature"></span>getAttachmentCount<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns total amount of attachments in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Number
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getComposingParticipants"><span class="type-signature"></span>getComposingParticipants<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns array of currently composing Participants.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getParticipants">AvayaClientServices.Services.Messaging.Conversation#getParticipants</a></li>
+			
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getActiveParticipants">AvayaClientServices.Services.Messaging.Conversation#getActiveParticipants</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation ID.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    string
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getLastAccessTime"><span class="type-signature"></span>getLastAccessTime<span class="signature">()</span><span class="type-signature"> &rarr; {Date}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation last access time.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#setLastAccessTime">AvayaClientServices.Services.Messaging.Conversation#setLastAccessTime</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Date
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getLastEntryTime"><span class="type-signature"></span>getLastEntryTime<span class="signature">()</span><span class="type-signature"> &rarr; {Date}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation last entry time.<br>This is timestamp of the most recent message in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Date
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getLastUpdatedByParticipant"><span class="type-signature"></span>getLastUpdatedByParticipant<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the Participant that the conversation was last updated by.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getLastUpdatedTime"><span class="type-signature"></span>getLastUpdatedTime<span class="signature">()</span><span class="type-signature"> &rarr; {Date}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation last updated time.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Date
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getMessages"><span class="type-signature"></span>getMessages<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataSet.html">AvayaClientServices.Base.DataSet</a>.&lt;<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets conversation messages.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataSet.html">AvayaClientServices.Base.DataSet</a>.&lt;<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getParticipants"><span class="type-signature"></span>getParticipants<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns array of all Participants that take part in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getComposingParticipants">AvayaClientServices.Services.Messaging.Conversation#getComposingParticipants</a></li>
+			
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getActiveParticipants">AvayaClientServices.Services.Messaging.Conversation#getActiveParticipants</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Array.&lt;<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getPreviewText"><span class="type-signature"></span>getPreviewText<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation preview text. PreviewText is a body of the latest message in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    String
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getSensitivity"><span class="type-signature"></span>getSensitivity<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">AvayaClientServices.Services.Messaging.SensitivityLevel</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation sensitivity level. It determines level of privacy for conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#setSensitivity">AvayaClientServices.Services.Messaging.Conversation#setSensitivity</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">AvayaClientServices.Services.Messaging.SensitivityLevel</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getStatus"><span class="type-signature"></span>getStatus<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.html#.ResourceStatus">AvayaClientServices.Services.Messaging.ResourceStatus</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation status.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.html#.ResourceStatus">AvayaClientServices.Services.Messaging.ResourceStatus</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getSubject"><span class="type-signature"></span>getSubject<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation subject.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#setSubject">AvayaClientServices.Services.Messaging.Conversation#setSubject</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    String
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getTotalMessageCount"><span class="type-signature"></span>getTotalMessageCount<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns total amount of messages in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Number
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getType"><span class="type-signature"></span>getType<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Messaging.html#.ConversationType">AvayaClientServices.Services.Messaging.ConversationType</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns conversation type, as defined in <a href="AvayaClientServices.Services.Messaging.html#.ConversationType">AvayaClientServices.Services.Messaging.ConversationType</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Messaging.html#.ConversationType">AvayaClientServices.Services.Messaging.ConversationType</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getUnreadAttachmentCount"><span class="type-signature"></span>getUnreadAttachmentCount<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns total amount of unread attachments in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Number
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getUnreadMessageCount"><span class="type-signature"></span>getUnreadMessageCount<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns total amount of unread messages in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Number
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="hasAttachments"><span class="type-signature"></span>hasAttachments<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether conversation contains attachments.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#hasUnreadAttachments">AvayaClientServices.Services.Messaging.Conversation#hasUnreadAttachments</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="hasUnreadAttachments"><span class="type-signature"></span>hasUnreadAttachments<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether conversation contains unread attachments.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#hasAttachments">AvayaClientServices.Services.Messaging.Conversation#hasAttachments</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="hasUnreadMessagesSinceLastAccess"><span class="type-signature"></span>hasUnreadMessagesSinceLastAccess<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether conversation has unread messages since last access time</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getLastAccessTime">AvayaClientServices.Services.Messaging.Conversation#getLastAccessTime</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isActive"><span class="type-signature"></span>isActive<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if conversation is active.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isClosed"><span class="type-signature"></span>isClosed<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if conversation is closed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isMultiParty"><span class="type-signature"></span>isMultiParty<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if conversation is multiparty.<br>A conversation is considered to be a multi-party conversation if there are more than two<br>active participants in conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isParticipantActive"><span class="type-signature"></span>isParticipantActive<span class="signature">(participant)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if a specified participant is active in this conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>participant</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isPrivate"><span class="type-signature"></span>isPrivate<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether conversation sensitivity level is PRIVATE.<br>Conversation is private when <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">SensitivityLevel</a> of conversation is set to <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">SensitivityLevel.PRIVATE</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#setSensitivity">AvayaClientServices.Services.Messaging.Conversation#setSensitivity</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="leave"><span class="type-signature"></span>leave<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(Boolean|object)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Leaves a conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#start">AvayaClientServices.Services.Messaging.Conversation#start</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(Boolean|object)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="markAllContentAsRead"><span class="type-signature"></span>markAllContentAsRead<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Marks all content as read.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="removeEscalation"><span class="type-signature"></span>removeEscalation<span class="signature">(escalation)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes escalation from conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>escalation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><a href="AvayaClientServices.Services.Messaging.Escalation.html">Escalation</a> object to be removed from <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#createEscalation">AvayaClientServices.Services.Messaging.Conversation#createEscalation</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="removeMessage"><span class="type-signature"></span>removeMessage<span class="signature">(message)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes a message from conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><a href="AvayaClientServices.Services.Messaging.Message.html">Message</a> of <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#createMessage">AvayaClientServices.Services.Messaging.Conversation#createMessage</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="removeParticipantAddresses"><span class="type-signature"></span>removeParticipantAddresses<span class="signature">(addressesToRemove)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|String)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes participants from conversation by addresses.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>addressesToRemove</code></td>
+            
+
+            <td class="type">
+            
+                
+    Array.&lt;String>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Array of Strings</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#addParticipantAddresses">AvayaClientServices.Services.Messaging.Conversation#addParticipantAddresses</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|String)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="retrieveMessagesAfter"><span class="type-signature"></span>retrieveMessagesAfter<span class="signature">(afterMessage, <span class="optional">maxMessageCount</span>)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets conversation messages after specified message.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>afterMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="AvayaClientServices.Services.Messaging.Message.html">Message</a> of <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>maxMessageCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Maximum number of messages to be returned.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getMessages">AvayaClientServices.Services.Messaging.Conversation#getMessages</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="retrieveMessagesBefore"><span class="type-signature"></span>retrieveMessagesBefore<span class="signature">(beforeMessage, <span class="optional">maxMessageCount</span>)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets conversation messages before specified message.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>beforeMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p><a href="AvayaClientServices.Services.Messaging.Message.html">Message</a> of <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>maxMessageCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Maximum number of messages to be returned.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getMessages">AvayaClientServices.Services.Messaging.Conversation#getMessages</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="setLastAccessTime"><span class="type-signature"></span>setLastAccessTime<span class="signature">()</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Sets last access time for conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getLastAccessTime">AvayaClientServices.Services.Messaging.Conversation#getLastAccessTime</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="setSensitivity"><span class="type-signature"></span>setSensitivity<span class="signature">(newSensitivity)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Sets conversation <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">sensitivity level</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>newSensitivity</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">AvayaClientServices.Services.Messaging.SensitivityLevel</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">Sensitivity level</a> for <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getSensitivity">AvayaClientServices.Services.Messaging.Conversation#getSensitivity</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="setSubject"><span class="type-signature"></span>setSubject<span class="signature">(newSubject)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Sets new subject for conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>newSubject</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New subject for <a href="AvayaClientServices.Services.Messaging.Conversation.html">Conversation</a>.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#getSubject">AvayaClientServices.Services.Messaging.Conversation#getSubject</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Starts a conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see"><h5>See:</h5></dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="AvayaClientServices.Services.Messaging.Conversation.html#leave">AvayaClientServices.Services.Messaging.Conversation#leave</a></li>
+			</ul>
+	</dd>
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="subscribeForTypingEvents"><span class="type-signature"></span>subscribeForTypingEvents<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Subscribes for typing notifications.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="unsubscribeForTypingEvents"><span class="type-signature"></span>unsubscribeForTypingEvents<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Unsubscribes from typing notifications.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(object|object)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+
+
+        
+            <h3 class="group-title" id="Managing_callbacks">Managing callbacks</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnActiveStatusChangedCallback"><span class="type-signature"></span>addOnActiveStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onActiveStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onActiveStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onActiveStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnClosedStatusChangedCallback"><span class="type-signature"></span>addOnClosedStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onClosedStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onClosedStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onClosedStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnLastAccessTimeChangedCallback"><span class="type-signature"></span>addOnLastAccessTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onLastAccessTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLastAccessTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLastAccessTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnLastUpdatedTimeChangedCallback"><span class="type-signature"></span>addOnLastUpdatedTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onLastUpdatedTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLastUpdatedTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLastUpdatedTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnLatestEntryTimeChangedCallback"><span class="type-signature"></span>addOnLatestEntryTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onLatestEntryTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLatestEntryTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLatestEntryTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnMultiPartyStatusChangedCallback"><span class="type-signature"></span>addOnMultiPartyStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onMultiPartyStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onMultiPartyStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onMultiPartyStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnPreviewTextChangedCallback"><span class="type-signature"></span>addOnPreviewTextChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onPreviewTextChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onPreviewTextChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onPreviewTextChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnSensitivityChangedCallback"><span class="type-signature"></span>addOnSensitivityChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onSensitivityChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onSensitivityChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onSensitivityChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnStatusChangedCallback"><span class="type-signature"></span>addOnStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnSubjectChangedCallback"><span class="type-signature"></span>addOnSubjectChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onSubjectChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onSubjectChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onSubjectChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnTotalAttachmentCountChangedCallback"><span class="type-signature"></span>addOnTotalAttachmentCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onTotalAttachmentCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalAttachmentCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalAttachmentCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnTotalMessageCountChangedCallback"><span class="type-signature"></span>addOnTotalMessageCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onTotalMessageCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalMessageCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalMessageCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnTotalUnreadAttachmentCountChangedCallback"><span class="type-signature"></span>addOnTotalUnreadAttachmentCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onTotalUnreadAttachmentCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalUnreadAttachmentCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalUnreadAttachmentCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnTotalUnreadMessageCountChangedCallback"><span class="type-signature"></span>addOnTotalUnreadMessageCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onTotalUnreadMessageCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalUnreadMessageCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalUnreadMessageCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnActiveStatusChangedCallback"><span class="type-signature"></span>removeOnActiveStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onActiveStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onActiveStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onActiveStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnClosedStatusChangedCallback"><span class="type-signature"></span>removeOnClosedStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onClosedStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onClosedStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onClosedStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnLastAccessTimeChangedCallback"><span class="type-signature"></span>removeOnLastAccessTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onLastAccessTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLastAccessTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLastAccessTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnLastUpdatedTimeChangedCallback"><span class="type-signature"></span>removeOnLastUpdatedTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onLastUpdatedTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLastUpdatedTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLastUpdatedTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnLatestEntryTimeChangedCallback"><span class="type-signature"></span>removeOnLatestEntryTimeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onLatestEntryTimeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onLatestEntryTimeChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onLatestEntryTimeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnMultiPartyStatusChangedCallback"><span class="type-signature"></span>removeOnMultiPartyStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onMultiPartyStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onMultiPartyStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onMultiPartyStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnPreviewTextChangedCallback"><span class="type-signature"></span>removeOnPreviewTextChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onPreviewTextChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onPreviewTextChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onPreviewTextChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnSensitivityChangedCallback"><span class="type-signature"></span>removeOnSensitivityChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onSensitivityChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onSensitivityChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onSensitivityChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnStatusChangedCallback"><span class="type-signature"></span>removeOnStatusChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onResourceStatusChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onStatusChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onStatusChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnSubjectChangedCallback"><span class="type-signature"></span>removeOnSubjectChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onSubjectChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onSubjectChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onSubjectChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnTotalAttachmentCountChangedCallback"><span class="type-signature"></span>removeOnTotalAttachmentCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onTotalAttachmentCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalAttachmentCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalAttachmentCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnTotalMessageCountChangedCallback"><span class="type-signature"></span>removeOnTotalMessageCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onTotalMessageCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalMessageCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalMessageCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnTotalUnreadAttachmentCountChangedCallback"><span class="type-signature"></span>removeOnTotalUnreadAttachmentCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onTotalUnreadAttachmentCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalUnreadAttachmentCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalUnreadAttachmentCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnTotalUnreadMessageCountChangedCallback"><span class="type-signature"></span>removeOnTotalUnreadMessageCountChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onTotalUnreadMessageCountChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html#onTotalUnreadMessageCountChangedCallback">AvayaClientServices.Services.Messaging.Conversation#onTotalUnreadMessageCountChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+            <h3 class="group-title" id="Capabilities">Capabilities</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getAddParticipantsCapability"><span class="type-signature"></span>getAddParticipantsCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if participant can be added to conversation.</p>
+<pre>
+     if (conversation is active and service is available)
+         allow
+     if (conversation is DRAFT_UNSENT and service is available)
+         allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getCreateEscalationCapability"><span class="type-signature"></span>getCreateEscalationCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if audio/video escalation is allowed in this conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getCreateMessageCapability"><span class="type-signature"></span>getCreateMessageCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if message can be created in this conversation.</p>
+<pre>
+     if (conversation is closed and service is available)
+         deny
+     if (service is not available)
+         deny
+     else
+         allow
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getIsTypingCapability"><span class="type-signature"></span>getIsTypingCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if isTyping feature is available in this conversation.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getLeaveCapability"><span class="type-signature"></span>getLeaveCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if participant can leave this conversation.</p>
+<pre>
+     if (conversation is not active)
+         deny
+     if (conversation is closed)
+         deny
+     if (service is not available)
+         deny
+     else
+         allow
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getMarkAllContentAsReadCapability"><span class="type-signature"></span>getMarkAllContentAsReadCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if unread content in this conversation can be marked as read.</p>
+<pre>
+     if (conversation has unreadCount equal to 0)
+         deny
+     if (resources doesn't contain markAsReadIf endpoint || resources are wrong || resources are unavailable)
+         deny
+     else
+         allow
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getRemoveCapability"><span class="type-signature"></span>getRemoveCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if this conversation can be removed.</p>
+<pre>
+     if (conversation is DRAFT_UNSENT and service is available)
+         allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getRemoveParticipantsCapability"><span class="type-signature"></span>getRemoveParticipantsCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if participant can be removed from conversation.</p>
+<pre>
+     if (conversation is DRAFT_UNSENT and service is available)
+         allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getRetrieveMessagesCapability"><span class="type-signature"></span>getRetrieveMessagesCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if older content of conversation can be downloaded.</p>
+<pre>
+     if (conversation is not PUBLISHED)
+         deny
+     if (totalCount is equal to length of messages array)
+         deny
+     if (service is not available)
+         deny
+     else
+         allow
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getSendCapability"><span class="type-signature"></span>getSendCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if this conversation can be started.</p>
+<pre>
+     if (conversation is DRAFT_UNSENT)
+         if (self is the only participant)
+             deny
+         else
+             allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getUpdateLastAccessTimeCapability"><span class="type-signature"></span>getUpdateLastAccessTimeCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if the last access time property of conversation can be updated.</p>
+<pre>
+     if (conversation is PUBLISHED & service is available & conversation is not closed)
+         allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getUpdateSensitivityCapability"><span class="type-signature"></span>getUpdateSensitivityCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if sensitivity property of conversation can be updated.</p>
+<pre>
+     if (conversation is PUBLISHED & service is available & conversation is not closed)
+         allow
+     else
+         deny
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getUpdateSubjectCapability"><span class="type-signature"></span>getUpdateSubjectCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns Capability object that indicates if subject property of conversation can be updated.</p>
+<pre>
+     if (conversation is closed)
+         deny
+     if (conversation is PUBLISHED)
+         if (resources contain endpoint for subject change)
+             allow
+         else
+             deny
+     else if (conversation is DRAFT_UNSENT)
+         allow
+</pre>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+
+    
+
+    
+        <h2 class="subsection-title">Type Definitions</h2>
+
+        
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onActiveStatusChangedCallback"><span class="type-signature"></span>onActiveStatusChangedCallback<span class="signature">(conversation, isActive)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when active status has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>isActive</code></td>
+            
+
+            <td class="type">
+            
+                
+    Boolean
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of isActive flag.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onClosedStatusChangedCallback"><span class="type-signature"></span>onClosedStatusChangedCallback<span class="signature">(conversation, isClosed)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when closed status has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>isClosed</code></td>
+            
+
+            <td class="type">
+            
+                
+    Boolean
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of isClosed flag.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onLastAccessTimeChangedCallback"><span class="type-signature"></span>onLastAccessTimeChangedCallback<span class="signature">(conversation, newTime)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when last access time has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newTime</code></td>
+            
+
+            <td class="type">
+            
+                
+    Date
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of last access time.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onLastUpdatedTimeChangedCallback"><span class="type-signature"></span>onLastUpdatedTimeChangedCallback<span class="signature">(conversation, newTime)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when last updated time has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newTime</code></td>
+            
+
+            <td class="type">
+            
+                
+    Date
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of last updated time.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onLatestEntryTimeChangedCallback"><span class="type-signature"></span>onLatestEntryTimeChangedCallback<span class="signature">(conversation, newTime)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when latest entry time has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newTime</code></td>
+            
+
+            <td class="type">
+            
+                
+    Date
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of last entry time.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onMultiPartyStatusChangedCallback"><span class="type-signature"></span>onMultiPartyStatusChangedCallback<span class="signature">(conversation, isMultiparty)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when multiparty status has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>isMultiparty</code></td>
+            
+
+            <td class="type">
+            
+                
+    Boolean
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of isMultiparty flag.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onPreviewTextChangedCallback"><span class="type-signature"></span>onPreviewTextChangedCallback<span class="signature">(conversation, newPreviewText)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when preview text has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newPreviewText</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of preview text.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onSensitivityChangedCallback"><span class="type-signature"></span>onSensitivityChangedCallback<span class="signature">(conversation, newSensitivity)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when sensitivity has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newSensitivity</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.html#.SensitivityLevel">AvayaClientServices.Services.Messaging.SensitivityLevel</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of sensitivity level.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onStatusChangedCallback"><span class="type-signature"></span>onStatusChangedCallback<span class="signature">(conversation, newResourceStatus)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when resource status has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newResourceStatus</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New resource status value.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onSubjectChangedCallback"><span class="type-signature"></span>onSubjectChangedCallback<span class="signature">(conversation, newSubject)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when subject has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newSubject</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New subject value.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onTotalAttachmentCountChangedCallback"><span class="type-signature"></span>onTotalAttachmentCountChangedCallback<span class="signature">(conversation, newTotalAttachmentCount)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when total attachment count has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newTotalAttachmentCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of total number of attachments.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onTotalMessageCountChangedCallback"><span class="type-signature"></span>onTotalMessageCountChangedCallback<span class="signature">(conversation, newMessagesCount)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when total messages count has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newMessagesCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of total number of messages.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onTotalUnreadAttachmentCountChangedCallback"><span class="type-signature"></span>onTotalUnreadAttachmentCountChangedCallback<span class="signature">(conversation, newUnreadAttachmentCount)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when total unread attachment count has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newUnreadAttachmentCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of unread number of attachments.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onTotalUnreadMessageCountChangedCallback"><span class="type-signature"></span>onTotalUnreadMessageCountChangedCallback<span class="signature">(conversation, newUnreadMessageCount)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when total unread message count has changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>conversation</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Conversation instance.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>newUnreadMessageCount</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>New value of unread number of messages.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+                        <span class="copyright">
+                        ©2016 Avaya Inc. All Rights Reserved.
+                        </span>
+						<br />
+					
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

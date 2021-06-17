@@ -1,0 +1,37 @@
+{
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "js/content_scripts.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ],
+  "manifest_version": 2,
+  "name": "Avaya Screen Sharing",
+  "permissions": [
+    "tabs",
+    "https://*/*",
+    "desktopCapture"
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "version": "4.2.0.0",
+  "version_name": "JSCSDK 4.3.0.11",
+  "homepage_url": "http://avaya.com",
+  "minimum_chrome_version": "51",
+  "description": "__MSG_manifestDescription__",
+  "author": "Avaya",
+  "default_locale": "en"
+}

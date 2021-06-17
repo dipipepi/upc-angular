@@ -1,0 +1,6517 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Communication Services API Reference (JavaScript) Class: Collaboration</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulian.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">Communication Services API Reference (JavaScript)</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.html">AvayaClientServices.Base</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.html">AvayaClientServices.Base.Library</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Library.jQuery.html">AvayaClientServices.Base.Library.jQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.html">AvayaClientServices.Config</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.html">AvayaClientServices.Services</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.html">AvayaClientServices.Services.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.html">AvayaClientServices.Services.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.html">AvayaClientServices.Services.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.html">AvayaClientServices.Services.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.ContentSharing.html">AvayaClientServices.Services.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.html">AvayaClientServices.Services.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.html">AvayaClientServices.Services.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioDevice.html">AvayaClientServices.Base.AudioDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInputInterface.html">AvayaClientServices.Base.AudioInputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioInterface.html">AvayaClientServices.Base.AudioInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.AudioOutputInterface.html">AvayaClientServices.Base.AudioOutputInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.BaseError.html">AvayaClientServices.Base.BaseError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.DataSet.html">AvayaClientServices.Base.DataSet</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.LoggerInterface.html">AvayaClientServices.Base.LoggerInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaInterface.html">AvayaClientServices.Base.MediaInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.MediaServices.html">AvayaClientServices.Base.MediaServices</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.SettingsFileParser.html">AvayaClientServices.Base.SettingsFileParser</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoDevice.html">AvayaClientServices.Base.VideoDevice</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Base.VideoInterface.html">AvayaClientServices.Base.VideoInterface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AbstractCredentialProvider.html">AvayaClientServices.Config.AbstractCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ACSConfiguration.html">AvayaClientServices.Config.ACSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AMMConfiguration.html">AvayaClientServices.Config.AMMConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.AnalyticsConfiguration.html">AvayaClientServices.Config.AnalyticsConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CallUserConfiguration.html">AvayaClientServices.Config.CallUserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CollaborationConfiguration.html">AvayaClientServices.Config.CollaborationConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialProvider.html">AvayaClientServices.Config.CredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.CredentialTokenProvider.html">AvayaClientServices.Config.CredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.GuestCredentialProvider.html">AvayaClientServices.Config.GuestCredentialProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.InvalidCredentialsEvent.html">AvayaClientServices.Config.InvalidCredentialsEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.MediaConfiguration.html">AvayaClientServices.Config.MediaConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.NetworkProviderConfiguration.html">AvayaClientServices.Config.NetworkProviderConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.PresenceConfiguration.html">AvayaClientServices.Config.PresenceConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.ServerInfo.html">AvayaClientServices.Config.ServerInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.SGConfiguration.html">AvayaClientServices.Config.SGConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UCCPConfiguration.html">AvayaClientServices.Config.UCCPConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.UserConfiguration.html">AvayaClientServices.Config.UserConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationAudio.html">AvayaClientServices.Config.VoIPConfigurationAudio</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.VoIPConfigurationVideo.html">AvayaClientServices.Config.VoIPConfigurationVideo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSConfiguration.html">AvayaClientServices.Config.WCSConfiguration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Config.WCSCredentialTokenProvider.html">AvayaClientServices.Config.WCSCredentialTokenProvider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioChannel.html">AvayaClientServices.Services.Call.AudioChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.AudioDetails.html">AvayaClientServices.Services.Call.AudioDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Call.html">AvayaClientServices.Services.Call.Call</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallCreationInfo.html">AvayaClientServices.Services.Call.CallCreationInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallEndEvent.html">AvayaClientServices.Services.Call.CallEndEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.CallException.html">AvayaClientServices.Services.Call.CallException</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.Calls.html">AvayaClientServices.Services.Call.Calls</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.ConferenceEntryOptions.html">AvayaClientServices.Services.Call.ConferenceEntryOptions</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.RingbackToneURLs.html">AvayaClientServices.Services.Call.RingbackToneURLs</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.UserToUserInfo.html">AvayaClientServices.Services.Call.UserToUserInfo</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoChannel.html">AvayaClientServices.Services.Call.VideoChannel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Call.VideoDetails.html">AvayaClientServices.Services.Call.VideoDetails</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.AbstractShape.html">AvayaClientServices.Services.Collaboration.AbstractShape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Bitmap.html">AvayaClientServices.Services.Collaboration.Bitmap</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Circle.html">AvayaClientServices.Services.Collaboration.Circle</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CircleTool.html">AvayaClientServices.Services.Collaboration.CircleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ClearTool.html">AvayaClientServices.Services.Collaboration.ClearTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.CollaborationError.html">AvayaClientServices.Services.Collaboration.CollaborationError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Collaborations.html">AvayaClientServices.Services.Collaboration.Collaborations</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.DeleteTool.html">AvayaClientServices.Services.Collaboration.DeleteTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Frame.html">AvayaClientServices.Services.Collaboration.Frame</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.LineTool.html">AvayaClientServices.Services.Collaboration.LineTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.MarkerTool.html">AvayaClientServices.Services.Collaboration.MarkerTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Participant.html">AvayaClientServices.Services.Collaboration.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.PenTool.html">AvayaClientServices.Services.Collaboration.PenTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Point.html">AvayaClientServices.Services.Collaboration.Point</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.RectangleTool.html">AvayaClientServices.Services.Collaboration.RectangleTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SelectionTool.html">AvayaClientServices.Services.Collaboration.SelectionTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Shape.html">AvayaClientServices.Services.Collaboration.Shape</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.SliderSlide.html">AvayaClientServices.Services.Collaboration.SliderSlide</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.StampTool.html">AvayaClientServices.Services.Collaboration.StampTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.TextTool.html">AvayaClientServices.Services.Collaboration.TextTool</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardRenderer.html">AvayaClientServices.Services.Collaboration.WhiteboardRenderer</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardSurface.html">AvayaClientServices.Services.Collaboration.WhiteboardSurface</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardText.html">AvayaClientServices.Services.Collaboration.WhiteboardText</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Collaboration.WhiteboardTools.html">AvayaClientServices.Services.Collaboration.WhiteboardTools</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ActiveParticipant.html">AvayaClientServices.Services.Conference.ActiveParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Chat.html">AvayaClientServices.Services.Conference.Chat</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.ChatMessage.html">AvayaClientServices.Services.Conference.ChatMessage</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Conference.html">AvayaClientServices.Services.Conference.Conference</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.DroppedParticipant.html">AvayaClientServices.Services.Conference.DroppedParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.Participant.html">AvayaClientServices.Services.Conference.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Conference.PendingParticipant.html">AvayaClientServices.Services.Conference.PendingParticipant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contact.html">AvayaClientServices.Services.Contacts.Contact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactBooleanField.html">AvayaClientServices.Services.Contacts.ContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactEmailAddressField.html">AvayaClientServices.Services.Contacts.ContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactField.html">AvayaClientServices.Services.Contacts.ContactField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactFieldList.html">AvayaClientServices.Services.Contacts.ContactFieldList</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactIMAddressField.html">AvayaClientServices.Services.Contacts.ContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactNumberField.html">AvayaClientServices.Services.Contacts.ContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactPhoneField.html">AvayaClientServices.Services.Contacts.ContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Contacts.html">AvayaClientServices.Services.Contacts.Contacts</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactSearchRequest.html">AvayaClientServices.Services.Contacts.ContactSearchRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactsError.html">AvayaClientServices.Services.Contacts.ContactsError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ContactStringField.html">AvayaClientServices.Services.Contacts.ContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContact.html">AvayaClientServices.Services.Contacts.EditableContact</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactBooleanField.html">AvayaClientServices.Services.Contacts.EditableContactBooleanField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactEmailAddressField.html">AvayaClientServices.Services.Contacts.EditableContactEmailAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactIMAddressField.html">AvayaClientServices.Services.Contacts.EditableContactIMAddressField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactNumberField.html">AvayaClientServices.Services.Contacts.EditableContactNumberField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactPhoneField.html">AvayaClientServices.Services.Contacts.EditableContactPhoneField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.EditableContactStringField.html">AvayaClientServices.Services.Contacts.EditableContactStringField</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel.html">AvayaClientServices.Services.Contacts.MatchedContactsWithMatchLevel</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactResult.html">AvayaClientServices.Services.Contacts.ResolveContactResult</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.ResolveContactsRequest.html">AvayaClientServices.Services.Contacts.ResolveContactsRequest</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Contacts.Terminal.html">AvayaClientServices.Services.Contacts.Terminal</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Attachment.html">AvayaClientServices.Services.Messaging.Attachment</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.ChatStateEvent.html">AvayaClientServices.Services.Messaging.ChatStateEvent</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Conversation.html">AvayaClientServices.Services.Messaging.Conversation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Escalation.html">AvayaClientServices.Services.Messaging.Escalation</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Message.html">AvayaClientServices.Services.Messaging.Message</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Messaging.html">AvayaClientServices.Services.Messaging.Messaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingError.html">AvayaClientServices.Services.Messaging.MessagingError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.MessagingQuery.html">AvayaClientServices.Services.Messaging.MessagingQuery</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Messaging.Participant.html">AvayaClientServices.Services.Messaging.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Participant.html">AvayaClientServices.Services.Participant</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.Presence.html">AvayaClientServices.Services.Presence.Presence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceError.html">AvayaClientServices.Services.Presence.PresenceError</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceListSubscription.html">AvayaClientServices.Services.Presence.PresenceListSubscription</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.PresenceService.html">AvayaClientServices.Services.Presence.PresenceService</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.Presence.SelfPresence.html">AvayaClientServices.Services.Presence.SelfPresence</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessaging.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessaging</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters.html">AvayaClientServices.Services.VoiceMessaging.VoiceMessagingStatusParameters</a>
+						</li>
+						
+						<li>
+							<a href="AvayaClientServices.User.html">AvayaClientServices.User</a>
+						</li>
+						
+						<li>
+							<a href="window.AvayaClientServices.html">window.AvayaClientServices</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: Collaboration</h1>
+<section>
+
+<!--
+<header>
+    <h2>
+        <span class="ancestors"><a href="AvayaClientServices.Services.html">.Services</a><a href="AvayaClientServices.Services.Collaboration.html">.Collaboration</a>.</span>
+    
+    Collaboration
+    </h2>
+    
+</header>
+-->
+
+<article>
+    <div class="container-overview">
+
+
+    
+
+    
+        <h2>Constructor</h2>
+        <dl class="frame">
+            
+<dt>
+    <h4 class="name" id="Collaboration"><span class="type-signature"></span>new Collaboration<span class="signature">(collaborationService, whiteboard, contentSharing, slider, collaborationId, <span class="optional">callId</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Collaboration module provides functionality of the screen sharing and the whiteboard drawing to the Client application.<br>For the Collaboration module namespace, see <a href="AvayaClientServices.Services.Collaboration.html">Collaboration</a>.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaborationService</code></td>
+            
+
+            <td class="type">
+            
+                
+    AvayaClientServices.Services.Collaboration.CollaborationService
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>collaborationService</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>whiteboard</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>contentSharing</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>slider</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>collaborationId</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callId</code></td>
+            
+
+            <td class="type">
+            
+                
+    String
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+
+</dd>
+
+        </dl>
+    
+    </div>
+
+    <!--
+    
+    -->
+
+    
+
+    <!--
+    
+        <h2 class="subsection-title">Requires</h2>
+
+        <ul>
+            <li>module:AvayaClientServices.Base.AOPCommonAdvices</li>
+        </ul>
+    
+    -->
+
+    
+
+    
+
+    
+        <h2 class="subsection-title">Members</h2>
+
+        
+            <dl class="members frame">
+<dt class="name" id="_supportedFeatures">
+    <h4><span class="type-signature">&lt;protected> </span>_supportedFeatures<span class="type-signature"> :Array.&lt;(AvayaClientServices.Services.Collaboration.FeaturesAvailable)></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>List of features currently implemented and supported by the JSCSDK.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+    Array.&lt;(AvayaClientServices.Services.Collaboration.FeaturesAvailable)>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+
+    
+</dd>
+</dl>
+        
+    
+
+    
+        <h2 class="subsection-title">Methods</h2>
+
+        
+
+
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getCallId"><span class="type-signature"></span>getCallId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the unique string ID for call that is linked with this collaboration.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    String
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getCollaborationId"><span class="type-signature"></span>getCollaborationId<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the unique string ID associated with the particular collaboration object.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    String
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getContentSharing"><span class="type-signature"></span>getContentSharing<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns <a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">ContentSharing</a> object associated with the collaboration.<br>This object provides set of APIs which allows to access different features concerning receiving and sharing a content.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Collaboration.ContentSharing.html">AvayaClientServices.Services.Collaboration.ContentSharing</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getParticipants"><span class="type-signature"></span>getParticipants<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the <a href="AvayaClientServices.Base.DataRetrieval.html">dataRetrieval</a> object with participants list associated with the collaboration session.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.DataRetrieval.html">AvayaClientServices.Base.DataRetrieval</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getSlider"><span class="type-signature"></span>getSlider<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns <a href="AvayaClientServices.Services.Collaboration.Slider.html">Slider</a> object associated with the collaboration.<br>This object provides set of APIs for receiving slider events.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Collaboration.Slider.html">AvayaClientServices.Services.Collaboration.Slider</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="getWhiteboard"><span class="type-signature"></span>getWhiteboard<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns <a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">Whiteboard</a> object associated with the collaboration.<br>This object provides set of APIs which allows to access different features concerning receiving and sharing a whiteboard.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Services.Collaboration.Whiteboard.html">AvayaClientServices.Services.Collaboration.Whiteboard</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="hasModeratorPrivilege"><span class="type-signature"></span>hasModeratorPrivilege<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if the local user has moderator privilege.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="hasPresenterPrivilege"><span class="type-signature"></span>hasPresenterPrivilege<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if the local user has presenter privilege.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isEjected"><span class="type-signature"></span>isEjected<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if the local user is ejected.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="isReceivingSharingPaused"><span class="type-signature"></span>isReceivingSharingPaused<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns true if receiving sharing is paused.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    Boolean
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="pause"><span class="type-signature"></span>pause<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Pauses events stream.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="resume"><span class="type-signature"></span>resume<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Resumes events stream.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="start"><span class="type-signature"></span>start<span class="signature">(<span class="optional">config</span>, <span class="optional">meetingId</span>)</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Starts the collaboration session. Collaboration can not be started twice or during collaboration starting or ending process.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Config.UserConfiguration.html">AvayaClientServices.Config.UserConfiguration</a>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>@deprecated This parameter is deprecated since version 1.1. User configuration object.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>meetingId</code></td>
+            
+
+            <td class="type">
+            
+                
+    Number
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>@deprecated This parameter is deprecated since version 1.1. ID of meeting to connect to.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|undefined)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+            <dl class="methods frame">
+                
+<dt>
+    <h4 class="name" id="stop"><span class="type-signature"></span>stop<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Collaboration.CollaborationError.html">AvayaClientServices.Services.Collaboration.CollaborationError</a>)>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Ends the collaboration session. Collaboration can not be ended twice or during collaboration starting or ending process.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Promise.html">AvayaClientServices.Base.Promise</a>.&lt;(undefined|<a href="AvayaClientServices.Services.Collaboration.CollaborationError.html">AvayaClientServices.Services.Collaboration.CollaborationError</a>)>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            </dl>
+        
+
+
+        
+            <h3 class="group-title" id="Managing_callbacks">Managing callbacks</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationEndedCallback"><span class="type-signature"></span>addOnCollaborationEndedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationEndedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationEndedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationEndedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationInitializedCallback"><span class="type-signature"></span>addOnCollaborationInitializedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationInitializedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationInitializedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationInitializedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationModeratorPrivilegeChangedCallback"><span class="type-signature"></span>addOnCollaborationModeratorPrivilegeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationModeratorPrivilegeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationModeratorPrivilegeChangedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationModeratorPrivilegeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationNearEndByEjectCallback"><span class="type-signature"></span>addOnCollaborationNearEndByEjectCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationNearEndByEjectCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationNearEndByEjectCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationNearEndByEjectCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationPresenterPrivilegeChangedCallback"><span class="type-signature"></span>addOnCollaborationPresenterPrivilegeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationPresenterPrivilegeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationPresenterPrivilegeChangedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationPresenterPrivilegeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationServiceAvailableCallback"><span class="type-signature"></span>addOnCollaborationServiceAvailableCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationServiceAvailableCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationServiceAvailableCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationServiceAvailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationServiceUnavailableCallback"><span class="type-signature"></span>addOnCollaborationServiceUnavailableCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationServiceUnavailableCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationServiceUnavailableCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationServiceUnavailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="addOnCollaborationStartedCallback"><span class="type-signature"></span>addOnCollaborationStartedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adds new onCollaborationStartedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationStartedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationStartedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationEndedCallback"><span class="type-signature"></span>removeOnCollaborationEndedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationEndedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationEndedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationEndedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationInitializedCallback"><span class="type-signature"></span>removeOnCollaborationInitializedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationInitializedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationInitializedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationInitializedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationModeratorPrivilegeChangedCallback"><span class="type-signature"></span>removeOnCollaborationModeratorPrivilegeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationModeratorPrivilegeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationModeratorPrivilegeChangedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationModeratorPrivilegeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationNearEndByEjectCallback"><span class="type-signature"></span>removeOnCollaborationNearEndByEjectCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationNearEndByEjectCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationNearEndByEjectCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationNearEndByEjectCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationPresenterPrivilegeChangedCallback"><span class="type-signature"></span>removeOnCollaborationPresenterPrivilegeChangedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationPresenterPrivilegeChangedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationPresenterPrivilegeChangedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationPresenterPrivilegeChangedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationServiceAvailableCallback"><span class="type-signature"></span>removeOnCollaborationServiceAvailableCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationServiceAvailableCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationServiceAvailableCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationServiceAvailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationServiceUnavailableCallback"><span class="type-signature"></span>removeOnCollaborationServiceUnavailableCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationServiceUnavailableCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationServiceUnavailableCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationServiceUnavailableCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="removeOnCollaborationStartedCallback"><span class="type-signature"></span>removeOnCollaborationStartedCallback<span class="signature">(callback)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Removes existing onCollaborationStartedCallback.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html#onCollaborationStartedCallback">AvayaClientServices.Services.Collaboration.Collaboration#onCollaborationStartedCallback</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+            <h3 class="group-title" id="Capabilities">Capabilities</h3>
+
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getChatCapability"><span class="type-signature"></span>getChatCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration call supports a chat.<br>Please note, that JSCSDK will not support the Chat in the Collaboration module.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getContentSharingCapability"><span class="type-signature"></span>getContentSharingCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Controls whether or not this participant can start content sharing.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+<p>Capability object</p>
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getLibrarySharingCapability"><span class="type-signature"></span>getLibrarySharingCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration call supports the library sharing.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getMeetingMinutesCapability"><span class="type-signature"></span>getMeetingMinutesCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration call supports meeting minutes.<br>Please note, that JSCSDK will not support the Meeting Minutes in the Collaboration module.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getNetworkLibraryCapability"><span class="type-signature"></span>getNetworkLibraryCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration call supports the library management.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getRetrieveParticipantListCapability"><span class="type-signature"></span>getRetrieveParticipantListCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration can be queried to get the list of conference participants.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getSliderCapability"><span class="type-signature"></span>getSliderCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether the collaboration call supports slider.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+                    <dl class="methods frame">
+                        
+<dt>
+    <h4 class="name" id="getWhiteboardCapability"><span class="type-signature"></span>getWhiteboardCapability<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Controls whether or not this participant can start whiteboard.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    <a href="AvayaClientServices.Base.Capability.html">AvayaClientServices.Base.Capability</a>
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+                    </dl>
+                    
+
+        
+
+    
+
+    
+        <h2 class="subsection-title">Type Definitions</h2>
+
+        
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationEndedCallback"><span class="type-signature"></span>onCollaborationEndedCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when a collaboration ends.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationInitializedCallback"><span class="type-signature"></span>onCollaborationInitializedCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when the collaboration is initialized (all starting events were processed).</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationModeratorPrivilegeChangedCallback"><span class="type-signature"></span>onCollaborationModeratorPrivilegeChangedCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when a participant moderator privilege is changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationNearEndByEjectCallback"><span class="type-signature"></span>onCollaborationNearEndByEjectCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be called when a participant is ejected from the collaboration.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationPresenterPrivilegeChangedCallback"><span class="type-signature"></span>onCollaborationPresenterPrivilegeChangedCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when a participant presenter privilege is changed.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationServiceAvailableCallback"><span class="type-signature"></span>onCollaborationServiceAvailableCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when a collaboration service is available.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationServiceUnavailableCallback"><span class="type-signature"></span>onCollaborationServiceUnavailableCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function when a collaboration service is unavailable.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+        <dl class="typedefs frame">
+        
+                
+<dt>
+    <h4 class="name" id="onCollaborationStartedCallback"><span class="type-signature"></span>onCollaborationStartedCallback<span class="signature">(collaboration)</span><span class="type-signature"> &rarr; {void}</span></h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Interface for callback function to be invoked when a collaboration starts.</p>
+    </div>
+    
+
+    
+    
+    
+
+    
+
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>collaboration</code></td>
+            
+
+            <td class="type">
+            
+                
+    <a href="AvayaClientServices.Services.Collaboration.Collaboration.html">AvayaClientServices.Services.Collaboration.Collaboration</a>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Collaboration session that the callback is associated with.</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+
+
+	{
+    void
+
+}
+
+
+</div>
+
+
+
+
+        
+    
+
+</dd>
+
+            
+         </dl>
+         
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+                        <span class="copyright">
+                        ©2016 Avaya Inc. All Rights Reserved.
+                        </span>
+						<br />
+					
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>
