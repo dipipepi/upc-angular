@@ -42,6 +42,9 @@
               "src/libs/jsrecording/sdk/jscsdk/avayaRecordingClient.js",
               "src/libs/commpkg/sdk/AvayaClientServices.min.js",
               "src/libs/jsrecording/sdk/jsplayerclient/jsPlayerClient.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "lodash"
             ]
           },
           "configurations": {

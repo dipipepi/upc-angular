@@ -232,3 +232,24 @@ export class OS {
   public static get LINUX(): string {return 'Linux';}
   public static get CHROME_OS(): string {return 'Chrome-OS';}
 }
+
+// tslint:disable-next-line:class-name
+export class CLIENT_TYPE {
+  public static get SDC():string {return 'SDC';}
+  public static get AC():string {return 'AC';}
+  public static get SWC():string {return 'SWC';}
+  public static get SMC():string {return 'SMC';}
+}
+
+// tslint:disable-next-line:class-name
+export class INDEXED_DB {
+  public static get DB_NAME():string {return 'LogsDB';}
+  public static get DB_VERSION():number {return 1;}
+  public static get DB_STORE_NAME():string {return 'Logs';}
+}
+
+// tslint:disable-next-line:class-name
+export class SWC_LOGS {
+  public static get SUBJECT():string {return 'Equinox Conferencing Problem Report on ';}
+  public static get BODY():string {return 'Summary of the problem:\n\nApproximate time when experiencing the problem:\n\nSteps that lead to the problem:\n\nIs it reproducible? (100% or Intermittent)\n\nIf the log file is not auto attached to this email, please download the logs and attach to this email.\n\nIf you have some screenshots, please attach to this email.\n\nAAWG Build: ';}
+}

@@ -102,7 +102,6 @@ export class HeaderComponent implements OnInit {
         test: 4,
         isTest: true
       },
-      panelClass: 'settings-wrapper',
       autoFocus: false
     });
   }

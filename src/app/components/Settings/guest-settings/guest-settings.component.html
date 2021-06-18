@@ -1,1 +1,159 @@
-<p>guest-settings works!</p>
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<div class="settings-container">
+  <div class="settings-title">{{'SETTINGS.TITLE' | translate}}</div>
+
+  <div class="mobile-accordeon settings">
+    <div class="settings-wrapper">
+      <div class="settings-tabs">
+        <div class="tab client-settings-mobile settings-navigation-item {{currentTab === TAB.CLIENT ? 'current' : ''}}"
+             (click)="setCurrentTab(TAB.CLIENT)">{{'SETTINGS.CLIENT' | translate}}
+        </div>
+
+        <div class="tab preferences-settings-mobile settings-navigation-item {{currentTab === TAB.PREFERENCES ? 'current' : ''}}"
+             (click)="setCurrentTab(TAB.PREFERENCES)">{{'SETTINGS.PREFERENCES' | translate}}
+        </div>
+
+        <div class="tab support-settings-mobile settings-navigation-item {{currentTab === TAB.SUPPORT ? 'current' : ''}}"
+             (click)="setCurrentTab(TAB.SUPPORT)">{{'SETTINGS.SUPPORT' | translate}}
+        </div>
+      </div>
+
+      <div class="settings-main-container">
+        <div class="tab-content client-settings-mobile {{currentTab === TAB.CLIENT ? '' : 'hidden'}}">
+          <div *ngIf="!ACData.isInstalled" class="no-client-info">
+            <span>{{'SETTINGS.CLIENT_TAB.NO_CLIENT' | translate}}</span>
+          </div>
+
+          <div *ngIf="ACData.isInstalled" class="client-title" translate-once="SETTINGS.CLIENT_TAB.CLIENT_INFO" translate-values="ACData"></div>
+
+          <div *ngIf="ACData.isInstalled" class="remove-client-info" (click)="removeClientInfo()">
+            {{'SETTINGS.CLIENT_TAB.REMOTE_INFO' | translate}}
+          </div>
+
+          <div class="default-button client-download-button"
+               *ngIf="(!ACData.isInstalled || needOptionalUpgrade()) && globalService.isThereClientToDownload()"
+               (click)="downloadAC()"
+          >
+    <span translate-once="SETTINGS.CLIENT_TAB.DOWNLOAD_AC"
+          translate-values="ACData.latestVersion">{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
+          </div>
+
+          <div *ngIf="!globalService.isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
+
+          <div *ngIf="isChrome && showSharingPlaginLink"
+               class="download-plugin"
+               (click)="downloadChromePlugin()">{{'SETTINGS.CLIENT_TAB.DOWNLOAD_CHROME_PLUGIN' | translate}}
+          </div>
+
+        </div>
+<!---->
+        <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsPreferences.html'">
+          <mat-select multiple>
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value[0] : ''}}
+              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+        (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})</span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </div>
+<!---->
+        <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsSupport.html'">
+        </div>
+<!--        -->
+      </div>
+    </div>
+
+    <div class="accordeon-name settings">{{'SETTINGS.SETTINGS' | translate}}</div>
+  </div>
+
+  <div class="settings-buttons {{currentTab ? '' : 'active'}}">
+    <button type="button"
+            class="white-button"
+            (click)="saveSettingsAndClose()">{{'SETTINGS.OK' | translate}}</button>
+
+    <button type="button"
+            class="white-button"
+            (click)="cancelSettings()">{{'SETTINGS.CANCEL' | translate}}</button>
+
+    <button type="button"
+            class="white-button"
+            (click)="applySettings()"
+            [disabled]="!isApplyDisabled()"> {{'SETTINGS.APPLY' | translate}}</button>
+  </div>
+</div>
+
+
+<!--In case if in future settings will available for mobile devices-->
+
+<!--<div ng-if="!isDesktop">-->
+<!--    <div class="settings-title" translate-once="SETTINGS.TITLE"></div>-->
+
+<!--    <div class="mobile-accordeon settings">-->
+<!--        &lt;!&ndash; Client tab &ndash;&gt;-->
+<!--        <div class="tab client-settings-mobile settings-navigation-item {{currentTab === TAB.CLIENT ? 'current' : ''}}"-->
+<!--             ng-click="setCurrentTab(TAB.CLIENT)"-->
+<!--             translate-once="SETTINGS.CLIENT"-->
+<!--        >-->
+<!--        </div>-->
+<!--        <div class="tab-content client-settings-mobile {{currentTab === TAB.CLIENT ? '' : 'hidden'}}"-->
+<!--             ng-include=":: 'app/components/settings/templates/SettingsClient.html'"-->
+<!--        >-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; User Preferences tab &ndash;&gt;-->
+<!--        <div class="tab preferences-settings-mobile settings-navigation-item {{currentTab === TAB.PREFERENCES ? 'current' : ''}}"-->
+<!--             ng-click="setCurrentTab(TAB.PREFERENCES)"-->
+<!--             translate-once="SETTINGS.PREFERENCES"-->
+<!--        >-->
+<!--        </div>-->
+<!--        <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}"-->
+<!--             ng-include=":: 'app/components/settings/templates/SettingsPreferences.html'"-->
+<!--        >-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Support tab &ndash;&gt;-->
+<!--        <div class="tab support-settings-mobile settings-navigation-item {{currentTab === TAB.SUPPORT ? 'current' : ''}}"-->
+<!--             ng-click="setCurrentTab(TAB.SUPPORT)"-->
+<!--             translate-once="SETTINGS.SUPPORT"-->
+<!--        >-->
+<!--        </div>-->
+<!--        <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}"-->
+<!--             ng-include=":: 'app/components/settings/templates/SettingsSupport.html'">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="settings-buttons {{currentTab ? '' : 'active'}}">-->
+<!--        <button type="button"-->
+<!--                class="white-button"-->
+<!--                ng-click="saveSettingsAndClose()"-->
+<!--                translate-once="SETTINGS.OK"-->
+<!--        >-->
+<!--        </button>-->
+
+<!--        <button type="button"-->
+<!--                class="white-button"-->
+<!--                ng-click="cancelSettings()"-->
+<!--                translate-once="SETTINGS.CANCEL"-->
+<!--        >-->
+<!--        </button>-->
+
+<!--        <button type="button"-->
+<!--                class="white-button"-->
+<!--                ng-click="applySettings()"-->
+<!--                ng-disabled="!isApplyDisabled()"-->
+<!--                translate-once="SETTINGS.APPLY"-->
+<!--        >-->
+<!--        </button>-->
+<!--    </div>-->
+<!--</div>-->

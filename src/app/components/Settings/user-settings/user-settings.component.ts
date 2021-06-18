@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-user-settings',
   templateUrl: './user-settings.component.html',
-  styleUrls: ['./user-settings.component.less']
+  styleUrls: ['./settings.component.less']
 })
 export class UserSettingsComponent implements OnInit {
 

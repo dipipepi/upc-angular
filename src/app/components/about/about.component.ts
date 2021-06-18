@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
+import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
 
 @Component({
   selector: 'app-about',
@@ -15,10 +16,15 @@ export class AboutComponent implements OnInit {
     link: 'https://support.avaya.com/helpcenter/getGenericDetails?detailId=C200922314304731046'
   };
 
-  constructor(public userSettingsService: UserSettingsService) {
+  constructor(public userSettingsService: UserSettingsService,
+              public customDeviceDetector: CustomDeviceDetectorService) {
   }
 
   ngOnInit(): void {
   }
 
+
+  resetTutorials(): void{
+
+  }
 }

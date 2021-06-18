@@ -66,10 +66,6 @@ export class AppComponent implements OnInit{
     }, () => {
       alert('Error. Can not get resources');
     });
-
-    window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat :  this.defaultTimeFormat;
-
-    window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
   }
 
   private useBranding(): void {
@@ -208,6 +204,9 @@ export class AppComponent implements OnInit{
     this.setTitle();
     this.defineCustomFavicon();
     this.isResourcesLoading = false;
+    window.localStorage.videoCallingPreferences = window.localStorage.videoCallingPreferences || true;
+    window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat :  this.defaultTimeFormat;
+    window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
   }
 }
 

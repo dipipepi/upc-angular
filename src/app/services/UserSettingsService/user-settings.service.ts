@@ -369,7 +369,7 @@ export class UserSettingsService {
     return this.getLocalizedLanguage(languages, this.localizedAudioPromptLanguages) ;
   }
 
-  getCurrentVideoCheck(): string {
+  getCurrentVideoCheck(): any {
     return JSON.parse(window.localStorage.videoCallingPreferences);
   }
 

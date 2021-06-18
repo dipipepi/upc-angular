@@ -13,7 +13,7 @@ intended publication of such source code.
 
   <div class="detail-popup-body about">
 
-    <div class="title" ng-if="resources.portalVersion">
+    <div class="title" *ngIf="userSettingsService.portalResources.portalVersion">
       <span>{{"ABOUT.RELEASE" | translate}}</span>
       <p>{{userSettingsService.portalResources.portalVersion}}</p>
     </div>
@@ -41,7 +41,7 @@ intended publication of such source code.
 
     <div class="separator"></div>
 
-    <div class="reset-tutorial" ng-if="!isMobile && !isTablet" ng-click="resetTutorials()">{{"MSG_UTILS.FIRST_LOUNCH_TUTORIAL.RESET_FIRST_LAUNCH_TUTORIALS" | translate}}</div>
+    <div class="reset-tutorial" *ngIf="!customDeviceDetector.isMobile() && !customDeviceDetector.isTablet()" (click)="resetTutorials()">{{"MSG_UTILS.FIRST_LOUNCH_TUTORIAL.RESET_FIRST_LAUNCH_TUTORIALS" | translate}}</div>
 
   </div>
 

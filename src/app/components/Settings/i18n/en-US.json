@@ -1,0 +1,203 @@
+{
+    "SETTINGS": {
+        "TITLE": "Avaya Settings",
+        "SETTINGS": "Settings",
+        "USER": "User Settings",
+        "ROOM": "Virtual Room",
+        "GENERAL": "General Settings",
+        "CLIENT": "Client",
+        "PREFERENCES": "User Preferences",
+        "SUPPORT": "Support",
+        "PASSWORD": "Change Password",
+        "PASSWORD_RESET": "Password Reset",
+        "OK": "OK",
+        "CANCEL": "Cancel",
+        "RESET": "Reset",
+        "APPLY": "Apply",
+        "AUTO": "Auto",
+
+        "USER_TAB": {
+            "DELETE": "Delete",
+            "CANCEL": "Cancel",
+            "LOCATION": "Meeting Location:",
+            "DEFAULT_ROOM": "Default Virtual Room:",
+            "UPLOAD_NEW": "Upload New",
+            "UPLOAD_PROFILE_PHOTO": "Upload Profile Photo",
+            "UPLOAD_NEW_PHOTO": "Upload New Photo",
+            "EDIT_PROFILE_PHOTO": "Edit Profile Photo",
+            "DELETE_PHOTO_TITLE": "Delete your profile photo?",
+            "DELETE_PHOTO_DESCRIPTION": "This action cannot be undone.",
+            "UPLOADING_ERROR": "Uploading failed, please contact administrator",
+            "CANT_REMOVE_IMAGE_ERROR_MESSAGE": "Can't remove the image",
+            "AUDIO_PROMPTS_LANGUAGE": "Audio prompts language:",
+            "PARTICIPANT_ID": "Your Participant ID:",
+            "REFRESH": "Refresh",
+            "SEARCH_USER": "search users",
+            "REMOVE_USER": "Remove delegation",
+            "DELEGATED_TITLE": "Delegates who can schedule meetings into my meeting rooms"
+        },
+
+        "ROOM_TAB": {
+            "ROOM_NUMBER": "Virtual Room Number:",
+            "ROOM_NAME": "Virtual Room Name:",
+            "ROOM_DESCRIPTION": "Description:",
+            "MEETING_TYPE": "Meeting Type:",
+            "MODERATOR_PIN": "Moderator PIN:",
+            "MODERATOR_PIN_NOTE": "Participants must enter this PIN to use moderator controls.",
+            "ENTRY_PIN": "Protect meeting with a PIN",
+            "ENTRY_PIN_NOTE": "Participants must enter this PIN to join your meetings.",
+            "ALLOW_REQUESTS": "Allow requests to join locked meetings",
+            "ALWAYS_RECORD_MEETING": "Turn on recording automatically at the start of meetings",
+            "RECORDING_NOT_SUPPORTED": "Recording is not supported for this Virtual Room",
+            "WAITING_ROOM": "Place participants in a 'waiting room' until the moderator joins",
+            "TERMINATE_MEETING": "Terminate meeting after the last moderator leaves",
+            "PERMANENT_PIN": "Permanent PIN:",
+            "ONETIME_PIN": "Use one-time PIN for each meeting",
+            "DEFAULT": "Default Room",
+            "PUBLIC": "Public Room",
+            "ADVANCED": "Advanced",
+            "DURATION_AFTER_LEFT": "Duration After Left:",
+            "TERMINATION_CONDITION": "Termination Condition:",
+            "MAX_PARTICIPANTS": "Max Participants:",
+            "NO_LIMIT": "No limit",
+            "SEARCH_ENDPOINTS": "Search Endpoints",
+            "AUDIO_PROMPTS_LANGUAGE": "Audio Prompt Language for Guest Users:",
+            "INVITATION_LANGUAGE": "Invitation Language:",
+            "PREFERRED_DIAL_IN_LOCATION": "Preferred Dial In Location:",
+            "ENABLE_SHARING_FOR": "Enable sharing for:",
+            "SHARING_LIST": {
+                "ONLY_MODERATOR": "Only moderator",
+                "MODERATOR_AND_REGISTERED_USER": "Moderator and registered users",
+                "EVERYONE": "Everyone"
+            },
+            "ENTRY_ANNOUNCEMENT": "Entry Announcement:",
+            "EXIT_ANNOUNCEMENT": "Exit Announcement:",
+            "MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_TONE": "Max Participants to play the entry/exit tone:",
+            "MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_NAME_ANNOUNCEMENT": "Max Participants to play the entry/exit name announcement:",
+            "ANNOUNCEMENT_LIST": {
+                "NONE": "None",
+                "TONE": "Tone",
+                "NAME": "Name"
+            },
+            "MAX_ROOM_ENDPOINTS": "Maximum Room Endpoints:",
+            "PROTECTED_PARTICIPANT_ID": "Protect meeting with Participant ID",
+            "PROTECTED_PARTICIPANT_ID_INFO": "Guest users and room systems will be disallowed to join the meeting"
+        },
+
+        "TERMINATION_CONDITION": {
+            "NORMAL": "Normal",
+            "AFTER_ALL_PARTIES_LEFT": "After all parties left",
+            "AFTER_HOST_LEFT": "After host left"
+        },
+
+        "LOCAL_TAB": {
+            "CLEAR": "Reset to default",
+            "AUDIO_MUTED": "Mute microphone when joining meetings",
+            "SPEAKER_MUTED": "Mute speakers when joining meetings",
+            "ENABLE_AC": "Enable Avaya on this PC",
+            "ENABLE_SDC": "Enable Scopia Desktop Client on this PC"
+        },
+
+        "GENERAL_TAB": {
+            "USER_NAME": "User name:",
+            "EMAIL": "Email:",
+            "FIRST_NAME": "First Name:",
+            "LAST_NAME": "Last Name:",
+            "PHONE_OFFICE": "Telephone (Office):",
+            "PHONE_MOBILE": "Telephone (Mobile):",
+            "MAX_BANDWIDTH": "Maximum bandwidth allowed:",
+            "PERSONAL_ENDPOINT": "Personal Endpoint:",
+            "RECORDING_POLICY": "Recording Policy:",
+            "GROUPS": "Groups",
+            "SCHEDULABLE": "Schedulable",
+            "RESERVABLE": "Reservable",
+            "ALLOW_STREAMING": "Allow streaming",
+            "ALLOW_RECORDING": "Allow recording",
+            "KBPS": "Kbps",
+            "CAN_SCHEDULE_EVENT_CONFERENCE": "Can schedule event conference"
+        },
+
+        "PREFERENCES_TAB": {
+            "VIDEO_CALLING": "Video Calling",
+            "VIDEO_CALLING_EXPLANATION": "Disabling ‘Video Calling’ will join a meeting in audio + presentation mode",
+            "DEFAULT_FORMAT": "Use system default time format",
+            "DATE_FORMAT_TITLE": "Date format:",
+            "DATE_FORMATS": {
+                "MM_DD_YY": "MM/DD/YY",
+                "DD_MM_YY": "DD/MM/YY"
+            },
+            "TIME_FORMAT": "Use 24 Hour time",
+            "ENABLE_LOGGING": "Enable logging",
+            "DOWNLOAD_LOGS": "Download logs",
+            "REPORT_A_PROBLEM_EML": "Report a problem by download the .eml file then open the file",
+            "REPORT_A_PROBLEM_EMAIL": "Report a problem by manually attach the zipped log file in the email"
+        },
+
+        "CLIENT_TAB": {
+            "TABLE_NAME": "Name",
+            "TABLE_DESCRIPTION": "Description",
+            "TABLE_VERSION": "Version",
+            "TABLE_TYPE": "Type",
+            "DOWNLOAD_AC": "Download App V{{version}}",
+            "DOWNLOAD_CHROME_PLUGIN": "Download Avaya Sharing Plug-in",
+            "DOWNLOAD_OUTLOOK_PLUGIN": "Download Meeting Outlook Add-in from Microsoft Store",
+            "CLIENT_INFO": "Release {{version}} installed",
+            "UPDATE_AC": "Update Avaya Workplace to {{version}}",
+            "REMOTE_INFO": "I don't have App anymore",
+            "CONTINUE": "Continue",
+            "OPTIONAL": "Optional",
+            "REQUIRED": "Required",
+            "NO_CLIENT": "No client detected"
+        },
+
+        "PASSWORD_TAB": {
+            "CURRENT": "Current Password:",
+            "NEW": "New Password:",
+            "CONFIRM": "Repeat New Password:",
+            "CHANGE": "Change",
+            "ERROR": {
+                "REQUIRED": "Required!",
+                "DO_NOT_MATCH": "Passwords do not match",
+                "INVALID": "Invalid!",
+                "SERVER_NOT_CHANGED": "Password has not been changed. Please try again later",
+                "SERVER_BAD_OLD_PASSWORD": "Current password is invalid. Please try again",
+                "SERVER_UNABLE_USE_OLD_PASSWORD": "You are trying to use old password",
+                "SERVER_CHANGE_FREQUENCY": "Password cannot be changed twice within 1 day",
+                "SERVER_CHANGE_REPEATED_CHARS": "ERROR - Must not contain repeated or sequential chars",
+                "SERVER_CHANGE_COMPLEXITY": "ERROR - Must contain the following 4 categories: Lowercase / Uppercase /Numeric / Non-alphanumeric special characters",
+                "SERVER_TOO_SHORT": "New password is too short",
+                "SERVER_INVALID_TOKEN": "Password recovery link is expired. Please request it again!",
+                "CANNOT_MACTH_PASSWORD_HISTORY": "Exceeded number of previous passwords that cannot be reused",
+                "CANNOT_CONTAIN_LOGIN_ID": "Password can't contain login id",
+                "MUST_CONTAIN_4_CATEGORIES": "Must contain the following 4 categories: Lowercase / Uppercase /Numeric / Non-alphanumeric special characters",
+                "CANNOT_CONTAIN_REPEATED_CHARS": "Must not contain repeated chars",
+                "CANNOT_CONTAIN_SEQUENTIAL_CHARS": "Must not contain sequential chars"
+            }
+        },
+        "ERROR": {
+            "SETTINGS_UPDATE_FAILED": "Failed to update settings",
+            "NOT_VALID_ROOM_NAME": "Not a valid room name!",
+            "NOT_VALID_PIN": "Not a valid PIN!",
+            "NUMERIC_PIN_CODE_ALLOWED": "Use a numeric pin code",
+            "VR_NAME_NOT_ALLOWED_CHARACTERS": "Not allowed characters",
+            "REQUIRED": "Required",
+            "ORG_NOT_EXIST": "Avaya Meetings is configured to support multiple organizations. You must specify the desired organization as part of the URL. Please contact your Avaya Meetings Administrator for more information",
+            "RESOURCES_NOT_FETCHED": "Cannot get resources from server.\nError message: {{errorMessage}}",
+            "ACS_RESOURCES_NOT_FETCHED": "Cannot connect to AADS server",
+            "WAITING_ROOM_MUST_BE_ENABLED": "Waiting room must be enabled",
+            "MODERATOR_PIN_REQUIRED": "Moderator PIN is required",
+            "WRONG_MEETING_TYPE": "Wrong meeting type",
+            "NO_DATA_TO_INIT_USER_SERVICE": "Can't get data from User Service (picture urls)",
+            "MAX_PLAY_NUMBER_MORE_THAN": "max 100 participants allowed"
+        },
+        "LOGS_DIALOG": {
+            "WARNING": "Disabling logging will delete previous logs.\nDo you wish to continue?",
+            "NO_LOGS": "No logs are available. Please start you conference to start logging."
+        },
+        "MEETING_PIN_DIALOG_MESSAGE_CAN_RESERVE": "The changed PIN will not affect the active meetings and existing scheduled meetings.",
+        "MEETING_PIN_DIALOG_MESSAGE_CANT_RESERVE": "The changed PIN will not affect the active meetings."
+    },
+    "ON": "On",
+    "OFF": "Off",
+    "DISABLED": "Disabled"
+}

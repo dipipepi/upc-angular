@@ -1,4 +1,5 @@
-import {rejects} from 'assert';
+import * as _ from 'lodash';
+
 
 export const path = window.location.href.split('/');
 export let currentAlias;
@@ -33,3 +34,18 @@ function test3(res): Promise<boolean> {
   });
   // return res*3;
 }
+
+const obj1 = {
+  a: 3,
+  b: 2,
+  c: 1
+};
+
+const obj2 = _.clone(obj1);
+
+console.log('hello lodash', obj1, obj2, _.isEqual(obj1, obj2));
+
+obj2.a = 1;
+obj2.c = 3;
+
+console.log('hello lodash', obj1, obj2,_.isEqual(obj1, obj2));

@@ -45,7 +45,7 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
 
   constructor(public portalResourcesServiceService: PortalResourcesServiceService,
               public authorizationService: AuthorizationService,
-              public dialogRef: MatDialogRef<MyDialogComponent>,
+              public dialogRef: MatDialogRef<AuthorizationComponent>,
               public translate: TranslateService,
               private userSettingsService: UserSettingsService) {
   }

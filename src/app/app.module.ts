@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MessageUtilsComponent } from './shared/message-utils/message-utils.component';
 import { UserSettingsComponent } from './components/Settings/user-settings/user-settings.component';
 import { GuestSettingsComponent } from './components/Settings/guest-settings/guest-settings.component';
+import { CustomSelectComponent } from './shared/custom-select/custom-select.component';
 
 
 // tslint:disable-next-line:typedef
@@ -39,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AboutComponent,
     MessageUtilsComponent,
     UserSettingsComponent,
-    GuestSettingsComponent
+    GuestSettingsComponent,
+    CustomSelectComponent
   ],
   imports: [
     BrowserModule,
