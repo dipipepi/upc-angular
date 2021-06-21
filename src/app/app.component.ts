@@ -205,7 +205,7 @@ export class AppComponent implements OnInit{
     this.defineCustomFavicon();
     this.isResourcesLoading = false;
     window.localStorage.videoCallingPreferences = window.localStorage.videoCallingPreferences || true;
-    window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat :  this.defaultTimeFormat;
+    window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat : this.defaultTimeFormat;
     window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
   }
 }

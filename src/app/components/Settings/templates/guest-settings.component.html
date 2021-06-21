@@ -32,7 +32,7 @@ intended publication of such source code.
             <span>{{'SETTINGS.CLIENT_TAB.NO_CLIENT' | translate}}</span>
           </div>
 
-          <div *ngIf="ACData.isInstalled" class="client-title" translate-once="SETTINGS.CLIENT_TAB.CLIENT_INFO" translate-values="ACData"></div>
+          <div *ngIf="ACData.isInstalled" class="client-title">{{'SETTINGS.CLIENT_TAB.CLIENT_INFO' | translate:ACData}}</div>
 
           <div *ngIf="ACData.isInstalled" class="remove-client-info" (click)="removeClientInfo()">
             {{'SETTINGS.CLIENT_TAB.REMOTE_INFO' | translate}}
@@ -42,8 +42,7 @@ intended publication of such source code.
                *ngIf="(!ACData.isInstalled || needOptionalUpgrade()) && globalService.isThereClientToDownload()"
                (click)="downloadAC()"
           >
-    <span translate-once="SETTINGS.CLIENT_TAB.DOWNLOAD_AC"
-          translate-values="ACData.latestVersion">{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
+    <span>{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
           </div>
 
           <div *ngIf="!globalService.isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
@@ -55,22 +54,69 @@ intended publication of such source code.
 
         </div>
 <!---->
-        <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}"
-             ng-include=":: 'app/components/settings/templates/SettingsPreferences.html'">
-          <mat-select multiple>
-            <mat-select-trigger>
-              {{toppings.value ? toppings.value[0] : ''}}
-              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
-        (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})</span>
-            </mat-select-trigger>
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-          </mat-select>
+        <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}">
+
+            <label class="default-checkbox use-browser-audio-video browser-checkbox preferences">
+              <input type="checkbox"
+                     [ngModel]="videoCalling"
+                     (change)="changePreferences()">
+              <span>{{'SETTINGS.PREFERENCES_TAB.VIDEO_CALLING' | translate}}</span>
+            </label>
+            <span class="explanation preferences">{{'SETTINGS.PREFERENCES_TAB.VIDEO_CALLING_EXPLANATION' | translate}}</span>
+
+
+            <div class="separator"></div>
+
+
+            <label class="default-checkbox use-browser-audio-video browser-checkbox preferences">
+              <input type="checkbox"
+                     [ngModel]="useDefaultTimeFormat"
+                     (change)="changeTimeFormat()">
+              <span>{{'SETTINGS.PREFERENCES_TAB.DEFAULT_FORMAT' | translate}}</span>
+            </label>
+            <div class="advanced-settings" *ngIf="!useDefaultTimeFormat">
+              <div class="settings-item upc-date-time-format">
+                <span>{{'SETTINGS.PREFERENCES_TAB.DATE_FORMAT_TITLE' | translate}}</span>
+                <app-custom-select (ngModelChange)="setDateFormat($event)" [model]="dateFormatSettings.selected" [options]="dateFormatSettings.options" key="format" value="format"></app-custom-select>
+              </div>
+              <label class="default-checkbox use-browser-audio-video browser-checkbox preferences upc-date-time-format">
+                <input type="checkbox"
+                       [ngModel]="use24HourFormat"
+                       (change)="changeHourFormat()">
+                <span>{{'SETTINGS.PREFERENCES_TAB.TIME_FORMAT' | translate}}</span>
+              </label>
+            </div>
         </div>
 <!---->
-        <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}"
-             ng-include=":: 'app/components/settings/templates/SettingsSupport.html'">
+        <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}">
+          <label class="default-checkbox use-browser-audio-video browser-checkbox preferences" (click)="changeSaveLogs()">
+            <input type="checkbox"
+                   [ngModel]="saveLogsCheckbox"
+                   [disabled]="saveLogsCheckbox"
+                   [class.reset-disable]="saveLogsCheckbox"
+            >
+            <span>{{'SETTINGS.PREFERENCES_TAB.ENABLE_LOGGING' | translate}}</span>
+          </label>
+
+          <div class="advanced-settings advanced-settings-logs" *ngIf="saveLogsCheckbox">
+            <div class="send-logs"
+                 (click)="sendLogsEml()"
+                 *ngIf="supportEmail">
+              {{'SETTINGS.PREFERENCES_TAB.REPORT_A_PROBLEM_EML' | translate}}
+
+            </div>
+            <div class="save-logs"
+                 (click)="sendLogsEmail()"
+                 *ngIf="supportEmail">
+              {{'SETTINGS.PREFERENCES_TAB.REPORT_A_PROBLEM_EMAIL' | translate}}
+            </div>
+            <div class="save-logs"
+                 (click)="downloadLogs()"
+            >
+              {{'SETTINGS.PREFERENCES_TAB.DOWNLOAD_LOGS' | translate}}
+            </div>
+          </div>
         </div>
-<!--        -->
       </div>
     </div>
 

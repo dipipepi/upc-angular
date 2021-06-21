@@ -26,7 +26,9 @@ export class HeaderComponent implements OnInit {
   isOldEdge = this.browserInfoService.isItOldEdge;
   private logger = new Logger('HeaderController');
 
-  constructor(public translate: TranslateService, public dialog: MatDialog, public authorizationService: AuthorizationService,
+  constructor(public translate: TranslateService,
+              public dialog: MatDialog,
+              public authorizationService: AuthorizationService,
               private userSettingsService: UserSettingsService,
               public browserInfoService: BrowserInfoService,
               private customDeviceDetector: CustomDeviceDetectorService) {
@@ -102,7 +104,8 @@ export class HeaderComponent implements OnInit {
         test: 4,
         isTest: true
       },
-      autoFocus: false
+      autoFocus: false,
+      disableClose: true
     });
   }
 

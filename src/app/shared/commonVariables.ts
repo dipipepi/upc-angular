@@ -43,9 +43,8 @@ const obj1 = {
 
 const obj2 = _.clone(obj1);
 
-console.log('hello lodash', obj1, obj2, _.isEqual(obj1, obj2));
 
 obj2.a = 1;
 obj2.c = 3;
 
-console.log('hello lodash', obj1, obj2,_.isEqual(obj1, obj2));
+

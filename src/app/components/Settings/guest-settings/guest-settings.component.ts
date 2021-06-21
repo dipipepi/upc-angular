@@ -1,24 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {BROWSERS, DATE_FORMAT} from '../../../constants';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
 import {MeetingsLogsService} from '../../../services/MeetingsLogsService/meetings-logs.service';
 import {StylesService} from '../../../services/StylesService/styles.service';
-import {MatDialogRef} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import * as _ from 'lodash';
 import {CustomDeviceDetectorService} from '../../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {VersionService} from '../../../services/BrowserInfoService/browser-info.service';
 import {GlobalService} from '../../../services/GlobalService/global.service';
-import {MatSelectModule} from '@angular/material/select';
+import {MatDialog} from '@angular/material/dialog';
+import {AuthorizationComponent} from '../../authorization/authorization.component';
 
 @Component({
   selector: 'app-guest-settings',
-  templateUrl: './guest-settings.component.html',
-  styleUrls: ['./../user-settings/settings.component.less']
+  templateUrl: '../templates/guest-settings.component.html',
+  styleUrls: ['./../user-settings/settings.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
-export class GuestSettingsComponent implements OnInit {
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+export class GuestSettingsComponent implements OnInit, OnChanges {
   inputTimeout: number;
   TAB = {
     CLIENT: 'client',
@@ -26,22 +27,8 @@ export class GuestSettingsComponent implements OnInit {
     SUPPORT: 'support'
   };
 
-  dateFormatSettings = {
-    options: [
-      {
-        id: DATE_FORMAT.MM_DD_YY,
-        format: this.translate.instant('SETTINGS.PREFERENCES_TAB.DATE_FORMATS.MM_DD_YY')
-      },
-      {
-        id: DATE_FORMAT.DD_MM_YY,
-        format: this.translate.instant('SETTINGS.PREFERENCES_TAB.DATE_FORMATS.DD_MM_YY')
-      }
-    ], selected: undefined
-
-  };
+  dateFormatSettings;
   private originDateFormat = JSON.parse(window.localStorage.timeFormat);
-
-
   private currentDateSetting = _.clone(this.originDateFormat);
 
   useDefaultTimeFormat = this.originDateFormat.useDefault;
@@ -62,7 +49,7 @@ export class GuestSettingsComponent implements OnInit {
   isChrome = this.customDeviceDetector.browser === BROWSERS.CHROME;
   // @ts-ignore
   showSharingPlaginLink = !AvayaClientServices.Providers.ContentSharing.FeatureSupported.isSharingAnyTypeAvailable();
-
+  private warningDialog;
 
   constructor(public translate: TranslateService,
               private acClientService: ACClientService,
@@ -72,9 +59,23 @@ export class GuestSettingsComponent implements OnInit {
               public dialogRef: MatDialogRef<GuestSettingsComponent>,
               private customDeviceDetector: CustomDeviceDetectorService,
               private versionService: VersionService,
-              public globalService: GlobalService) { }
+              public globalService: GlobalService,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.dateFormatSettings = {
+      options: [
+        {
+          id: DATE_FORMAT.MM_DD_YY,
+          format: this.translate.instant('SETTINGS.PREFERENCES_TAB.DATE_FORMATS.MM_DD_YY')
+        },
+        {
+          id: DATE_FORMAT.DD_MM_YY,
+          format: this.translate.instant('SETTINGS.PREFERENCES_TAB.DATE_FORMATS.DD_MM_YY')
+        }
+      ], selected: undefined
+
+    };
     this.dateFormatSettings.selected = this.searchById(this.currentDateSetting.dateFormat, this.dateFormatSettings.options);
     if (this.indexedDbIsCompatibility) {
       this.saveLogsCheckbox = JSON.parse(window.localStorage.enabledLogs);
@@ -95,6 +96,9 @@ export class GuestSettingsComponent implements OnInit {
           this.meetingsLogsService.closeDb(db);
         });
     }
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
   }
 
   setCurrentTab(tab): void {
@@ -131,9 +135,9 @@ export class GuestSettingsComponent implements OnInit {
     this.videoCalling = !this.videoCalling;
   }
 
-  changeSaveLogs(): void {
-    this.saveLogsCheckbox = !this.saveLogsCheckbox;
-  }
+  // changeSaveLogs(): void {
+  //   this.saveLogsCheckbox = !this.saveLogsCheckbox;
+  // }
 
   downloadAC(): void {
     this.acClientService.downloadClient();
@@ -181,25 +185,25 @@ export class GuestSettingsComponent implements OnInit {
     this.currentDateSetting.use24HourFormat = this.use24HourFormat;
   }
 
-  // changeSaveLogs(): void {
-  //   const dialogConfig = {
-  //     template: 'app/components/settings/templates/WarningSaveLogsDialog.html',
-  //     className: 'ngdialog-theme-log',
-  //     showClose: true,
-  //     overlay: true,
-  //     closeByEscape: true,
-  //     closeByNavigation: true,
-  //     trapFocus: false
-  //   };
-  //
-  //   if(this.saveLogsCheckbox){
-  //     ngDialog.openConfirm(dialogConfig).then(() => {
-  //       $scope.saveLogsCheckbox = !$scope.saveLogsCheckbox;
-  //     });
-  //   } else {
-  //     $scope.saveLogsCheckbox = !$scope.saveLogsCheckbox;
-  //   }
-  // };
+  changeSaveLogs(): void {
+    if(!this.warningDialog && this.saveLogsCheckbox){
+      this.warningDialog = this.dialog.open(WarningSaveLogsDialogComponent, {
+        data: {
+          confirm: this.confirmDialog.bind(this)
+        }
+      });
+      this.warningDialog.afterClosed().subscribe(() => {
+        this.warningDialog = undefined;
+      });
+    } else {
+      this.saveLogsCheckbox = !this.saveLogsCheckbox;
+    }
+  }
+
+  private confirmDialog(): void {
+    this.saveLogsCheckbox = !this.saveLogsCheckbox;
+    this.warningDialog.close();
+  }
 
   downloadLogs():void {
     if(this.haveIndexedDB){
@@ -225,16 +229,24 @@ export class GuestSettingsComponent implements OnInit {
     }
   }
 
+  setDateFormat(dateFormat: string): void{
+    this.dateFormatSettings.selected = dateFormat;
+  }
+
   private showHaveNotLogDialog(): void {
-    const dialogConfig = {
-      template: 'app/components/settings/templates/HaveNotLogsDialog.html',
-      className: 'ngdialog-theme-log',
-      showClose: true,
-      overlay: true,
-      closeByEscape: true,
-      closeByNavigation: true,
-      trapFocus: false
-    };
+    // const dialogConfig = this.dialog
+    //   {
+    //   template: 'app/components/settings/templates/HaveNotLogsDialog.html',
+    //   className: 'ngdialog-theme-log',
+    //   showClose: true,
+    //   overlay: true,
+    //   closeByEscape: true,
+    //   closeByNavigation: true,
+    //   trapFocus: false
+    // };
+
+    this.dialog.open(ShowHaveNotLogDialogComponent);
+
     // this.ngDialog.open(dialogConfig);
   }
 
@@ -252,4 +264,26 @@ export class GuestSettingsComponent implements OnInit {
     }
   }
 
+}
+
+@Component({
+  selector: 'app-warning-save-logs',
+  templateUrl: '../templates/WarningSaveLogsDialog.html',
+  styleUrls: ['./../user-settings/settings.component.less']
+})
+export class WarningSaveLogsDialogComponent {
+  confirm = this.data.confirm;
+  cancel = this.data.cancel;
+  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<GuestSettingsComponent>) {
+  }
+}
+
+@Component({
+  selector: 'app-show-not-logs',
+  templateUrl: '../templates/HaveNotLogsDialog.html',
+  styleUrls: ['./../user-settings/settings.component.less']
+})
+export class ShowHaveNotLogDialogComponent {
+  constructor(public dialogRef: MatDialogRef<GuestSettingsComponent>) {
+  }
 }

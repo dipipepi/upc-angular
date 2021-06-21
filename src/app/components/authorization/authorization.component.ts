@@ -152,19 +152,16 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
     switch (response.status) {
       case STATUS_CODE.BAD_REQUEST:
         this.translate.get('LOGIN.ERROR.VALIDATION_FAILED').subscribe((res: string) => {
-          console.log(res);
           this.message = res;
         });
         break;
       case STATUS_CODE.UNAUTHORIZED:
         if (response.error.error[0].errorCode === ERROR_CODE.AUTH.USER_AUTH_DISABLED) {
           this.translate.get('LOGIN.ERROR.USER_AUTH_DISABLED', { name: this.authForm.value.login }).subscribe((res: string) => {
-            console.log(res);
             this.message = res;
           });
         } else {
           this.translate.get('LOGIN.ERROR.INVALID_CREDENTIALS').subscribe((res: string) => {
-            console.log(res);
             this.message = res;
           });
         }
@@ -172,14 +169,12 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
         break;
       default:
         this.translate.get('LOGIN.ERROR.ERROR').subscribe((res: string) => {
-          console.log(res);
           this.message = res;
         });
     }
 
     if(response.error.error[0].errorCode === ERROR_CODE.AUTH.ERC_AUTH_EMPTY_EMAIL){
       this.translate.get('LOGIN.ERROR.ERC_AUTH_EMPTY_EMAIL').subscribe((res: string) => {
-        console.log(res);
         this.message = res;
         this.credentials.valid = false;
       });
