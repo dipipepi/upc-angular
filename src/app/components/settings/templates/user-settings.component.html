@@ -56,8 +56,69 @@ intended publication of such source code.
 
           <div class="settings-item upc-default-vr" *ngIf="defaultVirtualRoom.options.length">
             <span>{{'SETTINGS.USER_TAB.DEFAULT_ROOM' | translate}}</span>
-            <app-custom-select (ngModelChange)="locationsSelected($event)" [options]="defaultVirtualRoom.options" [model]="defaultVirtualRoom.selected" key="virtualRoomId" value="name"></app-custom-select>
-            <custom-select ng-change="defaultRoomWasChanged()" options="defaultVirtualRoom.options" ng-model="defaultVirtualRoom.selected" key="virtualRoomId" value="name"></custom-select>
+            <app-custom-select (ngModelChange)="defaultRoomWasChanged($event)" [options]="defaultVirtualRoom.options" [model]="defaultVirtualRoom.selected" key="virtualRoomId" value="name"></app-custom-select>
+          </div>
+
+          <div class="settings-item upc-audio-prompt-language">
+            <span>{{'SETTINGS.USER_TAB.AUDIO_PROMPTS_LANGUAGE' | translate}}</span>
+            <app-custom-select (ngModelChange)="voicePromptLanguageChanged($event)" [options]="voicePromptLanguage.options" [model]="voicePromptLanguage.selected" key="id" value="localizedDisplayName" disabled="{{!userSettingsService.portalResources.ottMode}}}"></app-custom-select>
+          </div>
+
+          <div class="settings-item participant-id" *ngIf="!isMultiTenant">
+            <span>{{'SETTINGS.USER_TAB.PARTICIPANT_ID' | translate}}</span>
+            <div class="password-input">
+              <input #participantId class="participant-id-field default-input"
+                     name="participantId"
+                     [(ngModel)]="userSettings.conferencing.participantId"
+                     type="password"
+                     autocomplete="off"
+                     disabled="disabled"
+                     [readOnly]="true">
+              <app-show-password [inputElem]="participantId" [inputValue]="userSettings.conferencing.participantId"></app-show-password>
+            </div>
+          </div>
+
+          <div class="refresh" (click)="refreshParticipantId()" *ngIf="!isMultiTenant">{{'SETTINGS.USER_TAB.REFRESH' | translate}}</div>
+
+          <div class="separator"></div>
+
+          <div *ngIf="userSettings.conferencing.virtualRoomSettings.length !== 0">
+            <div class="delegated-title">
+              <span>{{'SETTINGS.USER_TAB.DELEGATED_TITLE' | translate}}</span>
+            </div>
+
+            <tag-selector
+              placeholder="'SETTINGS.USER_TAB.SEARCH_USER'"
+              primary="lastName"
+              secondary="firstName"
+              tertiary="emailAddress"
+              callback="toInputChanged"
+              options="filteredContacts"
+              unique-property="userId"
+              is-for-participant="false"
+              selected="delegatedUsers"
+              is-for-user-search="true"
+              class="user-search"></tag-selector>
+
+            <app-tag-selector
+              placeholder="SETTINGS.USER_TAB.SEARCH_USER"
+              primary="lastName"
+              secondary="firstName"
+              tertiary="emailAddress"
+              [callback]="toInputChanged"
+              [options]="filteredContacts"
+              uniqueProperty="userId"
+              [isForParticipant]="false"
+              [selected]="delegatedUsers"
+              [isForUserSearch]="true"
+              class="user-search"></app-tag-selector>
+
+            <div class="user-delegated endpoints-wrapper">
+              <div class="user" *ngFor="let user of delegatedUsers">
+                <span class="user-info">{{user.lastName}}, {{user.firstName}}</span>
+                <span (click)="removeUser(user.userId)" class="remove-item">{{'SETTINGS.USER_TAB.REMOVE_USER' | translate}}</span>
+              </div>
+            </div>
           </div>
 
 <!--          -->

@@ -26,6 +26,8 @@ import {
 } from './components/settings/guest-settings/guest-settings.component';
 import { CustomSelectComponent } from './shared/custom-select/custom-select.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ShowPasswordComponent } from './shared/show-password/show-password.component';
+import { TagSelectorComponent } from './shared/tag-selector/tag-selector.component';
 
 
 // tslint:disable-next-line:typedef
@@ -48,7 +50,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     GuestSettingsComponent,
     CustomSelectComponent,
     WarningSaveLogsDialogComponent,
-    ShowHaveNotLogDialogComponent
+    ShowHaveNotLogDialogComponent,
+    ShowPasswordComponent,
+    TagSelectorComponent
   ],
   imports: [
     BrowserModule,

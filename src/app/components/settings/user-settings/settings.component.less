@@ -9,32 +9,6 @@
   padding: 0 10px;
   font-size: 12px;
 
-  .mat-select-panel{
-    position: absolute;
-    top: 32px;
-    left: 4px;
-    min-width: calc(100% + 22px) !important;
-    border-radius: 0px !important;
-    border: 1px solid blue;
-    border-top-style: none;
-  }
-
-  .mat-form-field-appearance-outline .mat-form-field-outline-start{
-    border-radius: 0px !important;
-    border: 1px solid blue !important;
-    border-right-style: none !important;
-  }
-
-  .mat-form-field-appearance-outline .mat-form-field-outline-end{
-    border-radius: 0px !important;
-    border: 1px solid blue !important;
-    border-left-style: none !important;
-  }
-
-  .mat-select-panel ng-animating {
-    visibility: hidden;
-  }
-
   .ngdialog-close {
     display: none;
     position: absolute;
@@ -52,6 +26,7 @@
   }
 
   .endpoints-wrapper {
+    margin: 10px 12px;
     height: auto;
   }
 
@@ -162,7 +137,7 @@
     }
 
     .default-select{
-      ul {
+      ul.dropdown-block {
         min-width: 215px;
         max-height: 400px;
         overflow-y: auto;
@@ -194,6 +169,35 @@
 
     .default-input {
       height: 30px;
+    }
+  }
+
+  .participant-id{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .password-input {
+      display: inline-flex;
+      position: relative;
+
+      //.password-eye {
+      //  width: 25px;
+      //  height: 25px;
+      //  background-size: 25px;
+      //  position: absolute;
+      //  right: 5px;
+      //  top: 2px;
+      //}
+      //
+      //.password-eye.hidden-pass{
+      //  background-image: @url-eye;
+      //}
+      //
+      //.password-eye.visible-pass{
+      //  background-image: @url-eye-hide;
+      //}
     }
   }
 
@@ -338,6 +342,12 @@
     flex-direction: column;
     &.client-settings-mobile-content {
       align-items: center;
+    }
+
+    .delegated-title{
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight: bold;
     }
 
     .refresh{
@@ -554,14 +564,21 @@
 
   .user-delegated{
     .user{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 10px;
       padding: 9px 5px;
-      margin-bottom: 0;
 
       .user-info{
-        width: 70%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 50%;
       }
 
       .remove-item{
+        color: #559BFD;
+        align-self: center;
         display: none;
         cursor: pointer;
       }

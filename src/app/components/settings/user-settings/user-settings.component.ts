@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {TranslateService} from '@ngx-translate/core';
 import * as _ from 'lodash';
@@ -20,88 +20,88 @@ import {ShowHaveNotLogDialogComponent, WarningSaveLogsDialogComponent} from '../
 @Component({
   selector: 'app-user-settings',
   templateUrl: '../templates/user-settings.component.html',
-  styleUrls: ['./settings.component.less']
+  styleUrls: ['./settings.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UserSettingsComponent implements OnInit {
   private inputTimeout: any;
   private originDateFormat: any;
   private thatScope: this;
-  public locations: any;
+  locations: any;
   private photoWasDeleted: boolean;
   private logger: any;
-  public userSettings: any;
-  public pictureErrorMessage: any;
+  userSettings: any;
+  pictureErrorMessage: any;
   private originalSettings: any;
   private userService: any;
-  public user: any;
-  public isDesktop: any;
-  public isMobileView: any;
-  public filteredEndpoints: any[];
-  public videoCalling: boolean;
-  public indexedDbIsCompatibility: boolean;
-  public supportEmail: string;
-  public saveLogsCheckbox: any;
-  public roomFormScope: any;
-  public roomNamePattern: RegExp;
-  public data: { permanentPin: string; moderatorPin: string; accessPinEnabled: boolean };
-  public recordingNotSupportedTitle: any;
-  public TAB: {
+  user: any;
+  isDesktop: any;
+  isMobileView: any;
+  filteredEndpoints: any[];
+  videoCalling: boolean;
+  indexedDbIsCompatibility: boolean;
+  supportEmail: string;
+  saveLogsCheckbox: any;
+  roomFormScope: any;
+  roomNamePattern: RegExp;
+  data: { permanentPin: string; moderatorPin: string; accessPinEnabled: boolean };
+  recordingNotSupportedTitle: any;
+  TAB: {
     PASSWORD?: string;
     GENERAL?: string;
     USER?: string;
     ROOM?: string;
     SUPPORT: string; PREFERENCES: string; CLIENT: string };
-  public currentDateSetting: any;
-  public dateFormatSettings: {
+  currentDateSetting: any;
+  dateFormatSettings: {
     selected?: any;
     options: ({ format: any; id: string })[] };
-  public useDefaultTimeFormat: any;
-  public use24HourFormat: any;
-  public currentDataFormat: string;
-  public timeFormat: { selected: string };
+  useDefaultTimeFormat: any;
+  use24HourFormat: any;
+  currentDataFormat: string;
+  timeFormat: { selected: string };
   private currentLocation: any;
   private newPicture: any;
-  public availableVoicePromptLanguagesCopy: any;
-  public voicePromptLanguage: { options: any; selected: any };
-  public voicePromptLanguageChanged: (language) => void;
+  availableVoicePromptLanguagesCopy: any;
+  voicePromptLanguage: { options: any; selected: any };
   // tslint:disable-next-line:variable-name
   private _defaultVirtualRoom: any;
-  public defaultVirtualRoom: any;
-  public currentRoom: any;
+  defaultVirtualRoom: any;
+  currentRoom: any;
   private announcementList: ({ name: any; id: string })[];
   private allowPresentPolicyList: ({ name: any; id: string })[];
-  public virtualRoomNumber: { options: any; selected: any };
-  public meetingType: { options: any; selected: any };
-  public virtualRoomInvitationLanguages: any;
-  public virtualRoomVoicePromptLanguage: any;
-  public virtualRoomDialInLocations: any;
+  virtualRoomNumber: { options: any; selected: any };
+  meetingType: { options: any; selected: any };
+  virtualRoomInvitationLanguages: any;
+  virtualRoomVoicePromptLanguage: any;
+  virtualRoomDialInLocations: any;
   private originalAccessPinEnabled: any;
-  public entryAnnouncement: any;
-  public exitAnnouncement: any;
-  public allowPresentPolicy: any;
-  public meetingPinMinLength: any;
-  public isMeetingPinContainsSequentialOrRepeatedSymbols: boolean;
-  public errorMaxPlayToneNumber: boolean;
-  public errorMaxPlayNameNumber: boolean;
-  public haveDualInData: boolean;
-  public isModeratorPinContainsSequentialOrRepeatedSymbols: any;
-  public isModeratorPinPatternCorrect: boolean;
-  public isMeetingPinPatternCorrect: boolean;
-  public changePasswordForm: any;
-  public haveIndexedDB: boolean;
-  public currentTab: any;
-  public ACData: any;
-  public canShowDownloadPlugin: boolean;
-  public isChrome: boolean;
-  public isMac: boolean;
-  public isWindows: boolean;
-  public showSharingPlaginLink: any;
-  public searching: boolean;
-  public filteredContacts: any[];
-  public delegatedUsers: any;
+  entryAnnouncement: any;
+  exitAnnouncement: any;
+  allowPresentPolicy: any;
+  meetingPinMinLength: any;
+  isMeetingPinContainsSequentialOrRepeatedSymbols: boolean;
+  errorMaxPlayToneNumber: boolean;
+  errorMaxPlayNameNumber: boolean;
+  haveDualInData: boolean;
+  isModeratorPinContainsSequentialOrRepeatedSymbols: any;
+  isModeratorPinPatternCorrect: boolean;
+  isMeetingPinPatternCorrect: boolean;
+  changePasswordForm: any;
+  haveIndexedDB: boolean;
+  currentTab: any;
+  ACData: any;
+  canShowDownloadPlugin: boolean;
+  isChrome: boolean;
+  isMac: boolean;
+  isWindows: boolean;
+  showSharingPlaginLink: any;
+  searching: boolean;
+  filteredContacts: any[];
+  delegatedUsers: any;
   private warningDialog: any;
-  public isOAuthUser: any;
-  public isMultiTenant: boolean;
+  isOAuthUser: any;
+  isMultiTenant: boolean;
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -219,13 +219,6 @@ export class UserSettingsComponent implements OnInit {
     this.voicePromptLanguage = {
       options : this.userSettingsService.getLocalizedAudioPromptLanguage(this.availableVoicePromptLanguagesCopy),
       selected : this.searchById(this.userSettings.voicePromptLanguage , this.availableVoicePromptLanguagesCopy)
-    };
-
-    this.voicePromptLanguageChanged = (language) => {
-      if (language) {
-        this.logger.log('voicePromptLanguage changed to %s', language.displayName);
-        this.userSettings.voicePromptLanguage = language.id;
-      }
     };
 
     this.locations = {
@@ -709,39 +702,39 @@ export class UserSettingsComponent implements OnInit {
     this.isMultiTenant = this.userSettingsService.portalResources.multitenant;
   }
 
-  public isShowLocalTab():boolean {
+  isShowLocalTab():boolean {
     return this.customDeviceDetector.isDesktop();
   }
 
-  public setRoomFormScope(scope): void{
+  setRoomFormScope(scope): void{
     this.roomFormScope = scope;
   }
 
-  public isShowClientTab():any {
+  isShowClientTab():any {
     return (this.customDeviceDetector.os === OS.WINDOWS || this.customDeviceDetector.os === OS.MAC) &&
       this.userSettingsService.portalResources.clientSettings.avayaCommunicatorClientEnableRank;
   }
 
-  public locationsSelected(location?): void {
-    console.log('hello locationsSelected', location);
+  locationsSelected(location?): void {
     this.logger.log('location changed');
     this.locations.selected = location;
     this.userSettings.conferencing.locationId = this.locations.selected.locationId;
   }
 
-  public defaultRoomWasChanged(): void {
-    this.logger.log('default Virtual Room changed');
+  defaultRoomWasChanged($event?: string): void {
+    this.logger.log('default Virtual Room changed', $event);
     // disable defaultRoom flags in all rooms
     const virtualRooms = this.userSettings.conferencing.virtualRoomSettings;
     for (const vr of virtualRooms) {
       vr.defaultRoom = false;
     }
     // set selected room as default
+    this.defaultVirtualRoom.selected = $event;
     this.defaultVirtualRoom.selected.defaultRoom = true;
-    this.userSettings.conferencing.defaultVirtualRoom = this.defaultVirtualRoom.selected.virtualRoomId;
+    this.userSettings.conferencing.defaultVirtualRoom = $event;
   }
 
-  public virtualRoomNumberSelected(): void {
+  virtualRoomNumberSelected(): void {
     this.logger.log('virtualRoomNumber changed');
     this.currentRoom = this.virtualRoomNumber.selected;
 
@@ -782,7 +775,7 @@ export class UserSettingsComponent implements OnInit {
 
   }
 
-  public meetingTypeSelected(event): void {
+  meetingTypeSelected(event): void {
     this.logger.log('meetingType changed');
     if (event.value) {
       this.currentRoom.serviceTemplateId = event.value.serviceId;
@@ -790,7 +783,7 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public moderatorPinChanged(): void {
+  moderatorPinChanged(): void {
     this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
     if (this.isEmpty(this.data.moderatorPin)) {
       this.currentRoom.moderatorPIN = '';
@@ -801,24 +794,24 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public isEmpty(value): boolean {
+  isEmpty(value): boolean {
     return value === undefined || value === null || value === '';
   }
 
-  public changeWaitingRoom(): void {
+  changeWaitingRoom(): void {
     if(!!this.currentRoom.moderatorPIN){
       this.currentRoom.previousWaitingRoomValue = this.currentRoom.waitingRoom;
     }
   }
 
-  public currentRoomModeratorPIN(): void {
+  currentRoomModeratorPIN(): void {
     // TODO get old and new value
     // if(newVal !== '' && oldVal === ''){
       this.currentRoom.waitingRoom = this.currentRoom.previousWaitingRoomValue;
     // }
   }
 
-  public accessPinCheckboxChanged(): void {
+  accessPinCheckboxChanged(): void {
     if(this.meetingPinMinLength !== 0){
       this.data.accessPinEnabled = true;
     } else{
@@ -830,7 +823,7 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public pinRadioStateChanged(): void {
+  pinRadioStateChanged(): void {
     if(this.currentRoom.oneTimePINRequired){
       this.isMeetingPinContainsSequentialOrRepeatedSymbols = false;
     }
@@ -838,7 +831,7 @@ export class UserSettingsComponent implements OnInit {
     this.currentRoom.accessPIN = '';
   }
 
-  public permanentPinChanged(): void {
+  permanentPinChanged(): void {
     this.pinService.isPinCorrect(this.data.permanentPin, PIN_TYPE.MEETING_PIN, this);
     if (this.isEmpty(this.data.permanentPin)) {
       this.currentRoom.accessPIN = '';
@@ -849,11 +842,11 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public isAllowRecordingDisabled (): boolean {
+  isAllowRecordingDisabled (): boolean {
     return this.userSettings.conferencing.allowRecording !== 'ON' || this.currentRoom.allowRecording === 'DISABLED';
   }
 
-  public virtualRoomVoicePromptLanguageSelected(): void {
+  virtualRoomVoicePromptLanguageSelected(): void {
     // TODO get language
     // if (language) {
     //   this.logger.log('virtualRoomVoicePromptLanguage changed to %s', language.displayName);
@@ -861,7 +854,7 @@ export class UserSettingsComponent implements OnInit {
     // }
   }
 
-  public entryAnnouncementSelected(): void {
+  entryAnnouncementSelected(): void {
     // TODO get announcement
     // if (announcement) {
     //   this.logger.log('entryAnnouncement changed to %s', announcement.name);
@@ -869,7 +862,7 @@ export class UserSettingsComponent implements OnInit {
     // }
   }
 
-  public exitAnnouncementSelected(): void {
+  exitAnnouncementSelected(): void {
     // TODO get announcement
     // if (announcement) {
     //   this.logger.log('exitAnnouncement changed to %s', announcement.name);
@@ -877,7 +870,7 @@ export class UserSettingsComponent implements OnInit {
     // }
   }
 
-  public currentRoomMaxPlayToneNumber(): void {
+  currentRoomMaxPlayToneNumber(): void {
     if (this.currentRoom.maxPlayToneNumber) {
       this.currentRoom.maxPlayToneNumber = +this.currentRoom.maxPlayToneNumber;
       if (+this.currentRoom.maxPlayToneNumber > 100) {
@@ -889,7 +882,7 @@ export class UserSettingsComponent implements OnInit {
     this.errorMaxPlayToneNumber = false;
   }
 
-  public currentRoomMaxPlayNameNumber(): void {
+  currentRoomMaxPlayNameNumber(): void {
     if (this.currentRoom.maxPlayNameNumber) {
       this.currentRoom.maxPlayNameNumber = +this.currentRoom.maxPlayNameNumber + 0;
       if (+this.currentRoom.maxPlayNameNumber > 100) {
@@ -901,7 +894,7 @@ export class UserSettingsComponent implements OnInit {
     this.errorMaxPlayNameNumber = false;
   }
 
-  public virtualRoomDialInLocationsSelected(): void {
+  virtualRoomDialInLocationsSelected(): void {
     // TODO get language
     //     if (language) {
     //       this.logger.log('virtualRoomDialInLocations changed to %s', language.displayName);
@@ -909,7 +902,7 @@ export class UserSettingsComponent implements OnInit {
     //     }
   }
 
-  public allowPresentPolicySelected(): void {
+  allowPresentPolicySelected(): void {
     // TODO get allowPresentPolicyOptions
     //     if (allowPresentPolicyOptions) {
     //       this.logger.log('allowPresentPolicy changed to %s', allowPresentPolicyOptions.name);
@@ -917,7 +910,7 @@ export class UserSettingsComponent implements OnInit {
     //     }
   }
 
-  public virtualRoomInvitationLanguagesSelected(): void {
+  virtualRoomInvitationLanguagesSelected(): void {
     // TODO get language
     //     if (language) {
     //       this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
@@ -925,30 +918,30 @@ export class UserSettingsComponent implements OnInit {
     //     }
   }
 
-  public areAllPinsCorrect(): boolean {
+  areAllPinsCorrect(): boolean {
     return this.isMeetingPinCorrect() && this.isModeratorPinCorrects();
   }
 
-  public canChangeMeetingType(): boolean {
+  canChangeMeetingType(): boolean {
     return this.currentRoom.fixedMeetingType === true;
   }
 
-  public saveSettingsAndClose(): Promise<any> {
+  saveSettingsAndClose(): Promise<any> {
     return this.applySettings().then(() => {
       this.dialogRef.close();
     });
   }
 
-  public cancelSettings(): void {
+  cancelSettings(): void {
     this.dialogRef.close();
   }
 
-  public applySettings(): Promise<any> {
+  applySettings(): Promise<any> {
     // TODO create this method
     return new Promise<any>(resolve => {resolve(true);});
   }
 
-  public settingsChanged(): boolean {
+  settingsChanged(): boolean {
     if(this.currentTab === this.TAB.ROOM){
       return (!_.isEqual(this.userSettings, this.originalSettings) || this.isTimeFormatWasChanged()) && this.areAllPinsCorrect();
     } else {
@@ -958,7 +951,7 @@ export class UserSettingsComponent implements OnInit {
   }
 
   // noinspection JSAnnotator
-  public needOptionalUpgrade(): boolean {
+  needOptionalUpgrade(): boolean {
     if(this.ACData && this.ACData.latestVersion) {
       return this.versionService.isUpdateRequired(this.ACData.version, this.ACData.latestVersion.version);
     }
@@ -967,11 +960,11 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public downloadOutlookPlugIn(): void {
+  downloadOutlookPlugIn(): void {
     this.acClientService.downloadOutlookPlugIn();
   }
 
-  public downloadAC(): void {
+  downloadAC(): void {
     this.acClientService.downloadClient();
     if (this.isApplyDisabled()) {
       this.dialogRef.close();
@@ -981,17 +974,17 @@ export class UserSettingsComponent implements OnInit {
     // MessageUtilsService.showDownloadSettingsDialog({isJoin: false});
   }
 
-  public removeClientInfo(): void {
+  removeClientInfo(): void {
     this.acClientService.clearClientData();
     this.ACData = this.acClientService.clientData;
     window.localStorage.haveDownloadedClient = false;
   }
 
-  public refreshClientInfo(): void {
+  refreshClientInfo(): void {
     this.ACData = this.acClientService.clientData;
   }
 
-  public downloadChromePlugin(): void {
+  downloadChromePlugin(): void {
     if (this.userSettingsService.portalResources) {
       if (this.customDeviceDetector.browser === BROWSERS.CHROME &&
         this.userSettingsService.portalResources.chromeScreensharingExtensionUrl) {
@@ -1003,11 +996,11 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public canShowACDownloadButton(): boolean {
+  canShowACDownloadButton(): boolean {
     return this.acClientService.canShowDownloadButton();
   }
 
-  public searchEndpointInputChanged(newvalue, oldvalue): void {
+  searchEndpointInputChanged(newvalue, oldvalue): void {
     if (this.inputTimeout) {
       clearTimeout(this.inputTimeout);
     }
@@ -1031,7 +1024,7 @@ export class UserSettingsComponent implements OnInit {
     }, 700);
   }
 
-  public toInputChanged(contactSearchTerm): void {
+  toInputChanged(contactSearchTerm): void {
     const searchContacts = (searchTerm) => {
 
       if (searchTerm) {
@@ -1056,24 +1049,24 @@ export class UserSettingsComponent implements OnInit {
     }, 700);
   }
 
-  public removeUser(userId): void {
+  removeUser(userId): void {
     this.delegatedUsers = this.delegatedUsers.filter(user => user.userId !== userId);
     this.userSettings.conferencing.delegatedUsers = this.delegatedUsers;
   }
 
-  public changePreferences(): void {
+  changePreferences(): void {
     this.videoCalling = !this.videoCalling;
     this.userSettings.videoCalling = this.videoCalling;
   }
 
-  public setPasswordFormToScope(form, token): void {
+  setPasswordFormToScope(form, token): void {
     this.changePasswordForm = {
       form,
       token
     };
   }
 
-  public isOKDisabled(): void {
+  isOKDisabled(): void {
     if(this.currentTab === this.TAB.ROOM){
       return ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) || this.data.moderatorPin === undefined) ||
         !this.areAllPinsCorrect();
@@ -1082,7 +1075,7 @@ export class UserSettingsComponent implements OnInit {
       (this.wasVirtualRoomSettingChanged() && !this.areAllPinsCorrect());
   }
 
-  public isApplyDisabled(): boolean {
+  isApplyDisabled(): boolean {
     return ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) ||
       !this.settingsChanged() ||
       this.data.moderatorPin === undefined) &&
@@ -1096,7 +1089,7 @@ export class UserSettingsComponent implements OnInit {
       ));
   }
 
-  public setCurrentTab(tab): void {
+  setCurrentTab(tab): void {
     this.currentTab = this.currentTab === tab && this.isMobileView ? undefined : tab;
 
     // need to set password type on pin inputs
@@ -1109,25 +1102,25 @@ export class UserSettingsComponent implements OnInit {
     $('.password-eye').removeClass('visible-pass').addClass('hidden-pass');
   }
 
-  public dateFormatSettingsSelected(): void {
+  dateFormatSettingsSelected(): void {
     this.currentDateSetting.dateFormat = this.dateFormatSettings.selected.id;
   }
 
-  public changeTimeFormat(): void {
+  changeTimeFormat(): void {
     this.useDefaultTimeFormat = !this.useDefaultTimeFormat;
     this.currentDateSetting.useDefault = this.useDefaultTimeFormat;
   }
 
-  public changeHourFormat(): void {
+  changeHourFormat(): void {
     this.use24HourFormat = !this.use24HourFormat;
     this.currentDateSetting.use24HourFormat = this.use24HourFormat;
   }
 
-  public isTimeFormatWasChanged(): boolean {
+  isTimeFormatWasChanged(): boolean {
     return !_.isEqual(this.currentDateSetting, this.originDateFormat);
   }
 
-  public changeSaveLogs(): void {
+  changeSaveLogs(): void {
     if(!this.warningDialog && this.saveLogsCheckbox){
       this.warningDialog = this.dialog.open(WarningSaveLogsDialogComponent, {
         data: {
@@ -1142,7 +1135,7 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public downloadLogs(): void{
+  downloadLogs(): void{
     if(this.haveIndexedDB){
       this.meetingsLogsService.downloadLogs();
     } else{
@@ -1150,7 +1143,7 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public sendLogsEml(): void {
+  sendLogsEml(): void {
     if(this.haveIndexedDB){
       this.meetingsLogsService.sendLogsEml();
     } else{
@@ -1158,7 +1151,7 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public sendLogsEmail(): void {
+  sendLogsEmail(): void {
     if(this.haveIndexedDB){
       this.meetingsLogsService.sendLogsEmail();
     } else{
@@ -1166,10 +1159,18 @@ export class UserSettingsComponent implements OnInit {
     }
   }
 
-  public refreshParticipantId(): void {
+  refreshParticipantId(): void {
     this.userSettingsService.getNewParticipantId().then((res:any) => {
       this.userSettings.conferencing.participantId = res.newParticipantId;
     });
+  }
+
+  voicePromptLanguageChanged(language): void {
+    if (language) {
+      this.logger.log('voicePromptLanguage changed to %s', language.displayName);
+      this.userSettings.voicePromptLanguage = language.id;
+    }
+    this.voicePromptLanguage.selected = language;
   }
 
   private wasVirtualRoomSettingChanged(): boolean {

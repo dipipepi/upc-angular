@@ -42,7 +42,7 @@ intended publication of such source code.
                *ngIf="(!ACData.isInstalled || needOptionalUpgrade()) && globalService.isThereClientToDownload()"
                (click)="downloadAC()"
           >
-    <span>{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
+            <span>{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
           </div>
 
           <div *ngIf="!globalService.isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>

@@ -27,7 +27,7 @@ export interface User{
   name: string;
   officePhoneNumber: string;
   pictureUrl: string;
-  scopiaId: string;
+  scopiaId?: string;
   pictureData?: string;
 }
 
