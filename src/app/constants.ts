@@ -253,3 +253,31 @@ export class SWC_LOGS {
   public static get SUBJECT():string {return 'Equinox Conferencing Problem Report on ';}
   public static get BODY():string {return 'Summary of the problem:\n\nApproximate time when experiencing the problem:\n\nSteps that lead to the problem:\n\nIs it reproducible? (100% or Intermittent)\n\nIf the log file is not auto attached to this email, please download the logs and attach to this email.\n\nIf you have some screenshots, please attach to this email.\n\nAAWG Build: ';}
 }
+
+
+// tslint:disable-next-line:class-name
+export class PIN_TYPE {
+  public static get MODERATOR_PIN():string {return 'MODERATOR_PIN';}
+  public static get MEETING_PIN():string {return 'MEETING_PIN';}
+  public static get RECORDING_AND_BROADCAST_PIN():string {return 'RECORDING_AND_BROADCAST_PIN';}
+}
+
+// tslint:disable-next-line:class-name
+export class PIN_MAX_LENGTH {
+  public static get MODERATOR_PIN():number {return 16;}
+  public static get MEETING_PIN():number {return 16;}
+  public static get RECORDING_AND_BROADCAST_PIN():number {return 255;}
+}
+
+// tslint:disable-next-line:class-name
+export class KEY_CODE {
+  public static get BACKSPACE():number {return 8;}
+  public static get TAB():number {return 9;}
+  public static get ENTER():number {return 13;}
+  public static get ESC():number {return 27;}
+  public static get SPACE():number {return 32;}
+  public static get LEFT():number {return 37;}
+  public static get UP():number {return 38;}
+  public static get RIGHT():number {return 39;}
+  public static get DOWN():number {return 40;}
+}

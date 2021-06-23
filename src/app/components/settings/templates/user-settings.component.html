@@ -1,0 +1,221 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<div *ngIf="!isMobileView" class="settings-container">
+  <div class="settings-title">{{'SETTINGS.TITLE' | translate}}</div>
+
+  <div class="mobile-accordeon settings">
+    <div class="settings-wrapper">
+      <div class="settings-tabs">
+        <div class="tab user-settings-mobile settings-navigation-item {{currentTab === TAB.USER ? 'current' : ''}}"
+             (click)="setCurrentTab(TAB.USER)">
+          {{'SETTINGS.USER' | translate}}
+        </div>
+
+        <div class="{{!areAllPinsCorrect() ? 'incorrect-pin' : ''}} tab virtual-room-settings-mobile settings-navigation-item {{currentTab === TAB.ROOM ? 'current' : ''}} {{userSettings.conferencing.virtualRoomSettings.length ? '' : 'hidden'}}"
+             (click)="setCurrentTab(TAB.ROOM)">
+          {{'SETTINGS.ROOM' | translate}}
+        </div>
+
+        <div class="tab general-settings-mobile settings-navigation-item {{currentTab === TAB.GENERAL ? 'current' : ''}}"
+             (click)="setCurrentTab(TAB.GENERAL)">{{'SETTINGS.GENERAL' | translate}}
+        </div>
+
+        <div class="tab preferences-settings-mobile settings-navigation-item {{currentTab === TAB.PREFERENCES ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+             (click)="setCurrentTab(TAB.PREFERENCES)">{{'SETTINGS.PREFERENCES' | translate}}
+        </div>
+
+        <div class="tab client-settings-mobile settings-navigation-item {{currentTab === TAB.CLIENT ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+             (click)="setCurrentTab(TAB.CLIENT)">{{'SETTINGS.CLIENT' | translate}}
+        </div>
+
+        <div class="tab support-settings-mobile settings-navigation-item {{currentTab === TAB.SUPPORT ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+             (click)="setCurrentTab(TAB.SUPPORT)"
+             *ngIf="indexedDbIsCompatibility">{{'SETTINGS.SUPPORT' | translate}}
+        </div>
+
+        <div class="tab password-settings-mobile settings-navigation-item {{currentTab === TAB.PASSWORD ? 'current' : ''}} {{userSettings.conferencing.localUser && !isOAuthUser ? '' : 'hidden'}}"
+             (click)="setCurrentTab(TAB.PASSWORD)">{{'SETTINGS.PASSWORD'}}
+        </div>
+
+      </div>
+
+      <div class="settings-main-container">
+        <div class="tab-content {{currentTab === TAB.USER ? '' : 'hidden'}}" *ngIf="currentTab === TAB.USER">
+<!--          -->
+          <div class="settings-item upc-location">
+            <span>{{'SETTINGS.USER_TAB.LOCATION' | translate}}</span>
+            <app-custom-select (ngModelChange)="locationsSelected($event)" [options]="locations.options" [model]="locations.selected" key="locationId" value="name"></app-custom-select>
+          </div>
+
+          <div class="settings-item upc-default-vr" *ngIf="defaultVirtualRoom.options.length">
+            <span>{{'SETTINGS.USER_TAB.DEFAULT_ROOM' | translate}}</span>
+            <app-custom-select (ngModelChange)="locationsSelected($event)" [options]="defaultVirtualRoom.options" [model]="defaultVirtualRoom.selected" key="virtualRoomId" value="name"></app-custom-select>
+            <custom-select ng-change="defaultRoomWasChanged()" options="defaultVirtualRoom.options" ng-model="defaultVirtualRoom.selected" key="virtualRoomId" value="name"></custom-select>
+          </div>
+
+<!--          -->
+        </div>
+
+        <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsRoom.html'">
+        </div>
+
+        <div class="tab-content {{currentTab === TAB.GENERAL ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsGeneral.html'">
+        </div>
+
+        <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsPreferences.html'">
+        </div>
+
+        <div class="tab-content client-settings-mobile {{currentTab === TAB.CLIENT ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsClient.html'">
+        </div>
+
+        <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsSupport.html'">
+        </div>
+
+        <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}"
+             ng-include=":: 'app/components/settings/templates/SettingsPassword.html'"
+             ng-controller="ChangePasswordController">
+        </div>
+      </div>
+    </div>
+
+    <div class="accordeon-name settings">{{'SETTINGS.SETTINGS' | translate}}</div>
+  </div>
+
+  <div class="settings-buttons {{currentTab ? '' : 'active'}}">
+    <button type="button"
+            class="white-button"
+            (click)="saveSettingsAndClose()"
+            [disabled]="isOKDisabled()">
+      {{'SETTINGS.OK' | translate}}
+    </button>
+
+    <button type="button"
+            class="white-button"
+            (click)="cancelSettings()"
+    >{{'SETTINGS.CANCEL' | translate}}
+    </button>
+
+    <button type="button"
+            class="white-button"
+            (click)="applySettings()"
+            [disabled]="isApplyDisabled()"
+    >{{'SETTINGS.APPLY' | translate}}
+    </button>
+  </div>
+</div>
+<div *ngIf="isMobileView">
+  <div class="settings-title">{{'SETTINGS.TITLE' | translate}}</div>
+
+  <div class="mobile-accordeon settings">
+    <div class="accordeon-name settings"
+    >{{'SETTINGS.SETTINGS' | translate}}
+    </div>
+
+    <!-- User settings tab -->
+    <div class="tab user-settings-mobile settings-navigation-item {{currentTab === TAB.USER ? 'current' : ''}}"
+         (click)="setCurrentTab(TAB.USER)"
+    > {{'SETTINGS.USER' | translate}}
+    </div>
+    <div class="tab-content {{currentTab === TAB.USER ? '' : 'hidden'}}"
+         ng-include="'app/components/settings/templates/SettingsUser.html'"
+    >
+    </div>
+
+    <!-- Virtual Room tab -->
+    <div class="{{!areAllPinsCorrect() ? 'incorrect-pin' : ''}} tab virtual-room-settings-mobile settings-navigation-item {{currentTab === TAB.ROOM ? 'current' : ''}} {{userSettings.conferencing.virtualRoomSettings.length ? '' : 'hidden'}}"
+         (click)="setCurrentTab(TAB.ROOM)">{{'SETTINGS.ROOM' | translate}}
+    </div>
+    <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}}"
+         ng-include=":: 'app/components/settings/templates/SettingsRoom.html'"
+    >
+    </div>
+
+    <!-- General Settings tab -->
+    <div class="tab general-settings-mobile settings-navigation-item {{currentTab === TAB.GENERAL ? 'current' : ''}}"
+         (click)="setCurrentTab(TAB.GENERAL)"
+    >{{'SETTINGS.GENERAL' | translate}}
+    </div>
+    <div class="tab-content {{currentTab === TAB.GENERAL ? '' : 'hidden'}}"
+         ng-include=":: 'app/components/settings/templates/SettingsGeneral.html'"
+    >
+    </div>
+
+    <!-- User Preferences tab -->
+    <div class="tab preferences-settings-mobile settings-navigation-item {{currentTab === TAB.PREFERENCES ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+         (click)="setCurrentTab(TAB.PREFERENCES)"
+    >{{'SETTINGS.PREFERENCES' | translate}}
+    </div>
+    <div class="tab-content {{currentTab === TAB.PREFERENCES ? '' : 'hidden'}}"
+         ng-include=":: 'app/components/settings/templates/SettingsPreferences.html'"
+    >
+    </div>
+
+    <!-- Client tab -->
+    <div class="tab client-settings-mobile settings-navigation-item {{currentTab === TAB.CLIENT ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+         (click)="setCurrentTab(TAB.CLIENT)"
+    >{{'SETTINGS.CLIENT' | translate}}
+    </div>
+    <div class="tab-content client-settings-mobile {{currentTab === TAB.CLIENT ? '' : 'hidden'}}"
+         ng-include=":: 'app/components/settings/templates/SettingsClient.html'"
+    >
+    </div>
+
+    <!-- Support tab -->
+    <div class="tab support-settings-mobile settings-navigation-item {{currentTab === TAB.SUPPORT ? 'current' : ''}} {{isShowClientTab() ? '' : 'hidden'}}"
+         (click)="setCurrentTab(TAB.SUPPORT)"
+         *ngIf="indexedDbIsCompatibility"
+    >{{'SETTINGS.SUPPORT' | translate}}
+    </div>
+    <div class="tab-content {{currentTab === TAB.SUPPORT ? '' : 'hidden'}}"
+         ng-include=":: 'app/components/settings/templates/SettingsSupport.html'"
+    >
+    </div>
+
+    <!-- Password tab -->
+    <div *ngIf="userSettings.conferencing.localUser && !isOAuthUser">
+      <div class="tab password-settings-mobile settings-navigation-item {{currentTab === TAB.PASSWORD ? 'current' : ''}} {{userSettings.conferencing.localUser ? '' : 'hidden'}}"
+           (click)="setCurrentTab(TAB.PASSWORD)"
+      >{{'SETTINGS.PASSWORD' | translate}}
+      </div>
+      <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}"
+           ng-include=":: 'app/components/settings/templates/SettingsPassword.html'"
+           ng-controller="ChangePasswordController"
+      >
+      </div>
+    </div>
+  </div>
+
+  <div class="settings-buttons {{currentTab ? '' : 'active'}}">
+    <button type="button"
+            class="white-button"
+            (click)="saveSettingsAndClose()"
+            [disabled]="isOKDisabled()"
+    >{{'SETTINGS.OK' | translate}}
+    </button>
+
+    <button type="button"
+            class="white-button"
+            (click)="cancelSettings()"
+    >{{'SETTINGS.CANCEL' | translate}}
+    </button>
+
+    <button type="button"
+            class="white-button"
+            (click)="applySettings()"
+            [disabled]="isApplyDisabled()"
+    >{{'SETTINGS.APPLY' | translate}}
+    </button>
+  </div>
+</div>

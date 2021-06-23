@@ -18,12 +18,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MessageUtilsComponent } from './shared/message-utils/message-utils.component';
-import { UserSettingsComponent } from './components/Settings/user-settings/user-settings.component';
+import { UserSettingsComponent } from './components/settings/user-settings/user-settings.component';
 import {
   GuestSettingsComponent,
   ShowHaveNotLogDialogComponent,
   WarningSaveLogsDialogComponent
-} from './components/Settings/guest-settings/guest-settings.component';
+} from './components/settings/guest-settings/guest-settings.component';
 import { CustomSelectComponent } from './shared/custom-select/custom-select.component';
 import {MatSelectModule} from '@angular/material/select';
 

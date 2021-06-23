@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {CLIENT_TYPE} from '../../constants';
+import {CLIENT_TYPE, OS} from '../../constants';
 import { Logger } from '../../../Logger';
 import {UserSettingsService} from '../UserSettingsService/user-settings.service';
 import {VersionService} from '../BrowserInfoService/browser-info.service';
+import {CustomDeviceDetectorService} from '../CustomDeviceDetectorService/custom-device-detector.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,8 @@ export class ACClientService {
 
   constructor(private http: HttpClient,
               private userSettingsService: UserSettingsService,
-              private versionService: VersionService) {
+              private versionService: VersionService,
+              private customDeviceDetector: CustomDeviceDetectorService) {
 
     this.initClientData();
   }
@@ -336,10 +338,10 @@ export class ACClientService {
   //     this.DeviceDetectorService.os !== this.OS.ANDROID &&
   //     this.DeviceDetectorService.os !== this.OS.IOS;
   // };
-  //
-  // public canShowDownloadButton = () => {
-  //   return this.canShowDownloadButtonCache;
-  // };
+
+  public canShowDownloadButton(): boolean {
+    return this.canShowDownloadButtonCache;
+  }
 
   downloadClient(update?): void {
     if (!(this.clientData.latestVersion && this.clientData.latestVersion.url)) {
@@ -465,22 +467,22 @@ export class ACClientService {
     this.clearLocalCaches();
   }
 
-  // public downloadOutlookPlugIn = () => {
-  //   if (this.DeviceDetectorService.os === this.OS.MAC) {
-  //     if (!this.$rootScope.resources.outlookPluginDownloadUrlMac) {
-  //       this.logger.error('Cant find url for latest outlook plugin!');
-  //     } else {
-  //       this.$window.open(this.$rootScope.resources.outlookPluginDownloadUrlMac);
-  //     }
-  //   }
-  //   if (this.DeviceDetectorService.os === this.OS.WINDOWS) {
-  //     if (!this.$rootScope.resources.outlookPluginDownloadUrlMac) {
-  //       this.logger.error('Cant find url for latest outlook plugin!');
-  //     } else {
-  //       this.$window.open(this.$rootScope.resources.outlookPluginDownloadUrlWindows);
-  //     }
-  //   }
-  // };
+  public downloadOutlookPlugIn(): void {
+    if (this.customDeviceDetector.os === OS.MAC) {
+      if (!this.userSettingsService.portalResources.outlookPluginDownloadUrlMac) {
+        this.logger.error('Cant find url for latest outlook plugin!');
+      } else {
+        window.open(this.userSettingsService.portalResources.outlookPluginDownloadUrlMac);
+      }
+    }
+    if (this.customDeviceDetector.os === OS.WINDOWS) {
+      if (!this.userSettingsService.portalResources.outlookPluginDownloadUrlMac) {
+        this.logger.error('Cant find url for latest outlook plugin!');
+      } else {
+        window.open(this.userSettingsService.portalResources.outlookPluginDownloadUrlWindows);
+      }
+    }
+  };
 
   private initClientData(): void {
     try {

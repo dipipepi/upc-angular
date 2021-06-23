@@ -8,8 +8,9 @@ import { Logger } from '../../../Logger';
 import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
 import {BrowserInfoService} from '../../services/BrowserInfoService/browser-info.service';
 import {BROWSERS, USER_TYPE} from '../../constants';
-import {GuestSettingsComponent} from '../Settings/guest-settings/guest-settings.component';
+import {GuestSettingsComponent} from '../settings/guest-settings/guest-settings.component';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
+import {UserSettingsComponent} from '../settings/user-settings/user-settings.component';
 
 @Component({
   selector: 'app-header',
@@ -109,7 +110,16 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  private showUserSettings(): void{}
+  private showUserSettings(): void{
+    const dialogRef = this.dialog.open(UserSettingsComponent, {
+      data: {
+        test: 4,
+        isTest: true
+      },
+      autoFocus: false,
+      disableClose: true
+    });
+  }
 
   private initBrowserMessages(): void {
     this.browserOutOfDateMessage = '';

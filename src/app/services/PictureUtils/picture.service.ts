@@ -13,7 +13,7 @@ export class PictureService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
-  extendObjectByPictureData(user) {
+    extendObjectByPictureData(user, thatScope?: any) {
     // tslint:disable-next-line:variable-name
     const _arrayBufferToBase64 = ( buffer ) => {
       let binary = '';
