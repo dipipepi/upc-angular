@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, SimpleChanges} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {ACClientService} from '../ACClientService/acclient.service';
 
@@ -12,5 +12,9 @@ export class GlobalService {
 
   isThereClientToDownload(): boolean {
     return !!this.acClientService.clientData.latestVersion;
+  }
+
+  valueChanged(valueName: string, valueObject: SimpleChanges): boolean  {
+    return valueObject[valueName] !== undefined && valueObject[valueName].previousValue !== undefined;
   }
 }

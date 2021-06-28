@@ -16,7 +16,7 @@ import {AuthorizationComponent} from '../../authorization/authorization.componen
 @Component({
   selector: 'app-guest-settings',
   templateUrl: '../templates/guest-settings.component.html',
-  styleUrls: ['./../user-settings/settings.component.less'],
+  styleUrls: ['../user-settings/settings.component.less'],
   encapsulation: ViewEncapsulation.None
 })
 export class GuestSettingsComponent implements OnInit, OnChanges {
@@ -29,7 +29,7 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
 
   dateFormatSettings;
   private originDateFormat = JSON.parse(window.localStorage.timeFormat);
-  private currentDateSetting = _.clone(this.originDateFormat);
+  private currentDateSetting = _.cloneDeep(this.originDateFormat);
 
   useDefaultTimeFormat = this.originDateFormat.useDefault;
   use24HourFormat = this.originDateFormat.use24HourFormat;
@@ -106,7 +106,7 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
   }
 
   applySettings():void {
-    this.originDateFormat = _.clone(this.currentDateSetting);
+    this.originDateFormat = _.cloneDeep(this.currentDateSetting);
     window.localStorage.timeFormat = JSON.stringify(this.currentDateSetting);
     window.localStorage.videoCallingPreferences = this.videoCalling;
     window.localStorage.enabledLogs = this.saveLogsCheckbox;
@@ -269,7 +269,7 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
 @Component({
   selector: 'app-warning-save-logs',
   templateUrl: '../templates/WarningSaveLogsDialog.html',
-  styleUrls: ['./../user-settings/settings.component.less']
+  styleUrls: ['../user-settings/settings.component.less']
 })
 export class WarningSaveLogsDialogComponent {
   confirm = this.data.confirm;
@@ -281,7 +281,7 @@ export class WarningSaveLogsDialogComponent {
 @Component({
   selector: 'app-show-not-logs',
   templateUrl: '../templates/HaveNotLogsDialog.html',
-  styleUrls: ['./../user-settings/settings.component.less']
+  styleUrls: ['../user-settings/settings.component.less']
 })
 export class ShowHaveNotLogDialogComponent {
   constructor(public dialogRef: MatDialogRef<GuestSettingsComponent>) {

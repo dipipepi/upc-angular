@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import {SimpleChanges} from '@angular/core';
 
 
 export const path = window.location.href.split('/');
@@ -35,13 +36,17 @@ function test3(res): Promise<boolean> {
   // return res*3;
 }
 
+export function valueChanged(valueName: string, valueObject: SimpleChanges): boolean  {
+  return valueObject[valueName].previousValue !== undefined;
+}
+
 const obj1 = {
   a: 3,
   b: 2,
   c: 1
 };
 
-const obj2 = _.clone(obj1);
+const obj2 = _.cloneDeep(obj1);
 
 
 obj2.a = 1;

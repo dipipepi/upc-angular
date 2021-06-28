@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {TranslateService} from '@ngx-translate/core';
 import * as _ from 'lodash';
@@ -14,8 +14,10 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
 import {VersionService} from '../../../services/BrowserInfoService/browser-info.service';
 import {ContactsService} from '../../../services/ContactsService/contacts.service';
-// import {$} from 'protractor';
 import {ShowHaveNotLogDialogComponent, WarningSaveLogsDialogComponent} from '../guest-settings/guest-settings.component';
+import {GlobalService} from '../../../services/GlobalService/global.service';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {passwordsMatch} from '../../../shared/CustomValidators';
 
 @Component({
   selector: 'app-user-settings',
@@ -23,7 +25,7 @@ import {ShowHaveNotLogDialogComponent, WarningSaveLogsDialogComponent} from '../
   styleUrls: ['./settings.component.less'],
   encapsulation: ViewEncapsulation.None
 })
-export class UserSettingsComponent implements OnInit {
+export class UserSettingsComponent implements OnInit, OnDestroy {
   private inputTimeout: any;
   private originDateFormat: any;
   private thatScope: this;
@@ -102,6 +104,7 @@ export class UserSettingsComponent implements OnInit {
   private warningDialog: any;
   isOAuthUser: any;
   isMultiTenant: boolean;
+  changePasswordReactiveForm: FormGroup;
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -115,18 +118,26 @@ export class UserSettingsComponent implements OnInit {
               public acClientService: ACClientService,
               private versionService: VersionService,
               private contactsService: ContactsService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              public globalService: GlobalService,
+              public formBuilder: FormBuilder) { }
+
+  ngOnDestroy(): void {
+        // throw new Error('Method not implemented.');
+    }
 
   ngOnInit(): void {
     this.logger = new Logger('SettingsController');
     this.thatScope = this;
     this.originDateFormat = JSON.parse(window.localStorage.timeFormat);
 
-    this.originalSettings = _.clone(this.userSettingsService.getUserSettings());
+    this.originalSettings = _.cloneDeep(this.userSettingsService.getUserSettings());
     this.locations = this.userSettingsService.getLocations();
 
     this.isDesktop = this.customDeviceDetector.isDesktop();
     this.isMobileView = this.stylesService.isMobileView();
+
+    this.isOAuthUser = window.localStorage.oauth2Authentication || false;
 
     this.filteredEndpoints = [];
 
@@ -155,7 +166,7 @@ export class UserSettingsComponent implements OnInit {
       SUPPORT: 'support'
     };
 
-    this.currentDateSetting = _.clone(this.originDateFormat);
+    this.currentDateSetting = _.cloneDeep(this.originDateFormat);
 
     this.dateFormatSettings = {
       options: [
@@ -197,7 +208,8 @@ export class UserSettingsComponent implements OnInit {
       }
     });
 
-    this.userSettings = _.clone(this.originalSettings);
+    this.userSettings = _.cloneDeep(this.originalSettings);
+    console.log('hello', this.userSettings.givenName);
 
     this.currentLocation = this.searchById(this.userSettings.conferencing.locationId, this.locations, 'locationId');
 
@@ -214,7 +226,7 @@ export class UserSettingsComponent implements OnInit {
       // this.userSettings.userPicture = this.user.pictureData;
     }
 
-    this.availableVoicePromptLanguagesCopy = _.clone(this.userSettings.conferencing.availableVoicePromptLanguages);
+    this.availableVoicePromptLanguagesCopy = _.cloneDeep(this.userSettings.conferencing.availableVoicePromptLanguages);
 
     this.voicePromptLanguage = {
       options : this.userSettingsService.getLocalizedAudioPromptLanguage(this.availableVoicePromptLanguagesCopy),
@@ -239,7 +251,7 @@ export class UserSettingsComponent implements OnInit {
       this.userSettings.conferencing.virtualRoomSettings, 'virtualRoomId');
     this.defaultVirtualRoom = {
       selected: this._defaultVirtualRoom,
-      options: _.clone(this.userSettings.conferencing.virtualRoomSettings)
+      options: _.cloneDeep(this.userSettings.conferencing.virtualRoomSettings)
     };
 
     if(this.userSettings.conferencing.defaultVirtualRoom === 'None'){
@@ -334,6 +346,56 @@ export class UserSettingsComponent implements OnInit {
       //   $scope.currentRoom.attendees = $filter('unique')($scope.currentRoom.attendees, 'terminalId');
       //
       // });
+
+      this.virtualRoomVoicePromptLanguage = {
+        options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableVoicePromptLanguages),
+        selected : this.searchById(this.currentRoom.voicePromptLanguage , this.userSettings.conferencing.availableVoicePromptLanguages)
+      };
+
+      this.entryAnnouncement = {
+        options: this.announcementList,
+        selected: this.searchById(this.currentRoom.entryAnnouncement, this.announcementList)
+      };
+
+      this.exitAnnouncement = {
+        options: this.announcementList,
+        selected: this.searchById(this.currentRoom.exitAnnouncement, this.announcementList)
+      };
+
+      if (this.currentRoom.maxPlayToneNumber === '') {
+        this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
+      }
+
+      this.virtualRoomDialInLocations = {
+        options : this.sortByKey(this.userSettings.conferencing.availableDialInLocations, 'label'),
+        selected : this.searchById(this.currentRoom.preferredDialInLocation , this.userSettings.conferencing.availableDialInLocations)
+      };
+
+      this.haveDualInData = this.virtualRoomDialInLocations.options.length !== 0;
+
+      this.allowPresentPolicy = {
+        options: this.allowPresentPolicyList,
+        selected: this.searchById(this.currentRoom.allowPresentPolicy, this.allowPresentPolicyList)
+      };
+
+      this.virtualRoomInvitationLanguages = {
+        options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableInvitationLanguages),
+        selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
+      };
+    }
+
+    if(this.userSettings.conferencing.localUser && !this.isOAuthUser){
+      // this.changePasswordReactiveForm = new FormGroup({
+      //   currentPassword: new FormControl(''),
+      //   newPassword: new FormControl('', Validators.required),
+      //   confirmPassword: new FormControl('')
+      // }, [passwordsMatch]);
+
+      this.changePasswordReactiveForm = this.formBuilder.group({
+        currentPassword: [''],
+        newPassword: [''],
+        confirmPassword: ['']
+      }, {validators: passwordsMatch()});
     }
     // TODO check than analog working correct
     //   $scope.$watch('meetingType.selected',(meetingType) => {
@@ -351,11 +413,6 @@ export class UserSettingsComponent implements OnInit {
     //     }
     //   });
 
-    this.virtualRoomVoicePromptLanguage = {
-      options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableVoicePromptLanguages),
-      selected : this.searchById(this.currentRoom.voicePromptLanguage , this.userSettings.conferencing.availableVoicePromptLanguages)
-    };
-
     // TODO check than analog working correct
     //   $scope.$watch('virtualRoomVoicePromptLanguage.selected',(language) => {
     //     if (language) {
@@ -363,11 +420,6 @@ export class UserSettingsComponent implements OnInit {
     //       $scope.currentRoom.voicePromptLanguage = language.id;
     //     }
     //   });
-
-    this.entryAnnouncement = {
-      options: this.announcementList,
-      selected: this.searchById(this.currentRoom.entryAnnouncement, this.announcementList)
-    };
 
     // TODO check than analog working correct
     //   $scope.$watch('entryAnnouncement.selected',(announcement) => {
@@ -377,11 +429,6 @@ export class UserSettingsComponent implements OnInit {
     //     }
     //   });
 
-    this.exitAnnouncement = {
-      options: this.announcementList,
-      selected: this.searchById(this.currentRoom.exitAnnouncement, this.announcementList)
-    };
-
     // TODO check than analog working correct
     //   $scope.$watch('exitAnnouncement.selected',(announcement) => {
     //     if (announcement) {
@@ -390,9 +437,6 @@ export class UserSettingsComponent implements OnInit {
     //     }
     //   });
     //
-    if (this.currentRoom.maxPlayToneNumber === '') {
-      this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
-    }
 
     // TODO check than analog working correct
     //   $scope.$watch('currentRoom.maxPlayToneNumber',() => {
@@ -428,18 +472,6 @@ export class UserSettingsComponent implements OnInit {
     //     }
     //   });
 
-    this.virtualRoomDialInLocations = {
-      options : this.sortByKey(this.userSettings.conferencing.availableDialInLocations, 'label'),
-      selected : this.searchById(this.currentRoom.preferredDialInLocation , this.userSettings.conferencing.availableDialInLocations)
-    };
-
-    this.haveDualInData = this.virtualRoomDialInLocations.options.length !== 0;
-
-    this.allowPresentPolicy = {
-      options: this.allowPresentPolicyList,
-      selected: this.searchById(this.currentRoom.allowPresentPolicy, this.allowPresentPolicyList)
-    };
-
     // TODO check than analog working correct
     //   $scope.$watch('allowPresentPolicy.selected', (allowPresentPolicyOptions) => {
     //     if (allowPresentPolicyOptions) {
@@ -447,11 +479,6 @@ export class UserSettingsComponent implements OnInit {
     //       $scope.currentRoom.allowPresentPolicy = allowPresentPolicyOptions.id;
     //     }
     //   });
-
-    this.virtualRoomInvitationLanguages = {
-      options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableInvitationLanguages),
-      selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
-    };
 
     // TODO check than analog working correct
     //   $scope.$watch('virtualRoomInvitationLanguages.selected', (language) => {
@@ -488,7 +515,7 @@ export class UserSettingsComponent implements OnInit {
 
     this.filteredContacts = [];
 
-    this.delegatedUsers = this.userSettings.conferencing.delegatedUsers;
+    this.delegatedUsers = _.cloneDeep(this.userSettings.conferencing.delegatedUsers);
 
     // TODO make analog of this watch and check than analog working correct
     // $scope.$watch('currentRoom.attendees.length', (newValue, oldValue) => {
@@ -665,7 +692,7 @@ export class UserSettingsComponent implements OnInit {
     //   class: 'cancel'
     // }];
 
-    this.originalSettings = _.clone(this.userSettings);
+    this.originalSettings = _.cloneDeep(this.userSettings);
 
     // TODO check than analog working correct
     // $scope.$watch('dateFormatSettings.selected', () => {
@@ -696,8 +723,6 @@ export class UserSettingsComponent implements OnInit {
     //   $scope.currentRoom = roomToUpdate;
     //   $scope.virtualRoomNumber.selected = roomToUpdate;
     // }
-
-    this.isOAuthUser = window.localStorage.oauth2Authentication || false;
 
     this.isMultiTenant = this.userSettingsService.portalResources.multitenant;
   }
@@ -731,7 +756,7 @@ export class UserSettingsComponent implements OnInit {
     // set selected room as default
     this.defaultVirtualRoom.selected = $event;
     this.defaultVirtualRoom.selected.defaultRoom = true;
-    this.userSettings.conferencing.defaultVirtualRoom = $event;
+    this.userSettings.conferencing.defaultVirtualRoom = this.defaultVirtualRoom.selected.virtualRoomId;
   }
 
   virtualRoomNumberSelected(): void {
@@ -902,6 +927,10 @@ export class UserSettingsComponent implements OnInit {
     //     }
   }
 
+  setDateFormat(dateFormat: string): void{
+    this.dateFormatSettings.selected = dateFormat;
+  }
+
   allowPresentPolicySelected(): void {
     // TODO get allowPresentPolicyOptions
     //     if (allowPresentPolicyOptions) {
@@ -1049,9 +1078,14 @@ export class UserSettingsComponent implements OnInit {
     }, 700);
   }
 
+  selectedChanged(event): void {
+    this.delegatedUsers = event;
+  }
+
   removeUser(userId): void {
     this.delegatedUsers = this.delegatedUsers.filter(user => user.userId !== userId);
     this.userSettings.conferencing.delegatedUsers = this.delegatedUsers;
+    console.log('hello remove users', this.userSettings.conferencing.delegatedUsers, this.originalSettings.conferencing.delegatedUsers);
   }
 
   changePreferences(): void {
@@ -1066,27 +1100,26 @@ export class UserSettingsComponent implements OnInit {
     };
   }
 
-  isOKDisabled(): void {
+  isOKDisabled(): boolean {
     if(this.currentTab === this.TAB.ROOM){
-      return ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) || this.data.moderatorPin === undefined) ||
-        !this.areAllPinsCorrect();
+      return this.data.moderatorPin === undefined || !this.areAllPinsCorrect();
     }
-    return ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) || this.data.moderatorPin === undefined) ||
-      (this.wasVirtualRoomSettingChanged() && !this.areAllPinsCorrect());
+    return this.data.moderatorPin === undefined || (this.wasVirtualRoomSettingChanged() && !this.areAllPinsCorrect());
   }
 
   isApplyDisabled(): boolean {
-    return ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) ||
-      !this.settingsChanged() ||
-      this.data.moderatorPin === undefined) &&
-      (this.changePasswordForm && (!this.changePasswordForm.form.changePasswordForm.$dirty ||
-        this.changePasswordForm.form.changePasswordForm.newPassword.$error.required ||
-        this.changePasswordForm.form.changePasswordForm.newPassword2.$error.required ||
-        this.changePasswordForm.form.changePasswordForm.newPassword.$error.matchError ||
-        this.changePasswordForm.form.changePasswordForm.newPassword2.$error.matchError ||
-        this.changePasswordForm.form.changePasswordForm.currentPassword.$error.required ||
-        this.changePasswordForm.form.changePasswordForm.currentPassword.$error.bad
-      ));
+    return true;
+    // ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) ||
+    //   !this.settingsChanged() ||
+    //   this.data.moderatorPin === undefined) &&
+    //   (this.changePasswordForm && (!this.changePasswordForm.form.changePasswordForm.$dirty ||
+    //     this.changePasswordForm.form.changePasswordForm.newPassword.$error.required ||
+    //     this.changePasswordForm.form.changePasswordForm.newPassword2.$error.required ||
+    //     this.changePasswordForm.form.changePasswordForm.newPassword.$error.matchError ||
+    //     this.changePasswordForm.form.changePasswordForm.newPassword2.$error.matchError ||
+    //     this.changePasswordForm.form.changePasswordForm.currentPassword.$error.required ||
+    //     this.changePasswordForm.form.changePasswordForm.currentPassword.$error.bad
+    //   ));
   }
 
   setCurrentTab(tab): void {
@@ -1166,11 +1199,132 @@ export class UserSettingsComponent implements OnInit {
   }
 
   voicePromptLanguageChanged(language): void {
+    this.voicePromptLanguage.selected = language;
     if (language) {
       this.logger.log('voicePromptLanguage changed to %s', language.displayName);
       this.userSettings.voicePromptLanguage = language.id;
     }
-    this.voicePromptLanguage.selected = language;
+  }
+
+  changePassword(data?): void {
+    this.logger.info('Change password');
+    // const form = data.form;
+    // form.$error.server = false;
+    // form.$error.server_bad_old_password = false;
+    // form.$error.server_unable_use_old_password = false;
+    // form.$error.server_change_frequency = false;
+    // form.$error.server_change_repeated_chars = false;
+    // form.$error.server_change_complexity = false;
+    // form.$error.server_too_short = false;
+    // form.$error.server_invalid_token = false;
+    // form.$error.number_previous_passwords_cannot_reused = false;
+    // form.$error.cannot_contain_loginId = false;
+    // form.$error.must_contain_categories = false;
+    // form.$error.cannot_contain_repeted_chars = false;
+    // form.$error.cannot_contain_sequential_chars = false;
+
+    this.logger.log('Start loading');
+    // $scope.$emit(EVENT.CUSTOM.LOADING_STARTED);
+    const onAlways = () => {
+      setTimeout(() => {
+        this.logger.log('Stop loading');
+        // $rootScope.$broadcast(EVENT.CUSTOM.LOADING_FINISHED);
+      });
+    };
+
+    const onDone = (response) => {
+      this.logger.log('Password has been changed. Clean up form, %o', JSON.stringify(response));
+      // $scope.password.currentPassword = '';
+      // $scope.password.newPassword = '';
+      // $scope.password.newPassword2 = '';
+      this.changePasswordForm.controls.currentPassword.setValue('');
+      this.changePasswordForm.controls.newPassword.setValue('');
+      this.changePasswordForm.controls.confirmPassword.setValue('');
+      // form.$setPristine();
+      // form.$setUntouched();
+      // if (confirmationToken) {
+      //   $state.go(STATE.JOIN);
+      // }
+      if (data.promise) {
+        data.promise.resolve();
+      }
+    };
+
+    const onFail = (response) => {
+      this.logger.warn('Password has not been changed, %o', JSON.stringify(response));
+      // form.$invalid = true;
+
+      // switch (response.responseJSON.error[0].errorCode) {
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_OLD_BAD':
+      //     form.$error.server_bad_old_password = true;
+      //     if (form.currentPassword) {
+      //       form.currentPassword.$error.bad = true;
+      //     }
+      //     break;
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_OLD_UNABLE_USE':
+      //     form.$error.server_unable_use_old_password = true;
+      //     break;
+      //   case 'ERROR_CANNOT_BECHANGE_FREQUENTLY':
+      //     form.$error.server_change_frequency = true;
+      //     break;
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_REPEATED_CHARS':
+      //     form.$error.server_change_repeated_chars = true;
+      //     break;
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_COMPLEXITY':
+      //     form.$error.server_change_complexity = true;
+      //     break;
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_NEW_SHORT':
+      //     form.$error.server_too_short = true;
+      //     break;
+      //   case 'ERC_AUTH_TOKEN_INVALID':
+      //     // TODO: handle unauthorized access, broadcast appropriate event
+      //     break;
+      //   case 'ERC_AUTH_PASSWORD_CHANGE_TOKEN_INVALID':
+      //     form.$error.server_invalid_token = true;
+      //     break;
+      //   case 'ERROR_CANNOT_MACTH_PASSWORD_HISTORY':
+      //     form.$error.number_previous_passwords_cannot_reused = true;
+      //     break;
+      //   case 'ERROR_CANNOT_CONTAIN_LOGIN_ID':
+      //     form.$error.cannot_contain_loginId = true;
+      //     break;
+      //   case 'ERROR_MUST_CONTAIN_4_CATEGORIES':
+      //     form.$error.must_contain_categories = true;
+      //     break;
+      //   case 'ERROR_CANNOT_CONTAIN_REPEATED_CHARS':
+      //     form.$error.cannot_contain_repeted_chars = true;
+      //     break;
+      //   case 'ERROR_CANNOT_CONTAIN_SEQUENTIAL_CHARS':
+      //     form.$error.cannot_contain_sequential_chars = true;
+      //     break;
+      //   case 'ERC_USER_NEW_PASSWORD_TOO_SHORT':
+      //     form.$error.server_too_short = true;
+      //     break;
+      //   default:
+      //     form.$error.server = true;
+      // }
+
+      if (data.promise) {
+        data.promise.reject();
+      }
+    };
+
+    // if ($scope.password.confirmationToken) {
+    //   this.logger.log('Guest tries to change password');
+    //   UserSettingsService.getAvayaUserService()
+    //     .changePassword(null, $scope.password.confirmationToken,
+    //     $scope.password.newPassword, null, $rootScope.resources.resources.authentication.POST.changePassword.href)
+    //     .fail(onFail).done(onDone).always(onAlways);
+    // } else {
+    //   this.logger.log('logged in tries to change password');
+    //   UserSettingsService.getAvayaUserService()
+    //     .changePassword($scope.password.currentPassword, null, $scope.password.newPassword, PortalResources.getTenantParams.user)
+    //     .fail(onFail).done(onDone).always(onAlways);
+    // }
+
+    this.userSettingsService.getAvayaUserService().changePassword(this.changePasswordReactiveForm.value.currentPassword, null,
+      this.changePasswordReactiveForm.value.newPassword, this.userSettingsService.portalResources.getTenantParams.user)
+      .fail(onFail).done(onDone).always(onAlways);
   }
 
   private wasVirtualRoomSettingChanged(): boolean {

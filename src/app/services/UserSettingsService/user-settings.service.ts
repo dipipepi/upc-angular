@@ -97,7 +97,7 @@ export class UserSettingsService {
     }
   }
 
-  getAvayaUserService(): void {
+  getAvayaUserService(): any {
     return this.service;
   }
 

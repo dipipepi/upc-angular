@@ -1,0 +1,176 @@
+@import "src/assets/styles/theme";
+
+.tag-selector {
+    position: relative;
+    display: block;
+    border: 1px solid @input-borders-color;
+    background: @background-white;
+    font-size: 0;
+
+    &.focused {
+        box-shadow: 0 0 1px 1px @focus;
+    }
+
+    &.max-room-participant{
+        box-shadow: 0 0 1px 1px @presence-yellow;
+    }
+
+    .removing .tag:last-child {
+        background: @background-highlight-2;
+    }
+
+    .tag-container {
+        padding: 1px;
+
+        .tag {
+            display: inline-block;
+            margin: 1px;
+            font-size: 13px;
+            padding: 5px 10px;
+            color: @text-color-black;
+            background: fade(@background-highlight-2, 65%);
+            cursor: default;
+
+            div[ng-transclude] {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .secondary,
+            .primary {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 300px;
+                width: auto;
+                margin: 0;
+            }
+
+            .you {
+                vertical-align: middle;
+            }
+
+            .secondary {
+                color: @text-color-dark;
+            }
+
+            span.delete {
+                margin-left: 5px;
+            }
+
+        }
+
+        .tag-input {
+            border: none;
+            margin: 5px 10px;
+            font-size: 13px;
+            color: inherit;
+            outline: none;
+            width: 300px;
+        }
+    }
+
+    .tag-options {
+        position: absolute;
+        display: block;
+        background: fade(@background-black, 85%);
+        color: @text-color-light;
+        padding: 0;
+        list-style-type: none;
+        font-size: 13px;
+        margin: 1px;
+        z-index: 3;
+        max-height: 10em;
+        overflow: auto;
+
+        .tag-option {
+            display: block;
+            padding: 5px 10px;
+            white-space: nowrap;
+
+            &.selected {
+                background: fade(@background-white, 10%);
+            }
+
+            &.searching::after {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                border: 3px solid fade(@background-white, 25%);
+                border-top: 3px solid transparent;
+                margin: 10px auto;
+                animation: spin 1s linear infinite;
+            }
+
+
+            &:hover .primary,
+            &:hover .secondary,
+            &:hover .tertiary,
+            &.selected .primary,
+            &.selected .secondary,
+            &.selected .tertiary{
+                color: @highlight-4;
+            }
+        }
+
+        .tertiary,
+        .secondary,
+        .primary {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            max-width: 300px;
+        }
+
+        .primary {
+            width: 30%;
+        }
+        .tertiary,
+        .secondary {
+            width: 30%;
+            color: @text-color-med;
+        }
+
+        .tertiary{
+            width:40%;
+
+            &:not(.hideBrackets) {
+                &:after {
+                    content: ')';
+                }
+
+                &:before {
+                    content: '(';
+                }
+            }
+        }
+
+        .single {
+            width: 100%;
+        }
+    }
+}
+
+.user-search.tag-selector{
+    .tag-options{
+        background: fade(@background-white, 85%);
+        top: 40px;
+        .tag-option{
+            span{
+                width: auto;
+                color: black;
+            }
+        }
+
+        .tag-option:hover{
+            span{
+                color: black;
+            }
+            background-color: #EDF4FB;
+        }
+    }
+}
