@@ -37,6 +37,7 @@
               "src/assets/libs/third_party/jszip.min.js",
               "src/assets/libs/third_party/mime-js.min.js",
               "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/moment/moment.js",
               "src/libs/jsmeetingmgmt/sdk/avayaMeetingManagementClient.js",
               "src/libs/jsuserconfig/sdk/avayaUserClient.js",
               "src/libs/jsrecording/sdk/jscsdk/avayaRecordingClient.js",

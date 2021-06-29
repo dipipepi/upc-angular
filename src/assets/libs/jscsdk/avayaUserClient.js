@@ -4493,11 +4493,11 @@
              * @desc link to Mac Client
              */
             this.linkToMacClient = config.linkToMacClient || '';
-             
+
             this.getUserDetailsServerApiVersions = [AvayaUserClient.Constants.CONTENT_TYPES.FETCH];
             this.addUpdateUserPreferencesServerApiVersions = [AvayaUserClient.Constants.CONTENT_TYPES.UPDATE];
             this.changePasswordServerApiVersions = [AvayaUserClient.Constants.CONTENT_TYPES.CHANGE_PASS];
-            
+
             if (config.resources) {
 
                 if (config.resources.user) {

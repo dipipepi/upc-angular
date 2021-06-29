@@ -16,8 +16,6 @@ import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn} 
 export function passwordsMatch(...arg): ValidatorFn {
 
   return (control: FormGroup): ValidationErrors | null => {
-    console.log('hello', control);
-
     if(control.value.newPassword === '' && control.value.confirmPassword === ''){
       return {passDoNotMatch: false};
     } else if((control.value.newPassword !== '' && control.value.newPassword !== control.value.confirmPassword) ||

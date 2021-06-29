@@ -61,7 +61,7 @@ intended publication of such source code.
 
           <div class="settings-item upc-audio-prompt-language">
             <span>{{'SETTINGS.USER_TAB.AUDIO_PROMPTS_LANGUAGE' | translate}}</span>
-            <app-custom-select (ngModelChange)="voicePromptLanguageChanged($event)" [options]="voicePromptLanguage.options" [model]="voicePromptLanguage.selected" key="id" value="localizedDisplayName" disabled="{{!userSettingsService.portalResources.ottMode}}}"></app-custom-select>
+            <app-custom-select (ngModelChange)="voicePromptLanguageChanged($event)" [options]="voicePromptLanguage.options" [model]="voicePromptLanguage.selected" key="id" value="localizedDisplayName" [disabled]="!userSettingsService.portalResources.ottMode"></app-custom-select>
           </div>
 
           <div class="settings-item participant-id" *ngIf="!isMultiTenant">
@@ -124,11 +124,267 @@ intended publication of such source code.
 
 <!--          -->
         </div>
-
-        <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}}"
+<!---->
+        <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}} " *ngIf="currentTab === TAB.ROOM"
              ng-include=":: 'app/components/settings/templates/SettingsRoom.html'">
-        </div>
+          <form class="room-settings">
+            <!-- Virtual room number -->
+            <div class="settings-item  upc-room-number">
+              <span>{{'SETTINGS.ROOM_TAB.ROOM_NUMBER' | translate}}</span>
+              <app-custom-select (ngModelChange)="virtualRoomNumberSelected($event)" [options]="virtualRoomNumber.options" [model]="virtualRoomNumber.selected" key="virtualRoomId" value="number"></app-custom-select>
+            </div>
 
+            <!-- Virtual room name -->
+            <div class="settings-item upc-room-name">
+              <span>{{'SETTINGS.ROOM_TAB.ROOM_NAME' | translate}}</span>
+<!--              <input class="default-input {{(roomForm.roomName.$error.pattern || roomForm.roomName.$error.required) ? 'error-input' : ''}}"-->
+<!--                     name="roomName"-->
+<!--                     [(ngModel)]="currentRoom.name"-->
+<!--                     [attr.title]="currentRoom.name"-->
+<!--                     type="text"-->
+<!--                     maxlength="80"-->
+<!--                     required-->
+<!--                     autocomplete="off"-->
+<!--                     [pattern]="roomNamePattern"-->
+<!--              >-->
+              <input class="default-input"
+                     name="roomName"
+                     [(ngModel)]="currentRoom.name"
+                     [attr.title]="currentRoom.name"
+                     type="text"
+                     maxlength="80"
+                     required
+                     autocomplete="off"
+                     [pattern]="roomNamePattern"
+              >
+<!--              <div class="default-error" *ngIf="roomForm.roomName.$error.pattern"-->
+<!--                   translate-once="SETTINGS.ERROR.VR_NAME_NOT_ALLOWED_CHARACTERS"></div>-->
+<!--              <div class="default-error" ng-if="roomForm.roomName.$error.required" translate-once="SETTINGS.ERROR.REQUIRED"></div>-->
+            </div>
+
+            <!-- Description -->
+            <div class="settings-item  upc-room-description">
+              <span>{{'SETTINGS.ROOM_TAB.ROOM_DESCRIPTION' | translate}}</span>
+              <input class="default-input"
+                     [(ngModel)]="currentRoom.description"
+                     [attr.title]="currentRoom.description"
+                     type="text"
+                     name="description"
+                     maxlength="200"
+              >
+            </div>
+
+            <!-- Meeting Type -->
+            <div class="settings-item  upc-room-meeting-type">
+              <span>{{'SETTINGS.ROOM_TAB.MEETING_TYPE' | translate}}</span>
+              <app-custom-select class="test" (ngModelChange)="meetingTypeSelected($event)" [disabled]="canChangeMeetingType()" [options]="meetingType.options" [model]="meetingType.selected" key="serviceId" value="prefixAndName"></app-custom-select>
+            </div>
+
+            <!-- Audio Prompt language -->
+            <div class="settings-item  upc-room-audio-prompt-language">
+              <span>{{'SETTINGS.ROOM_TAB.AUDIO_PROMPTS_LANGUAGE' | translate}}</span>
+              <app-custom-select (ngModelChange)="virtualRoomVoicePromptLanguageSelected($event)" [options]="virtualRoomVoicePromptLanguage.options" [model]="virtualRoomVoicePromptLanguage.selected" key="id" value="localizedDisplayName" [disabled]="!userSettingsService.portalResources.ottMode"></app-custom-select>
+            </div>
+
+            <!-- Invitation Language -->
+            <div class="settings-item  upc-room-invitation-language">
+              <span>{{'SETTINGS.ROOM_TAB.INVITATION_LANGUAGE' | translate}}</span>
+              <app-custom-select (ngModelChange)="virtualRoomInvitationLanguagesSelected($event)" class="invitation-language" [options]="virtualRoomInvitationLanguages.options" [model]="virtualRoomInvitationLanguages.selected" key="id" value="localizedDisplayName" [disabled]="!userSettingsService.portalResources.ottMode"></app-custom-select>
+            </div>
+
+            <!-- Entry Announcement -->
+            <div class="settings-item upc-room-entry-announcement">
+              <span>{{'SETTINGS.ROOM_TAB.ENTRY_ANNOUNCEMENT' | translate}}</span>
+              <app-custom-select (ngModelChange)="entryAnnouncementSelected($event)" name="entryAnnouncement" [options]="entryAnnouncement.options" [model]="entryAnnouncement.selected" key="id" value="name" ng-required="!entryAnnouncement.selected"></app-custom-select>
+              <!--              <div class="default-error" *ngIf="roomForm.entryAnnouncement.$error.required" translate-once="SETTINGS.ERROR.REQUIRED"></div>-->
+            </div>
+
+            <!-- Exit Announcement -->
+            <div class="settings-item upc-room-exit-announcement">
+              <span>{{'SETTINGS.ROOM_TAB.EXIT_ANNOUNCEMENT' | translate}}</span>
+              <custom-select name="exitAnnouncement" options="exitAnnouncement.options" ng-model="exitAnnouncement.selected" key="id" value="name" ng-required="!exitAnnouncement.selected"></custom-select>
+              <app-custom-select (ngModelChange)="exitAnnouncementSelected($event)" name="exitAnnouncement" [options]="exitAnnouncement.options" [model]="exitAnnouncement.selected" key="id" value="name" ng-required="!exitAnnouncement.selected"></app-custom-select>
+              <!--              <div class="default-error" ng-if="roomForm.exitAnnouncement.$error.required">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
+            </div>
+
+            <!-- Max Participants to play the entry/exit tone -->
+            <div class="settings-item upc-room-max-participants-play-tone">
+              <span>{{'SETTINGS.ROOM_TAB.MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_TONE' | translate}}</span>
+              <input class="default-input"
+                     name="maxPlayToneNumber"
+                     [(ngModel)]="currentRoom.maxPlayToneNumber"
+                     type="text"
+                     maxlength="3"
+                     autocomplete="off"
+                     [required]="currentRoom.maxPlayToneNumber !== ''"
+                     only-numbers>
+<!--              <div class="default-error" ng-if="errorMaxPlayToneNumber">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>-->
+<!--              <div class="default-error" ng-if="roomForm.maxPlayToneNumber.$error.required && !errorMaxPlayToneNumber">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
+            </div>
+
+            <!-- Max Participants to play the entry/exit name announcement -->
+            <div class="settings-item upc-room-max-participants-play-announcement">
+              <span>{{'SETTINGS.ROOM_TAB.MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_NAME_ANNOUNCEMENT' | translate}}</span>
+              <input class="default-input"
+                     name="maxPlayNameNumber"
+                     [(ngModel)]="currentRoom.maxPlayNameNumber"
+                     type="text"
+                     maxlength="3"
+                     autocomplete="off"
+                     [required]="currentRoom.maxPlayNameNumber !== ''"
+                     only-numbers>
+<!--              <div class="default-error" ng-if="errorMaxPlayNameNumber">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>-->
+<!--              <div class="default-error" ng-if="roomForm.maxPlayNameNumber.$error.required && !errorMaxPlayNameNumber">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
+            </div>
+
+            <!-- Preferred Dial In Location -->
+            <div class="settings-item upc-room-preferred-dial-in-location" *ngIf="haveDualInData">
+              <span>{{'SETTINGS.ROOM_TAB.PREFERRED_DIAL_IN_LOCATION' | translate}}</span>
+<!--              <custom-select options="virtualRoomDialInLocations.options" ng-model="virtualRoomDialInLocations.selected"-->
+<!--                             key="id" value="label" ></custom-select>-->
+              <app-custom-select (ngModelChange)="virtualRoomDialInLocationsSelected($event)" [options]="virtualRoomDialInLocations.options" [model]="virtualRoomDialInLocations.selected"
+                                 key="id" value="label"></app-custom-select>
+            </div>
+
+            <!-- Enable sharing -->
+            <div class="settings-item upc-room-enable-sharing">
+              <span>{{'SETTINGS.ROOM_TAB.ENABLE_SHARING_FOR' | translate}}</span>
+              <app-custom-select name="allowPresentPolicy"
+                                 (ngModelChange)="allowPresentPolicySelected($event)"
+                                 [options]="allowPresentPolicy.options"
+                                 [model]="allowPresentPolicy.selected"
+                                 key="id"
+                                 value="name"></app-custom-select>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="separator"></div>
+
+            <div class="upc-room-protect-participant-id" *ngIf="!isMultiTenant">
+              <!-- Protected Participant ID -->
+              <label class="default-checkbox">
+                <input name="protectMeetingWithParticipantId" type="checkbox" [(ngModel)]="currentRoom.protectMeetingWithParticipantId">
+                <span>{{'SETTINGS.ROOM_TAB.PROTECTED_PARTICIPANT_ID' | translate}}</span>
+              </label>
+
+              <span *ngIf="currentRoom.protectMeetingWithParticipantId" class="settings-note">{{'SETTINGS.ROOM_TAB.PROTECTED_PARTICIPANT_ID_INFO' | translate}}</span>
+
+            </div>
+
+            <div class="separator"></div>
+
+            <!-- Default room -->
+            <label class="default-checkbox upc-room-default-room">
+              <input disabled="disabled" name="defaultRoom" type="checkbox" [(ngModel)]="currentRoom.defaultRoom">
+              <span>{{'SETTINGS.ROOM_TAB.DEFAULT' | translate}}</span>
+            </label>
+
+            <div class="separator"></div>
+
+            <!-- Allow requests to join locked meetings -->
+            <label class="default-checkbox upc-room-allow-requests">
+              <input name="allowKnocking" type="checkbox" [(ngModel)]="currentRoom.allowKnocking">
+              <span>{{'SETTINGS.ROOM_TAB.ALLOW_REQUESTS' | translate}}</span>
+            </label>
+
+            <!-- Turn on recording automatically at the start of meetings -->
+            <label class="default-checkbox tooltiped upc-room-enable-recording" [attr.title]="isAllowRecordingDisabled() ? recordingNotSupportedTitle : ''">
+              <input type="checkbox"
+                     name="allowRecording"
+                     [(ngModel)]="currentRoom.allowRecording"
+                     ng-true-value="'ON'"
+                     ng-false-value="'OFF'"
+                     [disabled]="isAllowRecordingDisabled()">
+              <span>{{'SETTINGS.ROOM_TAB.ALWAYS_RECORD_MEETING' | translate}}</span>
+            </label>
+
+            <!-- Place participants in a 'waiting room' until the moderator joins -->
+            <label class="default-checkbox upc-room-place-participant-waiting-room" (click)="changeWaitingRoom()">
+              <input type="checkbox"
+                     name="waitingRoom"
+                     [(ngModel)]="currentRoom.waitingRoom"
+                     [disabled]="isEmpty(currentRoom.moderatorPIN)">
+              <span>{{'SETTINGS.ROOM_TAB.WAITING_ROOM' | translate}}</span>
+            </label>
+
+            <!-- Terminate meeting after the last moderator leaves -->
+            <label class="default-checkbox">
+              <input type="checkbox"
+                     name="terminateMeetingWhenModeratorLeft"
+                     [(ngModel)]="currentRoom.terminateMeetingWhenModeratorLeft"
+              >
+              <span>{{'SETTINGS.ROOM_TAB.TERMINATE_MEETING' | translate}}</span>
+            </label>
+
+            <div class="separator"></div>
+
+            <!-- Advanced -->
+            <div class="settings-item upc-room-advanced">
+              <span>{{'SETTINGS.ROOM_TAB.ADVANCED' | translate}}</span>
+            </div>
+
+            <!-- Max Participants -->
+            <div class="settings-item upc-room-max-participants">
+              <span>{{'SETTINGS.ROOM_TAB.MAX_PARTICIPANTS' | translate}}</span>
+              <input class="default-input"
+                     type="text"
+                     disabled
+                     *ngIf="currentRoom.maxParticipants <= 1"
+                     placeholder="{{'SETTINGS.ROOM_TAB.NO_LIMIT' | translate}}">
+              <input class="default-input"
+                     type="text"
+                     disabled
+                     *ngIf="currentRoom.maxParticipants > 1"
+                     placeholder="{{currentRoom.maxParticipants}}">
+            </div>
+
+            <!-- Max Room Endpoints -->
+            <div class="settings-item upc-room-max-room-endpoints">
+              <span>{{'SETTINGS.ROOM_TAB.MAX_ROOM_ENDPOINTS' | translate}}</span>
+              <input class="default-input"
+                     type="text"
+                     disabled
+                     *ngIf="currentRoom.maxRoomParticipants < 0"
+                     placeholder="{{'SETTINGS.ROOM_TAB.NO_LIMIT' | translate}}">
+              <input class="default-input"
+                     type="text"
+                     disabled
+                     *ngIf="currentRoom.maxRoomParticipants >= 0"
+                     placeholder="{{currentRoom.maxRoomParticipants}}">
+            </div>
+
+            <div *ngIf="userSettings.conferencing.schedulable" class="separator"></div>
+
+            <!-- selector for add endpoints -->
+            <tag-selector ng-if="userSettings.conferencing.schedulable"
+                          selected="currentRoom.attendees"
+                          options="filteredEndpoints"
+                          placeholder="'SETTINGS.ROOM_TAB.SEARCH_ENDPOINTS'"
+                          primary="terminalName"
+                          secondary=""
+                          tertiary=""
+                          unique-property="terminalId"
+                          callback="searchEndpointInputChanged"
+                          searching="searching">
+            </tag-selector>
+            <app-tag-selector *ngIf="userSettings.conferencing.schedulable"
+                              [selected]="currentRoom.attendees"
+                              [options]="filteredEndpoints"
+                              [placeholder]="'SETTINGS.ROOM_TAB.SEARCH_ENDPOINTS'"
+                              primary="terminalName"
+                              secondary=""
+                              tertiary=""
+                              uniqueProperty="terminalId"
+                              [callback]="searchEndpointInputChanged.bind(this)"
+                              [searching]="searching"></app-tag-selector>
+            <div class="endpoints-wrapper">
+              <app-endpoints (endpointsRemoved)="endpointsRemoved($event)" [endpoints]="currentRoom.attendees"></app-endpoints>
+<!--              <endpoints endpoints="currentRoom.attendees"></endpoints>-->
+            </div>
+          </form>
+        </div>
+<!---->
         <div class="tab-content {{currentTab === TAB.GENERAL ? '' : 'hidden'}}">
 <!--          -->
           <div class="settings-item upc-display-name">
@@ -305,7 +561,7 @@ intended publication of such source code.
 <!--          -->
         </div>
 
-        <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}"
+        <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}" *ngIf="currentTab === TAB.PASSWORD"
              ng-include=":: 'app/components/settings/templates/SettingsPassword.html'"
              ng-controller="ChangePasswordController">
           <form name="loginForm" [formGroup]="changePasswordReactiveForm">
@@ -350,9 +606,9 @@ intended publication of such source code.
 <!--                <div ng-message="matchError" class="default-error" translate-once="SETTINGS.PASSWORD_TAB.ERROR.DO_NOT_MATCH"></div>-->
 <!--              </div>-->
             </div>
-            <div class="settings-item" *ngIf="changePasswordReactiveForm.errors.passDoNotMatch">
-              <span>pass do not match</span>
-            </div>
+<!--            <div class="settings-item" *ngIf="changePasswordReactiveForm.errors.errorFromServer">-->
+<!--              <span>pass do not match</span>-->
+<!--            </div>-->
 
           </form>
 

@@ -28,6 +28,7 @@ import { CustomSelectComponent } from './shared/custom-select/custom-select.comp
 import {MatSelectModule} from '@angular/material/select';
 import { ShowPasswordComponent } from './shared/show-password/show-password.component';
 import { TagSelectorComponent } from './shared/tag-selector/tag-selector.component';
+import { EndpointsComponent } from './shared/endpoints/endpoints.component';
 
 
 // tslint:disable-next-line:typedef
@@ -52,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     WarningSaveLogsDialogComponent,
     ShowHaveNotLogDialogComponent,
     ShowPasswordComponent,
-    TagSelectorComponent
+    TagSelectorComponent,
+    EndpointsComponent
   ],
   imports: [
     BrowserModule,

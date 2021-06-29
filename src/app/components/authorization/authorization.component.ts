@@ -151,33 +151,22 @@ export class AuthorizationComponent implements OnInit, OnDestroy {
     this.logger.log('Show error on login form');
     switch (response.status) {
       case STATUS_CODE.BAD_REQUEST:
-        this.translate.get('LOGIN.ERROR.VALIDATION_FAILED').subscribe((res: string) => {
-          this.message = res;
-        });
+        this.message = this.translate.instant('LOGIN.ERROR.VALIDATION_FAILED');
         break;
       case STATUS_CODE.UNAUTHORIZED:
-        if (response.error.error[0].errorCode === ERROR_CODE.AUTH.USER_AUTH_DISABLED) {
-          this.translate.get('LOGIN.ERROR.USER_AUTH_DISABLED', { name: this.authForm.value.login }).subscribe((res: string) => {
-            this.message = res;
-          });
+        if (response.data.error[0].errorCode === ERROR_CODE.AUTH.USER_AUTH_DISABLED) {
+          this.message = this.translate.instant('LOGIN.ERROR.USER_AUTH_DISABLED', { name: this.credentials.login });
         } else {
-          this.translate.get('LOGIN.ERROR.INVALID_CREDENTIALS').subscribe((res: string) => {
-            this.message = res;
-          });
+          this.message = this.translate.instant('LOGIN.ERROR.INVALID_CREDENTIALS');
         }
         this.credentials.valid = false;
         break;
       default:
-        this.translate.get('LOGIN.ERROR.ERROR').subscribe((res: string) => {
-          this.message = res;
-        });
+        this.message = this.translate.instant('LOGIN.ERROR.ERROR');
     }
 
     if(response.error.error[0].errorCode === ERROR_CODE.AUTH.ERC_AUTH_EMPTY_EMAIL){
-      this.translate.get('LOGIN.ERROR.ERC_AUTH_EMPTY_EMAIL').subscribe((res: string) => {
-        this.message = res;
-        this.credentials.valid = false;
-      });
+      this.message = this.translate.instant('LOGIN.ERROR.ERC_AUTH_EMPTY_EMAIL');
     }
     this.logger.log('Error message is %s', this.message);
     this.loading = false;

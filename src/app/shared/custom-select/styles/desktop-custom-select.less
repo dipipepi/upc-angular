@@ -1,0 +1,63 @@
+.default-select {
+    div {
+        position: static;
+    }
+
+    .default-select-title {
+        padding: 0 30px 0 10px;
+        overflow: hidden;
+        display: block;
+    }
+
+    select {
+        display: none;
+    }
+
+    .dropdown-block {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background: fade(@background-black, 85%);
+        color: @text-color-light;
+        min-width: 200px;
+        z-index: 2;
+        line-height: 26px;
+        font-size: 14px;
+
+        li {
+            padding: 0 10px 0 10px;
+            position: relative;
+            cursor: default;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            &:hover {
+                color: @highlight-4;
+            }
+
+            &.recent {
+                padding-left: 30px;
+            }
+
+            &.recent::before {
+                content: '';
+                position: absolute;
+                left: 9px;
+                top: 5px;
+                width: 17px;
+                height: 17px;
+                background: @url-recent-meeting;
+            }
+        }
+    }
+}
+
+.invitation-language {
+    .default-select-title {
+        padding: 0 0px 0 10px;
+        text-overflow: ellipsis;
+    }
+}

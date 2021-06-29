@@ -1,384 +1,383 @@
+.ngdialog-overlay {
+  display: none;
+}
 
-  .ngdialog-overlay {
-      display: none;
+.ngdialog-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 50px solid transparent;
+  font-size: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ngdialog-close {
+  display: none;
+}
+
+.tag-selector {
+  margin: 0 12px;
+  background: @background-white @url-search left 5px center no-repeat;
+  padding-left: 23px;
+
+  input {
+    width: 100%;
   }
 
-  .ngdialog-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-top: 50px solid transparent;
-      font-size: 16px;
-      -webkit-overflow-scrolling: touch;
+  .tag {
+    display: none;
   }
+}
 
-  .ngdialog-close {
-      display: none;
-  }
+.endpoints-wrapper {
+  margin: 10px 12px;
+}
 
-  .tag-selector {
-    margin: 0 12px;
-    background: @background-white @url-search left 5px center no-repeat !important;
-    padding-left: 23px;
+.endpoints-header,
+.endpoints-timeline {
+  display: none;
+}
 
-    input {
-      width: 100%;
+.endpoints-titles {
+  position: static !important;
+  width: 100%;
+  padding: 0 !important;
+
+  .endpoint {
+    height: 30px !important;
+    line-height: 30px !important;
+    padding: 0 12px !important;
+
+    .endpoint-title {
+      display: inline-block;
+      width: ~"calc(100% - 10px)";
+      margin: 0;
+      transform: none;
+      height: 100%;
     }
 
-    .tag {
-      display: none !important;
+    .endpoint-remove {
+      display: inline;
+    }
+
+    .endpoint-remove-mobile {
+      display: none;
     }
   }
+}
 
-  .endpoints-wrapper {
-      margin: 10px 12px;
-  }
-
-  .endpoints-header,
-  .endpoints-timeline {
-      display: none;
-  }
-
-  .endpoints-titles {
-      position: static;
-      width: 100%;
-      padding: 0;
-
-      .endpoint {
-          height: 30px;
-          line-height: 30px;
-          padding: 0 12px;
-
-          .endpoint-title {
-              display: inline-block;
-              width: ~"calc(100% - 10px)";
-              margin: 0;
-              transform: none;
-              height: 100%;
-          }
-
-          .endpoint-remove {
-              display: inline;
-          }
-
-          .endpoint-remove-mobile {
-              display: none;
-          }
-      }
-  }
-
-  .reset-disable+span::before{
-      border: 1px solid @light-gray;
-      box-shadow: none;
-  }
-  .reset-disable+span{
-      color: @blue-gray;
-  }
+.reset-disable+span::before{
+  border: 1px solid @light-gray;
+  box-shadow: none;
+}
+.reset-disable+span{
+  color: @blue-gray;
+}
 
 
 .settings-back {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 13px;
-    font-size: 18px;
-    cursor: default;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 13px;
+  font-size: 18px;
+  cursor: default;
 
-    &.active {
-        cursor: pointer;
+  &.active {
+    cursor: pointer;
 
-        &::before {
-            content: '';
-            display: inline-block;
-            border-left: 2px solid;
-            border-bottom: 2px solid;
-            height: 12px;
-            width: 12px;
-            margin: 0 3px;
-            transform: rotate(45deg);
-        }
+    &::before {
+      content: '';
+      display: inline-block;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      height: 12px;
+      width: 12px;
+      margin: 0 3px;
+      transform: rotate(45deg);
     }
+  }
 }
 
 .settings-page,
 .settings-title,
 .settings-navigation,
 .settings-buttons {
-    display: none;
+  display: none;
 
-    &.active {
-        display: block;
-    }
+  &.active {
+    display: block;
+  }
 }
 
 .settings-navigation {
-    height: ~"calc(100% - 41px)";
-    padding: 2px 13px;
+  height: ~"calc(100% - 41px)";
+  padding: 2px 13px;
 }
 
 .settings-page {
-    padding: 18px 13px;
-    font-size: 14px;
+  padding: 18px 13px;
+  font-size: 14px;
 
-    .separator {
-        height: 1px;
-        margin: 18px -13px;
-        background: @input-borders-color;
-    }
+  .separator {
+    height: 1px;
+    margin: 18px -13px;
+    background: @input-borders-color;
+  }
 
-    .default-checkbox,
-    .default-radio {
-        display: block;
-        margin: 18px 0;
-    }
+  .default-checkbox,
+  .default-radio {
+    display: block;
+    margin: 18px 0;
+  }
 
-    a {
-        text-decoration: none;
-        color: @links-color-mobile;
-    }
+  a {
+    text-decoration: none;
+    color: @links-color-mobile;
+  }
 }
 
 .settings-item {
-    display: block;
-    min-height: 30px;
-    margin-bottom: 18px;
-    font-size: 0;
+  display: block;
+  min-height: 30px;
+  margin-bottom: 18px;
+  font-size: 0;
 
-    &>span {
-        width: 48%;
-        padding-right: 5px;
-        font-size: 14px;
-        display: inline-block;
-        vertical-align: middle;
+  &>span {
+    width: 48%;
+    padding-right: 5px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &>span:last-child {
+    width: 100%;
+  }
+
+  .default-error {
+    width: 100%;
+    line-height: 16px;
+    padding: 0;
+    text-align: right;
+
+    &::before {
+      display: none;
     }
+  }
 
-    &>span:last-child {
-        width: 100%;
+  input.default-input.ng-dirty.ng-valid-parse.ng-invalid.ng-touched.ng-invalid-required {
+    border: 1px solid @highlight-1;
+  }
+
+  input[name="maxPlayToneNumber"].ng-invalid, input[name="maxPlayNameNumber"].ng-invalid {
+    border: 1px solid @highlight-1;
+  }
+
+  .centered {
+    margin-top: 25px;
+
+    button.white-button {
+      color: @text-color-light;
+      background: @darkener;
     }
+  }
 
-    .default-error {
-        width: 100%;
-        line-height: 16px;
-        padding: 0;
-        text-align: right;
+  .default-select,
+  .default-input,
+  .static {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    width: 50%;
+    word-wrap: break-word;
 
-        &::before {
-            display: none;
-        }
+    select {
+      width: ~"calc((100% - 26px)/2 - 2px)";
     }
+  }
 
-    input.default-input.ng-dirty.ng-valid-parse.ng-invalid.ng-touched.ng-invalid-required {
-        border: 1px solid @highlight-1;
+  .default-select.ng-invalid {
+    border: 1px solid @highlight-1;
+  }
+
+  .default-select[disabled] {
+    color: inherit;
+    border: none;
+    &::before {
+      content: none;
     }
+  }
 
-    input[name="maxPlayToneNumber"].ng-invalid, input[name="maxPlayNameNumber"].ng-invalid {
-        border: 1px solid @highlight-1;
+  .default-input {
+    height: 35px;
+  }
+
+  .default-input[disabled] {
+    color: @text-color;
+    border: none;
+    &::before {
+      content: none;
     }
-
-    .centered {
-        margin-top: 25px;
-
-        button.white-button {
-            color: @text-color-light;
-            background: @darkener;
-        }
+    &:-ms-input-placeholder {
+      color: @text-color;
     }
-
-    .default-select,
-    .default-input,
-    .static {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 14px;
-        width: 50%;
-        word-wrap: break-word;
-
-        select {
-            width: ~"calc((100% - 26px)/2 - 2px)";
-        }
+    &::placeholder {
+      color: @text-color;
     }
+  }
 
-    .default-select.ng-invalid {
-        border: 1px solid @highlight-1;
-    }
-
-    .default-select[disabled] {
-        color: inherit;
-        border: none;
-        &::before {
-            content: none;
-        }
-    }
-
-    .default-input {
-        height: 35px;
-    }
-
-    .default-input[disabled] {
-        color: @text-color;
-        border: none;
-        &::before {
-            content: none;
-        }
-        &:-ms-input-placeholder {
-            color: @text-color;
-        }
-        &::placeholder {
-            color: @text-color;
-        }
-    }
-
-    .default-radio {
-        margin: 0;
-    }
+  .default-radio {
+    margin: 0;
+  }
 }
 
 .settings-note {
-    color: @blue-gray;
-    padding: 12px;
-    display: block;
+  color: @blue-gray;
+  padding: 12px;
+  display: block;
 }
 
 .settings-navigation-item {
-    cursor: pointer;
-    margin: 18px 0;
-    width: 0;
-    white-space: nowrap;
+  cursor: pointer;
+  margin: 18px 0;
+  width: 0;
+  white-space: nowrap;
 }
 
 .settings-buttons {
-    text-align: center;
-    font-size: 0;
+  text-align: center;
+  font-size: 0;
 
-    button {
-        margin-left: 10px;
-    }
+  button {
+    margin-left: 10px;
+  }
 }
 
 .settings-avatar {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: @background-highlight-1;
+  .avatar-wrapper {
+    margin-left: 15px;
+    width: 20%;
+    display: inline-block;
+    .img-container {
+      position: relative;
+      padding-top: ~"calc(100% - 4px)";
+      background: @url-generic-avatar no-repeat center;
+      background-size: cover;
+      border-radius: 50%;
+      border: solid 2px @background-white;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: @mobile-input-borders-color;
+    }
+    .delete-avatar {
+      display: none;
+    }
+  }
+  .avatar-options {
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+    padding-top: 15px;
+    width: ~"calc(80% - 35px)";
+    span {
+      line-height: 25px;
+    }
+    .user-name {
+      font-size: 18px;
+    }
+    .new-avatar {
+      display: none;
+    }
+    .error-message {
+      color: @highlight-1;
+    }
+  }
+  .mobile-options-button {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    background: @background-highlight-1;
-    .avatar-wrapper {
-        margin-left: 15px;
-        width: 20%;
-        display: inline-block;
-        .img-container {
-            position: relative;
-            padding-top: ~"calc(100% - 4px)";
-            background: @url-generic-avatar no-repeat center;
-            background-size: cover;
-            border-radius: 50%;
-            border: solid 2px @background-white;
-        }
-        img {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: @mobile-input-borders-color;
-        }
-        .delete-avatar {
-            display: none;
-        }
+    margin-top: 10px;
+    position: relative;
+    border: none;
+    background: @mobile-input-borders-color;
+    color: @text-color-light;
+    p {
+      margin: 5px;
     }
-    .avatar-options {
-        display: inline-block;
-        margin-left: 15px;
-        vertical-align: top;
-        padding-top: 15px;
-        width: ~"calc(80% - 35px)";
-        span {
-            line-height: 25px;
-        }
-        .user-name {
-            font-size: 18px;
-        }
-        .new-avatar {
-            display: none;
-        }
-        .error-message {
-            color: @highlight-1;
-        }
-    }
-    .mobile-options-button {
-        width: 100%;
-        margin-top: 10px;
-        position: relative;
-        border: none;
-        background: @mobile-input-borders-color;
-        color: @text-color-light;
-        p {
-            margin: 5px;
-        }
-    }
+  }
 }
 
 .ngdialog.ngdialog-theme-log {
-    top: 0;
-    background: transparent;
-    .ngdialog-overlay {
-        background: fade(@background-black, 40%);
+  top: 0;
+  background: transparent;
+  .ngdialog-overlay {
+    background: fade(@background-black, 40%);
+    display: block;
+  }
+
+  .ngdialog-content {
+    position: absolute;
+    top: ~"calc(50% - 200px)";
+    max-width: 340px;
+    width: auto;
+    left: ~"calc(50% - 170px)";
+    font-size: 14px;
+    border-top: none;
+
+    label {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      margin: 30px 30px;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+    }
+
+    .recording-change-access-level-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      button {
         display: block;
-    }
-
-    .ngdialog-content {
-        position: absolute;
-        top: ~"calc(50% - 200px)";
-        max-width: 340px;
-        width: auto;
-        left: ~"calc(50% - 170px)";
+        margin: 5px 30px 5px;
         font-size: 14px;
-        border-top: none;
-
-        label {
-            display: inline-block;
-            vertical-align: middle;
-            text-align: center;
-            margin: 30px 30px;
-            font-size: 14px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
+        background: @background;
+        border: 1px solid @text-color;
+        height: 32px;
+        padding: 0 32px;
+        border-radius: 16px;
+        overflow: hidden;
+        color: @text-color;
+        &:focus {
+          box-shadow: 0 0 1px 1px @focus;
         }
-
-        .recording-change-access-level-buttons {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-            button {
-                display: block;
-                margin: 5px 30px 5px;
-                font-size: 14px;
-                background: @background;
-                border: 1px solid @text-color;
-                height: 32px;
-                padding: 0 32px;
-                border-radius: 16px;
-                overflow: hidden;
-                color: @text-color;
-                &:focus {
-                    box-shadow: 0 0 1px 1px @focus;
-                }
-            }
-        }
+      }
     }
-    .ngdialog-close {
-        position: absolute;
-        top: 3px;
-        right: 6px;
-    }
+  }
+  .ngdialog-close {
+    position: absolute;
+    top: 3px;
+    right: 6px;
+  }
 }
 
 .ngdialog-theme-log.ngdialog-pin-warning{
-    .ngdialog-content{
+  .ngdialog-content{
     position: absolute;
     max-width: 340px;
     width: auto;
@@ -389,45 +388,45 @@
     border-radius: 15px;
 
     .warning-title{
-        text-align: center;
+      text-align: center;
     }
-    }
+  }
 }
 
 .settings{
-    .tab-content{
-        .delegated-title{
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .refresh{
-            text-align: end;
-            margin: 0 13px 10px 12px;
-            color: #3F93FC;
-        }
+  .tab-content{
+    .delegated-title{
+      margin-bottom: 15px;
+      text-align: center;
+      font-weight: bold;
     }
+
+    .refresh{
+      text-align: end;
+      margin: 0 13px 10px 12px;
+      color: #3F93FC;
+    }
+  }
 }
 
 .user-delegated {
-    .user {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 10px;
+  .user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
 
-        .user-info{
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 50%;
-        }
-
-        .remove-item{
-            color: #559BFD;
-            align-self: center;
-        }
+    .user-info{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 50%;
     }
+
+    .remove-item{
+      color: #559BFD;
+      align-self: center;
+    }
+  }
 
 
 }

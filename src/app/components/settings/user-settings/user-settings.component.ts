@@ -209,7 +209,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     });
 
     this.userSettings = _.cloneDeep(this.originalSettings);
-    console.log('hello', this.userSettings.givenName);
 
     this.currentLocation = this.searchById(this.userSettings.conferencing.locationId, this.locations, 'locationId');
 
@@ -305,48 +304,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         options: this.userSettings.conferencing.virtualRoomSettings
       };
 
-      // TODO check than analog working correct
-      // $scope.$watch('virtualRoomNumber.selected', () => {
-      //   this.logger.log('virtualRoomNumber changed');
-      //   $scope.currentRoom = $scope.virtualRoomNumber.selected;
-      //
-      //   const meetingType = this.searchById($scope.currentRoom.serviceTemplateId, $scope.userSettings.conferencing.meetingServiceList,
-      //   "serviceId");
-      //   $scope.meetingType = {
-      //     selected: meetingType,
-      //     options: $scope.userSettings.conferencing.meetingServiceList
-      //   };
-      //   $scope.virtualRoomInvitationLanguages.selected = this.searchById($scope.currentRoom.invitationLanguage,
-      //   $scope.userSettings.conferencing.availableInvitationLanguages);
-      //   $scope.virtualRoomVoicePromptLanguage.selected = this.searchById($scope.currentRoom.voicePromptLanguage,
-      //   $scope.userSettings.conferencing.availableVoicePromptLanguages);
-      //   $scope.virtualRoomDialInLocations.selected = this.searchById($scope.currentRoom.preferredDialInLocation,
-      //   $scope.userSettings.conferencing.availableDialInLocations);
-      //
-      //   $scope.data.accessPinEnabled = (!!($scope.currentRoom.accessPIN || $scope.currentRoom.oneTimePINRequired)) ||
-      //   PortalResources.resources.meetingPINMinimumLength !== 0;
-      //   this.originalAccessPinEnabled = $scope.data.accessPinEnabled;
-      //   $scope.data.moderatorPin = ($scope.currentRoom.moderatorPIN ? atob($scope.currentRoom.moderatorPIN) : '');
-      //   PinService.setModeratorPinVariables($scope, $scope.data.moderatorPin);
-      //   $scope.entryAnnouncement.selected = this.searchById($scope.currentRoom.entryAnnouncement, this.announcementList);
-      //   $scope.exitAnnouncement.selected = this.searchById($scope.currentRoom.exitAnnouncement, this.announcementList);
-      //   $scope.allowPresentPolicy.selected = this.searchById($scope.currentRoom.allowPresentPolicy, this.allowPresentPolicyList);
-      //
-      //   if ($scope.currentRoom.oneTimePINRequired) {
-      //     $scope.data.permanentPin = '';
-      //   } else {
-      //     $scope.data.permanentPin = ($scope.currentRoom.accessPIN ? atob($scope.currentRoom.accessPIN) : '');
-      //   }
-      //
-      //   PinService.setMeetingPinVariables($scope, false, $scope.data.permanentPin);
-      //
-      //   PinService.isPinCorrect($scope.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, $scope);
-      //   PinService.isPinCorrect($scope.data.permanentPin, PIN_TYPE.MEETING_PIN, $scope);
-      //
-      //   $scope.currentRoom.attendees = $filter('unique')($scope.currentRoom.attendees, 'terminalId');
-      //
-      // });
-
       this.virtualRoomVoicePromptLanguage = {
         options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableVoicePromptLanguages),
         selected : this.searchById(this.currentRoom.voicePromptLanguage , this.userSettings.conferencing.availableVoicePromptLanguages)
@@ -382,6 +339,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableInvitationLanguages),
         selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
       };
+
+      this.setCurrentVirtualRoom(this.currentRoom);
     }
 
     if(this.userSettings.conferencing.localUser && !this.isOAuthUser){
@@ -536,16 +495,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     };
 
     this.currentTab = this.TAB.USER;
-
-    // TODO make analog of this watch and check than analog working correct
-    // $scope.$watch('currentTab', (newValue, oldValue) => {
-    //   if (oldValue === $scope.TAB.PASSWORD) {
-    //     $scope.changePasswordForm.form.changePasswordForm.newPassword = '';
-    //     $scope.changePasswordForm.form.changePasswordForm.newPassword2 = '';
-    //     $scope.changePasswordForm.form.changePasswordForm.currentPassword = '';
-    //     $scope.changePasswordForm.form.changePasswordForm.$setPristine();
-    //   }
-    // });
 
     this.userService = this.userSettingsService.getAvayaUserService();
     this.pictureErrorMessage = undefined;
@@ -727,6 +676,10 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.isMultiTenant = this.userSettingsService.portalResources.multitenant;
   }
 
+  endpointsRemoved(attendees): void {
+    this.currentRoom.attendees = attendees;
+  }
+
   isShowLocalTab():boolean {
     return this.customDeviceDetector.isDesktop();
   }
@@ -759,52 +712,15 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.userSettings.conferencing.defaultVirtualRoom = this.defaultVirtualRoom.selected.virtualRoomId;
   }
 
-  virtualRoomNumberSelected(): void {
-    this.logger.log('virtualRoomNumber changed');
-    this.currentRoom = this.virtualRoomNumber.selected;
-
-    const meetingType = this.searchById(this.currentRoom.serviceTemplateId, this.userSettings.conferencing.meetingServiceList, 'serviceId');
-    this.meetingType = {
-      selected: meetingType,
-      options: this.userSettings.conferencing.meetingServiceList
-    };
-    this.virtualRoomInvitationLanguages.selected = this.searchById(this.currentRoom.invitationLanguage,
-      this.userSettings.conferencing.availableInvitationLanguages);
-    this.virtualRoomVoicePromptLanguage.selected = this.searchById(this.currentRoom.voicePromptLanguage,
-      this.userSettings.conferencing.availableVoicePromptLanguages);
-    this.virtualRoomDialInLocations.selected = this.searchById(this.currentRoom.preferredDialInLocation,
-      this.userSettings.conferencing.availableDialInLocations);
-
-    this.data.accessPinEnabled = (!!(this.currentRoom.accessPIN || this.currentRoom.oneTimePINRequired)) ||
-      this.userSettingsService.portalResources.meetingPINMinimumLength !== 0;
-    this.originalAccessPinEnabled = this.data.accessPinEnabled;
-    this.data.moderatorPin = (this.currentRoom.moderatorPIN ? atob(this.currentRoom.moderatorPIN) : '');
-    this.pinService.setModeratorPinVariables(this, this.data.moderatorPin);
-    this.entryAnnouncement.selected = this.searchById(this.currentRoom.entryAnnouncement, this.announcementList);
-    this.exitAnnouncement.selected = this.searchById(this.currentRoom.exitAnnouncement, this.announcementList);
-    this.allowPresentPolicy.selected = this.searchById(this.currentRoom.allowPresentPolicy, this.allowPresentPolicyList);
-
-    if (this.currentRoom.oneTimePINRequired) {
-      this.data.permanentPin = '';
-    } else {
-      this.data.permanentPin = (this.currentRoom.accessPIN ? atob(this.currentRoom.accessPIN) : '');
-    }
-
-    this.pinService.setMeetingPinVariables(this, false, this.data.permanentPin);
-
-    this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
-    this.pinService.isPinCorrect(this.data.permanentPin, PIN_TYPE.MEETING_PIN, this);
-
-    // this.currentRoom.attendees = $filter('unique')($scope.currentRoom.attendees, 'terminalId'); // TODO check than analog working correct
-    // this.currentRoom.attendees = this.currentRoom.attendees;
-
+  virtualRoomNumberSelected(currentRoom): void {
+    this.setCurrentVirtualRoom(currentRoom);
   }
 
   meetingTypeSelected(event): void {
     this.logger.log('meetingType changed');
-    if (event.value) {
-      this.currentRoom.serviceTemplateId = event.value.serviceId;
-      this.currentRoom.servicePrefix = event.value.prefix;
+    if (event) {
+      this.currentRoom.serviceTemplateId = event.serviceId;
+      this.currentRoom.servicePrefix = event.prefix;
     }
   }
 
@@ -871,28 +787,28 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     return this.userSettings.conferencing.allowRecording !== 'ON' || this.currentRoom.allowRecording === 'DISABLED';
   }
 
-  virtualRoomVoicePromptLanguageSelected(): void {
-    // TODO get language
-    // if (language) {
-    //   this.logger.log('virtualRoomVoicePromptLanguage changed to %s', language.displayName);
-    //   this.currentRoom.voicePromptLanguage = language.id;
-    // }
+  virtualRoomVoicePromptLanguageSelected(language): void {
+    this.virtualRoomVoicePromptLanguage.selected = language;
+    this.logger.log('virtualRoomVoicePromptLanguage changed to %s', language.displayName);
+    this.currentRoom.voicePromptLanguage = language.id;
   }
 
-  entryAnnouncementSelected(): void {
+  entryAnnouncementSelected(announcement): void {
     // TODO get announcement
-    // if (announcement) {
-    //   this.logger.log('entryAnnouncement changed to %s', announcement.name);
-    //   this.currentRoom.entryAnnouncement = announcement.id;
-    // }
+    if (announcement) {
+      this.entryAnnouncement.selected = announcement;
+      this.logger.log('entryAnnouncement changed to %s', announcement.name);
+      this.currentRoom.entryAnnouncement = announcement.id;
+    }
   }
 
-  exitAnnouncementSelected(): void {
+  exitAnnouncementSelected(announcement): void {
     // TODO get announcement
-    // if (announcement) {
-    //   this.logger.log('exitAnnouncement changed to %s', announcement.name);
-    //   this.currentRoom.exitAnnouncement = announcement.id;
-    // }
+    if (announcement) {
+      this.exitAnnouncement.selected = announcement;
+      this.logger.log('exitAnnouncement changed to %s', announcement.name);
+      this.currentRoom.exitAnnouncement = announcement.id;
+    }
   }
 
   currentRoomMaxPlayToneNumber(): void {
@@ -919,32 +835,31 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.errorMaxPlayNameNumber = false;
   }
 
-  virtualRoomDialInLocationsSelected(): void {
-    // TODO get language
-    //     if (language) {
-    //       this.logger.log('virtualRoomDialInLocations changed to %s', language.displayName);
-    //       $scope.currentRoom.preferredDialInLocation = language.id;
-    //     }
+  virtualRoomDialInLocationsSelected(language): void {
+        if (language) {
+          this.virtualRoomDialInLocations.selected = language;
+          this.logger.log('virtualRoomDialInLocations changed to %s', language.displayName);
+          this.currentRoom.preferredDialInLocation = language.id;
+        }
   }
 
   setDateFormat(dateFormat: string): void{
     this.dateFormatSettings.selected = dateFormat;
   }
 
-  allowPresentPolicySelected(): void {
-    // TODO get allowPresentPolicyOptions
-    //     if (allowPresentPolicyOptions) {
-    //       this.logger.log('allowPresentPolicy changed to %s', allowPresentPolicyOptions.name);
-    //       $scope.currentRoom.allowPresentPolicy = allowPresentPolicyOptions.id;
-    //     }
+  allowPresentPolicySelected(allowPresentPolicyOptions): void {
+        if (allowPresentPolicyOptions) {
+          this.allowPresentPolicy.selected = allowPresentPolicyOptions;
+          this.logger.log('allowPresentPolicy changed to %s', allowPresentPolicyOptions.name);
+          this.currentRoom.allowPresentPolicy = allowPresentPolicyOptions.id;
+        }
   }
 
-  virtualRoomInvitationLanguagesSelected(): void {
+  virtualRoomInvitationLanguagesSelected(language): void {
     // TODO get language
-    //     if (language) {
-    //       this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
-    //       $scope.currentRoom.invitationLanguage = language.id;
-    //     }
+          this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
+          this.virtualRoomInvitationLanguages.selected = language;
+          this.currentRoom.invitationLanguage = language.id;
   }
 
   areAllPinsCorrect(): boolean {
@@ -1085,7 +1000,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   removeUser(userId): void {
     this.delegatedUsers = this.delegatedUsers.filter(user => user.userId !== userId);
     this.userSettings.conferencing.delegatedUsers = this.delegatedUsers;
-    console.log('hello remove users', this.userSettings.conferencing.delegatedUsers, this.originalSettings.conferencing.delegatedUsers);
   }
 
   changePreferences(): void {
@@ -1252,6 +1166,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
     const onFail = (response) => {
       this.logger.warn('Password has not been changed, %o', JSON.stringify(response));
+      this.changePasswordReactiveForm.setErrors({errorFromServer: true});
       // form.$invalid = true;
 
       // switch (response.responseJSON.error[0].errorCode) {
@@ -1325,6 +1240,46 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.userSettingsService.getAvayaUserService().changePassword(this.changePasswordReactiveForm.value.currentPassword, null,
       this.changePasswordReactiveForm.value.newPassword, this.userSettingsService.portalResources.getTenantParams.user)
       .fail(onFail).done(onDone).always(onAlways);
+  }
+
+  private setCurrentVirtualRoom(currentRoom): void {
+    this.virtualRoomNumber.selected = currentRoom;
+    this.logger.log('virtualRoomNumber changed');
+    this.currentRoom = currentRoom;
+
+    const meetingType = this.searchById(this.currentRoom.serviceTemplateId, this.userSettings.conferencing.meetingServiceList, 'serviceId');
+    this.meetingType = {
+      selected: meetingType,
+      options: this.userSettings.conferencing.meetingServiceList
+    };
+    this.virtualRoomInvitationLanguages.selected = this.searchById(this.currentRoom.invitationLanguage,
+      this.userSettings.conferencing.availableInvitationLanguages);
+    this.virtualRoomVoicePromptLanguage.selected = this.searchById(this.currentRoom.voicePromptLanguage,
+      this.userSettings.conferencing.availableVoicePromptLanguages);
+    this.virtualRoomDialInLocations.selected = this.searchById(this.currentRoom.preferredDialInLocation,
+      this.userSettings.conferencing.availableDialInLocations);
+
+    this.data.accessPinEnabled = (!!(this.currentRoom.accessPIN || this.currentRoom.oneTimePINRequired)) ||
+      this.userSettingsService.portalResources.meetingPINMinimumLength !== 0;
+    this.originalAccessPinEnabled = this.data.accessPinEnabled;
+    this.data.moderatorPin = (this.currentRoom.moderatorPIN ? atob(this.currentRoom.moderatorPIN) : '');
+    this.pinService.setModeratorPinVariables(this, this.data.moderatorPin);
+    this.entryAnnouncement.selected = this.searchById(this.currentRoom.entryAnnouncement, this.announcementList);
+    this.exitAnnouncement.selected = this.searchById(this.currentRoom.exitAnnouncement, this.announcementList);
+    this.allowPresentPolicy.selected = this.searchById(this.currentRoom.allowPresentPolicy, this.allowPresentPolicyList);
+
+    if (this.currentRoom.oneTimePINRequired) {
+      this.data.permanentPin = '';
+    } else {
+      this.data.permanentPin = (this.currentRoom.accessPIN ? atob(this.currentRoom.accessPIN) : '');
+    }
+
+    // this.pinService.setMeetingPinVariables(this, false, this.data.permanentPin);
+    //
+    // this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
+    // this.pinService.isPinCorrect(this.data.permanentPin, PIN_TYPE.MEETING_PIN, this);
+
+    this.currentRoom.attendees = this.globalService.filterUnique(this.currentRoom.attendees, 'terminalId');
   }
 
   private wasVirtualRoomSettingChanged(): boolean {

@@ -1,0 +1,190 @@
+.scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    opacity: 0;
+}
+
+.endpoints {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    font-size: 12px;
+}
+
+.no-endpoints {
+    display: none;
+}
+
+.endpoints-header {
+    white-space: nowrap;
+    color: @text-color-dark;
+    padding-left: 110px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+    background: @background-highlight-3;
+
+    .marker {
+        display: inline-block;
+        width: 40px;
+        text-align: center;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(to right, @background-highlight-3, fade(@background-highlight-3, 0%) 40%, fade(@background-highlight-3, 0%) 60%, @background-highlight-3);
+    }
+
+    .left,
+    .right {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 15px;
+        background: @url-down-chevron left -20px top -20px;
+        background-size: 60px;
+        transform: rotate(90deg);
+        z-index: 1;
+    }
+
+    .right {
+        left: auto;
+        right: 15px;
+        transform: rotate(-90deg);
+    }
+}
+
+.endpoints-titles {
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    background: @background-white;
+    width: 130px;
+    top: 45px;
+    border-bottom: 1px solid transparent;
+    background-clip: content-box;
+
+    .endpoint {
+        position: relative;
+        background: @background-highlight-2;
+        color: @text-color-black;
+        padding: 0 5px;
+        margin-bottom: 5px;
+        height: 40px;
+        line-height: 20px;
+
+        .endpoint-remove-wrapper {
+            display: inline-block;
+        }
+
+        .endpoint-remove-mobile {
+            position: absolute;
+            height: 40px;
+            width: 70px;
+            background: @highlight-1;
+            color: @text-color-light;
+            line-height: 40px;
+            text-align: center;
+            left: -70px;
+            top: 0;
+            transform: none;
+            transition: transform 0.2s ease;
+        }
+
+        &.swiped {
+            .endpoint-remove-mobile,
+            .endpoint-title {
+                transform: translate3d(70px, 0, 0);
+            }
+        }
+    }
+
+    .endpoint-title {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        transform: none;
+        transition: transform 0.2s ease;
+    }
+
+    .endpoint-remove {
+        display: none;
+        cursor: pointer;
+    }
+}
+
+.endpoints-timeline {
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: auto;
+    height: ~"calc(100% - 25px)";
+
+    .timeline-container {
+        position: relative;
+        min-height: ~"calc(100% - 5px)";
+        pointer-events: none;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 10px;
+            width: 1140px;
+            pointer-events: none;
+            background: linear-gradient(to right, @input-borders-color 1px, transparent 1.1px);
+            background-size: 40px 100%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1111px;
+            width: 20px;
+            background: linear-gradient(to left, @background-white, fade(@background-white, 0%));
+        }
+    }
+
+    .endpoint {
+        width: 1130px;
+        margin-bottom: 5px;
+        height: 40px;
+        background: @background-highlight-3;
+
+        .busy {
+            position: absolute;
+            margin-left: 130px;
+            background: repeating-linear-gradient(-45deg, @text-color-med, @text-color-med 2px, transparent 2px, transparent 6px);
+            height: 40px;
+        }
+    }
+
+    .meeting-period,
+    .now {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: 130px;
+        background: fade(@text-color, 60%);
+    }
+
+    .now {
+        width: 2px;
+        background: @highlight-1;
+    }
+}
