@@ -108,6 +108,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   isOAuthUser: any;
   isMultiTenant: boolean;
   changePasswordReactiveForm: FormGroup;
+  virtualRoomForm: FormGroup;
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -344,6 +345,22 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       };
 
       console.log('hello form', this);
+
+      this.virtualRoomForm = new FormGroup({
+        roomName: new FormControl(this.currentRoom.name),
+        description: new FormControl(this.currentRoom.name, Validators.pattern(this.roomNamePattern)),
+        maxPlayToneNumber: new FormControl(this.currentRoom.maxPlayToneNumber),
+        maxPlayNameNumber: new FormControl(this.currentRoom.maxPlayNameNumber),
+        moderatorPin: new FormControl(this.data.permanentPin),
+        accessPinEnabled: new FormControl(this.data.accessPinEnabled),
+        oneTimePINRequired: new FormControl(this.currentRoom.oneTimePINRequired),
+        accessPin: new FormControl(this.data.moderatorPin),
+        protectMeetingWithParticipantId: new FormControl(this.currentRoom.protectMeetingWithParticipantId),
+        defaultRoom: new FormControl(this.currentRoom.defaultRoom),
+        allowKnocking: new FormControl(this.currentRoom.allowKnocking),
+        allowRecording: new FormControl(this.currentRoom.allowRecording),
+        waitingRoom: new FormControl(this.currentRoom.waitingRoom)
+      });
 
       this.setCurrentVirtualRoom(this.currentRoom);
     }

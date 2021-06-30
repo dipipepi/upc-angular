@@ -127,7 +127,7 @@ intended publication of such source code.
 <!---->
         <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}} " *ngIf="currentTab === TAB.ROOM"
              ng-include=":: 'app/components/settings/templates/SettingsRoom.html'">
-          <form class="room-settings">
+          <form class="room-settings" [formGroup]="virtualRoomForm">
             <!-- Virtual room number -->
             <div class="settings-item  upc-room-number">
               <span>{{'SETTINGS.ROOM_TAB.ROOM_NUMBER' | translate}}</span>
@@ -148,8 +148,7 @@ intended publication of such source code.
 <!--                     [pattern]="roomNamePattern"-->
 <!--              >-->
               <input class="default-input"
-                     name="roomName"
-                     [(ngModel)]="currentRoom.name"
+                     formControlName="roomName"
                      [attr.title]="currentRoom.name"
                      type="text"
                      maxlength="80"
@@ -166,10 +165,9 @@ intended publication of such source code.
             <div class="settings-item  upc-room-description">
               <span>{{'SETTINGS.ROOM_TAB.ROOM_DESCRIPTION' | translate}}</span>
               <input class="default-input"
-                     [(ngModel)]="currentRoom.description"
+                     formControlName="description"
                      [attr.title]="currentRoom.description"
                      type="text"
-                     name="description"
                      maxlength="200"
               >
             </div>
@@ -202,7 +200,6 @@ intended publication of such source code.
             <!-- Exit Announcement -->
             <div class="settings-item upc-room-exit-announcement">
               <span>{{'SETTINGS.ROOM_TAB.EXIT_ANNOUNCEMENT' | translate}}</span>
-              <custom-select name="exitAnnouncement" options="exitAnnouncement.options" ng-model="exitAnnouncement.selected" key="id" value="name" ng-required="!exitAnnouncement.selected"></custom-select>
               <app-custom-select (ngModelChange)="exitAnnouncementSelected($event)" name="exitAnnouncement" [options]="exitAnnouncement.options" [model]="exitAnnouncement.selected" key="id" value="name" ng-required="!exitAnnouncement.selected"></app-custom-select>
               <!--              <div class="default-error" ng-if="roomForm.exitAnnouncement.$error.required">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
             </div>
@@ -211,8 +208,7 @@ intended publication of such source code.
             <div class="settings-item upc-room-max-participants-play-tone">
               <span>{{'SETTINGS.ROOM_TAB.MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_TONE' | translate}}</span>
               <input class="default-input"
-                     name="maxPlayToneNumber"
-                     [(ngModel)]="currentRoom.maxPlayToneNumber"
+                     formControlName="maxPlayToneNumber"
                      type="text"
                      maxlength="3"
                      autocomplete="off"
@@ -226,8 +222,7 @@ intended publication of such source code.
             <div class="settings-item upc-room-max-participants-play-announcement">
               <span>{{'SETTINGS.ROOM_TAB.MAX_PARTICIPANTS_TO_PLAY_THE_ENTRY_EXIT_NAME_ANNOUNCEMENT' | translate}}</span>
               <input class="default-input"
-                     name="maxPlayNameNumber"
-                     [(ngModel)]="currentRoom.maxPlayNameNumber"
+                     formControlName="maxPlayNameNumber"
                      type="text"
                      maxlength="3"
                      autocomplete="off"
@@ -240,8 +235,6 @@ intended publication of such source code.
             <!-- Preferred Dial In Location -->
             <div class="settings-item upc-room-preferred-dial-in-location" *ngIf="haveDualInData">
               <span>{{'SETTINGS.ROOM_TAB.PREFERRED_DIAL_IN_LOCATION' | translate}}</span>
-<!--              <custom-select options="virtualRoomDialInLocations.options" ng-model="virtualRoomDialInLocations.selected"-->
-<!--                             key="id" value="label" ></custom-select>-->
               <app-custom-select (ngModelChange)="virtualRoomDialInLocationsSelected($event)" [options]="virtualRoomDialInLocations.options" [model]="virtualRoomDialInLocations.selected"
                                  key="id" value="label"></app-custom-select>
             </div>
@@ -264,9 +257,8 @@ intended publication of such source code.
               <div class="password-input">
                 <input class="default-input vr-pin"
                        #moderatorPin
-                       name="moderatorPin"
+                       formControlName="moderatorPin"
                        (change)="moderatorPinChanged($event)"
-                       [(ngModel)]="data.permanentPin"
                        type="password"
                        autocomplete="off"
                        [maxLength]="moderatorPinMaxLength"
@@ -288,7 +280,7 @@ intended publication of such source code.
 
             <!-- Protect meeting with a pin -->
             <label class="default-checkbox upc-room-protect-with-pin">
-              <input type="checkbox" name="accessPinEnabled" [(ngModel)]="data.accessPinEnabled" (change)="accessPinCheckboxChanged()" [disabled]="meetingPinMinLength !== 0">
+              <input type="checkbox" formControlName="accessPinEnabled" (change)="accessPinCheckboxChanged()" [disabled]="meetingPinMinLength !== 0">
               <span>{{'SETTINGS.ROOM_TAB.ENTRY_PIN' | translate}}</span>
             </label>
 
@@ -297,18 +289,16 @@ intended publication of such source code.
               <span>
                 <label class="default-radio">
                   <input type="radio"
-                       [(ngModel)]="currentRoom.oneTimePINRequired"
+                       formControlName="oneTimePINRequired"
                        [value]="false"
                        (change)="pinRadioStateChanged()"
-                       [disabled]="!data.accessPinEnabled"
-                       name="pin">
+                       [disabled]="!data.accessPinEnabled">
                   <span>{{'SETTINGS.ROOM_TAB.PERMANENT_PIN' | translate}}</span>
                 </label>
               </span>
               <div class="password-input">
                 <input [disabled]="(!data.accessPinEnabled || currentRoom.oneTimePINRequired)"
-                       name="accessPin"
-                       [(ngModel)]="data.moderatorPin"
+                       formControlName="accessPin"
                        (change)="permanentPinChanged()"
                        class="default-input vr-pin"
                        type="password"
@@ -333,7 +323,7 @@ intended publication of such source code.
             <div class="settings-item tier-two upc-room-one-time-pin">
               <span>
                 <label class="default-radio">
-                  <input type="radio" [(ngModel)]="currentRoom.oneTimePINRequired"
+                  <input type="radio" formControlName="currentRoom.oneTimePINRequired"
                        [value]="true"
                        (change)="pinRadioStateChanged()"
                        [disabled]="!data.accessPinEnabled"
@@ -348,7 +338,7 @@ intended publication of such source code.
             <div class="upc-room-protect-participant-id" *ngIf="!isMultiTenant">
               <!-- Protected Participant ID -->
               <label class="default-checkbox">
-                <input name="protectMeetingWithParticipantId" type="checkbox" [(ngModel)]="currentRoom.protectMeetingWithParticipantId">
+                <input formControlName="protectMeetingWithParticipantId" type="checkbox">
                 <span>{{'SETTINGS.ROOM_TAB.PROTECTED_PARTICIPANT_ID' | translate}}</span>
               </label>
 
@@ -358,7 +348,7 @@ intended publication of such source code.
 
             <!-- Default room -->
             <label class="default-checkbox upc-room-default-room">
-              <input disabled="disabled" name="defaultRoom" type="checkbox" [(ngModel)]="currentRoom.defaultRoom">
+              <input disabled="disabled" type="checkbox" formControlName="defaultRoom">
               <span>{{'SETTINGS.ROOM_TAB.DEFAULT' | translate}}</span>
             </label>
 
@@ -366,15 +356,14 @@ intended publication of such source code.
 
             <!-- Allow requests to join locked meetings -->
             <label class="default-checkbox upc-room-allow-requests">
-              <input name="allowKnocking" type="checkbox" [(ngModel)]="currentRoom.allowKnocking">
+              <input type="checkbox" formControlName="allowKnocking">
               <span>{{'SETTINGS.ROOM_TAB.ALLOW_REQUESTS' | translate}}</span>
             </label>
 
             <!-- Turn on recording automatically at the start of meetings -->
             <label class="default-checkbox tooltiped upc-room-enable-recording" [attr.title]="isAllowRecordingDisabled() ? recordingNotSupportedTitle : ''">
               <input type="checkbox"
-                     name="allowRecording"
-                     [(ngModel)]="currentRoom.allowRecording"
+                     formControlName="allowRecording"
                      ng-true-value="'ON'"
                      ng-false-value="'OFF'"
                      [disabled]="isAllowRecordingDisabled()">
@@ -384,8 +373,7 @@ intended publication of such source code.
             <!-- Place participants in a 'waiting room' until the moderator joins -->
             <label class="default-checkbox upc-room-place-participant-waiting-room" (click)="changeWaitingRoom()">
               <input type="checkbox"
-                     name="waitingRoom"
-                     [(ngModel)]="currentRoom.waitingRoom"
+                     formControlName="waitingRoom"
                      [disabled]="isEmpty(currentRoom.moderatorPIN)">
               <span>{{'SETTINGS.ROOM_TAB.WAITING_ROOM' | translate}}</span>
             </label>
