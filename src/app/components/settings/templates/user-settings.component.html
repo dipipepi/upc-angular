@@ -127,7 +127,7 @@ intended publication of such source code.
 <!---->
         <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}} " *ngIf="currentTab === TAB.ROOM"
              ng-include=":: 'app/components/settings/templates/SettingsRoom.html'">
-          <form class="room-settings" [formGroup]="virtualRoomReactiveForm">
+          <form class="room-settings">
             <!-- Virtual room number -->
             <div class="settings-item  upc-room-number">
               <span>{{'SETTINGS.ROOM_TAB.ROOM_NUMBER' | translate}}</span>
@@ -266,7 +266,7 @@ intended publication of such source code.
                        #moderatorPin
                        name="moderatorPin"
                        (change)="moderatorPinChanged($event)"
-                       formControlName="moderatorPin"
+                       [(ngModel)]="data.permanentPin"
                        type="password"
                        autocomplete="off"
                        [maxLength]="moderatorPinMaxLength"
@@ -308,7 +308,7 @@ intended publication of such source code.
               <div class="password-input">
                 <input [disabled]="(!data.accessPinEnabled || currentRoom.oneTimePINRequired)"
                        name="accessPin"
-                       formControlName="accessPin"
+                       [(ngModel)]="data.moderatorPin"
                        (change)="permanentPinChanged()"
                        class="default-input vr-pin"
                        type="password"

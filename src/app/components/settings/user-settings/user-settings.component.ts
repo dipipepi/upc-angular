@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {TranslateService} from '@ngx-translate/core';
 import * as _ from 'lodash';
@@ -16,7 +16,7 @@ import {VersionService} from '../../../services/BrowserInfoService/browser-info.
 import {ContactsService} from '../../../services/ContactsService/contacts.service';
 import {ShowHaveNotLogDialogComponent, WarningSaveLogsDialogComponent} from '../guest-settings/guest-settings.component';
 import {GlobalService} from '../../../services/GlobalService/global.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {passwordsMatch} from '../../../shared/CustomValidators';
 
 @Component({
@@ -26,6 +26,7 @@ import {passwordsMatch} from '../../../shared/CustomValidators';
   encapsulation: ViewEncapsulation.None
 })
 export class UserSettingsComponent implements OnInit, OnDestroy {
+  @ViewChild('myForm', { static: true })userFrm: NgForm;
   private inputTimeout: any;
   private originDateFormat: any;
   private thatScope: this;
@@ -107,7 +108,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   isOAuthUser: any;
   isMultiTenant: boolean;
   changePasswordReactiveForm: FormGroup;
-  virtualRoomReactiveForm: FormGroup;
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -343,10 +343,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
       };
 
-      this.virtualRoomReactiveForm = new FormGroup({
-        moderatorPin: new FormControl(this.data.moderatorPin),
-        accessPin: new FormControl(this.data.permanentPin)
-      });
+      console.log('hello form', this);
 
       this.setCurrentVirtualRoom(this.currentRoom);
     }
@@ -364,14 +361,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         confirmPassword: ['']
       }, {validators: passwordsMatch()});
     }
-    // TODO check than analog working correct
-    //   $scope.$watch('meetingType.selected',(meetingType) => {
-    //     this.logger.log('meetingType changed');
-    //     if (meetingType) {
-    //       $scope.currentRoom.serviceTemplateId = meetingType.serviceId;
-    //       $scope.currentRoom.servicePrefix = meetingType.prefix;
-    //     }
-    //   });
 
     // TODO check than analog working correct
     //   $scope.$watch('currentRoom.moderatorPIN', (newVal, oldVal) => {
