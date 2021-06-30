@@ -19,7 +19,7 @@
 
 .tag-selector {
   margin: 0 12px;
-  background: @background-white @url-search left 5px center no-repeat;
+  background: @background-white @url-search left 5px center no-repeat !important;
   padding-left: 23px;
 
   input {
@@ -206,13 +206,15 @@
     border: 1px solid @highlight-1;
   }
 
-  .default-select[disabled] {
+  .default-select[disabled], .default-select.disabled {
     color: inherit;
     border: none;
     &::before {
       content: none;
     }
   }
+
+
 
   .default-input {
     height: 35px;

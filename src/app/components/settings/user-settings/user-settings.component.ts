@@ -48,6 +48,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   roomNamePattern: RegExp;
   data: { permanentPin: string; moderatorPin: string; accessPinEnabled: boolean };
   recordingNotSupportedTitle: any;
+  meetingPinMaxLength: any;
+  moderatorPinMaxLength: any;
   TAB: {
     PASSWORD?: string;
     GENERAL?: string;
@@ -105,6 +107,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   isOAuthUser: any;
   isMultiTenant: boolean;
   changePasswordReactiveForm: FormGroup;
+  virtualRoomReactiveForm: FormGroup;
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -339,6 +342,11 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         options : this.userSettingsService.getLocalizedLanguage(this.userSettings.conferencing.availableInvitationLanguages),
         selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
       };
+
+      this.virtualRoomReactiveForm = new FormGroup({
+        moderatorPin: new FormControl(this.data.moderatorPin),
+        accessPin: new FormControl(this.data.permanentPin)
+      });
 
       this.setCurrentVirtualRoom(this.currentRoom);
     }
@@ -724,7 +732,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     }
   }
 
-  moderatorPinChanged(): void {
+  moderatorPinChanged(pin): void {
     this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
     if (this.isEmpty(this.data.moderatorPin)) {
       this.currentRoom.moderatorPIN = '';
@@ -1274,7 +1282,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       this.data.permanentPin = (this.currentRoom.accessPIN ? atob(this.currentRoom.accessPIN) : '');
     }
 
-    // this.pinService.setMeetingPinVariables(this, false, this.data.permanentPin);
+    this.pinService.setMeetingPinVariables(this, false, this.data.permanentPin);
     //
     // this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
     // this.pinService.isPinCorrect(this.data.permanentPin, PIN_TYPE.MEETING_PIN, this);
