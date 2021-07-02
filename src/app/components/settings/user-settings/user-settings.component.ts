@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {TranslateService} from '@ngx-translate/core';
 import * as _ from 'lodash';
@@ -8,16 +8,20 @@ import {AuthorizationService} from '../../../services/AuthorizationService/autho
 import {CustomDeviceDetectorService} from '../../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {StylesService} from '../../../services/StylesService/styles.service';
 import {MeetingsLogsService} from '../../../services/MeetingsLogsService/meetings-logs.service';
-import {BROWSERS, DATE_FORMAT, OS, PIN_TYPE} from '../../../constants';
+import {BROWSERS, DATE_FORMAT, OS, PIN_MAX_LENGTH, PIN_TYPE} from '../../../constants';
 import {PinService} from '../../../shared/service/PinService/pin.service';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
 import {VersionService} from '../../../services/BrowserInfoService/browser-info.service';
 import {ContactsService} from '../../../services/ContactsService/contacts.service';
-import {ShowHaveNotLogDialogComponent, WarningSaveLogsDialogComponent} from '../guest-settings/guest-settings.component';
+import {
+  GuestSettingsComponent,
+  ShowHaveNotLogDialogComponent,
+  WarningSaveLogsDialogComponent
+} from '../guest-settings/guest-settings.component';
 import {GlobalService} from '../../../services/GlobalService/global.service';
 import {FormBuilder, FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
-import {passwordsMatch} from '../../../shared/CustomValidators';
+import {CustomValidatorsService} from '../../../shared/custom-validators/custom-validators.service';
 
 @Component({
   selector: 'app-user-settings',
@@ -26,7 +30,7 @@ import {passwordsMatch} from '../../../shared/CustomValidators';
   encapsulation: ViewEncapsulation.None
 })
 export class UserSettingsComponent implements OnInit, OnDestroy {
-  @ViewChild('myForm', { static: true })userFrm: NgForm;
+  @ViewChild('virtualRoomForm') virtualRoomForm: NgForm;
   private inputTimeout: any;
   private originDateFormat: any;
   private thatScope: this;
@@ -81,6 +85,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   virtualRoomVoicePromptLanguage: any;
   virtualRoomDialInLocations: any;
   private originalAccessPinEnabled: any;
+  moderatorPinMinLength: any;
   entryAnnouncement: any;
   exitAnnouncement: any;
   allowPresentPolicy: any;
@@ -108,6 +113,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   isOAuthUser: any;
   isMultiTenant: boolean;
   changePasswordReactiveForm: FormGroup;
+  translateParamsModeratorPin: { minLength: number; maxLength: number };
+  translateParamsMeetingPin: { minLength: number; maxLength: number };
 
   constructor(public userSettingsService: UserSettingsService,
               public translate: TranslateService,
@@ -123,7 +130,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
               private contactsService: ContactsService,
               private dialog: MatDialog,
               public globalService: GlobalService,
-              public formBuilder: FormBuilder) { }
+              public formBuilder: FormBuilder,
+              private customValidators: CustomValidatorsService) { }
 
   ngOnDestroy(): void {
         // throw new Error('Method not implemented.');
@@ -133,6 +141,12 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.logger = new Logger('SettingsController');
     this.thatScope = this;
     this.originDateFormat = JSON.parse(window.localStorage.timeFormat);
+    this.moderatorPinMinLength = this.userSettingsService.portalResources.moderatorPINMinimumLength;
+    this.meetingPinMinLength = this.userSettingsService.portalResources.meetingPINMinimumLength;
+    this.translateParamsModeratorPin = {minLength: this.moderatorPinMinLength || 0,
+      maxLength: PIN_MAX_LENGTH.MODERATOR_PIN};
+    this.translateParamsMeetingPin = {minLength: this.meetingPinMinLength || 0,
+      maxLength: PIN_MAX_LENGTH.MEETING_PIN};
 
     this.originalSettings = _.cloneDeep(this.userSettingsService.getUserSettings());
     this.locations = this.userSettingsService.getLocations();
@@ -343,23 +357,16 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         selected : this.searchById(this.currentRoom.invitationLanguage , this.userSettings.conferencing.availableInvitationLanguages)
       };
 
-      console.log('hello form', this);
-
       this.setCurrentVirtualRoom(this.currentRoom);
     }
 
     if(this.userSettings.conferencing.localUser && !this.isOAuthUser){
-      // this.changePasswordReactiveForm = new FormGroup({
-      //   currentPassword: new FormControl(''),
-      //   newPassword: new FormControl('', Validators.required),
-      //   confirmPassword: new FormControl('')
-      // }, [passwordsMatch]);
 
       this.changePasswordReactiveForm = this.formBuilder.group({
         currentPassword: [''],
         newPassword: [''],
         confirmPassword: ['']
-      }, {validators: passwordsMatch()});
+      }, {validators: this.customValidators.passwordsMatch()});
     }
 
     // TODO check than analog working correct
@@ -723,12 +730,12 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
   moderatorPinChanged(pin): void {
     this.pinService.isPinCorrect(this.data.moderatorPin, PIN_TYPE.MODERATOR_PIN, this);
-    if (this.isEmpty(this.data.moderatorPin)) {
+    if (this.isEmpty(pin)) {
       this.currentRoom.moderatorPIN = '';
       this.currentRoom.waitingRoom = false;
 
     } else {
-      this.currentRoom.moderatorPIN = btoa(this.data.moderatorPin);
+      this.currentRoom.moderatorPIN = btoa(pin);
     }
   }
 
@@ -749,7 +756,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     // }
   }
 
-  accessPinCheckboxChanged(): void {
+  accessPinCheckboxChanged(value): void {
     if(this.meetingPinMinLength !== 0){
       this.data.accessPinEnabled = true;
     } else{
@@ -759,14 +766,25 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         this.currentRoom.oneTimePINRequired = false;
       }
     }
+
+    if(value){
+      setTimeout(() => {
+        this.virtualRoomForm.controls.accessPin.setErrors({required: true});
+      });
+    }
   }
 
-  pinRadioStateChanged(): void {
+  pinRadioStateChanged(event): void {
     if(this.currentRoom.oneTimePINRequired){
       this.isMeetingPinContainsSequentialOrRepeatedSymbols = false;
     }
     this.data.permanentPin = '';
     this.currentRoom.accessPIN = '';
+    if(this.data.accessPinEnabled && event.target.value === 'on'){
+      setTimeout(() => {
+        this.virtualRoomForm.controls.accessPin.setErrors({required: true});
+      });
+    }
   }
 
   permanentPinChanged(): void {
@@ -813,7 +831,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       this.currentRoom.maxPlayToneNumber = +this.currentRoom.maxPlayToneNumber;
       if (+this.currentRoom.maxPlayToneNumber > 100) {
         this.errorMaxPlayToneNumber = true;
-        this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
+        // this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
         return;
       }
     }
@@ -822,10 +840,10 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
   currentRoomMaxPlayNameNumber(): void {
     if (this.currentRoom.maxPlayNameNumber) {
-      this.currentRoom.maxPlayNameNumber = +this.currentRoom.maxPlayNameNumber + 0;
+      this.currentRoom.maxPlayNameNumber = +this.currentRoom.maxPlayNameNumber;
       if (+this.currentRoom.maxPlayNameNumber > 100) {
         this.errorMaxPlayNameNumber = true;
-        this.roomFormScope.roomForm.maxPlayNameNumber.$setValidity('required', false);
+        // this.roomFormScope.roomForm.maxPlayNameNumber.$setValidity('required', false);
         return;
       }
     }
@@ -879,7 +897,10 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
   applySettings(): Promise<any> {
     // TODO create this method
-    return new Promise<any>(resolve => {resolve(true);});
+    return new Promise<any>(resolve => {
+      console.log('hello ', this.wasMeetingPinChanged());
+      resolve(true);
+    });
   }
 
   settingsChanged(): boolean {
@@ -1013,13 +1034,31 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
   isOKDisabled(): boolean {
     if(this.currentTab === this.TAB.ROOM){
-      return this.data.moderatorPin === undefined || !this.areAllPinsCorrect();
+      return !this.areAllPinsCorrect() || !this.isChangeFormValid();
     }
-    return this.data.moderatorPin === undefined || (this.wasVirtualRoomSettingChanged() && !this.areAllPinsCorrect());
+    return (this.wasVirtualRoomSettingChanged() && !this.areAllPinsCorrect()) || !this.isChangeFormValid();
   }
 
   isApplyDisabled(): boolean {
-    return true;
+      if(this.currentTab === this.TAB.ROOM){
+        return !this.isVirtualRoomFormValid() || !this.settingsChanged() || !this.isChangeFormValid();
+      }
+      if(!this.wasVirtualRoomSettingChanged()){
+        return (!this.settingsChanged() || !this.isChangeFormValid());
+      } else {
+        return !this.isVirtualRoomFormValid() || !this.settingsChanged() || !this.isChangeFormValid();
+      }
+
+    // return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
+    //   !this.settingsChanged() ||
+    //   this.data.moderatorPin === undefined);
+
+    // if(this.currentTab === this.TAB.ROOM){
+    //   return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
+    //     !this.settingsChanged());
+    // }
+    // return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
+    //   !this.settingsChanged() || (this.wasVirtualRoomSettingChanged()));
     // ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) ||
     //   !this.settingsChanged() ||
     //   this.data.moderatorPin === undefined) &&
@@ -1233,13 +1272,26 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     //     .changePassword($scope.password.currentPassword, null, $scope.password.newPassword, PortalResources.getTenantParams.user)
     //     .fail(onFail).done(onDone).always(onAlways);
     // }
-
+    this.logger.log('logged in tries to change password');
     this.userSettingsService.getAvayaUserService().changePassword(this.changePasswordReactiveForm.value.currentPassword, null,
       this.changePasswordReactiveForm.value.newPassword, this.userSettingsService.portalResources.getTenantParams.user)
       .fail(onFail).done(onDone).always(onAlways);
   }
 
+  private isChangeFormValid(): boolean {
+    return this.changePasswordReactiveForm ? this.changePasswordReactiveForm.status === 'VALID' : true;
+  }
+
+  private isVirtualRoomFormValid(): boolean {
+    return this.virtualRoomForm ? this.virtualRoomForm.form.status === 'VALID' : true;
+  }
+
   private setCurrentVirtualRoom(currentRoom): void {
+    setTimeout(() => {
+      this.setValidators();
+      });
+
+
     this.virtualRoomNumber.selected = currentRoom;
     this.logger.log('virtualRoomNumber changed');
     this.currentRoom = currentRoom;
@@ -1279,6 +1331,26 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     this.currentRoom.attendees = this.globalService.filterUnique(this.currentRoom.attendees, 'terminalId');
   }
 
+  private setValidators(): void {
+    this.virtualRoomForm.form.get('roomName').setValidators([Validators.required, Validators.pattern(this.roomNamePattern)]);
+    this.virtualRoomForm.form.get('maxPlayToneNumber').setValidators([Validators.max(100), Validators.required]);
+    this.virtualRoomForm.form.get('maxPlayNameNumber').setValidators([Validators.max(100), Validators.required]);
+    if(this.userSettingsService.portalResources.moderatorPINMinimumLength !== 0) {
+      this.virtualRoomForm.form.get('moderatorPin').setValidators([Validators.minLength(
+        this.userSettingsService.portalResources.moderatorPINMinimumLength),
+        this.customValidators.isPinContainsSequentialOrRepeatedSymbols(), Validators.required]);
+    } else {
+      this.virtualRoomForm.form.get('moderatorPin').setValidators([Validators.minLength(
+        this.userSettingsService.portalResources.moderatorPINMinimumLength),
+        this.customValidators.isPinContainsSequentialOrRepeatedSymbols()]);
+    }
+    this.virtualRoomForm.controls.moderatorPin.updateValueAndValidity();
+    this.virtualRoomForm.form.get('accessPin').setValidators([Validators.minLength(
+      this.userSettingsService.portalResources.meetingPINMinimumLength),
+      this.customValidators.isPinContainsSequentialOrRepeatedSymbols()]);
+    this.virtualRoomForm.controls.accessPin.updateValueAndValidity();
+  }
+
   private wasVirtualRoomSettingChanged(): boolean {
     return !_.isEqual(this.currentRoom, this.searchById(this.originalSettings.conferencing.defaultVirtualRoom,
       this.originalSettings.conferencing.virtualRoomSettings, 'virtualRoomId'));
@@ -1312,7 +1384,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         return true;
       } else {
         if(this.data.permanentPin){
-          return !this.isMeetingPinContainsSequentialOrRepeatedSymbols && this.isMeetingPinPatternCorrect;
+          return this.virtualRoomForm ? this.virtualRoomForm.controls.accessPin?.status === 'VALID' : true;
         } else {
           return false;
         }
@@ -1323,7 +1395,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   }
 
   private isModeratorPinCorrects (): boolean {
-    return !this.isModeratorPinContainsSequentialOrRepeatedSymbols && this.isModeratorPinPatternCorrect;
+    return this.virtualRoomForm ? this.virtualRoomForm.controls.moderatorPin?.status === 'VALID' : true;
+    // return !this.isModeratorPinContainsSequentialOrRepeatedSymbols && this.isModeratorPinPatternCorrect;
   }
 
   // idName is an optional parameter
@@ -1400,5 +1473,56 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       const y = el_2[key];
       return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
+  }
+
+  private wasMeetingPinChanged(): boolean {
+    const originMeetingPins = [];
+    const currentMeetingPins = [];
+    const finnalyArray = [];
+
+    this.originalSettings.conferencing.virtualRoomSettings.forEach( (elem) => {
+      if(elem.virtualRoomId !== null){
+        originMeetingPins.push(atob(elem.accessPIN));
+      }
+    });
+
+    this.userSettings.conferencing.virtualRoomSettings.forEach( (elem) => {
+      if(elem.virtualRoomId !== null){
+        currentMeetingPins.push(atob(elem.accessPIN));
+      }
+    });
+
+    if(originMeetingPins.length === 0 || currentMeetingPins.length === 0){
+      return false;
+    }
+
+    for(let i = 0; i < originMeetingPins.length; i++){
+      if(originMeetingPins[i] !== currentMeetingPins[i]){
+        finnalyArray.push(currentMeetingPins[i]);
+      }
+    }
+
+    return finnalyArray.length !== 0 || this.originalAccessPinEnabled !== this.data.accessPinEnabled;
+  }
+
+  private showPinWarning(): Promise<any> {
+    return new Promise<any>(resolve => {
+      this.warningDialog = this.dialog.open(ShowPinWarningComponent, {
+        data: {
+          confirm: this.confirmDialog.bind(this)
+        }
+      });
+    });
+  }
+}
+
+
+@Component({
+  selector: 'app-show-pin-warning',
+  templateUrl: '../templates/WarningMeetingPinWasChanged.html',
+  styleUrls: ['../user-settings/settings.component.less']
+})
+export class ShowPinWarningComponent {
+  constructor(public dialogRef: MatDialogRef<ShowPinWarningComponent>) {
   }
 }

@@ -1,0 +1,42 @@
+<div class="endpoints">
+
+  <div class="endpoints-header">
+    <div class="markers-container">
+      <span class="marker" *ngFor="let hour of hours">{{hour}}</span>
+    </div>
+    <div class="left" (click)="scrollHorizontally(-120)"></div>
+    <div class="right" (click)="scrollHorizontally(120)"></div>
+  </div>
+
+  <div class="endpoints-timeline">
+    <div class="timeline-container">
+      <div class="endpoint {{hovered === $index ? 'hovered' : ''}}"
+           *ngFor="let endpoint of endpoints; index as $index"
+           (mouseover)="hovered = $index"
+           (mouseleave)="hovered = null">
+        <div class="busy"
+             *ngFor="let occupied of endpoint.occupied; index as $index"
+             [ngStyle]="{ 'left': occupied.start / 1.5 + 'px', 'width': occupied.duration / 1.5 + 'px'}"></div>
+      </div>
+      <div class="meeting-period" [ngStyle]="{ 'left': start / 1.5 + 'px', 'width': (duration / 1.5 + start / 1.5 > 980) ? (980 - start / 1.5) : (duration / 1.5) + 'px'}"></div>
+      <div class="now" [ngStyle]="{ 'left': start / 1.5 + 'px'}"></div>
+    </div>
+  </div>
+
+  <div class="endpoints-titles" [ngStyle]="{ 'bottom': (scrollbarWidth !== 0 ? scrollbarWidth + 'px' : '') }">
+    <div class="titles-container">
+      <div class="endpoint {{hovered === $index ? 'hovered' : ''}} {{swiped === $index ? 'swiped' : ''}}"
+           *ngFor="let endpoint of endpoints; index as $index"
+           (mouseover)="onMouseOver($index)"
+           (mouseleave)="onMouseOut()"
+           (swiperight)="onTitleSwipe($index)" (swipeleft)="cancelSwipe()">
+        <span class="endpoint-title" (click)="cancelSwipe()">{{endpoint.terminalName}}</span>
+        <div class="endpoint-remove-wrapper" *ngIf="!disabled && !endpoint.fixed">
+          <span class="endpoint-remove" (click)="removeEndpoint($index)">x</span>
+          <span class="endpoint-remove-mobile" (click)="removeEndpoint($index)">{{'MEETING.DELETE' | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

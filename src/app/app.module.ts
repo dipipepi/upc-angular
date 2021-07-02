@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MessageUtilsComponent } from './shared/message-utils/message-utils.component';
-import { UserSettingsComponent } from './components/settings/user-settings/user-settings.component';
+import { UserSettingsComponent, ShowPinWarningComponent } from './components/settings/user-settings/user-settings.component';
 import {
   GuestSettingsComponent,
   ShowHaveNotLogDialogComponent,
@@ -29,6 +29,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ShowPasswordComponent } from './shared/show-password/show-password.component';
 import { TagSelectorComponent } from './shared/tag-selector/tag-selector.component';
 import { EndpointsComponent } from './shared/endpoints/endpoints.component';
+import { OnlyNumbers } from './shared/only-numbers/only-numbers.directive';
 
 
 // tslint:disable-next-line:typedef
@@ -51,10 +52,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     GuestSettingsComponent,
     CustomSelectComponent,
     WarningSaveLogsDialogComponent,
+    ShowPinWarningComponent,
     ShowHaveNotLogDialogComponent,
     ShowPasswordComponent,
     TagSelectorComponent,
-    EndpointsComponent
+    EndpointsComponent,
+    OnlyNumbers
   ],
   imports: [
     BrowserModule,

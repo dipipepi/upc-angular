@@ -18,7 +18,7 @@ intended publication of such source code.
           {{'SETTINGS.USER' | translate}}
         </div>
 
-        <div class="{{!areAllPinsCorrect() ? 'incorrect-pin' : ''}} tab virtual-room-settings-mobile settings-navigation-item {{currentTab === TAB.ROOM ? 'current' : ''}} {{userSettings.conferencing.virtualRoomSettings.length ? '' : 'hidden'}}"
+        <div [class.incorrect-pin]="!areAllPinsCorrect()" class=" tab virtual-room-settings-mobile settings-navigation-item {{currentTab === TAB.ROOM ? 'current' : ''}} {{userSettings.conferencing.virtualRoomSettings.length ? '' : 'hidden'}}"
              (click)="setCurrentTab(TAB.ROOM)">
           {{'SETTINGS.ROOM' | translate}}
         </div>
@@ -125,9 +125,9 @@ intended publication of such source code.
 <!--          -->
         </div>
 <!---->
-        <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}} " *ngIf="currentTab === TAB.ROOM"
+        <div class="tab-content {{currentTab === TAB.ROOM ? '' : 'hidden'}} " *ngIf="userSettings.conferencing.virtualRoomSettings.length"
              ng-include=":: 'app/components/settings/templates/SettingsRoom.html'">
-          <form class="room-settings">
+          <form class="room-settings" #virtualRoomForm="ngForm">
             <!-- Virtual room number -->
             <div class="settings-item  upc-room-number">
               <span>{{'SETTINGS.ROOM_TAB.ROOM_NUMBER' | translate}}</span>
@@ -147,19 +147,16 @@ intended publication of such source code.
 <!--                     autocomplete="off"-->
 <!--                     [pattern]="roomNamePattern"-->
 <!--              >-->
-              <input class="default-input"
+              <input class="default-input error-input"
                      name="roomName"
                      [(ngModel)]="currentRoom.name"
                      [attr.title]="currentRoom.name"
                      type="text"
                      maxlength="80"
-                     required
                      autocomplete="off"
-                     [pattern]="roomNamePattern"
-              >
-<!--              <div class="default-error" *ngIf="roomForm.roomName.$error.pattern"-->
-<!--                   translate-once="SETTINGS.ERROR.VR_NAME_NOT_ALLOWED_CHARACTERS"></div>-->
-<!--              <div class="default-error" ng-if="roomForm.roomName.$error.required" translate-once="SETTINGS.ERROR.REQUIRED"></div>-->
+                     >
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('roomName')?.errors?.pattern">{{'SETTINGS.ERROR.VR_NAME_NOT_ALLOWED_CHARACTERS' | translate}}</div>
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('roomName')?.errors?.required">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>
             </div>
 
             <!-- Description -->
@@ -170,8 +167,7 @@ intended publication of such source code.
                      [attr.title]="currentRoom.description"
                      type="text"
                      name="description"
-                     maxlength="200"
-              >
+                     maxlength="200">
             </div>
 
             <!-- Meeting Type -->
@@ -216,10 +212,11 @@ intended publication of such source code.
                      type="text"
                      maxlength="3"
                      autocomplete="off"
+                     required
                      [required]="currentRoom.maxPlayToneNumber !== ''"
                      only-numbers>
-<!--              <div class="default-error" ng-if="errorMaxPlayToneNumber">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>-->
-<!--              <div class="default-error" ng-if="roomForm.maxPlayToneNumber.$error.required && !errorMaxPlayToneNumber">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('maxPlayToneNumber')?.errors?.max">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('maxPlayToneNumber')?.errors?.required">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>
             </div>
 
             <!-- Max Participants to play the entry/exit name announcement -->
@@ -233,15 +230,13 @@ intended publication of such source code.
                      autocomplete="off"
                      [required]="currentRoom.maxPlayNameNumber !== ''"
                      only-numbers>
-<!--              <div class="default-error" ng-if="errorMaxPlayNameNumber">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>-->
-<!--              <div class="default-error" ng-if="roomForm.maxPlayNameNumber.$error.required && !errorMaxPlayNameNumber">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>-->
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('maxPlayNameNumber')?.errors?.max">{{'SETTINGS.ERROR.MAX_PLAY_NUMBER_MORE_THAN' | translate}}</div>
+              <div class="default-error" *ngIf="virtualRoomForm.form.get('maxPlayNameNumber')?.errors?.required">{{'SETTINGS.ERROR.REQUIRED' | translate}}</div>
             </div>
 
             <!-- Preferred Dial In Location -->
             <div class="settings-item upc-room-preferred-dial-in-location" *ngIf="haveDualInData">
               <span>{{'SETTINGS.ROOM_TAB.PREFERRED_DIAL_IN_LOCATION' | translate}}</span>
-<!--              <custom-select options="virtualRoomDialInLocations.options" ng-model="virtualRoomDialInLocations.selected"-->
-<!--                             key="id" value="label" ></custom-select>-->
               <app-custom-select (ngModelChange)="virtualRoomDialInLocationsSelected($event)" [options]="virtualRoomDialInLocations.options" [model]="virtualRoomDialInLocations.selected"
                                  key="id" value="label"></app-custom-select>
             </div>
@@ -265,22 +260,23 @@ intended publication of such source code.
                 <input class="default-input vr-pin"
                        #moderatorPin
                        name="moderatorPin"
-                       (change)="moderatorPinChanged($event)"
-                       [(ngModel)]="data.permanentPin"
+                       (ngModelChange)="moderatorPinChanged($event)"
+                       [(ngModel)]="data.moderatorPin"
                        type="password"
+                       [minLength]="moderatorPinMinLength"
+                       inputmode="numeric"
                        autocomplete="off"
                        [maxLength]="moderatorPinMaxLength"
                        only-numbers>
                 <app-show-password [inputElem]="moderatorPin" [inputValue]="data.moderatorPin"></app-show-password>
-                <!--                <show-password input-value="{{data.moderatorPin}}" input-name="moderatorPin"></show-password>-->
               </div>
-<!--              <div class="errors">-->
-<!--                <div class="default-error" ng-if="isModeratorPinContainsSequentialOrRepeatedSymbols && isModeratorPinPatternCorrect"-->
-<!--                     translate-once="GENERAL.ERROR.INCORRECT_PIN"></div>-->
-<!--                <div class="default-error" ng-if="!isModeratorPinPatternCorrect"-->
-<!--                     translate-once="GENERAL.ERROR.PIN_MIN_LENGTH"-->
-<!--                     translate-values="{minLength: moderatorPinMinLength, maxLength: moderatorPinMaxLength}"></div>-->
-<!--              </div>-->
+              <div class="errors">
+                <div class="default-error" *ngIf="virtualRoomForm.form.get('moderatorPin')?.errors?.pinContainsSequentialOrRepeatedSymbols">{{'GENERAL.ERROR.INCORRECT_PIN' | translate}}</div>
+                <div class="default-error" *ngIf="(virtualRoomForm.form.get('moderatorPin')?.errors?.minlength || virtualRoomForm.form.get('moderatorPin')?.errors?.required) &&
+                !virtualRoomForm.form.get('moderatorPin')?.errors?.pinContainsSequentialOrRepeatedSymbols">
+                  {{'GENERAL.ERROR.PIN_MIN_LENGTH' | translate:translateParamsModeratorPin}}
+                </div>
+              </div>
             </div>
             <label class="settings-note upc-moderator-pin-note">{{'SETTINGS.ROOM_TAB.MODERATOR_PIN_NOTE' | translate}}</label>
 
@@ -288,7 +284,7 @@ intended publication of such source code.
 
             <!-- Protect meeting with a pin -->
             <label class="default-checkbox upc-room-protect-with-pin">
-              <input type="checkbox" name="accessPinEnabled" [(ngModel)]="data.accessPinEnabled" (change)="accessPinCheckboxChanged()" [disabled]="meetingPinMinLength !== 0">
+              <input type="checkbox" name="accessPinEnabled" [(ngModel)]="data.accessPinEnabled" (ngModelChange)="accessPinCheckboxChanged($event)" [disabled]="meetingPinMinLength !== 0">
               <span>{{'SETTINGS.ROOM_TAB.ENTRY_PIN' | translate}}</span>
             </label>
 
@@ -299,7 +295,7 @@ intended publication of such source code.
                   <input type="radio"
                        [(ngModel)]="currentRoom.oneTimePINRequired"
                        [value]="false"
-                       (change)="pinRadioStateChanged()"
+                       (change)="pinRadioStateChanged($event)"
                        [disabled]="!data.accessPinEnabled"
                        name="pin">
                   <span>{{'SETTINGS.ROOM_TAB.PERMANENT_PIN' | translate}}</span>
@@ -308,25 +304,29 @@ intended publication of such source code.
               <div class="password-input">
                 <input [disabled]="(!data.accessPinEnabled || currentRoom.oneTimePINRequired)"
                        name="accessPin"
-                       [(ngModel)]="data.moderatorPin"
+                       [(ngModel)]="data.permanentPin"
                        (change)="permanentPinChanged()"
                        class="default-input vr-pin"
                        type="password"
                        maxlength="{{meetingPinMaxLength}}"
                        #accessPin
-                       autocomplete="off">
-<!--                <show-password input-value="{{data.permanentPin}}" input-name="accessPin"></show-password>-->
+                       [required]="data.accessPinEnabled && data.permanentPin"
+                       autocomplete="off"
+                       inputmode="numeric"
+                       only-numbers>
                 <app-show-password [inputElem]="accessPin" [inputValue]="data.permanentPin"></app-show-password>
               </div>
-<!--              <div class="errors">-->
-<!--                <div class="default-error" ng-if="isMeetingPinContainsSequentialOrRepeatedSymbols && isMeetingPinPatternCorrect"-->
-<!--                     translate-once="GENERAL.ERROR.INCORRECT_PIN"></div>-->
-<!--                <div class="default-error" ng-if="!isMeetingPinPatternCorrect && !currentRoom.oneTimePINRequired"-->
-<!--                     translate-once="GENERAL.ERROR.PIN_MIN_LENGTH"-->
-<!--                     translate-values="{minLength: meetingPinMinLength, maxLength: meetingPinMaxLength}"></div>-->
-<!--                <div class="default-error" ng-if="isMeetingPinPatternCorrect && !currentRoom.oneTimePINRequired && data.accessPinEnabled && !data.permanentPin"-->
-<!--                     translate-once="SETTINGS.ERROR.REQUIRED"></div>-->
-<!--              </div>-->
+              <div class="errors">
+                <div class="default-error" *ngIf="virtualRoomForm.form.get('accessPin')?.errors?.pinContainsSequentialOrRepeatedSymbols">
+                  {{'GENERAL.ERROR.INCORRECT_PIN' | translate}}
+                </div>
+                <div class="default-error" *ngIf="virtualRoomForm.form.get('accessPin')?.errors?.minlength && !virtualRoomForm.form.get('accessPin')?.errors?.pinContainsSequentialOrRepeatedSymbols && !currentRoom.oneTimePINRequired">
+                  {{'GENERAL.ERROR.PIN_MIN_LENGTH' | translate:translateParamsMeetingPin}}
+                </div>
+                <div class="default-error" *ngIf="!currentRoom.oneTimePINRequired && data.accessPinEnabled && !data.permanentPin">
+                  {{'SETTINGS.ERROR.REQUIRED' | translate}}
+                </div>
+              </div>
             </div>
 
             <!-- One-time pin -->
@@ -632,9 +632,7 @@ intended publication of such source code.
 <!--          -->
         </div>
 
-        <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}" *ngIf="currentTab === TAB.PASSWORD"
-             ng-include=":: 'app/components/settings/templates/SettingsPassword.html'"
-             ng-controller="ChangePasswordController">
+        <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}" *ngIf="currentTab === TAB.PASSWORD">
           <form name="loginForm" [formGroup]="changePasswordReactiveForm">
 
 
@@ -676,10 +674,10 @@ intended publication of such source code.
 <!--                <div ng-message="required" class="default-error" translate-once="SETTINGS.PASSWORD_TAB.ERROR.REQUIRED"></div>-->
 <!--                <div ng-message="matchError" class="default-error" translate-once="SETTINGS.PASSWORD_TAB.ERROR.DO_NOT_MATCH"></div>-->
 <!--              </div>-->
+              <div class="default-error" *ngIf="changePasswordReactiveForm?.errors?.passDoNotMatch">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.DO_NOT_MATCH' | translate}}
+              </div>
             </div>
-<!--            <div class="settings-item" *ngIf="changePasswordReactiveForm.errors.errorFromServer">-->
-<!--              <span>pass do not match</span>-->
-<!--            </div>-->
 
           </form>
 

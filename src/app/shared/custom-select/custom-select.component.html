@@ -1,0 +1,18 @@
+<div class="default-select" [class.disabled]="disabled">
+<!--  <ie-fix>{{ value[value] ? value[value] : placeholder }}</ie-fix>-->
+  <span class="default-select-title">{{ model[value] ? model[value] : placeholder }}</span>
+
+  <ul *ngIf="toggled" class="dropdown-block">
+    <li *ngFor="let option of options"
+        class="{{option[key] === model[key] && option[value] === model[value] ? 'selected' : ''}}{{option.isDisabled ? 'hidden' : ''}}"
+        (click)="selectOption(option)"
+        [attr.title]="option.tooltip">
+      {{ option[value]}}</li>
+  </ul>
+
+<!--    <select [hidden]="disabled"-->
+<!--            ng-options="option[value] for option in options track by (option[key] || '__empty_option_key__')"-->
+<!--            [ngModel]="model"-->
+<!--            ng-change="selectOption(ngModel)"></select>-->
+</div>
+

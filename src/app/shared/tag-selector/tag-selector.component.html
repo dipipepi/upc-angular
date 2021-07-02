@@ -1,0 +1,52 @@
+<div class="tag-selector user-search {{toggled ? 'focused' : ''}} {{maxParticipantsIsExceeded() ? 'max-room-participant' : ''}}">
+  <div class="tag-container {{readyToDelete ? 'removing' : ''}}">
+        <span class="tag"
+              *ngFor="let item of filteredSelected; index as $index"
+              hint hint-data="{item: item, show: showHintToHint}">
+            <div class="tag-content">
+                <label class="primary">{{parse(item, primary)}}</label>
+                <label class="secondary">{{parse(item, secondary)}}</label>
+                <label class="tertiary"
+                       *ngIf="!parse(item, primary) && !parse(item, secondary)"
+                >
+                    {{parse(item, tertiary)}}
+                </label>
+            </div>
+            <span class="you"
+                  *ngIf="item.userId === user.scopiaId"
+            >
+                (<label>{{'MEETING.YOU' | translate}}</label>)
+            </span>
+            <span *ngIf="disabled">;</span>
+            <span *ngIf="!disabled && item.userId !== user.scopiaId && !item.fixed" class="delete" (click)="removeTag($index)">x</span>
+        </span>
+    <input class="tag-input"
+           type="text"
+           (focus)="toggled = true"
+           [ngModel]="search"
+           [attr.title]="search"
+           (ngModelChange)="searchChanged($event)"
+           placeholder="{{translatedPlaceholder}}"
+           [hidden]="disabled">
+  </div>
+  <div class="tag-options dropdown-block"
+       #dropDownBlock
+       *ngIf="!!search && toggled"
+       (scroll)="handleOptionsScroll(dropDownBlock)"  >
+    <span class="tag-option searching" [class.hidden]="!searching"></span>
+    <div class="tag-option {{$index === currentItem && !isForUserSearch ? 'selected' : ''}}"
+         (click)="addTag($index)"
+         *ngFor="let item of filteredOptions; index as $index">
+      <div *ngIf="!isForUserSearch">
+        <span class="{{secondary ? 'primary' : 'single'}}">{{parse(item, primary)}}<span *ngIf="!!isForUserSearch">,</span></span>
+        <span class="secondary" [hidden]="secondary">{{parse(item, secondary)}}</span>
+        <span class="tertiary"
+              [ngClass]="{hideBrackets: !parse(item, primary) && !parse(item, secondary)}"
+              [hidden]="tertiary">{{parse(item, tertiary)}}</span>
+      </div>
+      <div *ngIf="isForUserSearch">
+        <span class="{{secondary ? 'primary' : 'single'}}">{{parse(item, primary)}}, {{parse(item, secondary)}}</span>
+      </div>
+    </div>
+  </div>
+</div>
