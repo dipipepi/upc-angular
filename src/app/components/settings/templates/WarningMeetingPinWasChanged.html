@@ -1,10 +1,10 @@
 <div class="recording-change-access-level">
     <div class="warning-title">
-        <label>{{:: warningMessage}}</label>
+        <label>{{data.warningMessage}}</label>
     </div>
     <div class="recording-change-access-level-buttons">
-        <button ng-click="confirm(1)">
-            <span translate-once="SETTINGS.CLIENT_TAB.CONTINUE"></span>
+        <button (click)="dialogRef.close()">
+            <span>{{'SETTINGS.CLIENT_TAB.CONTINUE' | translate}}</span>
         </button>
     </div>
 </div>

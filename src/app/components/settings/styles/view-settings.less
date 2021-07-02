@@ -13,6 +13,45 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.recording-change-access-level{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  max-width: 340px;
+
+  label{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin: 30px 30px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+
+  .recording-change-access-level-buttons{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    button{
+      display: block;
+      margin: 5px 30px 5px;
+      font-size: 14px;
+      background: @off-white;
+      border: 1px solid @blue-gray;
+      height: 32px;
+      padding: 0 32px;
+      border-radius: 16px;
+      overflow: hidden;
+      color: @blue-gray;
+    }
+  }
+}
+
 .ngdialog-close {
   display: none;
 }

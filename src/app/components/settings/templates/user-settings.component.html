@@ -261,14 +261,14 @@ intended publication of such source code.
                        #moderatorPin
                        name="moderatorPin"
                        (ngModelChange)="moderatorPinChanged($event)"
-                       [(ngModel)]="data.moderatorPin"
+                       [(ngModel)]="pinData.moderatorPin"
                        type="password"
                        [minLength]="moderatorPinMinLength"
                        inputmode="numeric"
                        autocomplete="off"
                        [maxLength]="moderatorPinMaxLength"
                        only-numbers>
-                <app-show-password [inputElem]="moderatorPin" [inputValue]="data.moderatorPin"></app-show-password>
+                <app-show-password [inputElem]="moderatorPin" [inputValue]="pinData.moderatorPin"></app-show-password>
               </div>
               <div class="errors">
                 <div class="default-error" *ngIf="virtualRoomForm.form.get('moderatorPin')?.errors?.pinContainsSequentialOrRepeatedSymbols">{{'GENERAL.ERROR.INCORRECT_PIN' | translate}}</div>
@@ -284,7 +284,7 @@ intended publication of such source code.
 
             <!-- Protect meeting with a pin -->
             <label class="default-checkbox upc-room-protect-with-pin">
-              <input type="checkbox" name="accessPinEnabled" [(ngModel)]="data.accessPinEnabled" (ngModelChange)="accessPinCheckboxChanged($event)" [disabled]="meetingPinMinLength !== 0">
+              <input type="checkbox" name="accessPinEnabled" [(ngModel)]="pinData.accessPinEnabled" (ngModelChange)="accessPinCheckboxChanged($event)" [disabled]="meetingPinMinLength !== 0">
               <span>{{'SETTINGS.ROOM_TAB.ENTRY_PIN' | translate}}</span>
             </label>
 
@@ -296,25 +296,25 @@ intended publication of such source code.
                        [(ngModel)]="currentRoom.oneTimePINRequired"
                        [value]="false"
                        (change)="pinRadioStateChanged($event)"
-                       [disabled]="!data.accessPinEnabled"
+                       [disabled]="!pinData.accessPinEnabled"
                        name="pin">
                   <span>{{'SETTINGS.ROOM_TAB.PERMANENT_PIN' | translate}}</span>
                 </label>
               </span>
               <div class="password-input">
-                <input [disabled]="(!data.accessPinEnabled || currentRoom.oneTimePINRequired)"
+                <input [disabled]="(!pinData.accessPinEnabled || currentRoom.oneTimePINRequired)"
                        name="accessPin"
-                       [(ngModel)]="data.permanentPin"
+                       [(ngModel)]="pinData.permanentPin"
                        (change)="permanentPinChanged()"
                        class="default-input vr-pin"
                        type="password"
                        maxlength="{{meetingPinMaxLength}}"
                        #accessPin
-                       [required]="data.accessPinEnabled && data.permanentPin"
+                       [required]="pinData.accessPinEnabled && pinData.permanentPin"
                        autocomplete="off"
                        inputmode="numeric"
                        only-numbers>
-                <app-show-password [inputElem]="accessPin" [inputValue]="data.permanentPin"></app-show-password>
+                <app-show-password [inputElem]="accessPin" [inputValue]="pinData.permanentPin"></app-show-password>
               </div>
               <div class="errors">
                 <div class="default-error" *ngIf="virtualRoomForm.form.get('accessPin')?.errors?.pinContainsSequentialOrRepeatedSymbols">
@@ -323,7 +323,7 @@ intended publication of such source code.
                 <div class="default-error" *ngIf="virtualRoomForm.form.get('accessPin')?.errors?.minlength && !virtualRoomForm.form.get('accessPin')?.errors?.pinContainsSequentialOrRepeatedSymbols && !currentRoom.oneTimePINRequired">
                   {{'GENERAL.ERROR.PIN_MIN_LENGTH' | translate:translateParamsMeetingPin}}
                 </div>
-                <div class="default-error" *ngIf="!currentRoom.oneTimePINRequired && data.accessPinEnabled && !data.permanentPin">
+                <div class="default-error" *ngIf="!currentRoom.oneTimePINRequired && pinData.accessPinEnabled && !pinData.permanentPin">
                   {{'SETTINGS.ERROR.REQUIRED' | translate}}
                 </div>
               </div>
@@ -336,7 +336,7 @@ intended publication of such source code.
                   <input type="radio" [(ngModel)]="currentRoom.oneTimePINRequired"
                        [value]="true"
                        (change)="pinRadioStateChanged()"
-                       [disabled]="!data.accessPinEnabled"
+                       [disabled]="!pinData.accessPinEnabled"
                        name="pin">
                   <span>{{'SETTINGS.ROOM_TAB.ONETIME_PIN' | translate}}</span>
                 </label>
