@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "Informacje o Avaya Meetings",
+		"RELEASE": "Wersja:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings i Equinox Conferencing są znakami towarowymi Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java jest znakiem handlowym firmy Sun Microsystems Inc.; Microsoft, Windows i Internet Explorer są znakami towarowymi lub zastrzeżonymi znakami towarowymi Microsoft Corporation w Stanach Zjednoczonych i/lub innych krajach.",
+		"TRADEMARKS_INFO": "Wszystkie inne nazwy produktów użyte w niniejszym dokumencie są znakami towarowymi zastrzeżonymi przez odpowiednich producentów.",
+		"COPYRIGHT_INFO": "Aby uzyskać informacje wskazujące właścicieli praw autorskich do komponentów oraz warunki innych firm, które mają zastosowanie do tego produktu, należy sprawdzić tutaj <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+		"LICENCE": "Pobranie oprogramowania, instalacja lub użytkowanie oznacza, że użytkownik przeczytał, zrozumiał i zaakceptował warunki licencji oprogramowania Avaya (produkty Avaya) na stronie ",
+		"LICENCE_I18N": "Wersje angielskie, brazylijskie, francuskie, kanadyjskie, chińskie, niemieckie, włoskie, portugalskie, hiszpańskie, francuskie, japońskie i rosyjskie są dostępne na stronie ",
+		"USAGE_INFO": "Jeśli nie masz bezpośredniego dostępu do Internetu, uzyskaj dostęp do urządzenia, które ma dostęp do Internetu, aby wyświetlić, pobrać i wydrukować odpowiednią licencję.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. Wszelkie prawa zastrzeżone",
+		"CLOSE": "Zamknij",
+		"LINK": "łącze"
+	},
+	"LOGIN": {
+		"SIGNING": "Logowanie…",
+		"LOADING": "Ładowanie…",
+		"GREETING": "Czy masz konto?",
+		"NAME": "nazwa użytkownika",
+		"LOGIN": "logowanie",
+		"PASSWORD": "hasło",
+		"REMEMBER_ME": "Nie wyloguj mnie",
+		"SIGN_IN": "Zaloguj się",
+		"LOG_IN": "Zaloguj się",
+		"FORGOT_PASSWORD": "Nie pamiętasz hasła?",
+		"OR_SIGN_IN": "lub zaloguj się za pomocą",
+		"USE_ENTERPRISE_ACCOUNT": "Użyj mojego konta służbowego (SSO)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Został wysłany do Ciebie e-mail z łączem do odzyskania hasła"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Nieprawidłowa nazwa użytkownika lub hasło",
+			"VALIDATION_FAILED": "Nazwa użytkownika i hasło nie mogą być puste.",
+			"NOT_ALLOWED": "Nie masz pozwolenia na logowanie.",
+			"USER_AUTH_DISABLED": "Dla użytkownika {{name}} wyłączono uwierzytelnianie",
+			"ERROR": "Brak odpowiedzi ze strony serwera lub błąd serwera. Spróbuj ponownie później.",
+			"ERC_AUTH_USER_NAME": "Uwierzytelnienie OAuth nie powiodło się. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.",
+			"ERC_AUTH_EMPTY_EMAIL": "Nie można zalogować użytkownika bez określonego e-maila"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "Informacje",
+		"SIGN_OUT": "Wyloguj się",
+		"SETTINGS": "Ustawienia",
+		"SIGN_IN": "Zaloguj się"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "nie mogą być wykorzystane do dołączenia do spotkania. Proszę wypróbować jedną z obsługiwanych przeglądarek.",
+		"YOUR": "Twoja",
+		"BROWSER": "przeglądarka",
+		"BROWSERS": "przeglądarki",
+		"BROWSER_OUT_OF_DATE": "jest przestarzała. Zaktualizuj przeglądarkę, aby mieć dostęp do wszystkich funkcji.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "Twoja wersja przeglądarki nie obsługuje audio/wideo. Aby poprawić jakość współpracy,<br>wypróbuj inną wersję, inne <span class=\"underline\">obsługiwane przeglądarki</span> lub pobierz klienta.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Twoja wersja przeglądarki nie obsługuje konferencji internetowych. Aby poprawić jakość współpracy,<br>wypróbuj inną wersję, inne <span class=\"underline\">obsługiwane przeglądarki</span> lub pobierz klienta.",
+		"OLD_EDGE": "Twoja przeglądarka nie jest kompatybilna z Avaya Meetings. Najlepszą jakość zapewnia Google Chrome lub najnowsza wersja Microsoft Edge."
+	},
+	"NAVIGATION": {
+		"JOIN": "Spotkaj się teraz",
+		"RECORDING": "Nagrania i zdarzenia",
+		"SCHEDULE": "Zaplanuj",
+		"SETTINGS": "Ustawienia",
+		"SIGN_OUT": "Wyloguj się"
+	},
 	"SETTINGS": {
 		"TITLE": "Ustawienia Avaya",
 		"SETTINGS": "Ustawienia",
@@ -192,62 +255,6 @@
 	"ON": "Włączone",
 	"OFF": "Wył.",
 	"DISABLED": "Wyłączony",
-	"ABOUT": {
-		"TITLE": "Informacje o Avaya Meetings",
-		"RELEASE": "Wersja:",
-		"AVAYA_TRADEMARKS": "Avaya Meetings i Equinox Conferencing są znakami towarowymi Avaya Inc.",
-		"OTHER_TRADEMARKS": "Java jest znakiem handlowym firmy Sun Microsystems Inc.; Microsoft, Windows i Internet Explorer są znakami towarowymi lub zastrzeżonymi znakami towarowymi Microsoft Corporation w Stanach Zjednoczonych i/lub innych krajach.",
-		"TRADEMARKS_INFO": "Wszystkie inne nazwy produktów użyte w niniejszym dokumencie są znakami towarowymi zastrzeżonymi przez odpowiednich producentów.",
-		"COPYRIGHT_INFO": "Aby uzyskać informacje wskazujące właścicieli praw autorskich do komponentów oraz warunki innych firm, które mają zastosowanie do tego produktu, należy sprawdzić tutaj <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
-		"LICENCE": "Pobranie oprogramowania, instalacja lub użytkowanie oznacza, że użytkownik przeczytał, zrozumiał i zaakceptował warunki licencji oprogramowania Avaya (produkty Avaya) na stronie ",
-		"LICENCE_I18N": "Wersje angielskie, brazylijskie, francuskie, kanadyjskie, chińskie, niemieckie, włoskie, portugalskie, hiszpańskie, francuskie, japońskie i rosyjskie są dostępne na stronie ",
-		"USAGE_INFO": "Jeśli nie masz bezpośredniego dostępu do Internetu, uzyskaj dostęp do urządzenia, które ma dostęp do Internetu, aby wyświetlić, pobrać i wydrukować odpowiednią licencję.",
-		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. Wszelkie prawa zastrzeżone",
-		"CLOSE": "Zamknij",
-		"LINK": "łącze"
-	},
-	"LOGIN": {
-		"SIGNING": "Logowanie…",
-		"LOADING": "Ładowanie…",
-		"GREETING": "Czy masz konto?",
-		"NAME": "nazwa użytkownika",
-		"LOGIN": "logowanie",
-		"PASSWORD": "hasło",
-		"REMEMBER_ME": "Nie wyloguj mnie",
-		"SIGN_IN": "Zaloguj się",
-		"LOG_IN": "Zaloguj się",
-		"FORGOT_PASSWORD": "Nie pamiętasz hasła?",
-		"OR_SIGN_IN": "lub zaloguj się za pomocą",
-		"USE_ENTERPRISE_ACCOUNT": "Użyj mojego konta służbowego (SSO)",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "Został wysłany do Ciebie e-mail z łączem do odzyskania hasła"
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "Nieprawidłowa nazwa użytkownika lub hasło",
-			"VALIDATION_FAILED": "Nazwa użytkownika i hasło nie mogą być puste.",
-			"NOT_ALLOWED": "Nie masz pozwolenia na logowanie.",
-			"USER_AUTH_DISABLED": "Dla użytkownika {{name}} wyłączono uwierzytelnianie",
-			"ERROR": "Brak odpowiedzi ze strony serwera lub błąd serwera. Spróbuj ponownie później.",
-			"ERC_AUTH_USER_NAME": "Uwierzytelnienie OAuth nie powiodło się. Aby uzyskać pomoc, skontaktuj się z administratorem systemu.",
-			"ERC_AUTH_EMPTY_EMAIL": "Nie można zalogować użytkownika bez określonego e-maila"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "Informacje",
-		"SIGN_OUT": "Wyloguj się",
-		"SETTINGS": "Ustawienia",
-		"SIGN_IN": "Zaloguj się"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "nie mogą być wykorzystane do dołączenia do spotkania. Proszę wypróbować jedną z obsługiwanych przeglądarek.",
-		"YOUR": "Twoja",
-		"BROWSER": "przeglądarka",
-		"BROWSERS": "przeglądarki",
-		"BROWSER_OUT_OF_DATE": "jest przestarzała. Zaktualizuj przeglądarkę, aby mieć dostęp do wszystkich funkcji.",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "Twoja wersja przeglądarki nie obsługuje audio/wideo. Aby poprawić jakość współpracy,<br>wypróbuj inną wersję, inne <span class=\"underline\">obsługiwane przeglądarki</span> lub pobierz klienta.",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Twoja wersja przeglądarki nie obsługuje konferencji internetowych. Aby poprawić jakość współpracy,<br>wypróbuj inną wersję, inne <span class=\"underline\">obsługiwane przeglądarki</span> lub pobierz klienta.",
-		"OLD_EDGE": "Twoja przeglądarka nie jest kompatybilna z Avaya Meetings. Najlepszą jakość zapewnia Google Chrome lub najnowsza wersja Microsoft Edge."
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "Sesja wygasła. Zaloguj się, aby kontynuować",

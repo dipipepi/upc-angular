@@ -1,0 +1,9 @@
+{
+    "NAVIGATION": {
+        "JOIN": "会議に参加",
+        "RECORDING": "会議記録とイベント",
+        "SCHEDULE": "スケジュール",
+        "SETTINGS": "設定",
+        "SIGN_OUT": "サインアウト"
+    }
+}

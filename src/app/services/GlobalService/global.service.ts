@@ -1,11 +1,17 @@
 import {Injectable, SimpleChanges} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {ACClientService} from '../ACClientService/acclient.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
+
+  maxVrName = 25;
+  maxVrNameWithSpace = 22;
+  maxVrNumber = 23;
+  sessionId: string;
 
   constructor(private titleService: Title,
               private acClientService: ACClientService) { }
@@ -31,12 +37,5 @@ export class GlobalService {
 
     return res;
   }
-
-  // hasFormErrors(errors): boolean{
-  //   let res = false;
-  //   for(const err of errors) {
-  //
-  //   }
-  // }
 
 }

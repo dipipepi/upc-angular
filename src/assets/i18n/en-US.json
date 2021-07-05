@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "About Avaya Meetings",
+		"RELEASE": "Release:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings and Equinox Conferencing are trademarks of Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java is a trademark of Sun Microsystems, Inc.; Microsoft, Windows, and Internet Explorer are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.",
+		"TRADEMARKS_INFO": "All other product names used in this document are trademarks registered trademarks of their respective manufacturers.",
+		"COPYRIGHT_INFO": "For information identifying the copyright holders of the Third Party Components and Terms that apply to this Product please refer to <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+		"LICENCE": "Downloading the software, installation, or use indicates you have read, understood, and accepted the terms of the Avaya Software License Terms (Avaya Products) at ",
+		"LICENCE_I18N": "The English, Brazilian, Canadian French, Chinese, German, Italian, Portuguese, Spanish, French, Japanese, and Russian versions are posted at ",
+		"USAGE_INFO": "If you do not have direct Internet access, please access a device that has Internet access to view, download and print the applicable license.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
+		"CLOSE": "Close",
+		"LINK": "link"
+	},
+	"LOGIN": {
+		"SIGNING": "Signing in...",
+		"LOADING": "Loading...",
+		"GREETING": "Have an account?",
+		"NAME": "user name",
+		"LOGIN": "login",
+		"PASSWORD": "password",
+		"REMEMBER_ME": "Keep me signed in",
+		"SIGN_IN": "Sign in",
+		"LOG_IN": "Log in",
+		"FORGOT_PASSWORD": "Forgot password?",
+		"OR_SIGN_IN": "or sign in with",
+		"USE_ENTERPRISE_ACCOUNT": "Use my Enterprise Account (SSO)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Email with link to recover password has been sent to you"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Invalid username or password",
+			"VALIDATION_FAILED": "The user name or password must not be empty.",
+			"NOT_ALLOWED": "You are not allowed to login.",
+			"USER_AUTH_DISABLED": "Authentication disabled for the user {{name}}",
+			"ERROR": "No response from server or server error. Try again later.",
+			"ERC_AUTH_USER_NAME": "The OAuth authentication was not successful. Contact your system administrator for assistance.",
+			"ERC_AUTH_EMPTY_EMAIL": "Unable to login user with undefined email"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "About",
+		"SIGN_OUT": "Sign out",
+		"SETTINGS": "Settings",
+		"SIGN_IN": "Sign in"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "can not be used to join the meeting. Please try one of the supported browsers.",
+		"YOUR": "Your",
+		"BROWSER": "browser",
+		"BROWSERS": "browsers",
+		"BROWSER_OUT_OF_DATE": "is out of date. Please update your browser for the best experience.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "Your browser version does not support audio/video. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Your browser version does not support web conferencing. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
+		"OLD_EDGE": "Your browser is not compatible with Avaya Meetings. Please switch to Google Chrome or the latest Microsoft Edge for the best experience."
+	},
+	"NAVIGATION": {
+		"JOIN": "Meet Now",
+		"RECORDING": "Recordings + Events",
+		"SCHEDULE": "Schedule",
+		"SETTINGS": "Settings",
+		"SIGN_OUT": "Sign out"
+	},
 	"SETTINGS": {
 		"TITLE": "Avaya Settings",
 		"SETTINGS": "Settings",
@@ -192,62 +255,6 @@
 	"ON": "On",
 	"OFF": "Off",
 	"DISABLED": "Disabled",
-	"ABOUT": {
-		"TITLE": "About Avaya Meetings",
-		"RELEASE": "Release:",
-		"AVAYA_TRADEMARKS": "Avaya Meetings and Equinox Conferencing are trademarks of Avaya Inc.",
-		"OTHER_TRADEMARKS": "Java is a trademark of Sun Microsystems, Inc.; Microsoft, Windows, and Internet Explorer are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.",
-		"TRADEMARKS_INFO": "All other product names used in this document are trademarks registered trademarks of their respective manufacturers.",
-		"COPYRIGHT_INFO": "For information identifying the copyright holders of the Third Party Components and Terms that apply to this Product please refer to <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
-		"LICENCE": "Downloading the software, installation, or use indicates you have read, understood, and accepted the terms of the Avaya Software License Terms (Avaya Products) at ",
-		"LICENCE_I18N": "The English, Brazilian, Canadian French, Chinese, German, Italian, Portuguese, Spanish, French, Japanese, and Russian versions are posted at ",
-		"USAGE_INFO": "If you do not have direct Internet access, please access a device that has Internet access to view, download and print the applicable license.",
-		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
-		"CLOSE": "Close",
-		"LINK": "link"
-	},
-	"LOGIN": {
-		"SIGNING": "Signing in...",
-		"LOADING": "Loading...",
-		"GREETING": "Have an account?",
-		"NAME": "user name",
-		"LOGIN": "login",
-		"PASSWORD": "password",
-		"REMEMBER_ME": "Keep me signed in",
-		"SIGN_IN": "Sign in",
-		"LOG_IN": "Log in",
-		"FORGOT_PASSWORD": "Forgot password?",
-		"OR_SIGN_IN": "or sign in with",
-		"USE_ENTERPRISE_ACCOUNT": "Use my Enterprise Account (SSO)",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "Email with link to recover password has been sent to you"
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "Invalid username or password",
-			"VALIDATION_FAILED": "The user name or password must not be empty.",
-			"NOT_ALLOWED": "You are not allowed to login.",
-			"USER_AUTH_DISABLED": "Authentication disabled for the user {{name}}",
-			"ERROR": "No response from server or server error. Try again later.",
-			"ERC_AUTH_USER_NAME": "The OAuth authentication was not successful. Contact your system administrator for assistance.",
-			"ERC_AUTH_EMPTY_EMAIL": "Unable to login user with undefined email"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "About",
-		"SIGN_OUT": "Sign out",
-		"SETTINGS": "Settings",
-		"SIGN_IN": "Sign in"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "can not be used to join the meeting. Please try one of the supported browsers.",
-		"YOUR": "Your",
-		"BROWSER": "browser",
-		"BROWSERS": "browsers",
-		"BROWSER_OUT_OF_DATE": "is out of date. Please update your browser for the best experience.",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "Your browser version does not support audio/video. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Your browser version does not support web conferencing. For a better collaboration experience,<br>try another version, other <span class=\"underline\">supported browsers</span> or download the client.",
-		"OLD_EDGE": "Your browser is not compatible with Avaya Meetings. Please switch to Google Chrome or the latest Microsoft Edge for the best experience."
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "Your session has expired. Please login to continue",

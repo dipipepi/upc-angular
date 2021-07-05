@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PortalResources} from '../portal-resources-service.service';
 import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
+import {GlobalService} from '../GlobalService/global.service';
 
 @Injectable({
   providedIn: 'root'
@@ -78,7 +79,8 @@ export class UserSettingsService {
   };
 
   constructor(private http: HttpClient,
-              private translate: TranslateService) { }
+              private translate: TranslateService,
+              private globalService: GlobalService) { }
 
   startAvayaUserService(): void {
     if (!this.pictureUrls) {
@@ -244,7 +246,7 @@ export class UserSettingsService {
         return this.http.get(this.portalResources.resources.middleware.POST.createSession.href).toPromise()
           .then((session) => {
             // @ts-ignore
-            this.portalResources.sessionId = session.sessionId;
+            this.globalService.sessionId = session.sessionId;
             resolve(this.portalResources);
           });
       };

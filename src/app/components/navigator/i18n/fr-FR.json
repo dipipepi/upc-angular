@@ -1,0 +1,9 @@
+{
+    "NAVIGATION": {
+        "JOIN": "Lancer la réunion maintenant",
+        "RECORDING": "Enregistrements + Événements",
+        "SCHEDULE": "Agenda",
+        "SETTINGS": "Paramètres",
+        "SIGN_OUT": "Déconnexion"
+    }
+}

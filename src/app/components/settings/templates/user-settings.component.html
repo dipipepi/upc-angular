@@ -635,6 +635,62 @@ intended publication of such source code.
         <div class="tab-content {{currentTab === TAB.PASSWORD ? '' : 'hidden'}}" *ngIf="currentTab === TAB.PASSWORD">
           <form name="loginForm" [formGroup]="changePasswordReactiveForm">
 
+            <div class="password-errors" *ngIf="changePasswordReactiveForm.invalid">
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_NOT_CHANGED' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_bad_old_password">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_BAD_OLD_PASSWORD' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_unable_use_old_password">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_UNABLE_USE_OLD_PASSWORD' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_change_frequency">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_CHANGE_FREQUENCY' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_change_repeated_chars">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_CHANGE_REPEATED_CHARS' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_change_complexity">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_CHANGE_COMPLEXITY' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_too_short">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_TOO_SHORT' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.server_invalid_token">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.SERVER_INVALID_TOKEN' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.number_previous_passwords_cannot_reused">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.CANNOT_MACTH_PASSWORD_HISTORY' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.cannot_contain_loginId">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.CANNOT_CONTAIN_LOGIN_ID' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.must_contain_categories">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.MUST_CONTAIN_4_CATEGORIES' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.cannot_contain_repeted_chars">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.CANNOT_CONTAIN_REPEATED_CHARS' | translate}}
+              </div>
+              <div class="default-error"
+                   *ngIf="changePasswordReactiveForm?.errors?.cannot_contain_sequential_chars">
+                {{'SETTINGS.PASSWORD_TAB.ERROR.CANNOT_CONTAIN_SEQUENTIAL_CHARS' | translate}}
+              </div>
+
+              <br/>
+            </div>
 
             <div class="settings-item">
               <span>{{'SETTINGS.PASSWORD_TAB.CURRENT' | translate}}</span>

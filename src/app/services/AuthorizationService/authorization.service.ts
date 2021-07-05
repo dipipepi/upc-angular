@@ -10,6 +10,7 @@ import {PictureService} from '../PictureUtils/picture.service';
 import {ContactsService} from '../ContactsService/contacts.service';
 import {ScheduleService} from '../ScheduleService/schedule.service';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {Router} from '@angular/router';
 
 export interface LoginResponse {
   encryptedPassword: string;
@@ -46,7 +47,8 @@ export class AuthorizationService {
               private recordingService: RecordingService,
               private pictureUtils: PictureService,
               private contactsService: ContactsService,
-              private scheduleService: ScheduleService) { }
+              private scheduleService: ScheduleService,
+              private router: Router) { }
 
   private logger = new Logger('AuthorizationService');
 
@@ -128,6 +130,7 @@ export class AuthorizationService {
       .toPromise()
       .then((response => {
         this.clearUserData().then(() => {
+          this.redirectFromSchedule();
           window.localStorage.removeItem('oauth2Authentication');
           // this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGOUT); // TODO make analog of this event
         });
@@ -265,6 +268,7 @@ export class AuthorizationService {
           this.usePoleEmployeeSSOLogin();
         } else {
           this.userType = USER_TYPE.GUEST;
+          this.redirectFromSchedule();
           // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED); // TODO create analog of this event
           this.recordingService.initAvayaRecordingManagementService();
           reject();
@@ -345,6 +349,12 @@ export class AuthorizationService {
         reject(e);
       }
     });
+  }
+
+  private redirectFromSchedule(): void{
+    if(this.router.url === '/schedule'){
+      this.router.navigate(['/']);
+    }
   }
 
   private isKeepMeEnabled(): string {
@@ -458,6 +468,7 @@ export class AuthorizationService {
           }
           this.logger.log('User is not logged in');
           this.clearUserData();
+          this.redirectFromSchedule();
           reject(response);
         }
       }

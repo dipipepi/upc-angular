@@ -7,61 +7,63 @@ THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
 The copyright notice above does not evidence any actual or
 intended publication of such source code.
 -->
-<div class="browser-notifications-container">
-  <div class="administrator-notification-container"></div>
-  <div class="rollover-container"></div>
+<header class="header">
+  <div class="header-wrapper">
 
-  <div *ngIf="isDesktop && browserInfoService.isWebRTCBrowserExclusion() &&
+    <div class="browser-notifications-container">
+      <div class="administrator-notification-container"></div>
+      <div class="rollover-container"></div>
+
+      <div *ngIf="isDesktop && browserInfoService.isWebRTCBrowserExclusion() &&
     !browserInfoService.isDataOnlyBrowserExclusion()  && !isOldEdge" class="browser-exclusion">
-    <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_WEBRTC' | translate}}</div>
-  </div>
+        <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_WEBRTC' | translate}}</div>
+      </div>
 
-  <div *ngIf="isDesktop && browserInfoService.isDataOnlyBrowserExclusion()  && !isOldEdge" class="browser-exclusion">
-    <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_DATE_ONLY' | translate}}</div>
-  </div>
+      <div *ngIf="isDesktop && browserInfoService.isDataOnlyBrowserExclusion()  && !isOldEdge" class="browser-exclusion">
+        <div class="text">{{'BROWSERS.VERSION_EXCLUSION_FOR_DATE_ONLY' | translate}}</div>
+      </div>
 
-  <div *ngIf="isDesktop && !browserInfoService.isBrowserSupported() && !isOldEdge" class="browser-supporting">
-    <div class="text">{{browserNotSupportedMessage}}</div>
-  </div>
+      <div *ngIf="isDesktop && !browserInfoService.isBrowserSupported() && !isOldEdge" class="browser-supporting">
+        <div class="text">{{browserNotSupportedMessage}}</div>
+      </div>
 
-  <div *ngIf="isDesktop && browserInfoService.isBrowserSupported() && !browserInfoService.isFreshVersion()
+      <div *ngIf="isDesktop && browserInfoService.isBrowserSupported() && !browserInfoService.isFreshVersion()
     && !isOldEdge" class="browser-supporting">
-    <div class="text">{{browserOutOfDateMessage}}</div>
-  </div>
-
-  <div class="browser-supporting" *ngIf="isOldEdge">
-    <div class="text">{{'BROWSERS.OLD_EDGE' | translate}}</div>
-  </div>
-</div>
-
-<div class="header-wrapper">
-
-  <div class="action-blocks">
-    <div class="settings-block" (click)="showSettings()">
-      <div class="settings-icon"></div>
-      <span>{{'HEADER.SETTINGS' | translate}}</span>
-    </div>
-    <div class="about" (click)="showAbout()">
-      <span>{{'HEADER.ABOUT' | translate}}</span>
-    </div>
-    <div (click)="onSignIn()" class="sign-in-block" *ngIf="isLoginAvailable && authorizationService.userType !== 'SIGN_IN'">
-      <span>{{"HEADER.SIGN_IN" | translate}}</span>
-      <div class="sign-in-avatar"></div>
-    </div>
-    <div class="user-block"
-         *ngIf="authorizationService.userType==='SIGN_IN'"
-         (click)="showLogout($event)">
-      <span class="user-name">{{ authorizationService.user.name + ' ' +  authorizationService.user.lastName}}</span>
-      <div class="avatar">
-        <img alt="" *ngIf="authorizationService.user.pictureData" [src]="authorizationService.user.pictureData">
+        <div class="text">{{browserOutOfDateMessage}}</div>
       </div>
-      <div class="sign-out {{logoutVisible ? 'toggled' : 'hidden'}}">
-        <button type="button"
-                class="default-button"
-                (click)="logout()"
-                autofocus>{{'HEADER.SIGN_OUT' | translate}}
-        </button>
+
+      <div class="browser-supporting" *ngIf="isOldEdge">
+        <div class="text">{{'BROWSERS.OLD_EDGE' | translate}}</div>
       </div>
     </div>
+
+    <div class="action-blocks">
+      <div class="settings-block" (click)="showSettings()">
+        <div class="settings-icon"></div>
+        <span>{{'HEADER.SETTINGS' | translate}}</span>
+      </div>
+      <div class="about" (click)="showAbout()">
+        <span>{{'HEADER.ABOUT' | translate}}</span>
+      </div>
+      <div (click)="onSignIn()" class="sign-in-block" *ngIf="isLoginAvailable && authorizationService.userType !== 'SIGN_IN'">
+        <span>{{"HEADER.SIGN_IN" | translate}}</span>
+        <div class="sign-in-avatar"></div>
+      </div>
+      <div class="user-block"
+           *ngIf="authorizationService.userType==='SIGN_IN'"
+           (click)="showLogout($event)">
+        <span class="user-name">{{ authorizationService.user.name + ' ' +  authorizationService.user.lastName}}</span>
+        <div class="avatar">
+          <img alt="" *ngIf="authorizationService.user.pictureData" [src]="authorizationService.user.pictureData">
+        </div>
+        <div class="sign-out {{logoutVisible ? 'toggled' : 'hidden'}}">
+          <button type="button"
+                  class="default-button"
+                  (click)="logout()"
+                  autofocus>{{'HEADER.SIGN_OUT' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</header>

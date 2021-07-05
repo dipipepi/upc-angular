@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "關於 Avaya Meetings",
+		"RELEASE": "版本：",
+		"AVAYA_TRADEMARKS": "Avaya Meetings 和 Equinox Conferencing 是 Avaya Inc. 的商標。",
+		"OTHER_TRADEMARKS": "Java 是 Sun Microsystems, Inc. 的商標；Microsoft、Windows 和 Internet Explorer 是 Microsoft Corporation 在美國和／或其他國家／地區的註冊商標或商標。",
+		"TRADEMARKS_INFO": "本文件中使用的所有其他產品名稱是其各自製造商的商標或註冊商標。",
+		"COPYRIGHT_INFO": "如需確認適用於此產品之第三方元件的版權所有者以及使用條款，請參閱 <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>。",
+		"LICENCE": "下載軟體、安裝或使用，即表示您已閱讀、了解並接受以下連結中的 Avaya 軟體授權條款（Avaya 產品） ",
+		"LICENCE_I18N": "英文、巴西葡萄牙文、加拿大法文、中文、德文、義大利文、葡萄牙文、西班牙文、法文、日文和俄文版本張貼於 ",
+		"USAGE_INFO": "如果您無法直接存取網際網路，請使用具有網際網路存取權限的裝置來檢視、下載及列印適用的授權。",
+		"COPYRIGHT": "版權所有 © {{year}} Avaya Inc. 保留所有權利。",
+		"CLOSE": "關閉",
+		"LINK": "連結"
+	},
+	"LOGIN": {
+		"SIGNING": "正在登入...",
+		"LOADING": "正在載入...",
+		"GREETING": "已有帳戶？",
+		"NAME": "使用者名稱",
+		"LOGIN": "登入",
+		"PASSWORD": "密碼",
+		"REMEMBER_ME": "保持我的登入狀態",
+		"SIGN_IN": "登入",
+		"LOG_IN": "登入",
+		"FORGOT_PASSWORD": "忘記密碼？",
+		"OR_SIGN_IN": "或使用以下方式登入：",
+		"USE_ENTERPRISE_ACCOUNT": "使用我們的企業帳戶（SSO）",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "系統已將包含密碼復原連結的電子郵件傳送給您"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "使用者名稱或密碼無效",
+			"VALIDATION_FAILED": "使用者名稱或密碼必須為空白。",
+			"NOT_ALLOWED": "不允許您登入。",
+			"USER_AUTH_DISABLED": "已為使用者 {{name}} 停用驗證",
+			"ERROR": "沒有來自伺服器的回應，或伺服器錯誤。請稍後重試。",
+			"ERC_AUTH_USER_NAME": "OAuth 驗證未成功。請聯絡系統管理員協助。",
+			"ERC_AUTH_EMPTY_EMAIL": "使用者帳戶無法使用未定義的電子郵件登入"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "關於",
+		"SIGN_OUT": "登出",
+		"SETTINGS": "設定",
+		"SIGN_IN": "登入"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "無法用於加入會議。請嘗試使用支援的瀏覽器。",
+		"YOUR": "您的",
+		"BROWSER": "瀏覽器",
+		"BROWSERS": "瀏覽器",
+		"BROWSER_OUT_OF_DATE": "已過期。請更新您的瀏覽器，以獲得最佳體驗。",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "您的瀏覽器版本不支援音訊／視訊。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "您的瀏覽器版本不支援網路會議。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
+		"OLD_EDGE": "您的瀏覽器與 Avaya Meetings 不相容。請切換到 Google Chrome 或最新的 Microsoft Edge，以獲得最佳體驗。"
+	},
+	"NAVIGATION": {
+		"JOIN": "立即開始會議",
+		"RECORDING": "錄製 + 事件",
+		"SCHEDULE": "排程",
+		"SETTINGS": "設定",
+		"SIGN_OUT": "登出"
+	},
 	"SETTINGS": {
 		"TITLE": "Avaya 設定",
 		"SETTINGS": "設定",
@@ -192,62 +255,6 @@
 	"ON": "開",
 	"OFF": "關",
 	"DISABLED": "已停用",
-	"ABOUT": {
-		"TITLE": "關於 Avaya Meetings",
-		"RELEASE": "版本：",
-		"AVAYA_TRADEMARKS": "Avaya Meetings 和 Equinox Conferencing 是 Avaya Inc. 的商標。",
-		"OTHER_TRADEMARKS": "Java 是 Sun Microsystems, Inc. 的商標；Microsoft、Windows 和 Internet Explorer 是 Microsoft Corporation 在美國和／或其他國家／地區的註冊商標或商標。",
-		"TRADEMARKS_INFO": "本文件中使用的所有其他產品名稱是其各自製造商的商標或註冊商標。",
-		"COPYRIGHT_INFO": "如需確認適用於此產品之第三方元件的版權所有者以及使用條款，請參閱 <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>。",
-		"LICENCE": "下載軟體、安裝或使用，即表示您已閱讀、了解並接受以下連結中的 Avaya 軟體授權條款（Avaya 產品） ",
-		"LICENCE_I18N": "英文、巴西葡萄牙文、加拿大法文、中文、德文、義大利文、葡萄牙文、西班牙文、法文、日文和俄文版本張貼於 ",
-		"USAGE_INFO": "如果您無法直接存取網際網路，請使用具有網際網路存取權限的裝置來檢視、下載及列印適用的授權。",
-		"COPYRIGHT": "版權所有 © {{year}} Avaya Inc. 保留所有權利。",
-		"CLOSE": "關閉",
-		"LINK": "連結"
-	},
-	"LOGIN": {
-		"SIGNING": "正在登入...",
-		"LOADING": "正在載入...",
-		"GREETING": "已有帳戶？",
-		"NAME": "使用者名稱",
-		"LOGIN": "登入",
-		"PASSWORD": "密碼",
-		"REMEMBER_ME": "保持我的登入狀態",
-		"SIGN_IN": "登入",
-		"LOG_IN": "登入",
-		"FORGOT_PASSWORD": "忘記密碼？",
-		"OR_SIGN_IN": "或使用以下方式登入：",
-		"USE_ENTERPRISE_ACCOUNT": "使用我們的企業帳戶（SSO）",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "系統已將包含密碼復原連結的電子郵件傳送給您"
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "使用者名稱或密碼無效",
-			"VALIDATION_FAILED": "使用者名稱或密碼必須為空白。",
-			"NOT_ALLOWED": "不允許您登入。",
-			"USER_AUTH_DISABLED": "已為使用者 {{name}} 停用驗證",
-			"ERROR": "沒有來自伺服器的回應，或伺服器錯誤。請稍後重試。",
-			"ERC_AUTH_USER_NAME": "OAuth 驗證未成功。請聯絡系統管理員協助。",
-			"ERC_AUTH_EMPTY_EMAIL": "使用者帳戶無法使用未定義的電子郵件登入"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "關於",
-		"SIGN_OUT": "登出",
-		"SETTINGS": "設定",
-		"SIGN_IN": "登入"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "無法用於加入會議。請嘗試使用支援的瀏覽器。",
-		"YOUR": "您的",
-		"BROWSER": "瀏覽器",
-		"BROWSERS": "瀏覽器",
-		"BROWSER_OUT_OF_DATE": "已過期。請更新您的瀏覽器，以獲得最佳體驗。",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "您的瀏覽器版本不支援音訊／視訊。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "您的瀏覽器版本不支援網路會議。如要獲得更佳的協同作業體驗，請試試另一個版本、<br>其他<span class=\"underline\">支援的瀏覽器</span>或下載該用戶端。",
-		"OLD_EDGE": "您的瀏覽器與 Avaya Meetings 不相容。請切換到 Google Chrome 或最新的 Microsoft Edge，以獲得最佳體驗。"
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "您的工作階段已過期。請登入以繼續",

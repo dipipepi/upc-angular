@@ -1,0 +1,68 @@
+nav {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    font-size: 0;
+    background: @mobile-navigation-background;
+    transform: translate3d(-280px, 0, 0);
+    transition: transform 0.2s ease;
+    z-index: 100000;
+
+    &.toggled {
+        transform: translate3d(0, 0, 0);
+    }
+
+    visibility: visible !important;
+}
+
+.nav-link {
+    display: block;
+    color: @text-color-light;
+    padding-right: 10px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+
+    p {
+        display: inline;
+    }
+
+    &:hover {
+        background: @mobile-navigation-hover;
+        color: @mobile-navigation-hover-label;
+    }
+
+    &:active {
+        background: @mobile-navigation-active;
+        color: @mobile-navigation-active-label;
+    }
+
+    &:focus {
+        background: @mobile-navigation-focused;
+        color: @mobile-navigation-focused-label;
+    }
+
+    &.current,
+    &.current:hover,
+    &.current:active,
+    &.current:focus {
+        background: @mobile-navigation-current;
+        color: @mobile-navigation-current-label;
+    }
+
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin: -3px 10px 0;
+        width: 32px;
+        height: 32px;
+
+        * {
+            stroke: currentColor;
+        }
+    }
+}

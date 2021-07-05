@@ -1,0 +1,108 @@
+nav {
+    position: relative;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    background: none;
+    padding-top: 20px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    background: @navigation-background;
+    z-index: 1;
+}
+
+.nav-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 0 3px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 11px;
+    background: @navigation;
+    color: @navigation-label;
+    transition: background 0.3s ease;
+    position: relative;
+    &::after {
+        content: "";
+        top: 100%;
+        width: 100%;
+        position: absolute;
+        height: 6px;
+        left: 0;
+        background: transparent;
+        transition: background 0.3s ease;
+    }
+    &.edge:after {
+        height: 5.5px;
+    }
+    &:hover {
+        background: @navigation-hover;
+        color: @navigation-hover-label;
+    }
+    &:active {
+        background: @navigation-active;
+        color: @navigation-active-label;
+    }
+    &:focus {
+        background: @navigation-focused;
+        color: @navigation-focused-label;
+    }
+    &.current,
+    &.current:hover,
+    &.current:active,
+    &.current:focus {
+        background: @navigation-current;
+        color: @navigation-current-label;
+        &::after {
+            background: @navigation-current;
+        }
+    }
+    &.settings,
+    &.sign-out {
+        display: none;
+    }
+    &.meet-now {
+        padding-left: 5px;
+        &.current {
+            background: @background-front-page;
+            &::after {
+                background: @background-front-page;
+            }
+        }
+    }
+    svg {
+        margin: -3px 0 0 0;
+        width: 32px;
+        height: 32px;
+        rect,
+        polygon,
+        path {
+            stroke: currentColor;
+        }
+    }
+    p {
+      white-space: nowrap;
+      margin: 0;
+      font-size: 11px;
+    }
+
+  .svg-container{
+    width: 32px;
+    height: 32px;
+    background-color: red;
+
+    &.meet-now{
+      background: @meet-me-icon;
+    }
+
+    &.recording{
+      background: @recording-icon;
+    }
+
+    &.schedule{
+      background: @schedule-icon;
+    }
+  }
+}

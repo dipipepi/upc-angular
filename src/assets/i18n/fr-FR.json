@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "À propos d'Avaya Meetings",
+		"RELEASE": "Version :",
+		"AVAYA_TRADEMARKS": "Avaya Meetings et Equinox Conferencing sont des marques commerciales d'Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java est une marque commerciale de Sun Microsystems, Inc. ; Microsoft, Windows et Internet Explorer sont des marques déposées ou des marques commerciales de Microsoft Corporation aux États-Unis et dans d'autres pays.",
+		"TRADEMARKS_INFO": "Tous les autres produits mentionnés dans ce document sont des marques déposées ou des marques commerciales de leurs fabricants respectifs.",
+		"COPYRIGHT_INFO": "Pour plus d'informations sur les détenteurs des droits de copyright des composants tiers et sur les conditions qui s'appliquent à ce produit, veuillez consulter <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
+		"LICENCE": "Le téléchargement du logiciel, son installation ou son utilisation indique que vous avez lu, compris et accepté les conditions générales de licence de logiciel AVAYA (produits Avaya) disponibles ",
+		"LICENCE_I18N": "Les versions en anglais, brésilien, français canadien, chinois, allemand, italien, portugais, espagnol, français, japonais et russe sont disponibles ",
+		"USAGE_INFO": "Si vous ne disposez pas d'un accès direct à Internet, veuillez accéder à un appareil disposant d'un accès Internet pour visualiser, télécharger et imprimer la licence applicable.",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. Tous droits réservés.",
+		"CLOSE": "Fermer",
+		"LINK": "ici."
+	},
+	"LOGIN": {
+		"SIGNING": "Connexion...",
+		"LOADING": "Chargement...",
+		"GREETING": "Vous avez déjà un compte ?",
+		"NAME": "nom d'utilisateur",
+		"LOGIN": "connexion",
+		"PASSWORD": "mot de passe",
+		"REMEMBER_ME": "Maintenir la connexion",
+		"SIGN_IN": "Connexion",
+		"LOG_IN": "Se connecter",
+		"FORGOT_PASSWORD": "Mot de passe oublié ?",
+		"OR_SIGN_IN": "ou connectez-vous via",
+		"USE_ENTERPRISE_ACCOUNT": "Utiliser mon compte d'entreprise (SSO)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Un e-mail avec un lien vous permettant de récupérer votre mot de passe vient de vous être envoyé."
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Nom d'utilisateur ou mot de passe incorrect",
+			"VALIDATION_FAILED": "Le nom d'utilisateur et le mot de passe doivent être renseignés.",
+			"NOT_ALLOWED": "Vous n'êtes pas autorisé à vous connecter.",
+			"USER_AUTH_DISABLED": "Authentification désactivée pour l’utilisateur {{name}}.",
+			"ERROR": "Absence de réponse ou erreur du serveur. Réessayez ultérieurement.",
+			"ERC_AUTH_USER_NAME": "L'authentification OAuth a échoué. Adressez-vous à votre administrateur système.",
+			"ERC_AUTH_EMPTY_EMAIL": "Impossible de connecter l'utilisateur avec une adresse e-mail non définie"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "À propos",
+		"SIGN_OUT": "Déconnexion",
+		"SETTINGS": "Paramètres",
+		"SIGN_IN": "Connexion"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "ne peut pas être utilisé pour rejoindre la réunion. Veuillez essayer l'un des navigateurs pris en charge.",
+		"YOUR": "Votre",
+		"BROWSER": "navigateur",
+		"BROWSERS": "navigateurs",
+		"BROWSER_OUT_OF_DATE": "n'est pas à jour. Veuillez mettre à jour votre navigateur pour une expérience optimale.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "La version de votre navigateur ne prend pas en charge l'audio et la video. Pour une expérience de collaboration optimale,<br>essayez une autre version, d'autres <span class=\"underline\">navigateurs pris en charge</span> ou téléchargez le client.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "La version de votre navigateur ne prend pas en charge les conférences Web. Pour une expérience de collaboration optimale,<br>essayez une autre version, d'autres <span class=\"underline\">navigateurs pris en charge</span> ou téléchargez le client.",
+		"OLD_EDGE": "Votre navigateur n'est pas compatible avec Avaya Meetings. Pour une expérience optimale, veuillez passer sur Google Chrome ou sur la dernière version de Microsoft Edge."
+	},
+	"NAVIGATION": {
+		"JOIN": "Lancer la réunion maintenant",
+		"RECORDING": "Enregistrements + Événements",
+		"SCHEDULE": "Agenda",
+		"SETTINGS": "Paramètres",
+		"SIGN_OUT": "Déconnexion"
+	},
 	"SETTINGS": {
 		"TITLE": "Paramètres Avaya",
 		"SETTINGS": "Paramètres",
@@ -192,62 +255,6 @@
 	"ON": "Activé",
 	"OFF": "Désactivé",
 	"DISABLED": "Désactivé",
-	"ABOUT": {
-		"TITLE": "À propos d'Avaya Meetings",
-		"RELEASE": "Version :",
-		"AVAYA_TRADEMARKS": "Avaya Meetings et Equinox Conferencing sont des marques commerciales d'Avaya Inc.",
-		"OTHER_TRADEMARKS": "Java est une marque commerciale de Sun Microsystems, Inc. ; Microsoft, Windows et Internet Explorer sont des marques déposées ou des marques commerciales de Microsoft Corporation aux États-Unis et dans d'autres pays.",
-		"TRADEMARKS_INFO": "Tous les autres produits mentionnés dans ce document sont des marques déposées ou des marques commerciales de leurs fabricants respectifs.",
-		"COPYRIGHT_INFO": "Pour plus d'informations sur les détenteurs des droits de copyright des composants tiers et sur les conditions qui s'appliquent à ce produit, veuillez consulter <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>.",
-		"LICENCE": "Le téléchargement du logiciel, son installation ou son utilisation indique que vous avez lu, compris et accepté les conditions générales de licence de logiciel AVAYA (produits Avaya) disponibles ",
-		"LICENCE_I18N": "Les versions en anglais, brésilien, français canadien, chinois, allemand, italien, portugais, espagnol, français, japonais et russe sont disponibles ",
-		"USAGE_INFO": "Si vous ne disposez pas d'un accès direct à Internet, veuillez accéder à un appareil disposant d'un accès Internet pour visualiser, télécharger et imprimer la licence applicable.",
-		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. Tous droits réservés.",
-		"CLOSE": "Fermer",
-		"LINK": "ici."
-	},
-	"LOGIN": {
-		"SIGNING": "Connexion...",
-		"LOADING": "Chargement...",
-		"GREETING": "Vous avez déjà un compte ?",
-		"NAME": "nom d'utilisateur",
-		"LOGIN": "connexion",
-		"PASSWORD": "mot de passe",
-		"REMEMBER_ME": "Maintenir la connexion",
-		"SIGN_IN": "Connexion",
-		"LOG_IN": "Se connecter",
-		"FORGOT_PASSWORD": "Mot de passe oublié ?",
-		"OR_SIGN_IN": "ou connectez-vous via",
-		"USE_ENTERPRISE_ACCOUNT": "Utiliser mon compte d'entreprise (SSO)",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "Un e-mail avec un lien vous permettant de récupérer votre mot de passe vient de vous être envoyé."
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "Nom d'utilisateur ou mot de passe incorrect",
-			"VALIDATION_FAILED": "Le nom d'utilisateur et le mot de passe doivent être renseignés.",
-			"NOT_ALLOWED": "Vous n'êtes pas autorisé à vous connecter.",
-			"USER_AUTH_DISABLED": "Authentification désactivée pour l’utilisateur {{name}}.",
-			"ERROR": "Absence de réponse ou erreur du serveur. Réessayez ultérieurement.",
-			"ERC_AUTH_USER_NAME": "L'authentification OAuth a échoué. Adressez-vous à votre administrateur système.",
-			"ERC_AUTH_EMPTY_EMAIL": "Impossible de connecter l'utilisateur avec une adresse e-mail non définie"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "À propos",
-		"SIGN_OUT": "Déconnexion",
-		"SETTINGS": "Paramètres",
-		"SIGN_IN": "Connexion"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "ne peut pas être utilisé pour rejoindre la réunion. Veuillez essayer l'un des navigateurs pris en charge.",
-		"YOUR": "Votre",
-		"BROWSER": "navigateur",
-		"BROWSERS": "navigateurs",
-		"BROWSER_OUT_OF_DATE": "n'est pas à jour. Veuillez mettre à jour votre navigateur pour une expérience optimale.",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "La version de votre navigateur ne prend pas en charge l'audio et la video. Pour une expérience de collaboration optimale,<br>essayez une autre version, d'autres <span class=\"underline\">navigateurs pris en charge</span> ou téléchargez le client.",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "La version de votre navigateur ne prend pas en charge les conférences Web. Pour une expérience de collaboration optimale,<br>essayez une autre version, d'autres <span class=\"underline\">navigateurs pris en charge</span> ou téléchargez le client.",
-		"OLD_EDGE": "Votre navigateur n'est pas compatible avec Avaya Meetings. Pour une expérience optimale, veuillez passer sur Google Chrome ou sur la dernière version de Microsoft Edge."
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "Votre session est arrivée à expiration. Veuillez vous connecter pour continuer.",

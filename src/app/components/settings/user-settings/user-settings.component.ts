@@ -898,11 +898,72 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   applySettings(): Promise<any> {
     // TODO create this method
     return new Promise<any>(resolve => {
-      console.log('hello ', this.wasMeetingPinChanged());
 
       const confirmSettings = () => {
-        const deferredPassword = $q.defer();
-        const deferredSettings = $q.defer();
+        // const deferredPassword = $q.defer();
+        // const deferredSettings = $q.defer();
+        const confirmPassword = () => {
+          return new Promise<any>((resolve1, reject) => {
+
+
+            if (this.changePasswordReactiveForm && this.changePasswordReactiveForm.dirty) {
+              this.logger.info('Change password by apply button');
+              resolve1(this.changePassword());
+              // $scope.$broadcast(EVENT.CUSTOM.CHANGE_PASSWORD, {
+              //   form: $scope.changePasswordForm.form.changePasswordForm,
+              //   promise: deferredPassword
+              // });
+            } else {
+              resolve1(true);
+            }
+
+
+          });
+        };
+        const confirmUserSettings = () => {
+          return new Promise((resolve1, reject1) => {
+            if (this.settingsChanged()) {
+              this.logger.log('settings changed, need to upload to server');
+              if (this.isVirtualRoomFormValid()) {
+                resolve1(this.prepareAndUploadSettings().then(
+                  () => {
+                    return new Promise(resolve2 => {
+                      window.localStorage.videoCallingPreferences = this.videoCalling;
+                      window.localStorage.enabledLogs = this.saveLogsCheckbox;
+                      if (!this.saveLogsCheckbox) {
+                        this.meetingsLogsService.deleteLogs();
+                        this.haveIndexedDB = false;
+                      }
+                      // @ts-ignore
+                      this.originDateFormat = _.cloneDeep(this.currentDateSetting);
+                      this.originalAccessPinEnabled = this.data.accessPinEnabled;
+                      window.localStorage.timeFormat = JSON.stringify(this.currentDateSetting);
+                      if (this.isDesktop) {
+                        if (this.photoWasDeleted) {
+                          this.deletePhoto();
+                          this.photoWasDeleted = false;
+                        }
+
+                        if (!!this.newPicture) {
+                          this.sendPicture(this.newPicture);
+                        }
+                      }
+                      resolve2(true);
+                    });
+                  }, (e) => {
+                    return new Promise((resolve2, reject) => {
+                      reject();
+                    });
+                  }));
+              } else {
+                reject1();
+              }
+            } else {
+              this.logger.log('settings not changed, no need to upload to server');
+              resolve1(true);
+            }
+          });
+        };
 
         // if (this.changePasswordForm && $scope.changePasswordForm.form.changePasswordForm.$dirty) {
         //   this.logger.info('Change password by apply button');
@@ -914,57 +975,67 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         //   deferredPassword.resolve();
         // }
 
-        if (this.settingsChanged()) {
-          this.logger.log('settings changed, need to upload to server');
-          if (this.isVirtualRoomFormValid()) {
-            this.prepareAndUploadSettings().then(
-              () => {
-                deferredSettings.resolve();
-                window.localStorage.videoCallingPreferences = this.videoCalling;
-                window.localStorage.enabledLogs = this.saveLogsCheckbox;
-                if (!this.saveLogsCheckbox) {
-                  this.meetingsLogsService.deleteLogs();
-                  this.haveIndexedDB = false;
-                }
-                // @ts-ignore
-                this.originDateFormat = _.cloneDeep($scope.currentDateSetting);
-                this.originalAccessPinEnabled = this.data.accessPinEnabled;
-                window.localStorage.timeFormat = JSON.stringify(this.currentDateSetting);
-                if (this.isDesktop) {
-                  if (this.photoWasDeleted) {
-                    this.deletePhoto();
-                    this.photoWasDeleted = false;
-                  }
-
-                  if (!!this.newPicture) {
-                    this.sendPicture(this.newPicture);
-                  }
-                }
-              }, () => {
-                deferredSettings.reject();
-              });
-          } else {
-            deferredSettings.reject();
-          }
-        } else {
-          this.logger.log('settings not changed, no need to upload to server');
-          deferredSettings.resolve();
-        }
+        // if (this.settingsChanged()) {
+        //   this.logger.log('settings changed, need to upload to server');
+        //   if (this.isVirtualRoomFormValid()) {
+        //     this.prepareAndUploadSettings().then(
+        //       () => {
+        //         deferredSettings.resolve();
+        //         window.localStorage.videoCallingPreferences = this.videoCalling;
+        //         window.localStorage.enabledLogs = this.saveLogsCheckbox;
+        //         if (!this.saveLogsCheckbox) {
+        //           this.meetingsLogsService.deleteLogs();
+        //           this.haveIndexedDB = false;
+        //         }
+        //         // @ts-ignore
+        //         this.originDateFormat = _.cloneDeep($scope.currentDateSetting);
+        //         this.originalAccessPinEnabled = this.data.accessPinEnabled;
+        //         window.localStorage.timeFormat = JSON.stringify(this.currentDateSetting);
+        //         if (this.isDesktop) {
+        //           if (this.photoWasDeleted) {
+        //             this.deletePhoto();
+        //             this.photoWasDeleted = false;
+        //           }
+        //
+        //           if (!!this.newPicture) {
+        //             this.sendPicture(this.newPicture);
+        //           }
+        //         }
+        //       }, () => {
+        //         deferredSettings.reject();
+        //       });
+        //   } else {
+        //     deferredSettings.reject();
+        //   }
+        // } else {
+        //   this.logger.log('settings not changed, no need to upload to server');
+        //   deferredSettings.resolve();
+        // }
         this.setDefaultRoom();
-        return $q.all([deferredPassword.promise, deferredSettings.promise]);
+        // resolve(confirmPassword().then(() => {
+        //   resolve(confirmUserSettings().catch(() => {
+        //     return new Promise((resolve1, reject) => {
+        //       reject();
+        //     });
+        //   }));
+        // }, () => {
+        //   return new Promise((resolve1, reject) => {
+        //     reject();
+        //   });
+        // }));
+        return Promise.all([confirmPassword(), confirmUserSettings()]);
       };
 
-      if(this.wasMeetingPinChanged()){
+      if(this.defaultVirtualRoom.selected.name !== 'None' && this.wasMeetingPinChanged()){
         return this.showPinWarning().then( () => {
           return new Promise<any>(resolve1 => {
-            console.log('hello 2');
             // confirmSettings
-            resolve1(true);
+            resolve1(confirmSettings());
           });
         });
       } else {
         // confirmSettings
-        resolve(true);
+        resolve(confirmSettings());
       }
     });
   }
@@ -1141,6 +1212,10 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   setCurrentTab(tab): void {
     this.currentTab = this.currentTab === tab && this.isMobileView ? undefined : tab;
 
+    if(tab !== this.TAB.PASSWORD && this.changePasswordReactiveForm){
+      this.changePasswordReactiveForm.reset();
+    }
+
     // need to set password type on pin inputs
 
     // @ts-ignore
@@ -1222,126 +1297,142 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     }
   }
 
-  changePassword(data?): void {
-    this.logger.info('Change password');
-    // const form = data.form;
-    // form.$error.server = false;
-    // form.$error.server_bad_old_password = false;
-    // form.$error.server_unable_use_old_password = false;
-    // form.$error.server_change_frequency = false;
-    // form.$error.server_change_repeated_chars = false;
-    // form.$error.server_change_complexity = false;
-    // form.$error.server_too_short = false;
-    // form.$error.server_invalid_token = false;
-    // form.$error.number_previous_passwords_cannot_reused = false;
-    // form.$error.cannot_contain_loginId = false;
-    // form.$error.must_contain_categories = false;
-    // form.$error.cannot_contain_repeted_chars = false;
-    // form.$error.cannot_contain_sequential_chars = false;
+  changePassword(data?): Promise<any> {
+    return new Promise<any>(resolve => {
+      this.logger.info('Change password');
+      // const form = data.form;
+      // form.$error.server = false;
+      // form.$error.server_bad_old_password = false;
+      // form.$error.server_unable_use_old_password = false;
+      // form.$error.server_change_frequency = false;
+      // form.$error.server_change_repeated_chars = false;
+      // form.$error.server_change_complexity = false;
+      // form.$error.server_too_short = false;
+      // form.$error.server_invalid_token = false;
+      // form.$error.number_previous_passwords_cannot_reused = false;
+      // form.$error.cannot_contain_loginId = false;
+      // form.$error.must_contain_categories = false;
+      // form.$error.cannot_contain_repeted_chars = false;
+      // form.$error.cannot_contain_sequential_chars = false;
 
-    this.logger.log('Start loading');
-    // $scope.$emit(EVENT.CUSTOM.LOADING_STARTED);
-    const onAlways = () => {
-      setTimeout(() => {
-        this.logger.log('Stop loading');
-        // $rootScope.$broadcast(EVENT.CUSTOM.LOADING_FINISHED);
-      });
-    };
+      this.logger.log('Start loading');
+      // $scope.$emit(EVENT.CUSTOM.LOADING_STARTED);
+      const onAlways = () => {
+        setTimeout(() => {
+          this.logger.log('Stop loading');
+          // $rootScope.$broadcast(EVENT.CUSTOM.LOADING_FINISHED);
+        });
+      };
 
-    const onDone = (response) => {
-      this.logger.log('Password has been changed. Clean up form, %o', JSON.stringify(response));
-      // $scope.password.currentPassword = '';
-      // $scope.password.newPassword = '';
-      // $scope.password.newPassword2 = '';
-      this.changePasswordForm.controls.currentPassword.setValue('');
-      this.changePasswordForm.controls.newPassword.setValue('');
-      this.changePasswordForm.controls.confirmPassword.setValue('');
-      // form.$setPristine();
-      // form.$setUntouched();
-      // if (confirmationToken) {
-      //   $state.go(STATE.JOIN);
+      const onDone = (response) => {
+        return new Promise((resolve1, reject) => {
+          this.logger.log('Password has been changed. Clean up form, %o', JSON.stringify(response));
+          this.changePasswordForm.controls.currentPassword.patchValue('');
+          this.changePasswordForm.controls.newPassword.patchValue('');
+          this.changePasswordForm.controls.confirmPassword.patchValue('');
+          this.changePasswordForm.reset();
+          // form.$setPristine();
+          // form.$setUntouched();
+          resolve(response);
+        });
+      };
+
+      const onFail = (response) => {
+        return new Promise((resolve1, reject) => {
+          this.logger.warn('Password has not been changed, %o', JSON.stringify(response));
+          this.changePasswordReactiveForm.setErrors({errorFromServer: true});
+          // form.$invalid = true;
+          try {
+            switch (response.responseJSON.error[0].errorCode) {
+              case 'ERC_AUTH_PASSWORD_CHANGE_OLD_BAD':
+                // form.$error.server_bad_old_password = true;
+                this.changePasswordReactiveForm.setErrors({server_bad_old_password: true});
+                if (this.changePasswordReactiveForm.controls.currentPassword.value) {
+                  // form.currentPassword.$error.bad = true;
+                  this.changePasswordReactiveForm.setErrors({bad: true});
+                }
+                break;
+              case 'ERC_AUTH_PASSWORD_CHANGE_OLD_UNABLE_USE':
+                // form.$error.server_unable_use_old_password = true;
+                this.changePasswordReactiveForm.setErrors({server_unable_use_old_password: true});
+                break;
+              case 'ERROR_CANNOT_BECHANGE_FREQUENTLY':
+                // form.$error.server_change_frequency = true;
+                this.changePasswordReactiveForm.setErrors({server_change_frequency: true});
+                break;
+              case 'ERC_AUTH_PASSWORD_CHANGE_REPEATED_CHARS':
+                // form.$error.server_change_repeated_chars = true;
+                this.changePasswordReactiveForm.setErrors({server_change_repeated_chars: true});
+                break;
+              case 'ERC_AUTH_PASSWORD_CHANGE_COMPLEXITY':
+                // form.$error.server_change_complexity = true;
+                this.changePasswordReactiveForm.setErrors({server_change_complexity: true});
+                break;
+              case 'ERC_AUTH_PASSWORD_CHANGE_NEW_SHORT':
+                // form.$error.server_too_short = true;
+                this.changePasswordReactiveForm.setErrors({server_too_short: true});
+                break;
+              case 'ERC_AUTH_TOKEN_INVALID':
+                // TODO: handle unauthorized access, broadcast appropriate event
+                break;
+              case 'ERC_AUTH_PASSWORD_CHANGE_TOKEN_INVALID':
+                // form.$error.server_invalid_token = true;
+                this.changePasswordReactiveForm.setErrors({server_invalid_token: true});
+                break;
+              case 'ERROR_CANNOT_MACTH_PASSWORD_HISTORY':
+                // form.$error.number_previous_passwords_cannot_reused = true;
+                this.changePasswordReactiveForm.setErrors({number_previous_passwords_cannot_reused: true});
+                break;
+              case 'ERROR_CANNOT_CONTAIN_LOGIN_ID':
+                // form.$error.cannot_contain_loginId = true;
+                this.changePasswordReactiveForm.setErrors({cannot_contain_loginId: true});
+                break;
+              case 'ERROR_MUST_CONTAIN_4_CATEGORIES':
+                // form.$error.must_contain_categories = true;
+                this.changePasswordReactiveForm.setErrors({must_contain_categories: true});
+                break;
+              case 'ERROR_CANNOT_CONTAIN_REPEATED_CHARS':
+                // form.$error.cannot_contain_repeted_chars = true;
+                this.changePasswordReactiveForm.setErrors({cannot_contain_repeted_chars: true});
+                break;
+              case 'ERROR_CANNOT_CONTAIN_SEQUENTIAL_CHARS':
+                // form.$error.cannot_contain_sequential_chars = true;
+                this.changePasswordReactiveForm.setErrors({cannot_contain_sequential_chars: true});
+                break;
+              case 'ERC_USER_NEW_PASSWORD_TOO_SHORT':
+                // form.$error.server_too_short = true;
+                this.changePasswordReactiveForm.setErrors({server_too_short: true});
+                break;
+              default:
+                // form.$error.server = true;
+                this.changePasswordReactiveForm.setErrors({server: true});
+            }
+          } catch (e) {
+            console.log('hello error', e);
+            this.changePasswordReactiveForm.setErrors({server: true});
+          }
+
+          reject(response);
+        });
+      };
+
+      // if ($scope.password.confirmationToken) {
+      //   this.logger.log('Guest tries to change password');
+      //   UserSettingsService.getAvayaUserService()
+      //     .changePassword(null, $scope.password.confirmationToken,
+      //     $scope.password.newPassword, null, $rootScope.resources.resources.authentication.POST.changePassword.href)
+      //     .fail(onFail).done(onDone).always(onAlways);
+      // } else {
+      //   this.logger.log('logged in tries to change password');
+      //   UserSettingsService.getAvayaUserService()
+      //     .changePassword($scope.password.currentPassword, null, $scope.password.newPassword, PortalResources.getTenantParams.user)
+      //     .fail(onFail).done(onDone).always(onAlways);
       // }
-      if (data.promise) {
-        data.promise.resolve();
-      }
-    };
-
-    const onFail = (response) => {
-      this.logger.warn('Password has not been changed, %o', JSON.stringify(response));
-      this.changePasswordReactiveForm.setErrors({errorFromServer: true});
-      // form.$invalid = true;
-
-      // switch (response.responseJSON.error[0].errorCode) {
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_OLD_BAD':
-      //     form.$error.server_bad_old_password = true;
-      //     if (form.currentPassword) {
-      //       form.currentPassword.$error.bad = true;
-      //     }
-      //     break;
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_OLD_UNABLE_USE':
-      //     form.$error.server_unable_use_old_password = true;
-      //     break;
-      //   case 'ERROR_CANNOT_BECHANGE_FREQUENTLY':
-      //     form.$error.server_change_frequency = true;
-      //     break;
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_REPEATED_CHARS':
-      //     form.$error.server_change_repeated_chars = true;
-      //     break;
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_COMPLEXITY':
-      //     form.$error.server_change_complexity = true;
-      //     break;
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_NEW_SHORT':
-      //     form.$error.server_too_short = true;
-      //     break;
-      //   case 'ERC_AUTH_TOKEN_INVALID':
-      //     // TODO: handle unauthorized access, broadcast appropriate event
-      //     break;
-      //   case 'ERC_AUTH_PASSWORD_CHANGE_TOKEN_INVALID':
-      //     form.$error.server_invalid_token = true;
-      //     break;
-      //   case 'ERROR_CANNOT_MACTH_PASSWORD_HISTORY':
-      //     form.$error.number_previous_passwords_cannot_reused = true;
-      //     break;
-      //   case 'ERROR_CANNOT_CONTAIN_LOGIN_ID':
-      //     form.$error.cannot_contain_loginId = true;
-      //     break;
-      //   case 'ERROR_MUST_CONTAIN_4_CATEGORIES':
-      //     form.$error.must_contain_categories = true;
-      //     break;
-      //   case 'ERROR_CANNOT_CONTAIN_REPEATED_CHARS':
-      //     form.$error.cannot_contain_repeted_chars = true;
-      //     break;
-      //   case 'ERROR_CANNOT_CONTAIN_SEQUENTIAL_CHARS':
-      //     form.$error.cannot_contain_sequential_chars = true;
-      //     break;
-      //   case 'ERC_USER_NEW_PASSWORD_TOO_SHORT':
-      //     form.$error.server_too_short = true;
-      //     break;
-      //   default:
-      //     form.$error.server = true;
-      // }
-
-      if (data.promise) {
-        data.promise.reject();
-      }
-    };
-
-    // if ($scope.password.confirmationToken) {
-    //   this.logger.log('Guest tries to change password');
-    //   UserSettingsService.getAvayaUserService()
-    //     .changePassword(null, $scope.password.confirmationToken,
-    //     $scope.password.newPassword, null, $rootScope.resources.resources.authentication.POST.changePassword.href)
-    //     .fail(onFail).done(onDone).always(onAlways);
-    // } else {
-    //   this.logger.log('logged in tries to change password');
-    //   UserSettingsService.getAvayaUserService()
-    //     .changePassword($scope.password.currentPassword, null, $scope.password.newPassword, PortalResources.getTenantParams.user)
-    //     .fail(onFail).done(onDone).always(onAlways);
-    // }
-    this.logger.log('logged in tries to change password');
-    this.userSettingsService.getAvayaUserService().changePassword(this.changePasswordReactiveForm.value.currentPassword, null,
-      this.changePasswordReactiveForm.value.newPassword, this.userSettingsService.portalResources.getTenantParams.user)
-      .fail(onFail).done(onDone).always(onAlways);
+      this.logger.log('logged in tries to change password');
+      resolve(this.userSettingsService.getAvayaUserService().changePassword(this.changePasswordReactiveForm.value.currentPassword, null,
+        this.changePasswordReactiveForm.value.newPassword, this.userSettingsService.portalResources.getTenantParams.user)
+        .fail(onFail.bind(this)).done(onDone.bind(this)).always(onAlways.bind(this)));
+    });
   }
 
   private isChangeFormValid(): boolean {
@@ -1617,11 +1708,11 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       const isDefaultVRChanged = userDetailsUpdate.defaultVirtualRoom !== this.originalSettings.conferencing.defaultVirtualRoom;
 
       // @ts-ignore
-      resolve(this.UserSettingsService.uploadUserSettings(new AvayaUserClient.UserService.UserDetailsUpdate(userDetailsUpdate)).then(
+      resolve(this.userSettingsService.uploadUserSettings(new AvayaUserClient.UserService.UserDetailsUpdate(userDetailsUpdate)).then(
         (response) => {
           this.logger.log('User settings uploaded successfully');
           // @ts-ignore
-          this.originalSettings = angular.copy(this.$scope.userSettings);
+          this.originalSettings = _.cloneDeep(this.userSettings);
           this.userSettingsService.updateUserSettings(this.originalSettings);
           if (isDefaultVRChanged) {
             // TODO make analog of this event

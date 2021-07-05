@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "Avaya Meetings のバージョン情報",
+		"RELEASE": "リリース：",
+		"AVAYA_TRADEMARKS": "Avaya Meetings および Equinox Conferencing は Avaya Inc. の商標です。",
+		"OTHER_TRADEMARKS": "Java は Sun Microsystems, Inc. の商標です。Microsoft、Windows および Internet Explorer は、米国およびその他の国における Microsoft Corporation の登録商標または商標です。",
+		"TRADEMARKS_INFO": "本書で使用されるその他のすべての製品名は、各製造元の登録商標または商標です。",
+		"COPYRIGHT_INFO": "本製品に適用されるサードパーティコンポーネントの著作権者および利用規約を特定する情報は、<a href=\"{{link}}\" target=\"_blank\">{{link}}</a> をご参照ください。",
+		"LICENCE": "ソフトウェアのダウンロード、インストール、または使用を実行する場合、以下のリンクに記載されている Avaya ライセンス規約（Avaya 製品）を読み、理解し、同意したことと看做されます：",
+		"LICENCE_I18N": "以下のリンクでイタリア語、英語、スペイン語、中国語、日本語、フランス語、フランス語（カナダ）、ポルトガル語、ポルトガル語（ブラジル）、ドイツ語、ロシア語のバージョンを入手できます：",
+		"USAGE_INFO": "インターネットに直接アクセスできない場合、インターネットにアクセスできるデバイスにアクセスし、該当するライセンスを表示、ダウンロード、および印刷してください。",
+		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
+		"CLOSE": "閉じる",
+		"LINK": "リンク"
+	},
+	"LOGIN": {
+		"SIGNING": "サインイン中...",
+		"LOADING": "読み込み中...",
+		"GREETING": "アカウント情報を入力：",
+		"NAME": "ユーザー名",
+		"LOGIN": "ログイン",
+		"PASSWORD": "パスワード",
+		"REMEMBER_ME": "ログインしたままにする",
+		"SIGN_IN": "サインイン",
+		"LOG_IN": "ログイン",
+		"FORGOT_PASSWORD": "パスワードを忘れた場合",
+		"OR_SIGN_IN": "または",
+		"USE_ENTERPRISE_ACCOUNT": "エンタープライズアカウント（SSO）を使用してサインイン",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "パスワードリセットのリンクが電子メールで送信されました"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "ユーザー名またはパスワードが無効です",
+			"VALIDATION_FAILED": "ユーザー名またはパスワードを空にすることはできません。",
+			"NOT_ALLOWED": "ログインが許可されていません。",
+			"USER_AUTH_DISABLED": "ユーザー {{name}} の認証が無効です",
+			"ERROR": "サーバーから応答がないか、サーバーエラーが発生しています。後でもう一度お試しください。",
+			"ERC_AUTH_USER_NAME": "OAuth 認証に失敗しました。サポートが必要な場合は、システム管理者に連絡してください。",
+			"ERC_AUTH_EMPTY_EMAIL": "未定義の電子メールではログインできません"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "バージョン情報",
+		"SIGN_OUT": "サインアウト",
+		"SETTINGS": "設定",
+		"SIGN_IN": "サインイン"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "は会議の参加には使用できません。対応ブラウザでお試しください。",
+		"YOUR": "お使いの",
+		"BROWSER": "ブラウザ",
+		"BROWSERS": "ブラウザ",
+		"BROWSER_OUT_OF_DATE": "が古くなっています。快適にお使いいただくために最新のブラウザにアップデートしてください。",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "お使いのブラウザバージョンはオーディオとビデオをサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "お使いのブラウザバージョンはウェブ会議をサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
+		"OLD_EDGE": "お使いのブラウザは Avaya Meetings との互換性がありません。快適にお使いいただくために、Google Chrome または最新の Microsoft Edge に切り替えてください。"
+	},
+	"NAVIGATION": {
+		"JOIN": "会議に参加",
+		"RECORDING": "会議記録とイベント",
+		"SCHEDULE": "スケジュール",
+		"SETTINGS": "設定",
+		"SIGN_OUT": "サインアウト"
+	},
 	"SETTINGS": {
 		"TITLE": "Avaya 設定",
 		"SETTINGS": "設定",
@@ -192,62 +255,6 @@
 	"ON": "オン",
 	"OFF": "オフ",
 	"DISABLED": "無効",
-	"ABOUT": {
-		"TITLE": "Avaya Meetings のバージョン情報",
-		"RELEASE": "リリース：",
-		"AVAYA_TRADEMARKS": "Avaya Meetings および Equinox Conferencing は Avaya Inc. の商標です。",
-		"OTHER_TRADEMARKS": "Java は Sun Microsystems, Inc. の商標です。Microsoft、Windows および Internet Explorer は、米国およびその他の国における Microsoft Corporation の登録商標または商標です。",
-		"TRADEMARKS_INFO": "本書で使用されるその他のすべての製品名は、各製造元の登録商標または商標です。",
-		"COPYRIGHT_INFO": "本製品に適用されるサードパーティコンポーネントの著作権者および利用規約を特定する情報は、<a href=\"{{link}}\" target=\"_blank\">{{link}}</a> をご参照ください。",
-		"LICENCE": "ソフトウェアのダウンロード、インストール、または使用を実行する場合、以下のリンクに記載されている Avaya ライセンス規約（Avaya 製品）を読み、理解し、同意したことと看做されます：",
-		"LICENCE_I18N": "以下のリンクでイタリア語、英語、スペイン語、中国語、日本語、フランス語、フランス語（カナダ）、ポルトガル語、ポルトガル語（ブラジル）、ドイツ語、ロシア語のバージョンを入手できます：",
-		"USAGE_INFO": "インターネットに直接アクセスできない場合、インターネットにアクセスできるデバイスにアクセスし、該当するライセンスを表示、ダウンロード、および印刷してください。",
-		"COPYRIGHT": "Copyright © {{year}} Avaya Inc. All Rights Reserved.",
-		"CLOSE": "閉じる",
-		"LINK": "リンク"
-	},
-	"LOGIN": {
-		"SIGNING": "サインイン中...",
-		"LOADING": "読み込み中...",
-		"GREETING": "アカウント情報を入力：",
-		"NAME": "ユーザー名",
-		"LOGIN": "ログイン",
-		"PASSWORD": "パスワード",
-		"REMEMBER_ME": "ログインしたままにする",
-		"SIGN_IN": "サインイン",
-		"LOG_IN": "ログイン",
-		"FORGOT_PASSWORD": "パスワードを忘れた場合",
-		"OR_SIGN_IN": "または",
-		"USE_ENTERPRISE_ACCOUNT": "エンタープライズアカウント（SSO）を使用してサインイン",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "パスワードリセットのリンクが電子メールで送信されました"
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "ユーザー名またはパスワードが無効です",
-			"VALIDATION_FAILED": "ユーザー名またはパスワードを空にすることはできません。",
-			"NOT_ALLOWED": "ログインが許可されていません。",
-			"USER_AUTH_DISABLED": "ユーザー {{name}} の認証が無効です",
-			"ERROR": "サーバーから応答がないか、サーバーエラーが発生しています。後でもう一度お試しください。",
-			"ERC_AUTH_USER_NAME": "OAuth 認証に失敗しました。サポートが必要な場合は、システム管理者に連絡してください。",
-			"ERC_AUTH_EMPTY_EMAIL": "未定義の電子メールではログインできません"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "バージョン情報",
-		"SIGN_OUT": "サインアウト",
-		"SETTINGS": "設定",
-		"SIGN_IN": "サインイン"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "は会議の参加には使用できません。対応ブラウザでお試しください。",
-		"YOUR": "お使いの",
-		"BROWSER": "ブラウザ",
-		"BROWSERS": "ブラウザ",
-		"BROWSER_OUT_OF_DATE": "が古くなっています。快適にお使いいただくために最新のブラウザにアップデートしてください。",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "お使いのブラウザバージョンはオーディオとビデオをサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "お使いのブラウザバージョンはウェブ会議をサポートしていません。より良いコラボレーションエクスペリエンスを実現するためには、<br>他のバージョンを試すか、他の<span class=\"underline\">サポートされているブラウザ</span>またはクライアントをダウンロードしてください。",
-		"OLD_EDGE": "お使いのブラウザは Avaya Meetings との互換性がありません。快適にお使いいただくために、Google Chrome または最新の Microsoft Edge に切り替えてください。"
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "セッションの有効期限が切れました。続行するにはログインしてください",

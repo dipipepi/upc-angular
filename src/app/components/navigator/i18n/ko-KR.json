@@ -1,0 +1,9 @@
+{
+    "NAVIGATION": {
+        "JOIN": "지금 회의하기",
+        "RECORDING": "레코딩 + 이벤트",
+        "SCHEDULE": "일정",
+        "SETTINGS": "설정",
+        "SIGN_OUT": "로그아웃"
+    }
+}

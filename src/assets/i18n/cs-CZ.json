@@ -1,4 +1,67 @@
 {
+	"ABOUT": {
+		"TITLE": "Info o Avaya Meetings Server",
+		"RELEASE": "Verze:",
+		"AVAYA_TRADEMARKS": "Avaya Meetings Server je ochranná známka společnosti Avaya Inc.",
+		"OTHER_TRADEMARKS": "Java je ochranná známka společnosti Sun Microsystems, Inc.; Microsoft, Windows a Internet Explorer jsou registrované ochranné známky nebo ochranné známky společnosti Microsoft Corporation ve Spojených státech a/nebo dalších zemích.",
+		"TRADEMARKS_INFO": "Všechny ostatní názvy produktů použité v tomto Avaya produktu jsou registrované ochranné známky příslušných výrobců.",
+		"COPYRIGHT_INFO": "Informace pro identifikaci držitelů autorských práv ke komponentám a podmínkám třetích stran, které se vztahují na tento produkt, naleznete na tomto odkazu: <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>",
+		"LICENCE": "Stažením, instalací nebo použitím softwaru souhlasíte, že jste si přečetli, porozuměli a přijali podmínky licenčních podmínek softwaru Avaya (produkty Avaya) na tomto odkazu: ",
+		"LICENCE_I18N": "Jazykové verze těchto licenčních podmínek nalezne na tomto odkazu: ",
+		"USAGE_INFO": "Pokud nemáte přímý přístup k internetu, použijete zařízení, které přístup k Internetu má a příslušnou licenci si stáhněte a vytiskněte.",
+		"COPYRIGHT": "Copyright © {{{year}} Avaya Inc. Všechna práva vyhrazena.",
+		"CLOSE": "Zavřít",
+		"LINK": "odkaz"
+	},
+	"LOGIN": {
+		"SIGNING": "Přihlašování…",
+		"LOADING": "Načítání…",
+		"GREETING": "Máte již účet?",
+		"NAME": "Uživatelské jméno",
+		"LOGIN": "Přihlašovací jméno",
+		"PASSWORD": "Heslo",
+		"REMEMBER_ME": "Zůstat přihlášen",
+		"SIGN_IN": "Přihlásit",
+		"LOG_IN": "Přihlásit",
+		"FORGOT_PASSWORD": "Zapomenuté heslo?",
+		"OR_SIGN_IN": "nebo se přihlaste pomocí",
+		"USE_ENTERPRISE_ACCOUNT": "Použít můj firemní účet (jednotné přihlašování)",
+		"POPUP": {
+			"REMIND_PASSWORD_IN_EMAIL": "Byl vám zaslán e-mail s odkazem na obnovení hesla"
+		},
+		"ERROR": {
+			"INVALID_CREDENTIALS": "Neplatné uživatelské jméno nebo heslo",
+			"VALIDATION_FAILED": "Uživatelské jméno nebo heslo nesmí být prázdné.",
+			"NOT_ALLOWED": "Nemáte oprávnění se přihlásit.",
+			"USER_AUTH_DISABLED": "Ověření bylo pro uživatele {{name}} deaktivováno",
+			"ERROR": "Žádná odpověď ze serveru nebo chyba serveru. Zkuste to později.",
+			"ERC_AUTH_USER_NAME": "Ověřování OAuth nebylo úspěšné. Požádejte o pomoc svého správce systému.",
+			"ERC_AUTH_EMPTY_EMAIL": "Nelze přihlásit uživatele s nedefinovanou e-mailovou adresou"
+		}
+	},
+	"HEADER": {
+		"ABOUT": "O aplikaci",
+		"SIGN_OUT": "Odhlásit",
+		"SETTINGS": "Nastavení",
+		"SIGN_IN": "Přihlásit"
+	},
+	"BROWSERS": {
+		"BROWSER_NOT_SUPPORTED": "nelze použít pro připojení ke schůzce. Vyzkoušejte některý z podporovaných prohlížečů.",
+		"YOUR": "Váš",
+		"BROWSER": "prohlížeč",
+		"BROWSERS": "prohlížeč",
+		"BROWSER_OUT_OF_DATE": "je zastaralý. Aktualizujte svůj prohlížeč, abyste mohli používat všechny funkce.",
+		"VERSION_EXCLUSION_FOR_WEBRTC": "Verze vašeho prohlížeče nepodporuje audio/video. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Verze vašeho prohlížeče nepodporuje webové konference. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
+		"OLD_EDGE": "Váš prohlížeč není kompatibilní s Avaya Meetings. Chcete-li používat všechny funkce použijte nejnovější verzi prohlížeče Google Chrome nebo Microsoft Edge."
+	},
+	"NAVIGATION": {
+		"JOIN": "Zahájit schůzku",
+		"RECORDING": "Nahrávky a akce",
+		"SCHEDULE": "Plánování",
+		"SETTINGS": "Nastavení",
+		"SIGN_OUT": "Odhlásit"
+	},
 	"SETTINGS": {
 		"TITLE": "Nastavení",
 		"SETTINGS": "Nastavení",
@@ -192,62 +255,6 @@
 	"ON": "Zap.",
 	"OFF": "Vyp.",
 	"DISABLED": "Zakázáno",
-	"ABOUT": {
-		"TITLE": "Info o Avaya Meetings Server",
-		"RELEASE": "Verze:",
-		"AVAYA_TRADEMARKS": "Avaya Meetings Server je ochranná známka společnosti Avaya Inc.",
-		"OTHER_TRADEMARKS": "Java je ochranná známka společnosti Sun Microsystems, Inc.; Microsoft, Windows a Internet Explorer jsou registrované ochranné známky nebo ochranné známky společnosti Microsoft Corporation ve Spojených státech a/nebo dalších zemích.",
-		"TRADEMARKS_INFO": "Všechny ostatní názvy produktů použité v tomto Avaya produktu jsou registrované ochranné známky příslušných výrobců.",
-		"COPYRIGHT_INFO": "Informace pro identifikaci držitelů autorských práv ke komponentám a podmínkám třetích stran, které se vztahují na tento produkt, naleznete na tomto odkazu: <a href=\"{{link}}\" target=\"_blank\">{{link}}</a>",
-		"LICENCE": "Stažením, instalací nebo použitím softwaru souhlasíte, že jste si přečetli, porozuměli a přijali podmínky licenčních podmínek softwaru Avaya (produkty Avaya) na tomto odkazu: ",
-		"LICENCE_I18N": "Jazykové verze těchto licenčních podmínek nalezne na tomto odkazu: ",
-		"USAGE_INFO": "Pokud nemáte přímý přístup k internetu, použijete zařízení, které přístup k Internetu má a příslušnou licenci si stáhněte a vytiskněte.",
-		"COPYRIGHT": "Copyright © {{{year}} Avaya Inc. Všechna práva vyhrazena.",
-		"CLOSE": "Zavřít",
-		"LINK": "odkaz"
-	},
-	"LOGIN": {
-		"SIGNING": "Přihlašování…",
-		"LOADING": "Načítání…",
-		"GREETING": "Máte již účet?",
-		"NAME": "Uživatelské jméno",
-		"LOGIN": "Přihlašovací jméno",
-		"PASSWORD": "Heslo",
-		"REMEMBER_ME": "Zůstat přihlášen",
-		"SIGN_IN": "Přihlásit",
-		"LOG_IN": "Přihlásit",
-		"FORGOT_PASSWORD": "Zapomenuté heslo?",
-		"OR_SIGN_IN": "nebo se přihlaste pomocí",
-		"USE_ENTERPRISE_ACCOUNT": "Použít můj firemní účet (jednotné přihlašování)",
-		"POPUP": {
-			"REMIND_PASSWORD_IN_EMAIL": "Byl vám zaslán e-mail s odkazem na obnovení hesla"
-		},
-		"ERROR": {
-			"INVALID_CREDENTIALS": "Neplatné uživatelské jméno nebo heslo",
-			"VALIDATION_FAILED": "Uživatelské jméno nebo heslo nesmí být prázdné.",
-			"NOT_ALLOWED": "Nemáte oprávnění se přihlásit.",
-			"USER_AUTH_DISABLED": "Ověření bylo pro uživatele {{name}} deaktivováno",
-			"ERROR": "Žádná odpověď ze serveru nebo chyba serveru. Zkuste to později.",
-			"ERC_AUTH_USER_NAME": "Ověřování OAuth nebylo úspěšné. Požádejte o pomoc svého správce systému.",
-			"ERC_AUTH_EMPTY_EMAIL": "Nelze přihlásit uživatele s nedefinovanou e-mailovou adresou"
-		}
-	},
-	"HEADER": {
-		"ABOUT": "O aplikaci",
-		"SIGN_OUT": "Odhlásit",
-		"SETTINGS": "Nastavení",
-		"SIGN_IN": "Přihlásit"
-	},
-	"BROWSERS": {
-		"BROWSER_NOT_SUPPORTED": "nelze použít pro připojení ke schůzce. Vyzkoušejte některý z podporovaných prohlížečů.",
-		"YOUR": "Váš",
-		"BROWSER": "prohlížeč",
-		"BROWSERS": "prohlížeč",
-		"BROWSER_OUT_OF_DATE": "je zastaralý. Aktualizujte svůj prohlížeč, abyste mohli používat všechny funkce.",
-		"VERSION_EXCLUSION_FOR_WEBRTC": "Verze vašeho prohlížeče nepodporuje audio/video. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
-		"VERSION_EXCLUSION_FOR_DATE_ONLY": "Verze vašeho prohlížeče nepodporuje webové konference. Chcete-li používat všechny funkce<br>zkuste jinou verzi prohlížeče,<span class=\"underline\">jiný podporovaný prohlížeč</span>nebo si stáhněte aplikaci Workplace.",
-		"OLD_EDGE": "Váš prohlížeč není kompatibilní s Avaya Meetings. Chcete-li používat všechny funkce použijte nejnovější verzi prohlížeče Google Chrome nebo Microsoft Edge."
-	},
 	"GENERAL": {
 		"ERROR": {
 			"SESSION_HAS_EXPIRED": "Vaše relace vypršela. Chcete-li pokračovat, přihlaste se.",
