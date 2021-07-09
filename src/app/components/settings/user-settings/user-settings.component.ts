@@ -8,7 +8,7 @@ import {AuthorizationService} from '../../../services/AuthorizationService/autho
 import {CustomDeviceDetectorService} from '../../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {StylesService} from '../../../services/StylesService/styles.service';
 import {MeetingsLogsService} from '../../../services/MeetingsLogsService/meetings-logs.service';
-import {BROWSERS, DATE_FORMAT, OS, PIN_MAX_LENGTH, PIN_TYPE} from '../../../constants';
+import {BROWSERS, DATE_FORMAT, EVENT, OS, PIN_MAX_LENGTH, PIN_TYPE} from '../../../constants';
 import {PinService} from '../../../shared/services/PinService/pin.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
@@ -21,6 +21,7 @@ import {
 import {GlobalService} from '../../../services/GlobalService/global.service';
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 import {CustomValidatorsService} from '../../../shared/custom-validators/custom-validators.service';
+import {EventService} from '../../../shared/services/EventService/event.service';
 
 @Component({
   selector: 'app-user-settings',
@@ -131,7 +132,8 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
               private dialog: MatDialog,
               public globalService: GlobalService,
               public formBuilder: FormBuilder,
-              private customValidators: CustomValidatorsService) { }
+              private customValidators: CustomValidatorsService,
+              private eventService: EventService) { }
 
   ngOnDestroy(): void {
         // throw new Error('Method not implemented.');
@@ -255,12 +257,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       options: this.sortByKey(this.locations, 'name')
     };
 
-    // TODO check analog of this watch
-    // $scope.$watch('locations.selected',() => {
-    //   this.logger.log('location changed');
-    //   $scope.userSettings.conferencing.locationId = $scope.locations.selected.locationId;
-    // });
-
     const noneDefaultVirtualRoom = {name: 'None', virtualRoomId: null};
 
     // find first room with enabled defaultRoom flag
@@ -370,88 +366,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       }, {validators: this.customValidators.passwordsMatch()});
     }
 
-    // TODO check than analog working correct
-    //   $scope.$watch('currentRoom.moderatorPIN', (newVal, oldVal) => {
-    //     if(newVal !== '' && oldVal === ''){
-    //       $scope.currentRoom.waitingRoom = $scope.currentRoom.previousWaitingRoomValue;
-    //     }
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('virtualRoomVoicePromptLanguage.selected',(language) => {
-    //     if (language) {
-    //       this.logger.log('virtualRoomVoicePromptLanguage changed to %s', language.displayName);
-    //       $scope.currentRoom.voicePromptLanguage = language.id;
-    //     }
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('entryAnnouncement.selected',(announcement) => {
-    //     if (announcement) {
-    //       this.logger.log('entryAnnouncement changed to %s', announcement.name);
-    //       $scope.currentRoom.entryAnnouncement = announcement.id;
-    //     }
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('exitAnnouncement.selected',(announcement) => {
-    //     if (announcement) {
-    //       this.logger.log('exitAnnouncement changed to %s', announcement.name);
-    //       $scope.currentRoom.exitAnnouncement = announcement.id;
-    //     }
-    //   });
-    //
-
-    // TODO check than analog working correct
-    //   $scope.$watch('currentRoom.maxPlayToneNumber',() => {
-    //     if ($scope.currentRoom.maxPlayToneNumber) {
-    //       $scope.currentRoom.maxPlayToneNumber = +$scope.currentRoom.maxPlayToneNumber + 0;
-    //       if (+$scope.currentRoom.maxPlayToneNumber > 100) {
-    //         $scope.errorMaxPlayToneNumber = true;
-    //         $scope.roomFormScope.roomForm.maxPlayToneNumber.$setValidity("required", false);
-    //         return;
-    //       }
-    //     }
-    //     $scope.errorMaxPlayToneNumber = false;
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('currentRoom.maxPlayNameNumber', () => {
-    //     if ($scope.currentRoom.maxPlayNameNumber) {
-    //       $scope.currentRoom.maxPlayNameNumber = +$scope.currentRoom.maxPlayNameNumber + 0;
-    //       if (+$scope.currentRoom.maxPlayNameNumber > 100) {
-    //         $scope.errorMaxPlayNameNumber = true;
-    //         $scope.roomFormScope.roomForm.maxPlayNameNumber.$setValidity("required", false);
-    //         return;
-    //       }
-    //     }
-    //     $scope.errorMaxPlayNameNumber = false;
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('virtualRoomDialInLocations.selected', (language) => {
-    //     if (language) {
-    //       this.logger.log('virtualRoomDialInLocations changed to %s', language.displayName);
-    //       $scope.currentRoom.preferredDialInLocation = language.id;
-    //     }
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('allowPresentPolicy.selected', (allowPresentPolicyOptions) => {
-    //     if (allowPresentPolicyOptions) {
-    //       this.logger.log('allowPresentPolicy changed to %s', allowPresentPolicyOptions.name);
-    //       $scope.currentRoom.allowPresentPolicy = allowPresentPolicyOptions.id;
-    //     }
-    //   });
-
-    // TODO check than analog working correct
-    //   $scope.$watch('virtualRoomInvitationLanguages.selected', (language) => {
-    //     if (language) {
-    //       this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
-    //       $scope.currentRoom.invitationLanguage = language.id;
-    //     }
-    //   });
-    // }
     this.ACData = this.acClientService.clientData || undefined;
     if (this.customDeviceDetector.os === OS.MAC && this.userSettingsService.portalResources.outlookPluginDownloadUrlMac) {
       this.canShowDownloadPlugin = true;
@@ -648,12 +562,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
 
     this.originalSettings = _.cloneDeep(this.userSettings);
 
-    // TODO check than analog working correct
-    // $scope.$watch('dateFormatSettings.selected', () => {
-    //   $scope.currentDateSetting.dateFormat = $scope.dateFormatSettings.selected.id;
-    // });
-
-
     // If we haven't DB, hide button
     if (this.indexedDbIsCompatibility) {
       this.meetingsLogsService.openDb()
@@ -669,7 +577,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
         });
     }
 
-    // TODO get virtualRoomNeedUpdate from data when dialog opening
     if(this.data.virtualRoomNeedUpdate){
       this.currentTab = this.TAB.ROOM;
       const roomToUpdate = this.searchById(this.data.virtualRoomNeedUpdate.virtualRoomId,
@@ -810,7 +717,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   }
 
   entryAnnouncementSelected(announcement): void {
-    // TODO get announcement
     if (announcement) {
       this.entryAnnouncement.selected = announcement;
       this.logger.log('entryAnnouncement changed to %s', announcement.name);
@@ -819,7 +725,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   }
 
   exitAnnouncementSelected(announcement): void {
-    // TODO get announcement
     if (announcement) {
       this.exitAnnouncement.selected = announcement;
       this.logger.log('exitAnnouncement changed to %s', announcement.name);
@@ -872,10 +777,9 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   }
 
   virtualRoomInvitationLanguagesSelected(language): void {
-    // TODO get language
-          this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
-          this.virtualRoomInvitationLanguages.selected = language;
-          this.currentRoom.invitationLanguage = language.id;
+    this.logger.log('virtualRoomInvitationLanguages changed to %s', language.displayName);
+    this.virtualRoomInvitationLanguages.selected = language;
+    this.currentRoom.invitationLanguage = language.id;
   }
 
   areAllPinsCorrect(): boolean {
@@ -897,7 +801,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
   }
 
   applySettings(): Promise<any> {
-    // TODO create this method
     return new Promise<any>(resolve => {
 
       const confirmSettings = () => {
@@ -1715,30 +1618,30 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
           this.originalSettings = _.cloneDeep(this.userSettings);
           this.userSettingsService.updateUserSettings(this.originalSettings);
           if (isDefaultVRChanged) {
-            // TODO make analog of this event
-            // this.$rootScope.$broadcast(this.EVENT.CUSTOM.DEFAULT_VIRTUAL_ROOM_UPDATED);
+            this.eventService.broadcast(EVENT.CUSTOM.DEFAULT_VIRTUAL_ROOM_UPDATED);
           }
           return response;
         },
         (response) => {
-          this.logger.warn('User settings update request failed');
-          const error = {
-            message: this.translate.instant('SETTINGS.ERROR.SETTINGS_UPDATE_FAILED')
-          };
-          if (response && response.responseJSON && response.responseJSON.errorMsg && response.responseJSON.displayMsg &&
-            response.responseJSON.errorMsg === 'iView update error') {
-            if (response.responseJSON.displayMsg === 'FAILURE-WaitingRoomMustBeEnabled') {
-              error.message = this.translate.instant('SETTINGS.ERROR.WAITING_ROOM_MUST_BE_ENABLED');
-            } else if (response.responseJSON.displayMsg === 'FAILURE-ModeratorPINRequired') {
-              error.message = this.translate.instant('SETTINGS.ERROR.MODERATOR_PIN_REQUIRED');
-            } else if (response.responseJSON.displayMsg.indexOf('ERROR - Service Template') !== -1) {
-              error.message = this.translate.instant('SETTINGS.ERROR.WRONG_MEETING_TYPE');
+          return new Promise((resolve1, reject) => {
+            this.logger.warn('User settings update request failed');
+            const error = {
+              message: this.translate.instant('SETTINGS.ERROR.SETTINGS_UPDATE_FAILED')
+            };
+            if (response && response.responseJSON && response.responseJSON.errorMsg && response.responseJSON.displayMsg &&
+              response.responseJSON.errorMsg === 'iView update error') {
+              if (response.responseJSON.displayMsg === 'FAILURE-WaitingRoomMustBeEnabled') {
+                error.message = this.translate.instant('SETTINGS.ERROR.WAITING_ROOM_MUST_BE_ENABLED');
+              } else if (response.responseJSON.displayMsg === 'FAILURE-ModeratorPINRequired') {
+                error.message = this.translate.instant('SETTINGS.ERROR.MODERATOR_PIN_REQUIRED');
+              } else if (response.responseJSON.displayMsg.indexOf('ERROR - Service Template') !== -1) {
+                error.message = this.translate.instant('SETTINGS.ERROR.WRONG_MEETING_TYPE');
+              }
             }
-          }
-          // @ts-ignore
-          // TODO make this method
-          // this.MessageUtilsService.showError(error.caption, error.message);
-          // return this.$q.reject(response);
+            // TODO make this method
+            // this.MessageUtilsService.showError(error.caption, error.message);
+            reject(response);
+          });
         }
       ));
     });

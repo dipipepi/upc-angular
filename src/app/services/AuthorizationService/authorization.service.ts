@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PortalResources, PortalResourcesServiceService} from '../portal-resources-service.service';
 import {Logger} from '../../../Logger';
-import {LOCAL_STORAGE, SESSION_STORAGE, USER_TYPE} from '../../constants';
+import {EVENT, LOCAL_STORAGE, SESSION_STORAGE, USER_TYPE} from '../../constants';
 import {EncodingService} from '../EncodingService/encoding-service.service';
 import {UserSettingsService} from '../UserSettingsService/user-settings.service';
 import {RecordingService} from '../RecordingService/recording.service';
@@ -10,8 +10,9 @@ import {PictureService} from '../PictureUtils/picture.service';
 import {ContactsService} from '../ContactsService/contacts.service';
 import {ScheduleService} from '../ScheduleService/schedule.service';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {GlobalService} from '../GlobalService/global.service';
+import {EventService} from '../../shared/services/EventService/event.service';
 
 export interface LoginResponse {
   encryptedPassword: string;
@@ -50,7 +51,9 @@ export class AuthorizationService {
               private contactsService: ContactsService,
               private scheduleService: ScheduleService,
               private router: Router,
-              private globalService: GlobalService) { }
+              private globalService: GlobalService,
+              private route: ActivatedRoute,
+              private eventService: EventService) { }
 
   private logger = new Logger('AuthorizationService');
 
@@ -91,7 +94,7 @@ export class AuthorizationService {
         this.clearUserData();
         const isSsoPe =
           // TODO make possible get sso by URL
-          // this.$location.search().sso === 'pe-websso' &&
+          this.route.snapshot.queryParams.sso === 'pe-websso' &&
           this.userSettingsService.portalResources.peEnabled &&
           this.userSettingsService.portalResources.ssoRedirectUrl;
 
@@ -134,51 +137,11 @@ export class AuthorizationService {
         this.clearUserData().then(() => {
           this.redirectFromSchedule();
           window.localStorage.removeItem('oauth2Authentication');
-          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGOUT); // TODO make analog of this event
+          this.eventService.broadcast(EVENT.CUSTOM.SUCCESSFUL_LOGOUT);
         });
         return response;
       }));
   }
-
-  // clearUserData(): Promise<any> {
-  //   return new Promise<any>(() => {
-  //     // this.MessageUtilsService.closeOutlookExtensionNotification(); // TODO make MessageUtilsService
-  //     this.logger.log('ClearUserData: change user type to guest');
-  //     this.userType = USER_TYPE.GUEST;
-  //     window.localStorage.removeItem(LOCAL_STORAGE.UPS_TOKEN);
-  //     this.logger.log('UPS token has been removed from localStorage');
-  //     window.localStorage.removeItem(LOCAL_STORAGE.USER_DATA.LOGIN);
-  //     window.localStorage.removeItem(LOCAL_STORAGE.USER_DATA.ENCRYPTED_PASSWORD);
-  //     window.localStorage.removeItem(LOCAL_STORAGE.ALIAS);
-  //     window.localStorage.removeItem(LOCAL_STORAGE.OAUTH2_REFRESH_TOKEN);
-  //     this.logger.log('Keep me: Removed user data from local storage ');
-  //     this.user = {};
-  //     this.logger.log('Stop Services: AvayaContactsService, AvayaUserService, AvayaMeetingManagementService');
-  //     this.contactsService.stopAvayaClientServices();
-  //     this.userSettingsService.stopAvayaUserService();
-  //     this.scheduleService.stopAvayaMeetingManagementService();
-  //     this.logger.log('Get resources for GUEST');
-  //     // request resources for guest user
-  //
-  //     this.userSettingsService.fetchResources().then( () => {
-  //       return new Promise<void>((resolve, reject) => {
-  //         this.logger.log('Resources for GUEST are received. Logout from ACSR service');
-  //
-  //         this.recordingService.initAvayaRecordingManagementService();
-  //         this.recordingService.authenticationService.logout().done((res, res2) => {
-  //           this.logger.log('RecordingService: logout: %o : %o', res, res2);
-  //           resolve();
-  //         }).fail((res) => {
-  //           this.logger.warn('RecordingService: logout fail. Response=%o', res);
-  //           reject();
-  //         }).always(() => {
-  //           this.logger.log('Firing user type change event');
-  //           // this.$rootScope.$broadcast(EVENT.CUSTOM.RESOURCES_UPDATED); // TODO make analog of this event
-  //         });
-  //       });
-  //     });
-  //   });
-  // }
 
   clearUserData(): Promise<any> {
     return new Promise<any>((resolve, reject) => {
@@ -212,7 +175,7 @@ export class AuthorizationService {
           reject();
         }).always(() => {
           this.logger.log('Firing user type change event');
-          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED); // TODO make analog of this event
+          this.eventService.broadcast(EVENT.CUSTOM.RESOURCES_UPDATED);
         });
 
       }));
@@ -271,7 +234,7 @@ export class AuthorizationService {
         } else {
           this.userType = USER_TYPE.GUEST;
           this.redirectFromSchedule();
-          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED); // TODO create analog of this event
+          this.eventService.broadcast(EVENT.CUSTOM.RESOURCES_UPDATED);
           this.recordingService.initAvayaRecordingManagementService();
           reject();
         }
@@ -399,20 +362,17 @@ export class AuthorizationService {
               this.userSettingsService.fetchLocations();
               this.userType = USER_TYPE.SIGN_IN;
 
-              // TODO create following service and method
               this.recordingService.authenticationService.login(response.token).done((res, res2) => {
                 this.logger.log('RecordingService: Login: %o : %o', res, res2);
               }).fail(() => {
                 this.logger.warn('RecordingService: Login fail');
               }).always(() => {
-                // TODO make analog of this event
-                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RESOURCES_UPDATED);
-                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGIN);
-                // this.$rootScope.$broadcast(this.EVENT.CUSTOM.STOP_RECORDING);
+                this.eventService.broadcast(EVENT.CUSTOM.RESOURCES_UPDATED);
+                this.eventService.broadcast(EVENT.CUSTOM.SUCCESSFUL_LOGIN);
+                this.eventService.broadcast(EVENT.CUSTOM.STOP_RECORDING);
               });
 
-              // TODO make analog of this event
-              // this.$rootScope.$broadcast(this.EVENT.CUSTOM.CHECK_VIRTUAL_ROOM_PIN_UPDATE);
+              this.eventService.broadcast(EVENT.CUSTOM.CHECK_VIRTUAL_ROOM_PIN_UPDATE);
               resolve2(response);
             });
           };
@@ -443,10 +403,9 @@ export class AuthorizationService {
         });
       };
 
-      // TODO make analog of this event
-      // if (response.data.encryptedPassword){
-      //   this.$rootScope.$broadcast(this.EVENT.CUSTOM.SUCCESSFUL_LOGIN_WITH_CREDENTIALS);
-      // }
+      if (response.data.encryptedPassword){
+        this.eventService.broadcast(EVENT.CUSTOM.SUCCESSFUL_LOGIN_WITH_CREDENTIALS);
+      }
       this.logger.log('User is logged in, Token received');
       window.localStorage.setItem(LOCAL_STORAGE.UPS_TOKEN, response.token);
       // @ts-ignore

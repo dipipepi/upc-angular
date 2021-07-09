@@ -14,8 +14,9 @@ import {AuthorizationService, User} from '../../services/AuthorizationService/au
 import {TranslateService} from '@ngx-translate/core';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {DirectiveUtilsService} from '../services/DirectiveUtilsService/directive-utils.service';
-import {KEY_CODE} from '../../constants';
+import {EVENT, KEY_CODE} from '../../constants';
 import {GlobalService} from '../../services/GlobalService/global.service';
+import {EventService} from '../services/EventService/event.service';
 
 @Component({
   selector: 'app-tag-selector',
@@ -67,7 +68,8 @@ export class TagSelectorComponent implements OnInit, OnChanges, OnDestroy {
               private customDeviceDetector: CustomDeviceDetectorService,
               private elRef: ElementRef,
               private directiveUtilsService: DirectiveUtilsService,
-              private globalService: GlobalService) {
+              private globalService: GlobalService,
+              private eventService: EventService) {
     this.disabled = elRef.nativeElement.getAttribute('disabled') === null ? null : !!elRef.nativeElement.getAttribute('disabled');
   }
 
@@ -155,8 +157,7 @@ export class TagSelectorComponent implements OnInit, OnChanges, OnDestroy {
         Promise.all(this.beforeTagAdded(item)).then(() =>{
           this.selected.push(item);
           this.selectedChanged.emit(this.selected);
-          // TODO make analog of this event
-          // $rootScope.$broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
+          this.eventService.broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
 
           this.search = '';
           this.currentItem = 0;
@@ -167,8 +168,7 @@ export class TagSelectorComponent implements OnInit, OnChanges, OnDestroy {
       } else {
         this.selected.push(item);
         this.selectedChanged.emit(this.selected);
-        // TODO make analog of this event
-        // $rootScope.$broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
+        this.eventService.broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
 
         this.search = '';
         this.currentItem = 0;
@@ -183,8 +183,7 @@ export class TagSelectorComponent implements OnInit, OnChanges, OnDestroy {
     this.selected.splice(index, 1);
     this.selectedChanged.emit(this.selected);
 
-    // TODO make analog of this event
-    // $rootScope.$broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
+    this.eventService.broadcast(EVENT.CUSTOM.MOVE_TAG_IN_TAG_SELECTOR);
     if (this.onChange) {
       this.onChange();
     }

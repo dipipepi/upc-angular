@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {LOCAL_STORAGE, STATUS_CODE, URL} from '../../constants';
+import {EVENT, LOCAL_STORAGE, STATUS_CODE, URL} from '../../constants';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {PortalResources} from '../portal-resources-service.service';
 import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
 import {GlobalService} from '../GlobalService/global.service';
+import {EventService} from '../../shared/services/EventService/event.service';
 
 @Injectable({
   providedIn: 'root'
@@ -80,7 +81,8 @@ export class UserSettingsService {
 
   constructor(private http: HttpClient,
               private translate: TranslateService,
-              private globalService: GlobalService) { }
+              private globalService: GlobalService,
+              private eventService: EventService) { }
 
   startAvayaUserService(): void {
     if (!this.pictureUrls) {
@@ -242,7 +244,6 @@ export class UserSettingsService {
           };
         }
 
-        // TODO this can be replaced with client side UUID generation
         return this.http.get(this.portalResources.resources.middleware.POST.createSession.href).toPromise()
           .then((session) => {
             // @ts-ignore
@@ -292,10 +293,9 @@ export class UserSettingsService {
       return this.service.getUserConfig().fail((response) => {
         this.logger.warn('user settings request failed');
         this.logger.debug(JSON.stringify(response));
-        // TODO make broadcast analog
-        // if (response.status === this.STATUS_CODE.UNAUTHORIZED) {
-        //   this.$rootScope.$broadcast(this.EVENT.CUSTOM.UNAUTHORIZED_ACCESS);
-        // }
+        if (response.status === STATUS_CODE.UNAUTHORIZED) {
+          this.eventService.broadcast(EVENT.CUSTOM.UNAUTHORIZED_ACCESS);
+        }
         reject(response);
       }).done((response) => {
         this.logger.debug('user settings request success');
@@ -320,7 +320,7 @@ export class UserSettingsService {
         this.logger.warn('user settings update request failed');
         this.logger.debug(JSON.stringify(response));
         if (response.status === STATUS_CODE.UNAUTHORIZED) {
-          // this.$rootScope.$broadcast(this.EVENT.CUSTOM.UNAUTHORIZED_ACCESS); // TODO make analog of this event
+          this.eventService.broadcast(EVENT.CUSTOM.UNAUTHORIZED_ACCESS);
         }
         return response;
       }).done((response) => {
@@ -355,8 +355,8 @@ export class UserSettingsService {
     }
 
 
-    for( let i=0;i<languages.length;i++ ) {
-      languages[i].localizedDisplayName = localizedLanguages[languages[i].id] || languages[i].displayName;
+    for(const language of languages) {
+      language.localizedDisplayName = localizedLanguages[language.id] || language.displayName;
     }
 
     return languages;
@@ -375,7 +375,7 @@ export class UserSettingsService {
     return JSON.parse(window.localStorage.videoCallingPreferences);
   }
 
-  // tslint:disable-next-line:typedef
+  // @ts-ignore
   getRoomByNumber(number) {
     if (!this.userSettings || !number) {
       return null;
@@ -383,9 +383,9 @@ export class UserSettingsService {
 
     if (this.userSettings && this.userSettings.conferencing && this.userSettings.conferencing.virtualRoomSettings) {
       const rooms = this.userSettings.conferencing.virtualRoomSettings;
-      for (let i = 0; i < rooms.length; i++) {
-        if (rooms[i].number === number) {
-          return rooms[i];
+      for (const room of rooms) {
+        if (room.number === number) {
+          return room;
         }
       }
     }

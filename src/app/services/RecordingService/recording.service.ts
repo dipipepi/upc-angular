@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {UserSettingsService} from '../UserSettingsService/user-settings.service';
-import {URL} from '../../constants';
+import {EVENT, URL} from '../../constants';
 import { Logger } from '../../../Logger';
+import {EventService} from '../../shared/services/EventService/event.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class RecordingService {
     autoplay: true
   });
 
-  constructor(private userSettingsService: UserSettingsService) { }
+  constructor(private userSettingsService: UserSettingsService,
+              private eventService: EventService) { }
 
   initAvayaRecordingManagementService(): void {
     if (this.isInitialized) {
@@ -72,7 +74,7 @@ export class RecordingService {
 
     this.isInitialized = true;
 
-    // this.$rootScope.$broadcast(this.EVENT.CUSTOM.RECORDING_SERVICE_INITIALIZED); // TODO make analog of this event
+    this.eventService.broadcast(EVENT.CUSTOM.RECORDING_SERVICE_INITIALIZED);
 
   }
 
