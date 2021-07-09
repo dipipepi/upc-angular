@@ -1,7 +1,5 @@
 import {Injectable, SimpleChanges} from '@angular/core';
-import {Title} from '@angular/platform-browser';
-import {ACClientService} from '../ACClientService/acclient.service';
-import {TranslateService} from '@ngx-translate/core';
+import {User} from '../AuthorizationService/authorization.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +10,11 @@ export class GlobalService {
   maxVrNameWithSpace = 22;
   maxVrNumber = 23;
   sessionId: string;
+  offerScreenSharingExtension: boolean;
+  user: User | any;
+  isRolloverShowing: Boolean;
 
-  constructor(private titleService: Title,
-              private acClientService: ACClientService) { }
-
-  isThereClientToDownload(): boolean {
-    return !!this.acClientService.clientData.latestVersion;
-  }
+  constructor() { }
 
   valueChanged(valueName: string, valueObject: SimpleChanges): boolean  {
     return valueObject[valueName] !== undefined && valueObject[valueName].previousValue !== undefined;
@@ -36,6 +32,15 @@ export class GlobalService {
     });
 
     return res;
+  }
+
+  encodeQueryData(data): any {
+    const ret = [];
+    // tslint:disable-next-line:forin
+    for (const d in data) {
+      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+    }
+    return ret.join('&');
   }
 
 }

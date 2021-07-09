@@ -11,6 +11,7 @@ import {ContactsService} from '../ContactsService/contacts.service';
 import {ScheduleService} from '../ScheduleService/schedule.service';
 import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {Router} from '@angular/router';
+import {GlobalService} from '../GlobalService/global.service';
 
 export interface LoginResponse {
   encryptedPassword: string;
@@ -48,13 +49,14 @@ export class AuthorizationService {
               private pictureUtils: PictureService,
               private contactsService: ContactsService,
               private scheduleService: ScheduleService,
-              private router: Router) { }
+              private router: Router,
+              private globalService: GlobalService) { }
 
   private logger = new Logger('AuthorizationService');
 
   userType = USER_TYPE.GUEST;
 
-  user: User | {};
+  user: User | any;
 
   isAuthorizedUser = false;
 
@@ -190,7 +192,7 @@ export class AuthorizationService {
       window.localStorage.removeItem(LOCAL_STORAGE.ALIAS);
       window.localStorage.removeItem(LOCAL_STORAGE.OAUTH2_REFRESH_TOKEN);
       this.logger.log('Keep me: Removed user data from local storage ');
-      delete this.user;
+      delete this.globalService.user;
       delete this.userSettingsService.userSettings;
       this.logger.log('Stop Services: AvayaContactsService, AvayaUserService, AvayaMeetingManagementService');
       this.contactsService.stopAvayaClientServices();
@@ -383,7 +385,7 @@ export class AuthorizationService {
               // window.localStorage.setItem(LOCAL_STORAGE.ALIAS, this.$stateParams.alias); //TODO get alias from URL
               window.localStorage.setItem(LOCAL_STORAGE.ALIAS, 'dev-org208');
               const userConfig = userConfigResponse.userConfig;
-              this.user = {
+              this.globalService.user = {
                 login: (credentials && credentials.login) ? credentials.login : '',
                 name: userConfig.givenName,
                 lastName: userConfig.surname,
@@ -393,7 +395,7 @@ export class AuthorizationService {
                 mobilePhoneNumbers: userConfig.mobilePhoneNumbers,
                 fullName: userConfig.givenName + ' ' + userConfig.surname
               };
-              this.pictureUtils.extendObjectByPictureData(this.user);
+              this.pictureUtils.extendObjectByPictureData(this.globalService.user);
               this.userSettingsService.fetchLocations();
               this.userType = USER_TYPE.SIGN_IN;
 

@@ -9,7 +9,7 @@ import {CustomDeviceDetectorService} from '../../../services/CustomDeviceDetecto
 import {StylesService} from '../../../services/StylesService/styles.service';
 import {MeetingsLogsService} from '../../../services/MeetingsLogsService/meetings-logs.service';
 import {BROWSERS, DATE_FORMAT, OS, PIN_MAX_LENGTH, PIN_TYPE} from '../../../constants';
-import {PinService} from '../../../shared/service/PinService/pin.service';
+import {PinService} from '../../../shared/services/PinService/pin.service';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
 import {VersionService} from '../../../services/BrowserInfoService/browser-info.service';
@@ -138,6 +138,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit(): void {
+    console.log('hello dialog', document.getElementById(this.dialogRef.id));
     this.logger = new Logger('SettingsController');
     this.thatScope = this;
     this.originDateFormat = JSON.parse(window.localStorage.timeFormat);
@@ -1408,7 +1409,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
                 this.changePasswordReactiveForm.setErrors({server: true});
             }
           } catch (e) {
-            console.log('hello error', e);
             this.changePasswordReactiveForm.setErrors({server: true});
           }
 
@@ -1606,7 +1606,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
           this.thatScope.user.pictureUrl = undefined;
           this.thatScope.user.pictureData = undefined;
           this.thatScope.user.pictureUrl = url;
-          this.pictureUtils.extendObjectByPictureData(this.authorizationService.user, this.thatScope);
+          this.pictureUtils.extendObjectByPictureData(this.globalService.user, this.thatScope);
         }
         this.thatScope.pictureErrorMessage = undefined;
       });

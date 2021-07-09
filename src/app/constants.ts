@@ -1,11 +1,11 @@
 // tslint:disable-next-line:class-name
 export class UP_CLIENT_CONNECTION_SETTINGS {
-  static frontEndScheme='https';
-  static frontEndPort='8443';
-  static frontEndUPCBaseURL='/portal';
-  static frontEndUPSBaseURL='/ups';
-  static frontEndSWCBaseURL='/uwd/dist';
-  static frontEndESGBaseURL='/csg';
+  public static get frontEndScheme(): string {return 'https';}
+  public static get frontEndPort(): string {return '8443';}
+  public static get frontEndUPCBaseURL(): string {return '/portal';}
+  public static get frontEndUPSBaseURL(): string {return '/ups';}
+  public static get frontEndSWCBaseURL(): string {return '/uwd/dist';}
+  public static get frontEndESGBaseURL(): string {return '/csg';}
 }
 
 export class URL {
@@ -280,4 +280,50 @@ export class KEY_CODE {
   public static get UP():number {return 38;}
   public static get RIGHT():number {return 39;}
   public static get DOWN():number {return 40;}
+}
+
+// tslint:disable-next-line:class-name
+export class PARTICIPANT_MODE {
+  public static get AUDIO_VIDEO_WITH_PRESENTATION(): string {return 'AUDIO_VIDEO_WITH_PRESENTATION';}
+  public static get AUDIO_WITH_PRESENTATION(): string {return 'AUDIO_WITH_PRESENTATION';}
+  public static get PRESENTATION_ONLY(): string {return 'PRESENTATION_ONLY';}
+  // tslint:disable-next-line:typedef
+  public static get JOIN() {return {
+    AUDIO_VIDEO_PRESENTATION: 'Audio/Video + Presentation',
+    AUDIO_PRESENTATION: 'Audio + Presentation',
+    PRESENTATION_ONLY: 'Presentation Only'
+  };}
+}
+
+// tslint:disable-next-line:class-name
+export class MEETING_TYPE {
+  public static get AUDIO_ONLY(): string {return 'AUDIO_ONLY';}
+  public static get PROCESS_VIDEO(): string {return 'PROCESS_VIDEO';}
+  public static get SWITCHED_VIDEO(): string {return 'SWITCHED_VIDEO';}
+  public static get MULT_STREAM_SWITCH_VIDEO(): string {return 'MULT_STREAM_SWITCH_VIDEO';}
+}
+
+export class SSO_TYPE {
+  public static get PEWEBSSO(): string {return 'PE-WEBSSO';}
+}
+
+export class DELAY {
+  public static get UPCOMING_MEETINGS_TIMEOUT() {return 2000;}
+  public static get SCREEN_SHARING_EXTENSION_OFFER_DELAY() {return 2000;}
+  public static get OUTLOOK_PLUGIN_OFFER_DELAY() {return 2000;}
+  public static get AUTO_JOIN_DELAY() {return 1000;}
+  public static get PIN_UPDATE_DELAY() {return 1000;}
+}
+
+export class MOBILE_STORE_LINK {
+  public static get ANDROID() {return 'https://play.google.com/store/apps/details?id=com.avaya.android.flare';}
+  public static get IOS() {return 'http://itunes.apple.com/us/app/avaya-equinox/id933220295';}
+}
+
+export class STATE {
+// BASE: 'upc',
+  public static get JOIN() {return ''}
+  // RECORDINGS: 'upc.recordings',
+  // SCHEDULE: 'upc.schedule',
+  // REMIND_PASSWORD: 'upc.remindPassword'
 }

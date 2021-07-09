@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Otázky a odpovědi",
+            "RELATED_VIDEOS": "Související videa",
+            "BROWSE": "Procházet",
+            "VIDEO_DATE_AT": "{{date1}} v {{date2}}",
+            "NOT_ACTIVE": "Konferenční akce není aktivní."
+        },
+        "CHAT": {
+            "NEW_ONLY": "Zobrazit pouze nové položky",
+            "QUESTIONS_AND_ANSWERS": "Otázky a odpovědi",
+            "ENTER_QUESTION": "Zadejte otázku pro moderátora",
+            "ENTER_RESPONSE": "Zadejte odpověď pro {{name}}",
+            "ME": "Já",
+            "GUEST": "Host",
+            "REPLY_TO": "Odpovědět uživateli {{name}}",
+            "NAME_REQUEST": {
+                "TITLE": "Chcete-li se připojit k Otázkám a odpovím, zadejte své jméno.",
+                "JOIN_QA": "Připojit k Otázkám a odpovědím",
+                "PLACE_HOLDER": "Jméno"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Zadat PIN moderátora pro Otázky a odpovědi:",
+                "PLACE_HOLDER": "Zadat PIN",
+                "MODERATE": "Moderovat",
+                "CANCEL": "Zrušit",
+                "ERROR": "Zadaný PIN je neplatný."
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "Video je chráněné kódem PIN",
+            "ENTER_PIN": "Zadat PIN",
+            "OK": "OK",
+            "CANCEL": "Zrušit",
+            "ERROR": "Zadaný PIN je neplatný."
+        },
+        "TAB": {
+            "RECOMMENDED": "Doporučeno",
+            "EVENTS": "Konferenční akce",
+            "ALL_RECORDINGS": "Všechny nahrávky",
+            "MY_RECORDINGS": "Moje nahrávky",
+            "CATEGORY": "Kategorie",
+            "TRASH": "Koš"
+        },
+        "TABLE_HEADER": {
+            "DATE": "Datum",
+            "EXPIRY": "Platnost",
+            "DURATION": "Doba trvání",
+            "IMAGE": "Obrázek",
+            "TITLE": "Název",
+            "VIEWS": "Zhlédnutí",
+            "OWNER": "Vlastník",
+            "SIZE": "Velikost"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "Odstranit {{n}} položek?",
+            "DELETE_ITEM": "Odstranit 1 položku?",
+            "CANNOT_UNDONE": "Tuto akci nebude možné vrátit zpět.",
+            "DELETE": "Odstranit",
+            "CANCEL": "Zrušit"
+        },
+        "SEARCH_RECORDINGS": "Hledat",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "ID schůzky:",
+                "OWNER": "Vlastník:",
+                "DATE": "Datum:",
+                "EXPIRY": "Platnost:",
+                "CHECKSUM": "Kontrolní součet:",
+                "DIRECT_URL": "Přímá adresa URL:",
+                "DURATION": "Doba trvání:",
+                "SIZE": "Velikost",
+                "PROFILE": "Profil:",
+                "SIZE_W_X_H": "{{width}} x {{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}} x {{height}}, {{bitrate}} Kb/s",
+                "VIEWS": "Zhlédnutí: {{number}}",
+                "VIEWERS": "Prohlížející: {{number}}",
+                "ACCESS_LEVEL": "Tato nahrávka je nastavena jako soukromá. Chcete-li toto video sdílet s veřejností, změňte úroveň přístupu na veřejnou."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "K této nahrávce mají přístup tito:",
+                "ACCESS_FOOTNOTE": "* Pokud byl výše zadán přístupový PIN, bude vyžadován pro přístup k nahrávce.",
+                "ONLY_ME": "Pouze já (soukromé)",
+                "ONLY_FOLLOWING_USERS": "Vybraní uživatelé (soukromé)",
+                "ALL_AUTH_USERS": "Všichni ověření uživatelé",
+                "ALL_USERS": "Všichni uživatelé (veřejné)",
+                "ADD_ALL": "Přidejte všechny známé účastníky",
+                "NAME_OR_USER_ID": "Zadejte jméno nebo ID uživatele",
+                "N_SELECTED": "Vybráno: {{n}}",
+                "CHANGE_LEVEL": "Změna úrovně přístupu na veřejnou umožní komukoli tuto nahrávku přehrát.",
+                "DOWNLOAD_RECORDING": "Stáhnout nahrávku",
+                "SEE_RECORDING_IN_USER_PORTAL": "Přehrát nahrávku přímo v portálu",
+                "ALLOW_USER": "Umožnit těmto uživatelům"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "Název nahrávky nesmí být prázdný."
+            },
+            "UPLOAD": "Přidejte obrázek, který pomůže lidem tuto nahrávku snáze rozpoznat.",
+            "THUMBNAIL": "Miniatura videa",
+            "RECORDING_INFO_TAB_NAME": "Informace o nahrávce",
+            "USER_ACCESS_TAB_NAME": "Uživatelský přístup",
+            "RECORDING_MAIN_TAB_NAME": "Hlavní",
+            "CLOSE": "Zavřít",
+            "VIEW_RECORDING_DETAILS": "Zobrazení podrobností nahrávky",
+            "EDIT_RECORDING_DETAILS": "Úprava podrobností nahrávky",
+            "DESCRIPTION": "Popis:",
+            "CATEGORY": "Kategorie:",
+            "ACCESS_PIN": "Přístupový PIN:",
+            "ADD_CATEGORY": "Přidat kategorii",
+            "OPTIONAL": "Volitelné",
+            "REQUIRED": "Vyžadováno",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "Povolit stažení nahrávky",
+            "SHOW_PUBLICLY": "Zobrazit veřejně v portálu",
+            "SAVE": "Uložit",
+            "CANCEL": "Zrušit",
+            "ENTER_DESCRIPTION": "Zadat popis",
+            "RECORDING_TITLE": "Název"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "K tomuto vysílání mají přístup tito:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "Přehrát vysílání přímo v portálu"
+            },
+            "BROADCAST_DETAILS": "Podrobnosti vysílání",
+            "VIEW_BROADCAST_DETAILS": "Zobrazení podrobností vysílání",
+            "EDIT_BROADCAST_DETAILS": "Úprava podrobností vysílání",
+            "BROADCAST_INFO_TAB_NAME": "Informace o vysílání"
+        },
+        "NOW": "Právě probíhá",
+        "HAPPENING_TODAY": "Konané dnes",
+        "RECENTLY_ADDED": "Naposledy přidané",
+        "MOST_VIEWED": "Nejsledovanější",
+        "UPCOMING": "Připravované schůzky",
+        "LATER_TODAY": "Dnes později",
+        "TOMORROW": "Zítra",
+        "VIEW_DETAILS": "Zobrazit podrobnosti",
+        "EDIT_DETAILS": "Upravit podrobnosti",
+        "BROADCAST_MODERATE": "Moderovat",
+        "COPY_LINK": "Kopírovat odkaz",
+        "SHARE_LINK": "Sdílet e-mailem",
+        "DOWNLOAD": "Stahování",
+        "DELETE": "Odstranit",
+        "RECOVER": "Obnovit",
+        "TODAY": "Dnes",
+        "YESTERDAY": "Včera",
+        "TRASH_NOTICE": "Položky v koši budou automaticky smazány po {{n}} dnech.",
+        "DELETE_ALL": "Odstranit vše",
+        "RECOVER_ALL": "Obnovit vše",
+        "PAGE": "Stránka",
+        "OF": "z {{n}}",
+        "SHOW": "Zobrazit",
+        "ITEMS": "položek",
+        "LOAD_MORE": "Načíst další",
+        "RESULTS": "{{n}} výsledků",
+        "RESULT": "1 výsledek",
+        "SHOWING": "(zobrazeno {{first}} - {{second}})",
+        "TYPE_IN_SEARCH": "Zadejte text pro vyhledávání a stiskněte klávesu Enter",
+        "SEARCHING": "Probíhá hledání…",
+        "NO_RECOMMENDED": "Nejsou žádné doporučené nahrávky",
+        "NO_BROADCASTS": "Nejsou žádné živé konferenční akce",
+        "NO_RECORDINGS": "Žádná nahrávky",
+        "NO_ACCESS": "<a class='sign-in'>Přihlašte se</a> nebo použijte odkaz, který jste obdrželi pro přehrání nahrávky nebo konferenční akce.",
+        "VIEWS": "Zhlédnutí: {{n}}",
+        "VIEWERS": "Prohlížející: {{n}}",
+        "CANCEL": "Zrušit",
+        "CONTINUE": "Pokračovat",
+        "ERROR": {
+            "DOWNLOAD": "Chyba stahování",
+            "DOWNLOAD_LINK": "Odkaz na stažení není k dispozici",
+            "RECORDING_DELETED": "Nahrávka byla odstraněna. Chcete-li nahrávku přehrát, je třeba ji obnovit.",
+            "RECORDING_NOT_ACTIVE": "Konferenční akce není aktivní.",
+            "UPDATE_FAILED": "Aktualizace nahrávky se nezdařila."
+        },
+        "EXPIRY": {
+            "TITLE": "Vyprší",
+            "IN": "za",
+            "DAY": "d.",
+            "DAYS": "d.",
+            "HOUR": "hod.",
+            "HOURS": "hod.",
+            "EXPIRED": "Vypršelo"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

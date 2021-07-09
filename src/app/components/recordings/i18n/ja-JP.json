@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Q & A",
+            "RELATED_VIDEOS": "関連ビデオ",
+            "BROWSE": "参照",
+            "VIDEO_DATE_AT": "{{date1}} {{date2}}",
+            "NOT_ACTIVE": "イベントがアクティブではありません"
+        },
+        "CHAT": {
+            "NEW_ONLY": "新しいアイテムのみを表示する",
+            "QUESTIONS_AND_ANSWERS": "質問と回答",
+            "ENTER_QUESTION": "モデレーターへの質問を入力",
+            "ENTER_RESPONSE": "{{name}} への返信を入力",
+            "ME": "自分",
+            "GUEST": "ゲスト",
+            "REPLY_TO": "{{name}} への返信",
+            "NAME_REQUEST": {
+                "TITLE": "名前を入力して Q & A に参加する",
+                "JOIN_QA": "Q & A に参加する",
+                "PLACE_HOLDER": "名前"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Q&A モデレーター PIN を入力",
+                "PLACE_HOLDER": "PIN を入力",
+                "MODERATE": "会議制御",
+                "CANCEL": "キャンセル",
+                "ERROR": "指定された PIN は無効です。"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "このビデオは PIN で保護されています",
+            "ENTER_PIN": "PIN を入力",
+            "OK": "OK",
+            "CANCEL": "キャンセル",
+            "ERROR": "指定された PIN は無効です。"
+        },
+        "TAB": {
+            "RECOMMENDED": "おすすめ",
+            "EVENTS": "イベント",
+            "ALL_RECORDINGS": "すべての会議記録",
+            "MY_RECORDINGS": "個人用会議記録",
+            "CATEGORY": "カテゴリ",
+            "TRASH": "ごみ箱"
+        },
+        "TABLE_HEADER": {
+            "DATE": "日付",
+            "EXPIRY": "終了",
+            "DURATION": "所要時間",
+            "IMAGE": "画像",
+            "TITLE": "タイトル",
+            "VIEWS": "再生回数",
+            "OWNER": "所有者",
+            "SIZE": "サイズ"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "{{n}} 件のアイテムを削除しますか？",
+            "DELETE_ITEM": "1 個のアイテムを削除しますか？",
+            "CANNOT_UNDONE": "この操作は元に戻すことができません",
+            "DELETE": "削除",
+            "CANCEL": "キャンセル"
+        },
+        "SEARCH_RECORDINGS": "検索",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "会議 ID：",
+                "OWNER": "所有者：",
+                "DATE": "日付：",
+                "EXPIRY": "終了：",
+                "CHECKSUM": "チェックサム：",
+                "DIRECT_URL": "ダイレクト URL：",
+                "DURATION": "再生時間：",
+                "SIZE": "サイズ：",
+                "PROFILE": "プロファイル：",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}、{{bitrate}} Kb/s",
+                "VIEWS": "再生回数：{{number}}",
+                "VIEWERS": "視聴者数：{{number}}",
+                "ACCESS_LEVEL": "この会議記録はプライベートに設定されています。このビデオを公開として共有するには、ユーザーアクセスレベルを公開に変更してください。"
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "この会議記録は次のユーザーがアクセス可能：",
+                "ACCESS_FOOTNOTE": "* 上でアクセス PIN を入力すると会議記録へのアクセス保護に利用できます。",
+                "ONLY_ME": "プライベート（自分のみ）",
+                "ONLY_FOLLOWING_USERS": "プライベート - 選択したユーザー",
+                "ALL_AUTH_USERS": "認証されたすべてのユーザー",
+                "ALL_USERS": "公開（すべてのユーザー）",
+                "ADD_ALL": "既知の出席者をすべて追加する",
+                "NAME_OR_USER_ID": "名前またはユーザー ID を入力",
+                "N_SELECTED": "{{n}} 件選択済み",
+                "CHANGE_LEVEL": "ユーザーアクセスレベルを公開に変更すると、誰でもこの会議記録を表示できるようになります",
+                "DOWNLOAD_RECORDING": "録音のダウンロード",
+                "SEE_RECORDING_IN_USER_PORTAL": "ユーザーポータルの録音を参照",
+                "ALLOW_USER": "これらのユーザーへ許可"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "ユーザー名は空白にできません"
+            },
+            "UPLOAD": "この会議記録を特定できるようにする画像を追加",
+            "THUMBNAIL": "ビデオのサムネイル",
+            "RECORDING_INFO_TAB_NAME": "会議記録の情報",
+            "USER_ACCESS_TAB_NAME": "ユーザーアクセス",
+            "RECORDING_MAIN_TAB_NAME": "メイン",
+            "CLOSE": "閉じる",
+            "VIEW_RECORDING_DETAILS": "会議記録詳細の表示",
+            "EDIT_RECORDING_DETAILS": "会議記録詳細の編集",
+            "DESCRIPTION": "説明：",
+            "CATEGORY": "カテゴリ：",
+            "ACCESS_PIN": "アクセス PIN：",
+            "ADD_CATEGORY": "カテゴリの追加",
+            "OPTIONAL": "オプション",
+            "REQUIRED": "必須",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "会議記録のダウンロードを許可する",
+            "SHOW_PUBLICLY": "ポータルで公開表示する",
+            "SAVE": "保存",
+            "CANCEL": "キャンセル",
+            "ENTER_DESCRIPTION": "説明を入力",
+            "RECORDING_TITLE": "タイトル"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "このブロードキャストは次のユーザーがアクセス可能：",
+                "SEE_BROADCAST_IN_USER_PORTAL": "ユーザーポータルのブロードキャストを参照"
+            },
+            "BROADCAST_DETAILS": "ブロードキャストの詳細",
+            "VIEW_BROADCAST_DETAILS": "ブロードキャストの詳細を表示",
+            "EDIT_BROADCAST_DETAILS": "ブロードキャストの詳細を編集",
+            "BROADCAST_INFO_TAB_NAME": "ブロードキャスト情報"
+        },
+        "NOW": "現在進行中",
+        "HAPPENING_TODAY": "今日の予定",
+        "RECENTLY_ADDED": "最近追加されたアイテム",
+        "MOST_VIEWED": "再生回数の多いアイテム",
+        "UPCOMING": "今後の会議予定",
+        "LATER_TODAY": "今日の予定",
+        "TOMORROW": "明日",
+        "VIEW_DETAILS": "詳細の表示",
+        "EDIT_DETAILS": "詳細の編集",
+        "BROADCAST_MODERATE": "会議制御",
+        "COPY_LINK": "リンクをコピー",
+        "SHARE_LINK": "メールで共有する",
+        "DOWNLOAD": "ダウンロード",
+        "DELETE": "削除",
+        "RECOVER": "復元",
+        "TODAY": "今日",
+        "YESTERDAY": "昨日",
+        "TRASH_NOTICE": "ごみ箱内のアイテムは {{n}} 日後に自動的に削除されます",
+        "DELETE_ALL": "すべて削除",
+        "RECOVER_ALL": "すべて復元",
+        "PAGE": "ページ",
+        "OF": "/{{n}}",
+        "SHOW": "表示：",
+        "ITEMS": "件",
+        "LOAD_MORE": "さらに読み込む",
+        "RESULTS": "{{n}} 件の検索結果",
+        "RESULT": "1 件の結果",
+        "SHOWING": "(表示 {{first}}-{{second}})",
+        "TYPE_IN_SEARCH": "検索条件を入力し、Enter キーを押してください",
+        "SEARCHING": "検索中...",
+        "NO_RECOMMENDED": "おすすめの会議記録はありません",
+        "NO_BROADCASTS": "ライブイベントはありません",
+        "NO_RECORDINGS": "会議記録はありません",
+        "NO_ACCESS": "<a class='sign-in'>にサインイン</a>するか、記録またはイベント表示のために提供されたリンクを使用してください。",
+        "VIEWS": "再生回数：{{n}}",
+        "VIEWERS": "{{n}} 人が視聴中",
+        "CANCEL": "キャンセル",
+        "CONTINUE": "続行",
+        "ERROR": {
+            "DOWNLOAD": "ダウンロードエラー",
+            "DOWNLOAD_LINK": "ダウンロード先のリンクがありません",
+            "RECORDING_DELETED": "会議記録が削除されました。再生するには会議記録を復元する必要があります。",
+            "RECORDING_NOT_ACTIVE": "イベントは非アクティブです。",
+            "UPDATE_FAILED": "会議記録を更新できませんでした"
+        },
+        "EXPIRY": {
+            "TITLE": "有効期限：",
+            "IN": "受信",
+            "DAY": "日",
+            "DAYS": "日",
+            "HOUR": "時間",
+            "HOURS": "時間",
+            "EXPIRED": "有効期限切れ"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

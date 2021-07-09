@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Domande e risposte",
+            "RELATED_VIDEOS": "Video correlati",
+            "BROWSE": "Sfoglia",
+            "VIDEO_DATE_AT": "{{date1}} alle {{date2}}",
+            "NOT_ACTIVE": "L'evento non è attivo."
+        },
+        "CHAT": {
+            "NEW_ONLY": "Mostra solo nuovi elementi",
+            "QUESTIONS_AND_ANSWERS": "Domande e risposte",
+            "ENTER_QUESTION": "Immetti una domanda per il moderatore",
+            "ENTER_RESPONSE": "Immetti una risposta a {{name}}",
+            "ME": "Io",
+            "GUEST": "Ospite",
+            "REPLY_TO": "Rispondere a {{name}}",
+            "NAME_REQUEST": {
+                "TITLE": "Immetti il proprio nome per partecipare alle domande e risposte",
+                "JOIN_QA": "Partecipa alle domande e risposte",
+                "PLACE_HOLDER": "Nome"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Immetti il PIN del moderatore per le domande e risposte",
+                "PLACE_HOLDER": "Immetti PIN",
+                "MODERATE": "Modera",
+                "CANCEL": "Annulla",
+                "ERROR": "Il PIN specificato non è valido"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "Questo video è protetto da PIN",
+            "ENTER_PIN": "Immetti PIN",
+            "OK": "OK",
+            "CANCEL": "Annulla",
+            "ERROR": "Il PIN specificato non è valido"
+        },
+        "TAB": {
+            "RECOMMENDED": "Consigliato",
+            "EVENTS": "Eventi",
+            "ALL_RECORDINGS": "Tutte le registrazioni",
+            "MY_RECORDINGS": "Registrazioni",
+            "CATEGORY": "Categoria",
+            "TRASH": "Cestino"
+        },
+        "TABLE_HEADER": {
+            "DATE": "Data",
+            "EXPIRY": "Scadenza",
+            "DURATION": "Durata",
+            "IMAGE": "Immagine",
+            "TITLE": "Titolo",
+            "VIEWS": "Visualizzazioni",
+            "OWNER": "Proprietario",
+            "SIZE": "Dimensione"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "Eliminare {{n}} elementi?",
+            "DELETE_ITEM": "Eliminare 1 elemento?",
+            "CANNOT_UNDONE": "Impossibile annullare l'operazione",
+            "DELETE": "Elimina",
+            "CANCEL": "Annulla"
+        },
+        "SEARCH_RECORDINGS": "Cerca",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "ID riunione:",
+                "OWNER": "Proprietario:",
+                "DATE": "Data:",
+                "EXPIRY": "Scadenza:",
+                "CHECKSUM": "Checksum:",
+                "DIRECT_URL": "URL diretto:",
+                "DURATION": "Durata:",
+                "SIZE": "Dimensione:",
+                "PROFILE": "Profilo:",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} Kb/s",
+                "VIEWS": "Visualizzazioni: {{number}}",
+                "VIEWERS": "Visualizzatori: {{number}}",
+                "ACCESS_LEVEL": "Questa registrazione è impostata su Privata. Modificare il livello di accesso utente a Pubblica per condividere questo video con il pubblico."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Possono accedere alla registrazione:",
+                "ACCESS_FOOTNOTE": "*Se è stato immesso un PIN di accesso in precedenza, verrà richiesto per l'accesso alla registrazione.",
+                "ONLY_ME": "Privata (solo io)",
+                "ONLY_FOLLOWING_USERS": "Privata - utenti selezionati",
+                "ALL_AUTH_USERS": "Tutti gli utenti autenticati",
+                "ALL_USERS": "Pubblica (tutti gli utenti)",
+                "ADD_ALL": "Aggiungi tutti i partecipanti conosciuti",
+                "NAME_OR_USER_ID": "Immetti nome o ID utente",
+                "N_SELECTED": "{{n}} selezionato/i",
+                "CHANGE_LEVEL": "Con la modifica del livello di accesso utente a Pubblica, chiunque potrà visualizzare questa registrazione",
+                "DOWNLOAD_RECORDING": "Scaricare la registrazione",
+                "SEE_RECORDING_IN_USER_PORTAL": "Visualizzare la registrazione nel portale utente",
+                "ALLOW_USER": "Consenti a questi utenti di"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "Il nome utente non può essere vuoto!"
+            },
+            "UPLOAD": "Aggiungere un'immagine per aiutare gli utenti a identificare la registrazione",
+            "THUMBNAIL": "Anteprima video",
+            "RECORDING_INFO_TAB_NAME": "Informazioni sulla registrazione",
+            "USER_ACCESS_TAB_NAME": "Accesso utente",
+            "RECORDING_MAIN_TAB_NAME": "Principale",
+            "CLOSE": "Chiudi",
+            "VIEW_RECORDING_DETAILS": "Visualizza dettagli registrazione",
+            "EDIT_RECORDING_DETAILS": "Modifica dettagli registrazione",
+            "DESCRIPTION": "Descrizione:",
+            "CATEGORY": "Categoria:",
+            "ACCESS_PIN": "PIN accesso:",
+            "ADD_CATEGORY": "Aggiungi categoria",
+            "OPTIONAL": "Opzionale",
+            "REQUIRED": "Obbligatorio",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "Consenti scaricamento registrazione",
+            "SHOW_PUBLICLY": "Mostra pubblicamente nel portale",
+            "SAVE": "Salva",
+            "CANCEL": "Annulla",
+            "ENTER_DESCRIPTION": "Immetti una descrizione",
+            "RECORDING_TITLE": "Titolo"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Possono accedere alla trasmissione:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "Visualizzare la trasmissione nel portale utente"
+            },
+            "BROADCAST_DETAILS": "Dettagli trasmissione",
+            "VIEW_BROADCAST_DETAILS": "Visualizza dettagli trasmissione",
+            "EDIT_BROADCAST_DETAILS": "Modifica dettagli trasmissione",
+            "BROADCAST_INFO_TAB_NAME": "Informazioni sulla trasmissione"
+        },
+        "NOW": "In corso",
+        "HAPPENING_TODAY": "In programma oggi",
+        "RECENTLY_ADDED": "Aggiunte di recente",
+        "MOST_VIEWED": "Più visualizzate",
+        "UPCOMING": "Riunioni imminenti",
+        "LATER_TODAY": "Più tardi oggi",
+        "TOMORROW": "Domani",
+        "VIEW_DETAILS": "Visualizza dettagli",
+        "EDIT_DETAILS": "Modifica dettagli",
+        "BROADCAST_MODERATE": "Modera",
+        "COPY_LINK": "Copia collegamento",
+        "SHARE_LINK": "Condividi via e-mail",
+        "DOWNLOAD": "Scarica",
+        "DELETE": "Elimina",
+        "RECOVER": "Recupera",
+        "TODAY": "Oggi",
+        "YESTERDAY": "Ieri",
+        "TRASH_NOTICE": "Gli elementi nel Cestino verranno eliminati automaticamente dopo {{n}} giorni",
+        "DELETE_ALL": "Elimina tutto",
+        "RECOVER_ALL": "Recupera tutto",
+        "PAGE": "Pagina",
+        "OF": "di {{n}}",
+        "SHOW": "Mostra:",
+        "ITEMS": "elementi",
+        "LOAD_MORE": "Carica altro",
+        "RESULTS": "{{n}} risultati",
+        "RESULT": "1 risultato",
+        "SHOWING": "(che mostrano {{first}}-{{second}})",
+        "TYPE_IN_SEARCH": "Immettere i termini di ricerca e premere Invio",
+        "SEARCHING": "Ricerca in corso...",
+        "NO_RECOMMENDED": "Nessuna registrazione consigliata",
+        "NO_BROADCASTS": "Non ci sono eventi dal vivo",
+        "NO_RECORDINGS": "Nessuna registrazione",
+        "NO_ACCESS": "<a class='sign-in'>Accedere</a> o utilizzare il collegamento fornito per visualizzare la registrazione o l'evento.",
+        "VIEWS": "{{n}} visualizzazioni",
+        "VIEWERS": "{{n}} visualizzatori",
+        "CANCEL": "Annulla",
+        "CONTINUE": "Continua",
+        "ERROR": {
+            "DOWNLOAD": "Errore di download",
+            "DOWNLOAD_LINK": "Il collegamento del download non è disponibile",
+            "RECORDING_DELETED": "La registrazione è stata eliminata. Per riprodurre la registrazione, è necessario ripristinarla.",
+            "RECORDING_NOT_ACTIVE": "L'evento non è attivo.",
+            "UPDATE_FAILED": "Impossibile aggiornare la registrazione"
+        },
+        "EXPIRY": {
+            "TITLE": "Scade in data:",
+            "IN": "tra",
+            "DAY": "giorno",
+            "DAYS": "giorni",
+            "HOUR": "ora",
+            "HOURS": "ore",
+            "EXPIRED": "Scaduto"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

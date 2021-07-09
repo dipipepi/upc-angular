@@ -52,7 +52,7 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
   private warningDialog;
 
   constructor(public translate: TranslateService,
-              private acClientService: ACClientService,
+              public acClientService: ACClientService,
               private userSettingsService: UserSettingsService,
               private meetingsLogsService: MeetingsLogsService,
               private stylesService: StylesService,

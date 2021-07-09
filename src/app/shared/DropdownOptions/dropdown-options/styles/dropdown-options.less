@@ -1,0 +1,171 @@
+.dropdown-options {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100px;
+    font-size: 0;
+    text-align: left;
+    outline: none;
+    position: relative;
+
+    div,
+    .ie-fix {
+        padding: 0 20px;
+        margin-right: 1px;
+        display: inline-block;
+        vertical-align: middle;
+        border: 0;
+        border-radius: 100px 0 0 100px;
+        background-color: @button;
+        color: @button-label;
+        transition: background-color 0.3s ease;
+        outline: none;
+        user-select: none;
+        height: 38px;
+        line-height: 38px;
+        font-size: 18px;
+        cursor: default;
+
+        &:hover {
+            background-color: @button-hover;
+            color: @button-hover-label;
+        }
+
+        &:active {
+            background-color: @button-active;
+            color: @button-active-label;
+        }
+    }
+
+    .ie-fix {
+        border-radius: 0 100px 100px 0;
+        width: 32px;
+        margin: 0;
+        padding: 0;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 100%;
+            background: @url-down-chevron_white center;
+
+            &::selection, &:hover, &:focus {
+                background-color: transparent;
+                box-shadow: none;
+            }
+        }
+    }
+
+    div:empty {
+        display: none;
+    }
+
+    div:empty + .ie-fix {
+        border-radius: 0;
+    }
+
+    &[disabled] div,
+    &[disabled] .ie-fix {
+        background: @button-disabled;
+        color: @button-disabled-label;
+    }
+
+    .dropdown-block {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: auto;
+        height: 100%;
+        text-align: center;
+        padding:0;
+        background: fade(@background-black, 50%);
+        z-index: 2;
+        font-size: 18px;
+        overflow: visible;
+        text-overflow: ellipsis;
+        margin:0;
+
+        list-style-type: none;
+
+        flex-direction: column;
+        justify-content: flex-end;
+
+        li {
+            white-space: nowrap;
+            line-height: 35px;
+            margin: 0 10px;
+            padding: 5px 15px;
+            color: @links-color-mobile;
+            background: @off-white;
+            border-bottom: 1px solid fade(@background-black, 20%);
+
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            &:last-child, &.dropdown-item-last {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: none;
+                margin-bottom: 10px;
+            }
+
+            &.dropdown-item-cancel {
+                border-radius: 10px;
+                margin-bottom: 10px;
+                border-bottom: none;
+            }
+
+            &.dropdown-item-hide {
+                display: none;
+            }
+
+            &:nth-last-child(2){
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: none;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    &.minimal {
+        line-height: 22px;
+
+        div {
+            display: none;
+        }
+
+        .ie-fix {
+            background: none;
+            border-radius: 0;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+
+            &::before {
+                display: inline-block;
+                vertical-align: middle;
+                width: 4px;
+                height: 4px;
+                margin-left: 3px;
+                border-radius: 100%;
+                background: @text-color;
+                box-shadow: 7px 0 @text-color, 14px 0 @text-color;
+            }
+        }
+
+        .context-menu {
+            z-index: 100;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .mobile-dropdown {
+        display: none;
+    }
+}

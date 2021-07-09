@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+ <defs>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid0">
+
+   <g id="svg_3">
+    <path id="svg_4" stroke-width="0.4" d="m0,0m10,0m0,10m-10,0"/>
+    <path id="svg_5" stroke-width="0.2" d="m5,0m-5,5m5,0m5,0m-5,5"/>
+    <g id="svg_6" stroke-width="0.125">
+     <path id="svg_7" d="m1,0m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_8" d="m0,1m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_9" d="m0,2m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_10" d="m0,3m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_11" d="m0,4m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_12" d="m1,5m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_13" d="m0,6m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_14" d="m0,7m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_15" d="m0,8m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_16" d="m0,9m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_17" d="m1,10m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+    </g>
+   </g>
+  </pattern>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid1">
+   <g id="svg_18">
+    <path id="svg_19" stroke-width="0.4" d="m0,0m10,0m0,10m-10,0"/>
+    <path id="svg_20" stroke-width="0.2" d="m5,0m-5,5m5,0m5,0m-5,5"/>
+    <g id="svg_21" stroke-width="0.125">
+     <path id="svg_22" d="m1,0m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_23" d="m0,1m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_24" d="m0,2m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_25" d="m0,3m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_26" d="m0,4m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_27" d="m1,5m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_28" d="m0,6m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_29" d="m0,7m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_30" d="m0,8m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_31" d="m0,9m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_32" d="m1,10m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+    </g>
+   </g>
+  </pattern>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid2">
+   <g id="svg_33" fill="none" stroke="black" stroke-width="0.4" transform="scale(0.10000000149011612) ">troisieme niveau 10 1
+    <g id="svg_34" stroke-dasharray="2 8">
+     <path id="svg_35" d="m-1,0l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0"/>
+     <path id="svg_36" d="m0,-1l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102"/>
+    </g>deuxieme niveau 50/3
+    <g id="svg_37" stroke-dasharray="6 44">
+     <path id="svg_38" d="m-3,0l106,0m-106,50l106,0m-106,50l106,0"/>
+     <path id="svg_39" d="m0,-3l0,106m50,-106l0,106m50,-106l0,106"/>
+    </g>premier niveau 100/5
+    <g id="svg_40" stroke-dasharray="10 90">
+     <path id="svg_41" d="m-5,0l110,0m-110,100l110,0"/>
+     <path id="svg_42" d="m0,-5l0,119m100,-119l0,110"/>
+    </g></g>
+  </pattern>
+  <polygon stroke-width="1px" stroke="black" fill="khaki" id="svgEditorShapeDefs"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <circle stroke-width="2px" fill="none" stroke="#b2bac1" transform="matrix(1.32173,0,0,1.58825,6.5923,1.78107) " r="4.97566" cy="4.91138" cx="6.0199" id="e95_circle"/>
+  <path stroke-width="1px" fill="#b2bac1" id="e123_shape" d="m26.95666,19.918222l0,-4.260359a5.98618,5.680478 0 0 0 -5.98618,-5.680478l-11.97236,0a5.98618,5.680478 0 0 0 -5.98618,5.680478l0,8.520717a5.98618,5.680478 0 0 0 5.98618,5.680478l11.97236,0a5.98618,5.680478 0 0 0 5.98618,-5.680478l0,-4.260359z"/>
+ </g>
+</svg>

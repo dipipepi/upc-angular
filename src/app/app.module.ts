@@ -30,6 +30,10 @@ import { ShowPasswordComponent } from './shared/show-password/show-password.comp
 import { TagSelectorComponent } from './shared/tag-selector/tag-selector.component';
 import { EndpointsComponent } from './shared/endpoints/endpoints.component';
 import { OnlyNumbers } from './shared/only-numbers/only-numbers.directive';
+import { SuccessGetTokenComponent } from './components/join/success-get-toket/success-get-toket.component';
+import { FailGetTokenComponent } from './components/join/fail-get-toket/fail-get-toket.component';
+import { ViewMeetingComponent } from './components/view-meeting/view-meeting.component';
+import { DropdownOptionsComponent } from './shared/DropdownOptions/dropdown-options/dropdown-options.component';
 
 
 // tslint:disable-next-line:typedef
@@ -57,7 +61,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ShowPasswordComponent,
     TagSelectorComponent,
     EndpointsComponent,
-    OnlyNumbers
+    OnlyNumbers,
+    SuccessGetTokenComponent,
+    FailGetTokenComponent,
+    ViewMeetingComponent,
+    DropdownOptionsComponent
   ],
   imports: [
     BrowserModule,

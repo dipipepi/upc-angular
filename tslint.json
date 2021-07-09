@@ -74,7 +74,7 @@
       ]
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "variable-name": {
@@ -88,6 +88,8 @@
     "contextual-lifecycle": true,
     "directive-class-suffix": true,
     "no-conflicting-lifecycle": true,
+    "class-name": false,
+    "radix": false,
     "no-host-metadata-property": true,
     "no-input-rename": true,
     "no-inputs-metadata-property": true,
@@ -100,6 +102,7 @@
     "no-trailing-whitespace": false,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
+    "no-shadowed-variable": false,
     "disable-next-line": true,
     "directive-selector": [
       true,

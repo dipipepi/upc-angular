@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Pytania i odpowiedzi",
+            "RELATED_VIDEOS": "Powiązane wideo",
+            "BROWSE": "Przeglądaj",
+            "VIDEO_DATE_AT": "{{date1}} w {{date2}}",
+            "NOT_ACTIVE": "Zdarzenie nie jest aktywne"
+        },
+        "CHAT": {
+            "NEW_ONLY": "Pokaż tylko nowe elementy",
+            "QUESTIONS_AND_ANSWERS": "Pytania i odpowiedzi",
+            "ENTER_QUESTION": "Wpisz pytanie do moderatora",
+            "ENTER_RESPONSE": "Wpisz odpowiedź dla",
+            "ME": "Ja",
+            "GUEST": "Gość",
+            "REPLY_TO": "Odpowiedz uczestnikowi {{name}}",
+            "NAME_REQUEST": {
+                "TITLE": "Wpisz swoją nazwę, aby dołączyć do sesji pytań i odpowiedzi",
+                "JOIN_QA": "Dołącz do sesji pytań i odpowiedzi",
+                "PLACE_HOLDER": "Nazwa"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Wprowadź kod PIN moderatora dla sesji pytań i odpowiedzi",
+                "PLACE_HOLDER": "Wprowadź PIN",
+                "MODERATE": "Moderuj",
+                "CANCEL": "Anuluj",
+                "ERROR": "Wprowadzony PIN jest nieprawidłowy"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "To wideo jest chronione kodem PIN",
+            "ENTER_PIN": "Wprowadź PIN",
+            "OK": "OK",
+            "CANCEL": "Anuluj",
+            "ERROR": "Wprowadzony PIN jest nieprawidłowy"
+        },
+        "TAB": {
+            "RECOMMENDED": "Zalecane",
+            "EVENTS": "Zdarzenia",
+            "ALL_RECORDINGS": "Wszystkie nagrania",
+            "MY_RECORDINGS": "Moje nagrania",
+            "CATEGORY": "Kategoria",
+            "TRASH": "Kosz"
+        },
+        "TABLE_HEADER": {
+            "DATE": "Data",
+            "EXPIRY": "Wygasanie",
+            "DURATION": "Czas trwania",
+            "IMAGE": "Obraz",
+            "TITLE": "Tytuł",
+            "VIEWS": "Wyświetlenia",
+            "OWNER": "Właściciel",
+            "SIZE": "Rozmiar"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "Czy usunąć elementy: {{n}}?",
+            "DELETE_ITEM": "Czy usunąć 1 element?",
+            "CANNOT_UNDONE": "Nie można cofnąć",
+            "DELETE": "Usuń",
+            "CANCEL": "Anuluj"
+        },
+        "SEARCH_RECORDINGS": "Szukaj",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "ID spotkania:",
+                "OWNER": "Właściciel:",
+                "DATE": "Data:",
+                "EXPIRY": "Wygaśnie:",
+                "CHECKSUM": "Suma kontrolna:",
+                "DIRECT_URL": "Bezpośredni adres URL:",
+                "DURATION": "Czas trwania:",
+                "SIZE": "Rozmiar:",
+                "PROFILE": "Profil:",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} kb/s",
+                "VIEWS": "Wyświetlenia: {{number}}",
+                "VIEWERS": "Oglądających: {{number}}",
+                "ACCESS_LEVEL": "To nagranie jest ustawione jako prywatne. Zmień poziom dostępu na publiczne, aby udostępnić to wideo publicznie."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Do tego nagrania mają dostęp:",
+                "ACCESS_FOOTNOTE": "*Jeśli został wprowadzony powyżej PIN dostępu, będzie konieczny do uzyskania dostępu do nagrania.",
+                "ONLY_ME": "Prywatny (tylko ja)",
+                "ONLY_FOLLOWING_USERS": "Prywatny – wybrani użytkownicy",
+                "ALL_AUTH_USERS": "Wszyscy uwierzytelnieni użytkownicy",
+                "ALL_USERS": "Publiczny (wszyscy użytkownicy)",
+                "ADD_ALL": "Dodaj wszystkich znanych uczestników",
+                "NAME_OR_USER_ID": "Wprowadź nazwę lub ID użytkownika",
+                "N_SELECTED": "Wybrano: {{n}}",
+                "CHANGE_LEVEL": "Zmiana poziomu dostępu użytkownika na publiczny pozwoli wszystkim na oglądanie tego nagrania",
+                "DOWNLOAD_RECORDING": "Pobierz nagranie",
+                "SEE_RECORDING_IN_USER_PORTAL": "Zobacz nagranie w portalu użytkownika",
+                "ALLOW_USER": "Zezwól tym użytkownikom na"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "Nazwa nagrania nie może być pusta"
+            },
+            "UPLOAD": "Dodaj obraz, aby pomóc oglądającym w identyfikacji tego nagrania",
+            "THUMBNAIL": "Miniatura obrazu wideo",
+            "RECORDING_INFO_TAB_NAME": "Informacje o nagraniu",
+            "USER_ACCESS_TAB_NAME": "Dostęp użytkownika",
+            "RECORDING_MAIN_TAB_NAME": "Główny",
+            "CLOSE": "Zamknij",
+            "VIEW_RECORDING_DETAILS": "Pokaż szczegóły nagrania",
+            "EDIT_RECORDING_DETAILS": "Edytuj szczegóły nagrania",
+            "DESCRIPTION": "Opis:",
+            "CATEGORY": "Kategoria:",
+            "ACCESS_PIN": "Kod PIN dostępu:",
+            "ADD_CATEGORY": "Dodaj kategorię",
+            "OPTIONAL": "Opcjonalne",
+            "REQUIRED": "Wymagane",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "Zezwól na pobieranie nagrania",
+            "SHOW_PUBLICLY": "Pokaż publicznie w portalu",
+            "SAVE": "Zapisz",
+            "CANCEL": "Anuluj",
+            "ENTER_DESCRIPTION": "Wprowadź opis",
+            "RECORDING_TITLE": "Tytuł"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Do tej transmisji mają dostęp:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "Zobacz transmisję w portalu użytkownika"
+            },
+            "BROADCAST_DETAILS": "Szczegóły transmisji",
+            "VIEW_BROADCAST_DETAILS": "Pokaż szczegóły transmisji",
+            "EDIT_BROADCAST_DETAILS": "Edytuj szczegóły transmisji",
+            "BROADCAST_INFO_TAB_NAME": "Informacje o transmisji"
+        },
+        "NOW": "Odbywające się teraz",
+        "HAPPENING_TODAY": "Dzisiejsze zdarzenia",
+        "RECENTLY_ADDED": "Dodane niedawno",
+        "MOST_VIEWED": "Najczęściej wyświetlane",
+        "UPCOMING": "Najbliższe spotkania",
+        "LATER_TODAY": "Najnowsze dziś",
+        "TOMORROW": "Jutro",
+        "VIEW_DETAILS": "Pokaż szczegóły",
+        "EDIT_DETAILS": "Edytuj szczegóły",
+        "BROADCAST_MODERATE": "Moderuj",
+        "COPY_LINK": "Kopiuj łącze",
+        "SHARE_LINK": "Udostępnij pocztą e-mail",
+        "DOWNLOAD": "Pobierz",
+        "DELETE": "Usuń",
+        "RECOVER": "Odzyskaj",
+        "TODAY": "Dzisiaj",
+        "YESTERDAY": "Wczoraj",
+        "TRASH_NOTICE": "Pozycje w koszu zostaną automatycznie usunięte po upływie {{n}} dni",
+        "DELETE_ALL": "Usuń wszystko",
+        "RECOVER_ALL": "Odzyskaj wszystkie",
+        "PAGE": "Strona",
+        "OF": "z {{n}}",
+        "SHOW": "Pokaż:",
+        "ITEMS": "elementy",
+        "LOAD_MORE": "Załaduj więcej",
+        "RESULTS": "wyników: {{n}}",
+        "RESULT": "1 wynik",
+        "SHOWING": "(wyświetlanie {{first}}-{{second}})",
+        "TYPE_IN_SEARCH": "Wpisz wyszukiwanie i naciśnij Enter",
+        "SEARCHING": "Trwa wyszukiwanie...",
+        "NO_RECOMMENDED": "Nie ma polecanych nagrań",
+        "NO_BROADCASTS": "Nie ma wydarzeń na żywo",
+        "NO_RECORDINGS": "Brak nagrań",
+        "NO_ACCESS": "<a class='sign-in'>Zaloguj się</a> lub kliknij poniższy link by zobaczyć nagranie lub wydarzenie.",
+        "VIEWS": "wyświetleń: {{n}}",
+        "VIEWERS": "{{n}} oglądający(ch)",
+        "CANCEL": "Anuluj",
+        "CONTINUE": "Kontynuuj",
+        "ERROR": {
+            "DOWNLOAD": "Błąd pobierania",
+            "DOWNLOAD_LINK": "Łącze pobierania nie jest dostępne.",
+            "RECORDING_DELETED": "Nagranie zostało usunięte. Aby je odtworzyć, należy je najpierw przywrócić.",
+            "RECORDING_NOT_ACTIVE": "Wydarzenie jest nieaktywne.",
+            "UPDATE_FAILED": "Zaktualizowanie nagrania nie powiodło się"
+        },
+        "EXPIRY": {
+            "TITLE": "Czas wygaśnięcia:",
+            "IN": " ",
+            "DAY": "dzień",
+            "DAYS": "dni",
+            "HOUR": "godz.",
+            "HOURS": "godz.",
+            "EXPIRED": "Wygasło"
+        },
+        "SIZE": {
+            "KB": "kb",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

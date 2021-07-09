@@ -13,9 +13,8 @@ import {
 import {AuthorizationService, User} from '../../services/AuthorizationService/authorization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
-import {DirectiveUtilsService} from '../service/DirectiveUtilsService/directive-utils.service';
+import {DirectiveUtilsService} from '../services/DirectiveUtilsService/directive-utils.service';
 import {KEY_CODE} from '../../constants';
-import {valueChanged} from '../commonVariables';
 import {GlobalService} from '../../services/GlobalService/global.service';
 
 @Component({
@@ -81,7 +80,7 @@ export class TagSelectorComponent implements OnInit, OnChanges, OnDestroy {
     this.filteredOptionsCount = this.defaultFilteredOptionsCount;
     // @ts-ignore
     this.element = $(this.elRef.nativeElement.childNodes);
-    this.user = this.authorizationService.user;
+    this.user = this.globalService.user;
     this.translatedPlaceholder = this.translate.instant(this.placeholder);
     this.moveHintWithScroll = '';
     this.showHintToHint = this.showHint && this.customDeviceDetector.isDesktop();

@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "问答",
+            "RELATED_VIDEOS": "相关视频",
+            "BROWSE": "浏览",
+            "VIDEO_DATE_AT": "于{{date1}}{{date2}}",
+            "NOT_ACTIVE": "会议未激活。"
+        },
+        "CHAT": {
+            "NEW_ONLY": "仅显示新项目",
+            "QUESTIONS_AND_ANSWERS": "问题和解答",
+            "ENTER_QUESTION": "向会议主持人提问",
+            "ENTER_RESPONSE": "输入给 {{name}} 的回复",
+            "ME": "我",
+            "GUEST": "来宾",
+            "REPLY_TO": "回复给 {{name}}",
+            "NAME_REQUEST": {
+                "TITLE": "输入您的姓名以加入“问答”",
+                "JOIN_QA": "加入“问答”",
+                "PLACE_HOLDER": "姓名"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "输入问答会议主持人 PIN 码",
+                "PLACE_HOLDER": "输入 PIN",
+                "MODERATE": "主持",
+                "CANCEL": "取消",
+                "ERROR": "您提供的 PIN 码无效"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "此视频受 PIN 码保护",
+            "ENTER_PIN": "输入 PIN",
+            "OK": "确定",
+            "CANCEL": "取消",
+            "ERROR": "您提供的 PIN 码无效"
+        },
+        "TAB": {
+            "RECOMMENDED": "推荐",
+            "EVENTS": "事件",
+            "ALL_RECORDINGS": "所有录制",
+            "MY_RECORDINGS": "我的录制",
+            "CATEGORY": "类别",
+            "TRASH": "回收站"
+        },
+        "TABLE_HEADER": {
+            "DATE": "日期",
+            "EXPIRY": "到期日期",
+            "DURATION": "持续时间",
+            "IMAGE": "图像",
+            "TITLE": "标题",
+            "VIEWS": "浏览量",
+            "OWNER": "所有者",
+            "SIZE": "大小"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "删除 {{n}} 个项目？",
+            "DELETE_ITEM": "删除 1 个项目？",
+            "CANNOT_UNDONE": "此操作无法撤消",
+            "DELETE": "删除",
+            "CANCEL": "取消"
+        },
+        "SEARCH_RECORDINGS": "搜索",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "会议 ID：",
+                "OWNER": "所有者：",
+                "DATE": "日期：",
+                "EXPIRY": "到期日期：",
+                "CHECKSUM": "校验：",
+                "DIRECT_URL": "直接 URL：",
+                "DURATION": "持续时间：",
+                "SIZE": "大小：",
+                "PROFILE": "配置文件：",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} Kb/s",
+                "VIEWS": "查看数：{{number}}",
+                "VIEWERS": "观看人数：{{number}}",
+                "ACCESS_LEVEL": "此录制的访问权限已设置为“私人”。如需共享此视频，请将访问权限更改为“公共”。"
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "具备以下权限可访问此录制：",
+                "ACCESS_FOOTNOTE": "*如果您在上面已输入了访问 PIN 码，则需要提供该访问 PIN 码才能访问此录制。",
+                "ONLY_ME": "私人(仅限我自己)",
+                "ONLY_FOLLOWING_USERS": "私人 - 选定的用户",
+                "ALL_AUTH_USERS": "所有已验证身份的用户",
+                "ALL_USERS": "公共(所有用户)",
+                "ADD_ALL": "添加所有已知的与会者",
+                "NAME_OR_USER_ID": "输入姓名或用户 ID",
+                "N_SELECTED": "已选择 {{n}} 个",
+                "CHANGE_LEVEL": "将用户访问权限级别更改为“公共”将允许任何人查看此录制",
+                "DOWNLOAD_RECORDING": "下载录制",
+                "SEE_RECORDING_IN_USER_PORTAL": "在用户门户中查看录制",
+                "ALLOW_USER": "允许这些用户"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "录制名不能为空!"
+            },
+            "UPLOAD": "添加图像以帮助相关人员识别此录制",
+            "THUMBNAIL": "视频缩略图",
+            "RECORDING_INFO_TAB_NAME": "录制信息",
+            "USER_ACCESS_TAB_NAME": "用户访问权限",
+            "RECORDING_MAIN_TAB_NAME": "主要",
+            "CLOSE": "关闭",
+            "VIEW_RECORDING_DETAILS": "查看录制细节",
+            "EDIT_RECORDING_DETAILS": "编辑录制细节",
+            "DESCRIPTION": "说明：",
+            "CATEGORY": "类别：",
+            "ACCESS_PIN": "访问 PIN 码：",
+            "ADD_CATEGORY": "添加类别",
+            "OPTIONAL": "可选",
+            "REQUIRED": "必填项",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "允许下载录制",
+            "SHOW_PUBLICLY": "在门户中公开显示",
+            "SAVE": "保存",
+            "CANCEL": "取消",
+            "ENTER_DESCRIPTION": "输入说明",
+            "RECORDING_TITLE": "标题"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "该广播可由以下访问：",
+                "SEE_BROADCAST_IN_USER_PORTAL": "在用户门户中查看广播"
+            },
+            "BROADCAST_DETAILS": "广播详细信息",
+            "VIEW_BROADCAST_DETAILS": "查看广播详细信息",
+            "EDIT_BROADCAST_DETAILS": "编辑广播详细信息",
+            "BROADCAST_INFO_TAB_NAME": "广播信息"
+        },
+        "NOW": "正在发生",
+        "HAPPENING_TODAY": "今日会议",
+        "RECENTLY_ADDED": "最近添加",
+        "MOST_VIEWED": "播放最多",
+        "UPCOMING": "即将召开的会议",
+        "LATER_TODAY": "今天晚些时候",
+        "TOMORROW": "明天",
+        "VIEW_DETAILS": "查看细节",
+        "EDIT_DETAILS": "编辑细节",
+        "BROADCAST_MODERATE": "主持",
+        "COPY_LINK": "复制链接",
+        "SHARE_LINK": "通过e-mail分享",
+        "DOWNLOAD": "下载",
+        "DELETE": "删除",
+        "RECOVER": "恢复",
+        "TODAY": "今天",
+        "YESTERDAY": "昨天",
+        "TRASH_NOTICE": "您的回收站中的项目将在 {{n}} 天后自动删除",
+        "DELETE_ALL": "全部删除",
+        "RECOVER_ALL": "全部恢复",
+        "PAGE": "页",
+        "OF": "／{{n}}",
+        "SHOW": "显示：",
+        "ITEMS": "项目",
+        "LOAD_MORE": "加载更多",
+        "RESULTS": "{{n}} 个结果",
+        "RESULT": "1 个结果",
+        "SHOWING": "（显示{{first}}-{{second}}）",
+        "TYPE_IN_SEARCH": "输入您的搜索内容，然后按 Enter",
+        "SEARCHING": "正在搜索...",
+        "NO_RECOMMENDED": "无推荐的录制",
+        "NO_BROADCASTS": "无事件",
+        "NO_RECORDINGS": "无项目",
+        "NO_ACCESS": "请<a class='sign-in'>登录</a>或使用提供的链接来查看录音或事件。",
+        "VIEWS": "{{n}} 次浏览",
+        "VIEWERS": "{{n}} 名观看者",
+        "CANCEL": "取消",
+        "CONTINUE": "继续",
+        "ERROR": {
+            "DOWNLOAD": "下载错误",
+            "DOWNLOAD_LINK": "下载链接不可用",
+            "RECORDING_DELETED": "已删除录音。需要还原录音才能播放。",
+            "RECORDING_NOT_ACTIVE": "事件处于非活动状态。",
+            "UPDATE_FAILED": "无法更新录音"
+        },
+        "EXPIRY": {
+            "TITLE": "到期日：",
+            "IN": "在",
+            "DAY": "天",
+            "DAYS": "天",
+            "HOUR": "小时",
+            "HOURS": "小时",
+            "EXPIRED": "已过期"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

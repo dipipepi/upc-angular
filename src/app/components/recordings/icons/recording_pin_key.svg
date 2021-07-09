@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+ <defs>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid0">
+
+   <g id="svg_3">
+    <path id="svg_4" stroke-width="0.4" d="m0,0m10,0m0,10m-10,0"/>
+    <path id="svg_5" stroke-width="0.2" d="m5,0m-5,5m5,0m5,0m-5,5"/>
+    <g id="svg_6" stroke-width="0.125">
+     <path id="svg_7" d="m1,0m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_8" d="m0,1m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_9" d="m0,2m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_10" d="m0,3m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_11" d="m0,4m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_12" d="m1,5m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_13" d="m0,6m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_14" d="m0,7m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_15" d="m0,8m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_16" d="m0,9m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_17" d="m1,10m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+    </g>
+   </g>
+  </pattern>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid1">
+   <g id="svg_18">
+    <path id="svg_19" stroke-width="0.4" d="m0,0m10,0m0,10m-10,0"/>
+    <path id="svg_20" stroke-width="0.2" d="m5,0m-5,5m5,0m5,0m-5,5"/>
+    <g id="svg_21" stroke-width="0.125">
+     <path id="svg_22" d="m1,0m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_23" d="m0,1m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_24" d="m0,2m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_25" d="m0,3m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_26" d="m0,4m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_27" d="m1,5m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+     <path id="svg_28" d="m0,6m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_29" d="m0,7m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_30" d="m0,8m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_31" d="m0,9m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0m1,0"/>
+     <path id="svg_32" d="m1,10m1,0m1,0m1,0m2,0m1,0m1,0m1,0"/>
+    </g>
+   </g>
+  </pattern>
+  <pattern viewBox="0 0 10 10" height="10" width="10" y="0" x="0" patternUnits="userSpaceOnUse" id="svgEditorGrid2">
+   <g id="svg_33" fill="none" stroke="black" stroke-width="0.4" transform="scale(0.10000000149011612) ">troisieme niveau 10 1
+    <g id="svg_34" stroke-dasharray="2 8">
+     <path id="svg_35" d="m-1,0l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0m-102,10l102,0"/>
+     <path id="svg_36" d="m0,-1l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102m10,-102l0,102"/>
+    </g>deuxieme niveau 50/3
+    <g id="svg_37" stroke-dasharray="6 44">
+     <path id="svg_38" d="m-3,0l106,0m-106,50l106,0m-106,50l106,0"/>
+     <path id="svg_39" d="m0,-3l0,106m50,-106l0,106m50,-106l0,106"/>
+    </g>premier niveau 100/5
+    <g id="svg_40" stroke-dasharray="10 90">
+     <path id="svg_41" d="m-5,0l110,0m-110,100l110,0"/>
+     <path id="svg_42" d="m0,-5l0,119m100,-119l0,110"/>
+    </g></g>
+  </pattern>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <polyline stroke-width="0.1px" fill="#b2bac1" stroke="#b2bac1" points="15.805948094916342,7.486235615545269 1.3850298748683905,24.809854936100002 1.3699334128723137,28.78127684532165 6.742117382841112,28.694295768283837 6.905991344306944,24.586643065551755 9.75497233060646,24.387706348361966 9.81369411814499,20.955752818588255 13.055127155697821,20.801135451059338 13.396176407952307,16.885228029031754 16.965936228396412,16.744674605291365 20.26021216021633,12.956215658926006 " id="e47_polyline"/>
+  <g transform="matrix(1,0,0,1,-0.378156,-11.6808) " id="e3242_group">
+   <circle stroke-width="1px" transform="matrix(1.716,0.151806,-0.151806,1.716,-8.58482,8.27287) " fill="#b2bac1" r="4.49899" cy="5.42417" cx="17.2737" id="e17_circle"/>
+   <circle stroke-width="1px" transform="matrix(1.30481,0,0,1.30481,-5.04052,-1.82456) " fill="white" r="1.37185" stroke="white" cy="15.4107" cx="20.0656" id="e3146_circle"/>
+  </g>
+ </g>
+</svg>

@@ -22,7 +22,6 @@ export class NavigatorComponent implements OnInit {
   ngOnInit(): void {
     this.USER_TYPE = USER_TYPE;
     this.browser = this.customDeviceDetectorService.browser;
-    console.log('hello', this.router);
   }
 
 }

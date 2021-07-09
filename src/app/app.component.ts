@@ -9,6 +9,7 @@ import { Logger } from '../Logger';
 import {BROWSERS, DATE_FORMAT, OS, UP_CLIENT_CONNECTION_SETTINGS, USER_TYPE} from './constants';
 import {CustomDeviceDetectorService} from './services/CustomDeviceDetectorService/custom-device-detector.service';
 import {Title} from '@angular/platform-browser';
+import {GlobalService} from './services/GlobalService/global.service';
 
 @Component({
   selector: 'app-root',
@@ -40,7 +41,8 @@ export class AppComponent implements OnInit{
               public translate: TranslateService,
               private userSettingsService: UserSettingsService,
               private customDeviceDetector: CustomDeviceDetectorService,
-              private titleService: Title) {
+              private titleService: Title,
+              private globalService: GlobalService) {
     translate.setDefaultLang(localization.initLocalization());
   }
 
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit{
     // TODO 2.1) AUTH WITH TOKEN
     // TODO 2.1) AUTH WITH TOKEN
     // TODO 2.1) GET USER RESOURCES
+    this.detectChromeWebsharingExtension();
 
     this.userSettingsService.fetchResources(true).then(() => {
 
@@ -208,5 +211,28 @@ export class AppComponent implements OnInit{
     window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat : this.defaultTimeFormat;
     window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
   }
+
+  private detectChromeWebsharingExtension(): void{
+    this.globalService.offerScreenSharingExtension = true;
+
+    const pingChromeScreenSharingExtension = () => {
+      window.postMessage({
+        type: 'SCREEN_SHARING_PAGE',
+        text: 'PING'
+      }, '*');
+    };
+
+    if (this.customDeviceDetector.isDesktop() && this.customDeviceDetector.browser === BROWSERS.CHROME) {
+      window.addEventListener('message', (event) => {
+        if (event.source === window && event.data.type && event.data.type === 'PONG') {
+          this.globalService.offerScreenSharingExtension = false;
+        }
+      });
+      setTimeout(pingChromeScreenSharingExtension, 1000);
+    } else if (this.customDeviceDetector.isDesktop() && this.customDeviceDetector.browser === BROWSERS.FIREFOX) {
+      // TODO: implement firefox add-on detection
+    }
+  }
 }
+
 

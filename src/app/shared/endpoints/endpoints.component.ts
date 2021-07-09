@@ -35,7 +35,7 @@ export class EndpointsComponent implements OnInit, OnDestroy {
     this.element = $(this.elRef.nativeElement).find('.endpoints');
     if(this.baseStart){
       // @ts-ignore
-      start = moment(this.baseStart, 'HH:mm A').hours() * 60 + moment(this.baseStart, 'HH:mm A').minutes();
+      this.start = !this.start ? moment(this.baseStart, 'HH:mm A').hours() * 60 + moment(this.baseStart, 'HH:mm A').minutes() : this.start;
     }
     if (!window.requestAnimationFrame) {
       window.requestAnimationFrame = (callback) => {

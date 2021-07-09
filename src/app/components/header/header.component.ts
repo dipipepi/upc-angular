@@ -11,6 +11,7 @@ import {BROWSERS, USER_TYPE} from '../../constants';
 import {GuestSettingsComponent} from '../settings/guest-settings/guest-settings.component';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {UserSettingsComponent} from '../settings/user-settings/user-settings.component';
+import {GlobalService} from '../../services/GlobalService/global.service';
 
 @Component({
   selector: 'app-header',
@@ -32,7 +33,8 @@ export class HeaderComponent implements OnInit {
               public authorizationService: AuthorizationService,
               private userSettingsService: UserSettingsService,
               public browserInfoService: BrowserInfoService,
-              private customDeviceDetector: CustomDeviceDetectorService) {
+              private customDeviceDetector: CustomDeviceDetectorService,
+              public globalService: GlobalService) {
   }
 
   ngOnInit(): void {

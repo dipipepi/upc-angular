@@ -52,9 +52,9 @@ intended publication of such source code.
       <div class="user-block"
            *ngIf="authorizationService.userType==='SIGN_IN'"
            (click)="showLogout($event)">
-        <span class="user-name">{{ authorizationService.user.name + ' ' +  authorizationService.user.lastName}}</span>
+        <span class="user-name">{{ globalService.user.name + ' ' +  globalService.user.lastName}}</span>
         <div class="avatar">
-          <img alt="" *ngIf="authorizationService.user.pictureData" [src]="authorizationService.user.pictureData">
+          <img alt="" *ngIf="globalService.user.pictureData" [src]="globalService.user.pictureData">
         </div>
         <div class="sign-out {{logoutVisible ? 'toggled' : 'hidden'}}">
           <button type="button"

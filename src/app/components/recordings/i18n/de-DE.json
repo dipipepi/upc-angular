@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "F&A",
+            "RELATED_VIDEOS": "Ähnliche Videos",
+            "BROWSE": "Durchsuchen",
+            "VIDEO_DATE_AT": "{{date1}} um {{date2}}",
+            "NOT_ACTIVE": "Das Ereignis ist nicht aktiv."
+        },
+        "CHAT": {
+            "NEW_ONLY": "Nur neue Elemente anzeigen",
+            "QUESTIONS_AND_ANSWERS": "Fragen und Antworten",
+            "ENTER_QUESTION": "Fragen an den Moderator eingeben",
+            "ENTER_RESPONSE": "Eine Antwort an {{name}} eingeben",
+            "ME": "Ich",
+            "GUEST": "Gast",
+            "REPLY_TO": "{{name}} antworten",
+            "NAME_REQUEST": {
+                "TITLE": "Geben Sie Ihren Namen ein, um an den F&A teilzunehmen",
+                "JOIN_QA": "An F&A teilnehmen",
+                "PLACE_HOLDER": "Name"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Moderator-PIN für F&A eingeben:",
+                "PLACE_HOLDER": "PIN eingeben",
+                "MODERATE": "Moderieren",
+                "CANCEL": "Abbrechen",
+                "ERROR": "Die angegebene PIN ist ungültig"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "Dieses Video ist PIN-geschützt.",
+            "ENTER_PIN": "PIN eingeben",
+            "OK": "OK",
+            "CANCEL": "Abbrechen",
+            "ERROR": "Die angegebene PIN ist ungültig"
+        },
+        "TAB": {
+            "RECOMMENDED": "Empfohlen",
+            "EVENTS": "Ereignisse",
+            "ALL_RECORDINGS": "Alle Aufzeichnungen",
+            "MY_RECORDINGS": "Meine Aufzeichnungen",
+            "CATEGORY": "Kategorie",
+            "TRASH": "Papierkorb"
+        },
+        "TABLE_HEADER": {
+            "DATE": "Datum",
+            "EXPIRY": "Ablauf",
+            "DURATION": "Dauer",
+            "IMAGE": "Bild",
+            "TITLE": "Titel",
+            "VIEWS": "Aufrufe",
+            "OWNER": "Besitzer",
+            "SIZE": "Größe"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "{{n}} Elemente löschen?",
+            "DELETE_ITEM": "Ein Element löschen?",
+            "CANNOT_UNDONE": "Dies lässt sich nicht rückgängig machen.",
+            "DELETE": "Löschen",
+            "CANCEL": "Abbrechen"
+        },
+        "SEARCH_RECORDINGS": "Suchen",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "Besprechungs-ID:",
+                "OWNER": "Besitzer:",
+                "DATE": "Datum:",
+                "EXPIRY": "Ablauf:",
+                "CHECKSUM": "Prüfsumme:",
+                "DIRECT_URL": "Direkte URL:",
+                "DURATION": "Dauer:",
+                "SIZE": "Größe:",
+                "PROFILE": "Profil:",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} KBit/s",
+                "VIEWS": "Aufrufe: {{number}}",
+                "VIEWERS": "Betrachter: {{number}}",
+                "ACCESS_LEVEL": "Diese Aufzeichnung ist als „Privat“ eingestellt. Ändern Sie die Benutzerzugriffsebene zu „Öffentlich“, um dieses Video öffentlich zu machen."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Zugriff auf diese Aufzeichnung:",
+                "ACCESS_FOOTNOTE": "*Wenn oben eine Zugriffs-PIN eingegeben wurde, muss sie zum Zugriff auf die Aufzeichnung eingegeben werden.",
+                "ONLY_ME": "Privat (nur ich)",
+                "ONLY_FOLLOWING_USERS": "Privat – ausgewählte Benutzer",
+                "ALL_AUTH_USERS": "Alle authentifizierten Benutzer",
+                "ALL_USERS": "Öffentlich (alle Benutzer)",
+                "ADD_ALL": "Alle bekannten Teilnehmer hinzufügen",
+                "NAME_OR_USER_ID": "Namen oder Benutzer-ID eingeben",
+                "N_SELECTED": "{{n}} ausgewählt",
+                "CHANGE_LEVEL": "Wenn Sie die Benutzerzugriffsebene zu „Öffentlich“ ändern, können alle Benutzer auf diese Aufzeichnung zugreifen.",
+                "DOWNLOAD_RECORDING": "App herunterladen",
+                "SEE_RECORDING_IN_USER_PORTAL": "Die Aufzeichnung im Benutzerportal anzeigen",
+                "ALLOW_USER": "Diesen Benutzern folgendes gestatten:"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "Die Aufzeichnung benötigt eine Bezeichnung!"
+            },
+            "UPLOAD": "Fügen Sie ein Bild hinzu, damit diese Aufzeichnung einfacher gefunden wird",
+            "THUMBNAIL": "Video-Miniaturbild",
+            "RECORDING_INFO_TAB_NAME": "Aufzeichnungsinformationen",
+            "USER_ACCESS_TAB_NAME": "Benutzerzugriff",
+            "RECORDING_MAIN_TAB_NAME": "Hauptrufnummer",
+            "CLOSE": "Schließen",
+            "VIEW_RECORDING_DETAILS": "Aufzeichnungsdetails anzeigen",
+            "EDIT_RECORDING_DETAILS": "Aufzeichnungsdetails bearbeiten",
+            "DESCRIPTION": "Beschreibung:",
+            "CATEGORY": "Kategorie:",
+            "ACCESS_PIN": "Zugriffs-PIN:",
+            "ADD_CATEGORY": "Kategorie hinzufügen",
+            "OPTIONAL": "Optional",
+            "REQUIRED": "Erforderlich",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "Herunterladen der Aufzeichnung zulassen",
+            "SHOW_PUBLICLY": "Öffentlich im Portal anzeigen",
+            "SAVE": "Speichern",
+            "CANCEL": "Abbrechen",
+            "ENTER_DESCRIPTION": "Eine Beschreibung eingeben",
+            "RECORDING_TITLE": "Titel"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Zugriff auf diese Rundsendung:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "Rundsendung im Benutzerportal anzeigen"
+            },
+            "BROADCAST_DETAILS": "Rundsendungsdetails",
+            "VIEW_BROADCAST_DETAILS": "Rundsendungsdetails anzeigen",
+            "EDIT_BROADCAST_DETAILS": "Rundsendungsdetails bearbeiten",
+            "BROADCAST_INFO_TAB_NAME": "Info zur Rundsendung"
+        },
+        "NOW": "Findet jetzt statt",
+        "HAPPENING_TODAY": "Findet heute statt",
+        "RECENTLY_ADDED": "Zuletzt hinzugefügt",
+        "MOST_VIEWED": "Am häufigsten angezeigt",
+        "UPCOMING": "Bevorstehende Besprechungen",
+        "LATER_TODAY": "Später heute",
+        "TOMORROW": "Morgen",
+        "VIEW_DETAILS": "Details anzeigen",
+        "EDIT_DETAILS": "Details bearbeiten",
+        "BROADCAST_MODERATE": "Moderieren",
+        "COPY_LINK": "Link kopieren",
+        "SHARE_LINK": "Per E-Mail teilen",
+        "DOWNLOAD": "Herunterladen",
+        "DELETE": "Löschen",
+        "RECOVER": "Wiederherstellen",
+        "TODAY": "Heute",
+        "YESTERDAY": "Gestern",
+        "TRASH_NOTICE": "Die Objekte in Ihrem Papierkorb werden nach {{n}} Tagen automatisch gelöscht.",
+        "DELETE_ALL": "Alle löschen",
+        "RECOVER_ALL": "Alle wiederherstellen",
+        "PAGE": "Seite",
+        "OF": "von {{n}}",
+        "SHOW": "Anzeigen:",
+        "ITEMS": "Elemente",
+        "LOAD_MORE": "Mehr laden",
+        "RESULTS": "{{n}} Ergebnisse",
+        "RESULT": "1 Ergebnis",
+        "SHOWING": "(Reihenfolge {{first}}-{{second}})",
+        "TYPE_IN_SEARCH": "Geben Sie die Suchanfrage ein und drücken Sie die Eingabetaste.",
+        "SEARCHING": "Suchen...",
+        "NO_RECOMMENDED": "Es sind keine empfohlenen Aufzeichnungen vorhanden.",
+        "NO_BROADCASTS": "Es gibt keine Live-Ereignisse",
+        "NO_RECORDINGS": "Keine Aufzeichnungen vorhanden",
+        "NO_ACCESS": "Bitte <a class='sign-in'>Anmelden</a> oder einen Link zum Anzeigen einer Aufzeichnung oder eines Ereignisses verwenden.",
+        "VIEWS": "{{n}} Mal betrachtet",
+        "VIEWERS": "{{n}} Betrachter",
+        "CANCEL": "Abbrechen",
+        "CONTINUE": "Weiter",
+        "ERROR": {
+            "DOWNLOAD": "Downloadfehler",
+            "DOWNLOAD_LINK": "Download-Link ist nicht verfügbar.",
+            "RECORDING_DELETED": "Die Aufzeichnung wurde gelöscht. Um die Aufzeichnung abzuspielen, muss sie wiederhergestellt werden.",
+            "RECORDING_NOT_ACTIVE": "Ereignis ist nicht aktiv.",
+            "UPDATE_FAILED": "Die Aufzeichnung konnte nicht aktualisiert werden."
+        },
+        "EXPIRY": {
+            "TITLE": "Läuft ab:",
+            "IN": "In",
+            "DAY": "Tag",
+            "DAYS": "Tagen",
+            "HOUR": "Stunde",
+            "HOURS": "Stunden",
+            "EXPIRED": "Abgelaufen"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

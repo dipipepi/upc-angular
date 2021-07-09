@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Perguntas e respostas",
+            "RELATED_VIDEOS": "Vídeos relacionados",
+            "BROWSE": "Procurar",
+            "VIDEO_DATE_AT": "{{date1}} às {{date2}}",
+            "NOT_ACTIVE": "O evento está inativo."
+        },
+        "CHAT": {
+            "NEW_ONLY": "Exibir apenas novos itens",
+            "QUESTIONS_AND_ANSWERS": "Perguntas e respostas",
+            "ENTER_QUESTION": "Digite uma pergunta para o moderador",
+            "ENTER_RESPONSE": "Digite uma resposta para {{name}}",
+            "ME": "Eu",
+            "GUEST": "Convidado",
+            "REPLY_TO": "Responder para {{name}}",
+            "NAME_REQUEST": {
+                "TITLE": "Insira seu nome para ingressar na sessão de perguntas e respostas",
+                "JOIN_QA": "Participar da sessão de perguntas e respostas",
+                "PLACE_HOLDER": "Nome"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Inserir o PIN de moderador de perguntas e resposta",
+                "PLACE_HOLDER": "Insira o PIN",
+                "MODERATE": "Moderar",
+                "CANCEL": "Cancelar",
+                "ERROR": "O PIN fornecido é inválido"
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "Este vídeo está protegido por PIN",
+            "ENTER_PIN": "Insira o PIN",
+            "OK": "OK",
+            "CANCEL": "Cancelar",
+            "ERROR": "O PIN fornecido é inválido"
+        },
+        "TAB": {
+            "RECOMMENDED": "Recomendados",
+            "EVENTS": "Eventos",
+            "ALL_RECORDINGS": "Todas as gravações",
+            "MY_RECORDINGS": "Minhas gravações",
+            "CATEGORY": "Categoria",
+            "TRASH": "Lixeira"
+        },
+        "TABLE_HEADER": {
+            "DATE": "Data",
+            "EXPIRY": "Expiração",
+            "DURATION": "Duração",
+            "IMAGE": "Imagem",
+            "TITLE": "Título",
+            "VIEWS": "Visualizações",
+            "OWNER": "Proprietário",
+            "SIZE": "Tamanho"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "Excluir {{n}} itens?",
+            "DELETE_ITEM": "Excluir 1 item?",
+            "CANNOT_UNDONE": "Não é possível ser desfeito.",
+            "DELETE": "Excluir",
+            "CANCEL": "Cancelar"
+        },
+        "SEARCH_RECORDINGS": "Pesquisar",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "ID da reunião:",
+                "OWNER": "Proprietário:",
+                "DATE": "Data:",
+                "EXPIRY": "Expiração:",
+                "CHECKSUM": "Soma de verificação:",
+                "DIRECT_URL": "URL direto:",
+                "DURATION": "Duração:",
+                "SIZE": "Tamanho:",
+                "PROFILE": "Perfil:",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} Kb/s",
+                "VIEWS": "Visualizações: {{number}}",
+                "VIEWERS": "Visualizadores: {{number}}",
+                "ACCESS_LEVEL": "Essa gravação está definida como Privada. Altere o Nível de acesso do usuário para Público se quiser compartilhar esse vídeo com o público."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Essa gravação pode ser acessada por:",
+                "ACCESS_FOOTNOTE": "*Caso um PIN de acesso tenha sido inserido acima, ele será necessário para acessar a gravação.",
+                "ONLY_ME": "Privado (apenas eu)",
+                "ONLY_FOLLOWING_USERS": "Privado (usuários selecionados)",
+                "ALL_AUTH_USERS": "Todos os usuários autenticados",
+                "ALL_USERS": "Público (todos os usuários)",
+                "ADD_ALL": "Adicionar todos os participantes conhecidos",
+                "NAME_OR_USER_ID": "Insira um nome ou ID de usuário",
+                "N_SELECTED": "{{n}} selecionado(s)",
+                "CHANGE_LEVEL": "Alterar o nível de acesso do usuário para Público permitirá que qualquer pessoa visualize essa gravação",
+                "DOWNLOAD_RECORDING": "Fazer o download da gravação",
+                "SEE_RECORDING_IN_USER_PORTAL": "Visualizar a gravação no portal do usuário",
+                "ALLOW_USER": "Permitir que esses usuários"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "O nome de usuário não pode ficar em branco."
+            },
+            "UPLOAD": "Adicionar uma imagem para ajudar na identificação dessa gravação",
+            "THUMBNAIL": "Miniatura do vídeo",
+            "RECORDING_INFO_TAB_NAME": "Informações da gravação",
+            "USER_ACCESS_TAB_NAME": "Acesso do usuário",
+            "RECORDING_MAIN_TAB_NAME": "Principal",
+            "CLOSE": "Fechar",
+            "VIEW_RECORDING_DETAILS": "Vsualizar detalhes da gravação",
+            "EDIT_RECORDING_DETAILS": "Editar detalhes da gravação",
+            "DESCRIPTION": "Descrição:",
+            "CATEGORY": "Categoria:",
+            "ACCESS_PIN": "PIN de acesso:",
+            "ADD_CATEGORY": "Adicionar categoria",
+            "OPTIONAL": "Opcional",
+            "REQUIRED": "Necessária(s)",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "Permitir o download da gravação",
+            "SHOW_PUBLICLY": "Exibir publicamente no portal",
+            "SAVE": "Salvar",
+            "CANCEL": "Cancelar",
+            "ENTER_DESCRIPTION": "Inserir uma descrição",
+            "RECORDING_TITLE": "Título"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "Essa transmissão pode ser acessada por:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "Visualizar a transmissão no portal do usuário"
+            },
+            "BROADCAST_DETAILS": "Detalhes da transmissão",
+            "VIEW_BROADCAST_DETAILS": "Visualizar detalhes da transmissão",
+            "EDIT_BROADCAST_DETAILS": "Editar detalhes da transmissão",
+            "BROADCAST_INFO_TAB_NAME": "Informações da transmissão"
+        },
+        "NOW": "Acontecendo agora",
+        "HAPPENING_TODAY": "Acontecendo hoje",
+        "RECENTLY_ADDED": "Adicionados recentemente",
+        "MOST_VIEWED": "Mais assistidos",
+        "UPCOMING": "Futuras reuniões",
+        "LATER_TODAY": "Ainda hoje",
+        "TOMORROW": "Amanhã",
+        "VIEW_DETAILS": "Visualizar detalhes",
+        "EDIT_DETAILS": "Editar detalhes",
+        "BROADCAST_MODERATE": "Moderar",
+        "COPY_LINK": "Copiar link",
+        "SHARE_LINK": "Compartilhar por e-mail",
+        "DOWNLOAD": "Fazer o download",
+        "DELETE": "Excluir",
+        "RECOVER": "Recuperar",
+        "TODAY": "Hoje",
+        "YESTERDAY": "Ontem",
+        "TRASH_NOTICE": "Os itens em sua lixeira serão excluídos automaticamente após {{n}} dias",
+        "DELETE_ALL": "Excluir tudo",
+        "RECOVER_ALL": "Recuperar tudo",
+        "PAGE": "Página",
+        "OF": "de {{n}}",
+        "SHOW": "Mostrar:",
+        "ITEMS": "itens",
+        "LOAD_MORE": "Carregar mais",
+        "RESULTS": "{{n}} resultados",
+        "RESULT": "1 resultado",
+        "SHOWING": "(exibindo {{first}}-{{second}})",
+        "TYPE_IN_SEARCH": "Digite sua pesquisa e pressione Enter",
+        "SEARCHING": "Pesquisando...",
+        "NO_RECOMMENDED": "Não há gravações recomendadas",
+        "NO_BROADCASTS": "Não há eventos ao vivo",
+        "NO_RECORDINGS": "Não há gravações",
+        "NO_ACCESS": "<a class='sign-in'>Entre</a> ou use o link fornecido para exibir uma gravação ou evento.",
+        "VIEWS": "{{n}} visualizações",
+        "VIEWERS": "{{n}} visualizadores",
+        "CANCEL": "Cancelar",
+        "CONTINUE": "Continuar",
+        "ERROR": {
+            "DOWNLOAD": "Erro no download",
+            "DOWNLOAD_LINK": "O link do download não está disponível",
+            "RECORDING_DELETED": "A gravação foi excluída. Necessário restaurar a gravação para reproduzí-la.",
+            "RECORDING_NOT_ACTIVE": "O evento está inativo.",
+            "UPDATE_FAILED": "Falha ao atualizar uma gravação"
+        },
+        "EXPIRY": {
+            "TITLE": "Expiração:",
+            "IN": "Em",
+            "DAY": "dia",
+            "DAYS": "dias",
+            "HOUR": "hora",
+            "HOURS": "horas",
+            "EXPIRED": "Expirado"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

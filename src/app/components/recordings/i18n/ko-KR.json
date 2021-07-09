@@ -1,0 +1,192 @@
+{
+    "RECORDINGS": {
+        "PLAYBACK": {
+            "QA": "Q & A",
+            "RELATED_VIDEOS": "관련 비디오",
+            "BROWSE": "찾아보기",
+            "VIDEO_DATE_AT": "{{date1}} {{date2}}",
+            "NOT_ACTIVE": "이벤트가 활성화 되어있지 않습니다."
+        },
+        "CHAT": {
+            "NEW_ONLY": "새 항목만 표시",
+            "QUESTIONS_AND_ANSWERS": "질문과 답변",
+            "ENTER_QUESTION": "호스트에게 질문 입력",
+            "ENTER_RESPONSE": "{{name}}님에게 회신 입력",
+            "ME": "나",
+            "GUEST": "게스트",
+            "REPLY_TO": "{{name}}님에 회신",
+            "NAME_REQUEST": {
+                "TITLE": "이름을 입력하여 Q & A에 참가",
+                "JOIN_QA": "Q & A에 참가",
+                "PLACE_HOLDER": "이름"
+            },
+            "PIN_REQUEST": {
+                "TITLE": "Q&A 호스트 PIN 입력",
+                "PLACE_HOLDER": "PIN 입력",
+                "MODERATE": "호스트",
+                "CANCEL": "취소",
+                "ERROR": "입력한 PIN이 잘못되었습니다."
+            }
+        },
+        "PIN_REQUEST": {
+            "TITLE": "이 비디오는 PIN으로 보호되어 있습니다.",
+            "ENTER_PIN": "PIN 입력",
+            "OK": "확인",
+            "CANCEL": "취소",
+            "ERROR": "입력한 PIN이 잘못되었습니다."
+        },
+        "TAB": {
+            "RECOMMENDED": "추천",
+            "EVENTS": "이벤트",
+            "ALL_RECORDINGS": "모든 레코딩",
+            "MY_RECORDINGS": "내 레코딩",
+            "CATEGORY": "카테고리",
+            "TRASH": "삭제 항목"
+        },
+        "TABLE_HEADER": {
+            "DATE": "날짜",
+            "EXPIRY": "만료",
+            "DURATION": "길이",
+            "IMAGE": "이미지",
+            "TITLE": "제목",
+            "VIEWS": "조회 수",
+            "OWNER": "소유자",
+            "SIZE": "크기"
+        },
+        "TRASH": {
+            "DELETE_ITEMS": "{{n}} 항목을 삭제하시겠습니까?",
+            "DELETE_ITEM": "1개 항목을 삭제하시겠습니까?",
+            "CANNOT_UNDONE": "실행을 취소할 수 없습니다.",
+            "DELETE": "삭제",
+            "CANCEL": "취소"
+        },
+        "SEARCH_RECORDINGS": "검색",
+        "RECORDING_DETAILS": {
+            "RECORDING_INFO": {
+                "MEETING_ID": "회의 ID:",
+                "OWNER": "소유자:",
+                "DATE": "날짜:",
+                "EXPIRY": "만료:",
+                "CHECKSUM": "체크섬:",
+                "DIRECT_URL": "다이렉트 URL",
+                "DURATION": "길이:",
+                "SIZE": "크기:",
+                "PROFILE": "프로파일:",
+                "SIZE_W_X_H": "{{width}}x{{height}}",
+                "SIZE_W_X_H_BITRATE": "{{width}}x{{height}}, {{bitrate}} Kb/s",
+                "VIEWS": "조회 수: {{number}}",
+                "VIEWERS": "조회 수: {{number}}",
+                "ACCESS_LEVEL": "이 레코딩은 비공개로 설정되어 있습니다. 사용자 액세스 수준을 공개로 변경하여 이 비디오를 공개적으로 공유하십시오."
+            },
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "레코딩 액세스 허용:",
+                "ACCESS_FOOTNOTE": "*위에 액세스 PIN을 입력한 경우 레코딩에 액세스하는 데 해당 PIN이 필요합니다.",
+                "ONLY_ME": "비공개(개인)",
+                "ONLY_FOLLOWING_USERS": "비공개 - 선택된 사용자",
+                "ALL_AUTH_USERS": "모든 인증된 사용자",
+                "ALL_USERS": "공개(모든 사용자)",
+                "ADD_ALL": "알려진 모든 참가자 추가",
+                "NAME_OR_USER_ID": "이름 또는 사용자 ID 입력",
+                "N_SELECTED": "{{n}}명 선택됨",
+                "CHANGE_LEVEL": "사용자 액세스 수준을 공개로 변경하면 누구나 이 레코딩을 볼 수 있게 됩니다.",
+                "DOWNLOAD_RECORDING": "레코딩 다운로드",
+                "SEE_RECORDING_IN_USER_PORTAL": "사용자 포털에서 레코팅 보기",
+                "ALLOW_USER": "이 사용자들에게 다음 작업 허용:"
+            },
+            "ERROR": {
+                "INVALID_TITLE": "사용자 이름은 비워둘 수 없습니다."
+            },
+            "UPLOAD": "이 레코딩을 식별하는 데 도움이 되는 이미지 추가",
+            "THUMBNAIL": "비디오 축소판",
+            "RECORDING_INFO_TAB_NAME": "레코딩 정보",
+            "USER_ACCESS_TAB_NAME": "사용자 액세스",
+            "RECORDING_MAIN_TAB_NAME": "기본 전화",
+            "CLOSE": "닫기",
+            "VIEW_RECORDING_DETAILS": "레코딩 상세정보 보기",
+            "EDIT_RECORDING_DETAILS": "레코딩 상세정보 편집",
+            "DESCRIPTION": "설명:",
+            "CATEGORY": "카테고리:",
+            "ACCESS_PIN": "액세스 PIN",
+            "ADD_CATEGORY": "카테고리 추가",
+            "OPTIONAL": "옵션",
+            "REQUIRED": "필수",
+            "ALLOW_RECORDING_TO_BE_DOWNLOADED": "레코딩 다운로드 허용",
+            "SHOW_PUBLICLY": "포털에 공개적으로 표시",
+            "SAVE": "저장",
+            "CANCEL": "취소",
+            "ENTER_DESCRIPTION": "설명 입력",
+            "RECORDING_TITLE": "제목"
+        },
+        "BROADCAST_DETAILS": {
+            "USER_ACCESS": {
+                "DESCRIPTION_TEXT": "브로드캐스트 액세스 허용:",
+                "SEE_BROADCAST_IN_USER_PORTAL": "사용자 포털에서 브로드캐스트 보기"
+            },
+            "BROADCAST_DETAILS": "브로드캐스트 상세정보",
+            "VIEW_BROADCAST_DETAILS": "브로드캐스트 상세정보 보기",
+            "EDIT_BROADCAST_DETAILS": "브로드캐스트 상세정보 편집",
+            "BROADCAST_INFO_TAB_NAME": "브로드캐스트 정보"
+        },
+        "NOW": "지금 진행되고 있는 이벤트",
+        "HAPPENING_TODAY": "오늘 일정",
+        "RECENTLY_ADDED": "최근에 추가된 항목",
+        "MOST_VIEWED": "조회 수가 가장 많은 항목",
+        "UPCOMING": "향후 회의",
+        "LATER_TODAY": "오늘 중 이후 시간",
+        "TOMORROW": "내일",
+        "VIEW_DETAILS": "상세정보 보기",
+        "EDIT_DETAILS": "상세정보 편집",
+        "BROADCAST_MODERATE": "호스트",
+        "COPY_LINK": "링크 복사",
+        "SHARE_LINK": "이메일로 공유",
+        "DOWNLOAD": "다운로드",
+        "DELETE": "삭제",
+        "RECOVER": "복구",
+        "TODAY": "오늘",
+        "YESTERDAY": "어제",
+        "TRASH_NOTICE": "삭제 항목에 있는 항목은 {{n}}일 후 자동으로 삭제됩니다.",
+        "DELETE_ALL": "모두 삭제",
+        "RECOVER_ALL": "모두 복원",
+        "PAGE": "페이지",
+        "OF": "/ {{n}}",
+        "SHOW": "표시:",
+        "ITEMS": "개 항목",
+        "LOAD_MORE": "추가 로드",
+        "RESULTS": "{{n}}개 결과",
+        "RESULT": "1개 결과",
+        "SHOWING": "({{first}}~{{second}} 표시)",
+        "TYPE_IN_SEARCH": "검색을 입력한 후 Enter 키를 누르십시오.",
+        "SEARCHING": "검색 중...",
+        "NO_RECOMMENDED": "추천 레코딩이 없습니다.",
+        "NO_BROADCASTS": "실시간 이벤트가 없습니다",
+        "NO_RECORDINGS": "레코딩이 없습니다",
+        "NO_ACCESS": "레코딩 또는 이벤트를 보려면 <a class='sign-in'>로그인</a>하거나 제공된 링크를 이용하십시오.",
+        "VIEWS": "조회 수 {{n}}",
+        "VIEWERS": "{{n}} 뷰어",
+        "CANCEL": "취소",
+        "CONTINUE": "계속",
+        "ERROR": {
+            "DOWNLOAD": "다운로드 에러",
+            "DOWNLOAD_LINK": "다운로드 링크가 사용 불가합니다.",
+            "RECORDING_DELETED": "레코딩이 삭제되었습니다. 재생하려면 레코딩을 복원해야 합니다.",
+            "RECORDING_NOT_ACTIVE": "이벤트가 활성화되어 있지 않습니다.",
+            "UPDATE_FAILED": "레코딩을 업데이트하지 못했습니다."
+        },
+        "EXPIRY": {
+            "TITLE": "만료 날짜:",
+            "IN": "기한 -",
+            "DAY": "일",
+            "DAYS": "일",
+            "HOUR": "시간",
+            "HOURS": "시간",
+            "EXPIRED": "만료됨"
+        },
+        "SIZE": {
+            "KB": "KB",
+            "MB": "MB",
+            "GB": "GB",
+            "TB": "TB",
+            "PB": "PB"
+        }
+    }
+}

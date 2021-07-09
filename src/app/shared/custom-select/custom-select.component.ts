@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter, ElementRef, OnDestroy, OnChanges, SimpleChanges} from '@angular/core';
-import {DirectiveUtilsService} from '../service/DirectiveUtilsService/directive-utils.service';
+import {DirectiveUtilsService} from '../services/DirectiveUtilsService/directive-utils.service';
 import {KEY_CODE} from '../../constants';
 
 @Component({

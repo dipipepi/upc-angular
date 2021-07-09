@@ -39,13 +39,13 @@ intended publication of such source code.
           </div>
 
           <div class="default-button client-download-button"
-               *ngIf="(!ACData.isInstalled || needOptionalUpgrade()) && globalService.isThereClientToDownload()"
+               *ngIf="(!ACData.isInstalled || needOptionalUpgrade()) && acClientService.isThereClientToDownload()"
                (click)="downloadAC()"
           >
             <span>{{'SETTINGS.CLIENT_TAB.DOWNLOAD_AC' | translate:ACData.latestVersion}}</span>
           </div>
 
-          <div *ngIf="!globalService.isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
+          <div *ngIf="!acClientService.isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
 
           <div *ngIf="isChrome && showSharingPlaginLink"
                class="download-plugin"
