@@ -1,5 +1,6 @@
 import {Injectable, SimpleChanges} from '@angular/core';
 import {User} from '../AuthorizationService/authorization.service';
+import {UserSettingsService} from '../UserSettingsService/user-settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,10 @@ export class GlobalService {
   sessionId: string;
   offerScreenSharingExtension: boolean;
   user: User | any;
-  isRolloverShowing: Boolean;
+  isRolloverShowing: boolean;
+  haveMic: boolean;
+  isAdminNotificationShowing = window.localStorage.isAdminNotificationShowing || true;
+  wasAdminMessageClosed = false;
 
   constructor() { }
 
@@ -41,6 +45,22 @@ export class GlobalService {
       ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
     }
     return ret.join('&');
+  }
+
+  haveConnectedMicrophone(deviceList) {
+    if(deviceList){
+      this.haveMic = false;
+
+      for (const device of deviceList){
+        if (device.kind === 'audioinput') {
+          this.haveMic = true;
+          break;
+        }
+      }
+      return this.haveMic;
+    } else{
+      return false;
+    }
   }
 
 }

@@ -34,6 +34,10 @@ import { SuccessGetTokenComponent } from './components/join/success-get-toket/su
 import { FailGetTokenComponent } from './components/join/fail-get-toket/fail-get-toket.component';
 import { ViewMeetingComponent } from './components/view-meeting/view-meeting.component';
 import { DropdownOptionsComponent } from './shared/DropdownOptions/dropdown-options/dropdown-options.component';
+// tslint:disable-next-line:max-line-length
+import { RequestToOpenMobileClientComponent } from './components/join/request-to-open-mobile-client/request-to-open-mobile-client.component';
+import { EnterNameToJoinViewComponent } from './components/join/enter-name-to-join/enter-name-to-join.component';
+import { MobilePageHeaderComponent } from './components/mobile-page-header/mobile-page-header.component';
 
 
 // tslint:disable-next-line:typedef
@@ -45,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     AppComponent,
     JoinComponent,
+    EnterNameToJoinViewComponent,
     RecordingsComponent,
     ScheduleComponent,
     NavigatorComponent,
@@ -65,7 +70,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     SuccessGetTokenComponent,
     FailGetTokenComponent,
     ViewMeetingComponent,
-    DropdownOptionsComponent
+    DropdownOptionsComponent,
+    RequestToOpenMobileClientComponent,
+    MobilePageHeaderComponent
   ],
   imports: [
     BrowserModule,

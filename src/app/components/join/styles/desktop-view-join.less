@@ -1,0 +1,196 @@
+.upc\.join {
+    padding: 0;
+
+    .join-page {
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .up-legal-statement{
+            width: 100%;
+            padding: 0 25%;
+        }
+
+        .join-form {
+            flex: 0 0 auto;
+            position: relative;
+
+            .default-select{
+                height: 30px;
+                width: 200px;
+
+                &::before {
+                    width: 29px;
+                    height: 28px;
+                }
+            }
+
+            .input-wrapper .dropdown-options ie-fix {
+                width: 30px;
+                height: 30px;
+            }
+
+            .default-warning {
+                width: auto;
+                max-width: 300px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+                margin: 15px auto;
+            }
+
+            .desktop-join-button {
+                display: block;
+            }
+
+            .mobile-join-button {
+                display: none;
+            }
+
+            .use-browser-audio-video {
+                display: inline-block;
+                font-size: 12px;
+                margin: 0 10px 20px;
+            }
+
+            .adjust-audio-video-button {
+                height: 25px;
+                line-height: 25px;
+                font-size: 10pt;
+                transition: background 0.2s ease, color 0.2s ease;
+                margin: 20px auto 40px auto;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 24px;
+                    height: 15px;
+                    float: left;
+                    margin: 4px 10px 0 0;
+                    background: @url-adjust-av-dark no-repeat;
+                    transition: background 0.2s ease;
+                }
+
+                &:hover {
+                    &::before {
+                        background: @url-adjust-av no-repeat;
+                    }
+                }
+            }
+
+            .dropdown-block {
+                right: auto;
+            }
+
+            .join-another-meeting {
+                margin-bottom: 40px;
+                min-width: 100px;
+            }
+        }
+
+        .upcoming-meetings {
+            width: 800px;
+            margin-bottom: 60px;
+            flex: 0 0 auto;
+            z-index: 1;
+
+            & > li {
+                line-height: normal;
+                padding: 5px 10px;
+                min-height: 60px;
+                overflow: visible;
+                position: relative;
+
+                .title {
+                    font-size: 16px;
+                }
+
+                .time {
+                    border-right: none;
+                    width: 90px;
+                }
+
+                .info{
+                    width: 500px;
+                }
+
+                .in-progress {
+                    .start::after {
+                        display: none;
+                    }
+
+                    span:first-child {
+                        display: none;
+                    }
+
+                    span:last-child {
+                        display: inline;
+                    }
+                }
+
+                .start {
+                    &::after {
+                        content: ' -'
+                    }
+                }
+
+                .dropdown-options {
+                    display: inline-block;
+                    float: right;
+                    margin: 10px 0 10px 20px;
+                }
+
+                .mobile-button {
+                    padding: 3px 33px 3px 65px;
+                    &::before {
+                        margin-left: -45px;
+                    }
+                    .mobile-button-text {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        label.browser-checkbox {
+            display: inline-block;
+        }
+
+        .logo {
+            flex: 0 0 auto;
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            background-size: 100%;
+            visibility: visible !important;
+        }
+
+        .svg-logo {
+            left: ~"calc(50% - @{logo-width} / 2)";
+            width: @logo-width;
+            height: @logo-height;
+            background: @logo no-repeat;// this could be overridden by custom svg logo
+            background-size: 100%;
+        }
+
+        .png-logo {
+            width: auto;
+            height: auto;
+        }
+
+        .powered-by-logo {
+            background-size: 100%;
+            visibility: visible !important;
+            position: fixed;
+            right: 20px;
+            bottom: 10px;
+        }
+
+        .meet-now-caption {
+            display: none;
+        }
+    }
+}
+
+

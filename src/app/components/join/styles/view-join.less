@@ -1,0 +1,284 @@
+input[readonly] {
+    color: @text-color-med;
+    user-select: none;
+}
+
+.upcoming-meetings {
+    margin-bottom: 0;
+    background: white;
+    list-style-type: none;
+    padding: 0;
+
+    & > li {
+        padding: 0 10px;
+        border-bottom: 1px solid @darkener;
+        min-height: 53px;
+        overflow: hidden;
+
+        &:first-child {
+            border-top: 1px solid @darkener;
+        }
+
+        .time {
+            float: left;
+            width: 80px;
+            padding: 10px 0;
+            border-right: 2px solid;
+            cursor: pointer;
+
+            &.in-progress {
+                color: @highlight-1;
+            }
+        }
+
+        .start {
+            span:last-child {
+                display: none;
+            }
+        }
+
+        .finish {
+            font-weight: lighter;
+            color: @text-color-med;
+        }
+
+        .info {
+            padding: 10px 0 10px 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .title {
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 470px;
+        }
+
+        .attendees {
+            color: @text-color-med;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            p {
+                display: inline;
+            }
+        }
+
+        .dropdown-options {
+            display: none;
+        }
+
+        .mobile-button {
+            display: inline-block;
+            float: right;
+            margin: 9px 0 9px 20px;
+            height: 36px;
+            line-height: 30px;
+            padding: 3px 15px;
+            &::before {
+                width: 30px;
+                height: 30px;
+                margin: 0;
+            }
+            .mobile-button-text {
+                display: none;
+            }
+        }
+    }
+}
+
+.join-form {
+    text-align: center;
+
+    form {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 20px 20px;
+    }
+
+    .default-select {
+        height: 36px;
+        width: 224px;
+
+        select {
+            height: 34px;
+            margin: auto;
+        }
+
+        &::before {
+            width: 35px;
+            height: 34px;
+        }
+    }
+
+    .default-input {
+        border: 1px solid lighten(@darkener, 10%);
+        &.not-valid-is-confirence-exists {
+            box-shadow: 0 0 1px 1px @highlight-3;
+        }
+    }
+
+    [name="guestJoinForm"] .input-wrapper {
+        input.ng-invalid {
+            box-shadow: 0 0 1px 1px @highlight-3;
+        }
+    }
+
+    [name="userJoinForm"] .input-wrapper {
+        input.ng-invalid {
+            box-shadow: 0 0 1px 1px @highlight-3;
+        }
+    }
+
+    .default-warning {
+        color: @highlight-4;
+    }
+
+    button {
+        display: block;
+        margin: 15px auto 0;
+    }
+
+    label {
+        font-size: 11px;
+    }
+
+    .desktop-join-button {
+        display: none;
+    }
+
+    .mobile-join-button {
+        display: block;
+    }
+}
+
+.join-caption {
+    padding: 40px 0;
+    font-size: 24px;
+}
+
+.join-small-caption {
+    padding: 0 0 18px;
+    font-size: 18px;
+}
+
+.join-tiny-caption {
+    font-size: 14px;
+    margin-top: -20px;
+    padding: 0 0 18px;
+
+    &>* {
+        margin-top:5px;
+    }
+}
+
+.join-page {
+    height: 100%;
+    overflow: auto;
+
+
+    .up-legal-statement {
+        margin-top: 5px;
+        text-align: center;
+    }
+}
+
+.meet-now-caption {
+    font-size: 16px;
+    line-height: 50px;
+    padding-left: 50px;
+    position: fixed;
+    top: 0;
+}
+
+.ngdialog.ngdialog-theme-request-popup {
+
+    .ngdialog-content {
+        position: absolute;
+        top: ~"calc(50% - 100px)";
+        right: ~"calc(50% - 160px)";
+        font-size: 14px;
+        width: 320px;
+        padding: 20px 12px;
+        background: @background-white;
+        box-shadow: 0 0 1px @darkener;
+        text-align: center;
+    }
+
+    .pin-input {
+        margin: 20px 0;
+    }
+
+    .enter-name-form,
+    .assign-pin-form {
+        .reset {
+            vertical-align: baseline;
+        }
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .sub-title {
+        font-size: 12px;
+        margin: 10px 0 20px;
+    }
+}
+
+.ngdialog-theme-request-join-without-presentation {
+    label {
+        display: block;
+        margin-bottom: 15px;
+        white-space: pre-line;
+    }
+}
+
+.use-browser-audio-video {
+    display: none;
+}
+
+.logo, .powered-by-logo {
+    visibility: hidden;
+}
+
+.input-wrapper {
+    margin: 12px auto;
+
+    .dropdown-options {
+        margin-left: -4px;
+
+        ie-fix {
+            width: 36px;
+            height: 36px;
+            display: inline-block;
+            cursor: default;
+            background: lighten(@darkener, 10%) @url-share center;
+            transition: background 0.3s ease;
+
+            &:hover, &:active, &:focus {
+                background: @darkener @url-share center;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+        &:focus {
+            box-shadow: none;
+        }
+        &[disabled] {
+            margin-left: 1px;
+        }
+        &[disabled] div, &[disabled] ie-fix {
+            background: lighten(@darkener, 10%) @url-share center;
+        }
+    }
+}
+
+.custom-branding{
+    text-align: center;
+}

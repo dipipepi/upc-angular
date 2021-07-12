@@ -6,6 +6,7 @@ import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
 import {GlobalService} from '../GlobalService/global.service';
 import {EventService} from '../../shared/services/EventService/event.service';
+import {DateFormatService} from '../../shared/services/DateFormatService/date-format.service';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +83,8 @@ export class UserSettingsService {
   constructor(private http: HttpClient,
               private translate: TranslateService,
               private globalService: GlobalService,
-              private eventService: EventService) { }
+              private eventService: EventService,
+              private dateFormatService: DateFormatService) { }
 
   startAvayaUserService(): void {
     if (!this.pictureUrls) {
@@ -404,5 +406,30 @@ export class UserSettingsService {
     };
 
     return this.http.post(parameters.url, {}, {headers: new HttpHeaders(headers)}).toPromise();
+  }
+
+  isNewAdminNotification() {
+    if (this.portalResources.notificationMessages[0].announcementActive) {
+      if(window.localStorage.currentAdminMessage !== JSON.stringify(this.portalResources.notificationMessages[0])){
+        window.localStorage.isAdminNotificationShowing = true;
+        window.localStorage.currentAdminMessage = JSON.stringify(this.portalResources.notificationMessages[0]);
+      }
+    }
+  }
+
+  showAdminNotification() {
+    if (!this.portalResources){
+      return;
+    }
+
+    for(const message of this.portalResources.notificationMessages){
+      if(this.dateFormatService.checkDate(message.announcementStartTime,
+        message.announcementEndTime) &&
+        message.announcementActive){
+        // TODO create this method
+        // MessageUtilsService.administrationAlert(this.portalResources.notificationMessages[j]);
+        break;
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
@@ -6,18 +6,34 @@ import {DateFormatService} from '../../shared/services/DateFormatService/date-fo
 import {ACClientService} from '../../services/ACClientService/acclient.service';
 import {MeetingUtilsService} from '../../shared/services/MeetingUtilsService/meeting-utils.service';
 import {EventService} from '../../shared/services/EventService/event.service';
-import {BROWSERS, CLIENT_TYPE, DELAY, ERROR_CODE, EVENT, LOCAL_STORAGE, MOBILE_STORE_LINK, OS, STATE, USER_TYPE} from '../../constants';
+import {
+  BROWSERS,
+  CLIENT_TYPE,
+  DELAY,
+  ERROR_CODE,
+  EVENT,
+  LOCAL_STORAGE,
+  MOBILE_STORE_LINK,
+  OS,
+  STATE,
+  UP_CLIENT_CONNECTION_SETTINGS,
+  USER_TYPE,
+  URL
+} from '../../constants';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {GlobalService} from '../../services/GlobalService/global.service';
 import {BrowserInfoService, VersionService} from '../../services/BrowserInfoService/browser-info.service';
 import {UserSettingsService} from '../../services/UserSettingsService/user-settings.service';
 import {ScheduleService} from '../../services/ScheduleService/schedule.service';
-import {MatDialog} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {ViewMeetingComponent} from '../view-meeting/view-meeting.component';
 import {ClientStatusService} from '../../services/ClientStatusService/client-status.service';
 import {SWCClientService} from '../../services/SWCClientService/swcclient.service';
 import {JoinService} from '../../services/JoinService/join.service';
 import {AuthorizationService} from '../../services/AuthorizationService/authorization.service';
+import {GuestSettingsComponent} from '../settings/guest-settings/guest-settings.component';
+import {EnterNameToJoinViewComponent} from './enter-name-to-join/enter-name-to-join.component';
+import {RequestToOpenMobileClientComponent} from './request-to-open-mobile-client/request-to-open-mobile-client.component';
 
 @Component({
   selector: 'app-join',
@@ -62,6 +78,11 @@ export class JoinComponent implements OnInit, OnDestroy {
   checkBrowserExclusions: (dataOnly) => boolean;
   linkForDownloadApp: string;
   upcomingMeetings: any[];
+  myMeetings: any;
+  custom2: string;
+  custom3: string;
+  customAfterLaunch: string;
+  availableDevices: MediaDeviceInfo[];
 
   constructor(private route: ActivatedRoute,
               private translate: TranslateService,
@@ -184,8 +205,6 @@ export class JoinComponent implements OnInit, OnDestroy {
     if (this.upcomingMeetingsTimeout) {
       clearTimeout(this.upcomingMeetingsTimeout);
     }
-
-
   }
 
 
@@ -386,8 +405,13 @@ export class JoinComponent implements OnInit, OnDestroy {
     return this.clientStatusService.canShowAdjustButton();
   }
 
+  isThereClientToDownload() {
+    return !!this.accClientService.clientData.latestVersion;
+  }
+
   private editMeeting(meeting) {
-    this.scheduleService.editMeeting(meeting).then(this.updateUpcomingMeetings);
+    // TODO create this method
+    // this.scheduleService.editMeeting(meeting).then(this.updateUpcomingMeetings);
   }
 
   private checkAndShowFirstTimeDownloadRollover() {
@@ -441,6 +465,487 @@ export class JoinComponent implements OnInit, OnDestroy {
       this.upcomingMeetingsTimeout = setTimeout(this.updateUpcomingMeetings, 60000);
     } else {
       this.firstLaunchTutorial();
+    }
+  }
+
+  private updateMyMeetings() {
+    this.logger.info('updateMyMeetings()');
+    if (!this.myMeetings) {
+      this.myMeetings = {
+        virtualRooms: []
+      };
+    }
+    if (this.authorizationService.userType === USER_TYPE.SIGN_IN && this.route.snapshot.routeConfig.path === STATE.JOIN) {
+      this.optionsForJoin = [];
+      const userSettings = this.userSettingsService.getUserSettings();
+      const defaultVRId = userSettings.conferencing.defaultVirtualRoom;
+      this.myMeetings.virtualRooms = userSettings.conferencing.virtualRoomSettings || [];
+
+      if (this.myMeetings.virtualRooms.length !== 0) {
+        this.myMeetings.virtualRooms.forEach((item) => {
+          let vrNumberForDisplay = '';
+          let vrNameForDisplay = '';
+          let tooltip = '';
+          if (item.name.length > 26) {
+            if (item.name.indexOf(' ') !== -1) {
+              vrNameForDisplay = item.name.slice(0, this.globalService.maxVrName) + '...';
+            } else {
+              vrNameForDisplay = item.name.slice(0, this.globalService.maxVrNameWithSpace) + '...';
+            }
+          } else {
+            vrNameForDisplay = item.name;
+          }
+
+          if (item.number.length > this.globalService.maxVrNumber) {
+            vrNumberForDisplay =  '...' + item.number.substr(-this.globalService.maxVrNumber);
+          } else {
+            vrNumberForDisplay = item.number;
+          }
+
+          if (item.name.length > this.globalService.maxVrName || item.number.length > this.globalService.maxVrNameWithSpace) {
+            tooltip = item.name + ' - ' + item.number;
+          }
+
+          let pin = '';
+          if (item.accessPIN) {
+            pin = '*' + atob(item.accessPIN);
+          }
+          this.optionsForJoin.push({
+            name: vrNameForDisplay,
+            fullName: item.name || '',
+            number: item.number,
+            numberForDisplay: vrNumberForDisplay,
+            tooltip,
+            url:  window.location.href + '?ID=' + item.number + pin
+          });
+        });
+      }
+
+      // $scope.optionsForJoin.push(JSON.parse($window.localStorage.currentAndRecentOptions));
+      JSON.parse(window.localStorage.currentAndRecentOptions).forEach((item) => {
+        if(item.className){
+          this.optionsForJoin.push(item);
+        }
+      });
+
+
+      if(window.localStorage.currentAndRecentOptions === '[]'){
+        window.localStorage.currentAndRecentOptions = JSON.stringify(this.optionsForJoin);
+      }
+
+
+      if (this.myMeetings.virtualRooms.length === 0) {
+        return;
+      }
+
+      this.myMeetings.virtualRooms.forEach((virtualRoom) => {
+
+        virtualRoom.url = window.location.origin + UP_CLIENT_CONNECTION_SETTINGS.frontEndUPCBaseURL +
+          // TODO get alias from url
+          // URL.UPC.BASE.replace(':alias', this.$stateParams.alias) + URL.UPC.JOIN + '?ID=' + virtualRoom.number;
+          URL.UPC.BASE.replace(':alias', 'dev-org208') + URL.UPC.JOIN + '?ID=' + virtualRoom.number;
+        if (!this.myMeetings.selectedVirtualRoom && defaultVRId === virtualRoom.virtualRoomId) {
+          this.myMeetings.selectedVirtualRoom = virtualRoom;
+        }
+      });
+
+      if (!this.myMeetings.selectedVirtualRoom) {
+        this.myMeetings.selectedVirtualRoom = this.myMeetings.virtualRooms[0];
+        this.eventService.broadcast(EVENT.CUSTOM.SET_VIRTUAL_ROOM_NUMBER, this.myMeetings.selectedVirtualRoom);
+      } else {
+        this.eventService.broadcast(EVENT.CUSTOM.SET_VIRTUAL_ROOM_NUMBER, this.myMeetings.selectedVirtualRoom);
+      }
+    } else {
+      this.optionsForJoinGuest = JSON.parse(window.localStorage.currentAndRecentOptionsForGuest);
+    }
+
+    // autoInsert id meeting for mobile
+    setTimeout(() => {
+      if (!this.customDeviceDetectorService.isDesktop()) {
+        if(Boolean(this.route.snapshot.queryParams.ID)){
+          this.meeting.id = this.route.snapshot.queryParams.ID;
+        } else if((!Boolean(this.route.snapshot.queryParams.ID)) && this.authorizationService.userType !== 'GUEST'){
+          if(this.myMeetings.selectedVirtualRoom){
+            this.meeting.id = this.myMeetings.selectedVirtualRoom.number;
+          }
+        } else if((!Boolean(this.route.snapshot.queryParams.ID)) && this.authorizationService.userType === 'GUEST'){
+          const lastJoinId = this.optionsForJoinGuest.length - 1;
+          if(this.optionsForJoinGuest.length !== 0){
+            this.meeting.id = this.optionsForJoinGuest[lastJoinId].number;
+          } else {
+            this.meeting.id = '';
+          }
+        }
+      }
+    }, 300);
+
+
+  }
+
+  private turnToGuestMode() {
+    this.logger.info('Turn to guest mode');
+    this.meetingStarted = false;
+    clearTimeout(this.upcomingMeetingsTimeout);
+    this.upcomingMeetings = [];
+    this.myMeetings.virtualRooms = [];
+    this.myMeetings.selectedVirtualRoom = undefined;
+  }
+
+  private defineCustomHTML() {
+    if (!this.userSettingsService.portalResources) {
+      this.logger.info('defineCustomHTML: Resources are not defined yet.');
+      return;
+    }
+
+    if (this.userSettingsService.portalResources.branding) {
+      this.signInCaption = this.userSettingsService.portalResources.branding.customSignIn || 'app/components/join/templates/SignInCaptionView.html';
+      this.guestCaption = this.userSettingsService.portalResources.branding.customGuest || 'app/components/join/templates/GuestCaptionView.html';
+      this.custom2 = this.userSettingsService.portalResources.branding.custom2;
+      this.custom3 = this.userSettingsService.portalResources.branding.custom3;
+      this.customAfterLaunch = this.userSettingsService.portalResources.branding.customAfterLaunch;
+    }
+  }
+
+  private handleEvents() {
+    const shouldShowDownloadDialog = () => {
+      return this.clientStatusService.selectedClient === CLIENT_TYPE.AC &&
+        !this.isClientInstalled && !this.userSettingsService.portalResources.disablePopupForAppDownload;
+    };
+
+    const globalThis = this;
+
+    const guestNameRequestToJoin = (meeting) => {
+      this.logger.log('user name is requested for a meeting, id=%s', meeting.id);
+
+      // TODO create this dialog
+      // const dialogConfig = {
+      //   template: 'app/components/join/templates/EnterNameToJoinView.html',
+      //   closeByNavigation: false,
+      //   closeByDocument: false,
+      //   closeByEscape: false,
+      //   showClose: false,
+      //   className: 'ngdialog-theme-request-popup',
+      //   controller: ['$scope', ($scope) => {
+      //     $scope.meeting = meeting;
+      //     $scope.join = function() {
+      //       this.eventService.broadcast(EVENT.CUSTOM.AUTO_FILL_UPDATE);
+      //       if (this.browserInfoService.isWebRTCBrowser()) {
+      //         if(this.browserInfoService.isWebRTCBrowserExclusion() || this.browserInfoService.isDataOnlyBrowserExclusion()){
+      //           this.clientStatusService.selectedClient = CLIENT_TYPE.AC;
+      //         } else {
+      //           this.clientStatusService.selectedClient = CLIENT_TYPE.SWC;
+      //         }
+      //       } else {
+      //         this.clientStatusService.selectedClient = CLIENT_TYPE.AC;
+      //       }
+      //
+      //       if (this.customDeviceDetectorService.isDesktop()) {
+      //         if (shouldShowDownloadDialog()) {
+      //           const options = {
+      //             meetingId: this.data.meeting.id,
+      //             joinMode: {
+      //               name: this.data.meeting.name,
+      //               audioOnly: !JSON.parse(window.localStorage.videoCallingPreferences)
+      //             }
+      //           };
+      //           // TODO create this method
+      //           // globalThis.MessageUtilsService.showDownloadDialog(options);
+      //         } else {
+      //           setTimeout(() => {
+      //             this.joinService.joinToMeeting(this.data.meeting.id, {
+      //               name: this.data.meeting.name,
+      //               audioOnly: !!this.route.snapshot.queryParams.dataonly ? false :
+      //                 !JSON.parse(window.localStorage.videoCallingPreferences)
+      //             });
+      //           }, 500);
+      //         }
+      //       } else {
+      //         requestToOpenMobileClient($scope.meeting);
+      //
+      //         setTimeout(() => {
+      //           this.joinService.joinToMeeting($scope.meeting.id, {
+      //             name: $scope.meeting.name,
+      //             audioOnly: !!this.route.snapshot.queryParams.dataonly ? false :
+      //             !JSON.parse(window.localStorage.videoCallingPreferences)
+      //           });
+      //         }, 500);
+      //       }
+      //
+      //       this.closeThisDialog();
+      //     };
+      //     $scope.cancel = function() {
+      //       this.closeThisDialog();
+      //     };
+      //   }]
+      // };
+      this.dialog.open(EnterNameToJoinViewComponent, {
+        data: {
+          meeting,
+          shouldShowDownloadDialog,
+          requestToOpenMobileClient
+        },
+        panelClass: 'ngdialog-theme-request-popup'
+      });
+    };
+
+    // workaround for Android - request authorized user to open SMC in case of autojoin
+    const requestToOpenMobileClient = (meeting) => {
+
+      this.dialog.open(RequestToOpenMobileClientComponent, {
+        data: {
+          meeting
+        },
+        panelClass: 'ngdialog-theme-request-popup'
+      });
+      // TODO create this dialog
+      // const dialogConfig = {
+      //   template: 'app/components/join/templates/RequestToOpenMobileClient.html',
+      //   closeByNavigation: false,
+      //   closeByDocument: false,
+      //   closeByEscape: false,
+      //   showClose: false,
+      //   className: 'ngdialog-theme-request-popup',
+      //   controller: ['$scope', function($scope) {
+      //     $scope.meeting = meeting;
+      //     $scope.join = function() {
+      //       globalThis.$timeout(function() {
+      //         globalThis.JoinService.joinToMeeting($scope.meeting.id, {
+      //           name: $scope.meeting.name,
+      //           audioOnly: !JSON.parse(globalThis.$window.localStorage.videoCallingPreferences)
+      //         });
+      //       }, 500);
+      //       this.closeThisDialog();
+      //     };
+      //     $scope.cancel = function() {
+      //       this.closeThisDialog();
+      //     };
+      //   }]
+      // };
+      // return this.ngDialog.openConfirm(dialogConfig);
+    };
+
+    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGIN, () => {
+      this.logger.info('Handle \'SUCCESSFUL_LOGIN\' event');
+      this.optionsForJoin = JSON.parse(window.localStorage.currentAndRecentOptions);
+
+      // TODO create this method
+      // this.MessageUtilsService.closeFirstLaunchTutorials();
+      if (this.upcomingMeetingsTimeout) {
+        clearTimeout(this.upcomingMeetingsTimeout);
+      }
+      this.updateUpcomingMeetings();
+      this.updateMyMeetings();
+    });
+
+    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGOUT, () => {
+      this.optionsForJoinGuest = JSON.parse(window.localStorage.currentAndRecentOptionsForGuest);
+      this.logger.info('Handle \'SUCCESSFUL_LOGOUT\' event');
+
+      // TODO create this method
+      // this.MessageUtilsService.closeFirstLaunchTutorials();
+      this.firstLaunchTutorial();
+      this.turnToGuestMode();
+    });
+
+    this.eventService.on(EVENT.CUSTOM.UNAUTHORIZED_ACCESS, () => {
+      this.logger.info('Handle \'UNAUTHORIZED_ACCESS\' event');
+      this.turnToGuestMode();
+    });
+
+    this.eventService.on(EVENT.CUSTOM.RESOURCES_UPDATED, this.defineCustomHTML);
+
+    if (this.browserInfoService.isWebRTCBrowser() && this.customDeviceDetectorService.isDesktop()) {
+      navigator.mediaDevices.enumerateDevices()
+        .then((fetchedDevices) => {
+          this.availableDevices = fetchedDevices;
+        });
+    }
+    // TODO rework to remove events
+    this.eventService.on(EVENT.CUSTOM.CHECK_AUTO_JOIN, () => {
+      this.logger.info('Checking autojoin property');
+
+      if (Boolean(this.route.snapshot.queryParams.autojoin) && this.route.snapshot.queryParams.ID && !this.hadAutoJoinHandledAlready) {
+        if (this.autoJoinTimeoutPromise) {
+          // it will work if we fetched data for guest and right after that refetch for signed-in user
+          this.logger.log('Autojoining is in progress, lets restart it with updated resources');
+          clearTimeout(this.autoJoinTimeoutPromise);
+        }
+
+        if(this.browserInfoService.isWebRTCBrowser() && !!this.availableDevices &&
+          !this.globalService.haveConnectedMicrophone(this.availableDevices)) {
+          const options = {
+            meetingId: this.meeting.id,
+            joinMode: {
+              name: this.meeting.name,
+              audioOnly: !window.localStorage.videoCallingPreferences
+            }
+          };
+          // TODO create this method
+          // this.MessageUtilsService.showMicrophoneDialog(options);
+          return;
+        } else {
+          this.autoJoinTimeoutPromise = setTimeout(() => {
+            this.logger.info('Execute autojoin scenario');
+            if (this.meeting.name === '' && this.authorizationService.userType !== USER_TYPE.SIGN_IN) {
+              // workaround for android - user manual action is required to open external app
+              guestNameRequestToJoin(this.meeting);
+            } else if (this.customDeviceDetectorService.os === OS.ANDROID || this.customDeviceDetectorService.os === OS.IOS) {
+              requestToOpenMobileClient(this.meeting);
+            } else {
+              if(!this.route.snapshot.queryParams.dataonly && !this.route.snapshot.queryParams.clienttype){
+                if(!this.getAutoJoinType()){
+                  return;
+                } else{
+                  this.clientStatusService.selectedClient = this.getAutoJoinType();
+                }
+              }
+              if(!!this.route.snapshot.queryParams.dataonly){
+                this.clientStatusService.selectedClient = CLIENT_TYPE.SWC;
+              }
+
+              if (this.customDeviceDetectorService.isDesktop()) {
+                if (shouldShowDownloadDialog()) {
+                  const options = {
+                    meetingId: this.meeting.id,
+                    joinMode: {
+                      name: this.meeting.name,
+                      audioOnly: !JSON.parse(window.localStorage.videoCallingPreferences)
+                    }
+                  };
+                  // TODO create this method
+                  // this.MessageUtilsService.showDownloadDialog(options);
+                } else {
+                  setTimeout(() => {
+                    this.joinService.joinToMeeting(this.meeting.id, {
+                      name: this.meeting.name,
+                      audioOnly: !!this.route.snapshot.queryParams.dataonly ? false :
+                        !JSON.parse(window.localStorage.videoCallingPreferences)
+                    });
+                  }, 500);
+                }
+              } else {
+                setTimeout(() => {
+                  this.joinService.joinToMeeting(this.meeting.id, {
+                    name: this.meeting.name,
+                    audioOnly: !!this.route.snapshot.queryParams.dataonly ? false : !JSON.parse(window.localStorage.videoCallingPreferences)
+                  });
+                }, 500);
+              }
+
+            }
+            this.hadAutoJoinHandledAlready = true;
+          }, this.autoJoinDelay);
+        }
+      }
+    });
+
+    this.eventService.on(EVENT.DEFAULT.STATE_CHANGE_START, () => {
+      this.logger.info('Handle \'STATE_CHANGE_START\' event');
+      this.globalService.offerScreenSharingExtension = false;
+      // TODO create this methids
+      // this.MessageUtilsService.closeScreenSharingExtension();
+      // this.MessageUtilsService.closeFirstLaunchTutorials();
+      // this.MessageUtilsService.closeOutlookExtensionNotification();
+    });
+
+    this.eventService.on(EVENT.CUSTOM.CONFERENCE_STARTED, (event, meetingOptions) => {
+      this.logger.info('Handle \'CONFERENCE_STARTED\' event');
+      this.optionsForJoin = JSON.parse(window.localStorage.currentAndRecentOptions);
+      this.optionsForJoinGuest = JSON.parse(window.localStorage.currentAndRecentOptionsForGuest);
+      this.meetingStarted = true;
+      if (this.customDeviceDetectorService.isDesktop()) {
+        this.meetingOptions = meetingOptions;
+
+        if (meetingOptions.preferredClient === CLIENT_TYPE.AC) {
+          this.meetingStartedMessage = 'JOIN.STARTED_AC';
+          this.browserWasUsedLastTime = false;
+        } else {    // == CLIENT_TYPE.SWC
+          this.browserWasUsedLastTime = true;
+          this.meetingStartedMessage = 'JOIN.STARTED_SWC';
+        }
+      }
+    });
+
+    this.eventService.on(EVENT.CUSTOM.DEFAULT_VIRTUAL_ROOM_UPDATED, () => {
+      this.logger.info('Handle \'DEFAULT_VIRTUAL_ROOM_UPDATED\' event');
+      this.myMeetings.selectedVirtualRoom = undefined;
+      this.updateMyMeetings();
+    });
+  }
+
+  private haveOutlookPlugInToDownload() {
+    if (this.customDeviceDetectorService.os === OS.WINDOWS) {
+      return this.userSettingsService.portalResources.outlookPluginDownloadUrlWindows !== '';
+    } else if (this.customDeviceDetectorService.os === OS.MAC) {
+      return this.userSettingsService.portalResources.outlookPluginDownloadUrlMac !== '';
+    }
+  }
+
+  private showOutlookPlugIn() {
+    setTimeout(() => {
+      if(this.haveOutlookPlugInToDownload() && this.customDeviceDetectorService.isDesktop() &&
+        this.authorizationService.userType === USER_TYPE.SIGN_IN && !this.accClientService.clientData.isInstalled &&
+        !JSON.parse(window.localStorage.isOutlookPluginShown)){
+        setTimeout(() => {
+          // TODO create this method
+          // this.MessageUtilsService.OutlookExtensionNotificationView(this.userSettingsService.portalResources);
+        }, this.outlookPlugInOfferDelay);
+      }
+    }, 2000);
+  }
+
+  private firstLaunchTutorial() {
+    if (this.customDeviceDetectorService.isDesktop()) {
+      // TODO create this method
+      // this.MessageUtilsService.FirstLaunchTutorialOverlay(this);
+    }
+  }
+
+  private showAdminNotification() {
+    if (this.userSettingsService.portalResources) {
+      if (this.userSettingsService.portalResources.notificationMessages.length !== 0){
+        this.userSettingsService.isNewAdminNotification();
+        if(JSON.parse(window.localStorage.isAdminNotificationShowing) && !this.globalService.isAdminNotificationShowing &&
+          this.customDeviceDetectorService.isDesktop() && !this.globalService.wasAdminMessageClosed) {
+          this.userSettingsService.showAdminNotification();
+          this.globalService.isAdminNotificationShowing = true;
+        }
+      }
+    }
+  }
+
+  private getAutoJoinType (): string | boolean {
+    let isJoinWithBrowserButtonVisible: boolean = this.browserInfoService.isWebRTCBrowser() &&
+      !this.browserInfoService.isWebRTCBrowserExclusion();
+    let isJoinWithAppButtonVisible = true;
+
+    if(this.userSettingsService.portalResources.brandingRules){
+      if(isJoinWithBrowserButtonVisible){
+        isJoinWithBrowserButtonVisible = !this.userSettingsService.portalResources.brandingRules.hideJoinWithBrowser;
+      }
+      isJoinWithAppButtonVisible = !this.userSettingsService.portalResources.brandingRules.hideJoinWithNativeApp;
+    }
+
+    if(this.browserInfoService.isWebRTCBrowser()){
+      if(isJoinWithBrowserButtonVisible && isJoinWithAppButtonVisible){
+        return window.localStorage.getItem('lastSelectedClient') || CLIENT_TYPE.SWC;
+      }
+      if(!isJoinWithBrowserButtonVisible && isJoinWithAppButtonVisible){
+        return CLIENT_TYPE.AC;
+      }
+
+      if(isJoinWithBrowserButtonVisible && !isJoinWithAppButtonVisible){
+        return CLIENT_TYPE.SWC;
+      }
+
+      return false;
+
+    } else {
+      if(isJoinWithAppButtonVisible){
+        return CLIENT_TYPE.AC;
+      } else {
+        return false;
+      }
     }
   }
 }

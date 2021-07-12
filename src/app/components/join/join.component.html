@@ -1,1 +1,239 @@
-<p>join works!</p>
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<!--<mobile-page-header options="mobileHeaderOptions" attr="mobileHeaderAttr">{{'NAVIGATION.JOIN' | translate}}</mobile-page-header>-->
+
+<app-mobile-page-header title="NAVIGATION.JOIN"></app-mobile-page-header>
+
+<div class="join-page">
+
+  <!-- After join notification -->
+  <div class="join-form {{(meetingStarted || clientSettingsOpened) && !isMobileButton ? '' : 'hidden'}} after-join-notification">
+    <div class="join-caption" *ngIf="!showAdjustAV2dPage()">{{meetingStartedMessage | translate}}</div>
+
+    <div *ngIf="showMessageIfClientNotStarted()">
+      <div *ngIf="showACClient2dPage()"
+           class="join-tiny-caption">
+        <span>{{'JOIN.MEETING_DID_NOT_START' | translate}}</span>
+
+        <a *ngIf="canJoinLastMeetingWithBrowser() && checkBrowserExclusions(false)" href="#"
+           (click)="joinLastMeetingWithBrowser()">{{'JOIN.JOIN_WITH_YOUR_BROWSER' | translate}}</a>
+        <span *ngIf="checkBrowserExclusions(false)">{{'JOIN.OR' | translate}}</span>
+        <div *ngIf="isThereClientToDownload()">
+          <a href="#" (click)="downloadACAndClearStorage()">{{'JOIN.DOWNLOAD_LATEST_EQUINOX_APP' | translate}}</a>
+        </div>
+        <div *ngIf="!isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
+      </div>
+
+      <div *ngIf="showSWC2dPage()"
+           class="join-tiny-caption">
+        <span translate-once="JOIN.IF_SWC_NOT_STARTED" translate-values="{link: meetingOptions.meetingURL}"></span>
+      </div>
+    </div>
+
+    <div *ngIf="showAdjustAV2dPage()"
+         class="join-tiny-caption">
+      <div class="join-caption">{{'JOIN.AUDIO_VIDEO_CHECK' | translate}}</div>
+      <span>{{'JOIN.IF_CLIENT_SETTINGS_NOT_STARTED' | translate}}</span>
+      <div *ngIf="isThereClientToDownload()">
+        <a href="#" (click)="downloadACAndClearStorage()">{{'JOIN.DOWNLOAD_LATEST_EQUINOX_APP' | translate}}</a>
+      </div>
+      <div *ngIf="!isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
+    </div>
+
+    <div *ngIf="!showMessageIfClientNotStarted() && !showAdjustAV2dPage()">
+      <div class="join-tiny-caption">
+        <span>{{'JOIN.MEETING_DID_NOT_START' | translate}}</span>
+
+        <a *ngIf="canJoinLastMeetingWithBrowser()" href="#"
+           (click)="joinLastMeetingWithBrowser()">{{'JOIN.OPEN_MANUALLY' | translate}}</a>
+
+        <span *ngIf="canDownloadAC() && canJoinLastMeetingWithBrowser()">{{'JOIN.OR' | translate}}</span>
+
+
+        <div *ngIf="canDownloadAC() && isThereClientToDownload()">
+          <a href="#" (click)="downloadACAndClearStorage()">{{'JOIN.DOWNLOAD_LATEST_EQUINOX_APP' | translate}}</a>
+        </div>
+        <div *ngIf="!isThereClientToDownload()" class="client-title">{{'GENERAL.DOWNLOAD.NO_CLIENT' | translate}}</div>
+      </div>
+    </div>
+
+    <button type="button"
+            class="default-button ghost-button join-another-meeting"
+            (click)="joinAnotherMeeting()">
+      {{'JOIN.JOIN_ANOTHER' | translate}}
+    </button>
+
+    <div [id]="customAfterLaunch" *ngIf="customAfterLaunch" ng-include="customAfterLaunch"></div>
+
+  </div>
+  <!-- After join notification end -->
+
+  <!-- After join mobile notification -->
+  <div class="join-form {{meetingStarted && isMobileButton ? '' : 'hidden'}} after-join-notification">
+    <div class="join-caption" *ngIf="!showAdjustAV2dPage()">{{'JOIN.STARTED_AC' | translate}}</div>
+
+    <div class="join-tiny-caption">
+      <span>{{'JOIN.STARTED_MOBILE' | translate}}</span>
+
+      <div>
+        <a href="{{linkForDownloadApp}}" target="_blank">{{'JOIN.DOWNLOAD_LATEST_EQUINOX_APP' | translate}}</a>
+      </div>
+    </div>
+
+    <button type="button"
+            class="default-button ghost-button join-another-meeting"
+            (click)="joinAnotherMeeting()">
+      {{'JOIN.JOIN_ANOTHER' | translate}}
+    </button>
+
+    <div [id]="customAfterLaunch" *ngIf="customAfterLaunch" ng-include="customAfterLaunch"></div>
+
+  </div>
+  <!-- After join mobile notification end -->
+
+  <!-- Join form (inputs and buttons) -->
+  <div class="join-form {{meetingStarted || clientSettingsOpened? 'hidden' : ''}} join-buttons">
+
+    <!-- Join form for guest -->
+    <div *ngIf="authorizationService.userType!=='SIGN_IN'">
+      <ng-include src="guestCaption"></ng-include>
+
+      <!-- Join form for guest mobile -->
+<!--      TODO create this component-->
+<!--      <join-input-mobile-->
+<!--        ng-if="isMobileButton"-->
+<!--        options="optionsForJoinGuest"-->
+<!--        meeting-id="meeting.id"-->
+<!--        user-name="meeting.name"-->
+<!--        user-type="{{authorizationService.userType}}"-->
+<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
+<!--        is-from-form="true"-->
+<!--        is-conference-exists="isConferenceExists">-->
+<!--      </join-input-mobile>-->
+      <!-- Join form for guest mobile end -->
+
+      <!-- Join form for guest desktop -->
+      <!--      TODO create this component-->
+<!--      <join-input-->
+<!--        ng-if="!isMobileButton"-->
+<!--        class="white-arrow"-->
+<!--        options="optionsForJoinGuest"-->
+<!--        ng-model="myMeetings.selectedVirtualRoom"-->
+<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
+<!--        meeting-id="meeting.id"-->
+<!--        user-name="meeting.name"-->
+<!--        user-type="{{authorizationService.userType}}">-->
+<!--      </join-input>-->
+      <!-- Join form for guest desktop end -->
+
+    </div>
+    <!-- Join form for guest end -->
+
+    <!-- Join form for user -->
+    <div *ngIf="authorizationService.userType==='SIGN_IN'">
+      <ng-include src="signInCaption"></ng-include>
+
+      <!-- Join form for user for mobile -->
+      <!--      TODO create this component-->
+<!--      <join-input-mobile-->
+<!--        ng-if="isMobileButton"-->
+<!--        options="optionsForJoin"-->
+<!--        ng-model="myMeetings.selectedVirtualRoom"-->
+<!--        meeting-id="meeting.id"-->
+<!--        user-name="meeting.name"-->
+<!--        user-type="{{authorizationService.userType}}"-->
+<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
+<!--        is-from-form="true"-->
+<!--        is-conference-exists="isConferenceExists">-->
+<!--      </join-input-mobile>-->
+      <!-- Join form for user for mobile end -->
+
+      <!-- Join form for user for desktop -->
+      <!--      TODO create this component-->
+<!--      <join-input-->
+<!--        ng-if="!isMobileButton"-->
+<!--        class="white-arrow"-->
+<!--        options="optionsForJoin"-->
+<!--        ng-model="myMeetings.selectedVirtualRoom"-->
+<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
+<!--        meeting-id="meeting.id"-->
+<!--        user-name="meeting.name"-->
+<!--        user-type="{{authorizationService.userType}}">-->
+<!--      </join-input>-->
+      <!-- Join form for user for desktop end -->
+    </div>
+    <!-- Join form for user end -->
+
+    <!-- Button audio adn video check -->
+    <button
+      type="button"
+      class="default-button ghost-button adjust-audio-video-button-guest adjust-audio-video-button"
+      *ngIf="canShowAdjustButton() && isDesktop"
+      (click)="openClientSettings()">
+      {{'JOIN.ADJUST_AUDIO_VIDEO_DEVICES' | translate}}
+    </button>
+    <!-- Button audio adn video check end -->
+
+  </div>
+  <!-- Join form (inputs and buttons) end -->
+
+  <!-- Upcoming meetings list -->
+  <ul *ngIf="authorizationService.userType==='SIGN_IN'" class="upcoming-meetings {{meetingStarted || clientSettingsOpened? 'hidden' : ''}}">
+    <li *ngFor="let meeting of upcomingMeetings">
+<!--      <join-mobile-button meeting-id="meeting.number"-->
+<!--                          ng-if="isMobileButton"-->
+<!--                          name="{{meeting.name}}"-->
+<!--                          text="JOIN.JOIN">-->
+<!--      </join-mobile-button>-->
+<!--      <join-upcoming-button ng-if="!isMobileButton" meeting-id="meeting.number" name="{{meeting.name}}"></join-upcoming-button>-->
+      <div class="time {{meeting.status === 'IN_SESSION' ? 'in-progress' : ''}}" (click)="showMeetingDetails(meeting, $event)">
+        <div class="start">
+          <span>{{meeting.startTime | date:dateFormat.shortTime | lowercase}}</span>
+          <span>{{'JOIN.IN_PROGRESS' | translate}}</span>
+        </div>
+        <div class="finish">{{plannedEndMeetingTime(meeting) | date:dateFormat.shortTime | lowercase}}</div>
+      </div>
+      <div class="info" (click)="showMeetingDetails(meeting, $event)">
+        <div class="title" [attr.title]="meeting.subject">{{ meeting.subject}}</div>
+        <div class="attendees">
+                    <span *ngFor="let attendee of meeting.attendees | slice: 0: 3; index as $index">
+                        <p *ngIf="attendee.userId !== authorizationService.user.scopiaId">{{attendee.firstName + ' ' + attendee.lastName}}{{getAttendiesSeparator($index, meeting.attendees.length)}}</p>
+                        <p *ngIf="attendee.userId === authorizationService.user.scopiaId" translate-once="JOIN.YOU" translate-values="{separator: getAttendiesSeparator($index, meeting.attendees.length)}"></p>
+                    </span>
+          <p *ngIf="meeting.attendees.length > 3" translate-once="JOIN.AND_N_OTHERS" translate-values="{n: meeting.attendees.length - 3}"></p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- Upcoming meetings list end -->
+
+  <div id="customHtml2" *ngIf="custom2" ng-include="custom2"></div>
+  <div class="logo {{logoType}}"
+       [style]="customLogoStyle"><img *ngIf="logoType == 'png-logo'" [src]="customLogoSrc"/></div>
+  <div class="legal-text" style="text-align: center" *ngIf="userSettingsService.portalResources.isAemo">
+    <font size="2" color="333" face="Arial">
+      <a translate-once="JOIN.LEGAL_TEXT.MEETING_RESOURCES" href="https://support.avaya.com/public/index?page=content&id=FAQ115184" target="_blank">
+       {{'JOIN.LEGAL_TEXT.MEETING_RESOURCES' | translate}}</a>
+    </font>
+    <br/>
+    <font size="2" color="333" face="Arial"><span translate-once="JOIN.LEGAL_TEXT.AGREEMENT" >By clicking <small><b>JOIN</b></small>, you agree to the </span>
+      <a translate-once="JOIN.LEGAL_TEXT.TERMS" href="https://downloads.avaya.com/css/P8/documents/100174102" target="_blank">Terms Of Use</a> |
+      <a translate-once="JOIN.LEGAL_TEXT.PRIVACY" href="https://www.avaya.com/en/privacy/products/" target="_blank">Privacy Statement</a>
+    </font>
+  </div>
+
+<!--  TODO check branding-->
+
+<!--  <div [id]="customHtml3" ng-if="custom3" ng-include="custom3"></div>-->
+
+  <div class="up-legal-statement {{meetingStarted || clientSettingsOpened ? 'hidden' : ''}}">{{'JOIN.LEGAL_TEXT.DEFAULT' | translate}}</div>
+
+  <div class="powered-by-logo" *ngIf="userSettingsService.portalResources.customLogoUrl && userSettingsService.portalResources.branding.poweredByLogo"></div>
+</div>

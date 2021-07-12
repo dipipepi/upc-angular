@@ -1,0 +1,37 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+
+.ngdialog-theme-request-popup {
+
+  .ngdialog-content {
+    position: absolute;
+    top: ~"calc(50% - 100px)";
+    right: ~"calc(50% - 160px)";
+    font-size: 14px;
+    width: 320px;
+    padding: 20px 12px;
+    background: @background-white;
+    box-shadow: 0 0 1px @darkener;
+    text-align: center;
+  }
+
+  .pin-input {
+    margin: 20px 0;
+  }
+
+  .enter-name-form,
+  .assign-pin-form {
+    .reset {
+      vertical-align: baseline;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .sub-title {
+    font-size: 12px;
+    margin: 10px 0 20px;
+  }
+}

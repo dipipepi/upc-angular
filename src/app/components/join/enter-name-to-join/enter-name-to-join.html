@@ -1,0 +1,31 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+
+<div class="ngdialog-content">
+  <form class="enter-name-form">
+    <label>{{'JOIN.ENTER_YOUR_NAME' | translate}}</label>
+    <label>
+      <input autofill
+             autocomplete="on"
+             reset-field
+             type="text"
+             class="default-input pin-input"
+             name="name"
+             [(ngModel)]="data.meeting.name"
+             [attr.title]="data.meeting.name"
+             [placeholder]="'JOIN.USER_NAME' | translate"
+             maxlength="100"
+             required
+             autofocus>
+    </label>
+    <button type="submit" class="default-button" [disabled]="!data.meeting.name" (click)="join()">{{'JOIN.OK' | translate}}</button>
+    <button type="button" class="default-button secondary-button" (click)="cancel()">{{'JOIN.CANCEL' | translate}}</button>
+  </form>
+</div>
