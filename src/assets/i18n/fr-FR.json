@@ -344,6 +344,52 @@
 			"PB": "Po"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "Planifier",
+		"YESTERDAY": "Hier",
+		"TODAY": "Aujourd'hui",
+		"TOMORROW": "Demain",
+		"THIS_WEEK": "Cette semaine",
+		"DAY": "Jour",
+		"WEEK": "Semaine",
+		"NUMBER_WEEK": "semaine {{number}}",
+		"MONTH": "Mois",
+		"NEXT_MEETINGS": "Prochaines réunions",
+		"IN_PROGRESS": "En cours",
+		"YOU": "Vous",
+		"AND": "et",
+		"OTHERS": "les autres",
+		"SEARCH": "Rechercher",
+		"MORE": "{{n}} supplémentaires...",
+		"DONT_HAVE_MEETINGS": "Vous n'avez aucune réunion planifiée à cette date.",
+		"NO_MEETINGS": "Aucune réunion",
+		"NO_MEETINGS_FOUND": "Aucune réunion n’a été trouvée.",
+		"LOAD_MORE": "Charger plus",
+		"TYPE_IN_SEARCH": "Tapez votre recherche puis cliquez sur Entrée.",
+		"DURATION": {
+			"MINUTES": "minutes"
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "Ouvrir",
+			"NEW_EMAIL": "Nouvel e-mail aux participants",
+			"GENERATE_MEETING_HISTORY": "Générer un fichier CSV",
+			"MEETING_OPTIONS": "Options de la réunion",
+			"DELETE_MEETING": "Supprimer la réunion",
+			"DELETE": "Supprimer",
+			"OCCURRENCE": "Occurrence",
+			"SERIES": "Séries",
+			"CANCEL": "Annuler"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0APoints de terminaison :%0D%0A{{endpoints}}%0D%0A%0D%0AHoraire : {{startTime}}%0D%0ADurée : {{duration}}%0D%0ALien : {{url}}%0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AHoraire : {{startTime}}%0D%0ADurée : {{duration}}%0D%0ALien : {{url}}%0D%0A%0D%0A{{name}}",
+			"KBPS": "Kbits/s",
+			"AUTO_DIAL": "Numérotation automatique"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "Les informations détaillées concernant la réunion ne peuvent pas être communiquées par le serveur en ce moment. Si le problème persiste, veuillez contacter un administrateur."
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Paramètres Avaya",
 		"SETTINGS": "Paramètres",

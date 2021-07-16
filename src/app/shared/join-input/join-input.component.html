@@ -1,0 +1,105 @@
+<form name="userJoinForm" class="join-input-signin {{class}}" novalidate #joinForm='ngForm'>
+
+  <!-- Form's title -->
+  <div class="join-small-caption">{{'JOIN.JOIN_A_MEETING' | translate}}</div>
+
+  <!-- Input for enter name for guest -->
+  <div *ngIf="authorizationService.userType==='GUEST'" class="input-wrapper">
+    <input autofill
+           reset-field
+           type="text"
+           class="default-input guest-name-input"
+           [class.guest-name]="authorizationService.userType==='GUEST'"
+           name="name"
+           [ngModel]="userName"
+           [attr.title]="globalService.user?.userName"
+           [placeholder]="'JOIN.USER_NAME' | translate"
+           [maxlength]="10"
+           required
+           (ngModelChange)="changeName($event)">
+  </div>
+
+  <!-- text error if name is too long -->
+  <div class="default-warning max-length-name"
+       ng-if="userJoinForm.name.$error.maxlength">
+    {{'JOIN.ERROR.NOT_VALID_USER_NAME' | translate}}
+  </div>
+
+<!--  <div class="input-wrapper {{myMeetings.virtualRooms.length > 1 ? 'multiple-rooms' : ''}} {{userType==='GUEST' ? 'guest-input-size' : 'sign-in-input-size'}}">-->
+
+<!--    &lt;!&ndash; Input for enter id meeting &ndash;&gt;-->
+<!--    <input autofill reset-field-->
+<!--           type="text"-->
+<!--           class="default-input"-->
+<!--           ng-class="{'without-dropdown': options.length < 2, 'not-valid-is-confirence-exists': !isConferenceExists}"-->
+<!--           name="id"-->
+<!--           ng-model="meetingId"-->
+<!--           ng-attr-title="{{meetingId}}"-->
+<!--           translate-once-placeholder="JOIN.MEETING_ID"-->
+<!--           ng-pattern="meetingIdPattern"-->
+<!--           maxlength="35"-->
+<!--           required>-->
+
+<!--    &lt;!&ndash; Select for select meeting id from history or VR &ndash;&gt;-->
+<!--    <div class="default-select join-input-selected"-->
+<!--         ng-click="showDropdown()"-->
+<!--         ng-class="{'guest-dropdown': userType==='GUEST'}"-->
+<!--         ng-if="options.length > 1">-->
+<!--      <ul ng-if="toggled" class="dropdown-block">-->
+<!--        <li ng-repeat="option in options"-->
+<!--            class="{{option[key] === ngModel[key] && option[value] === ngModel[value] ? 'selected' : ''}}-->
+<!--                    {{option.className ? 'recent' : ''}}"-->
+<!--            ng-click="selectOption(option)"-->
+<!--            ng-attr-title="{{option.tooltip}}">-->
+<!--          <span class="name-in-history" ng-class="{'no-meeting-name': option.fullName == ''}">{{:: option[value]}}</span>-->
+<!--          <span ng-show="option.fullName" class="id-in-history">{{:: option.numberForDisplay}}</span>-->
+<!--        </li>-->
+<!--      </ul>-->
+
+<!--      <select ng-options="option[value] for option in options track by (option[key] || '__empty_option_key__')"-->
+<!--              ng-model="ngModel"-->
+<!--              ng-change="selectOption(ngModel)">-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Block for copy link or email invite &ndash;&gt;-->
+<!--    <copy-or-email-link-join ng-if="userType!=='GUEST'"-->
+<!--                             url="url" required="true"-->
+<!--                             class="{{!meetingId ? 'inactive' : ''}}">-->
+<!--    </copy-or-email-link-join>-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Error not valid meeting id &ndash;&gt;-->
+<!--  <div class="default-warning max-length-name"-->
+<!--       ng-if="userJoinForm.id.$error.pattern"-->
+<!--       translate-once="JOIN.ERROR.NOT_VALID_MEETING_ID">-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Error conference is not exist &ndash;&gt;-->
+<!--  <div class="default-warning max-length-name wrong-current-meeting-id"-->
+<!--       ng-if="!isConferenceExists"-->
+<!--       translate-once="JOIN.ERROR.CONFERENCE_DOES_NOT_EXIST">-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Error no name or id for guest &ndash;&gt;-->
+<!--  <div class="default-warning"-->
+<!--       ng-if="!userJoinForm.id.$error.pattern && (userJoinForm.name.$error.required || userJoinForm.id.$error.required) && userType === 'GUEST'"-->
+<!--       translate="JOIN.WARNING.NO_NAME_OR_ID"-->
+<!--       translate-values="{noName: userJoinForm.name.$error.required, noId: userJoinForm.id.$error.required}">-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Error no name or id for user &ndash;&gt;-->
+<!--  <div class="default-warning"-->
+<!--       ng-if="!userJoinForm.id.$error.pattern && userJoinForm.id.$error.required  && userType !== 'GUEST'"-->
+<!--       translate="JOIN.WARNING.NO_NAME_OR_ID"-->
+<!--       translate-values="{noName: false, noId: userJoinForm.id.$error.required}">-->
+<!--  </div>-->
+
+<!--  &lt;!&ndash; Desktop buttons &ndash;&gt;-->
+<!--  <join-guest-button ng-class="{'for-wrong-meeting-id' : !isConferenceExists}"-->
+<!--                     is-conference-exists="isConferenceExists"-->
+<!--                     meeting-id="meetingId"-->
+<!--                     name="{{userName}}"-->
+<!--                     is-disabled="guestJoinForm.$invalid">-->
+<!--  </join-guest-button>-->
+</form>

@@ -1,0 +1,10 @@
+<div class="mobile-page-header {{options?.length ? 'multiple' : 'single'}}">
+  <span *ngIf="title">{{title | translate}}</span>
+  <span>{{options ? options[getSelectedOption()].name : ''}}</span>
+
+  <ul *ngIf="!toggled">
+    <li class="{{getSelectedOption() === $index ? 'selected' : ''}} {{option.name ? '' : 'separator'}} {{option.hideForGuest? 'disabled' : ''}}"
+        *ngFor="let option of options; index as $index"
+        (click)="option.func ? performAction($index) : true">{{option.name}}</li>
+  </ul>
+</div>

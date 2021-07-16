@@ -1,0 +1,48 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "日程安排",
+        "YESTERDAY": "昨天",
+        "TODAY": "今天",
+        "TOMORROW": "明天",
+        "THIS_WEEK": "本周",
+        "DAY": "天",
+        "WEEK": "周",
+        "NUMBER_WEEK": "第 {{number}} 周",
+        "MONTH": "月",
+        "NEXT_MEETINGS": "未来会议",
+        "IN_PROGRESS": "正在进行",
+        "YOU": "您",
+        "AND": "和",
+        "OTHERS": "其他人",
+        "SEARCH": "搜索",
+        "MORE": "{{n}} 更多...",
+        "DONT_HAVE_MEETINGS": "您在此日期没有已安排的会议。",
+        "NO_MEETINGS": "无会议",
+        "NO_MEETINGS_FOUND": "找不到任何会议",
+        "LOAD_MORE": "加载更多",
+        "TYPE_IN_SEARCH": "输入您的搜索内容，然后按 Enter",
+        "DURATION": {
+            "MINUTES": "分钟"
+        },
+        "CONTEXT_MENU": {
+            "OPEN": "打开",
+            "NEW_EMAIL": "发送新邮件给与会者",
+            "GENERATE_MEETING_HISTORY": "生成 CSV 文件",
+            "MEETING_OPTIONS": "会议选项",
+            "DELETE_MEETING": "删除会议",
+            "DELETE": "删除",
+            "OCCURRENCE": "频率",
+            "SERIES": "序列",
+            "CANCEL": "取消"
+        },
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0A终端：%0D%0A{{endpoints}}%0D%0A%0D%0A开始时间：{{startTime}}%0D%0A持续时间：{{duration}}%0D%0A链接：{{url}}%0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0A开始时间：{{startTime}}%0D%0A持续时间：{{duration}}%0D%0A链接：{{url}}%0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "自动拨号"
+        },
+        "ERROR": {
+            "MEETING_NOT_FOUND": "现在无法从服务器接收会议细节。如果此问题仍然存在，请联系管理员。"
+        }
+    }
+}

@@ -344,6 +344,52 @@
 			"PB": "PB"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "Zaplanuj",
+		"YESTERDAY": "Wczoraj",
+		"TODAY": "Dzisiaj",
+		"TOMORROW": "Jutro",
+		"THIS_WEEK": "Bieżący tydzień",
+		"DAY": "Dzień",
+		"WEEK": "Tydzień",
+		"NUMBER_WEEK": "{{number}}. tydzień",
+		"MONTH": "Miesiąc",
+		"NEXT_MEETINGS": "Następne spotkania",
+		"IN_PROGRESS": "W trakcie",
+		"YOU": "Ty",
+		"AND": "i",
+		"OTHERS": "inni",
+		"SEARCH": "Szukaj",
+		"MORE": "{{n}} więcej...",
+		"DONT_HAVE_MEETINGS": "Nie masz zaplanowanych spotkań w tym terminie.",
+		"NO_MEETINGS": "Nie masz żadnych spotkań",
+		"NO_MEETINGS_FOUND": "Nie znaleziono żadnych spotkań",
+		"LOAD_MORE": "Załaduj więcej",
+		"TYPE_IN_SEARCH": "Wpisz wyszukiwanie i naciśnij Enter",
+		"DURATION": {
+			"MINUTES": "min"
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "Otwórz",
+			"NEW_EMAIL": "Nowa wiadomość e-mail do uczestników",
+			"GENERATE_MEETING_HISTORY": "Wygeneruj plik csv",
+			"MEETING_OPTIONS": "Opcje spotkania",
+			"DELETE_MEETING": "Usuń spotkanie",
+			"DELETE": "Usuń",
+			"OCCURRENCE": "Wystąpienie",
+			"SERIES": "Seria",
+			"CANCEL": "Anuluj"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0APunkty końcowe:%0D%0A{{endpoints}}%0D%0A%0D%0AKiedy: {{startTime}}%0D%0ACzas trwania: {{duration}}%0D%0AŁącze: {{url}}%0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AKiedy: {{startTime}}%0D%0ACzas trwania: {{duration}}%0D%0AŁącze: {{url}}%0D%0A%0D%0A{{name}}",
+			"KBPS": "kb/s",
+			"AUTO_DIAL": "Automatyczne łączenie"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "Aktualnie nie można odebrać szczegółów spotkania z serwera. Jeśli problem nie ustępuje, skontaktuj się z administratorem."
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Ustawienia Avaya",
 		"SETTINGS": "Ustawienia",

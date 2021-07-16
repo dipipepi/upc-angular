@@ -344,6 +344,52 @@
 			"PB": "PB"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "Planen",
+		"YESTERDAY": "Gestern",
+		"TODAY": "Heute",
+		"TOMORROW": "Morgen",
+		"THIS_WEEK": "Diese Woche",
+		"DAY": "Tag",
+		"WEEK": "Woche",
+		"NUMBER_WEEK": "Woche {{number}}",
+		"MONTH": "Monat",
+		"NEXT_MEETINGS": "Nächste Besprechungen",
+		"IN_PROGRESS": "Läuft",
+		"YOU": "Sie",
+		"AND": "und",
+		"OTHERS": "andere",
+		"SEARCH": "Suchen",
+		"MORE": "{{n}} weitere …",
+		"DONT_HAVE_MEETINGS": "An diesem Tag sind keine Besprechungen für Sie geplant.",
+		"NO_MEETINGS": "Es liegen keine Besprechungen vor.",
+		"NO_MEETINGS_FOUND": "Es wurden keine Besprechungen gefunden.",
+		"LOAD_MORE": "Mehr laden",
+		"TYPE_IN_SEARCH": "Geben Sie die Suchanfrage ein und drücken Sie die Eingabetaste.",
+		"DURATION": {
+			"MINUTES": "Min."
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "Öffnen",
+			"NEW_EMAIL": "Neue E-Mail an Teilnehmer",
+			"GENERATE_MEETING_HISTORY": "CSV-Datei generieren",
+			"MEETING_OPTIONS": "Besprechungseinstellungen",
+			"DELETE_MEETING": "Besprechung löschen",
+			"DELETE": "Löschen",
+			"OCCURRENCE": "Diese Instanz",
+			"SERIES": "Alle Instanzen",
+			"CANCEL": "Abbrechen"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0AEndpunkte:%0D%0A{{endpoints}}%0D%0A%0D%0ATermin: {{startTime}}%0D%0ADauer: {{duration}}%0D%0ALink: {{url}}%0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0ATermin: {{startTime}}%0D%0ADauer: {{duration}}%0D%0ALink: {{url}}%0D%0A%0D%0A{{name}}",
+			"KBPS": "KBit/s",
+			"AUTO_DIAL": "Auto-Wählen"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "Besprechungsdetails können gegenwärtig nicht vom Server empfangen werden. Falls das Problem weiterhin besteht, wenden Sie sich bitte an den Administrator."
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Avaya-Einstellungen",
 		"SETTINGS": "Einstellungen",

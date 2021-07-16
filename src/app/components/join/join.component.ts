@@ -569,7 +569,7 @@ export class JoinComponent implements OnInit, OnDestroy {
         virtualRoom.url = window.location.origin + UP_CLIENT_CONNECTION_SETTINGS.frontEndUPCBaseURL +
           // TODO get alias from url
           // URL.UPC.BASE.replace(':alias', this.$stateParams.alias) + URL.UPC.JOIN + '?ID=' + virtualRoom.number;
-          URL.UPC.BASE.replace(':alias', 'dev-org208') + URL.UPC.JOIN + '?ID=' + virtualRoom.number;
+          URL.UPC.BASE.replace(':alias', 'dev-org200') + URL.UPC.JOIN + '?ID=' + virtualRoom.number;
         if (!this.myMeetings.selectedVirtualRoom && defaultVRId === virtualRoom.virtualRoomId) {
           this.myMeetings.selectedVirtualRoom = virtualRoom;
         }

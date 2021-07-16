@@ -1,0 +1,48 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "일정",
+        "YESTERDAY": "어제",
+        "TODAY": "오늘",
+        "TOMORROW": "내일",
+        "THIS_WEEK": "이번 주",
+        "DAY": "일",
+        "WEEK": "주",
+        "NUMBER_WEEK": "주 {{number}}",
+        "MONTH": "월",
+        "NEXT_MEETINGS": "다음 회의",
+        "IN_PROGRESS": "진행 중",
+        "YOU": "귀하",
+        "AND": "및",
+        "OTHERS": "기타",
+        "SEARCH": "검색",
+        "MORE": "{{n}} 더 보기...",
+        "DONT_HAVE_MEETINGS": "이 날짜에 예약된 회의가 없습니다.",
+        "NO_MEETINGS": "회의가 없습니다.",
+        "NO_MEETINGS_FOUND": "검색된 회의 없음",
+        "LOAD_MORE": "추가 로드",
+        "TYPE_IN_SEARCH": "검색을 입력한 후 Enter 키를 누르십시오.",
+        "DURATION": {
+            "MINUTES": "분"
+        },
+        "CONTEXT_MENU": {
+            "OPEN": "열기",
+            "NEW_EMAIL": "참가자에게 새 이메일 전송",
+            "GENERATE_MEETING_HISTORY": "CSV 파일 생성",
+            "MEETING_OPTIONS": "회의 옵션",
+            "DELETE_MEETING": "회의 삭제",
+            "DELETE": "삭제",
+            "OCCURRENCE": "되풀이 항목",
+            "SERIES": "시리즈",
+            "CANCEL": "취소"
+        },
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0A엔드포인트:%0D%0A{{endpoints}}%0D%0A%0D%0A시기: {{startTime}}%0D%0A지속 시간: {{duration}}%0D%0A링크: {{url}}%0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0A시기: {{startTime}}%0D%0A지속 시간: {{duration}}%0D%0A링크: {{url}}%0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "자동 다이얼"
+        },
+        "ERROR": {
+            "MEETING_NOT_FOUND": "현재 서버에서 회의 상세 정보를 받을 수 없습니다. 문제가 지속된다면 관리자에게 연락하십시오."
+        }
+    }
+}

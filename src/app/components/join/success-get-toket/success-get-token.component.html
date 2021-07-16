@@ -1,0 +1,26 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<form class="assign-pin-form" #pinRequestForm='ngForm'>
+  <label>{{'JOIN.PIN_REQUEST.TITLE_PIN_ASSIGN' | translate}}</label>
+  <label>
+    <input type="password"
+           reset-field
+           maxlength="16"
+           autocomplete="off"
+           required
+           [(ngModel)]="oneTimePin"
+           class="default-input pin-input"
+           [placeholder]="'JOIN.PIN_REQUEST.ENTER_PIN' | translate"
+           pattern="/^\d+$/"
+           autofocus>
+  </label>
+  <button type="submit" class="default-button" [disabled]="!oneTimePin" (click)="join()">{{'JOIN.OK' | translate}}</button>
+  <button type="button" class="default-button secondary-button" (click)="cancelJoin()">{{'JOIN.CANCEL' | translate}}</button>
+</form>

@@ -344,6 +344,52 @@
 			"PB": "PB"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "排程",
+		"YESTERDAY": "昨天",
+		"TODAY": "今天",
+		"TOMORROW": "明天",
+		"THIS_WEEK": "本週",
+		"DAY": "日",
+		"WEEK": "週",
+		"NUMBER_WEEK": "第 {{number}} 週",
+		"MONTH": "月",
+		"NEXT_MEETINGS": "後續會議",
+		"IN_PROGRESS": "進行中",
+		"YOU": "您",
+		"AND": "和",
+		"OTHERS": "其他",
+		"SEARCH": "搜尋",
+		"MORE": "其他 {{n}} 個...",
+		"DONT_HAVE_MEETINGS": "您目前尚未排程會議。",
+		"NO_MEETINGS": "沒有會議",
+		"NO_MEETINGS_FOUND": "找不到任何會議",
+		"LOAD_MORE": "載入更多",
+		"TYPE_IN_SEARCH": "輸入搜尋字詞然後按 Enter",
+		"DURATION": {
+			"MINUTES": "分鐘"
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "開啟",
+			"NEW_EMAIL": "寄電子郵件給參與者",
+			"GENERATE_MEETING_HISTORY": "產生 CSV 檔",
+			"MEETING_OPTIONS": "會議選項",
+			"DELETE_MEETING": "刪除會議",
+			"DELETE": "刪除",
+			"OCCURRENCE": "單一事件",
+			"SERIES": "例會",
+			"CANCEL": "取消"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0A端點：%0D%0A{{endpoints}}%0D%0A%0D%0A時間：{{startTime}}%0D%0A持續時間：{{duration}}%0D%0A連結：{{url}}%0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0A時間：{{startTime}}%0D%0A持續時間：{{duration}}%0D%0A連結：{{url}}%0D%0A%0D%0A{{name}}",
+			"KBPS": "Kbps",
+			"AUTO_DIAL": "自動撥號"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "現在無法從伺服器擷取會議詳細資料。如果問題依然存在，請聯絡管理員。"
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Avaya 設定",
 		"SETTINGS": "設定",

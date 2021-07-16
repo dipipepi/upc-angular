@@ -1,0 +1,48 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "Agenda",
+        "YESTERDAY": "Ayer",
+        "TODAY": "Hoy",
+        "TOMORROW": "Mañana",
+        "THIS_WEEK": "Esta semana",
+        "DAY": "Día",
+        "WEEK": "Semana",
+        "NUMBER_WEEK": "Semana {{number}}",
+        "MONTH": "Mes",
+        "NEXT_MEETINGS": "Próximas reuniones",
+        "IN_PROGRESS": "En curso",
+        "YOU": "Usted",
+        "AND": "y",
+        "OTHERS": "otros",
+        "SEARCH": "Buscar",
+        "MORE": "{{n}} más...",
+        "DONT_HAVE_MEETINGS": "No tiene reuniones programadas en esta fecha.",
+        "NO_MEETINGS": "No hay reuniones",
+        "NO_MEETINGS_FOUND": "No se encontraron reuniones",
+        "LOAD_MORE": "Cargar más",
+        "TYPE_IN_SEARCH": "Ingrese su búsqueda y presione Intro",
+        "DURATION": {
+            "MINUTES": "min"
+        },
+        "CONTEXT_MENU": {
+            "OPEN": "Abrir",
+            "NEW_EMAIL": "Nuevo correo electrónico a participantes",
+            "GENERATE_MEETING_HISTORY": "Generar archivo CSV",
+            "MEETING_OPTIONS": "Opciones de reunión",
+            "DELETE_MEETING": "Eliminar reunión",
+            "DELETE": "Eliminar",
+            "OCCURRENCE": "Ocurrencia",
+            "SERIES": "Serie",
+            "CANCEL": "Cancelar"
+        },
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0ATerminales:%0D%0A{{endpoints}}%0D%0A%0D%0ACuando: {{startTime}}%0D%0ADuración: {{duration}}%0D%0AEnlace: {{url}}%0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0ACuando: {{startTime}}%0D%0ADuración: {{duration}}%0D%0AEnlace: {{url}}%0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "Marcación automática"
+        },
+        "ERROR": {
+            "MEETING_NOT_FOUND": "Por el momento, los detalles de la reunión no se pueden recibir a través del servidor. Si el problema persiste contacte al administrador."
+        }
+    }
+}

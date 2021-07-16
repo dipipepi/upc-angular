@@ -1,0 +1,44 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+<div class="ngdialog-content">
+  <div class="meeting-details-header">
+    <!--  <dropdown-options class="minimal" options="ngDialogData.meetingActions" attr="[ngDialogData.meeting]"></dropdown-options>-->
+    <app-dropdown-options externalClass="minimal" [baseOptions]="data.meetingActions" [attr]="data.meeting"></app-dropdown-options>
+    <div class="title" (click)="dialogRef.close()">{{data.meeting.subject}}</div>
+    <app-dropdown-options *ngIf="mobileButton" externalClass="mobile-dropdown mobile-menu" [baseOptions]="data.meetingActions" [attr]="[data.meeting]"></app-dropdown-options>
+    <!--  <dropdown-options class="mobile-dropdown mobile-menu" options="ngDialogData.meetingActions" attr="[ngDialogData.meeting]"></dropdown-options>-->
+  </div>
+  <div class="meeting-details-info">
+    <div class="attendees">
+          <span *ngFor="let attendee of data.meeting.attendees | slice:0:3; index as $index">
+              <p *ngIf="attendee.userId !== globalService.user.scopiaId">{{attendee.firstName + ' ' + attendee.lastName}}{{getAttendiesSeparator($index, data.meeting.attendees.length)}}</p>
+              <p *ngIf="attendee.userId === globalService.user.scopiaId" translate-once="JOIN.YOU" translate-values="{separator: getAttendiesSeparator($index, ngDialogData.meeting.attendees.length)}"></p>
+          </span>
+      <p *ngIf="data.meeting.attendees.length > 3" translate-once="JOIN.AND_N_OTHERS" translate-values="{n: ngDialogData.meeting.attendees.length - 3}"></p>
+    </div>
+    <div class="time {{data.meeting.status === 'IN_SESSION' ? 'in-progress' : ''}}">
+      <span>{{data.meeting.startTime | date:dateFormat.shortTime | lowercase}}</span>
+      <span>{{'MEETING.IN_PROGRESS' | translate}}</span>
+      - {{plannedEndMeetingTime(data.meeting) | date:dateFormat.shortTime | lowercase}}
+    </div>
+    <!--    <join-options-button ng-if="!mobileButton" is-disabled="!isMeetingJoinable(ngDialogData.meeting)" meeting-id="ngDialogData.meeting.number" is-from-schedule="true"></join-options-button>-->
+    <!--TODO create this components-->
+    <!--  <schedule-join-button ng-if="!mobileButton" is-disabled="!isMeetingJoinable(ngDialogData.meeting)" meeting-id="ngDialogData.meeting.number"></schedule-join-button>-->
+    <!--  <join-mobile-button ng-if="mobileButton"-->
+    <!--                      is-disabled="!isMeetingJoinable(ngDialogData.meeting)"-->
+    <!--                      meeting-id="ngDialogData.meeting.number"-->
+    <!--                      name="{{data.meeting.name}}"-->
+    <!--                      text="JOIN.JOIN">-->
+    <!--  </join-mobile-button>-->
+  </div>
+  <div class="meeting-details-body" bind-innerHTML="data.meeting.description"></div>
+</div>
+
+

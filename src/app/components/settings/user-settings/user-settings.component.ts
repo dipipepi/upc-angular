@@ -1088,28 +1088,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       } else {
         return !this.isVirtualRoomFormValid() || !this.settingsChanged() || !this.isChangeFormValid();
       }
-
-    // return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
-    //   !this.settingsChanged() ||
-    //   this.data.moderatorPin === undefined);
-
-    // if(this.currentTab === this.TAB.ROOM){
-    //   return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
-    //     !this.settingsChanged());
-    // }
-    // return ((this.virtualRoomForm && this.virtualRoomForm.form.status === 'INVALID') ||
-    //   !this.settingsChanged() || (this.wasVirtualRoomSettingChanged()));
-    // ((this.roomFormScope && this.roomFormScope.roomForm.$invalid) ||
-    //   !this.settingsChanged() ||
-    //   this.data.moderatorPin === undefined) &&
-    //   (this.changePasswordForm && (!this.changePasswordForm.form.changePasswordForm.$dirty ||
-    //     this.changePasswordForm.form.changePasswordForm.newPassword.$error.required ||
-    //     this.changePasswordForm.form.changePasswordForm.newPassword2.$error.required ||
-    //     this.changePasswordForm.form.changePasswordForm.newPassword.$error.matchError ||
-    //     this.changePasswordForm.form.changePasswordForm.newPassword2.$error.matchError ||
-    //     this.changePasswordForm.form.changePasswordForm.currentPassword.$error.required ||
-    //     this.changePasswordForm.form.changePasswordForm.currentPassword.$error.bad
-    //   ));
   }
 
   setCurrentTab(tab): void {

@@ -344,6 +344,52 @@
 			"PB": "PB"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "Plánování",
+		"YESTERDAY": "Včera",
+		"TODAY": "Dnes",
+		"TOMORROW": "Zítra",
+		"THIS_WEEK": "Tento týden",
+		"DAY": "Den",
+		"WEEK": "Týden",
+		"NUMBER_WEEK": "Týden {{number}}",
+		"MONTH": "Měsíc",
+		"NEXT_MEETINGS": "Další schůzky",
+		"IN_PROGRESS": "Probíhá",
+		"YOU": "Vy",
+		"AND": "a",
+		"OTHERS": "dalších",
+		"SEARCH": "Hledat",
+		"MORE": "{{n}} další…",
+		"DONT_HAVE_MEETINGS": "K tomuto datu nemáte naplánované žádné schůzky.",
+		"NO_MEETINGS": "Žádné schůzky",
+		"NO_MEETINGS_FOUND": "Nebyly nalezeny žádné schůzky.",
+		"LOAD_MORE": "Načíst další",
+		"TYPE_IN_SEARCH": "Zadejte text pro vyhledávání a stiskněte klávesu Enter",
+		"DURATION": {
+			"MINUTES": "min."
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "Otevřít",
+			"NEW_EMAIL": "Nový e-mail účastníkům",
+			"GENERATE_MEETING_HISTORY": "Generovat CSV soubor",
+			"MEETING_OPTIONS": "Možnosti schůzky",
+			"DELETE_MEETING": "Odstranit schůzku",
+			"DELETE": "Odstranit",
+			"OCCURRENCE": "Výskyt",
+			"SERIES": "Série",
+			"CANCEL": "Zrušit"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0AKonferenční zařízení:%0D%0A{{endpoints}}%0D%0A%0D%0AKdy: {{startTime}}%0D%0ADoba trvání: {{duration}}%0D%0AOdkaz: {{url}} %0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AKdy: {{startTime}}%0D%0ADoba trvání: {{duration}}%0D%0AOdkaz: {{url}} %0D%0A%0D%0A{{name}}",
+			"KBPS": "Kb/s",
+			"AUTO_DIAL": "Automatické vytáčení"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "Momentálně nelze ze serveru přijmout podrobnosti o schůzce. Pokud problém přetrvává, kontaktujte správce."
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Nastavení",
 		"SETTINGS": "Nastavení",

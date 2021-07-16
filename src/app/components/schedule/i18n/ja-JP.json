@@ -1,0 +1,48 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "スケジュール",
+        "YESTERDAY": "昨日",
+        "TODAY": "今日",
+        "TOMORROW": "明日",
+        "THIS_WEEK": "今週",
+        "DAY": "日",
+        "WEEK": "週",
+        "NUMBER_WEEK": "{ {number} } 週",
+        "MONTH": "月",
+        "NEXT_MEETINGS": "次の会議",
+        "IN_PROGRESS": "進行中",
+        "YOU": "自分",
+        "AND": "および",
+        "OTHERS": "その他",
+        "SEARCH": "検索",
+        "MORE": "その他（{{n}} ）",
+        "DONT_HAVE_MEETINGS": "この日付に予定された会議はありません。",
+        "NO_MEETINGS": "会議はありません",
+        "NO_MEETINGS_FOUND": "会議が見つかりませんでした",
+        "LOAD_MORE": "さらに読み込む",
+        "TYPE_IN_SEARCH": "検索条件を入力し、Enter キーを押してください",
+        "DURATION": {
+            "MINUTES": "分"
+        },
+        "CONTEXT_MENU": {
+            "OPEN": "開く",
+            "NEW_EMAIL": "参加者に電子メールで通知する",
+            "GENERATE_MEETING_HISTORY": "CSV ファイルの生成",
+            "MEETING_OPTIONS": "会議オプション",
+            "DELETE_MEETING": "会議を削除する",
+            "DELETE": "削除",
+            "OCCURRENCE": "開催回数",
+            "SERIES": "繰り返し",
+            "CANCEL": "キャンセル"
+        },
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0Aエンドポイント：%0D%0A{{endpoints}}%0D%0A%0D%0A日時：{{startTime}}%0D%0A所要時間：{{duration}}%0D%0Aリンク：{{url}}%0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0A日時：{{startTime}}%0D%0A所要時間：{{duration}}%0D%0Aリンク：{{url}}%0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "自動ダイヤル"
+        },
+        "ERROR": {
+            "MEETING_NOT_FOUND": "現在、会議の詳細をサーバーから受信できません。問題が解決しない場合は管理者にお問い合わせください。"
+        }
+    }
+}

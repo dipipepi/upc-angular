@@ -1,0 +1,52 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "Schedule",
+        "YESTERDAY": "Yesterday",
+        "TODAY": "Today",
+        "TOMORROW": "Tomorrow",
+        "THIS_WEEK": "This week",
+        "DAY": "Day",
+        "WEEK": "Week",
+        "NUMBER_WEEK": "Week {{number}}",
+        "MONTH": "Month",
+        "NEXT_MEETINGS": "Next Meetings",
+        "IN_PROGRESS": "In progress",
+        "YOU": "You",
+        "AND": "and",
+        "OTHERS": "others",
+        "SEARCH": "Search",
+        "MORE": "{{n}} more...",
+        "DONT_HAVE_MEETINGS": "You don't have scheduled meetings at this date.",
+        "NO_MEETINGS": "There are no meetings",
+        "NO_MEETINGS_FOUND": "No meetings were found",
+        "LOAD_MORE": "Load More",
+        "TYPE_IN_SEARCH": "Type in your search and hit enter",
+
+        "DURATION": {
+            "MINUTES": "mins"
+        },
+
+        "CONTEXT_MENU": {
+            "OPEN": "Open",
+            "NEW_EMAIL": "New email to participants",
+            "GENERATE_MEETING_HISTORY": "Generate CSV file",
+            "MEETING_OPTIONS": "Meeting options",
+            "DELETE_MEETING": "Delete meeting",
+            "DELETE": "Delete",
+            "OCCURRENCE": "Occurrence",
+            "SERIES": "Series",
+            "CANCEL": "Cancel"
+        },
+
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0AEndpoints:%0D%0A{{endpoints}}%0D%0A%0D%0AWhen: {{startTime}}%0D%0ADuration: {{duration}}%0D%0ALink: {{url}} %0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AWhen: {{startTime}}%0D%0ADuration: {{duration}}%0D%0ALink: {{url}} %0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "Auto-Dial"
+        },
+
+        "ERROR": {
+            "MEETING_NOT_FOUND": "Meeting details cannot be received from server right now. If problem persist please contact administrator."
+        }
+    }
+}

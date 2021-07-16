@@ -344,6 +344,52 @@
 			"PB": "ПБ"
 		}
 	},
+	"SCHEDULE": {
+		"TAB_NAME_SCHEDULE": "Расписание",
+		"YESTERDAY": "Вчера",
+		"TODAY": "Сегодня",
+		"TOMORROW": "Завтра",
+		"THIS_WEEK": "На этой неделе",
+		"DAY": "День",
+		"WEEK": "Неделя",
+		"NUMBER_WEEK": "Неделя {{число}}",
+		"MONTH": "Месяц",
+		"NEXT_MEETINGS": "Следующие собрания",
+		"IN_PROGRESS": "Выполняется",
+		"YOU": "Вы",
+		"AND": "и",
+		"OTHERS": "другие",
+		"SEARCH": "Поиск",
+		"MORE": "{{n}} больше...",
+		"DONT_HAVE_MEETINGS": "Нет собраний, запланированных на эту дату.",
+		"NO_MEETINGS": "Нет собраний",
+		"NO_MEETINGS_FOUND": "Собрания не найдены.",
+		"LOAD_MORE": "Загрузить еще",
+		"TYPE_IN_SEARCH": "Введите поисковый запрос и нажмите «Ввод»",
+		"DURATION": {
+			"MINUTES": "мин"
+		},
+		"CONTEXT_MENU": {
+			"OPEN": "Открыть",
+			"NEW_EMAIL": "Новое электронное сообщение для участников",
+			"GENERATE_MEETING_HISTORY": "Создать файл CSV",
+			"MEETING_OPTIONS": "Параметры собрания",
+			"DELETE_MEETING": "Удалить собрание",
+			"DELETE": "Удалить",
+			"OCCURRENCE": "Текущее",
+			"SERIES": "Весь цикл",
+			"CANCEL": "Отмена"
+		},
+		"EMAIL_INVITE": {
+			"MEETING_BODY": "{{description}}%0D%0A%0D%0AОконечные устройства:%0D%0A{{endpoints}}%0D%0A%0D%0AКогда: {{startTime}}%0D%0AПродолжительность: {{duration}}%0D%0AСсылка: {{url}}%0D%0A%0D%0A{{name}}",
+			"MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AКогда: {{startTime}}%0D%0AПродолжительность: {{duration}}%0D%0AСсылка: {{url}}%0D%0A%0D%0A{{name}}",
+			"KBPS": "Кбит/с",
+			"AUTO_DIAL": "Автоматический набор"
+		},
+		"ERROR": {
+			"MEETING_NOT_FOUND": "Сведения о собрании не могут быть получены с сервера прямо сейчас. Если проблема не устраняется, обратитесь к администратору."
+		}
+	},
 	"SETTINGS": {
 		"TITLE": "Настройки Avaya",
 		"SETTINGS": "Настройки",

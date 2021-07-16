@@ -1,0 +1,48 @@
+{
+    "SCHEDULE": {
+        "TAB_NAME_SCHEDULE": "Programmazione",
+        "YESTERDAY": "Ieri",
+        "TODAY": "Oggi",
+        "TOMORROW": "Domani",
+        "THIS_WEEK": "Questa settimana",
+        "DAY": "Giorno",
+        "WEEK": "Settimana",
+        "NUMBER_WEEK": "Settimana {{number}}",
+        "MONTH": "Mese",
+        "NEXT_MEETINGS": "Prossime riunioni",
+        "IN_PROGRESS": "In corso",
+        "YOU": "Tu",
+        "AND": "e",
+        "OTHERS": "altri",
+        "SEARCH": "Cerca",
+        "MORE": "altri {{n}}...",
+        "DONT_HAVE_MEETINGS": "Non sono presenti riunioni pianificate in questa data.",
+        "NO_MEETINGS": "Nessuna riunione presente",
+        "NO_MEETINGS_FOUND": "Nessuna riunione è stata trovata",
+        "LOAD_MORE": "Carica altro",
+        "TYPE_IN_SEARCH": "Immettere i termini di ricerca e premere Invio",
+        "DURATION": {
+            "MINUTES": "min"
+        },
+        "CONTEXT_MENU": {
+            "OPEN": "Apri",
+            "NEW_EMAIL": "Nuova e-mail a partecipanti",
+            "GENERATE_MEETING_HISTORY": "Genera file CSV",
+            "MEETING_OPTIONS": "Opzioni della riunione",
+            "DELETE_MEETING": "Elimina la riunione",
+            "DELETE": "Elimina",
+            "OCCURRENCE": "Occorrenza",
+            "SERIES": "Serie",
+            "CANCEL": "Annulla"
+        },
+        "EMAIL_INVITE": {
+            "MEETING_BODY": "{{description}}%0D%0A%0D%0AEndpoint:%0D%0A{{endpoints}}%0D%0A%0D%0AQuando: {{startTime}}%0D%0ADurata: {{duration}}%0D%0ACollegamento: {{url}}%0D%0A%0D%0A{{name}}",
+            "MEETING_BODY_NO_ENDPOINTS": "{{description}}%0D%0A%0D%0AQuando: {{startTime}}%0D%0ADurata: {{duration}}%0D%0ACollegamento: {{url}}%0D%0A%0D%0A{{name}}",
+            "KBPS": "Kbps",
+            "AUTO_DIAL": "Composizione automatica"
+        },
+        "ERROR": {
+            "MEETING_NOT_FOUND": "Impossibile ricevere i dettagli della riunione dal server in questo momento. Se il problema persiste contattare l'amministratore."
+        }
+    }
+}

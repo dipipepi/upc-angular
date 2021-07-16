@@ -1,0 +1,56 @@
+<div class="dropdown-options {{externalClass}}">
+  <div class="main-container">{{translatedName | translate}}</div>
+  <p class="ie-fix"></p>
+
+  <ul class="dropdown-block"
+      [style]="mobileSafariStyle"
+      *ngIf="isDesktop && toggled"
+  >
+    <li data-clipboard-text="{{option.isCopyLink ? getLink($index1) : undefined}}"
+        *ngFor="let option of options; index as $index1"
+        class="dropdown-item dropdown-item-{{option.class}} {{option.clipboardClass}} {{$index1 === currentItem ? 'selected' : ''}} {{option.hidden ? 'hidden last-item' : ''}}"
+        (mouseover)="option.hover=true"
+        (mouseleave)="$index1 === currentItem ? option.hover=true : option.hover=false"
+        (click)="performAction($index1)"
+    >
+      <ul *ngIf="option.options && option.hover"
+          class="context-menu"
+          [style]="getChildMenuPositionStyles($index1, option.options.length, positions.left)"
+      >
+        <li *ngFor="let childOption of option.options; index as $index2"
+            (click)="performAction($index2, option.options, $index1)"
+            class="{{currentSecondItem !== undefined && $index2 === currentSecondItem ? 'selected' : ''}}"
+        >
+          {{childOption.name | translate}}
+        </li>
+      </ul>
+      {{option.name | translate}}
+    </li>
+  </ul>
+
+  <!-- if it not desktop, disable mouseover and mouseleave events -->
+  <ul class="dropdown-block"
+      [style]="mobileSafariStyle"
+      *ngIf="!isDesktop && toggled"
+  >
+    <ng-container *ngFor="let option of options; index as $index1">
+      <li data-clipboard-text="{{option.isCopyLink ? getLink($index1) : undefined}}"
+          class="{{$index1}} dropdown-item dropdown-item-{{option.class}} {{option.clipboardClass}} {{$index1 === currentItem ? 'selected' : ''}} {{option.hidden ? 'hidden last-item' : ''}}"
+          (click)="performAction($index1)"
+          *ngIf="!option.hidden">
+        <ul *ngIf="option.options && option.hover"
+            class="context-menu"
+            [style]="getChildMenuPositionStyles($index1, option.options.length, positions.left)"
+        >
+          <li *ngFor="let childOption of option.options; index as $index2"
+              (click)="performAction($index2, option.options, $index1)"
+              class="{{currentSecondItem !== undefined && $index2 === currentSecondItem ? 'selected' : ''}}"
+          >
+            {{childOption.name | translate}}
+          </li>
+        </ul>
+        {{option.name | translate}}
+      </li>
+    </ng-container>
+  </ul>
+</div>

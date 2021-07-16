@@ -1,0 +1,137 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+@import "/src/assets/styles/urls";
+
+.upc\.join {
+  .join-page {
+    .join-form {
+      .join-input-signin{
+        visibility: visible !important;
+
+        .default-error.max-length-name{
+          color: @highlight-4;
+        }
+
+        .default-error.wrong-current-meeting-id{
+          max-width: none;
+          width: 354px;
+          margin-top: 0;
+        }
+
+        .input-wrapper {
+          position: relative;
+          margin: 4px auto 9px auto;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          .guest-name {
+            width: 231px;
+            margin-left: 0px;
+          }
+
+          .ng-invalid-pattern {
+            box-shadow: 0 0 1px 1px @highlight-4;
+          }
+        }
+
+        .for-wrong-meeting-id{
+          margin-top: 10px;
+        }
+
+        .input-wrapper.guest-input-size{
+          width: 231px;
+          input.without-dropdown {
+            width: 231px;
+          }
+        }
+
+        .input-wrapper.sign-in-input-size{
+          width: 261px;
+          input.without-dropdown {
+            width: 230px;
+            margin-right: 1px;
+          }
+        }
+
+        .default-select {
+          height: 30px;
+          width: 30px;
+          overflow: inherit;
+          position: static;
+          margin-left: 1px;
+
+          .dropdown-block{
+            width: 232px;
+            position: absolute;
+            left: 0px;
+            top: 30px;
+
+            li{
+              padding-left: 30px;
+
+              .name-in-history{
+                display: block;
+                height: 20px;
+              }
+
+              .id-in-history{
+                color: #68767A;
+              }
+
+              .no-meeting-name{
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+
+        copy-or-email-link-join{
+
+          &.inactive {
+            pointer-events: none;
+          }
+
+          .input-wrapper{
+            margin: 0;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+
+            .default-input{
+              display: none;
+            }
+
+            .dropdown-options{
+
+              ie-fix {
+                width: 30px;
+                height: 30px;
+                margin-left: 0px;
+                display: inline-block;
+                cursor: default;
+                background: lighten(@darkener, 10%) @url-share center;
+                transition: background 0.3s ease;
+
+                &:hover, &:active, &:focus {
+                  background: @darkener @url-share center;
+                }
+
+                &::before {
+                  display: none;
+                }
+              }
+
+              &:focus {
+                box-shadow: none;
+              }
+            }
+          }
+        }
+        /*.default-input.guest-name-input{
+          margin-left: -29px;
+        }*/
+      }
+    }
+  }
+}
