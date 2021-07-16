@@ -15,7 +15,9 @@ intended publication of such source code.
 <ng-template #loading>
   <app-header></app-header>
   <app-navigator></app-navigator>
-  <router-outlet></router-outlet>
+  <main id="main" class="upc.{{activeRoute}}">
+    <router-outlet></router-outlet>
+  </main>
 </ng-template>
 
 <script type='text/javascript'>

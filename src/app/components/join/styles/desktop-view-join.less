@@ -193,4 +193,31 @@
     }
 }
 
+.adjust-audio-video-button.adjust-audio-video-button-guest{
+  position: fixed;
+  left: 20px;
+  bottom: 10px;
+  border: 0;
+  background: none;
+  color: @text-color-med;
+  outline: none;
+  filter: drop-shadow(0 0 5px @text-color-light);
+  margin: 0;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
+  &::before {
+    width: 20px;
+    height: 20px;
+    background: @url-adjust-av-dark no-repeat;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 1px #007aff;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 3px @darkener);
+  }
+}

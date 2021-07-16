@@ -140,7 +140,6 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
     }
 
   ngOnInit(): void {
-    console.log('hello dialog', document.getElementById(this.dialogRef.id));
     this.logger = new Logger('SettingsController');
     this.thatScope = this;
     this.originDateFormat = JSON.parse(window.localStorage.timeFormat);

@@ -11,7 +11,6 @@ export class RecordingsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log('hello route' , this.route);
   }
 
 }

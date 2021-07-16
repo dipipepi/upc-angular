@@ -33,7 +33,7 @@ intended publication of such source code.
 
       <div *ngIf="showSWC2dPage()"
            class="join-tiny-caption">
-        <span translate-once="JOIN.IF_SWC_NOT_STARTED" translate-values="{link: meetingOptions.meetingURL}"></span>
+        <span>{{'JOIN.IF_SWC_NOT_STARTED' | translate:translateParams}}</span>
       </div>
     </div>
 
@@ -103,7 +103,7 @@ intended publication of such source code.
 
     <!-- Join form for guest -->
     <div *ngIf="authorizationService.userType!=='SIGN_IN'">
-      <ng-include src="guestCaption"></ng-include>
+      <app-include [src]="guestCaption"></app-include>
 
       <!-- Join form for guest mobile -->
 <!--      TODO create this component-->
@@ -133,12 +133,20 @@ intended publication of such source code.
 <!--      </join-input>-->
       <!-- Join form for guest desktop end -->
 
+      <app-join-input class="white-arrow"
+                      [options]="optionsForJoinGuest"
+                      [url]="myMeetings?.selectedVirtualRoom.url"
+                      [meetingId]="meeting.id"
+                      [virtualRoom]="myMeetings?.selectedVirtualRoom"
+      ></app-join-input>
+
     </div>
     <!-- Join form for guest end -->
 
     <!-- Join form for user -->
     <div *ngIf="authorizationService.userType==='SIGN_IN'">
-      <ng-include src="signInCaption"></ng-include>
+<!--      <ng-include src="signInCaption"></ng-include>-->
+      <app-include [src]="signInCaption"></app-include>
 
       <!-- Join form for user for mobile -->
       <!--      TODO create this component-->
@@ -204,10 +212,11 @@ intended publication of such source code.
         <div class="title" [attr.title]="meeting.subject">{{ meeting.subject}}</div>
         <div class="attendees">
                     <span *ngFor="let attendee of meeting.attendees | slice: 0: 3; index as $index">
-                        <p *ngIf="attendee.userId !== authorizationService.user.scopiaId">{{attendee.firstName + ' ' + attendee.lastName}}{{getAttendiesSeparator($index, meeting.attendees.length)}}</p>
-                        <p *ngIf="attendee.userId === authorizationService.user.scopiaId" translate-once="JOIN.YOU" translate-values="{separator: getAttendiesSeparator($index, meeting.attendees.length)}"></p>
+                        <p *ngIf="attendee.userId !== globalService.user.scopiaId">{{attendee.firstName + ' ' + attendee.lastName}}{{getAttendiesSeparator($index, meeting.attendees.length)}}</p>
+                        <p *ngIf="attendee.userId === globalService.user.scopiaId" [innerHTML]="'JOIN.YOU' | translate:{separator: getAttendiesSeparator($index, meeting.attendees.length)}">
+                        </p>
                     </span>
-          <p *ngIf="meeting.attendees.length > 3" translate-once="JOIN.AND_N_OTHERS" translate-values="{n: meeting.attendees.length - 3}"></p>
+          <p *ngIf="meeting.attendees.length > 3">{{'JOIN.AND_N_OTHERS' | translate:translateParams}}</p>
         </div>
       </div>
     </li>
@@ -223,7 +232,7 @@ intended publication of such source code.
        {{'JOIN.LEGAL_TEXT.MEETING_RESOURCES' | translate}}</a>
     </font>
     <br/>
-    <font size="2" color="333" face="Arial"><span translate-once="JOIN.LEGAL_TEXT.AGREEMENT" >By clicking <small><b>JOIN</b></small>, you agree to the </span>
+    <font size="2" color="333" face="Arial"><span [innerHTML]="'JOIN.LEGAL_TEXT.AGREEMENT' | translate"></span>
       <a translate-once="JOIN.LEGAL_TEXT.TERMS" href="https://downloads.avaya.com/css/P8/documents/100174102" target="_blank">Terms Of Use</a> |
       <a translate-once="JOIN.LEGAL_TEXT.PRIVACY" href="https://www.avaya.com/en/privacy/products/" target="_blank">Privacy Statement</a>
     </font>

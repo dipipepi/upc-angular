@@ -1,22 +1,18 @@
-.ngdialog.ngdialog-theme-meeting-details {
-    position: absolute;
-    width: 400px;
-    top: 0;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    height: auto;
-    z-index: 1;
+.mat-dialog-container {
+  box-shadow: none !important;
+}
 
-    .ngdialog-content {
-        position: static;
-        border: 1px solid @darkener-soft;
-        box-shadow: 0 0 10px fade(@darkener, 50%);
-        font-size: 0;
+.ngdialog-content {
+  width: 400px;
+  height: auto;
+  z-index: 1;
+  border: 1px solid @darkener-soft;
+  box-shadow: 0 0 10px fade(@darkener, 50%);
+  font-size: 0;
+  padding: 0;
 
-        .join-options{
-            display: inline;
-        }
+    .join-options{
+        display: inline;
     }
 
     .ngdialog-close {
@@ -72,25 +68,32 @@
 
 
 .meeting-details-header {
-    font-size: 16px;
-    line-height: normal;
-    background: @background-highlight-1;
-    height: auto;
-    padding: 20px 20px 0;
-    pointer-events: none;
-    word-break: break-all;
-    white-space: normal;
-    overflow: visible;
+  font-size: 16px;
+  line-height: normal;
+  background: @background-highlight-1;
+  height: auto;
+  padding: 20px 20px 0;
+  pointer-events: none;
+  word-break: break-all;
+  white-space: normal;
+  overflow: visible;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 
-    &::before {
-        display: none;
-    }
+  &::before {
+      display: none;
+}
 
-    .dropdown-options.minimal {
-        pointer-events: all;
-        float: right;
-        margin-left: 20px;
-    }
+  .title{
+    text-align: left;
+  }
+
+  .dropdown-options.minimal {
+      pointer-events: all;
+      float: right;
+      margin-left: 20px;
+  }
 }
 
 .meeting-details-info {
@@ -141,9 +144,10 @@
 }
 
 .meeting-details-body {
-    padding: 20px;
-    max-height: 50vh;
-    font-size: 14px;
+  padding: 20px;
+  max-height: 50vh;
+  font-size: 14px;
+  background: @white;
 }
 
 .meeting-details-body:empty {

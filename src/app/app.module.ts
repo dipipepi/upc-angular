@@ -38,6 +38,9 @@ import { DropdownOptionsComponent } from './shared/DropdownOptions/dropdown-opti
 import { RequestToOpenMobileClientComponent } from './components/join/request-to-open-mobile-client/request-to-open-mobile-client.component';
 import { EnterNameToJoinViewComponent } from './components/join/enter-name-to-join/enter-name-to-join.component';
 import { MobilePageHeaderComponent } from './components/mobile-page-header/mobile-page-header.component';
+import { IncludeDirective } from './shared/include/include.directive';
+import { IncludeComponent } from './shared/includeComponent/include/include.component';
+import { JoinInputComponent } from './shared/join-input/join-input.component';
 
 
 // tslint:disable-next-line:typedef
@@ -72,7 +75,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ViewMeetingComponent,
     DropdownOptionsComponent,
     RequestToOpenMobileClientComponent,
-    MobilePageHeaderComponent
+    MobilePageHeaderComponent,
+    IncludeDirective,
+    IncludeComponent,
+    JoinInputComponent
   ],
   imports: [
     BrowserModule,

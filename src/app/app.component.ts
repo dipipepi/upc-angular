@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {PortalResourcesServiceService} from './services/portal-resources-service.service';
 import {FormGroup} from '@angular/forms';
 import {AuthorizationService} from './services/AuthorizationService/authorization.service';
 import {LocalizationService} from './services/LocalizationService/localization.service';
@@ -10,6 +9,8 @@ import {BROWSERS, DATE_FORMAT, OS, UP_CLIENT_CONNECTION_SETTINGS, USER_TYPE} fro
 import {CustomDeviceDetectorService} from './services/CustomDeviceDetectorService/custom-device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {GlobalService} from './services/GlobalService/global.service';
+import {ActivatedRoute, NavigationEnd, Router, RouterEvent} from '@angular/router';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -34,15 +35,17 @@ export class AppComponent implements OnInit{
   private errorMessageAboutExpired;
   private errorMessageAboutWindowWidth;
   private widthError;
+  activeRoute: string;
 
-  constructor(public portalResourcesServiceService: PortalResourcesServiceService,
-              private authorizationServiceService: AuthorizationService,
+  constructor(private authorizationServiceService: AuthorizationService,
               private localization: LocalizationService,
               public translate: TranslateService,
               private userSettingsService: UserSettingsService,
               private customDeviceDetector: CustomDeviceDetectorService,
               private titleService: Title,
-              private globalService: GlobalService) {
+              private globalService: GlobalService,
+              private route: ActivatedRoute,
+              private router: Router) {
     translate.setDefaultLang(localization.initLocalization());
   }
 
@@ -68,6 +71,20 @@ export class AppComponent implements OnInit{
       window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
     }, () => {
       alert('Error. Can not get resources');
+    });
+
+    this.activeRoute = 'join';
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((root: RouterEvent) => {
+      if(root.url === '/'){
+        this.activeRoute = 'join';
+      } else if(root.url === '/recording'){
+        this.activeRoute = 'recordings';
+      } else {
+        this.activeRoute = 'schedule';
+      }
+
     });
   }
 

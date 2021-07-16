@@ -403,7 +403,7 @@ export class AuthorizationService {
         });
       };
 
-      if (response.data.encryptedPassword){
+      if (response.encryptedPassword){
         this.eventService.broadcast(EVENT.CUSTOM.SUCCESSFUL_LOGIN_WITH_CREDENTIALS);
       }
       this.logger.log('User is logged in, Token received');

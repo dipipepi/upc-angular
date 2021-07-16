@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {Component, Inject, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
@@ -38,7 +38,8 @@ import {RequestToOpenMobileClientComponent} from './request-to-open-mobile-clien
 @Component({
   selector: 'app-join',
   templateUrl: './join.component.html',
-  styleUrls: ['./join.component.less']
+  styleUrls: ['./join.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 export class JoinComponent implements OnInit, OnDestroy {
   dateFormat = this.dateFormatService.getDateFormat();
@@ -46,16 +47,18 @@ export class JoinComponent implements OnInit, OnDestroy {
   isClientInstalled = this.accClientService.clientData.isInstalled;
   optionsForJoin = [];
   optionsForJoinGuest = [];
-  plannedEndMeetingTime = this.meetingUtilsService.plannedEndTime;
+  plannedEndMeetingTime = this.meetingUtilsService.plannedEndTime.bind(this.meetingUtilsService);
   isConferenceExists = true;
   meetingStarted = false;
   meetingIdPattern = /^[0-9]{1,32}(\*\*\*[0-9]{0,16}(\*[0-9]{0,16})?)?$/;
   currentTime = Date.now();
-  guestCaption = 'app/components/join/templates/GuestCaptionView.html';
-  signInCaption = 'app/components/join/templates/SignInCaptionView.html';
+  guestCaption = `<div class=\'join-caption\'>${this.translate.instant('JOIN.CAPTION')}</div>`;
+  signInCaption: any;
   useBrowserMessage = 'Use browser';
   peEnabled: boolean;
-  meeting: { name: string; id: string };
+  meeting: {
+    attendees?: any;
+    name: string; id: string };
 
   private logger = new Logger('JoinController');
   private upcomingMeetingsTimeout = DELAY.UPCOMING_MEETINGS_TIMEOUT;
@@ -83,6 +86,8 @@ export class JoinComponent implements OnInit, OnDestroy {
   custom3: string;
   customAfterLaunch: string;
   availableDevices: MediaDeviceInfo[];
+  translateParams: any;
+  private isMeetingDetailsDialogOpen: boolean;
 
   constructor(private route: ActivatedRoute,
               private translate: TranslateService,
@@ -98,12 +103,11 @@ export class JoinComponent implements OnInit, OnDestroy {
               private clientStatusService: ClientStatusService,
               private swcClientService: SWCClientService,
               private joinService: JoinService,
-              private globalService: GlobalService,
+              public globalService: GlobalService,
               private versionService: VersionService,
               public authorizationService: AuthorizationService) { }
 
   ngOnInit(): void {
-    console.log('hello route' , this.route);
     if(!window.localStorage.currentAndRecentOptions){
       window.localStorage.currentAndRecentOptions = JSON.stringify(this.optionsForJoin);
     }
@@ -123,7 +127,7 @@ export class JoinComponent implements OnInit, OnDestroy {
     });
 
     window.localStorage.haveDownloadedClient = window.localStorage.haveDownloadedClient || false;
-    // this.handleEvents();
+    this.handleEvents();
 
     if (this.customDeviceDetectorService.isDesktop() && this.customDeviceDetectorService.browser === BROWSERS.CHROME &&
       this.globalService.offerScreenSharingExtension && !this.browserInfoService.isDataOnlyBrowserExclusion() &&
@@ -143,9 +147,9 @@ export class JoinComponent implements OnInit, OnDestroy {
 
     window.localStorage.videoCallingPreferences = window.localStorage.videoCallingPreferences || true;
 
-    // this.updateUpcomingMeetings();
-    // this.updateMyMeetings();
-    // this.defineCustomHTML();
+    this.updateUpcomingMeetings();
+    this.updateMyMeetings();
+    this.defineCustomHTML();
 
     this.meeting = {
       id: this.route.snapshot.queryParams.ID || '',
@@ -173,8 +177,8 @@ export class JoinComponent implements OnInit, OnDestroy {
       }, 100);
     });
 
-    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGIN, this.checkAndShowFirstTimeDownloadRollover);
-    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGOUT, this.checkAndShowFirstTimeDownloadRollover);
+    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGIN, this.checkAndShowFirstTimeDownloadRollover.bind(this));
+    this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGOUT, this.checkAndShowFirstTimeDownloadRollover.bind(this));
 
     this.initResources();
 
@@ -198,7 +202,10 @@ export class JoinComponent implements OnInit, OnDestroy {
       this.linkForDownloadApp = MOBILE_STORE_LINK.IOS;
     }
 
-
+    this.translateParams = {
+      link: this.meetingOptions?.meetingURL,
+      n: this.meeting.attendees?.length - 3
+    };
   }
 
   ngOnDestroy(): void {
@@ -365,7 +372,23 @@ export class JoinComponent implements OnInit, OnDestroy {
     }
 
     this.meetingDetailsPopup = this.dialog.open(ViewMeetingComponent, {
-      data
+      data,
+      restoreFocus: false,
+      position: {
+        left: data.preferredLeft + 'px',
+        top: data.preferredTop + 141 + 'px'
+      },
+      panelClass: 'ngdialog-theme-meeting-details',
+      hasBackdrop: false
+    });
+
+    this.meetingDetailsPopup.afterOpened().subscribe(()=>{
+      document.addEventListener('click', this.closeMeetingDetails.bind(this));
+      this.isMeetingDetailsDialogOpen = true;
+    });
+
+    this.meetingDetailsPopup.afterClosed().subscribe(()=>{
+      document.removeEventListener('click', this.closeMeetingDetails.bind(this));
     });
 
     // this.meetingDetailsPopup = ngDialog.open({
@@ -381,7 +404,7 @@ export class JoinComponent implements OnInit, OnDestroy {
     //   preCloseCallback: this.onCloseMeetingDetails,
     // });
 
-    document.addEventListener('click', this.closeMeetingDetails);
+    // document.addEventListener('click', this.closeMeetingDetails.bind(this));
   }
 
   openClientSettings(): void {
@@ -411,7 +434,7 @@ export class JoinComponent implements OnInit, OnDestroy {
 
   private editMeeting(meeting) {
     // TODO create this method
-    // this.scheduleService.editMeeting(meeting).then(this.updateUpcomingMeetings);
+    // this.scheduleService.editMeeting(meeting).then(this.updateUpcomingMeetings.bind(this));
   }
 
   private checkAndShowFirstTimeDownloadRollover() {
@@ -429,17 +452,20 @@ export class JoinComponent implements OnInit, OnDestroy {
   }
 
   private onCloseMeetingDetails() {
-    document.removeEventListener('click', this.closeMeetingDetails);
+    document.removeEventListener('click', this.closeMeetingDetails.bind(this));
   }
 
   private closeMeetingDetails(e) {
-    if(document.getElementById(this.meetingDetailsPopup.id) &&
-      (!(document.getElementById(this.meetingDetailsPopup.id).contains(e.target)) ||
-      (document.getElementById(this.meetingDetailsPopup.id).contains(e.target) &&
+
+    if(this.isMeetingDetailsDialogOpen && document.getElementById(this.meetingDetailsPopup?.id) &&
+      (!(document.getElementById(this.meetingDetailsPopup?.id).contains(e.target)) ||
+      (document.getElementById(this.meetingDetailsPopup?.id).contains(e.target) &&
         (e.target.classList.contains('main-container') || e.target.classList.contains('mobile-button'))))) {
       // this.dialog.close(this.meetingDetailsPopup.id);
       this.meetingDetailsPopup.close();
-      document.removeEventListener('click', this.closeMeetingDetails);
+      this.meetingDetailsPopup = null;
+      document.removeEventListener('click', this.closeMeetingDetails.bind(this));
+      this.isMeetingDetailsDialogOpen = false;
     }
   }
 
@@ -462,7 +488,7 @@ export class JoinComponent implements OnInit, OnDestroy {
         // this.MessageUtilsService.closeFirstLaunchTutorials();
         this.firstLaunchTutorial();
       });
-      this.upcomingMeetingsTimeout = setTimeout(this.updateUpcomingMeetings, 60000);
+      this.upcomingMeetingsTimeout = setTimeout(this.updateUpcomingMeetings.bind(this), 60000);
     } else {
       this.firstLaunchTutorial();
     }
@@ -598,8 +624,8 @@ export class JoinComponent implements OnInit, OnDestroy {
     }
 
     if (this.userSettingsService.portalResources.branding) {
-      this.signInCaption = this.userSettingsService.portalResources.branding.customSignIn || 'app/components/join/templates/SignInCaptionView.html';
-      this.guestCaption = this.userSettingsService.portalResources.branding.customGuest || 'app/components/join/templates/GuestCaptionView.html';
+      this.signInCaption = this.userSettingsService.portalResources.branding.customSignIn || this.signInCaption;
+      this.guestCaption = this.userSettingsService.portalResources.branding.customGuest || this.guestCaption;
       this.custom2 = this.userSettingsService.portalResources.branding.custom2;
       this.custom3 = this.userSettingsService.portalResources.branding.custom3;
       this.customAfterLaunch = this.userSettingsService.portalResources.branding.customAfterLaunch;
@@ -735,6 +761,7 @@ export class JoinComponent implements OnInit, OnDestroy {
       }
       this.updateUpcomingMeetings();
       this.updateMyMeetings();
+      this.signInCaption = `<div class="join-caption">${this.translate.instant('JOIN.WELCOME_USER', {userName: this.globalService.user.name})}</div>`;
     });
 
     this.eventService.on(EVENT.CUSTOM.SUCCESSFUL_LOGOUT, () => {
@@ -752,7 +779,7 @@ export class JoinComponent implements OnInit, OnDestroy {
       this.turnToGuestMode();
     });
 
-    this.eventService.on(EVENT.CUSTOM.RESOURCES_UPDATED, this.defineCustomHTML);
+    this.eventService.on(EVENT.CUSTOM.RESOURCES_UPDATED, this.defineCustomHTML.bind(this));
 
     if (this.browserInfoService.isWebRTCBrowser() && this.customDeviceDetectorService.isDesktop()) {
       navigator.mediaDevices.enumerateDevices()
