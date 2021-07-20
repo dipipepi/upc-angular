@@ -1,0 +1,10 @@
+<div class="input-wrapper {{externalClass}}">
+  <input type="text"
+         class="default-input"
+         name="url"
+         ngModel="url"
+         [attr.title]="url"
+         readonly
+         required="">
+  <app-dropdown-options [baseOptions]="url? shareOptions : ''" [attr]="[{}]"></app-dropdown-options>
+</div>

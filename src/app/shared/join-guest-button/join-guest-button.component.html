@@ -1,0 +1,14 @@
+<div class="join-options {{externalClass}}">
+  <div class="guest-buttons">
+    <ng-container *ngFor="let option of joinOptions; index as $index">
+      <button class="guest-button {{option.className}} {{isActiveButton(option) ? 'active' : 'not-active'}}"
+              type="button"
+              *ngIf="isButtonVisible(option)"
+              (click)="performAction($index)"
+              [attr.title]="option.tooltip"
+              [attr.tabindex]="isActiveButton(option) ? 0 : -1">
+        <span class="guest-button-text" [innerHTML]="option.name | translate"></span>
+      </button>
+    </ng-container>
+  </div>
+</div>

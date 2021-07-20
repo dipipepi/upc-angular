@@ -1,8 +1,9 @@
 @import "/src/assets/styles/variables.less";
 @import "/src/assets/styles/theme.less";
 @import "/src/assets/styles/urls";
+@url-down-chevron:       url(src/assets/icons/ic_common_downChevron.svg);
 
-.upc\.join {
+.upc-join {
   .join-page {
     .join-form {
       .join-input-signin{
@@ -27,7 +28,7 @@
 
           .guest-name {
             width: 231px;
-            margin-left: 0px;
+            margin-left: 0;
           }
 
           .ng-invalid-pattern {
@@ -134,4 +135,23 @@
       }
     }
   }
+}
+
+
+.default-select{
+  height: 30px;
+  width: 200px;
+
+  &::before {
+    content: '';
+    float: right;
+    height: 28px;
+    width: 29px;
+    background: @input-borders-color @url-down-chevron left;
+  }
+}
+
+.reset-field{
+  right: 43px;
+  top: -6px;
 }

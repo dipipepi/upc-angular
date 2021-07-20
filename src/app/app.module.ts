@@ -41,6 +41,8 @@ import { MobilePageHeaderComponent } from './components/mobile-page-header/mobil
 import { IncludeDirective } from './shared/include/include.directive';
 import { IncludeComponent } from './shared/includeComponent/include/include.component';
 import { JoinInputComponent } from './shared/join-input/join-input.component';
+import { CopyOrEmailLinkJoinComponent } from './shared/copy-or-email-link-join/copy-or-email-link-join.component';
+import { JoinGuestButtonComponent } from './shared/join-guest-button/join-guest-button.component';
 
 
 // tslint:disable-next-line:typedef
@@ -78,7 +80,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MobilePageHeaderComponent,
     IncludeDirective,
     IncludeComponent,
-    JoinInputComponent
+    JoinInputComponent,
+    CopyOrEmailLinkJoinComponent,
+    JoinGuestButtonComponent
   ],
   imports: [
     BrowserModule,

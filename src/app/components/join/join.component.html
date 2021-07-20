@@ -242,7 +242,7 @@ intended publication of such source code.
 
 <!--  <div [id]="customHtml3" ng-if="custom3" ng-include="custom3"></div>-->
 
-  <div class="up-legal-statement {{meetingStarted || clientSettingsOpened ? 'hidden' : ''}}">{{'JOIN.LEGAL_TEXT.DEFAULT' | translate}}</div>
+  <div class="up-legal-statement {{meetingStarted || clientSettingsOpened ? 'hidden' : ''}}" [innerHTML]="upLegalStatement"></div>
 
   <div class="powered-by-logo" *ngIf="userSettingsService.portalResources.customLogoUrl && userSettingsService.portalResources.branding.poweredByLogo"></div>
 </div>

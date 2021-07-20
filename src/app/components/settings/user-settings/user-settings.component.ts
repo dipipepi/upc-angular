@@ -333,7 +333,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
       };
 
       if (this.currentRoom.maxPlayToneNumber === '') {
-        this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
+        // this.roomFormScope.roomForm.maxPlayToneNumber.$setValidity('required', false);
       }
 
       this.virtualRoomDialInLocations = {
@@ -832,6 +832,7 @@ export class UserSettingsComponent implements OnInit, OnDestroy {
                   () => {
                     return new Promise(resolve2 => {
                       window.localStorage.videoCallingPreferences = this.videoCalling;
+                      this.eventService.broadcast(EVENT.CUSTOM.VIDEO_CALLING_PREFERENCES_CHANGED, window.localStorage.videoCallingPreferences);
                       window.localStorage.enabledLogs = this.saveLogsCheckbox;
                       if (!this.saveLogsCheckbox) {
                         this.meetingsLogsService.deleteLogs();

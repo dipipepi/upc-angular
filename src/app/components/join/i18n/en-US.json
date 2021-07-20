@@ -73,6 +73,10 @@
 
         },
         "WARNING": {
+          "PLEASE_ENTER": "Please enter ",
+          "YOUR_NAME": "Your name",
+          "AND": "and",
+          "MEETING_ID": "the Meeting ID",
             "NO_NAME_OR_ID": "Please enter {{noName ? 'Your name' : ''}}{{noName && noId ? ' and ' : ''}}{{noId ? 'the Meeting ID' : ''}}"
         },
         "GUEST": "Guest",

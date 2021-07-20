@@ -34,6 +34,7 @@ import {AuthorizationService} from '../../services/AuthorizationService/authoriz
 import {GuestSettingsComponent} from '../settings/guest-settings/guest-settings.component';
 import {EnterNameToJoinViewComponent} from './enter-name-to-join/enter-name-to-join.component';
 import {RequestToOpenMobileClientComponent} from './request-to-open-mobile-client/request-to-open-mobile-client.component';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-join',
@@ -88,6 +89,7 @@ export class JoinComponent implements OnInit, OnDestroy {
   availableDevices: MediaDeviceInfo[];
   translateParams: any;
   private isMeetingDetailsDialogOpen: boolean;
+  upLegalStatement: any;
 
   constructor(private route: ActivatedRoute,
               private translate: TranslateService,
@@ -105,7 +107,8 @@ export class JoinComponent implements OnInit, OnDestroy {
               private joinService: JoinService,
               public globalService: GlobalService,
               private versionService: VersionService,
-              public authorizationService: AuthorizationService) { }
+              public authorizationService: AuthorizationService,
+              private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     if(!window.localStorage.currentAndRecentOptions){
@@ -146,6 +149,7 @@ export class JoinComponent implements OnInit, OnDestroy {
     }
 
     window.localStorage.videoCallingPreferences = window.localStorage.videoCallingPreferences || true;
+    this.eventService.broadcast(EVENT.CUSTOM.VIDEO_CALLING_PREFERENCES_CHANGED, window.localStorage.videoCallingPreferences);
 
     this.updateUpcomingMeetings();
     this.updateMyMeetings();
@@ -206,6 +210,12 @@ export class JoinComponent implements OnInit, OnDestroy {
       link: this.meetingOptions?.meetingURL,
       n: this.meeting.attendees?.length - 3
     };
+
+    // this.upLegalStatement = this.sanitizer.bypassSecurityTrustHtml(this.translate.instant('JOIN.LEGAL_TEXT.DEFAULT'));
+
+    this.translate.get('JOIN.LEGAL_TEXT.DEFAULT').subscribe(s => {
+      this.upLegalStatement = this.sanitizer.bypassSecurityTrustHtml(s);
+    });
   }
 
   ngOnDestroy(): void {

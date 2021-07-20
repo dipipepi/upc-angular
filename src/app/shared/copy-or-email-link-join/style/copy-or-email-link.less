@@ -1,0 +1,28 @@
+copy-or-email-link {
+    .default-input {
+        padding-right: 35px;
+    }
+
+    .dropdown-options {
+        ie-fix {
+            width: 36px;
+            height: 36px;
+            margin-left: -36px;
+            display: inline-block;
+            cursor: default;
+            background: lighten(@darkener, 10%) @url-share center;
+            transition: background 0.3s ease;
+
+            &:hover, &:active, &:focus {
+                background: @darkener @url-share center;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}

@@ -1,21 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {AuthorizationService} from './services/AuthorizationService/authorization.service';
 import {LocalizationService} from './services/LocalizationService/localization.service';
 import {TranslateService} from '@ngx-translate/core';
 import {UserSettingsService} from './services/UserSettingsService/user-settings.service';
 import { Logger } from '../Logger';
-import {BROWSERS, DATE_FORMAT, OS, UP_CLIENT_CONNECTION_SETTINGS, USER_TYPE} from './constants';
+import {BROWSERS, DATE_FORMAT, EVENT, OS, UP_CLIENT_CONNECTION_SETTINGS, USER_TYPE} from './constants';
 import {CustomDeviceDetectorService} from './services/CustomDeviceDetectorService/custom-device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {GlobalService} from './services/GlobalService/global.service';
 import {ActivatedRoute, NavigationEnd, Router, RouterEvent} from '@angular/router';
 import {filter} from 'rxjs/operators';
+import {EventService} from './shared/services/EventService/event.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.less'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent implements OnInit{
@@ -45,7 +47,8 @@ export class AppComponent implements OnInit{
               private titleService: Title,
               private globalService: GlobalService,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private eventService: EventService) {
     translate.setDefaultLang(localization.initLocalization());
   }
 
@@ -225,6 +228,7 @@ export class AppComponent implements OnInit{
     this.defineCustomFavicon();
     this.isResourcesLoading = false;
     window.localStorage.videoCallingPreferences = window.localStorage.videoCallingPreferences || true;
+    this.eventService.broadcast(EVENT.CUSTOM.VIDEO_CALLING_PREFERENCES_CHANGED, window.localStorage.videoCallingPreferences);
     window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat : this.defaultTimeFormat;
     window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
   }

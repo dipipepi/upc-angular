@@ -3,3 +3,26 @@
 @import "src/assets/styles/theme.less";
 //@import "src/assets/styles/urls.less";
 //@import "src/assets/styles/layout.less";
+
+.reset-field {
+  display: block;
+  width: 10px;
+  height: 10px;
+  font-size: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  top: -4px;
+  right: 11px;
+
+  &::before {
+    content: 'X';
+    color: @darkener;
+    font-size: 10px;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 1px #007aff;
+  }
+}

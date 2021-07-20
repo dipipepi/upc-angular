@@ -154,6 +154,7 @@ export class EVENT {
   // tslint:disable-next-line:typedef
   public static get CUSTOM() {
     return {
+      VIDEO_CALLING_PREFERENCES_CHANGED: 'VIDEO_CALLING_PREFERENCES_CHANGED',
       SUCCESSFUL_LOGIN_WITH_CREDENTIALS: 'SUCCESSFUL_LOGIN_WITH_CREDENTIALS',
       UNAUTHORIZED_ACCESS: 'UNAUTHORIZED_ACCESS',
       LOADING_STARTED: 'LOADING_STARTED',
@@ -326,4 +327,9 @@ export class STATE {
   // RECORDINGS: 'upc.recordings',
   // SCHEDULE: 'upc.schedule',
   // REMIND_PASSWORD: 'upc.remindPassword'
+}
+
+export class DEFAULT_MOBILE_CLIENT {
+  public static get AC() {return 'AVAYA_COMMUNICATOR';}
+  public static get SMC() {return 'SCOPIA_MOBILE';}
 }

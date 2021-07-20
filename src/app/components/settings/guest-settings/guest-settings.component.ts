@@ -1,6 +1,6 @@
 import {Component, Inject, OnChanges, OnInit, SimpleChanges, ViewEncapsulation} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
-import {BROWSERS, DATE_FORMAT} from '../../../constants';
+import {BROWSERS, DATE_FORMAT, EVENT} from '../../../constants';
 import {UserSettingsService} from '../../../services/UserSettingsService/user-settings.service';
 import {ACClientService} from '../../../services/ACClientService/acclient.service';
 import {MeetingsLogsService} from '../../../services/MeetingsLogsService/meetings-logs.service';
@@ -12,6 +12,7 @@ import {VersionService} from '../../../services/BrowserInfoService/browser-info.
 import {GlobalService} from '../../../services/GlobalService/global.service';
 import {MatDialog} from '@angular/material/dialog';
 import {AuthorizationComponent} from '../../authorization/authorization.component';
+import {EventService} from '../../../shared/services/EventService/event.service';
 
 @Component({
   selector: 'app-guest-settings',
@@ -60,7 +61,8 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
               private customDeviceDetector: CustomDeviceDetectorService,
               private versionService: VersionService,
               public globalService: GlobalService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private eventService: EventService) { }
 
   ngOnInit(): void {
     this.dateFormatSettings = {
@@ -109,6 +111,7 @@ export class GuestSettingsComponent implements OnInit, OnChanges {
     this.originDateFormat = _.cloneDeep(this.currentDateSetting);
     window.localStorage.timeFormat = JSON.stringify(this.currentDateSetting);
     window.localStorage.videoCallingPreferences = this.videoCalling;
+    this.eventService.broadcast(EVENT.CUSTOM.VIDEO_CALLING_PREFERENCES_CHANGED, window.localStorage.videoCallingPreferences);
     window.localStorage.enabledLogs = this.saveLogsCheckbox;
     if (!this.saveLogsCheckbox) {
       this.meetingsLogsService.deleteLogs();
