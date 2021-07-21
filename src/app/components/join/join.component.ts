@@ -1,5 +1,5 @@
 import {Component, Inject, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ActivatedRoute, Params, Route, Router} from '@angular/router';
 import { Logger } from '../../../Logger';
 import {TranslateService} from '@ngx-translate/core';
 import {DateFormatService} from '../../shared/services/DateFormatService/date-format.service';
@@ -157,7 +157,7 @@ export class JoinComponent implements OnInit, OnDestroy {
 
     this.meeting = {
       id: this.route.snapshot.queryParams.ID || '',
-      name: this.route.snapshot.queryParams.ID || window.localStorage[LOCAL_STORAGE.GUEST_NAME] || ''
+      name: this.route.snapshot.queryParams.displayname || window.localStorage[LOCAL_STORAGE.GUEST_NAME] || ''
     };
 
     this.isMobileButton = !(this.customDeviceDetectorService.os === OS.MAC || this.customDeviceDetectorService.os === OS.WINDOWS);
@@ -885,7 +885,7 @@ export class JoinComponent implements OnInit, OnDestroy {
       // this.MessageUtilsService.closeOutlookExtensionNotification();
     });
 
-    this.eventService.on(EVENT.CUSTOM.CONFERENCE_STARTED, (event, meetingOptions) => {
+    this.eventService.on(EVENT.CUSTOM.CONFERENCE_STARTED, (meetingOptions) => {
       this.logger.info('Handle \'CONFERENCE_STARTED\' event');
       this.optionsForJoin = JSON.parse(window.localStorage.currentAndRecentOptions);
       this.optionsForJoinGuest = JSON.parse(window.localStorage.currentAndRecentOptionsForGuest);

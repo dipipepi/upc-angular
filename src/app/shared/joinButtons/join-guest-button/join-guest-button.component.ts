@@ -1,10 +1,10 @@
 import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {ACClientService} from '../../services/ACClientService/acclient.service';
-import {BrowserInfoService} from '../../services/BrowserInfoService/browser-info.service';
-import {EventService} from '../services/EventService/event.service';
-import {EVENT} from '../../constants';
-import {AuthorizationService} from '../../services/AuthorizationService/authorization.service';
-import {JoinButtonService} from '../../services/JoinButtonServices/join-button.service';
+import {ACClientService} from '../../../services/ACClientService/acclient.service';
+import {BrowserInfoService} from '../../../services/BrowserInfoService/browser-info.service';
+import {EventService} from '../../services/EventService/event.service';
+import {EVENT} from '../../../constants';
+import {AuthorizationService} from '../../../services/AuthorizationService/authorization.service';
+import {JoinButtonService} from '../../../services/JoinButtonServices/join-button.service';
 
 class JoinButtonServices {
 }
@@ -26,7 +26,6 @@ export class JoinGuestButtonComponent implements OnInit, OnDestroy {
   haveDownloadedClient = window.localStorage.haveDownloadedClient === 'true';
   availableDevices = [];
   joinOptions = this.joinButtonServices.optionsForJoinButtons(this, 'GB');
-  isButtonVisible = this.joinButtonServices;
   // TODO check attributes of element
   private attr: any;
   private meetingIdPattern =  /^[0-9]{1,32}(\*\*\*[0-9]{0,16}(\*[0-9]{0,16})?)?$/;
@@ -37,7 +36,7 @@ export class JoinGuestButtonComponent implements OnInit, OnDestroy {
   constructor(private acClientService: ACClientService,
               private browserInfoService: BrowserInfoService,
               private eventService: EventService,
-              private joinButtonServices: JoinButtonService,
+              public joinButtonServices: JoinButtonService,
               private authorizationService: AuthorizationService
   ) { }
 

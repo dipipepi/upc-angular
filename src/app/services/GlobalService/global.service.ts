@@ -17,6 +17,8 @@ export class GlobalService {
   haveMic: boolean;
   isAdminNotificationShowing = window.localStorage.isAdminNotificationShowing || true;
   wasAdminMessageClosed = false;
+  activeRoute: string;
+  previousJoinUrl: string;
 
   constructor() { }
 

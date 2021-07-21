@@ -42,7 +42,7 @@ import { IncludeDirective } from './shared/include/include.directive';
 import { IncludeComponent } from './shared/includeComponent/include/include.component';
 import { JoinInputComponent } from './shared/join-input/join-input.component';
 import { CopyOrEmailLinkJoinComponent } from './shared/copy-or-email-link-join/copy-or-email-link-join.component';
-import { JoinGuestButtonComponent } from './shared/join-guest-button/join-guest-button.component';
+import { JoinGuestButtonComponent } from './shared/joinButtons/join-guest-button/join-guest-button.component';
 
 
 // tslint:disable-next-line:typedef

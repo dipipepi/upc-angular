@@ -1,0 +1,17 @@
+{
+    "JOIN_BUTTONS": {
+        "JOIN_GUEST_BUTTON": {
+            "BROWSER_AUDIO_VIDEO": "ブラウザで参加",
+            "BROWSER_AUDIO_VIDEO_TOOLTIP": "ブラウザを使用して参加（音声、ビデオ、プレゼンテーション）",
+            "BROWSER_AUDIO_TOOLTIP": "ブラウザを使用して参加（音声、プレゼンテーション）",
+            "PRESENTATION_ONLY": "プレゼンテーションのみ参加",
+            "PRESENTATION_ONLY_TOOLTIP": "ブラウザにプレゼンテーションを表示し、電話で会議に参加",
+            "AC_AUDIO_VIDEO": "アプリで参加",
+            "AC_AUDIO_VIDEO_TOOLTIP": "アプリケーションを使用して参加（音声、ビデオ、プレゼンテーション）",
+            "AC_AUDIO_TOOLTIP": "アプリケーションを使用して参加（音声、プレゼンテーション）"
+        },
+        "JOIN_MOBILE_BUTTON": {
+            "DOWNLOAD_APP_LINK": "アプリのダウンロード"
+        }
+    }
+}

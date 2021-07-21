@@ -26,3 +26,25 @@
     box-shadow: 0 0 1px 1px #007aff;
   }
 }
+
+input[reset-field] {
+  padding-right: 20px;
+}
+
+.reset {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 20px;
+  height: 28px;
+  line-height: 27px;
+  margin-left: -23px;
+  margin-right: 3px;
+
+  &::before {
+    content: 'X';
+    color: @darkener;
+    font-size: 10px;
+  }
+}

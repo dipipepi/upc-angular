@@ -1,0 +1,17 @@
+{
+    "JOIN_BUTTONS": {
+        "JOIN_GUEST_BUTTON": {
+            "BROWSER_AUDIO_VIDEO": "使用浏览器加入",
+            "BROWSER_AUDIO_VIDEO_TOOLTIP": "使用浏览器加入以使用音频、视频和演示文稿",
+            "BROWSER_AUDIO_TOOLTIP": "使用浏览器加入以使用音频和演示文稿",
+            "PRESENTATION_ONLY": "仅加入演示文稿模式",
+            "PRESENTATION_ONLY_TOOLTIP": "在浏览器上查看演示文稿并通过电话呼叫加入会议",
+            "AC_AUDIO_VIDEO": "加入应用程序",
+            "AC_AUDIO_VIDEO_TOOLTIP": "加入以使用应用程序的音频、视频和演示文稿",
+            "AC_AUDIO_TOOLTIP": "加入以使用应用程序的音频和演示文稿"
+        },
+        "JOIN_MOBILE_BUTTON": {
+            "DOWNLOAD_APP_LINK": "下载应用程序"
+        }
+    }
+}

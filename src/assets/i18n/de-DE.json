@@ -892,6 +892,21 @@
 			"NO_CLIENT": "Die App wurde nicht in der Avaya Meetings Verwaltung gefunden. Wenden Sie sich an das Support-Team."
 		}
 	},
+	"JOIN_BUTTONS": {
+		"JOIN_GUEST_BUTTON": {
+			"BROWSER_AUDIO_VIDEO": "Über Browser beitreten",
+			"BROWSER_AUDIO_VIDEO_TOOLTIP": "Über Ihren Browser für Audio, Video und Präsentation beitreten",
+			"BROWSER_AUDIO_TOOLTIP": "Über Ihren Browser für Audio und Präsentation beitreten",
+			"PRESENTATION_ONLY": "Nur Präsentation beitreten",
+			"PRESENTATION_ONLY_TOOLTIP": "Die Präsentation in Ihrem Browser anzeigen und mit einem Telefon an der Besprechung teilnehmen",
+			"AC_AUDIO_VIDEO": "Über App beitreten",
+			"AC_AUDIO_VIDEO_TOOLTIP": "Mit der Anwendung für Audio, Video und Präsentation beitreten",
+			"AC_AUDIO_TOOLTIP": "Mit der Anwendung für Audio und Präsentation beitreten"
+		},
+		"JOIN_MOBILE_BUTTON": {
+			"DOWNLOAD_APP_LINK": "App herunterladen"
+		}
+	},
 	"MSG_UTILS": {
 		"DOWNLOAD": "Herunterladen",
 		"DOWNLOAD_APP": "App herunterladen",

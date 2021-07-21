@@ -3,7 +3,7 @@
     <ng-container *ngFor="let option of joinOptions; index as $index">
       <button class="guest-button {{option.className}} {{isActiveButton(option) ? 'active' : 'not-active'}}"
               type="button"
-              *ngIf="isButtonVisible(option)"
+              *ngIf="joinButtonServices.isButtonVisible(option)"
               (click)="performAction($index)"
               [attr.title]="option.tooltip"
               [attr.tabindex]="isActiveButton(option) ? 0 : -1">

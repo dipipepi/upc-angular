@@ -1,0 +1,260 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+@import "/src/assets/styles/urls";
+@url-presentation-only:  url(../../message-utils/icons/ic_portal_presentaion.svg);
+@url-use-browser-adjust: url(../../message-utils/icons/ic_portal_audiovideo.svg);
+@url-adjust-av-dark: url(src/app/components/join/icons/adjust_av_dark.svg);
+
+.calendar-meeting-info, .meeting-details-info, .meeting-line{
+  position: relative;
+
+  .join-schedule{
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+
+    .join-buttons{
+      display: flex;
+      flex-direction: row;
+
+      .join-button{
+        padding: 2px 5px 3px 56px;
+        margin-right: 5px;
+        height: 35px;
+        border-radius: 37px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.2s ease, box-shadow 0.2s ease;
+        background: @button;
+
+        &.audio-video-ac {
+          background-color: @button-alt;
+        }
+
+        &:hover {
+          box-shadow: 0 0 3px @darkener;
+
+          &.audio-video-ac::before {
+            box-shadow: 0 0 2px @background-white;
+          }
+        }
+
+        &::before {
+          background-repeat: no-repeat;
+          content: "";
+          display: block;
+          float: left;
+          width: 28px;
+          height: 28px;
+          margin-left: -39px;
+          margin-top: 1px;
+        }
+
+        &.audio-video-swc::before {
+          background-image: @url-use-browser-adjust;
+        }
+
+        &.present-only::before {
+          background-image: @url-presentation-only;
+        }
+
+        &.audio-video-ac::before {
+          background-image: @url-download-client;
+          background-color: transparent;
+          transition: box-shadow 0.2s ease;
+          outline: none;
+          box-shadow: none;
+          border-radius: 50%;
+        }
+
+        &.audio-video-ac {
+          background-color: @button-alt;
+        }
+
+        &.audio-video-ac:hover {
+          background-color: @button-alt-active;
+        }
+      }
+
+      .upcoming-button:hover {
+        background: @button-hover;
+        cursor: pointer;
+      }
+
+    }
+
+    .join-button.disabled-join, .join-button.audio-video-ac.disabled-join, .join-button.audio-video-ac.disabled-join:hover, .audio-video-ac:hover{
+      background-color: @mid-gray;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.meeting-details-info{
+  .join-schedule{
+    top: 25px;
+  }
+}
+
+.meeting-line{
+  .join-schedule{
+    top: 11px;
+  }
+}
+
+.guest-buttons {
+  display: inline-block;
+  margin: 10px 0 10px;
+
+  div,
+  ie-fix {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+
+  .guest-button {
+    padding: 0px 33px 0 65px;
+    height: 35px;
+    border-radius: 37px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    line-height: 35px;
+    width: 100%;
+
+    &::before {
+      background-repeat: no-repeat;
+      content: "";
+      display: block;
+      float: left;
+      width: 35px;
+      height: 35px;
+      margin-left: -45px;
+      margin-top: 0px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 1px 1px #007aff;
+    }
+
+    &.audio-video-ac.active {
+      background-color: @button-alt;
+      color: @button-secondary;
+    }
+
+    &.audio-video-ac.active:hover {
+      background-color: @button-alt-active;
+      cursor: pointer;
+    }
+
+    &.audio-video-ac.not-active, &.audio-video-swc.not-active, &.present-only.not-active {
+      background: @button-disabled;
+      color: @button-secondary;
+      pointer-events: none;
+    }
+
+    &.audio-video-swc::before {
+      background-image: @url-use-browser-adjust;
+    }
+
+    &.present-only::before {
+      background-image: @url-presentation-only;
+    }
+
+    &.audio-video-ac::before {
+      background-image: @url-download-client;
+      background-color: transparent;
+      transition: box-shadow 0.2s ease;
+      outline: none;
+      box-shadow: none;
+      border-radius: 50%;
+      width: 29px;
+      height: 29px;
+      margin-top: 3px;
+    }
+  }
+}
+
+.ng-valid .guest-buttons {
+  .guest-button {
+    &.audio-video-swc.active, &.present-only.active {
+      background: @button;
+      color: @button-secondary;
+    }
+
+    &.audio-video-ac.active{
+      background: @button-alt;
+      color: @button-secondary;
+    }
+
+    &:hover {
+      box-shadow: 0 0 3px @darkener;
+
+      &.audio-video-ac::before {
+        box-shadow: 0 0 2px @background-white;
+      }
+    }
+  }
+
+  .guest-button:hover {
+    background: @button-hover;
+    cursor: pointer;
+  }
+}
+
+.upc\.join .join-page .join-form .adjust-audio-video-button.adjust-audio-video-button-guest{
+  position: fixed;
+  left: 20px;
+  bottom: 10px;
+  border: 0;
+  background: none;
+  color: @text-color-med;
+  outline: none;
+  filter: drop-shadow(0 0 5px @text-color-light);
+  margin: 0;
+  padding: 0 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &::before {
+    background: @url-adjust-av-dark no-repeat;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px 1px #007aff;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 3px @darkener);
+  }
+}
+
+.pe-only{
+  display: flex;
+  flex-direction: column;
+
+  .audio-video-swc{
+    order: 1;
+  }
+
+  .audio-video-ac{
+    order: 2;
+  }
+
+  .present-only{
+    order: 3;
+  }
+}
+

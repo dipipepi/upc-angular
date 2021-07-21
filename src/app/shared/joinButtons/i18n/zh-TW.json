@@ -1,0 +1,17 @@
+{
+    "JOIN_BUTTONS": {
+        "JOIN_GUEST_BUTTON": {
+            "BROWSER_AUDIO_VIDEO": "透過瀏覽器加入",
+            "BROWSER_AUDIO_VIDEO_TOOLTIP": "使用瀏覽器加入以存取音訊、視訊和簡報",
+            "BROWSER_AUDIO_TOOLTIP": "使用瀏覽器加入以存取音訊和簡報",
+            "PRESENTATION_ONLY": "僅加入簡報",
+            "PRESENTATION_ONLY_TOOLTIP": "在瀏覽器中檢視簡報並透過手機撥入會議",
+            "AC_AUDIO_VIDEO": "加入問答",
+            "AC_AUDIO_VIDEO_TOOLTIP": "使用應用程式加入以存取音訊、視訊和簡報",
+            "AC_AUDIO_TOOLTIP": "使用應用程式加入以存取音訊和簡報"
+        },
+        "JOIN_MOBILE_BUTTON": {
+            "DOWNLOAD_APP_LINK": "下載應用程式"
+        }
+    }
+}

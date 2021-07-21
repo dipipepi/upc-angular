@@ -120,25 +120,14 @@ intended publication of such source code.
       <!-- Join form for guest mobile end -->
 
       <!-- Join form for guest desktop -->
-      <!--      TODO create this component-->
-<!--      <join-input-->
-<!--        ng-if="!isMobileButton"-->
-<!--        class="white-arrow"-->
-<!--        options="optionsForJoinGuest"-->
-<!--        ng-model="myMeetings.selectedVirtualRoom"-->
-<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
-<!--        meeting-id="meeting.id"-->
-<!--        user-name="meeting.name"-->
-<!--        user-type="{{authorizationService.userType}}">-->
-<!--      </join-input>-->
-      <!-- Join form for guest desktop end -->
-
       <app-join-input class="white-arrow"
                       [options]="optionsForJoinGuest"
                       [url]="myMeetings?.selectedVirtualRoom?.url"
                       [meetingId]="meeting?.id"
                       [virtualRoom]="myMeetings?.selectedVirtualRoom"
+                      [name]="meeting.name"
       ></app-join-input>
+      <!-- Join form for guest desktop end -->
 
     </div>
     <!-- Join form for guest end -->

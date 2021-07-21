@@ -9,9 +9,11 @@ import {BROWSERS, DATE_FORMAT, EVENT, OS, UP_CLIENT_CONNECTION_SETTINGS, USER_TY
 import {CustomDeviceDetectorService} from './services/CustomDeviceDetectorService/custom-device-detector.service';
 import {Title} from '@angular/platform-browser';
 import {GlobalService} from './services/GlobalService/global.service';
-import {ActivatedRoute, NavigationEnd, Router, RouterEvent} from '@angular/router';
+import {ActivatedRoute, NavigationEnd, Router, RouterEvent, RoutesRecognized} from '@angular/router';
 import {filter} from 'rxjs/operators';
 import {EventService} from './shared/services/EventService/event.service';
+import {Location} from '@angular/common';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-root',
@@ -45,10 +47,11 @@ export class AppComponent implements OnInit{
               private userSettingsService: UserSettingsService,
               private customDeviceDetector: CustomDeviceDetectorService,
               private titleService: Title,
-              private globalService: GlobalService,
+              public globalService: GlobalService,
               private route: ActivatedRoute,
               private router: Router,
-              private eventService: EventService) {
+              private eventService: EventService,
+              private location: Location) {
     translate.setDefaultLang(localization.initLocalization());
   }
 
@@ -76,18 +79,25 @@ export class AppComponent implements OnInit{
       alert('Error. Can not get resources');
     });
 
-    this.activeRoute = 'join';
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((root: RouterEvent) => {
-      if(root.url === '/'){
-        this.activeRoute = 'join';
-      } else if(root.url === '/recording'){
-        this.activeRoute = 'recordings';
-      } else {
-        this.activeRoute = 'schedule';
-      }
+    this.globalService.activeRoute = 'join';
 
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd))
+      .subscribe((root: RouterEvent) => {
+        if(root.url.indexOf('recording') === -1 && root.url.indexOf('schedule') === -1){
+          this.globalService.activeRoute = 'join';
+          if(this.globalService.previousJoinUrl) {
+            this.location.replaceState(this.globalService.previousJoinUrl);
+          }
+        } else if(root.url.indexOf('recording')){
+          this.globalService.activeRoute = 'recordings';
+        } else {
+          this.globalService.activeRoute = 'schedule';
+        }
+
+        if(!_.isEmpty(this.route.snapshot.queryParams) && root.url !== 'recording') {
+          this.globalService.previousJoinUrl = this.router.url;
+        }
     });
   }
 
@@ -231,6 +241,9 @@ export class AppComponent implements OnInit{
     this.eventService.broadcast(EVENT.CUSTOM.VIDEO_CALLING_PREFERENCES_CHANGED, window.localStorage.videoCallingPreferences);
     window.localStorage.timeFormat = !!window.localStorage.timeFormat ? window.localStorage.timeFormat : this.defaultTimeFormat;
     window.localStorage.enabledLogs = window.localStorage.enabledLogs ? JSON.parse(window.localStorage.enabledLogs) : true;
+    setTimeout(() => {
+      this.eventService.broadcast(EVENT.CUSTOM.CHECK_AUTO_JOIN);
+    }, 300);
   }
 
   private detectChromeWebsharingExtension(): void{

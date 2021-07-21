@@ -1,0 +1,17 @@
+{
+    "JOIN_BUTTONS": {
+        "JOIN_GUEST_BUTTON": {
+            "BROWSER_AUDIO_VIDEO": "Unirse con navegador",
+            "BROWSER_AUDIO_VIDEO_TOOLTIP": "Unirse usando su navegador para audio, video y presentación",
+            "BROWSER_AUDIO_TOOLTIP": "Unirse usando su navegador para audio y presentación",
+            "PRESENTATION_ONLY": "Unirse sólo a la presentación",
+            "PRESENTATION_ONLY_TOOLTIP": "Vea la presentación en su navegador y llame para unirse a la reunión con un teléfono",
+            "AC_AUDIO_VIDEO": "Unirse con la aplicación",
+            "AC_AUDIO_VIDEO_TOOLTIP": "Unirse usando la aplicación para audio, video y presentación",
+            "AC_AUDIO_TOOLTIP": "Unirse usando la aplicación para audio y presentación"
+        },
+        "JOIN_MOBILE_BUTTON": {
+            "DOWNLOAD_APP_LINK": "Descargar la aplicación"
+        }
+    }
+}

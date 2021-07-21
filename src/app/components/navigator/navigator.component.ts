@@ -4,6 +4,7 @@ import {AuthorizationService} from '../../services/AuthorizationService/authoriz
 import {USER_TYPE} from '../../constants';
 import {CustomDeviceDetectorService} from '../../services/CustomDeviceDetectorService/custom-device-detector.service';
 import {Router} from '@angular/router';
+import {GlobalService} from '../../services/GlobalService/global.service';
 
 @Component({
   selector: 'app-navigator',
@@ -17,7 +18,7 @@ export class NavigatorComponent implements OnInit {
   constructor(public userSettingsService: UserSettingsService,
               public authorizationService: AuthorizationService,
               public customDeviceDetectorService: CustomDeviceDetectorService,
-              private router: Router) { }
+              public globalService: GlobalService) { }
 
   ngOnInit(): void {
     this.USER_TYPE = USER_TYPE;

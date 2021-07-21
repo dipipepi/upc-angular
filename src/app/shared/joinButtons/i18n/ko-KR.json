@@ -1,0 +1,17 @@
+{
+    "JOIN_BUTTONS": {
+        "JOIN_GUEST_BUTTON": {
+            "BROWSER_AUDIO_VIDEO": "브라우저로 참가",
+            "BROWSER_AUDIO_VIDEO_TOOLTIP": "오디오, 비디오 및 프레젠테이션에 브라우저를 사용하여 참가합니다.",
+            "BROWSER_AUDIO_TOOLTIP": "오디오 및 프레젠테이션에 브라우저를 사용하여 참가합니다.",
+            "PRESENTATION_ONLY": "프레젠테이션 전용 참가",
+            "PRESENTATION_ONLY_TOOLTIP": "브라우저에서 프레젠테이션을 보고 전화로 회의에 참석합니다.",
+            "AC_AUDIO_VIDEO": "앱으로 참가",
+            "AC_AUDIO_VIDEO_TOOLTIP": "오디오, 비디오, 프레젠테이션에 애플리케이션을 사용하여 참가합니다.",
+            "AC_AUDIO_TOOLTIP": "오디오 및 프레젠테이션에 애플리케이션을 사용하여 참가합니다."
+        },
+        "JOIN_MOBILE_BUTTON": {
+            "DOWNLOAD_APP_LINK": "앱 다운로드"
+        }
+    }
+}

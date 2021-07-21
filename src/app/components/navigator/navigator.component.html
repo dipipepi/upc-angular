@@ -5,18 +5,17 @@
 <!--</ul>-->
 
 <nav>
-  <a routerLinkActive="current" routerLink="/" class="nav-link meet-now {{browser === 'MS-Edge' ? 'edge' : ''}}"
-     [routerLinkActiveOptions]="{exact: true}">
+  <a [class.current]="globalService.activeRoute === 'join'" routerLink="/" class="nav-link meet-now {{browser === 'MS-Edge' ? 'edge' : ''}}">
     <span class="svg-container meet-now"></span>
     <!--  <ng-include src=":: 'app/components/navigation/icons/meet_now.svg'"></ng-include>-->
     <p>{{'NAVIGATION.JOIN' | translate}}</p>
   </a>
-  <a routerLinkActive="current" routerLink="/recording" *ngIf="this.userSettingsService.portalResources.assrUrl" class="nav-link">
+  <a [class.current]="globalService.activeRoute === 'recordings'" routerLink="/recording" *ngIf="this.userSettingsService.portalResources.assrUrl" class="nav-link">
     <span class="svg-container recording"></span>
     <!--  <ng-include src=":: 'assets/icons/recordings.svg'"></ng-include>-->
     <p>{{'NAVIGATION.RECORDING' | translate}}</p>
   </a>
-  <a routerLinkActive="current" routerLink="/schedule" *ngIf="authorizationService.userType==='SIGN_IN'" class="nav-link">
+  <a [class.current]="globalService.activeRoute === 'schedule'" routerLink="/schedule" *ngIf="authorizationService.userType==='SIGN_IN'" class="nav-link">
     <span class="svg-container schedule"></span>
     <!--  <ng-include src=":: 'assets/icons/schedule.svg'"></ng-include>-->
     <p>{{'NAVIGATION.SCHEDULE' | translate}}</p>

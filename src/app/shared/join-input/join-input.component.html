@@ -16,7 +16,7 @@
            [placeholder]="'JOIN.USER_NAME' | translate"
            required
            >
-    <button class="reset-field" (click)="resetField('name')" *ngIf="joinForm.value.name"></button>
+    <div class="reset" (click)="resetField('name')" *ngIf="joinForm.value.name"></div>
   </div>
 
   <!-- text error if name is too long -->
@@ -30,6 +30,7 @@
     <!-- Input for enter id meeting -->
     <input autofill reset-field
            type="text"
+           (ngModelChange)="meetingIdChanged()"
            class="default-input"
            [ngClass]="{'without-dropdown': options.length < 2, 'not-valid-is-confirence-exists': !isConferenceExists}"
            [attr.title]="meetingId"
@@ -37,7 +38,7 @@
            only-numbers
            formControlName="meetingId"
            required>
-    <button class="reset-field" (click)="resetField('meetingId')" *ngIf="joinForm.value.meetingId"></button>
+    <div class="reset" (click)="resetField('meetingId')" *ngIf="joinForm.value.meetingId"></div>
 <!--     Select for select meeting id from history or VR -->
     <div class="default-select join-input-selected"
          (click)="showDropdown()"
@@ -97,8 +98,8 @@
     [externalClass]="!isConferenceExists ? 'for-wrong-meeting-id' : ''"
     [isConferenceExists]="isConferenceExists"
     [meetingId]="joinForm.value.meetingId"
-    [name]="userName"
-    [isDisabled]="joinForm.valid === 'INVALID'"></app-join-guest-button>
+    [name]="joinForm.value.name"
+    [isDisabled]="joinForm.status === 'INVALID'"></app-join-guest-button>
 
 <!--  &lt;!&ndash; Desktop buttons &ndash;&gt;-->
 <!--  <join-guest-button ng-class="{'for-wrong-meeting-id' : !isConferenceExists}"-->

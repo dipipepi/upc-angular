@@ -892,6 +892,21 @@
 			"NO_CLIENT": "Telefonní aplikace nebyla nalezena na serveru Avaya Meetings Server. Obraťte se na svého správce systému."
 		}
 	},
+	"JOIN_BUTTONS": {
+		"JOIN_GUEST_BUTTON": {
+			"BROWSER_AUDIO_VIDEO": "Připojit v prohlížeči",
+			"BROWSER_AUDIO_VIDEO_TOOLTIP": "Připojíte se pomocí prohlížeče (audio, video i prezentace).",
+			"BROWSER_AUDIO_TOOLTIP": "Připojíte se pomocí prohlížeče (audio i  prezentace, ale video není povoleno).",
+			"PRESENTATION_ONLY": "Pouze prezentace",
+			"PRESENTATION_ONLY_TOOLTIP": "Zobrazíte prezentaci v prohlížeči a pak se připojte ke schůzce telefonem.",
+			"AC_AUDIO_VIDEO": "Připojit v aplikaci",
+			"AC_AUDIO_VIDEO_TOOLTIP": "Připojíte te se pomocí telefonní aplikace (audio, video i prezentace).",
+			"AC_AUDIO_TOOLTIP": "Připojíte se pomocí telefonní aplikace (audio i prezentace, ale video není povoleno)."
+		},
+		"JOIN_MOBILE_BUTTON": {
+			"DOWNLOAD_APP_LINK": "Stáhnout aplikaci"
+		}
+	},
 	"MSG_UTILS": {
 		"DOWNLOAD": "Stahování",
 		"DOWNLOAD_APP": "Stáhnout aplikaci",

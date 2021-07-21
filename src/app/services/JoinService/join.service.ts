@@ -231,13 +231,13 @@ export class JoinService {
         } else if (errorCode === ERROR_CODE.JOIN.ERC_JC_ONE_TIME_PIN_REQUIRED && options.oneTimePin){
           this.startConference(options, options.oneTimePin);
         } else {
-          if (response.data.meetingType === MEETING_TYPE.AUDIO_ONLY && !options.presentationOnly) {
+          if (response.meetingType === MEETING_TYPE.AUDIO_ONLY && !options.presentationOnly) {
             options.audioOnly = true;
           }
-          if (!response.data.passcode) {
-            delete response.data.passcode;
+          if (!response.passcode) {
+            delete response.passcode;
           }
-          _.extend(options, response.data);
+          _.extend(options, response);
 
           if(this.authorizationService.userType === USER_TYPE.SIGN_IN){
             this.updateOptionsList(response);
@@ -249,9 +249,8 @@ export class JoinService {
       };
 
       const onFailGetToken = (response) => {
-        const errors = response.data && response.data.error ? response.data.error : undefined;
-        // @ts-ignore
-        const errorCode = angular.isArray(errors) && errors[0] ? errors[0].errorCode : 'undefined';
+        const errors = response && response.error ? response.error : undefined;
+        const errorCode = _.isArray(errors) && errors[0] ? errors[0].errorCode : 'undefined';
         const showWaitingForModerator = () => {
           closeExistingBlankTab();
           return this.dialog.open(FailGetTokenComponent, {
@@ -301,7 +300,7 @@ export class JoinService {
         if (errorCode === ERROR_CODE.JOIN.ERC_JC_FORBIDDEN_ONE_TIME_PIN_REQUIRED) {
           return showWaitingForModerator();
         } else {
-          throw this.getReadableError(response.status, response.data.error);
+          throw this.getReadableError(response.status, response.error.error);
         }
       };
 
@@ -479,7 +478,7 @@ export class JoinService {
     for(let i = 0; i < currentOptions.length; i++) {
       if (currentOptions[i].className) {
         currentRecentCount++;
-        if (currentOptions[i].number === token.data.conferenceId) {
+        if (currentOptions[i].number === token.conferenceId) {
           haveOptionInList = true;
           numberOptionInList = i;
         }
@@ -499,7 +498,7 @@ export class JoinService {
     let vrNameForDisplay = '';
     let tooltip = '';
 
-    if (token.data.meetingName !== null){
+    if (token.meetingName !== null){
 
       if (token.data.meetingName.length > this.globalService.maxVrName ||
         token.data.conferenceId.length > this.globalService.maxVrNameWithSpace) {
@@ -558,7 +557,7 @@ export class JoinService {
     for(let i = 0; i < currentOptions.length; i++) {
       if (currentOptions[i].className) {
         currentRecentCount++;
-        if (currentOptions[i].number === token.data.conferenceId) {
+        if (currentOptions[i].number === token.conferenceId) {
           haveOptionInList = true;
           numberOptionInList = i;
         }
@@ -577,35 +576,35 @@ export class JoinService {
     let vrNameForDisplay = '';
     let tooltip = '';
 
-    if (token.data.meetingName !== null){
+    if (token.meetingName !== null){
 
-      if (token.data.meetingName.length > this.globalService.maxVrName ||
-        token.data.conferenceId.length > this.globalService.maxVrNameWithSpace) {
-        tooltip = token.data.meetingName + ' - ' + token.data.conferenceId;
+      if (token.meetingName.length > this.globalService.maxVrName ||
+        token.conferenceId.length > this.globalService.maxVrNameWithSpace) {
+        tooltip = token.meetingName + ' - ' + token.conferenceId;
       }
 
-      if (token.data.meetingName.length > 26) {
-        if (token.data.meetingName.indexOf(' ') !== -1) {
-          vrNameForDisplay = token.data.meetingName.slice(0, this.globalService.maxVrName) + '...';
+      if (token.meetingName.length > 26) {
+        if (token.meetingName.indexOf(' ') !== -1) {
+          vrNameForDisplay = token.meetingName.slice(0, this.globalService.maxVrName) + '...';
         } else {
-          vrNameForDisplay = token.data.meetingName.slice(0, this.globalService.maxVrNameWithSpace) + '...';
+          vrNameForDisplay = token.meetingName.slice(0, this.globalService.maxVrNameWithSpace) + '...';
         }
       } else {
-        vrNameForDisplay = token.data.meetingName;
+        vrNameForDisplay = token.meetingName;
       }
     } else {
-      if (token.data.conferenceId.length > this.globalService.maxVrNameWithSpace) {
-        vrNameForDisplay = token.data.conferenceId.slice(0, this.globalService.maxVrNameWithSpace) + '...';
-        tooltip = token.data.conferenceId;
+      if (token.conferenceId.length > this.globalService.maxVrNameWithSpace) {
+        vrNameForDisplay = token.conferenceId.slice(0, this.globalService.maxVrNameWithSpace) + '...';
+        tooltip = token.conferenceId;
       } else {
-        vrNameForDisplay = token.data.conferenceId;
+        vrNameForDisplay = token.conferenceId;
       }
     }
 
-    if (token.data.conferenceId.length > this.globalService.maxVrNumber) {
-      vrNumberForDisplay =  '...' + token.data.conferenceId.substr(-this.globalService.maxVrNumber);
+    if (token.conferenceId.length > this.globalService.maxVrNumber) {
+      vrNumberForDisplay =  '...' + token.conferenceId.substr(-this.globalService.maxVrNumber);
     } else {
-      vrNumberForDisplay = token.data.conferenceId;
+      vrNumberForDisplay = token.conferenceId;
     }
 
     if (haveOptionInList) {
@@ -615,10 +614,10 @@ export class JoinService {
     currentOptions.push({
       name: vrNameForDisplay,
       tooltip,
-      fullName: token.data.meetingName || '',
-      number: token.data.conferenceId,
+      fullName: token.meetingName || '',
+      number: token.conferenceId,
       numberForDisplay: vrNumberForDisplay,
-      url: window.location.href + '?ID=' + token.data.conferenceId,
+      url: window.location.href + '?ID=' + token.conferenceId,
       className: 'recent'
     });
 
