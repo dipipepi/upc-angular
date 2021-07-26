@@ -14,6 +14,7 @@ input[readonly] {
         border-bottom: 1px solid @darkener;
         min-height: 53px;
         overflow: hidden;
+      height: 53px;
 
         &:first-child {
             border-top: 1px solid @darkener;
@@ -251,7 +252,7 @@ input[readonly] {
     .dropdown-options {
         margin-left: -4px;
 
-        ie-fix {
+        .ie-fix {
             width: 36px;
             height: 36px;
             display: inline-block;
@@ -273,7 +274,7 @@ input[readonly] {
         &[disabled] {
             margin-left: 1px;
         }
-        &[disabled] div, &[disabled] ie-fix {
+        &[disabled] div, &[disabled] .ie-fix {
             background: lighten(@darkener, 10%) @url-share center;
         }
     }

@@ -1,0 +1,40 @@
+{
+    "UTILITIES": {
+        "COPY_OR_EMAIL_LINK": {
+            "CANCEL": "キャンセル",
+            "COPY": "リンクをコピー",
+            "SHARE_LINK": "メールで共有する",
+            "COPIED": "リンクがクリップボードにコピーされました",
+            "EMAIL_INVITE": "電子メール招待",
+            "EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}}さんから会議に招待されました",
+            "EMAIL_INVITE_MEETING_BODY": "以下の会議への参加をお願いします：%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+            "EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}}から動画が送信されました：{{subject}}",
+            "EMAIL_INVITE_RECORDING_BODY": "{{fullName}}があなたと会議記録を共有しました：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A所有者：{{owner}}{{description}}",
+            "EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "あなたに動画が共有されました：{{subject}}",
+            "EMAIL_GUEST_INVITE_RECORDING_BODY": "この会議記録を視聴してください：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A所有者：{{owner}}{{description}}",
+            "EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}}はあなたにブロードキャストを送信しました：{{subject}}",
+            "EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A所有者：{{owner}}%0D%0A日付：{{date}}{{description}}%0D%0A%0D%0A以下のリンクをクリックして参加します：%0D%0A{{url}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "あなたにブロードキャストが共有されました：{{subject}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A所有者：{{owner}}%0D%0A日付：{{date}}{{description}}%0D%0A%0D%0A以下のリンクをクリックして参加します：%0D%0A{{url}}"
+        },
+        "PLAYER": {
+            "NOT_AVAILABLE": "このプログラムはまだ視聴できません。後でもう一度お試しください。",
+            "DENIED": "このプログラムは現在の位置から再生できません。管理者によってアクセスが制限されています。",
+            "NOT_FOUND": "このプログラムは見つかりませんでした。削除された可能性があります。ログインし直すか、システム管理者にお問い合わせください。",
+            "NOT_AUTHORIZED": "このビデオを視聴する権限がありません。ログインし直すか、システム管理者にお問い合わせください。",
+            "NO_FLASH": "このビデオは現在このブラウザでは再生できません。Adobe Flash Player をインストールしてください。インストールの完了後にブラウザを再起動する必要があります。"
+        },
+        "JOIN_BUTTON": {
+            "JOIN": "参加",
+            "DETECTING_CLIENTS": "アプリの確認中...",
+            "BROWSER_AUDIO_VIDEO": "オーディオ/ビデオおよびプレゼンテーション",
+            "AUDIO_AND_PRESENTATION": "オーディオおよびプレゼンテーション",
+            "PRESENTATION_ONLY": "プレゼンテーションのみ",
+            "CANCEL": "キャンセル"
+        },
+        "FILE_READER": {
+            "DENIED_EXTENSION": "ファイル拡張子が拒否されました",
+            "FORMAT_ERROR": "サムネイルは、次のいずれかの形式である必要があります：{{types}}"
+        }
+    }
+}

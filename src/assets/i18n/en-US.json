@@ -1018,5 +1018,43 @@
 			"PIN_UPDATE_TITLE": "Your meeting's moderator PIN has expired. Please change your PIN in ",
 			"OPEN_SETTINGS": "Settings"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Cancel",
+			"COPY": "Copy link",
+			"SHARE_LINK": "Share by e-mail",
+			"COPIED": "A link has been copied to your clipboard",
+			"EMAIL_INVITE": "E-mail invite",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} invites you to join a meeting",
+			"EMAIL_INVITE_MEETING_BODY": "Please join this meeting:%0D%0A{{url}} %0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} sent you a video: {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} has shared a recording with you:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0ABy {{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "A video was shared with you: {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Please see this recording:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0ABy {{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} sent you a broadcast: {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0ABy {{owner}}%0D%0ADate: {{date}}{{description}}%0D%0A%0D%0AClick the following link to attend:%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "A broadcast was shared with you: {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0ABy {{owner}}%0D%0ADate: {{date}}{{description}}%0D%0A%0D%0AClick the following link to attend:%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "The program is not yet available for viewing. Please try again later.",
+			"DENIED": "This program cannot be played from your current location. Access has been restricted by the administrator.",
+			"NOT_FOUND": "This program cannot be found. Probably it was deleted. Try to re-login  or contact your system administrator.",
+			"NOT_AUTHORIZED": "You are not authorized to view this video. Try to re-login  or contact your system administrator.",
+			"NO_FLASH": "This video cannot currently be played in this browser. Please install the Adobe Flash Player. You may need to restart the browser after installation completes."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Join",
+			"DETECTING_CLIENTS": "Checking for App...",
+			"BROWSER_AUDIO_VIDEO": "Audio/Video + Presentation",
+			"AUDIO_AND_PRESENTATION": "Audio + Presentation",
+			"PRESENTATION_ONLY": "Presentation Only",
+			"CANCEL": "Cancel"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Denied file extension",
+			"FORMAT_ERROR": "The thumbnail must be one of the following formats: {{types}}"
+		}
 	}
 }

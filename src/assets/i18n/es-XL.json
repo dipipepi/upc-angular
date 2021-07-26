@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "El PIN de moderador de la reunión ha caducado. Cambie el PIN en ",
 			"OPEN_SETTINGS": "Ajustes"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Cancelar",
+			"COPY": "Copiar enlace",
+			"SHARE_LINK": "Compartir por correo",
+			"COPIED": "Se ha copiado un enlace en su portapapeles",
+			"EMAIL_INVITE": "Enviar invitación por correo electrónico",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} lo invita a unirse a una reunión",
+			"EMAIL_INVITE_MEETING_BODY": "Únase a esta reunión:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} le envió un video: {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} compartió una grabación con usted:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0APor {{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Se compartió un video con usted: {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Dele un vistazo a esta grabación:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0APor {{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} le envió una transmisión: {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0APor {{owner}}%0D%0AFecha: {{date}}{{description}}%0D%0A%0D%0AHaga clic en el siguiente vínculo para participar:%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Se compartió una transmisión con usted: {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0APor {{owner}}%0D%0AFecha: {{date}}{{description}}%0D%0A%0D%0AHaga clic en el siguiente vínculo para participar:%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "El programa grabado aún no está disponible para ver. Vuelva a intentarlo más tarde.",
+			"DENIED": "Este programa grabado no puede ejecutarse desde su ubicación actual. El administrador ha restringido el acceso.",
+			"NOT_FOUND": "No se encuentra el programa grabado. Probablemente fue eliminado. Vuelva a iniciar sesión o póngase en contacto con el administrador del sistema.",
+			"NOT_AUTHORIZED": "No tiene autorización para ver este video. Vuelva a iniciar sesión o póngase en contacto con el administrador del sistema.",
+			"NO_FLASH": "Este video no se puede reproducir en este navegador. Instale Adobe Flash Player. Es posible que tenga que reiniciar su navegador después de finalizar la instalación."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Unirse",
+			"DETECTING_CLIENTS": "Verificando aplicación...",
+			"BROWSER_AUDIO_VIDEO": "Audio/Video + Presentación",
+			"AUDIO_AND_PRESENTATION": "Audio + Presentación",
+			"PRESENTATION_ONLY": "Sólo presentación",
+			"CANCEL": "Cancelar"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Extensión de archivo denegada",
+			"FORMAT_ERROR": "La miniatura debe tener uno de los siguientes formatos: {{types}}"
+		}
 	}
 }

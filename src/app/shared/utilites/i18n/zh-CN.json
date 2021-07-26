@@ -1,0 +1,40 @@
+{
+    "UTILITIES": {
+        "COPY_OR_EMAIL_LINK": {
+            "CANCEL": "取消",
+            "COPY": "复制链接",
+            "SHARE_LINK": "通过e-mail分享",
+            "COPIED": "链接已复制到您的剪贴板",
+            "EMAIL_INVITE": "电子邮件邀请",
+            "EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} 邀请您加入会议",
+            "EMAIL_INVITE_MEETING_BODY": "请加入此会议：%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+            "EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} 发给您一个视频：{{subject}}",
+            "EMAIL_INVITE_RECORDING_BODY": "{{fullName}}发给您一段录制：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A来自：{{owner}}{{description}}",
+            "EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "一个视频分享给了您：{{subject}}",
+            "EMAIL_GUEST_INVITE_RECORDING_BODY": "请查看此录制：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A来自：{{owner}}{{description}}",
+            "EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}}发给您一个广播：{{subject}}",
+            "EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A来自：{{owner}}%0D%0A日期：{{date}}{{description}}%0D%0A%0D%0A点击以下链接加入：%0D%0A{{url}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "一个广播分享给了您：{{subject}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A来自：{{owner}}%0D%0A日期：{{date}}{{description}}%0D%0A%0D%0A点击以下链接加入：%0D%0A{{url}}"
+        },
+        "PLAYER": {
+            "NOT_AVAILABLE": "该节目尚不可查看。请稍候重试。",
+            "DENIED": "无法在您当前位置运行此节目。管理员已限制访问。",
+            "NOT_FOUND": "无法找到此节目。它可能已被删除。请尝试重新登录或联系您的系统管理员。",
+            "NOT_AUTHORIZED": "您无权查看该视频。请尝试重新登录或联系您的系统管理员。",
+            "NO_FLASH": "目前无法在此浏览器中播放该视频。请安装 Adobe Flash Player。安装完成后，您可能需要重新启动该浏览器。"
+        },
+        "JOIN_BUTTON": {
+            "JOIN": "加入",
+            "DETECTING_CLIENTS": "正在检查应用程序...",
+            "BROWSER_AUDIO_VIDEO": "音频/视频 + 演示文稿",
+            "AUDIO_AND_PRESENTATION": "音频 + 演示文稿",
+            "PRESENTATION_ONLY": "仅演示文稿模式",
+            "CANCEL": "取消"
+        },
+        "FILE_READER": {
+            "DENIED_EXTENSION": "文件扩展名不可用",
+            "FORMAT_ERROR": "缩略图必须是下列格式之一：{{types}}"
+        }
+    }
+}

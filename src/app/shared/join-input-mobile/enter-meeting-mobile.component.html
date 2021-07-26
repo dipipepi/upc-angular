@@ -1,0 +1,38 @@
+<!--
+Avaya Inc. Proprietary (Restricted)
+Solely for authorized persons having a need to know
+pursuant to company instructions.
+Copyright 2016 Avaya Inc. All Rights Reserved.
+THIS IS UNPUBLISHED PROPRIETARY SOURCE CODE OF Avaya Inc.
+The copyright notice above does not evidence any actual or
+intended publication of such source code.
+-->
+
+<div class="join-meeting-list" [formGroup]="joinForm">
+  <header class="header-join-meeting-list">
+    <label>
+      <input autofill reset-field
+             type="text"
+             class="default-input"
+             name="id"
+             autocomplete="off"
+             formControlName="meetingId"
+             [placeholder]="'JOIN.MEETING_ID' | translate"
+             (ngModelChange)="meetingIdWasChanged()"
+             required>
+    </label>
+    <button type="button" class="button-cancel" (click)="closeDialog()">{{'JOIN.CANCEL' | translate}}</button>
+  </header>
+  <ul class="list-block">
+    <li *ngFor="let option of currentOptions"
+        class="{{option.className ? 'recent' : ''}}"
+        (click)="selectOption(option)">
+      <span class="name-in-history" [class.no-meeting-name]="option.fullName == ''">{{option.name}}</span>
+      <span *ngIf="option.fullName" class="id-in-history">{{option.numberForDisplay}}</span>
+    </li>
+  </ul>
+  <footer class="footer-join-meeting-list">
+    <button type="submit" class="button-done" (click)="confirmDialog()">{{'JOIN.DONE' | translate}}</button>
+  </footer>
+</div>
+

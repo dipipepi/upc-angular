@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "Le code PIN du modérateur de la réunion a expiré. Veuillez modifier le code confidentiel dans : ",
 			"OPEN_SETTINGS": "Paramètres"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Annuler",
+			"COPY": "Copier le lien",
+			"SHARE_LINK": "Partager par e-mail valide",
+			"COPIED": "Le lien a été copié dans le Presse-papiers.",
+			"EMAIL_INVITE": "Invitation par e-mail",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} vous invite à rejoindre une réunion",
+			"EMAIL_INVITE_MEETING_BODY": "Veuillez rejoindre la réunion suivante :%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} vous a envoyé une vidéo : {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} a partagé avec vous un enregistrement :%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0Apar {{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Une vidéo a été partagée avec vous : {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Veuillez visionner cet enregistrement :%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0Apar {{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} vous a envoyé une diffusion : {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0Apar {{owner}}%0D%0ADate : {{date}}{{description}}%0D%0A%0D%0ACliquez sur le lien ci-dessous pour participer :%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Une diffusion a été partagée avec vous : {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0Apar {{owner}}%0D%0ADate: {{date}}{{description}}%0D%0A%0D%0ACliquez sur le lien ci-dessous pour participer :%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "Ce programme n’est pas encore disponible à l’affichage. Veuillez réessayer ultérieurement.",
+			"DENIED": "Ce programme n'est pas accessible depuis votre emplacement actuel. L'accès a été restreint par l'administrateur.",
+			"NOT_FOUND": "Ce programme est introuvable. Il a probablement été supprimé. Essayez de vous reconnecter ou contactez votre administrateur système.",
+			"NOT_AUTHORIZED": "Vous n'êtes pas autorisé à visionner cette vidéo. Essayez de vous reconnecter ou contactez votre administrateur système.",
+			"NO_FLASH": "Cette vidéo ne peut être actuellement lue dans ce navigateur. Veuillez installer Adobe Flash Player. Après l'installation, il se peut que vous deviez redémarrer votre navigateur."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Rejoindre",
+			"DETECTING_CLIENTS": "Vérification de l'application...",
+			"BROWSER_AUDIO_VIDEO": "Audio/Vidéo + Présentation",
+			"AUDIO_AND_PRESENTATION": "Audio + Présentation",
+			"PRESENTATION_ONLY": "Présentation uniquement",
+			"CANCEL": "Annuler"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Extension de fichier refusée",
+			"FORMAT_ERROR": "La miniature doit être dans l’un des formats suivants : {{types}}"
+		}
 	}
 }

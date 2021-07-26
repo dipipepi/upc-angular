@@ -53,6 +53,9 @@ export class JoinInputComponent implements OnInit, OnDestroy {
       meetingId: new FormControl(this.meetingId, [Validators.pattern(this.meetingIdPattern), Validators.maxLength(35)])
     });
 
+    if(this.virtualRoom){
+      this.joinForm.get('meetingId').patchValue(this.virtualRoom.number);
+    }
     // this.setUserName();
 
     // this.joinForm.valueChanges.subscribe(val => {

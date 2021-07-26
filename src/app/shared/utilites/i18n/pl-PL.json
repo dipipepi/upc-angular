@@ -1,0 +1,40 @@
+{
+    "UTILITIES": {
+        "COPY_OR_EMAIL_LINK": {
+            "CANCEL": "Anuluj",
+            "COPY": "Kopiuj łącze",
+            "SHARE_LINK": "Udostępnij pocztą e-mail",
+            "COPIED": "Łącze zostało skopiowane do schowka",
+            "EMAIL_INVITE": "Zaproszenie e-mail",
+            "EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} zaprasza Cię na spotkanie",
+            "EMAIL_INVITE_MEETING_BODY": "Dołącz do tego spotkania:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+            "EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} wysłał Ci swoje wideo: {{subject}}",
+            "EMAIL_INVITE_RECORDING_BODY": "{{fullName}} udostępnił Ci nagranie:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AOd: {{owner}}{{description}}",
+            "EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Udostępniono Ci nagranie: {{subject}}",
+            "EMAIL_GUEST_INVITE_RECORDING_BODY": "Obejrzyj to nagranie:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AOd: {{owner}}{{description}}",
+            "EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} wysłał Ci transmisję: {{subject}}",
+            "EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AOd: {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AKliknij następujące łącze, aby dołączyć:%0D%0A{{url}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Udostępniono Ci następującą transmisję: {{subject}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AOd: {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AKliknij następujące łącze, aby dołączyć:%0D%0A{{url}}"
+        },
+        "PLAYER": {
+            "NOT_AVAILABLE": "Program nie jest jeszcze dostępny do wyświetlenia. Spróbuj ponownie później.",
+            "DENIED": "Ten program nie może być odtwarzany z bieżącej lokalizacji. Dostęp został ograniczony przez administratora.",
+            "NOT_FOUND": "Nie można znaleźć tego programu. Prawdopodobnie został on usunięty. Spróbuj zalogować się ponownie lub skontaktuj się z administratorem systemu.",
+            "NOT_AUTHORIZED": "Nie masz upoważnienia do oglądania tego wideo. Spróbuj zalogować się ponownie lub skontaktuj się z administratorem systemu.",
+            "NO_FLASH": "Aktualnie nie można odtworzyć wideo w Twojej przeglądarce. Zainstaluj aplikację Adobe Flash Player. Po zakończeniu instalacji może być wymagane ponowne uruchomienie przeglądarki."
+        },
+        "JOIN_BUTTON": {
+            "JOIN": "Dołącz",
+            "DETECTING_CLIENTS": "Sprawdzanie aplikacji...",
+            "BROWSER_AUDIO_VIDEO": "Audio/wideo + prezentacja",
+            "AUDIO_AND_PRESENTATION": "Audio + prezentacja",
+            "PRESENTATION_ONLY": "Tylko prezentacja",
+            "CANCEL": "Anuluj"
+        },
+        "FILE_READER": {
+            "DENIED_EXTENSION": "Niedopuszczalne rozszerzenie pliku",
+            "FORMAT_ERROR": "Miniatura musi mieć jeden z następujących formatów: {{typy}}"
+        }
+    }
+}

@@ -16,6 +16,7 @@ export class DropdownOptionsComponent implements OnInit, AfterViewInit, OnChange
   @Input() toggled;
   @Input() baseOptions;
   @Input() externalClass: string;
+  @Input() disabled: boolean;
   itemClicked = false;
   el: any;
   isListenersExists = false;
@@ -26,7 +27,6 @@ export class DropdownOptionsComponent implements OnInit, AfterViewInit, OnChange
   translatedName: string;
   positions: any;
   options: any;
-  disabled: any;
   mobileSafariStyle: any;
   private element: any;
 
@@ -136,14 +136,15 @@ export class DropdownOptionsComponent implements OnInit, AfterViewInit, OnChange
         if (!this.isClipboardInitialized) {
           this.options.forEach((option) => {
             if (option.isCopyLink) {
-              const uniqueId = 'tempId' + (new Date()).getTime();
-              option.clipboardClass = uniqueId;
-              // @ts-ignore
-              option.clipboard = new Clipboard('.' + uniqueId);
-              option.clipboard.on('success', (e) => {
-                // TODO create this method
-                // MessageUtilsService.showPlainNotification($translate.instant('UTILITIES.COPY_OR_EMAIL_LINK.COPIED'), true);
-              });
+              // TODO check how it works without following code
+              // const uniqueId = 'tempId' + (new Date()).getTime();
+              // option.clipboardClass = uniqueId;
+              // // @ts-ignore
+              // option.clipboard = new Clipboard('.' + uniqueId);
+              // option.clipboard.on('success', (e) => {
+              //   // TODO create this method
+              //   // MessageUtilsService.showPlainNotification($translate.instant('UTILITIES.COPY_OR_EMAIL_LINK.COPIED'), true);
+              // });
             }
           });
           this.isClipboardInitialized = true;

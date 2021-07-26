@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "Die PIN des Moderators Ihrer Besprechung ist abgelaufen. Bitte ändern Sie Ihre PIN unter ",
 			"OPEN_SETTINGS": "Einstellungen"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Abbrechen",
+			"COPY": "Link kopieren",
+			"SHARE_LINK": "Per E-Mail teilen",
+			"COPIED": "Ein Link wurde in die Zwischenablage kopiert",
+			"EMAIL_INVITE": "E-Mail-Einladung",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} hat Sie zu einer Besprechung eingeladen",
+			"EMAIL_INVITE_MEETING_BODY": "Bitte nehmen Sie an dieser Besprechung teil:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} hat Ihnen ein Video geschickt: {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} hat eine Aufzeichnung mit Ihnen geteilt:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0Avon {{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Ein Video wurde mit Ihnen geteilt: {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Bitte schauen Sie sich diese Aufzeichnung an:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0Avon {{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} hat Ihnen eine Rundsendung geschickt: {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0Avon {{owner}}%0D%0ADatum: {{date}}{{description}}%0D%0A%0D%0AKlicken Sie zum Teilnehmen folgenden Link:%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Eine Rundsendung wurde mit Ihnen geteilt: {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0Avon {{owner}}%0D%0ADatum: {{date}}{{description}}%0D%0A%0D%0AKlicken Sie zum Teilnehmen folgenden Link:%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "Das Video ist noch nicht wiedergabebereit. Bitte versuchen Sie es später erneut.",
+			"DENIED": "Dieses Video kann an Ihrem aktuellen Standort nicht wiedergegeben werden. Der Zugriff wurde vom Administrator eingeschränkt.",
+			"NOT_FOUND": "Dieses Video wurde nicht gefunden. Möglicherweise wurde es gelöscht. Melden Sie sich erneut an oder wenden Sie sich an Ihren Systemadministrator.",
+			"NOT_AUTHORIZED": "Sie haben keine Berechtigung zur Anzeige dieses Videos. Melden Sie sich erneut an oder wenden Sie sich an Ihren Systemadministrator.",
+			"NO_FLASH": "Dieses Video kann in diesem Browser derzeit nicht angezeigt werden. Installieren Sie Adobe Flash Player. Möglicherweise müssen Sie nach Abschluss der Installation den Browser erneut starten."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Teilnehmen",
+			"DETECTING_CLIENTS": "App wird gesucht …",
+			"BROWSER_AUDIO_VIDEO": "Audio/Video + Präsentation",
+			"AUDIO_AND_PRESENTATION": "Audio + Präsentation",
+			"PRESENTATION_ONLY": "Nur Präsentation",
+			"CANCEL": "Abbrechen"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Abgelehnte Dateierweiterung",
+			"FORMAT_ERROR": "Die Miniaturansicht muss eines der folgenden Formate haben: {{types}}"
+		}
 	}
 }

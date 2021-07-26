@@ -16,12 +16,14 @@ export class CopyOrEmailLinkJoinComponent implements OnInit {
   logger = new Logger('CopyOrEmailLinkDirective');
   shareLinkName = this.translate.instant('UTILITIES.COPY_OR_EMAIL_LINK.EMAIL_INVITE');
   shareOptions = [];
+  private controller: this;
 
   constructor(public translate: TranslateService,
               private customDeviceDetector: CustomDeviceDetectorService,
               private globalService: GlobalService) { }
 
   ngOnInit(): void {
+    const controller = this;
     this.shareOptions.push({
       name: this.shareLinkName,
       func: this.emailInvite
@@ -31,7 +33,7 @@ export class CopyOrEmailLinkJoinComponent implements OnInit {
       name: this.translate.instant('UTILITIES.COPY_OR_EMAIL_LINK.COPY'),
       func () {},
       isCopyLink: true,
-      generateLink () {
+      generateLink: () => {
         return this.url;
       }
     });
@@ -41,14 +43,14 @@ export class CopyOrEmailLinkJoinComponent implements OnInit {
       func() {},
       class: 'cancel',
       redefineByCondition(attr) {
-        if (this.customDeviceDetector.isDesktop()) {
+        if (controller.customDeviceDetector.isDesktop()) {
           this.class += ' dropdown-item-hide';
         }
       }
     });
   }
 
-  emailInvite() {
+  emailInvite = () => {
     // this.logger.log('Email invite. \'Recording\' option is %s', !!$scope.recording);
     const userName = encodeURIComponent(this.globalService.user.name);
     const userLastName = encodeURIComponent(this.globalService.user.lastName);

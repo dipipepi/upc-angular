@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "PIN moderátora vaší schůzky vypršel. Změňte svůj PIN kód v ",
 			"OPEN_SETTINGS": "Nastavení"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Zrušit",
+			"COPY": "Kopírovat odkaz",
+			"SHARE_LINK": "Sdílet e-mailem",
+			"COPIED": "Odkaz byl zkopírován do schránky",
+			"EMAIL_INVITE": "Pozvánka e-mailem",
+			"EMAIL_INVITE_MEETING_SUBJECT": "Uživatel {{fullName}} vás pozval na svou schůzku.",
+			"EMAIL_INVITE_MEETING_BODY": "Připojte se k této schůzce:%0D%0A{{url}} %0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "Uživatel {{fullName}} vám poslal video: {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} s vámi sdílí nahrávku:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AAutor: {{owner}} {{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Pro vás nasdílené video: {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Podívejte so na tuto nahrávku:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AAutor: {{owner}} {{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "Uživatel {{fullName}} vás pozval na vysílání: {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AAutor: {{owner}}%0D%0ADatum: {{date}} {{description}}%0D%0A%0D%0AKliknutím na následující odkaz se zúčastníte:%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Bylo vám nasdíleno vysílání: {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AAutor: {{owner}}%0D%0ADatum: {{date}} {{description}}%0D%0A%0D%0AKliknutím na následující odkaz se zúčastníte:%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "Program pro přehrávání zatím není k dispozici. Zkuste to později.",
+			"DENIED": "Tento program pro přehrávání nelze spustit z aktuální lokace. Přístup byl omezen správcem systému.",
+			"NOT_FOUND": "Program pro přehrávání nelze najít. Pravděpodobně byl odstraněn. Zkuste se znovu přihlásit nebo se obraťte na svého správce systému.",
+			"NOT_AUTHORIZED": "Nemáte povolení zobrazit tuto nahrávku. Zkuste se znovu přihlásit nebo se obraťte na svého správce systému.",
+			"NO_FLASH": "Tuto nahrávku aktuálně nelze v tomto prohlížeči přehrát. Nainstalujte si Adobe Flash Player. Po dokončení instalace bude možná nutné restartovat prohlížeč."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Připojit",
+			"DETECTING_CLIENTS": "Probíhá kontrola aplikace…",
+			"BROWSER_AUDIO_VIDEO": "Audio/video + prezentace",
+			"AUDIO_AND_PRESENTATION": "Audio + prezentace",
+			"PRESENTATION_ONLY": "Pouze prezentace",
+			"CANCEL": "Zrušit"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Tento formát souboru není povolen.",
+			"FORMAT_ERROR": "Miniatura náhledu musí být v jednom z následujících formátů: {{types}}"
+		}
 	}
 }

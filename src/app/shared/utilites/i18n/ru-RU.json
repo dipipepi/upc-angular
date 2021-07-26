@@ -1,0 +1,40 @@
+{
+    "UTILITIES": {
+        "COPY_OR_EMAIL_LINK": {
+            "CANCEL": "Отмена",
+            "COPY": "Копировать ссылку",
+            "SHARE_LINK": "Поделиться по эл. почте",
+            "COPIED": "Ссылка скопирована в буфер обмена.",
+            "EMAIL_INVITE": "Пригласить по электронной почте",
+            "EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} приглашает вас присоединиться к собранию",
+            "EMAIL_INVITE_MEETING_BODY": "Присоединитесь к этому собранию:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+            "EMAIL_INVITE_RECORDING_SUBJECT": "Пользователь {{fullName}} отправил вам видео: {{subject}}.",
+            "EMAIL_INVITE_RECORDING_BODY": "Пользователь {{fullName}} пригласил вас просмотреть запись:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AОт {{owner}}{{description}}.",
+            "EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Вас пригласили просмотреть видео: {{subject}}.",
+            "EMAIL_GUEST_INVITE_RECORDING_BODY": "Просмотрите запись:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0AОт {{owner}}{{description}}",
+            "EMAIL_INVITE_BROADCAST_SUBJECT": "Пользователь {{fullName}} отправил вам трансляцию: {{subject}}.",
+            "EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AОт {{owner}}%0D%0AДата: {{date}}{{description}}%0D%0A%0D%0AНажмите на следующую ссылку, чтобы присоединиться:%0D%0A{{url}}.",
+            "EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Вас пригласили просмотреть трансляцию: {{subject}}.",
+            "EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0AОт {{owner}}%0D%0AДата: {{date}}{{description}}%0D%0A%0D%0AНажмите на следующую ссылку, чтобы присоединиться:%0D%0A{{url}}."
+        },
+        "PLAYER": {
+            "NOT_AVAILABLE": "Это видео пока не доступно для просмотра. Повторите попытку.",
+            "DENIED": "Не удается воспроизвести это видео из вашего текущего местоположения. Доступ ограничен администратором.",
+            "NOT_FOUND": "Не удается найти это видео. Возможно, оно было удалено. Попытайтесь повторить вход в систему или обратитесь к системному администратору.",
+            "NOT_AUTHORIZED": "У вас нет разрешения на просмотр этого видео. Попытайтесь повторить вход в систему или обратитесь к системному администратору.",
+            "NO_FLASH": "Это видео невозможно воспроизвести в данном браузере. Установите Adobe Flash Player. После установки вам может понадобиться перезагрузка браузера."
+        },
+        "JOIN_BUTTON": {
+            "JOIN": "Присоединиться",
+            "DETECTING_CLIENTS": "Поиск приложения...",
+            "BROWSER_AUDIO_VIDEO": "Аудио/видео и презентация",
+            "AUDIO_AND_PRESENTATION": "Аудио и презентация",
+            "PRESENTATION_ONLY": "Только презентацию",
+            "CANCEL": "Отмена"
+        },
+        "FILE_READER": {
+            "DENIED_EXTENSION": "Недопустимое расширение файла",
+            "FORMAT_ERROR": "Эскиз должен быть в одном из таких форматов: {{types}}"
+        }
+    }
+}

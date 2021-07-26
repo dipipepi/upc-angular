@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "會議主持人 PIN 碼已過期。請 ",
 			"OPEN_SETTINGS": "在「設定」中變更您的 PIN 碼"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "取消",
+			"COPY": "複製連結",
+			"SHARE_LINK": "透過電子郵件共用",
+			"COPIED": "已將連結複製到剪貼簿",
+			"EMAIL_INVITE": "電子郵件邀請",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} 邀請您加入會議",
+			"EMAIL_INVITE_MEETING_BODY": "請加入此會議：%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} 傳送了一個影片給您：{{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} 要與您分享錄製：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A擁有者：{{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "您有一個分享影片：{{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "請查看此錄製：%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0A擁有者：{{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} 給您傳送了一份廣播：{{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A擁有者：{{owner}}%0D%0A日期：{{date}}{{description}}%0D%0A%0D%0A按一下以下連結加入：%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "您有一個分享廣播：{{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0A擁有者：{{owner}}%0D%0A日期：{{date}}{{description}}%0D%0A%0D%0A按一下以下連結加入：%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "目前尚無法檢視此錄製節目。請稍後重試。",
+			"DENIED": "無法從您目前的位置播放此錄製節目。管理員已限制存取權限。",
+			"NOT_FOUND": "找不到此錄製節目。節目可能已被刪除。請嘗試重新登入或聯絡系統管理員。",
+			"NOT_AUTHORIZED": "您沒有檢視此影片的授權。請嘗試重新登入，或聯絡您的系統管理員。",
+			"NO_FLASH": "此瀏覽器目前無法播放此視訊。請安裝 Adobe Flash Player。安裝完成後可能需要重新啟動瀏覽器。"
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "加入",
+			"DETECTING_CLIENTS": "正在檢查應用程式...",
+			"BROWSER_AUDIO_VIDEO": "音訊／視訊 + 簡報",
+			"AUDIO_AND_PRESENTATION": "音訊 + 簡報",
+			"PRESENTATION_ONLY": "僅啟用簡報模式",
+			"CANCEL": "取消"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "拒絕的副檔名",
+			"FORMAT_ERROR": "縮圖必須為下列格式之一：{{types}}"
+		}
 	}
 }

@@ -1014,5 +1014,43 @@
 			"PIN_UPDATE_TITLE": "Il PIN del moderatore della riunione è scaduto. Modificare il PIN in ",
 			"OPEN_SETTINGS": "Impostazioni"
 		}
+	},
+	"UTILITIES": {
+		"COPY_OR_EMAIL_LINK": {
+			"CANCEL": "Annulla",
+			"COPY": "Copia collegamento",
+			"SHARE_LINK": "Condividi via e-mail",
+			"COPIED": "Un collegamento è stato copiato negli appunti",
+			"EMAIL_INVITE": "Invito via e-mail",
+			"EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} ha inviato un invito a partecipare a una riunione",
+			"EMAIL_INVITE_MEETING_BODY": "Partecipare alla riunione:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+			"EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} ti ha inviato un video: {{subject}}",
+			"EMAIL_INVITE_RECORDING_BODY": "{{fullName}} ha condiviso un video:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0ADi {{owner}}{{description}}",
+			"EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Un video è stato condiviso: {{subject}}",
+			"EMAIL_GUEST_INVITE_RECORDING_BODY": "Vedere questa registrazione:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0ADi {{owner}}{{description}}",
+			"EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} ha inviato una trasmissione: {{subject}}",
+			"EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0ADi {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AFare clic sul seguente link per partecipare:%0D%0A{{url}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Una trasmissione è stata condivisa: {{subject}}",
+			"EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0ADi {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AFare clic sul seguente link per partecipare:%0D%0A{{url}}"
+		},
+		"PLAYER": {
+			"NOT_AVAILABLE": "Il programma non è ancora disponibile per la visualizzazione. Riprovare più tardi.",
+			"DENIED": "Impossibile riprodurre il programma dalla posizione corrente. L'accesso è stato limitato dall'amministratore.",
+			"NOT_FOUND": "Impossibile trovare il programma, poiché potrebbe essere stato eliminato. Provare ad accedere nuovamente o contattare l'amministratore del sistema.",
+			"NOT_AUTHORIZED": "L'utente non è autorizzato a visualizzare il video. Provare ad accedere nuovamente o contattare l'amministratore del sistema.",
+			"NO_FLASH": "Impossibile riprodurre al momento il video in questo browser. Installare Adobe Flash Player. Potrebbe essere necessario riavviare il browser una volta completata l'installazione."
+		},
+		"JOIN_BUTTON": {
+			"JOIN": "Partecipa",
+			"DETECTING_CLIENTS": "Controllo delle app in corso...",
+			"BROWSER_AUDIO_VIDEO": "Audio/video e presentazione",
+			"AUDIO_AND_PRESENTATION": "Audio e presentazione",
+			"PRESENTATION_ONLY": "Solo presentazione",
+			"CANCEL": "Annulla"
+		},
+		"FILE_READER": {
+			"DENIED_EXTENSION": "Estensione del file negata",
+			"FORMAT_ERROR": "L'anteprima deve essere in uno dei seguenti formati: {{types}}"
+		}
 	}
 }

@@ -43,6 +43,9 @@ import { IncludeComponent } from './shared/includeComponent/include/include.comp
 import { JoinInputComponent } from './shared/join-input/join-input.component';
 import { CopyOrEmailLinkJoinComponent } from './shared/copy-or-email-link-join/copy-or-email-link-join.component';
 import { JoinGuestButtonComponent } from './shared/joinButtons/join-guest-button/join-guest-button.component';
+import { JoinMobileButtonComponent } from './shared/join-mobile-button/join-mobile-button.component';
+import { JoinInputMobileComponent, EnterIdMeetingMobileComponent } from './shared/join-input-mobile/join-input-mobile.component';
+import { JoinUpcomingButtonComponent } from './shared/join-upcoming-button/join-upcoming-button.component';
 
 
 // tslint:disable-next-line:typedef
@@ -82,7 +85,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     IncludeComponent,
     JoinInputComponent,
     CopyOrEmailLinkJoinComponent,
-    JoinGuestButtonComponent
+    JoinGuestButtonComponent,
+    JoinMobileButtonComponent,
+    JoinInputMobileComponent,
+    EnterIdMeetingMobileComponent,
+    JoinUpcomingButtonComponent
   ],
   imports: [
     BrowserModule,

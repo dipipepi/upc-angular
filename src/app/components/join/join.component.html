@@ -106,27 +106,28 @@ intended publication of such source code.
       <app-include [src]="guestCaption"></app-include>
 
       <!-- Join form for guest mobile -->
-<!--      TODO create this component-->
-<!--      <join-input-mobile-->
-<!--        ng-if="isMobileButton"-->
-<!--        options="optionsForJoinGuest"-->
-<!--        meeting-id="meeting.id"-->
-<!--        user-name="meeting.name"-->
-<!--        user-type="{{authorizationService.userType}}"-->
-<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
-<!--        is-from-form="true"-->
-<!--        is-conference-exists="isConferenceExists">-->
-<!--      </join-input-mobile>-->
+      <app-join-input-mobile
+        *ngIf="isMobileButton"
+        [options]="optionsForJoinGuest"
+        [meetingId]="meeting.id"
+        [userName]="meeting.name"
+        [url]="myMeetings.selectedVirtualRoom?.url"
+        [isFromForm]="true"
+        [isConferenceExists]="isConferenceExists"
+        [myMeetings]="myMeetings"
+      ></app-join-input-mobile>
       <!-- Join form for guest mobile end -->
 
       <!-- Join form for guest desktop -->
       <app-join-input class="white-arrow"
+                      *ngIf="!isMobileButton"
                       [options]="optionsForJoinGuest"
                       [url]="myMeetings?.selectedVirtualRoom?.url"
                       [meetingId]="meeting?.id"
                       [virtualRoom]="myMeetings?.selectedVirtualRoom"
                       [name]="meeting.name"
       ></app-join-input>
+
       <!-- Join form for guest desktop end -->
 
     </div>
@@ -139,31 +140,27 @@ intended publication of such source code.
 
       <!-- Join form for user for mobile -->
       <!--      TODO create this component-->
-<!--      <join-input-mobile-->
-<!--        ng-if="isMobileButton"-->
-<!--        options="optionsForJoin"-->
-<!--        ng-model="myMeetings.selectedVirtualRoom"-->
-<!--        meeting-id="meeting.id"-->
-<!--        user-name="meeting.name"-->
-<!--        user-type="{{authorizationService.userType}}"-->
-<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
-<!--        is-from-form="true"-->
-<!--        is-conference-exists="isConferenceExists">-->
-<!--      </join-input-mobile>-->
+      <app-join-input-mobile
+        *ngIf="isMobileButton"
+        [options]="optionsForJoin"
+        [meetingId]="meeting.id"
+        [userName]="meeting.name"
+        [url]="myMeetings.selectedVirtualRoom?.url"
+        [isFromForm]="true"
+        [isConferenceExists]="isConferenceExists"
+        [myMeetings]="myMeetings"
+      ></app-join-input-mobile>
       <!-- Join form for user for mobile end -->
 
       <!-- Join form for user for desktop -->
-      <!--      TODO create this component-->
-<!--      <join-input-->
-<!--        ng-if="!isMobileButton"-->
-<!--        class="white-arrow"-->
-<!--        options="optionsForJoin"-->
-<!--        ng-model="myMeetings.selectedVirtualRoom"-->
-<!--        ulr="{{myMeetings.selectedVirtualRoom.url}}"-->
-<!--        meeting-id="meeting.id"-->
-<!--        user-name="meeting.name"-->
-<!--        user-type="{{authorizationService.userType}}">-->
-<!--      </join-input>-->
+      <app-join-input class="white-arrow"
+                      *ngIf="!isMobileButton"
+                      [options]="optionsForJoin"
+                      [url]="myMeetings?.selectedVirtualRoom?.url"
+                      [meetingId]="meeting?.id"
+                      [virtualRoom]="myMeetings?.selectedVirtualRoom"
+                      [name]="meeting.name"
+      ></app-join-input>
       <!-- Join form for user for desktop end -->
     </div>
     <!-- Join form for user end -->
@@ -189,7 +186,17 @@ intended publication of such source code.
 <!--                          name="{{meeting.name}}"-->
 <!--                          text="JOIN.JOIN">-->
 <!--      </join-mobile-button>-->
-<!--      <join-upcoming-button ng-if="!isMobileButton" meeting-id="meeting.number" name="{{meeting.name}}"></join-upcoming-button>-->
+      <app-join-mobile-button
+        [meetingId]="meeting.number"
+        *ngIf="isMobileButton"
+        [name]="meeting.name"
+        text="JOIN.JOIN"
+      ></app-join-mobile-button>
+      <app-join-upcoming-button
+        *ngIf="!isMobileButton"
+        [meetingId]="meeting.number"
+        [name]="meeting.name"
+      ></app-join-upcoming-button>
       <div class="time {{meeting.status === 'IN_SESSION' ? 'in-progress' : ''}}" (click)="showMeetingDetails(meeting, $event)">
         <div class="start">
           <span>{{meeting.startTime | date:dateFormat.shortTime | lowercase}}</span>

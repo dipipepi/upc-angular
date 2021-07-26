@@ -1,0 +1,40 @@
+{
+    "UTILITIES": {
+        "COPY_OR_EMAIL_LINK": {
+            "CANCEL": "Cancelar",
+            "COPY": "Copiar link",
+            "SHARE_LINK": "Compartilhar por e-mail",
+            "COPIED": "Um link foi copiado para a sua área de transferência",
+            "EMAIL_INVITE": "Convite por e-mail",
+            "EMAIL_INVITE_MEETING_SUBJECT": "{{fullName}} convida você a ingressar em uma reunião",
+            "EMAIL_INVITE_MEETING_BODY": "Ingresse nesta reunião:%0D%0A{{url}}%0D%0A%0D%0A{{name}}",
+            "EMAIL_INVITE_RECORDING_SUBJECT": "{{fullName}} enviou um vídeo para você: {{subject}}",
+            "EMAIL_INVITE_RECORDING_BODY": "{{fullName}} compartilhou uma gravação com você:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0APor {{owner}}{{description}}",
+            "EMAIL_GUEST_INVITE_RECORDING_SUBJECT": "Um vídeo foi compartilhado com você: {{subject}}",
+            "EMAIL_GUEST_INVITE_RECORDING_BODY": "Assista esta gravação:%0D%0A{{url}}%0D%0A%0D%0A{{subject}}%0D%0APor {{owner}}{{description}}",
+            "EMAIL_INVITE_BROADCAST_SUBJECT": "{{fullName}} enviou uma transmissão para você: {{subject}}",
+            "EMAIL_INVITE_BROADCAST_BODY": "{{subject}}%0D%0APor {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AClique no link a seguir para participar:%0D%0A{{url}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_SUBJECT": "Uma transmissão foi compartilhada com você: {{subject}}",
+            "EMAIL_GUEST_INVITE_BROADCAST_BODY": "{{subject}}%0D%0APor {{owner}}%0D%0AData: {{date}}{{description}}%0D%0A%0D%0AClique no link a seguir para participar:%0D%0A{{url}}"
+        },
+        "PLAYER": {
+            "NOT_AVAILABLE": "O programa ainda não está disponível para visualização. Tente novamente mais tarde.",
+            "DENIED": "Este programa não pode ser reproduzido a partir de seu local atual. O acesso foi restringido pelo administrador.",
+            "NOT_FOUND": "Não foi possível encontrar este programa, pois ele provavelmente foi excluído. Tente fazer logon novamente ou entre em contato com o administrador do sistema.",
+            "NOT_AUTHORIZED": "Você não tem autorização para assistir a este vídeo. Tente fazer logon novamente ou entre em contato com seu administrador do sistema.",
+            "NO_FLASH": "Este vídeo não pode ser exibido neste navegador no momento. Instale o Adobe Flash Player. Talvez seja necessário reiniciar o navegador depois que a instalação for concluída."
+        },
+        "JOIN_BUTTON": {
+            "JOIN": "Participar",
+            "DETECTING_CLIENTS": "Verificando aplicativo...",
+            "BROWSER_AUDIO_VIDEO": "Áudio/vídeo + apresentação",
+            "AUDIO_AND_PRESENTATION": "Áudio + apresentação",
+            "PRESENTATION_ONLY": "Apenas apresentação",
+            "CANCEL": "Cancelar"
+        },
+        "FILE_READER": {
+            "DENIED_EXTENSION": "Extensão de arquivo recusada",
+            "FORMAT_ERROR": "A miniatura precisa estar em um dos seguintes formatos: {{types}}"
+        }
+    }
+}

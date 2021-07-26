@@ -224,7 +224,7 @@ export class JoinService {
           // });
         };
 
-        const errors = response.data && response.data.error ? response.data.error : undefined;
+        const errors = response && response.error ? response.error : undefined;
         const errorCode = _.isArray(errors) && errors[0] ? errors[0].errorCode : 'undefined';
         if (errorCode === ERROR_CODE.JOIN.ERC_JC_ONE_TIME_PIN_REQUIRED && !options.oneTimePin) {
           return showAssignOneTimePin();
@@ -368,9 +368,11 @@ export class JoinService {
     }
 
     // tslint:disable-next-line:prefer-const
-    let headers;
+    let headers = {
+      Authorization: undefined
+    };
     if(window.localStorage.UPS_TOKEN){
-      headers.Authorization = window.localStorage.UPS_TOKEN;
+      headers.Authorization = 'UPToken ' + window.localStorage.UPS_TOKEN;
     }
 
     return this.http.post(this.userSettingsService.portalResources.resources.middleware.POST.createConferenceToken.href, parameters,
@@ -461,7 +463,7 @@ export class JoinService {
 
     const numberIsVR = currentOptions.some((item) => {
       if (!item.className) {
-        return item.number === token.data.conferenceId;
+        return item.number === token.conferenceId;
       }
       return false;
     });
@@ -500,33 +502,33 @@ export class JoinService {
 
     if (token.meetingName !== null){
 
-      if (token.data.meetingName.length > this.globalService.maxVrName ||
-        token.data.conferenceId.length > this.globalService.maxVrNameWithSpace) {
-        tooltip = token.data.meetingName + ' - ' + token.data.conferenceId;
+      if (token.meetingName.length > this.globalService.maxVrName ||
+        token.conferenceId.length > this.globalService.maxVrNameWithSpace) {
+        tooltip = token.meetingName + ' - ' + token.conferenceId;
       }
 
-      if (token.data.meetingName.length > 26) {
-        if (token.data.meetingName.indexOf(' ') !== -1) {
-          vrNameForDisplay = token.data.meetingName.slice(0, this.globalService.maxVrName) + '...';
+      if (token.meetingName.length > 26) {
+        if (token.meetingName.indexOf(' ') !== -1) {
+          vrNameForDisplay = token.meetingName.slice(0, this.globalService.maxVrName) + '...';
         } else {
-          vrNameForDisplay = token.data.meetingName.slice(0, this.globalService.maxVrNameWithSpace) + '...';
+          vrNameForDisplay = token.meetingName.slice(0, this.globalService.maxVrNameWithSpace) + '...';
         }
       } else {
-        vrNameForDisplay = token.data.meetingName;
+        vrNameForDisplay = token.meetingName;
       }
     } else {
-      if (token.data.conferenceId.length > this.globalService.maxVrNameWithSpace) {
-        vrNameForDisplay = token.data.conferenceId.slice(0, this.globalService.maxVrNameWithSpace) + '...';
-        tooltip = token.data.conferenceId;
+      if (token.conferenceId.length > this.globalService.maxVrNameWithSpace) {
+        vrNameForDisplay = token.conferenceId.slice(0, this.globalService.maxVrNameWithSpace) + '...';
+        tooltip = token.conferenceId;
       } else {
-        vrNameForDisplay = token.data.conferenceId;
+        vrNameForDisplay = token.conferenceId;
       }
     }
 
-    if (token.data.conferenceId.length > this.globalService.maxVrNumber) {
-      vrNumberForDisplay =  '...' + token.data.conferenceId.substr(-this.globalService.maxVrNumber);
+    if (token.conferenceId.length > this.globalService.maxVrNumber) {
+      vrNumberForDisplay =  '...' + token.conferenceId.substr(-this.globalService.maxVrNumber);
     } else {
-      vrNumberForDisplay = token.data.conferenceId;
+      vrNumberForDisplay = token.conferenceId;
     }
 
     if (haveOptionInList) {
@@ -536,10 +538,10 @@ export class JoinService {
     currentOptions.push({
       name: vrNameForDisplay,
       tooltip,
-      fullName: token.data.meetingName || '',
-      number: token.data.conferenceId,
+      fullName: token.meetingName || '',
+      number: token.conferenceId,
       numberForDisplay: vrNumberForDisplay,
-      url: window.location.href + '?ID=' + token.data.conferenceId,
+      url: window.location.href + '?ID=' + token.conferenceId,
       className: 'recent'
     });
 

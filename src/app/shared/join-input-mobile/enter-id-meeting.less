@@ -1,0 +1,121 @@
+@import "/src/assets/styles/variables.less";
+@import "/src/assets/styles/theme.less";
+@import "/src/assets/styles/urls";
+@url-recent-meeting:     url(src/app/shared/icons/ic_portal_history.svg);
+
+.ngdialog-theme-enter-id-meeting {
+    .ngdialog-content {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    .join-meeting-list {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-join-meeting-list {
+        padding: 0;
+        height: 50px;
+        border-bottom: 1px solid @input-borders-color;
+    }
+
+    input {
+        border: none;
+        float: left;
+        width: 100%;
+        height: 49px;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .reset {
+        display: none !important;
+    }
+
+    .list-block {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        z-index: 2;
+        font-size: 14px;
+        flex: 1 1;
+        overflow: scroll;
+        li {
+            padding: 0 10px 0 30px;
+            position: relative;
+            cursor: default;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 10px 0 10px 0;
+            line-height: 20px;
+            display: flex;
+            flex-direction: column;
+            float: none;
+            span {
+                display: block;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                &:nth-child(2) {
+                    color: @text-color-med;
+                }
+            }
+
+            &.recent::before {
+                content: '';
+                position: absolute;
+                left: 9px;
+                top: 2px;
+                width: 17px;
+                height: 17px;
+                background: @url-recent-meeting;
+            }
+        }
+    }
+
+    .footer-join-meeting-list {
+        bottom: 0;
+        padding: 0;
+        height: 50px;
+        border-top: 1px solid @input-borders-color;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .button-done {
+        display: block;
+        color: @button-alt;
+        line-height: 30px;
+        border: none;
+        font-size: 14px;
+        background: none;
+        padding: 1px 20px;
+        height: 49px;
+        text-decoration: underline;
+    }
+    .button-cancel {
+        display: block;
+        color: @button-alt;
+        line-height: 30px;
+        border: none;
+        font-size: 14px;
+        background: none;
+        position: absolute;
+        right: 0;
+        padding: 1px 20px;
+        height: 49px;
+    }
+}
